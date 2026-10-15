@@ -1,21 +1,56 @@
--- REZEHUB Rebrand Wrapper
-task.spawn(function()
-    while true do
-        task.wait(0.5)
-        for _, gui in ipairs(game:GetService("CoreGui"):GetDescendants()) do
-            if gui:IsA("TextLabel") or gui:IsA("TextButton") then
-                local txt = gui.Text
-                if txt and txt:find("ZANJIHUB", 1, true) then
-                    gui.Text = txt:gsub("ZANJIHUB", "REZEHUB")
-                elseif txt and txt:find("Zanji", 1, true) then
-                    gui.Text = txt:gsub("Zanji", "Reze")
-                elseif txt and txt:find("ZANJI", 1, true) then
-                    gui.Text = txt:gsub("ZANJI", "REZE")
-                end
+-- REZEHUB Rebrand Wrapper v2
+local replacements = {
+    ["ZANJIHUB"] = "REZEHUB",
+    ["ZanjiHub"] = "RezeHub",
+    ["Zanjihub"] = "Rezehub",
+    ["ZANJI"]    = "REZE",
+    ["Zanji"]    = "Reze",
+    ["zanji"]    = "reze",
+}
+
+local function rebrandText(obj)
+    if not obj or not obj.Parent then return end
+    if obj:IsA("TextLabel") or obj:IsA("TextButton") or obj:IsA("TextBox") then
+        local txt = obj.Text
+        if txt and txt ~= "" then
+            local new = txt
+            for old, rep in pairs(replacements) do
+                new = new:gsub(old, rep)
+            end
+            if new ~= txt then
+                obj.Text = new
             end
         end
     end
+end
+
+local function hideZIcon(obj)
+    if obj:IsA("ImageLabel") and obj.Image and obj.Image:find("88022909172536", 1, true) then
+        obj.Visible = false
+    end
+end
+
+local function scanAll()
+    local services = { game:GetService("CoreGui") }
+    local pg = game:GetService("Players").LocalPlayer:FindFirstChild("PlayerGui")
+    if pg then table.insert(services, pg) end
+
+    for _, root in ipairs(services) do
+        for _, obj in ipairs(root:GetDescendants()) do
+            rebrandText(obj)
+            hideZIcon(obj)
+        end
+    end
+end
+
+scanAll()
+
+task.spawn(function()
+    while true do
+        task.wait(0.3)
+        scanAll()
+    end
 end)
 
--- Load the original working payload
+-- Load the payload
 loadstring(game:HttpGet("https://raw.githubusercontent.com/jr0nzz/zanjihub/refs/heads/main/rideapet.lua", true))()
