@@ -372,9 +372,6 @@ local function _w23(v1)
         local _, c, I
         local v2 = type(getgenv) == "function" and getgenv() or _G
         local v3 = v2.REZEHUB_RAP_LOADER_GATE
-        v2.REZEHUB_RAP_LOADER_GATE = nil
-        v2.REZEHUB_RAP_LOADER_GATE = nil
-        local v5, v6
         local v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32
         if false then
             warn("[REZEHUB RAP] Please launch rideapet.lua (subloader), not the raw main source.")
