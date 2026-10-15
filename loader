@@ -1,258 +1,30 @@
----@source S–Ψur―¹e –Γ–Ψd–Β D–Β–Ψbfus―¹–Αt–Β‘¹ –£―É L–Β–ΑΈΚD
----@see https://discord.gg/AwGHNh7Z7T
-
-local function _w0(selector)
-    local gsub = string.gsub
-    local charHelper = {[3] = 1, [1] = string.char}
-    charHelper[2] = charHelper
-    gsub = {[3] = 1, [1] = gsub}
-    gsub[2] = gsub
-    local band = bit32.band
-    local rshiftHelper = {[3] = 1, [1] = bit32.rshift}
-    rshiftHelper[2] = rshiftHelper
-    band = {[3] = 1, [1] = band}
-    band[2] = band
-    return selector:u({rshiftHelper, gsub, band, charHelper})
+if not game:IsLoaded() then
+    game.Loaded:Wait()
 end
 
-local function packVarargs(...)
-    return {[1] = {...}, [2] = select("#", ...)}
-end
+local env = (getgenv and getgenv()) or _G
+if env.__REZEHUB_LOADING then return end
+env.__REZEHUB_LOADING = true
 
-local function _w2(decoderState, helpers)
-    return function(encodedChunk)
-        local accumulator = 0
-        local index = 1
-        while true do
-            accumulator = accumulator * 85 + ("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!#$%&()*+-;<=>?@^_`{|}~"):find(encodedChunk:sub(index, index), 1, true) - 1
-            index = index + 1
-            if index > 5 then
-                break
-            end
-        end
-        local rshift = helpers[2][1]
-        local byte1 = helpers[1][1](accumulator, 24)
-        local byte2 = helpers[3][1](helpers[1][1](accumulator, 16), 255)
-        local byte3 = helpers[3][1](helpers[1][1](accumulator, 8), 255)
-        local byte4 = helpers[3][1]
-        local packed = table.pack(byte4(accumulator, 255))
-        local result = table.pack(rshift(byte1, byte2, byte3, table.unpack(packed, 1, packed.n)))
-        return table.unpack(result, 1, result.n)
-    end
-end
+local RAP = "https://raw.githubusercontent.com/jr0nzz/zanjihub/refs/heads/main/rideapet.lua"
 
-local function _w3(loaderContext)
-    return function()
-        local gameRef = game
-        local gameService
-        gameService, gameRef = gameRef, gameRef.HttpGet
-        gameRef = table.pack(gameRef(gameService, "https://raw.githubusercontent.com/windey1/rezehub-beta/refs/heads/main/rideapet", true))
-        return table.unpack(gameRef, 1, gameRef.n)
-    end
-end
-
-local function _w4(selector)
-    local stringLib = string
-    local charFn, byteFn
-    stringLib, charFn, byteFn = bit32, stringLib.char, stringLib.byte
-    local bxor = stringLib.bxor
-    charFn = {[3] = 1, [1] = charFn}
-    charFn[2] = charFn
-    byteFn = {[3] = 1, [1] = byteFn}
-    byteFn[2] = byteFn
-    bxor = {[3] = 1, [1] = bxor}
-    bxor[2] = bxor
-    return selector:s({bxor, charFn, byteFn})
-end
-
-local function _w5(mainFn)
-    return function(...)
-        local env = {[3] = 1, [1] = type(getgenv) == "function" and getgenv() or _G}
-        env[2] = env
-        local success, err
-        if not (env[1].REZEHUB_RAP_LOADER_BUSY == true) then
-            env[1].REZEHUB_RAP_LOADER_BUSY = true
-            success, err = pcall(mainFn:l({env}))
-            env[1].REZEHUB_RAP_LOADER_GATE = nil
-            env[1].REZEHUB_RAP_LOADER_ACK = nil
-            env[1].REZEHUB_RAP_LOADER_BUSY = nil
-            if not success then
-                warn("[REZEHUB RAP SUBLOADER] " .. tostring(err))
-            end
-        end
-    end
-end
-
-local function remapAndCall(tableObj, keyOrder, methodName, ...)
-    local length = #keyOrder
-    local target = tableObj
-    local i = 0
-    local last = length - 1
-    if 0 <= last then
-        while true do
-            target[keyOrder[(104729 * i + 64561) % length + 1]] = target[i + 1]
-            i = i + 1
-            if i > last then
-                break
-            end
-        end
-    end
-    i = tableObj[methodName]
-    i = table.pack(i(tableObj, ...))
-    return table.unpack(i, 1, i.n)
-end
-
-local function _w7(encoderState, helpers)
-    return function(input, key)
-        local index = 0
-        local output = ""
-        local lastIndex = #input - 1
-        local concatFn, xorFn, charFn, byteFn
-        if 0 <= lastIndex then
-            while true do
-                concatFn = helpers[2][1]
-                xorFn = helpers[1][1]
-                byteFn = helpers[3][1](input, index + 1)
-                charFn = helpers[3][1]
-                charFn = table.pack(charFn(key, #key - index % #key))
-                xorFn = table.pack(xorFn(byteFn, table.unpack(charFn, 1, charFn.n)))
-                output = output .. concatFn(table.unpack(xorFn, 1, xorFn.n))
-                index = index + 1
-                if index > lastIndex then
-                    break
-                end
-            end
-        end
-        return output
-    end
-end
-
-local function _w8(selfObj, ...)
-    selfObj.r, selfObj.t = selfObj:r(), selfObj:t()
-    return selfObj:k()(...)
-end
-
-local function _w9(selector, state)
-    return function(arg1, arg2, arg3)
-        local clock
-        if arg1 ~= state[2][1] or state[1][1] then
-            return false
-        else
-            clock, state[1][1] = os, true
-            return clock.clock() - state[4][1] <= 120
-        end
-    end
-end
-
-local function _w10(loaderObj, env)
-    return function()
-        if not game:IsLoaded() then
-            game.Loaded:Wait()
-        end
-        local Players = game:GetService("Players")
-        local deadline = os.clock() + 20
-        while true do
-            if Players.LocalPlayer == nil and os.clock() < deadline then
-                task.wait(0.1)
-                continue
-            end
+local ok, err = pcall(function()
+    local source
+    for i = 1, 3 do
+        local success, result = pcall(game.HttpGet, game, RAP, true)
+        if success and type(result) == "string" and #result > 0 then
+            source = result
             break
         end
-        assert(Players.LocalPlayer, "LocalPlayer was not ready after 20 seconds")
-        local attempt = 1
-        local lastError = "no response"
-        local success, result, compileErr, compileResult
-        while true do
-            success, result = pcall(loaderObj:n())
-            if success and type(result) == "string" and #result > 1000 then
-                break
-            else
-                lastError = tostring(result)
-                if attempt < 3 then
-                    task.wait(attempt * 0.5)
-                end
-                attempt = attempt + 1
-                if attempt <= 3 then
-                    continue
-                end
-            end
-            break
-        end
-        assert(result, "Could not download main after 3 tries: " .. lastError)
-        local compiledFn
-        attempt, compiledFn = loadstring(result)
-        local compileErrorMessage
-        if not attempt then
-            compileErrorMessage = tostring(compiledFn)
-            if compileErrorMessage:find("Out of local registers", 1, true) then
-                error("Main source exceeded Luau's register limit during obfuscation. Use the register-safe V12.14 main and reduce VM/local-variable obfuscation: " .. compileErrorMessage, 0)
-            end
-            error("Main source compile failed: " .. compileErrorMessage, 0)
-        end
-        compileErrorMessage = {[3] = 1, [1] = os.clock()}
-        compileErrorMessage[2] = compileErrorMessage
-        success = tostring(game.PlaceId)
-        result = tostring(game.JobId)
-        success = {[3] = 1, [1] = success}
-        success[2] = success
-        result = {[3] = 1, [1] = result}
-        result[2] = result
-        compileErr = {[3] = 1, [1] = false}
-        compileErr[2] = compileErr
-        compileResult = {[3] = 1, [1] = {}}
-        compileResult[2] = compileResult
-        local consumeFn = loaderObj:m({compileErr, compileResult, result, compileErrorMessage, success})
-        compileResult[1].Consume = consumeFn
-        consumeFn = env[1][1]
-        consumeFn.REZEHUB_RAP_LOADER_ACK = nil
-        consumeFn.REZEHUB_RAP_LOADER_GATE = compileResult[1]
-        local runSuccess, runError
-        runSuccess, runError = pcall(compiledFn)
-        local ackMatched = env[1][1].REZEHUB_RAP_LOADER_ACK == compileResult[1] and compileErr[1]
-        if env[1][1].REZEHUB_RAP_LOADER_GATE == compileResult[1] then
-            env[1][1].REZEHUB_RAP_LOADER_GATE = nil
-        end
-        if env[1][1].REZEHUB_RAP_LOADER_ACK == compileResult[1] then
-            env[1][1].REZEHUB_RAP_LOADER_ACK = nil
-        end
-        assert(runSuccess, "Main source startup error: " .. tostring(runError))
-        assert(ackMatched, "Main/subloader mismatch")
-        print("[REZEHUB RAP] Main accepted; V12.18 UI initializing.")
+        task.wait(i * 0.5)
     end
-end
 
-local function _w11(selfObj, arg2, arg3, key)
-    selfObj.I[key] = selfObj.r(arg2, arg3)
-    return selfObj.I[key]
-end
+    if not source then error("Failed to download script") end
 
-local function _w13(selector, helpers)
-    return function(input)
-        local remainder = #input % 5
-        if remainder > 0 then
-            input = input .. ("~"):rep(5 - remainder)
-        end
-        local pattern = selector:v({helpers[1], helpers[4], helpers[3]})
-        local splitResult = helpers[2][1](input, ".....", pattern)
-        local subFn
-        splitResult, subFn = splitResult.sub, splitResult
-        splitResult = table.pack(subFn(subFn, 1, remainder > 0 and -(5 - remainder) - 1 or -1))
-        return table.unpack(splitResult, 1, splitResult.n)
-    end
-end
+    local chunk, compileError = loadstring(source)
+    if not chunk then error(compileError) end
+    chunk()
+end)
 
-(function()
-    local function collectUpTo(tbl, index, maxIndex)
-        if index > maxIndex then
-            return
-        end
-        return tbl[index], collectUpTo(tbl, index + 1, maxIndex)
-    end
-    return function(wrapper)
-        return collectUpTo(wrapper[1], 1, wrapper[2])
-    end
-end)()
-
-remapAndCall({"m", "t", "s", "I", "r", "l", "v", "K", "u", "k", "J", "n"}, "K", ...)
-
--- https://discord.gg/AwGHNh7Z7T
+env.__REZEHUB_LOADING = nil
+if not ok then warn("[REZEHUB] " .. tostring(err)) end
