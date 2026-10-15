@@ -1,0 +1,27620 @@
+--[[
+    Тһіѕ Fіle Ԝаѕ Dеobfusсаtеԁ Ву LeаκD
+    https://discord.gg/AwGHNh7Z7T
+]]
+
+local function _w0(v1, v2)
+    return function()
+        while true do
+            if v2[1][3].Alive then
+                task.wait(1)
+                continue
+            end
+            break
+        end
+        local v3, v4, v5
+        v4, v3, v5 = ipairs(v2[2][3].Hooks)
+        v4, v3, v5 = v1.g(v4, v3, v5)
+        local v6, v7
+        v6, v7 = v4(v3, v5)
+        if v6 ~= nil then
+            while true do
+                v7 = {[1] = 3, [3] = v7}
+                v7[2] = v7
+                pcall(v1:Xk({v7}))
+                v6, v7 = v4(v3, v5)
+                v5 = v6
+                if v5 == nil then
+                    break
+                end
+            end
+        end
+    end
+end
+local function _w1(v1, v2)
+    return function()
+        local v3 = v2[2][3]
+        v2[1][3]:UnbindFromRenderStep(v3.CameraGuardKey)
+    end
+end
+local function _w2(v1, v2)
+    return function(noclip)
+        v2[1][3].Noclip = noclip
+    end
+end
+local function _w3(v1, v2)
+    return function(v3, v4)
+        local v5 = {}
+        v5.WeightText = type(v4) == "table" and v4.WeightText or nil
+        v5.Mutation = type(v4) == "table" and v4.Mutation or nil
+        v5.SpawnMutation = type(v4) == "table" and v4.SpawnMutation or nil
+        local v6, v7
+        v7, v6, v5 = v5, v3, typeof
+        v5 = v5(v6)
+        local v8, v9, v10, v11
+        if v5 == "Instance" then
+            v2[1][3].WebhookEggWeight(v3)
+            v6, v9 = v2[1][3].ReadEggWebhookVariants(v3)
+            if v6 then
+                v7.Mutation = v6
+            end
+            if v9 then
+                v7.SpawnMutation = v9
+            end
+            v10 = not v7.WeightText and v2[1][3].RenderedEggs
+            if v10 then
+                v8 = v2[1][3].RenderedEggs
+                v10 = v3.Parent == v8
+            end
+            if v10 then
+                v10 = type(v2[1][3].FindActiveWorldEggConfiguration) == "function"
+            end
+            if v10 then
+                v10, v11 = pcall(v2[1][3].FindActiveWorldEggConfiguration, v3)
+                if v10 and v11 then
+                    v8 = v2[1][3].WebhookEggWeight(v11)
+                    if v8 ~= "Unknown" then
+                        v7.WeightText = v8
+                    end
+                end
+            end
+        end
+        return v7
+    end
+end
+local function _w4(v1, v2)
+    return function()
+        local v3 = v2[1][3].REZETitleLabel
+        local v4 = v3
+        if v3 then
+            v4 = v3:FindFirstAncestorOfClass("ScreenGui")
+        end
+        local v5 = v4
+        if v4 then
+            v5 = not v4:FindFirstChild("REZEDiscordFooterClick", true)
+        end
+        if v5 then
+            v2[2][3]()
+        end
+    end
+end
+local function _w5(v1, v2)
+    return function()
+        v2[1][3].StopFarmHover()
+    end
+end
+local function _w6(v1, v2)
+    return function()
+        local k
+        local v3 = setmetatable({}, {__mode = "k"})
+        local v4 = {[1] = 3, [3] = setmetatable({}, {__mode = "k"})}
+        v4[2] = v4
+        local v5 = v1:Pn({v4})
+        local v6, v7, v8, v9, v10, v11
+        while true do
+            if v2[1][3].Alive then
+                v9 = v2[3][3].Character
+                v11 = v9 and v9:FindFirstChildOfClass("Humanoid")
+                if v11 then
+                    if v2[2][3] and v2[1][3].IsFastRideMounted and v2[1][3].IsFastRideMounted() then
+                        v3[v11] = nil
+                    elseif v3[v11] ~= nil then
+                        v11.WalkSpeed = v3[v11]
+                        v3[v11] = nil
+                    end
+                end
+                if v9 and v2[1][3].Noclip then
+                    v6 = v9.GetDescendants
+                    v6 = v1.h(v6(v9))
+                    v10, v6, v7 = ipairs(v1.i(v6))
+                    v10, v6, v7 = v1.g(v10, v6, v7)
+                    for v12, k in v10, v6, v7 do
+                        if k:IsA("BasePart") then
+                            if v4[3][k] == nil then
+                                v8 = k.CanCollide
+                                v4[3][k] = v8
+                            end
+                            k.CanCollide = false
+                        end
+                    end
+                else
+                    v5()
+                end
+                task.wait(0.2)
+                continue
+            end
+            break
+        end
+        v9, v11, v10 = pairs(v3)
+        v9, v11, v10 = v1.g(v9, v11, v10)
+        v6, v7 = v9(v11, v10)
+        if v6 ~= nil then
+            while true do
+                if v6 and v6.Parent then
+                    v6.WalkSpeed = v7
+                end
+                v6, v7 = v9(v11, v10)
+                v10 = v6
+                if v10 == nil then
+                    break
+                end
+            end
+        end
+        v5()
+    end
+end
+local function _w7(v1, v2)
+    return function(v3)
+        local v4 = v3
+        if v3 then
+            v4 = v3.Parent
+        end
+        if v4 then
+            v4 = not v2[1][3][v3]
+        end
+        if v4 then
+            v2[1][3][v3] = true
+            v4 = v2[2][3]
+            v4[#v4 + 1] = v3
+        end
+    end
+end
+local function _w8(v1, v2)
+    return function(v3)
+        if v2[1][3].ShaderEnabled then
+            v2[2][3].SetSimpleShader(true, v3)
+        end
+    end
+end
+local function _w9(v1, v2)
+    return function(v3)
+        local v4
+        if v3 == "EspRarities" then
+            return v2[1][3].RarityNames
+        elseif v3:find("Rarit", 1, true) then
+            v4 = v2[1][3].rarityOptions
+            v4 = table.pack(v4())
+            return table.unpack(v4, 1, v4.n)
+        else
+            v3:find("Mutation", 1, true)
+            v3:find("Trait", 1, true)
+            v3:find("Names", 1, true)
+            return nil
+        end
+    end
+end
+local function _w10(v1)
+    return function()
+        settings().Rendering.MeshPartDetailLevel = Enum.MeshPartDetailLevel.Level04
+    end
+end
+local function _w11(v1, v2)
+    return function(v3, v4)
+        local v5, v6, v7, v8
+        if not v2[10][3]() then
+            return "STOPPED"
+        else
+            v2[6][3]()
+            if v4 == "Candy" then
+                if not v2[5][3].AutoCandy then
+                    return "TOGGLE_OFF"
+                else
+                    v5 = v2[5][3].CandyHUDState().carry
+                    v7 = v3.Position
+                    v2[13][3](v7)
+                    v2[7][3](v3.Position)
+                    v5 = nil
+                    v7 = os.clock() + 1.15
+                    while true do
+                        v5 = v2[14][3](v3)
+                        if not v5 then
+                            task.wait(0.09)
+                            if not (os.clock() >= v7 or not v2[10][3]() or v2[6][3]()) then
+                                continue
+                            end
+                            break
+                        end
+                        break
+                    end
+                    if not v5 then
+                        return "MISSING_OR_CHANGED_SINCE_SCAN"
+                    else
+                        v2[6][3]()
+                        v2[5][3].CandyCollect(v5)
+                        return "FAILED_OR_UNVERIFIED"
+                    end
+                end
+            else
+                v5 = v2[8][3](v3, v4)
+                if not v5 then
+                    return "SKIPPED_NO_LIVE_INTERACTION"
+                else
+                    if v4 == "Doors" then
+                        v7, v8 = v2[12][3](v5)
+                        if not v7 then
+                            return "SKIPPED_" .. tostring(v8)
+                        end
+                    else
+                        v6 = v3.Position
+                        v2[13][3](v6)
+                        v2[7][3](v3.Position)
+                        task.wait(0.18)
+                    end
+                    v2[6][3]()
+                    if v4 == "Halves" then
+                        v3.Id:lower()
+                        if v2[1][3]:GetAttribute("RitualYang") == true then
+                            return "ALREADY_COLLECTED"
+                        elseif not v5:IsA("ProximityPrompt") then
+                            return "HALF_COLLECT_PROMPT_NOT_FOUND"
+                        else
+                            return v2[9][3](v5, "Collect", "Yang")
+                        end
+                    else
+                        return "UNKNOWN_CATEGORY"
+                    end
+                end
+            end
+        end
+    end
+end
+local function _w12(v1, v2)
+    return function()
+        local v3 = v2[3][3]
+        local v4 = v2[1][3]
+        local v5, v6
+        v6, v3, v5 = {}, v2[5][3], "REZEV8_" .. v3
+        v6.Text = v3
+        v6.Values = v2[4][3]
+        v6.Default = v2[2][3]
+        v6.Multi = true
+        v6.Searchable = true
+        v6.MaxVisibleDropdownItems = 8
+        local v7
+        v7, v4 = v4, v4.AddDropdown
+        v4 = table.pack(v4(v7, v5, v6))
+        return table.unpack(v4, 1, v4.n)
+    end
+end
+local function _w13(v1, v2)
+    return function()
+        v2[1][3].ShadowSoftness = 0
+    end
+end
+local function _w14(v1, v2)
+    return function(v3)
+        v3 = {[1] = 3, [3] = v3}
+        v3[2] = v3
+        if v2[1][3].Alive and v2[1][3].PromptTapEnabled then
+            pcall(v1:dj({v3}))
+        end
+    end
+end
+local function _w15(v1, v2)
+    return function()
+        local v3 = v2[2][3].Technology
+        v2[1][3].FPSState.Original.LightingTechnology = v3
+    end
+end
+local function _w17(v1, v2)
+    return function()
+        v2[1][3]:FireServer()
+    end
+end
+local function _w18(v1, v2)
+    return function()
+        if v2[1][3] then
+            v2[2][3].PickupModeBlockedNotice()
+        end
+    end
+end
+local function _w19(v1, v2)
+    return function()
+        fireproximityprompt(v2[1][3])
+    end
+end
+local function _w20(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        local v4 = v2[3][3]
+        local v5, v6
+        v4, v5, v6 = v2[5][3], {}, "REZEV8_" .. v4
+        v5.Text = v4
+        v5.Values = v2[4][3]
+        v5.Default = v2[2][3]
+        v5.Multi = false
+        v5.Searchable = false
+        local v7
+        v3, v7 = v3.AddDropdown, v3
+        v3 = table.pack(v3(v7, v6, v5))
+        return table.unpack(v3, 1, v3.n)
+    end
+end
+local function _w21(v1, v2)
+    return function()
+        while true do
+            if v2[1][3].Alive then
+                task.wait(30)
+                v2[1][3].SaveConfig()
+                continue
+            end
+            break
+        end
+    end
+end
+local function _w22(v1, v2)
+    return function()
+        return v2[1][3], "🔴 Auto Pick-Up Off"
+    end
+end
+local function _w23(v1)
+    return function(...)
+        local _, c, I
+        local v2 = type(getgenv) == "function" and getgenv() or _G
+        local v3 = v2.REZEHUB_RAP_LOADER_GATE
+        v2.REZEHUB_RAP_LOADER_GATE = nil
+        local v4 = false
+        local v5, v6
+        if type(v3) == "table" and type(v3.Consume) == "function" then
+            v6, v5 = pcall(v3.Consume, v3, tostring(game.PlaceId), tostring(game.JobId))
+            v4 = v6 and v5 == true
+        end
+        local v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32
+        if not v4 then
+            warn("[REZEHUB RAP] Please launch rideapet.lua (subloader), not the raw main source.")
+        else
+            v2.REZEHUB_RAP_LOADER_ACK = v3
+            v3 = {Stage = "Game"}
+            v3.Started = os.clock()
+            v3.Ready = false
+            v3.Degraded = false
+            v2 = {[1] = 3, [3] = v3}
+            v2[2] = v2
+            v3 = v1:t({v2})
+            if not game:IsLoaded() then
+                v3("Game Loaded")
+                game.Loaded:Wait()
+            end
+            v3("Player")
+            v4 = game:GetService("Players")
+            v6 = os.clock() + 18
+            while true do
+                if not v4.LocalPlayer and os.clock() < v6 then
+                    task.wait(0.1)
+                    continue
+                end
+                break
+            end
+            v5 = v4.LocalPlayer
+            if v5 then
+                v3("PlayerGui / Backpack")
+                v5:WaitForChild("PlayerGui", 8)
+                v5:WaitForChild("Backpack", 5)
+                v5:WaitForChild("SavedData", 1.5)
+                v3("Character")
+                v32 = v5.Character or v5.CharacterAdded:Wait()
+                if v32 then
+                    v32:WaitForChild("HumanoidRootPart", 6)
+                    v32:WaitForChild("Humanoid", 5)
+                end
+            else
+                v2[3].Degraded = true
+            end
+            v3("Game Remotes / Egg Replication")
+            v32 = game:GetService("ReplicatedStorage")
+            v7 = v32:WaitForChild("Remotes", 3)
+            if v7 then
+                v7:WaitForChild("Game", 2)
+            else
+                v2[3].Degraded = true
+            end
+            v21 = v32:WaitForChild("ServerData", 2)
+            v11 = v21 and v21:WaitForChild("ActiveEggs", 2)
+            v8 = workspace:WaitForChild("RenderedEggs", 2)
+            if not v11 or not v8 then
+                v2[3].Degraded = true
+            end
+            v26 = -1
+            _ = -1
+            v17 = os.clock()
+            v31 = os.clock() + 0.85
+            while true do
+                if os.clock() < v31 then
+                    v20 = v11 and #v11:GetChildren() or 0
+                    v23 = v8 and #v8:GetChildren() or 0
+                    if v20 == v26 and v23 == _ then
+                        if os.clock() - v17 < 0.2 then
+                            v26 = v20
+                            _ = v23
+                            task.wait(0.09)
+                            continue
+                        end
+                        break
+                    else
+                        v17 = os.clock()
+                        v26 = v20
+                        _ = v23
+                        task.wait(0.09)
+                        continue
+                    end
+                end
+                break
+            end
+            v3("Ready")
+            v2[3].Ready = true
+            v20 = os.clock() - v2[3].Started
+            v2[3].Duration = v20
+            ;(type(getgenv) == "function" and getgenv() or _G).REZEHUB_RAP_BOOT_STATE = v2[3]
+            v3 = {}
+            v6 = {Name = "HOME", Icon = "house"}
+            v21 = {}
+            v32 = {}
+            v21[1], v21[2], v21[3] = "Session", "Left", "activity"
+            v11 = {}
+            v11[1], v11[2], v11[3] = "Stats", "Right", "chart-no-axes-column"
+            v8 = {}
+            v8[1], v8[2], v8[3] = "Quick Actions", "Right", "zap"
+            v26 = {}
+            v26[1], v26[2], v26[3] = "Account", "Left", "user-round"
+            v32[1], v32[2], v32[3], v32[4] = v21, v11, v8, v26
+            v6.Groups = v32
+            v5 = {}
+            v4 = v6
+            v5.Name = "EGGS"
+            v5.Icon = "egg"
+            v11 = {}
+            v7 = {}
+            v11[1], v11[2], v11[3] = "Pick-Up Eggs", "Left", "egg"
+            v8 = {}
+            v8[1], v8[2], v8[3] = "Eggs Tracker", "Right", "radar"
+            v26 = {}
+            v26[1], v26[2], v26[3] = "Place Eggs", "Left", "package-check"
+            _ = {}
+            _[1], _[2], _[3] = "Hatch Eggs", "Right", "egg"
+            v7[1], v7[2], v7[3], v7[4] = v11, v8, v26, _
+            v5.Groups = v7
+            v32 = {Name = "PETS", Icon = "paw-print"}
+            v21 = {}
+            v8 = {}
+            v8[1], v8[2], v8[3] = "Sell Pets", "Left", "badge-dollar-sign"
+            v26 = {}
+            v26[1], v26[2], v26[3] = "Feed Pets", "Right", "utensils"
+            _ = {}
+            _[1], _[2], _[3] = "Place Pets", "Left", "paw-print"
+            v17 = {}
+            v17[1], v17[2], v17[3] = "Pets Fusion", "Right", "dna"
+            v31 = {}
+            v31[1], v31[2], v31[3] = "Favorite Pets", "Left", "heart"
+            v21[1], v21[2], v21[3], v21[4], v21[5] = v8, v26, _, v17, v31
+            v32.Groups = v21
+            v7 = {Name = "PROGRESSION", Icon = "trending-up"}
+            v26 = {}
+            v11 = {}
+            v26[1], v26[2], v26[3] = "Hatch Luck", "Left", "sparkles"
+            _ = {}
+            _[1], _[2], _[3] = "Index", "Right", "book-open"
+            v17 = {}
+            v17[1], v17[2], v17[3] = "Rebirth", "Left", "refresh-cw"
+            v11[1], v11[2], v11[3] = v26, _, v17
+            v7.Groups = v11
+            v21 = {Name = "PREMIUM", Icon = "gem"}
+            _ = {}
+            v8 = {}
+            _[1], _[2], _[3] = "Vuln", "Left", "recycle"
+            v8[1] = _
+            v21.Groups = v8
+            v11 = {Name = "EVENT", Icon = "calendar-days"}
+            v17 = {}
+            v26 = {}
+            v17[1], v17[2], v17[3] = "Halloween Event", "Left", "candy"
+            v26[1] = v17
+            v11.Groups = v26
+            v8 = {Name = "SHOP", Icon = "store"}
+            v31 = {}
+            _ = {}
+            v31[1], v31[2], v31[3] = "Foods Shop", "Left", "utensils"
+            v20 = {}
+            v20[1], v20[2], v20[3] = "Gears Shop", "Right", "wrench"
+            _[1], _[2] = v31, v20
+            v8.Groups = _
+            v26 = {Name = "SETTINGS", Icon = "settings"}
+            v17 = {}
+            v20 = {}
+            v20[1], v20[2], v20[3] = "Player", "Left", "user-round"
+            v23 = {}
+            v23[1], v23[2], v23[3] = "Runtime", "Right", "shield"
+            v14 = {}
+            v14[1], v14[2], v14[3] = "Interface", "Left", "settings"
+            v28 = {}
+            v28[1], v28[2], v28[3] = "Performance", "Right", "gauge"
+            v30 = {}
+            v30[1], v30[2], v30[3] = "Webhook", "Left", "send"
+            I = {}
+            I[1], I[2], I[3] = "Config", "Right", "sliders-horizontal"
+            v29 = {}
+            v29[1], v29[2], v29[3] = "Visual", "Left", "eye"
+            v17[1], v17[2], v17[3], v17[4], v17[5], v17[6], v17[7] = v20, v23, v14, v28, v30, I, v29
+            v26.Groups = v17
+            v3[1], v3[2], v3[3], v3[4], v3[5], v3[6], v3[7], v3[8] = v4, v5, v32, v7, v21, v11, v8, v26
+            v2 = {[1] = 3, [3] = v3}
+            v2[2] = v2
+            v3 = {[1] = 3, [3] = type(getgenv) == "function" and getgenv() or _G}
+            v3[2] = v3
+            type(v3[3].REZEHUB_RAP_V8_FEATURES)
+            v3[3].REZEHUB_RAP_V8_FEATURES = nil
+            v6 = {[1] = 3, [3] = v3[3].REZEHUB_RAP_V71_UI}
+            v6[2] = v6
+            if type(v6[3]) == "table" and v6[3].Library then
+                pcall(v1:o({v6}))
+            end
+            v3[3].REZEHUB_RAP_V71_UI = nil
+            if not game:IsLoaded() then
+                game.Loaded:Wait()
+            end
+            v5 = game
+            v5, v32 = v5.GetService, v5
+            v5 = {[1] = 3, [3] = v5(v32, "TextService")}
+            v5[2] = v5
+            v7 = {[1] = 3, [3] = v1:n()()}
+            v7[2] = v7
+            v7[3].ShowCustomCursor = false
+            v8 = {Title = "REZEHUB", Icon = "rbxthumb://type=Asset&id=88022909172536&w=420&h=420"}
+            _, v26 = 30, UDim2.fromOffset
+            v8.IconSize = v26(30, 30)
+            v8.Footer = "discord.gg/CHpZkDtmPe"
+            v8.Center = true
+            v8.AutoShow = true
+            v26, v17, _ = UDim2.fromOffset, 580, 960
+            v8.Size = v26(960, 580)
+            v8.CornerRadius = 5
+            v8.Font = Enum.Font.Code
+            v8.GlobalSearch = true
+            _, v26 = 1, UDim2.fromScale
+            v8.SearchbarSize = v26(1, 1)
+            v8.HideTabHeader = true
+            v8.SearchIconOnLeft = true
+            v8.CenterSearchText = true
+            v8.EnableSidebarResize = false
+            v8.SidebarCompacted = false
+            v8.ShowCustomCursor = false
+            v8.ToggleKeybind = Enum.KeyCode.Unknown
+            v8.NotifySide = "Right"
+            v21 = {[1] = 3, [3] = v7[3].CreateWindow(v7[3], v8)}
+            v21[2] = v21
+            assert(v21[3], "[REZEHUB] The UI window was not created.")
+            v11 = {[1] = 3, [3] = assert}
+            v11[2] = v11
+            v11[3] = v1:u({v21, v5})
+            v11[3]()
+            task.defer(v11[3])
+            v8, v26, _ = task.delay, 0.35, v11[3]
+            v8(0.35, _)
+            v8 = {[1] = 3, [3] = v8}
+            v8[2] = v8
+            _, v8[3] = task, v1:p({v21})
+            _, v17, v26 = 0.65, v8[3], _.delay
+            v26(0.65, v17)
+            v17, _, v26 = v1:w({v21, v8}), 2, task.delay
+            v26(2, v17)
+            v26 = {[1] = 3, [3] = false}
+            v26[2] = v26
+            v31 = v7[3].SetDPIScale
+            _ = v1:l({v26, v2, v21, v11})
+            if type(v31) == "function" then
+                pcall(v1:q({v7}))
+            end
+            v17 = v1:m()
+            v31 = {}
+            v20 = {[1] = 3, [3] = {}}
+            v20[2] = v20
+            v23, v14, v28 = ipairs(v2[3])
+            v23, v14, v28 = v1.g(v23, v14, v28)
+            for _, I in v23, v14, v28 do
+                v22 = {Name = I.Name, Icon = I.Icon}
+                v25 = v21[3]
+                v29 = v21[3].AddTab(v25, v22)
+                assert(v29, "[REZEHUB] Could not create tab: " .. I.Name)
+                v31[I.Name] = v29
+                v20[3][I.Name] = {}
+                v25, v22, v10 = ipairs(I.Groups)
+                v25, v22, v10 = v1.g(v25, v22, v10)
+                for _, c in v25, v22, v10 do
+                    v27, v19, v9 = unpack(c)
+                    v12 = I.Name
+                    v15, v18, v24, v12, v13, v16 = v19, v9, v27, v17, v20[3][v12], v29
+                    v13[v27] = v12(v16, v24, v15, v18)
+                    task.wait()
+                end
+                task.wait()
+            end
+            _()
+            v23 = v1:r({v21})
+            task.defer(v23)
+            task.delay(0.3, v23)
+            v28 = {
+                Version = "8",
+                Library = v7[3],
+                Window = v21[3],
+                Tabs = v31,
+                Groups = v20[3],
+            }
+            v3[3].REZEHUB_RAP_V71_UI = v28
+            v14 = {[1] = 3, [3] = v28}
+            v14[2] = v14
+            v14[3] = v1:v({v3})
+            v28 = {[1] = 3, [3] = v28}
+            v28[2] = v28
+            I, v29, v28[3] = {}, false, v1:s({v14, v21, v3, v20, v7})
+            I.Ready = false
+            I.Stage = "ui-initial-paint"
+            I.StartedAt = os.clock()
+            I.Error = nil
+            I.Mode = "halloween-interaction-safe-v12.17"
+            v30 = {[1] = 3, [3] = I}
+            v30[2] = v30
+            v3[3].REZEHUB_RAP_RUNTIME_STATUS = v30[3]
+            v29, v25, I = 0.55, v1:x({v28, v30, v3}), task.delay
+            I(0.55, v25)
+        end
+    end
+end
+local function _w24(v1, v2)
+    return function()
+        local v3 = v2[1][3] and v2[1][3].TextLabel
+        local v4, v5, v6, v7, v8, v9, uIListLayout, uICorner
+        do
+            local shouldExit = false
+            if not v3 or not v3.Parent then
+                v7 = v2[6][3].REZETitleLabel
+                v5 = v7 and v7:FindFirstAncestorOfClass("ScreenGui")
+                if v5 then
+                    v4 = v5.GetDescendants
+                    v4 = v1.h(v4(v5))
+                    uICorner, v4, v8 = ipairs(v1.i(v4))
+                    uICorner, v4, v8 = v1.g(uICorner, v4, v8)
+                    uIListLayout, v9 = uICorner(v4, v8)
+                    v8 = uIListLayout
+                    if v8 ~= nil then
+                        while true do
+                            v6 = v9:IsA("TextLabel") and v9.Text == "__REZE_LIVE_STATS_MOUNT__"
+                            if v6 then
+                                break
+                            else
+                                uIListLayout, v9 = uICorner(v4, v8)
+                                v8 = uIListLayout
+                                if v8 ~= nil then
+                                    continue
+                                end
+                            end
+                            shouldExit = true
+                            break
+                        end
+                        if shouldExit then
+                            break
+                        end
+                        v3 = v9
+                    end
+                end
+            end
+        end
+        local frame, v10, accent, v11, uICorner2, uICorner3, uIStroke, v12, title, v13, v14
+        if not v3 or not v3.Parent then
+            return false
+        else
+            v7 = v3.Parent
+            if not v7:FindFirstChild("REZELiveStatsGrid") then
+                v3.Visible = false
+                v3.Size = UDim2.new(1, 0, 0, 0)
+                v5 = Instance.new("Frame")
+                v5.Name = "REZELiveStatsGrid"
+                v5.Size = UDim2.new(1, 0, 0, 338)
+                v5.LayoutOrder = v3.LayoutOrder
+                v5.BackgroundColor3 = Color3.fromRGB(24, 24, 28)
+                v5.BorderSizePixel = 0
+                v5.Parent = v7
+                v2[5][3].MountCardsWithoutPlaceholder(v3, v5)
+                uICorner = Instance.new("UICorner")
+                uICorner.CornerRadius = UDim.new(0, 6)
+                uICorner.Parent = v5
+                v4 = Instance.new("UIStroke")
+                v4.Color = Color3.fromRGB(43, 43, 50)
+                v4.Thickness = 1
+                v4.Parent = v5
+                v8 = Instance.new("UIPadding")
+                v8.PaddingLeft = UDim.new(0, 9)
+                v8.PaddingRight = UDim.new(0, 9)
+                v8.PaddingTop = UDim.new(0, 9)
+                v8.PaddingBottom = UDim.new(0, 9)
+                v8.Parent = v5
+                uIListLayout = Instance.new("UIListLayout")
+                uIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+                uIListLayout.Padding = UDim.new(0, 6)
+                uIListLayout.Parent = v5
+                v9, v6, v14 = ipairs(v2[4][3])
+                v9, v6, v14 = v1.g(v9, v6, v14)
+                v11, v13 = v9(v6, v14)
+                v14 = v11
+                if v14 ~= nil then
+                    while true do
+                        frame = Instance.new("Frame")
+                        frame.Name = "StatCard_" .. v13:gsub("%W", "")
+                        frame.LayoutOrder = v11
+                        frame.Size = UDim2.new(1, 0, 0, 48)
+                        frame.BackgroundColor3 = Color3.fromRGB(31, 31, 35)
+                        frame.BorderSizePixel = 0
+                        frame.Parent = v5
+                        uICorner3 = Instance.new("UICorner")
+                        uICorner3.CornerRadius = UDim.new(0, 5)
+                        uICorner3.Parent = frame
+                        uIStroke = Instance.new("UIStroke")
+                        uIStroke.Color = Color3.fromRGB(40, 40, 46)
+                        uIStroke.Thickness = 1
+                        uIStroke.Parent = frame
+                        accent = Instance.new("Frame")
+                        accent.Name = "Accent"
+                        accent.AnchorPoint = Vector2.new(0, 0.5)
+                        accent.Position = UDim2.new(0, 4, 0.5, 0)
+                        accent.Size = UDim2.new(0, 3, 0.56, 0)
+                        accent.BorderSizePixel = 0
+                        v10 = v2[2][3]
+                        v10 = v10[v13] or "#FFFFFF"
+                        accent.BackgroundColor3 = Color3.fromHex(v10)
+                        accent.Parent = frame
+                        uICorner2 = Instance.new("UICorner")
+                        uICorner2.CornerRadius = UDim.new(1, 0)
+                        uICorner2.Parent = accent
+                        v10 = Instance.new("TextLabel")
+                        v10.Name = "Symbol"
+                        v10.BackgroundTransparency = 1
+                        v10.AnchorPoint = Vector2.new(0, 0.5)
+                        v10.Position = UDim2.new(0, 14, 0.5, 0)
+                        v10.Size = UDim2.fromOffset(21, 24)
+                        v10.Font = Enum.Font.SourceSansBold
+                        v10.Text = v2[7][3][v13] or "✦"
+                        v12 = v2[2][3]
+                        v12 = v12[v13] or "#FFFFFF"
+                        v10.TextColor3 = Color3.fromHex(v12)
+                        v10.TextSize = 19
+                        v10.TextScaled = false
+                        v10.TextXAlignment = Enum.TextXAlignment.Center
+                        v10.TextYAlignment = Enum.TextYAlignment.Center
+                        v10.Parent = frame
+                        title = Instance.new("TextLabel")
+                        title.Name = "Title"
+                        title.BackgroundTransparency = 1
+                        title.Position = UDim2.fromOffset(49, 7)
+                        title.Size = UDim2.new(1, -55, 0, 13)
+                        title.Font = Enum.Font.GothamMedium
+                        title.Text = v13
+                        title.TextColor3 = Color3.fromRGB(155, 155, 168)
+                        title.TextSize = 10
+                        title.TextXAlignment = Enum.TextXAlignment.Left
+                        title.TextTruncate = Enum.TextTruncate.AtEnd
+                        title.Parent = frame
+                        v12 = Instance.new("TextLabel")
+                        v12.Name = "Value"
+                        v12.BackgroundTransparency = 1
+                        v12.Position = UDim2.fromOffset(49, 23)
+                        v12.Size = UDim2.new(1, -55, 0, 19)
+                        v12.Font = Enum.Font.GothamBold
+                        v12.Text = "—"
+                        v12.TextColor3 = Color3.fromRGB(244, 244, 247)
+                        v12.TextSize = 14
+                        v12.TextXAlignment = Enum.TextXAlignment.Left
+                        v12.TextTruncate = Enum.TextTruncate.AtEnd
+                        v12.Parent = frame
+                        v2[3][3][v13] = v12
+                        v11, v13 = v9(v6, v14)
+                        v14 = v11
+                        if v14 == nil then
+                            break
+                        end
+                    end
+                end
+            end
+            return true
+        end
+    end
+end
+local function _w25(v1, v2, v3, v4)
+    v1.Br[v4] = v1.Wq(v2, v3)
+    return v1.Br[v4]
+end
+local function _w26(v1, v2)
+    return function()
+        local v3 = v2[2][3].GlobalShadows
+        v2[1][3].FPSState.Original.GlobalShadows = v3
+    end
+end
+local function _w27(v1, v2)
+    return function(v3, v4, v5, v6, v7)
+        local v8 = v3
+        if v3 then
+            v8 = v2[1][3][v3]
+        end
+        if not v8 then
+            if v3 then
+                v2[1][3][v3] = true
+            end
+            v2[3][3](v4, v5, v6, v7)
+            return
+        end
+    end
+end
+local function _w28(v1, v2)
+    return function(v3, v4, v5, v6)
+        local v7 = v2[1][3]
+        v7.Pumpkin.RespawnAt[v3] = v4
+        v7.Pumpkin.DropUntil[v3] = v5
+        v7.Pumpkin.RottenUntil[v3] = v6
+    end
+end
+local function _w29(v1, v2)
+    return function()
+        while true do
+            if v2[1][3].Alive then
+                v2[1][3].CanClaimIndexReward()
+                pcall(v1:Vi({v2[2]}))
+                task.wait(1)
+                task.wait(0.5)
+                continue
+            end
+            break
+        end
+    end
+end
+local function _w30(v1, v2)
+    return function()
+        v2[1][3].LocalTransparencyModifier = v2[2][3]
+    end
+end
+local function _w31(v1, v2)
+    return function(v3, v4)
+        local v5, v6, v7, v8, v9
+        if v2[1][3] == "Most Candy" and v3.Rank ~= v4.Rank then
+            v9 = v4.Rank
+            return v3.Rank > v9
+        else
+            v7 = v2[2][3]
+            v9 = v2[3][3](v3.Position, v7)
+            v6, v8, v5, v9 = v2[3][3], v9, v7, v4.Position
+            v6 = v6(v9, v5)
+            if math.abs(v8 - v6) > 0.01 then
+                if v2[1][3] == "Nearest" then
+                    return v8 < v6
+                else
+                    return v8 > v6
+                end
+            else
+                return v3.Key < v4.Key
+            end
+        end
+    end
+end
+local function _w32(v1, v2)
+    return function(v3)
+        local d
+        local v4 = not v3 and v2[1][3] and v2[3][3].PickupMode == "Instant" and v2[3][3].FarmBusy
+        local v5
+        v2[1][3], v5 = v3, v2[3][3]
+        if v5.UpdatePickupModeLock then
+            v2[3][3].UpdatePickupModeLock()
+        end
+        local v6 = v2[3][3]
+        v6.NoMatchesSince = nil
+        v6.LastCarryAttempt = nil
+        v6 = v4
+        if v4 then
+            v6 = v2[3][3].InstantEmergencyRanchReturn
+        end
+        if v6 then
+            v2[3][3].InstantEmergencyRanchReturn("Auto Pick-Up switched OFF")
+        end
+        if not v3 and type(v2[3][3].StopPetPhase) == "function" then
+            v2[3][3].StopPetPhase()
+        end
+        local v7 = v3
+        v5 = v2[2][3]
+        if v7 then
+            v7 = "🟡 Searching for eggs"
+        end
+        if not v7 then
+            v7 = "🔴 Auto Pick-Up Off"
+        end
+        v2[3][3].setLabel(v5, v7)
+        local v8
+        if not v3 then
+            v6 = {[1] = 3, [3] = v2[3][3].LastHum}
+            v6[2] = v6
+            if v6[3] and v6[3].Parent then
+                v5, v7, v8 = ipairs(v2[3][3].NoFallStates or {})
+                v5, v7, v8 = v1.g(v5, v7, v8)
+                for v9, d in v5, v7, v8 do
+                    d = {[1] = 3, [3] = d}
+                    d[2] = d
+                    pcall(v1:zm({v6, d}))
+                end
+            end
+            v2[3][3].LastHum = nil
+        end
+    end
+end
+local function _w33(v1)
+    return function(v2)
+        local eggInventoryId = v2:GetAttribute("EggInventoryId")
+        if eggInventoryId ~= nil then
+            return tostring(eggInventoryId)
+        else
+            return nil
+        end
+    end
+end
+local function _w34(v1, v2)
+    return function(v3)
+        local q, _
+        local v4, v5, v6
+        if v3 then
+            v5 = v2[1][3](v2[6][3])
+            v5, v4, v6 = v2[1][3], v2[5][3], v5
+            v5 = v5(v4)
+        end
+        local v7 = v2[4][3]
+        local v8 = {}
+        local v9
+        v9, v7 = v7, v7.FindFirstChildOfClass
+        v8[1], v8[2] = v7(v9, "Backpack"), v2[4][3].Character
+        local v10
+        v5, v4, v10 = ipairs(v8)
+        v5, v4, v10 = v1.g(v5, v4, v10)
+        v8, v7 = v5(v4, v10)
+        local v11 = {}
+        local v12, v13, petKey, v14, v15, v16, v17
+        if v8 ~= nil then
+            local v18 = {}
+            while true do
+                if v7 then
+                    _ = v7.GetChildren
+                    _ = v1.h(_(v7))
+                    v9, _, v13 = ipairs(v1.i(_))
+                    v9, _, v13 = v1.g(v9, _, v13)
+                    for _, q in v9, _, v13 do
+                        q = {[1] = 3, [3] = q}
+                        q[2] = q
+                        if q[3].IsA(q[3], "Tool") then
+                            v14 = q[3]
+                            petKey = q[3].GetAttribute(v14, "PetKey")
+                            v16 = q[3]
+                            v14 = {[1] = 3, [3] = v2[2][3](v16)}
+                            v14[2] = v14
+                            v16 = v2[7][3][v14[3]]
+                            if typeof(petKey) == "string" and v16 and not v18[petKey] and not v2[3][3](q[3], petKey) then
+                                v15, v17 = pcall(v1:wq({v2[8], q, v14}))
+                                if v15 and v17 then
+                                    if v3 then
+                                        v12 = q[3]
+                                        v2[9][3].PetMatchesFilter(v12, "Sell")
+                                    end
+                                    v18[petKey] = true
+                                    table.insert(v11, petKey)
+                                end
+                            end
+                        end
+                    end
+                end
+                v8, v7 = v5(v4, v10)
+                v10 = v8
+                if v10 == nil then
+                    break
+                end
+            end
+        end
+        return v11
+    end
+end
+local function _w35(v1, v2)
+    return function()
+        v2[1][3]:InputHoldBegin()
+        local v3 = v2[1][3]
+        local v4 = math.max
+        task.wait(v4(0.1, tonumber(v3.HoldDuration) or 0) + 0.12)
+        v2[1][3]:InputHoldEnd()
+    end
+end
+local function _w36(v1, v2)
+    return function()
+        v2[1][3]:UnequipTools()
+    end
+end
+local function _w37(v1, v2)
+    return function()
+        local v3 = {[1] = 3, [3] = v2[1][3]()}
+        v3[2] = v3
+        local v4 = {[1] = 3, [3] = {}}
+        v4[2] = v4
+        local v5 = v1:al({v4, v3, v2[3]})
+        local headlessRitual = workspace:FindFirstChild("HeadlessRitual")
+        local v6, v7, v8, v9, v10, v11, v12, v13
+        do
+            local shouldExit2 = false
+            if headlessRitual then
+                v7 = headlessRitual.GetDescendants
+                v7 = v1.h(v7(headlessRitual))
+                v12, v7, v8 = ipairs(v1.i(v7))
+                v12, v7, v8 = v1.g(v12, v7, v8)
+                v10, v13 = v12(v7, v8)
+                v8 = v10
+                if v8 ~= nil then
+                    while true do
+                        v9 = "ProximityPrompt"
+                        v11 = v13
+                        v6 = v13:IsA("ProximityPrompt")
+                        if not v6 then
+                            v10, v13 = v12(v7, v8)
+                            v8 = v10
+                            if v8 ~= nil then
+                                continue
+                            end
+                            shouldExit2 = true
+                            break
+                        end
+                        v6, v11, v9 = v5(v13)
+                        if not v6 then
+                            v10, v13 = v12(v7, v8)
+                            v8 = v10
+                            if v8 ~= nil then
+                                continue
+                            end
+                            shouldExit2 = true
+                            break
+                        end
+                        break
+                    end
+                    if shouldExit2 then
+                        break
+                    end
+                    return v6, v11, v9
+                end
+            end
+        end
+        v12 = {[1] = 3, [3] = OverlapParams.new()}
+        v12[2] = v12
+        v12[3].MaxParts = 350
+        v7, v8 = pcall(v1:bl({v3, v12}))
+        v10 = v7
+        if v7 then
+            v10 = type(v8) == "table"
+        end
+        local v14, isA, v15, v16, v17, v18, v19, v20
+        do
+            local shouldExit = false
+            if v10 then
+                v10, v13, v6 = ipairs(v8)
+                v10, v13, v6 = v1.g(v10, v13, v6)
+                v11, v9 = v10(v13, v6)
+                v6 = v11
+                if v6 ~= nil then
+                    local __cont3 = false
+                    while true do
+                        v19 = v9.GetDescendants
+                        v19 = v1.h(v19(v9))
+                        v18, v19, v15 = ipairs(v1.i(v19))
+                        v18, v19, v15 = v1.g(v18, v19, v15)
+                        v17, v14 = v18(v19, v15)
+                        v15 = v17
+                        if v15 == nil then
+                            v11, v9 = v10(v13, v6)
+                            v6 = v11
+                            if v6 ~= nil then
+                                continue
+                            end
+                            shouldExit = true
+                            break
+                        end
+                        while true do
+                            v16 = v14
+                            v20 = "ProximityPrompt"
+                            isA = v14:IsA("ProximityPrompt")
+                            if not isA then
+                                v17, v14 = v18(v19, v15)
+                                v15 = v17
+                                if v15 == nil then
+                                    v11, v9 = v10(v13, v6)
+                                    v6 = v11
+                                    if v6 ~= nil then
+                                        __cont3 = true
+                                        break
+                                    end
+                                    shouldExit = true
+                                    break
+                                else
+                                    continue
+                                end
+                            end
+                            isA, v16, v20 = v5(v14)
+                            if not isA then
+                                v17, v14 = v18(v19, v15)
+                                v15 = v17
+                                if v15 == nil then
+                                    v11, v9 = v10(v13, v6)
+                                    v6 = v11
+                                    if v6 ~= nil then
+                                        __cont3 = true
+                                        break
+                                    end
+                                    shouldExit = true
+                                    break
+                                else
+                                    continue
+                                end
+                            end
+                            break
+                        end
+                        if shouldExit then
+                            break
+                        end
+                        if __cont3 then
+                            __cont3 = false
+                            continue
+                        end
+                        break
+                    end
+                    if shouldExit then
+                        break
+                    end
+                    return isA, v16, v20
+                end
+            end
+        end
+        v13 = v2[2][3]
+        v6, v13 = v13, v13.GetTagged
+        v13 = v1.h(v13(v6, "HalloweenRitualPrompt"))
+        v10, v13, v6 = ipairs(v1.i(v13))
+        v10, v13, v6 = v1.g(v10, v13, v6)
+        v11, v9 = v10(v13, v6)
+        if v11 ~= nil then
+            while true do
+                v18, v19, v15 = v5(v9)
+                if not v18 then
+                    v11, v9 = v10(v13, v6)
+                    v6 = v11
+                    if v6 ~= nil then
+                        continue
+                    end
+                    return nil
+                end
+                break
+            end
+            return v18, v19, v15
+        end
+        return nil
+    end
+end
+local function _w38(v1, v2)
+    return function(v3)
+        local v4 = v2[3][3]
+        v2[1][3].setVisible(v4, v3)
+        v4 = v2[5][3]
+        v2[1][3].setVisible(v4, v3)
+        v4 = v2[1][3]
+        local v5, v6
+        v6, v4, v5 = v3, v2[4][3], v4.setVisible
+        v5(v4, v6)
+        v4 = v2[2][3]
+        v2[1][3].setVisible(v4, v3)
+    end
+end
+local function _w39(v1, v2)
+    return function()
+        local v3 = v2[1][3].GetEggWeightText
+        local v4
+        if v3 then
+            v4 = v2[2][3]
+            v3 = v2[1][3].GetEggWeightText(v4)
+        end
+        return v3
+    end
+end
+local function _w40(v1, v2, v3, ...)
+    local v4 = {v3}
+    for v5 = 1, 1 + select("#", ...) do
+        v1[v2 + v5 - 1] = v4[v5]
+    end
+end
+local function _w41(v1, v2)
+    return function()
+        v2[1][3]:FireServer()
+    end
+end
+local function _w42(v1, v2)
+    return function()
+        local v3, v4, v5, v6, candyBalance, v7, v8, v9, candyBalance2, basket, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21
+        if not v2[10][3].EventAutoBuyHalloweenEgg or v2[6][3]() then
+            return "BUY_PAUSED"
+        else
+            v2[5][3]()
+            if 0 > os.clock() then
+                return "BUY_COOLDOWN"
+            else
+                basket = v2[4][3]:FindFirstChild("Basket")
+                if basket and #basket:GetChildren() > 0 then
+                    return "EGG_CARRY_PENDING"
+                else
+                    candyBalance2 = v2[10][3].CandyBalance()
+                    if type(candyBalance2) ~= "number" then
+                        v2[10][3].EventNextBuyAt = os.clock() + 2
+                        return "HALLOWEEN_CANDY_UNAVAILABLE"
+                    else
+                        v9 = v2[2][3]()
+                        if v9 and candyBalance2 < v9 then
+                            v2[10][3].EventNextBuyAt = os.clock() + 1.5
+                            return "INSUFFICIENT_HALLOWEEN_CANDY"
+                        else
+                            v14 = v2[7][3]
+                            v14, v16 = v14.FindFirstChild, v14
+                            v14 = {[1] = 3, [3] = v14(v16, "BuyHalloweenEgg")}
+                            v14[2] = v14
+                            if not v14[3] or not v14[3].IsA(v14[3], "RemoteFunction") then
+                                v2[10][3].CandyLog("EVENT_BUY_DEBUG", "BuyHalloweenEgg remote missing or unsupported")
+                                v2[10][3].EventNextBuyAt = os.clock() + 3
+                                return "BUY_REMOTE_UNAVAILABLE"
+                            else
+                                v16 = v2[3][3]()
+                                if not v16 then
+                                    v2[10][3].EventNextBuyAt = os.clock() + 3
+                                    return "HALLOWEEN_SHOP_NOT_STREAMED"
+                                else
+                                    v6 = v2[8][3]()
+                                    if not v6 then
+                                        return "SHOP_CHARACTER_UNAVAILABLE"
+                                    else
+                                        if (v6.Position - v16).Magnitude > 10 then
+                                            v20 = Vector3.new
+                                            v2[9][3](v16 + v20(0, 0, 4))
+                                            v2[11][3](v16)
+                                            task.wait(0.2)
+                                        end
+                                        v2[6][3]()
+                                        v13 = (v2[8][3]().Position - v16).Magnitude
+                                        v8 = 0
+                                        v13 = 1
+                                        while true do
+                                            if not (not v2[1][3]() or not v2[10][3].EventAutoBuyHalloweenEgg) then
+                                                v2[6][3]()
+                                                v2[5][3]()
+                                                candyBalance = v2[10][3].CandyBalance()
+                                                if type(candyBalance) == "number" then
+                                                    v9 = v2[2][3]()
+                                                    if not (v9 and candyBalance < v9) then
+                                                        v21 = (v2[8][3]().Position - v16).Magnitude
+                                                        v7 = v2[10][3]
+                                                        v7.EventShopAttempts = v7.EventShopAttempts + 1
+                                                        v7, v21 = pcall(v1:rl({v14}))
+                                                        if v7 then
+                                                            v15 = candyBalance
+                                                            v18 = os.clock() + 1.3
+                                                            while true do
+                                                                task.wait(0.09)
+                                                                v15 = v2[10][3].CandyBalance()
+                                                                if not (type(v15) == "number" and v15 < candyBalance) then
+                                                                    os.clock()
+                                                                    v2[6][3]()
+                                                                    continue
+                                                                end
+                                                                break
+                                                            end
+                                                            if not (type(v15) ~= "number" or v15 >= candyBalance) then
+                                                                v11 = not v9
+                                                                v19 = candyBalance - v15
+                                                                if v11 then
+                                                                    v11 = v19 > 0
+                                                                end
+                                                                if v11 then
+                                                                    v11 = v2[10][3]
+                                                                    v11.EventHalloweenEggPrice = v19
+                                                                    v9 = v19
+                                                                    v11, v3, v17, v12 = v11.CandyLog, "EVENT_BUY_PRICE_LEARNED", v19, tostring
+                                                                    v12 = table.pack(v12(v17))
+                                                                    v11("EVENT_BUY_PRICE_LEARNED", table.unpack(v12, 1, v12.n))
+                                                                end
+                                                                v11, v8 = v2[10][3], v8 + 1
+                                                                v11.EventShopSuccesses = v11.EventShopSuccesses + 1
+                                                                if not (v9 and v15 < v9) then
+                                                                    task.wait(0.14)
+                                                                    v13 = v13 + 1
+                                                                    if v13 <= 12 then
+                                                                        continue
+                                                                    end
+                                                                    break
+                                                                end
+                                                                v11 = v2[10][3]
+                                                                v11.EventNextBuyAt = os.clock() + 1.5
+                                                                v12, v3, v11, v10, v4, v5 = "confirmed=", "EVENT_HALLOWEEN_BUY", v11.CandyLog, " candy=", tostring, v15
+                                                                v11("EVENT_HALLOWEEN_BUY", "confirmed=" .. v8 .. " candy=" .. v4(v5) .. " next cost=" .. tostring(v9))
+                                                                return "INSUFFICIENT_HALLOWEEN_CANDY"
+                                                            end
+                                                            v2[10][3].CandyLog("EVENT_BUY_DEBUG", "remote=" .. tostring(v21) .. " price=" .. tostring(v9) .. " candy=" .. tostring(candyBalance) .. " after=" .. tostring(v15) .. " (no confirmed deduction)")
+                                                            v2[10][3].EventNextBuyAt = os.clock() + 3
+                                                            return "BUY_UNCONFIRMED"
+                                                        end
+                                                        v2[10][3].CandyLog("EVENT_BUY_DEBUG", "remote error=" .. tostring(v21))
+                                                        v2[10][3].EventNextBuyAt = os.clock() + 3
+                                                        return "BUY_REMOTE_ERROR"
+                                                    end
+                                                    v2[10][3].EventNextBuyAt = os.clock() + 1.5
+                                                    return "INSUFFICIENT_HALLOWEEN_CANDY"
+                                                end
+                                                return "HALLOWEEN_CANDY_UNAVAILABLE"
+                                            end
+                                            break
+                                        end
+                                        if v8 > 0 then
+                                            v18 = v2[10][3]
+                                            v2[10][3].CandyLog("EVENT_HALLOWEEN_BUY", "confirmed=" .. v8 .. " total=" .. v18.EventShopSuccesses)
+                                            return "BUY_MORE"
+                                        else
+                                            return "BUY_PAUSED"
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+local function _w43(v1, v2)
+    return function()
+        v2[1][3]:Fire()
+    end
+end
+local function _w44(v1)
+    return function(v2)
+        local n
+        v2 = {[1] = 3, [3] = v2}
+        v2[2] = v2
+        local v3 = {[1] = 3, [3] = false}
+        v3[2] = v3
+        local v4, v5, v6, v7, v8, v9, v10
+        if typeof(getconnections) == "function" then
+            v9 = v2[3].MouseButton1Down
+            v7 = v2[3].MouseButton1Click
+            v10 = v2[3].MouseButton1Up
+            v8 = {}
+            v8[1], v8[2], v8[3], v8[4] = v2[3].Activated, v7, v9, v10
+            v5, v6, v4 = ipairs(v8)
+            v5, v6, v4 = v1.g(v5, v6, v4)
+            for v11, n in v5, v6, v4 do
+                n = {[1] = 3, [3] = n}
+                n[2] = n
+                pcall(v1:yq({n, v3}))
+            end
+        end
+        if not v3[3] and typeof(firesignal) == "function" then
+            pcall(v1:zq({v2}))
+            pcall(v1:Aq({v2}))
+        end
+    end
+end
+local function _w45(v1)
+    return function(v2, v3, v4)
+        local d
+        local v5, v6, v7, findFirstChild, v8
+        if v2 then
+            v7, v8, v6 = ipairs(v3)
+            v7, v8, v6 = v1.g(v7, v8, v6)
+            for v9, d in v7, v8, v6 do
+                v5 = v2:GetAttribute(d)
+                if v5 == nil then
+                    findFirstChild = v2:FindFirstChild(d)
+                    if findFirstChild and findFirstChild:IsA("ValueBase") then
+                        v5 = findFirstChild.Value
+                    end
+                end
+                if v5 ~= nil then
+                    v4[#v4 + 1] = v5
+                end
+            end
+            return
+        end
+    end
+end
+local function _w46(v1, v2)
+    return function(v3)
+        local v4 = v2[1][3]
+        local v5 = v3.Name
+        local v6, v7
+        v4, v7, v6, v5 = v3.FindFirstChild, "EggData", v4[v5], v3
+        v4 = v4(v5, "EggData")
+        v5 = v4
+        if v4 then
+            v5 = v4:FindFirstChild("PlaceTime")
+        end
+        local v8, v9, growthTimeFor, v10, v11
+        if not v6 or not v5 or v5.Value <= 0 then
+            return false
+        else
+            v7 = v4:FindFirstChild("Weight")
+            v9 = v7 and tonumber(v7.Value) or 1
+            v10 = v6.GrowthTime
+            growthTimeFor = v2[3][3].GrowthTimeFor(v10, v9)
+            v10 = v3:GetAttribute("FlatGrow") == true
+            if v10 then
+                v11 = workspace
+                v8, v11 = v11, v11.GetServerTimeNow
+                v10 = v11(v8) - v5.Value
+            end
+            if not v10 then
+                v11 = v5.Value
+                v10 = v2[2][3].GrowthElapsed(v11)
+            end
+            return growthTimeFor - v10 <= 0
+        end
+    end
+end
+local function _w47(v1, v2)
+    return function(v3, v4)
+        local v5 = v3[2]
+        local v6 = v2[1][3][v5] or 0
+        local v7 = v2[1][3][v4[2]] or 0
+        local v8
+        if v6 ~= v7 then
+            return v6 > v7
+        else
+            v8 = v4[1]
+            return v3[1] < v8
+        end
+    end
+end
+local function _w48(v1, v2)
+    return function()
+        local v3 = v2[2][3]
+        v2[1][3](v3, "deferred ChildAdded")
+    end
+end
+local function _w49(v1, v2)
+    return function()
+        local v3, v4, v5, v6, playerGui, v7, v8, v9, v10
+        if v2[1][3].ReadCarriedEggTimer and v2[1][3].ReadCarriedEggTimer() ~= nil then
+            return true
+        else
+            playerGui = v2[2][3]:FindFirstChildOfClass("PlayerGui")
+            v7 = playerGui and playerGui:FindFirstChild("EggBreaking")
+            if v7 then
+                v4 = v7.GetDescendants
+                v4 = v1.h(v4(v7))
+                v3, v4, v5 = ipairs(v1.i(v4))
+                v3, v4, v5 = v1.g(v3, v4, v5)
+                v8, v9 = v3(v4, v5)
+                v5 = v8
+                if v5 ~= nil then
+                    local __cont2 = false
+                    while true do
+                        if not ((v9:IsA("TextLabel") or v9:IsA("TextButton")) and tostring(v9.Text or ""):lower():find("egg will break", 1, true)) then
+                            v8, v9 = v3(v4, v5)
+                            v5 = v8
+                            if v5 ~= nil then
+                                continue
+                            end
+                            return false
+                        end
+                        v10 = v9
+                        v6 = true
+                        if v10 and v10 ~= playerGui then
+                            v10:IsA("GuiObject")
+                            v6 = false
+                        end
+                        if not v6 then
+                            v8, v9 = v3(v4, v5)
+                            if v8 ~= nil then
+                                break
+                            end
+                            return false
+                        end
+                        if __cont2 then
+                            __cont2 = false
+                            continue
+                        end
+                        break
+                    end
+                    return true
+                end
+            end
+            return false
+        end
+    end
+end
+local function _w50(v1, v2)
+    return function(v3)
+        local v4 = v2[1][3]()
+        local v5 = v4
+        if v4 then
+            v5 = typeof(v3) == "Vector3"
+        end
+        if not v5 then
+            return false
+        else
+            v5 = Vector3.new
+            v4.CFrame = v2[2][3].UprightCFrame(v3 + v5(0, 3, 0))
+            v2[2][3].Stabilize()
+            return true
+        end
+    end
+end
+local function _w51(v1, v2, v3, v4)
+    v1.Hr[v4] = v1.Uq(v2, v3)
+    return v1.Hr[v4]
+end
+local function _w52(v1, v2)
+    return function(v3, v4, v5, v6, v7, v8, v9)
+        v5 = {[1] = 3, [3] = v5}
+        v5[2] = v5
+        v6 = {[1] = 3, [3] = v6}
+        v6[2] = v6
+        v7 = {[1] = 3, [3] = v7}
+        v7[2] = v7
+        v8 = {[1] = 3, [3] = v8}
+        v8[2] = v8
+        v9 = {[1] = 3, [3] = v9}
+        v9[2] = v9
+        local v10 = v2[1][3]
+        v10.YieldUIPaint()
+        local v11, v12
+        v12, v11, v10 = v4, v10.boxFor, v3
+        v11 = {[1] = 3, [3] = v11(v10, v12)}
+        v11[2] = v11
+        local v13, v14, v15
+        if not v11[3] then
+            return
+        else
+            v10, v12 = pcall(v1:Kq({v11, v2[1], v7, v8, v6, v5, v2[3]}))
+            if not v10 or not v12 then
+                v15 = "Dropdown " .. v5[3]
+                v2[1][3].notifyError(v15, v12)
+                return
+            else
+                v2[2][3][v5[3]] = v12
+                v14 = {}
+                v13 = v2[1][3].SavedDropdownRegistry
+                v14.Control = v12
+                v14.Key = v7[3]
+                v14.Kind = "plain-multi"
+                v13[v5[3]] = v14
+                v12:OnChanged(v1:Lq({v2[4], v9, v2[1], v7, v2[3]}))
+                return v12
+            end
+        end
+    end
+end
+local function _w53(v1, v2)
+    return function()
+        local basket2 = v2[1][3]:FindFirstChild("Basket")
+        return basket2 ~= nil and #basket2:GetChildren() > 0
+    end
+end
+local function _w54(v1, v2)
+    return function()
+        local v3 = v2[1][3].PetWorth
+        local v4 = v2[3][3]
+        local weight = v2[2][3]:GetAttribute("Weight")
+        local mutation = v2[2][3]:GetAttribute("Mutation")
+        local v5 = v2[2][3]
+        local v6
+        v5, v6 = v5.GetAttribute, v5
+        v5 = table.pack(v5(v6, "SpawnMutation"))
+        local pack = table.pack(v3(v4, weight, mutation, table.unpack(v5, 1, v5.n)))
+        return table.unpack(pack, 1, pack.n)
+    end
+end
+local function _w55(v1, v2)
+    return function(v3)
+        local v4, v5, v6, v7, v8, mutation2, v9, v10, v11, v12, v13, v14
+        if not v3 or not v3.Parent then
+            return nil
+        else
+            v11 = v2[1][3].getPetNameFromObject
+            v10 = v11(v3) or ""
+            v7 = v2[3][3][tostring(v10)]
+            v6 = type(v7) == "table" and tonumber(v7.Income) or nil
+            v10 = v3.GetAttribute
+            v10 = v1.h(v10(v3, "Weight"))
+            v14 = tonumber(v1.i(v10))
+            if not v14 then
+                v10 = v3:FindFirstChild("Data")
+                v5 = v10 and v10:FindFirstChild("Weight")
+                if v5 and v5:IsA("ValueBase") then
+                    v14 = tonumber(v5.Value)
+                end
+            end
+            if not v6 or not v14 then
+                return nil
+            else
+                v10 = 1
+                v5 = v2[1][3].InventoryESPState
+                v8 = v5 and v5.Mutations
+                if type(v8) == "table" and type(v8.CombinedFactor) == "function" then
+                    v13 = v8.CombinedFactor
+                    mutation2 = v3:GetAttribute("Mutation")
+                    v9 = v3.GetAttribute
+                    v9 = table.pack(v9(v3, "SpawnMutation"))
+                    v4, v13 = pcall(v13, mutation2, table.unpack(v9, 1, v9.n))
+                    if v4 and tonumber(v13) and tonumber(v13) > 0 then
+                        v10 = tonumber(v13)
+                    end
+                end
+                v4 = 10
+                v13, mutation2 = pcall(v1:jn({v2[1], v2[2]}))
+                if v13 and type(mutation2) == "table" then
+                    v4 = tonumber(mutation2.WeightStandardKG)
+                end
+                if v4 <= 0 then
+                    v4 = 10
+                end
+                v9 = math.floor
+                v12 = math.floor(v6 * v14 / v4) * v10
+                v9 = table.pack(v9(v12))
+                return table.unpack(v9, 1, v9.n)
+            end
+        end
+    end
+end
+local function _w56(v1, v2)
+    return function()
+        local v3 = v2[2][3]
+        local v4 = v2[3][3]
+        v2[1][3][v4] = v3
+    end
+end
+local function _w57(v1, v2)
+    return function()
+        v2[1][3]:UnbindFromRenderStep(v2[2][3].GuardKey)
+    end
+end
+local function _w58(v1, v2)
+    return function(v3)
+        local basket3 = v2[1][3]:FindFirstChild("Basket")
+        local v4 = basket3
+        if basket3 then
+            v4 = basket3:GetChildren()[1]
+        end
+        local v5, v6, v7
+        if v4 then
+            v6 = v2[2][3]
+            v6, v5, v7 = tostring, v4.Name, v6.VolcanoDippedCarryUIDs
+            v7[v6(v5)] = true
+            if v2[2][3].CarryCapture[v4] then
+                v2[2][3].CarryCapture[v4].DipVerified = true
+            end
+        end
+        if v2[2][3].ActivePickupAt then
+            v5 = {}
+            v7 = v2[2][3]
+            v5.PickupAt = v7.ActivePickupAt
+            v5.Done = true
+            v7.VolcanoSession = v5
+        end
+        local v8
+        if v2[2][3].TraceRideDrop then
+            v8 = v4 and v4.Name
+            v2[2][3].TraceRideDrop("DIP_VERIFIED", "source=" .. tostring(v3) .. " carry=" .. tostring(v8))
+        end
+    end
+end
+local function _w59(v1, v2)
+    return function()
+        local v3, v4
+        v3, v4 = pcall(v1:um({v2[1], v2[3]}))
+        local v5 = v2[3][3]
+        v5.ModuleBusy = false
+        v5.ToolRevision = (v5.ToolRevision or 0) + 1
+        if not v3 then
+            v2[2][3].diagnose("esp.modules", v4)
+        end
+        if v2[4][3].Alive and v2[3][3].Enabled then
+            v2[2][3].queueInventoryESPRefresh(0)
+        end
+    end
+end
+local function _w60(v1, v2)
+    return function()
+        while true do
+            if v2[1][3].Alive then
+                v2[1][3].TaskWants("Hatch")
+                v2[1][3].TaskRun("Hatch", v1:Wn({v2[1], v2[5], v2[4], v2[2], v2[3]}), true)
+                v2[1][3].TaskInvalidate("Place")
+                task.wait(0.22)
+                continue
+            end
+            break
+        end
+    end
+end
+local function _w61(v1, v2)
+    return function(v3, v4)
+        local getMyPlot = v2[1][3].GetMyPlot()
+        local v5 = getMyPlot
+        if getMyPlot then
+            v5 = getMyPlot:FindFirstChild("Baseplate")
+        end
+        local v6 = v5
+        if v5 then
+            v6 = v5:IsA("BasePart")
+        end
+        local v7, v8, v9, v10, v11, v12, pointToObjectSpace, v13, v14
+        if not v6 then
+            return false
+        else
+            v8 = v4 or v3.Position
+            pointToObjectSpace = v5.CFrame:PointToObjectSpace(v8)
+            v6 = v5.Size.X / 2
+            v8 = v5.Size.Z / 2
+            v7 = pointToObjectSpace.Z / v8
+            if math.abs(pointToObjectSpace.X / v6) >= math.abs(v7) then
+                v13 = pointToObjectSpace.X >= 0 and 1 or -1
+                v14 = v2[1][3]
+                v9 = (v6 + v14.OutsideExtra) * v13
+                v10 = v14.OutsideHeight
+                v11 = Vector3.new(v9, v10, 0)
+            else
+                v13 = pointToObjectSpace.Z >= 0 and 1 or -1
+                v12 = v2[1][3]
+                v10 = v12.OutsideHeight
+                v11 = Vector3.new(0, v10, (v8 + v12.OutsideExtra) * v13)
+            end
+            v10 = CFrame.new
+            v3.CFrame = v2[1][3].UprightCFrame((v5.CFrame * v10(v11)).Position)
+            v2[1][3].Stabilize()
+            return true
+        end
+    end
+end
+local function _w62(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        local v4 = "REZEV8_" .. v2[3][3]
+        local v5 = {Text = v2[5][3]}
+        local v6 = v2[2][3]
+        v5.Default = v2[4][3][v6] == true
+        local v7
+        v7, v3 = v3, v3.AddToggle
+        v3 = table.pack(v3(v7, v4, v5))
+        return table.unpack(v3, 1, v3.n)
+    end
+end
+local function _w63(v1, v2)
+    return function(v3)
+        v2[1][3](v3, false)
+    end
+end
+local function _w64(v1, v2)
+    return function(v3, v4, v9, ...)
+        local v5 = v2[1][3]
+        v5.BgBusy = v5.BgBusy + 1
+        local v6 = v1.h(v4, v9, ...)
+        local v7
+        v5, v7 = pcall(v3, v1.i(v6))
+        v6 = v2[1][3]
+        local v8 = v6.BgBusy
+        v6.BgBusy = math.max(0, v8 - 1)
+        return v5, v7
+    end
+end
+local function _w65(v1)
+    local v2 = string
+    local v3, v4
+    v3, v2, v4 = v2.char, bit32, v2.byte
+    local bxor = v2.bxor
+    v3 = {[1] = 3, [3] = v3}
+    v3[2] = v3
+    v4 = {[1] = 3, [3] = v4}
+    v4[2] = v4
+    bxor = {[1] = 3, [3] = bxor}
+    bxor[2] = bxor
+    return v1:Vq({v3, v4, bxor})
+end
+local function _w66(v1, v2)
+    return function()
+        v2[1][3].TotalLabel:Destroy()
+    end
+end
+local function _w67(v1)
+    return function(v2)
+        local v3, v4
+        if type(v2) == "number" then
+            return v2
+        else
+            v4, v3 = tostring(v2 or ""):gsub(",", ""):gsub("%s+", ""):match("([%d%.]+)([A-Za-z]*)")
+            return tonumber(v4) and tonumber(v4) * (({
+                K = 1000,
+                M = 1000000,
+                B = 1000000000,
+                T = 1000000000000,
+                Qa = 1000000000000000,
+                Qi = 1000000000000000000,
+                Sx = 1e+21,
+                Sp = 1e+24,
+                Oc = 1e+27,
+                No = 1e+30,
+                Dc = 1e+33,
+            })[v3] or 1) or nil
+        end
+    end
+end
+local function _w68(v1)
+    return function(v2)
+        local format = string.format("%.2f", v2)
+        local v3, v4, v5
+        v4, v3, v5, format = format, "%.?0+$", "", format.gsub
+        return format(v4, "%.?0+$", "")
+    end
+end
+local function _w69(v1, v2)
+    return function(v3)
+        local v4
+        v4, v2[1][3] = v2[2][3], v3
+        local v5
+        v4, v5 = v3, v4.ToggleHideEggs
+        v5(v4)
+    end
+end
+local function _w70(v1)
+    return function(v2)
+        local v3, v4, v5, v6, v7, min, v8, v9, v10, v11, v12, min2, v13, v14, v15
+        if not v2 or not v2:IsA("BasePart") then
+            return nil
+        else
+            v11 = v2.Position
+            v7 = v2.Size
+            min = math.min(3, v7.X / 4)
+            v12 = v7.Z
+            min2 = math.min(3, v12 / 4)
+            v9 = v7.X / 2
+            v6 = v11.X - v9 + min
+            v4 = v7.X / 2
+            v12 = v11.X + v4 - min
+            v13 = v7.Z / 2
+            v14 = v11.Z - v13 + min2
+            v10 = v7.Z / 2
+            v9 = v11.Z + v10 - min2
+            v4 = v6 + math.random() * (v12 - v6)
+            v13 = v14 + math.random() * (v9 - v14)
+            v8 = v7.Y / 2
+            v5 = v11.Y + v8
+            v15, v3, v5, v8 = v13, v4, Vector3.new, v5 + 1.5
+            v5 = table.pack(v5(v3, v8, v15))
+            return table.unpack(v5, 1, v5.n)
+        end
+    end
+end
+local function _w71(v1, v2)
+    return function(v3, v5, ...)
+        local v4 = v2[2][3].Name
+        v2[1][3](v4, v3, v5, ...)
+    end
+end
+local function _w72(v1, v2)
+    return function()
+        local backpack = v2[1][3]:FindFirstChildOfClass("Backpack")
+        local v3 = {}
+        if backpack then
+            v3[#v3 + 1] = backpack
+        end
+        if v2[1][3].Character then
+            v3[#v3 + 1] = v2[1][3].Character
+        end
+        return v3
+    end
+end
+local function _w73(v1, v2)
+    return function()
+        v2[1][3]:RequestStreamAroundAsync(v2[2][3], 0.35)
+    end
+end
+local function _w74(v1, v2)
+    return function()
+        local v3 = v2[3][3].UprightCFrame
+        local v4 = v2[2][3].CFrame
+        local v5 = CFrame.new
+        local v6 = v2[2][3].Size.Y * 0.5 + 4
+        v2[1][3].CFrame = v3((v4 * v5(0, v6, 0)).Position)
+    end
+end
+local function _w75(v1, v2)
+    return function()
+        v2[1][3]:Destroy()
+    end
+end
+local function _w76(v1, v2)
+    return function()
+        local v3 = v2[2][3].FPSState.Original.GlobalShadows
+        v2[1][3].GlobalShadows = v3
+    end
+end
+local function _w77(v1, v2)
+    return function(v3)
+        local v4 = {[1] = 3, [3] = v2[1][3].EventScanCamera}
+        v4[2] = v4
+        local candyPad, v5, v6, v7, v8, v9, v10
+        if v4[3] then
+            if v3 then
+                v6 = workspace.CurrentCamera
+                if v6 and v4[3].CFrame then
+                    v6.CameraType = Enum.CameraType.Scriptable
+                    v6.CFrame = v4[3].CFrame
+                    v6.Focus = v4[3].Focus
+                end
+                v8 = v2[3][3].Character
+                v9 = {[1] = 3, [3] = v8 and v8:FindFirstChild("HumanoidRootPart")}
+                v9[2] = v9
+                if v9[3] and v9[3].Parent then
+                    candyPad = v2[1][3].CandyPad()
+                    v5 = Vector3.new
+                    v7 = (candyPad and candyPad.Size.Y * 0.5 or 0) + 5
+                    v10 = {
+                        [1] = 3,
+                        [3] = (candyPad and candyPad.Position or v2[1][3].CandyHome.Position) + v5(0, v7, 0),
+                    }
+                    v10[2] = v10
+                    pcall(v1:hl({v9, v10, v2[1]}))
+                    v2[2][3].Heartbeat:Wait()
+                    v2[1][3].CandyLog("EVENT_HIDDEN_SCAN_SAFE_EXIT", "returned to drop-off before camera restore")
+                end
+            end
+            v2[1][3].EventScanCamera = nil
+            v6 = {[1] = 3, [3] = workspace.CurrentCamera}
+            v6[2] = v6
+            v8 = v6[3]
+            if v8 then
+                v9 = v4[3].Camera
+                v8 = v6[3] ~= v9
+            end
+            if v8 then
+                pcall(v1:fl({v2[3], v6}))
+            end
+            if v2[1][3].EventScanReplica then
+                v2[1][3].EventScanReplica.Parent = nil
+            end
+            if v2[1][3].EventScanPetReplica then
+                v2[1][3].EventScanPetReplica.Parent = nil
+            end
+        end
+    end
+end
+local function _w78(v1, v2)
+    return function()
+        local v3 = v2[2][3].FPSState.Original.FogEnd
+        v2[1][3].FogEnd = v3
+    end
+end
+local function _w79(v1, v2)
+    return function(v3, v4)
+        v3 = {[1] = 3, [3] = v3}
+        v3[2] = v3
+        local v5, v6, v7
+        if not (not v3[3] or not v3[3].IsA(v3[3], "Tool")) then
+            v7 = v2[1][3].ToolLookup
+            if v7 and not v2[1][3].ToolsDirty then
+                v6 = v7[v3[3].Name]
+                v5 = #v6
+                if v5 >= 1 then
+                    while true do
+                        if v6[v5] == v3[3] then
+                            table.remove(v6, v5)
+                        end
+                        v5 = v5 + -1
+                        if v5 < 1 then
+                            break
+                        end
+                    end
+                end
+                if #v6 == 0 then
+                    v7[v3[3].Name] = nil
+                end
+                if v4 and v3[3].GetAttribute(v3[3], "PetKey") ~= nil then
+                    v6 = v7[v3[3].Name]
+                    v6[#v6 + 1] = v3[3]
+                    v7[v3[3].Name] = v6
+                end
+            else
+                v2[1][3].ToolsDirty = true
+            end
+            v5 = v1:kj({v2[3], v2[2], v2[1], v3})
+            task.defer(v5)
+            return
+        end
+    end
+end
+local function _w80(v1, v2)
+    return function(v3)
+        local v4 = {}
+        v4.Name = v2[1][3].WebhookPetName(v3)
+        local v5 = v2[1][3].WebhookPetAttribute
+        local v6 = {}
+        v6[1], v6[2], v6[3] = "Mutation", "MutationName", "PetMutation"
+        v4.Mutation = v5(v3, v6)
+        v5 = v2[1][3].WebhookPetAttribute
+        v6 = {}
+        v6[1], v6[2], v6[3], v6[4] = "SpawnMutation", "SpawnTrait", "Trait", "Traits"
+        v4.SpawnMutation = v5(v3, v6)
+        v6 = {}
+        v5 = v2[1][3].WebhookPetAttribute
+        v6[1], v6[2], v6[3] = "Weight", "KG", "BaseWeight"
+        v4.Weight = v5(v3, v6)
+        v4.Age = v2[1][3].WebhookPetAttribute(v3, {[1] = "Age"})
+        v5 = v2[1][3].WebhookPetAttribute
+        v6 = {}
+        v6[1], v6[2] = "DisplayIncome", "Income"
+        v4.Income = v5(v3, v6)
+        return v4
+    end
+end
+local function _w81(v1, v2)
+    return function(v3)
+        local g
+        local v4 = v2[1][3]
+        local v5
+        v4, v5 = v2[3][3], v4.EventScanCamera
+        local v6
+        if v5 == v4 then
+            v5 = v2[2][3] + v3
+            v2[2][3] = v5
+            if not (v2[2][3] < 0.12) then
+                v5, v2[2][3], v4 = pairs, 0, v2[4][3]
+                v5, v4, v6 = v5(v4)
+                v5, v4, v6 = v1.g(v5, v4, v6)
+                for g in v5, v4, v6 do
+                    if g.Parent then
+                        g.LocalTransparencyModifier = 1
+                    end
+                end
+            end
+            return
+        end
+    end
+end
+local function _w82(v1)
+    return function()
+        local v2 = type(setclipboard) == "function" and setclipboard or type(toclipboard) == "function" or nil
+        if v2 then
+            pcall(v2, "https://discord.gg/CHpZkDtmPe")
+        else
+            warn("[REZEHUB] Clipboard unavailable")
+        end
+    end
+end
+local function _w83(v1)
+    return function()
+        local v2 = tonumber(game.GameId) or 0
+        local pack = table.pack(tostring(v2))
+        local gsub = ("-- REZEHUB user-enabled auto-start. Generated by V11.3 Runtime Auto Execute.\nif not game:IsLoaded() then game.Loaded:Wait() end\nlocal gameId = tonumber(game.GameId) or 0\nlocal placeId = tonumber(game.PlaceId) or 0\nlocal allowedGameId = __ALLOWED_GAME_ID__\nlocal allowedPlaceId = __ALLOWED_PLACE_ID__\nif allowedGameId > 0 then\n    if gameId ~= allowedGameId then return end\nelseif placeId ~= allowedPlaceId then\n    return\nend\nlocal player = game:GetService(\"Players\").LocalPlayer\nif not player then return end\n-- No file/config means OFF (fail closed). This also cancels already-queued\n-- execution when the user turns Auto Execute OFF before the next teleport.\nif type(readfile) ~= \"function\" then return end\nlocal path = \"REZEHUB.app/\" .. string.lower(tostring(player.Name)) .. \".json\"\nlocal okConfig, cfg = pcall(function()\n    return game:GetService(\"HttpService\"):JSONDecode(readfile(path))\nend)\nif not okConfig or type(cfg) ~= \"table\" or cfg.AutoExecute ~= true then return end\nlocal env = (type(getgenv) == \"function\" and getgenv()) or _G\n-- Do not start twice if both queue_on_teleport and an autoexec file fire.\n-- A NEW Roblox server has a different JobId and may start normally.\nlocal thisJob = tostring(game.PlaceId) .. \":\" .. tostring(game.JobId)\nif env.REZEHUB_AUTO_EXECUTED_JOB == thisJob then return end\nif env.REZEHUB_AUTO_EXECUTE_BOOTING == thisJob then return end\nenv.REZEHUB_AUTO_EXECUTE_BOOTING = thisJob\nlocal okLaunch, launchError = pcall(function()\n    local content = game:HttpGet(\"https://raw.githubusercontent.com/windey1/rezehub-beta/refs/heads/main/loader.lua\", true)\n    local chunk, compileError = loadstring(content)\n    assert(chunk, \"Universal loader compile failed: \" .. tostring(compileError))\n    chunk()\nend)\nenv.REZEHUB_AUTO_EXECUTE_BOOTING = nil\nif okLaunch then\n    env.REZEHUB_AUTO_EXECUTED_JOB = thisJob\nelse\n    warn(\"[REZEHUB Auto Execute] Universal loader failed: \" .. tostring(launchError))\nend\n"):gsub("__ALLOWED_GAME_ID__", table.unpack(pack, 1, pack.n))
+        v2 = tonumber(game.PlaceId) or 0
+        pack = v1.h(tostring(v2))
+        return gsub:gsub("__ALLOWED_PLACE_ID__", table.unpack(pack, 1, pack.n))
+    end
+end
+local function _w84(v1, v2)
+    return function(v3)
+        local v4 = v3
+        if v3 then
+            v4 = v3.Parent
+        end
+        if v4 then
+            v4 = v3:IsA("ProximityPrompt")
+        end
+        local v5, v6, v7
+        if not v4 then
+            return false, "PROMPT_MISSING"
+        else
+            v6 = v2[1][3]()
+            v4 = v2[3][3](v3.Parent)
+            if not (v6 and v4) then
+                return false, "PROMPT_POSITION_MISSING"
+            else
+                v2[2][3](v4)
+                task.wait(0.08)
+                if type(fireproximityprompt) == "function" then
+                    v7, v5 = pcall(fireproximityprompt, v3)
+                    return v7, v7 and "PROMPT_TRIGGERED_UNVERIFIED" or tostring(v5)
+                else
+                    return false, "EXECUTOR_HAS_NO_FIREPROXIMITYPROMPT"
+                end
+            end
+        end
+    end
+end
+local function _w85(v1, v2)
+    return function()
+        local v3, v4
+        v4, v3 = pcall(require, v2[1][3])
+        local v5 = v4
+        if v4 then
+            v5 = type(v3) == "table"
+        end
+        if v5 then
+            v5 = type(v3.PetWorth) == "function"
+        end
+        if v5 then
+            v2[2][3] = v3
+        end
+    end
+end
+local function _w86(v1, v2)
+    return function(v3)
+        local v4 = not v3
+        local v5
+        if not v4 then
+            v5 = v3.Name
+            v4 = not v2[1][3].IsKnownEggName(v5)
+        end
+        local v6, v7, v8
+        if not v4 then
+            v4 = v2[1][3].WorldEggSnapshots[v3]
+            if not v4 then
+                v2[1][3].SnapshotWorldEgg(v3)
+                v4 = v2[1][3].WorldEggSnapshots[v3]
+            end
+            v5 = v2[1][3]
+            v6 = v5.RecentWorldEggRemoved
+            v7 = #v5.RecentWorldEggRemoved
+            v8 = {Name = v3.Name}
+            v8.Position = v4 and v4.Position
+            v8.Weight = v4 and v4.Weight
+            v8.At = os.clock()
+            v8.DipVerified = v2[1][3].VerifiedDippedWorldEggs[v3] == true
+            v6[v7 + 1] = v8
+            while true do
+                if #v2[1][3].RecentWorldEggRemoved > 25 then
+                    v5 = v2[1][3].RecentWorldEggRemoved
+                    table.remove(v5, 1)
+                    continue
+                end
+                break
+            end
+            return
+        end
+    end
+end
+local function _w87(v1, v2, v3, v4)
+    v1.tr[v4] = v1.Wq(v2, v3)
+    return v1.tr[v4]
+end
+local function _w88(v1, v2)
+    return function()
+        local v3 = v2[1][3].PreSimulation
+        local v4 = v2[2][3]
+        local v5
+        v5, v3 = v3, v3.Connect
+        v3 = table.pack(v3(v5, v4))
+        return table.unpack(v3, 1, v3.n)
+    end
+end
+local function _w89(v1, v2)
+    return function()
+        v2[1][3]:FireServer()
+    end
+end
+local function _w90(v1)
+    return function()
+        settings().Rendering.QualityLevel = Enum.QualityLevel.Level01
+    end
+end
+local function _w91(v1, v2)
+    return function()
+        local v3 = v2[1][3].SavedDropPosition
+        local v4, v5, v6, floor, floor2, v7
+        if type(v3) ~= "table" then
+            return "Saved Position: Not set"
+        else
+            v4 = string.format
+            v6 = v3.X
+            floor2 = math.floor((tonumber(v6) or 0) + 0.5)
+            v5 = v3.Y
+            floor = math.floor((tonumber(v5) or 0) + 0.5)
+            v7 = v3.Z
+            v6 = math.floor
+            v5 = tonumber(v7) or 0
+            v6 = table.pack(v6(v5 + 0.5))
+            v4 = table.pack(v4("Saved Position: %d %d %d", floor2, floor, table.unpack(v6, 1, v6.n)))
+            return table.unpack(v4, 1, v4.n)
+        end
+    end
+end
+local function _w92(v1, v2)
+    return function()
+        local v3 = v2[1][3] + 1
+        local v4
+        v2[1][3], v4 = v3, os
+        v3 = v4.clock()
+        local v5, v6
+        if v3 - v2[3][3] >= 1 then
+            v6 = v3 - v2[3][3]
+            v5 = v2[1][3] / v6
+            v4 = math.floor(v5 + 0.5)
+            v2[2][3], v4 = v4, 0
+            v2[3][3], v2[1][3] = v3, 0
+        end
+    end
+end
+local function _w93(v1, v2)
+    return function()
+        local v3, v4
+        v3, v4 = pcall(v1:Fn({v2[1]}))
+        local v5 = v3
+        if v3 then
+            v5 = v4
+        end
+        if not v5 then
+            v5 = nil
+        end
+        return v5
+    end
+end
+local function _w94(v1, v2)
+    return function()
+        local v3, v4, v5
+        v4, v3, v5 = ipairs(v2[1][3].PET_LIST)
+        v4, v3, v5 = v1.g(v4, v3, v5)
+        local v6, v7
+        v6, v7 = v4(v3, v5)
+        local v8 = {}
+        local v9, v10
+        if v6 ~= nil then
+            while true do
+                v9 = v2[3][3][v7]
+                v10 = {}
+                v10[1], v10[2] = v7, v9 and tostring(v9.Rarity or "Common") or "Common"
+                v8[#v8 + 1] = v10
+                v6, v7 = v4(v3, v5)
+                v5 = v6
+                if v5 == nil then
+                    break
+                end
+            end
+        end
+        table.sort(v8, v1:cj({v2[2]}))
+        return v8
+    end
+end
+local function _w95(v1, v2)
+    return function(v3, v4)
+        local format2 = string.format("[%.2f] %s | %s", os.clock(), tostring(v3), tostring(v4 or ""))
+        local v5 = v2[1][3].RideDropLog
+        table.insert(v5, format2)
+        if #v2[1][3].RideDropLog > 130 then
+            v5 = v2[1][3].RideDropLog
+            table.remove(v5, 1)
+        end
+    end
+end
+local function _w96(v1, v2)
+    return function(v3)
+        local v4 = v3
+        if v3 then
+            v4 = v3.Parent
+        end
+        local v5, v6, v7, v8, v9, v10, position, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21
+        if not v4 then
+            return false
+        else
+            v2[1][3].IsInsideSavedDropSafezone(v3)
+            v5 = {[1] = 3, [3] = v2[1][3].GetEggPart(v3)}
+            v5[2] = v5
+            v4 = v2[1][3]
+            v18 = {Name = v3.Name}
+            v18.At = os.clock()
+            v18.Position = v5[3] and v5[3].Position
+            v4.RecentPickupHint = v18
+            v4 = v2[3][3]:FindFirstChild("Basket")
+            if v4 and #v4:GetChildren() > 0 then
+                return false
+            else
+                v19 = {[1] = 3, [3] = v3:FindFirstChild("Pickup", true)}
+                v19[2] = v19
+                v17 = v19[3]
+                if v17 then
+                    v6 = v19[3]
+                    v17 = v19[3].IsA(v6, "ProximityPrompt")
+                end
+                if not v17 then
+                    v19[3] = v3:FindFirstChildWhichIsA("ProximityPrompt", true)
+                end
+                v18 = v2[1][3].GetCharacter()
+                v17 = {[1] = 3, [3] = v18 and v18:FindFirstChild("HumanoidRootPart")}
+                v17[2] = v17
+                v9 = false
+                v6 = v1:pp({v19, v5, v17})
+                v7 = v2[1][3].FindActiveWorldEggConfiguration and v2[1][3].FindActiveWorldEggConfiguration(v3)
+                v20 = v2[2][3]
+                v20, v16 = v20.FindFirstChild, v20
+                v20 = {[1] = 3, [3] = v20(v16, "EggPickup")}
+                v20[2] = v20
+                v16 = v7 and v7.Parent and v20[3]
+                if v16 then
+                    v21 = v20[3]
+                    v16 = v20[3].IsA(v21, "RemoteEvent")
+                end
+                if v16 then
+                    v16 = {[1] = 3, [3] = tostring(v7.Name)}
+                    v16[2] = v16
+                    v21 = v7:GetAttribute("Egg")
+                    position = v7:GetAttribute("Position")
+                    v13 = typeof(position) == "Vector3" and v5[3] and (position - v5[3].Position).Magnitude or math.huge
+                    v10 = v21 == v3.Name and v13 <= 14 and #v16[3] == 36
+                    if v10 then
+                        v8 = v16[3]
+                        v10 = v16[3].match(v8, "^[%da-fA-F%-]+$")
+                    end
+                    if v10 then
+                        v10, v8 = pcall(v1:qp({v20, v16}))
+                        v9 = v10
+                        if v2[1][3].TraceRideDrop then
+                            v15 = v2[1][3].TraceRideDrop
+                            v14 = tostring(v3.Name)
+                            v11 = " distance3D=" .. tostring(v6()) .. " remoteOK=" .. tostring(v10) .. " error=" .. tostring(v10 and "none" or v8)
+                            v15("EGG_PICKUP_UUID_REQUEST", "egg=" .. v14 .. " activeUUID=" .. v16[3] .. v11)
+                        end
+                        task.wait(0.17)
+                    end
+                end
+                if v4 and #v4:GetChildren() > 0 then
+                    return true
+                else
+                    v16 = v6()
+                    v21 = v19[3] and tonumber(v19[3].MaxActivationDistance)
+                    if v19[3] and v19[3].Enabled and v16 and v21 and v16 <= math.max(0, v21 - 0.5) then
+                        v13 = false
+                        if typeof(fireproximityprompt) == "function" then
+                            v13 = pcall(v1:np({v19}))
+                        end
+                        if not v13 then
+                            pcall(v1:op({v19}))
+                        end
+                        v9 = true
+                    elseif v2[1][3].TraceRideDrop then
+                        v12 = v3.Name
+                        v2[1][3].TraceRideDrop("EGG_PROMPT_OUT_OF_RANGE", "egg=" .. tostring(v12) .. " d3=" .. tostring(v16) .. " promptRange=" .. tostring(v21))
+                    end
+                    return v9
+                end
+            end
+        end
+    end
+end
+local function _w97(v1, v2)
+    return function(v3)
+        v3 = {[1] = 3, [3] = v3}
+        v3[2] = v3
+        local v4, v5, v6, v7
+        if v3[3].IsA(v3[3], "GuiObject") then
+            v4 = v2[1][3]
+            v4.GridCardList = nil
+            v4 = not v4.Enabled
+            v5 = v3[3]
+            v2[3][3].bindInventoryESPCard(v5)
+            v5 = v3[3]
+            v7 = v2[1][3]
+            v6 = v7.ToolLookup or {}
+            v2[3][3].processInventoryESPCard(v5, v6, {})
+            task.defer(v1:Ti({v2[1], v2[2], v3, v2[3]}))
+        end
+    end
+end
+local function _w98(v1, v2)
+    return function()
+        v2[1][3]:SetDPIScale(100)
+    end
+end
+local function _w99(v1, v2)
+    return function()
+        v2[1][3].AppearanceConnection:Disconnect()
+    end
+end
+local function _w100(v1)
+    return function(v2)
+        v2.Closed = true
+        local v3, v4, v5
+        v3, v4, v5 = ipairs(v2.Connections)
+        v3, v4, v5 = v1.g(v3, v4, v5)
+        local v6, v7
+        v7, v6 = v3(v4, v5)
+        if v7 ~= nil then
+            while true do
+                v6 = {[1] = 3, [3] = v6}
+                v6[2] = v6
+                pcall(v1:Sm({v6}))
+                v7, v6 = v3(v4, v5)
+                v5 = v7
+                if v5 == nil then
+                    break
+                end
+            end
+        end
+        table.clear(v2.Connections)
+    end
+end
+local function _w101(v1, v2)
+    return function()
+        local v3 = v1:Sq()
+        local v4, v5
+        v5, v4 = xpcall(v2[1][3], v3)
+        local v6
+        if not v5 then
+            v3 = tostring(v2[3][3].REZEHUB_RAP_STARTUP_STAGE or "unknown")
+            v6 = v2[2][3]
+            v6.Stage = "failed: " .. v3
+            v6.Error = tostring(v4)
+            v6.LastCheckpoint = v3
+            v6 = v2[3][3].REZEHUB_RAP_V8_FEATURES
+            if type(v6) == "table" and type(v6.Stop) == "function" then
+                pcall(v6.Stop)
+            end
+            warn("[REZEHUB V12.13] Feature runtime failed at [" .. v3 .. "]: " .. tostring(v4))
+        else
+            v3 = v2[2][3]
+            v3.Ready = true
+            v3.Stage = "ready"
+            v2[3][3].REZEHUB_RAP_STARTUP_STAGE = "ready"
+            v3 = v2[2][3]
+            v3.Duration = os.clock() - v3.StartedAt
+        end
+    end
+end
+local function _w102(v1, v2)
+    return function(v3)
+        local basket4 = v2[1][3]:FindFirstChild("Basket")
+        local clock
+        if not basket4 then
+            return false
+        else
+            clock = os.clock()
+            while true do
+                if #basket4:GetChildren() ~= 0 then
+                    task.wait(0.06)
+                    if os.clock() - clock < (v3 or 2) then
+                        continue
+                    end
+                    break
+                end
+                return true
+            end
+            return #basket4:GetChildren() == 0
+        end
+    end
+end
+local function _w103(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        v3.Camera.CameraType = v3.Type
+        local v4
+        if v3.Subject and v2[1][3].Subject.Parent then
+            v3 = v2[1][3]
+            v3.Camera.CameraSubject = v3.Subject
+        else
+            v4 = v2[2][3].Character
+            v3 = v4 and v4:FindFirstChildOfClass("Humanoid")
+            if v3 then
+                v2[1][3].Camera.CameraSubject = v3
+            end
+        end
+        v3 = Enum.CameraType.Scriptable
+        local v5
+        if v2[1][3].Type == v3 then
+            v3 = v2[1][3]
+            v5 = v3
+            v3.Camera.CFrame = v3.CFrame
+            v5.Camera.Focus = v5.Focus
+        end
+    end
+end
+local function _w104(v1, v2)
+    return function(v3, v4)
+        local v5 = v3.Rarity or "Common"
+        local v6 = v2[1][3][v5] or 0
+        local v7 = v4.Rarity or "Common"
+        local v8 = v2[1][3][v7] or 0
+        local v9, v10
+        if v6 ~= v8 then
+            return v6 > v8
+        else
+            v7 = v4.Luck
+            if v3.Luck ~= v7 then
+                v10 = v4.Luck or 0
+                return (v3.Luck or 0) > v10
+            else
+                v7 = v3.Name:lower()
+                v10 = v4.Name
+                v9, v10 = v10, v10.lower
+                return v7 < v10(v9)
+            end
+        end
+    end
+end
+local function _w105(v1, v2)
+    return function()
+        local e, o
+        local v3 = {}
+        local v4, v5, v6
+        if type(v2[1][3]) == "table" then
+            v6, v5, v4 = ipairs(v2[1][3])
+            v6, v5, v4 = v1.g(v6, v5, v4)
+            for _, e in v6, v5, v4 do
+                v3[v2[3][3](e)] = true
+            end
+        end
+        v6 = {}
+        v4 = {}
+        local v7 = v2[5][3]
+        v7, e = v7.FindFirstChildOfClass, v7
+        v4[1], v4[2] = v7(e, "Backpack"), v2[5][3].Character
+        v4, v5 = ipairs, v4
+        v4, v7, e = v4(v5)
+        v4, v7, e = v1.g(v4, v7, e)
+        local v8, v9
+        v9, v8 = v4(v7, e)
+        local v10, v11, petName, v12, v13
+        if v9 ~= nil then
+            while true do
+                if v8 then
+                    v12 = v8.GetChildren
+                    v12 = v1.h(v12(v8))
+                    v11, v12, v10 = ipairs(v1.i(v12))
+                    v11, v12, v10 = v1.g(v11, v12, v10)
+                    for _, o in v11, v12, v10 do
+                        if o:IsA("Tool") and o:GetAttribute("PetKey") then
+                            petName = o:GetAttribute("PetName")
+                            v13 = string.match
+                            v13 = v13(petName, "^(.-) %[") or petName
+                            if (next(v3) == nil or v3[v2[3][3](v13)]) and not v2[4][3](o) and v2[2][3].PetMatchesFilter(o, "Fusion") then
+                                table.insert(v6, o)
+                            end
+                        end
+                    end
+                end
+                v9, v8 = v4(v7, e)
+                e = v9
+                if e == nil then
+                    break
+                end
+            end
+        end
+        return v6
+    end
+end
+local function _w106(v1, v2)
+    return function(v3)
+        local v4
+        v4, v2[1][3] = v2[3][3], v3
+        local v5, v6
+        v5, v4, v6 = v3, v2[2][3], v4.setLabel
+        if v5 then
+            v5 = "🟢 Hatching eggs"
+        end
+        if not v5 then
+            v5 = "🔴 Auto Hatch Off"
+        end
+        v6(v4, v5)
+    end
+end
+local function _w107(v1, v2)
+    return function(v3, v4)
+        local readWebhookPlacedLuck = v2[1][3].ReadWebhookPlacedLuck(v4)
+        local v5, v6, v7, v8, readWebhookHatchMultiplier, v9
+        if readWebhookPlacedLuck ~= nil then
+            v5 = v2[1][3].FormatWebhookLuck
+            v5 = table.pack(v5(readWebhookPlacedLuck))
+            return table.unpack(v5, 1, v5.n)
+        else
+            v5 = v2[2][3][tostring(v3)] or {}
+            v8 = tonumber(v5.Luck or v5.BaseLuck or v5.HatchLuck)
+            readWebhookHatchMultiplier = v2[1][3].ReadWebhookHatchMultiplier()
+            if v8 and v8 >= 0 and readWebhookHatchMultiplier then
+                v6 = v2[1][3].FormatWebhookLuck
+                v6 = table.pack(v6(v8 * readWebhookHatchMultiplier))
+                return table.unpack(v6, 1, v6.n)
+            else
+                v6 = v2[1][3].ReadWebhookExplicitLuck(v4)
+                if v6 and not v8 then
+                    v9 = v2[1][3].FormatWebhookLuck
+                    v9 = table.pack(v9(v6))
+                    return table.unpack(v9, 1, v9.n)
+                else
+                    v9 = v2[1][3].ReadWebhookRanchLuck(v3, v8)
+                    if v9 ~= nil then
+                        v7 = v2[1][3].FormatWebhookLuck
+                        v7 = table.pack(v7(v9))
+                        return table.unpack(v7, 1, v7.n)
+                    else
+                        return "Syncing"
+                    end
+                end
+            end
+        end
+    end
+end
+local function _w108(v1, v2)
+    return function(v3, v4, v5, v6, v7, v8, v9)
+        local s, m
+        local v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20
+        if not v3 then
+            return false
+        else
+            v10 = tostring(v3:GetAttribute("EggName") or v3.Name)
+            v11 = v2[1][3][v10]
+            if not v11 then
+                return false
+            else
+                v18 = tostring(v11.Rarity or "Common")
+                if not v2[2][3].CategoryRarityMatches(v5, v4, v10, v18) then
+                    return false
+                else
+                    v20 = v2[2][3].KGMatches
+                    v14 = v2[2][3].GetEggKG
+                    v14 = v1.h(v14(v3))
+                    v20 = v20(v6, v7, v1.i(v14))
+                    v20 = {}
+                    v15 = v3:FindFirstChild("EggData")
+                    v14 = v3.FindFirstChild
+                    v14 = v1.h(v14(v3, "Handle"))
+                    v20[1], v20[2] = v3, v15
+                    v1.j(v20, 3, v1.i(v14))
+                    v19 = v20
+                    v20 = v2[2][3].RenderedEggs
+                    if v20 then
+                        v15 = v2[2][3].RenderedEggs
+                        v20 = v3.Parent == v15
+                    end
+                    if v20 then
+                        v20 = type(v2[2][3].FindActiveWorldEggConfiguration) == "function"
+                    end
+                    if v20 then
+                        v20, v16 = pcall(v2[2][3].FindActiveWorldEggConfiguration, v3)
+                        if v20 and v16 then
+                            v19[#v19 + 1] = v16
+                        end
+                    end
+                    v20 = {}
+                    v15 = v1:dp()
+                    v16 = {}
+                    v14, v18, s = pairs(v19)
+                    v14, v18, s = v1.g(v14, v18, s)
+                    for s, m in v14, v18, s do
+                        v17 = {}
+                        v17[1], v17[2] = "Mutation", "MutationName"
+                        v17, v12 = v20, v17
+                        v15(m, v12, v17)
+                        v17 = {}
+                        v17[1], v17[2], v17[3], v17[4] = "SpawnMutation", "SpawnTrait", "Trait", "Traits"
+                        v17, v12 = v16, v17
+                        v15(m, v12, v17)
+                    end
+                    v18, v13, s = v2[2][3].VariantMatches, v20, v8
+                    v18 = v18(s, v13)
+                    if not v18 then
+                        return false
+                    else
+                        v13, s, v18 = v16, v9, v2[2][3].VariantMatches
+                        v18 = v18(s, v13)
+                        return true
+                    end
+                end
+            end
+        end
+    end
+end
+local function _w109(v1)
+    return function(v2, v3)
+        local v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17
+        if not v2 or not v2:IsA("GuiObject") or not v2.Visible then
+            return false
+        else
+            v17 = v3
+            if not v3 or not v17:IsA("ScrollingFrame") then
+                return true
+            else
+                v12 = v2.AbsoluteSize
+                v15 = v2.AbsolutePosition
+                v13 = v17.AbsoluteSize
+                v4 = v17.AbsolutePosition
+                v5 = v12.X
+                v9 = v15.X
+                v7 = v15.X
+                v9, v8, v16, v10 = v15.Y, v15.Y, v12.Y, v9 + v5
+                v16, v6, v5 = v4.X, 90, v8 + v16
+                v8 = v16 - 90
+                v16 = v4.X + v13.X + 90
+                v6 = v4.Y - 90
+                v11 = v13.Y
+                v14 = v4.Y + v11 + 90
+                return v10 >= v8 and v7 <= v16 and v5 >= v6 and v9 <= v14
+            end
+        end
+    end
+end
+local function _w110(v1, v2)
+    return function(ranchEggESPEnabled)
+        v2[1][3].RanchEggESPEnabled = ranchEggESPEnabled
+        if not ranchEggESPEnabled and v2[1][3].ClearRanchEggESP then
+            v2[1][3].ClearRanchEggESP()
+        end
+    end
+end
+local function _w111(v1, v2)
+    return function()
+        local playerGui2 = v2[1][3]:FindFirstChild("PlayerGui")
+        local v3 = playerGui2
+        if playerGui2 then
+            v3 = playerGui2:FindFirstChild("Upgrade")
+        end
+        local v4 = v3
+        if v3 then
+            v4 = v3:FindFirstChild("CurrentUpgrade")
+        end
+        local v5, v6, gsub2
+        if not v4 or not (v4:IsA("TextLabel") or v4:IsA("TextButton")) then
+            return nil
+        else
+            gsub2 = tostring(v4.Text or ""):lower():gsub(",", ""):gsub("%s+", "")
+            v6 = gsub2:match("([%d%.]+%a*)x") or gsub2:match("x([%d%.]+%a*)")
+            v5 = v6 and v2[2][3].ParseKG(v6) or nil
+            if v5 and v5 >= 1 and v5 < 1e+35 then
+                return v5
+            else
+                return nil
+            end
+        end
+    end
+end
+local function _w112(v1, v2)
+    return function()
+        v2[1][3].EventScanReplica:Destroy()
+    end
+end
+local function _w113(v1, v2)
+    return function()
+        local v3, v4, v5, v6
+        if v2[1][3] then
+            return v2[1][3]
+        elseif os.clock() < v2[3][3] then
+            return nil
+        else
+            v6 = os.clock() + 5
+            v5, v2[3][3], v6 = "GameData", v6, v2[2][3]
+            v6 = v6:FindFirstChild("GameData")
+            v3 = v6 and v6:FindFirstChild("HatchLuck")
+            if not v3 then
+                return nil
+            else
+                v5, v4 = pcall(require, v3)
+                if v5 and type(v4) == "table" and type(v4.GetOdds) == "function" then
+                    v2[1][3] = v4
+                end
+                return v2[1][3]
+            end
+        end
+    end
+end
+local function _w114(v1, v2)
+    return function()
+        local savedData = v2[1][3]:FindFirstChild("SavedData")
+        local v3 = savedData
+        if savedData then
+            v3 = savedData:FindFirstChild("HalloweenCandy")
+        end
+        local v4 = v3
+        if v3 then
+            v4 = v3:IsA("IntValue")
+        end
+        local v5
+        if v4 then
+            v5 = v3.Value
+            v4 = table.pack(tonumber(v5))
+            return table.unpack(v4, 1, v4.n)
+        else
+            return nil
+        end
+    end
+end
+local function _w115(v1, v2)
+    return function(stage)
+        v2[1][3].Stage = stage
+    end
+end
+local function _w116(v1, v2)
+    return function(v3)
+        local v4 = v2[1][3].CandyHome.Position
+        local v5 = v3.X
+        local v6 = v4.X
+        local v7
+        v6, v7, v5 = v4.Z, v5 - v6, v3.Z
+        local v8
+        v8, v6 = v5 - v6, math
+        local v9
+        v9, v5, v6 = v8 * v8, v6.sqrt, v7 * v7
+        v5 = table.pack(v5(v6 + v9))
+        return table.unpack(v5, 1, v5.n)
+    end
+end
+local function _w117(v1, v2)
+    return function()
+        local v3 = {[1] = 3, [3] = v2[1][3].InventoryESPState}
+        v3[2] = v3
+        local clock2, v4
+        if v3[3].NativeModulesLoaded then
+            return true
+        else
+            os.clock()
+            clock2 = os.clock()
+            v3[3].ModuleBusy, v4 = true, clock2 + 5
+            v3[3].NextModuleTry = v4
+            v4 = v1:tm({v2[3], v2[1], v3, v2[2]})
+            task.spawn(v4)
+            return v3[3].NativeModulesLoaded == true
+        end
+    end
+end
+local function _w118(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        v3.CandyStreamScans = v3.CandyStreamScans + 1
+        v3 = workspace:FindFirstChild("HalloweenCandy")
+        local v4 = v3
+        if v3 then
+            v4 = #v3:GetChildren()
+        end
+        if not v4 then
+            v4 = 0
+        end
+        if v4 > 0 then
+            v2[1][3].CandyLog("CANDY_VISIBLE_BUT_INELIGIBLE", "visible=" .. v4 .. " IDs may be missing")
+        elseif v2[1][3].CandyStreamScans % 12 == 1 then
+            v2[1][3].CandyLog("CANDY_WAIT_RESPAWN", "no visible candy; NO blind spawn-point teleport")
+        end
+        v2[1][3].CandySetStatus("🟡 Waiting for spawned event candy")
+    end
+end
+local function _w119(v1, v2)
+    return function()
+        v2[1][3].TryServerHop(true)
+    end
+end
+local function _w120(v1, v2)
+    return function()
+        local v3 = v2[6][3]
+        local v4 = v2[1][3]
+        local v5, v6
+        v3, v5, v6 = v2[5][3], "REZEV8_" .. v3, {}
+        v6.Text = v3
+        local v7 = v2[2][3]
+        v6.Default = tostring(v2[4][3][v7] or "")
+        v6.Finished = false
+        v6.ClearTextOnFocus = false
+        v6.Placeholder = v2[3][3]
+        v6.ShowSavedValue = v2[6][3] ~= "WebhookUrl"
+        local v8
+        v4, v8 = v4.AddInput, v4
+        v4 = table.pack(v4(v8, v5, v6))
+        return table.unpack(v4, 1, v4.n)
+    end
+end
+local function _w121(v1, v2)
+    return function()
+        local v3, v4, v5
+        v3, v5, v4 = v2[1][3].MountedPetDescriptor()
+        local v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17
+        if v3 then
+            return v3
+        else
+            v11 = v2[3][3].Character
+            v17 = v11 and v11:FindFirstChild("HumanoidRootPart")
+            v13 = v17 and v17:FindFirstChild("PetMountJoint")
+            v6 = v13 and v13:IsA("JointInstance") and v13.Part1
+            if v6 then
+                v10, v12 = pcall(v2[2][3].GetAll)
+                if v10 and type(v12) == "table" then
+                    v8, v7, v14 = pairs(v12)
+                    v8, v7, v14 = v1.g(v8, v7, v14)
+                    v9, v15 = v8(v7, v14)
+                    v14 = v9
+                    if v14 ~= nil then
+                        while true do
+                            v16 = type(v15) == "table" and v15.Model
+                            if not (v16 and v6 == v16 and tonumber(v15.OwnerUserId) == v2[3][3].UserId) then
+                                v9, v15 = v8(v7, v14)
+                                v14 = v9
+                                if v14 ~= nil then
+                                    continue
+                                end
+                                return nil
+                            end
+                            break
+                        end
+                        return v15.PetKey
+                    end
+                    return nil
+                end
+            end
+            return nil
+        end
+    end
+end
+local function _w122(v1)
+    return function(v2)
+        local v3, v4, getAttribute, v5, v6, v7, findFirstChild2, v8
+        if not v2 or not v2.Parent then
+            return true
+        else
+            v8 = {}
+            v8[1], v8[2], v8[3] = "Favorited", "IsFavorite", "Favorite"
+            v4, v3, v5 = ipairs(v8)
+            v4, v3, v5 = v1.g(v4, v3, v5)
+            v8, v6 = v4(v3, v5)
+            v5 = v8
+            if v5 ~= nil then
+                while true do
+                    getAttribute = v2:GetAttribute(v6)
+                    if not (getAttribute == true or getAttribute == 1 or getAttribute == "true") then
+                        findFirstChild2 = v2:FindFirstChild(v6)
+                        if not (findFirstChild2 and findFirstChild2:IsA("ValueBase")) then
+                            v8, v6 = v4(v3, v5)
+                            v5 = v8
+                            if v5 ~= nil then
+                                continue
+                            end
+                            return false
+                        end
+                        v7 = findFirstChild2.Value
+                        if not (v7 == true or v7 == 1 or v7 == "true") then
+                            v8, v6 = v4(v3, v5)
+                            v5 = v8
+                            if v5 ~= nil then
+                                continue
+                            end
+                            return false
+                        end
+                        break
+                    end
+                    return true
+                end
+                return true
+            end
+            return false
+        end
+    end
+end
+local function _w123(v1, v2)
+    return function(v3)
+        local v4 = v3
+        if v3 then
+            v4 = v3:IsA("Model")
+        end
+        if v4 then
+            v4 = v3:IsDescendantOf(workspace)
+        end
+        local v5, v6
+        if not v4 then
+            return false, "DOOR_MODEL_MISSING"
+        elseif type(v3:GetAttribute("Id")) ~= "string" then
+            return false, "DOOR_ID_MISSING"
+        else
+            v4 = v3:FindFirstChild("Door")
+            v6 = v4 and v4:FindFirstChild("TrickOrTreatPrompt", true)
+            if not (v6 and v6:IsA("ProximityPrompt") and v6.Enabled) then
+                return false, "DOOR_INTERACTION_NOT_VISIBLE"
+            elseif v6:GetAttribute("DoorPromptAvailable") ~= true then
+                return false, "DOOR_PROMPT_NOT_AVAILABLE"
+            elseif 0 > os.clock() then
+                return false, "DOOR_COOLDOWN"
+            else
+                v5 = v2[2][3](v6)
+                if not v5 then
+                    return false, "DOOR_PROMPT_NO_POSITION"
+                else
+                    return true, "READY", v6, v5
+                end
+            end
+        end
+    end
+end
+local function _w124(v1, v2)
+    return function()
+        local v3 = v2[1][3]:IsA("Model") and v2[1][3]:GetPivot() or v2[1][3].CFrame
+        local v4 = CFrame.new
+        v2[2][3].CFrame = v3 * v4(0, 0, -4)
+    end
+end
+local function _w125(v1, v2)
+    return function(v3)
+        local _, p
+        local basket5 = v2[1][3]:FindFirstChild("Basket")
+        local v4 = v3
+        local v5 = {}
+        if v3 then
+            v4 = v3:GetAttribute("Egg")
+        end
+        if not v4 then
+            v4 = false
+        end
+        local v6 = v3
+        if v3 then
+            v6 = v3:GetAttribute("EggName")
+        end
+        if not v6 then
+            v6 = false
+        end
+        local v7 = v3
+        if v3 then
+            v7 = v3:GetAttribute("Type")
+        end
+        if not v7 then
+            v7 = false
+        end
+        local v8 = v3
+        if v3 then
+            v8 = v3:GetAttribute("Name")
+        end
+        if not v8 then
+            v8 = false
+        end
+        local v9 = basket5
+        if basket5 then
+            v9 = basket5:GetAttribute("EggName")
+        end
+        if not v9 then
+            v9 = false
+        end
+        v5[1], v5[2], v5[3], v5[4], v5[5], v5[6] = v4, v6, v7, v8, v9, v2[2][3].ReadCarriedNameFromCharacter() or false
+        local v10
+        v10, v5 = v5, ipairs
+        v5, v4, v6 = v5(v10)
+        v5, v4, v6 = v1.g(v5, v4, v6)
+        v7, v8 = v5(v4, v6)
+        local v11, v12, v13, v14, v15, v16
+        if v7 ~= nil then
+            while true do
+                if not v2[2][3].IsKnownEggName(v8) then
+                    v7, v8 = v5(v4, v6)
+                    v6 = v7
+                    if v6 ~= nil then
+                        continue
+                    end
+                    v5 = v3 and v2[2][3].CarryCapture[v3]
+                    v4 = v5
+                    if v4 then
+                        v6 = v5.EggName
+                        v4 = v2[2][3].IsKnownEggName(v6)
+                    end
+                    if v4 then
+                        return v5.EggName, "confirmed-pickup"
+                    else
+                        v4 = v2[2][3].RecentPickupHint
+                        v6 = v4 and v5 and v4.Position and v5.Position and os.clock() - v4.At < 4
+                        if v6 then
+                            v7 = v4.Name
+                            v6 = v2[2][3].IsKnownEggName(v7)
+                        end
+                        if v6 then
+                            v6 = (v4.Position - v5.Position).Magnitude <= 26
+                        end
+                        if v6 then
+                            return v4.Name, "automation-target"
+                        else
+                            v6 = v5
+                            v8 = 0
+                            v7 = nil
+                            os.clock()
+                            if v6 and v5.At then
+                                v11, v13, _ = ipairs(v2[2][3].RecentWorldEggRemoved)
+                                v11, v13, _ = v1.g(v11, v13, _)
+                                for _, p in v11, v13, _ do
+                                    v12 = p.Position and p.At
+                                    if v12 then
+                                        v14 = p.Name
+                                        v12 = v2[2][3].IsKnownEggName(v14)
+                                    end
+                                    if v12 then
+                                        v16 = v5.At
+                                        v15 = p.At
+                                        v12 = math.abs(v15 - v16) <= 2.5
+                                    end
+                                    if v12 then
+                                        v12 = (p.Position - v6).Magnitude <= 18
+                                    end
+                                    if v12 then
+                                        v14 = v3.GetAttribute
+                                        v14 = v1.h(v14(v3, "Weight"))
+                                        v12 = tonumber(v1.i(v14))
+                                        v14 = not v12 or not p.Weight
+                                        if not v14 then
+                                            v16 = p.Weight
+                                            v14 = math.abs(v12 - v16) < 0.0001
+                                        end
+                                        if v14 then
+                                            v8, v7 = v8 + 1, p
+                                        end
+                                    end
+                                end
+                            end
+                            if v8 == 1 and v7 then
+                                if v5 then
+                                    v5.EggName = v7.Name
+                                    v5.DipVerified = true
+                                    v13 = v2[2][3]
+                                    _, v13, v11 = v3.Name, tostring, v13.VolcanoDippedCarryUIDs
+                                    v11[v13(_)] = true
+                                    _, p, v11, v12, v13 = "source=unique-world-removal egg=", tostring, v2[2][3].TraceRideDrop, v7.Name, "DIP_REPICK_VERIFIED"
+                                    v11("DIP_REPICK_VERIFIED", "source=unique-world-removal egg=" .. p(v12) .. " uuid=" .. tostring(v3.Name))
+                                end
+                                return v7.Name, "unique-world-removal"
+                            else
+                                if v5 then
+                                    v5.ResolveDetail = "no uniquely matched world removal"
+                                end
+                                return nil, "unresolved-uuid-carry"
+                            end
+                        end
+                    end
+                end
+                break
+            end
+            return v8, "direct"
+        end
+    end
+end
+local function _w126(v1, v2)
+    return function()
+        local g, n, o
+        local v3 = v2[1][3]:FindFirstChild("Remotes") and v2[1][3].Remotes:FindFirstChild("Game") and v2[1][3].Remotes.Game:FindFirstChild("OfflineEarnings")
+        local v4, v5, v6, v7, lower, lower2, v8, v9, v10
+        if v3 then
+            v3:FireServer()
+            task.wait(0.3)
+            v8 = v2[2][3]:FindFirstChildOfClass("PlayerGui") or v2[2][3]:WaitForChild("PlayerGui", 2)
+            if v8 then
+                v4 = v8.GetChildren
+                v4 = v1.h(v4(v8))
+                v6, v4, g = ipairs(v1.i(v4))
+                v6, v4, g = v1.g(v6, v4, g)
+                for g, n in v6, v4, g do
+                    if n:IsA("ScreenGui") then
+                        v7 = n.Name
+                        lower = string.lower(v7)
+                        if string.find(lower, "offline") or string.find(lower, "away") or string.find(lower, "reward") then
+                            n.Enabled = false
+                        end
+                        v9 = n.GetDescendants
+                        v9 = v1.h(v9(n))
+                        v7, v9, v10 = ipairs(v1.i(v9))
+                        v7, v9, v10 = v1.g(v7, v9, v10)
+                        for v11, o in v7, v9, v10 do
+                            if o:IsA("TextLabel") or o:IsA("TextButton") then
+                                v5 = o.Text
+                                lower2 = string.lower(v5)
+                                if string.find(lower2, "while you're away") or string.find(lower2, "your pets made you") then
+                                    v5 = o:FindFirstAncestorOfClass("Frame")
+                                    if v5:IsA("ScreenGui") then
+                                        v5.Enabled = false
+                                    else
+                                        v5.Visible = false
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+local function _w127(v1, v2)
+    return function()
+        local getCharacter = v2[1][3].GetCharacter()
+        local humanoidRootPart, getMyPlot2, v3, v4, baseplate
+        if not getCharacter then
+            return false
+        else
+            humanoidRootPart = getCharacter:FindFirstChild("HumanoidRootPart")
+            if not humanoidRootPart then
+                return false
+            else
+                getMyPlot2 = v2[1][3].GetMyPlot()
+                if not getMyPlot2 then
+                    return false
+                else
+                    baseplate = getMyPlot2:FindFirstChild("Baseplate")
+                    if baseplate and baseplate:IsA("BasePart") then
+                        v3 = baseplate.CFrame
+                        v4 = CFrame.new
+                        humanoidRootPart.CFrame = v2[1][3].UprightCFrame((v3 * v4(0, 3, 0)).Position)
+                        v2[1][3].Stabilize()
+                        return true
+                    else
+                        getMyPlot2:FindFirstChildWhichIsA("BasePart", true)
+                        return false
+                    end
+                end
+            end
+        end
+    end
+end
+local function _w128(v1, v2)
+    return function()
+        v2[1][3]:UnbindFromRenderStep(v2[2][3].GuardKey)
+    end
+end
+local function _w129(v1, v2)
+    return function()
+        if not (not v2[1][3].Alive or v2[1][3].InstantRecoveryPending or not v2[1][3].InstantCameraProxy or v2[1][3].InstantExpectedBasketClear) then
+            v2[1][3].HasCarriedEgg()
+            v2[1][3].InstantEmergencyRanchReturn("manual egg drop")
+            return
+        end
+    end
+end
+local function _w130(v1)
+    return function(v2, v3)
+        local v4, v5, floor3, v6, v7, floor4
+        if typeof(v3) ~= "Vector3" then
+            return tostring(v2)
+        else
+            v7 = tostring(v2)
+            v5 = v3.X / 5
+            floor3 = math.floor(v5 + 0.5)
+            v6 = v3.Y / 5
+            floor4 = math.floor(v6 + 0.5)
+            v4 = v3.Z / 5
+            return v7 .. "|" .. floor3 .. ":" .. floor4 .. ":" .. math.floor(v4 + 0.5)
+        end
+    end
+end
+local function _w131(v1, v2)
+    return function()
+        local v3 = v2[2][3].FPSState.Original.WaterReflectance
+        v2[1][3].WaterReflectance = v3
+    end
+end
+local function _w132(v1, v2)
+    return function(v3, v4)
+        local v5 = v3.CFrame
+        local cFrame = CFrame.new(((v4 - 1) % 3 - 1) * 4, 0, -(math.floor((v4 - 1) / 3) * 4 + 8))
+        local v6, v7
+        cFrame, v7, v6 = v2[2][3], v2[1][3], (v5 * cFrame).Position
+        v7 = v7:GetPlot(cFrame)
+        v5 = v7
+        if v7 then
+            v5 = v7:FindFirstChild("Baseplate")
+        end
+        local clamp, v8, clamp2, v9, v10, v11, v12, v13
+        if not v5 then
+            return v6
+        else
+            cFrame = v5.CFrame:PointToObjectSpace(v6)
+            v9 = v5.Size.X / 2 - 2
+            v13 = v5.Size.Z / 2 - 2
+            clamp = math.clamp(cFrame.X, -v9, v9)
+            v11 = cFrame.Z
+            clamp2 = math.clamp(v11, -v13, v13)
+            v11 = v5.CFrame
+            v8 = Vector3.new
+            v12 = cFrame.Y
+            v8 = table.pack(v8(clamp, v12, clamp2))
+            v11, v10 = v11.PointToWorldSpace, v11
+            v11 = table.pack(v11(v10, table.unpack(v8, 1, v8.n)))
+            return table.unpack(v11, 1, v11.n)
+        end
+    end
+end
+local function _w133(v1, v2)
+    return function()
+        local _, k
+        local v3 = ""
+        local v4 = 1
+        local v5 = {}
+        local v6, v7, v8, v9, v10, v11, v12
+        while true do
+            v10 = string.format
+            v6 = tostring(game.PlaceId)
+            v11 = v3 ~= ""
+            if v11 then
+                k = v2[1][3]
+                v12, k = k, k.UrlEncode
+                v11 = "&cursor=" .. k(v12, v3)
+            end
+            if not v11 then
+                v11 = ""
+            end
+            v10 = v10("https://games.roblox.com/v1/games/%s/servers/Public?sortOrder=Asc&limit=100%s", v6, v11)
+            v8 = v2[1][3]
+            v11 = game
+            v11, k = v11.HttpGet, v11
+            v11 = v1.h(v11(k, v10))
+            v8 = v8:JSONDecode(v1.i(v11))
+            v6, v11, k = ipairs(v8.data or {})
+            v6, v11, k = v1.g(v6, v11, k)
+            for k, _ in v6, v11, k do
+                v7 = _.id
+                if v7 then
+                    v9 = game.JobId
+                    v7 = _.id ~= v9
+                end
+                if v7 then
+                    v7 = tonumber(_.playing)
+                end
+                if v7 then
+                    v7 = tonumber(_.maxPlayers)
+                end
+                if v7 then
+                    v9 = _.maxPlayers
+                    v7 = _.playing < v9
+                end
+                if v7 then
+                    table.insert(v5, _)
+                end
+            end
+            v3 = v8.nextPageCursor or ""
+            if v3 ~= "" then
+                v4 = v4 + 1
+                if v4 <= 4 then
+                    continue
+                end
+                break
+            end
+            break
+        end
+        local v13 = v1:Mp()
+        table.sort(v5, v13)
+        return v5[1]
+    end
+end
+local function _w134(v1, v2)
+    return function(v3, v4)
+        if v3:GetAttribute("Favorited") == true or v3:GetAttribute("IsFavorite") == true or v3:GetAttribute("Favorite") == true then
+            return true
+        else
+            return false
+        end
+    end
+end
+local function _w135(v1, v2)
+    return function()
+        return v2[1][3].Alive and v2[1][3].AutoCandy
+    end
+end
+local function _w136(v1, v2)
+    return function()
+        local playerGui3 = v2[1][3]:FindFirstChild("PlayerGui")
+        local v3 = playerGui3
+        if playerGui3 then
+            v3 = playerGui3:FindFirstChild("BackpackGui")
+        end
+        local v4 = v3
+        if v3 then
+            v4 = v3:FindFirstChild("Backpack")
+        end
+        local v5 = v4
+        if v4 then
+            v5 = v4:FindFirstChild("Hotbar")
+        end
+        local v6, v7, v8
+        if not v5 then
+            return {}
+        else
+            v7 = 1
+            v8 = {}
+            while true do
+                tostring(v7)
+                v6 = v5:FindFirstChild(v1) or v5:FindFirstChild("Slot" .. tostring(v7))
+                if v6 and v6:IsA("GuiObject") then
+                    v8[#v8 + 1] = v6
+                end
+                v7 = v7 + 1
+                if v7 > 10 then
+                    break
+                end
+            end
+            return v8
+        end
+    end
+end
+local function _w137(v1, v2)
+    return function()
+        local fusionSlots, v3, v4, remotes, v5, v6, fusionResult, endsAt, v7
+        if v2[1][3].FarmPaused() then
+            return
+        else
+            remotes = v2[3][3]:FindFirstChild("Remotes")
+            v6 = remotes and remotes:FindFirstChild("Game")
+            v7 = v6 and v6:FindFirstChild("FusionAction")
+            if v7 then
+                if v2[2][3]:GetAttribute("FusionPresentationPending") ~= true then
+                    fusionResult = v2[2][3]:FindFirstChild("FusionResult")
+                    v4 = fusionResult and fusionResult:FindFirstChild("Pet")
+                    v5 = v1:Op({v2[1], v2[2]})
+                    if v4 then
+                        if v5() then
+                            v4:GetAttribute("PetKey")
+                        end
+                    else
+                        fusionSlots = v2[2][3]:FindFirstChild("FusionSlots")
+                        if fusionSlots and fusionSlots:GetAttribute("FusionStatus") == "Waiting" then
+                            endsAt = fusionSlots:GetAttribute("EndsAt")
+                            if workspace:GetServerTimeNow() >= endsAt then
+                                if v5() then
+                                    v7:FireServer("Fuse")
+                                    v3 = 1
+                                    while true do
+                                        if not v2[1][3].TaskShouldStop("FuseClaim") then
+                                            task.wait(0.1)
+                                            v3 = v3 + 1
+                                            if v3 <= 60 then
+                                                continue
+                                            end
+                                            break
+                                        end
+                                        break
+                                    end
+                                end
+                                return
+                            end
+                        end
+                    end
+                    return
+                end
+            end
+        end
+    end
+end
+local function _w138(v1, v2)
+    return function()
+        v2[1][3].EventScanPetReplica:Destroy()
+    end
+end
+local function _w139(v1, v2)
+    return function(v3)
+        return type(v3) == "string" and v2[1][3][v3] ~= nil
+    end
+end
+local function _w140(v1, v2)
+    return function(v3, v4, v5, v6, v7, v8)
+        v6 = {[1] = 3, [3] = v6}
+        v6[2] = v6
+        v7 = {[1] = 3, [3] = v7}
+        v7[2] = v7
+        v8 = {[1] = 3, [3] = v8}
+        v8[2] = v8
+        local v9 = {[1] = 3, [3] = nil}
+        v9[2] = v9
+        local v10 = v1:Io({v2[1], v7, v9, v2[2], v8, v6})
+        local v11 = v2[2][3].addSingle
+        local v12, v13, v14
+        v12 = {}
+        v14 = v6[3]
+        v12[1], v12[2], v12[3] = "Any", "Above", "Below"
+        local v19
+        v19, v12 = v12, v10
+        v11(v3, v4, v5 .. "KGRule", "KG Rule", v14, v19, v12)
+        v11 = v2[2][3].addInput
+        v12 = v1:Jo({v2[2], v2[1], v8, v6})
+        v11 = v11(v3, v4, v5 .. "KGThreshold", "KG Threshold", v7[3], "0", v12)
+        local v20
+        v20, v9[3] = v2[2][3], v11
+        v13, v11, v20 = v2[1][3], v20.setVisible, v9[3]
+        local v21
+        v21, v13 = v13[v6[3]], "Any"
+        v11(v20, v21 ~= "Any")
+    end
+end
+local function _w141(v1, v2)
+    return function(v3)
+        v2[1][3] = v3
+    end
+end
+local function _w142(v1, v2, v3, v4)
+    v1.Nr[v4] = v1.Wq(v2, v3)
+    return v1.Nr[v4]
+end
+local function _w143(v1, v2)
+    return function()
+        local v3 = 0
+        local v4, v5, v6
+        v4, v6, v5 = pairs(v2[1][3].CardCache)
+        v4, v6, v5 = v1.g(v4, v6, v5)
+        local v7, v8
+        v7, v8 = v4(v6, v5)
+        local v9, v10, v11
+        if v7 ~= nil then
+            while true do
+                v11 = not v2[1][3].Enabled
+                if not v11 then
+                    v9 = v2[1][3].LuckRevision
+                    v11 = v2[3][3] ~= v9
+                end
+                if not v11 then
+                    v3, v10 = v3 + 1, 90
+                    if v3 % 90 == 0 then
+                        task.wait()
+                    end
+                    v7, v8 = v4(v6, v5)
+                    v5 = v7
+                    if v5 ~= nil then
+                        continue
+                    end
+                    break
+                end
+                break
+            end
+        end
+    end
+end
+local function _w144(v1, v2)
+    return function()
+        v2[1][3].AppearanceConnection:Disconnect()
+    end
+end
+local function _w145(v1, v2)
+    return function()
+        if v2[1][3] then
+            v2[2][3].ApplyFPSBoost(true)
+        end
+    end
+end
+local function _w146(v1, v2)
+    return function(v3, v4, v5, v6, kind, rank)
+        local v7 = v6
+        if v6 then
+            v7 = v4
+        end
+        local v8, v9
+        if v7 then
+            v9 = v2[1][3](v4, v6)
+            if not v3[v9] then
+                v8 = {Key = v9, Id = v4, Position = v6}
+                v8.Name = v5 and v5.Name or kind
+                v8.Rank = rank or 0
+                v8.Kind = kind
+                v3[v9] = v8
+                v2[2][3].EventGeometry[v9] = v6
+            end
+            return
+        end
+    end
+end
+local function _w147(v1)
+    return function(v2, v3, v4, v5)
+        local v6 = v4
+        if v4 then
+            v6 = v4.EggTools
+        end
+        if v6 then
+            v6 = v4.EggTools[tostring(v3 or "")]
+        end
+        local v7, v8, v9, v10, v11, v12, v13
+        if not v6 then
+            return nil
+        else
+            v11 = v2
+            if v11 ~= nil then
+                v12, v8, v9 = ipairs(v6)
+                v12, v8, v9 = v1.g(v12, v8, v9)
+                v10, v13 = v12(v8, v9)
+                v9 = v10
+                if v9 ~= nil then
+                    while true do
+                        v7 = v13.GetAttribute
+                        v7 = table.pack(v7(v13, "EggInventoryId"))
+                        if tostring(table.unpack(v7, 1, v7.n)) ~= tostring(v11) then
+                            v10, v13 = v12(v8, v9)
+                            v9 = v10
+                            if v9 ~= nil then
+                                continue
+                            end
+                            v12, v8, v9 = ipairs(v6)
+                            v12, v8, v9 = v1.g(v12, v8, v9)
+                            v10, v13 = v12(v8, v9)
+                            v9 = v10
+                            if v9 ~= nil then
+                                while true do
+                                    if v5[v13] then
+                                        v10, v13 = v12(v8, v9)
+                                        v9 = v10
+                                        if v9 ~= nil then
+                                            continue
+                                        end
+                                        return v6[1]
+                                    end
+                                    break
+                                end
+                                v5[v13] = true
+                                return v13
+                            end
+                            return v6[1]
+                        end
+                        break
+                    end
+                    v5[v13] = true
+                    return v13
+                end
+            end
+        end
+    end
+end
+local function _w148(v1, v2)
+    return function(v3)
+        v2[1][3] = v3
+        local v4, v5
+        if v3 then
+            v4, v5, v2[6][3] = v2[5][3], false, false
+            v4.AutoUpgradeHatchLuckMax = false
+            v5 = v2[2][3].LuckMax
+            v2[4][3].SetUIValue(v5, false)
+        end
+        v5 = v2[4][3]
+        local v6
+        v5, v4, v6 = v2[3][3], v5.setLabel, v3
+        if v6 then
+            v6 = "🟡 Checking upgrade cost"
+        end
+        if not v6 then
+            v6 = "🔴 Auto Upgrade Hatch Luck Off"
+        end
+        v4(v5, v6)
+    end
+end
+local function _w149(v1)
+    return function(v2, v3)
+        local v4 = {}
+        local v5 = {
+            Secret = "#FF4040",
+            Ethereal = "#AAFFFF",
+            Divine = "#FFFF00",
+            Mythic = "#FF00FF",
+            Legendary = "#FF5500",
+            Epic = "#AA55FF",
+            Rare = "#00AAFF",
+            Uncommon = "#00FF78",
+            Common = "#EBEBEB",
+        }
+        v4.Rainbow = "#FF80E5"
+        v4.Diamond = "#8FDBFF"
+        v4.Gold = "#FFD86B"
+        v4.Shocked = "#F4E76E"
+        v4.Volted = "#98D8FF"
+        v4.Rage = "#FF795F"
+        v4.Void = "#AE8CFF"
+        v4.Magma = "#FF854D"
+        v4.Eternal = "#FFCF84"
+        v4.Normal = "#C7CBD4"
+        local v6, v7, v8, v9, v10
+        v9, v6, v7, v4, v8, v10 = true, 1, "Mutation", v2.find, v4, v2
+        v4 = v4(v10, "Mutation", 1, true) or v2:find("Trait", 1, true)
+        v10 = v2:find("Rarit", 1, true)
+        v7, v6, v9 = ipairs(type(v3) == "table" and v3 or {})
+        v7, v6, v9 = v1.g(v7, v6, v9)
+        local v11, v12
+        v11, v12 = v7(v6, v9)
+        local v13 = {}
+        local v14 = {}
+        local v15 = {}
+        local v16, v17, v18, v19, v20, v21, v22
+        if v11 ~= nil then
+            while true do
+                v17 = nil
+                if type(v12) == "table" then
+                    v17 = v12[2]
+                    v20 = v12[1]
+                else
+                    v20 = v12
+                end
+                if (type(v20) == "string" or type(v20) == "number") and tostring(v20) ~= "" then
+                    v21, v20 = nil, tostring(v20)
+                    if v4 then
+                        v22 = v8[v20] or "#FFFFFF"
+                        v21 = string.format("<font color=\"%s\"><b>%s</b></font><font color=\"#AEB4C4\"> • %s</font>", v22, v20, tostring(v17 or "x1"))
+                    elseif v10 then
+                        v22 = v5[v20] or "#FFFFFF"
+                        v21 = string.format("<font color=\"%s\"><b>%s</b></font>", v22, v20)
+                    else
+                        v16 = type(v17) == "string" and v17:match("^(.-) •") or "Unknown"
+                        v18 = type(v17) == "string" and v17:match(" • (.*)$")
+                        v19 = v5[v16] or "#EEEEEE"
+                        v21 = string.format("<b><font color=\"#F5F6F8\">%s</font></b><font color=\"%s\"> • %s</font>%s", v20, v19, v16, v18 and "<font color=\"#AEB4C4\"> • " .. v18 .. "</font>" or "")
+                    end
+                    v14[v20] = v21
+                    v13[v21] = v20
+                    v15[#v15 + 1] = v21
+                end
+                v11, v12 = v7(v6, v9)
+                v9 = v11
+                if v9 == nil then
+                    break
+                end
+            end
+        end
+        return v14, v13, v15
+    end
+end
+local function _w150(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        local v4 = v2[2][3]
+        local v5 = math.clamp
+        local v6 = tonumber(v4.UIScale) or 100
+        local pack = table.pack(v5(v6, 70, 130))
+        v3:SetDPIScale(table.unpack(pack, 1, pack.n))
+    end
+end
+local function _w151(v1, v2)
+    return function()
+        local h, f
+        local v3 = v2[1][3]
+        local v4 = {}
+        local v5
+        v5, v3 = v3, v3.FindFirstChild
+        v4[1], v4[2] = v3(v5, "Backpack"), v2[6][3].Character
+        local v6, v7, v8
+        v8, v6, v7 = ipairs(v4)
+        v8, v6, v7 = v1.g(v8, v6, v7)
+        v4, v3 = v8(v6, v7)
+        local v9 = {}
+        local v10, v11, v12, v13, v14, v15, v16, v17, v18
+        if v4 ~= nil then
+            while true do
+                if v3 then
+                    v15 = v3.GetChildren
+                    v15 = v1.h(v15(v3))
+                    v5, v15, f = ipairs(v1.i(v15))
+                    v5, v15, f = v1.g(v5, v15, f)
+                    for f, h in v5, v15, f do
+                        v14 = h:IsA("Tool")
+                        if v14 then
+                            v13 = v2[5][3]
+                            v10, v16, v11, v13, v14 = v2[4][3], v2[5][3], v2[2][3], h, v13.EggMatchesFilter
+                            v17 = v16.PlaceKGRule
+                            v12, v16, v18 = v2[3][3], v16.PlaceKGThreshold, v2[7][3]
+                            v14 = v14(v13, v10, v11, v17, v16, v18, v12)
+                        end
+                        if v14 then
+                            table.insert(v9, h)
+                        end
+                    end
+                end
+                v4, v3 = v8(v6, v7)
+                v7 = v4
+                if v7 == nil then
+                    break
+                end
+            end
+        end
+        return v9
+    end
+end
+local function _w152(v1, v2)
+    return function(autoDropEgg)
+        local v3
+        if v2[1][3].PickupMode == "Instant" then
+            v2[1][3].AutoDropEgg = false
+            v2[3][3].AutoDropEgg = false
+            v3 = v2[1][3]
+            v3.DropSafezoneActive = false
+            v3.ReturnPreviouslyDropped = false
+        else
+            v2[1][3].AutoDropEgg = autoDropEgg
+            if not autoDropEgg then
+                v3 = v2[1][3]
+                v3.ReturnPreviouslyDropped = v3.DropSafezoneActive
+                v3.DropSafezoneActive = false
+            end
+        end
+        v2[2][3]()
+    end
+end
+local function _w153(v1, v2)
+    return function(v3)
+        v3 = {[1] = 3, [3] = v3}
+        v3[2] = v3
+        local v4 = {[1] = 3, [3] = nil}
+        v4[2] = v4
+        local v5 = {[1] = 3, [3] = nil}
+        v5[2] = v5
+        local v6
+        if v3[3].IsA(v3[3], "BasePart") then
+            v5[3], v4[3] = 1, "LocalTransparencyModifier"
+        else
+            v3[3].IsA(v3[3], "Decal")
+            v6 = v3[3]
+            v3[3].IsA(v6, "Texture")
+            v3[3].IsA(v3[3], "ParticleEmitter")
+            v6 = v3[3]
+            v3[3].IsA(v6, "Trail")
+            v6 = v3[3]
+            v3[3].IsA(v6, "Beam")
+            v3[3].IsA(v3[3], "Smoke")
+            v3[3].IsA(v3[3], "Fire")
+            v6 = v3[3]
+            v3[3].IsA(v6, "Sparkles")
+            v3[3].IsA(v3[3], "BillboardGui")
+            v6 = v3[3]
+            v3[3].IsA(v6, "SurfaceGui")
+        end
+        local v7
+        if v4[3] then
+            v6 = v2[1][3]
+            v7 = v6.HiddenPetVisuals
+            v6 = v6.HiddenPetVisuals[v3[3]] or {}
+            v7[v3[3]] = v6
+            if v2[1][3].HiddenPetVisuals[v3[3]][v4[3]] == nil then
+                v6 = v3[3][v4[3]]
+                v2[1][3].HiddenPetVisuals[v3[3]][v4[3]] = v6
+            end
+            pcall(v1:gm({v3, v5, v4}))
+        end
+    end
+end
+local function _w154(v1, v2)
+    return function()
+        local v3 = {[1] = 3, [3] = v2[1][3].InventoryESPState}
+        v3[2] = v3
+        local v4, v5, v6, v7
+        if not (not v2[2][3].Alive or not v3[3].Enabled) then
+            v6, v5 = v2[1][3].getInventoryESPGrid()
+            v6 = {[1] = 3, [3] = v6}
+            v6[2] = v6
+            v5 = {[1] = 3, [3] = v5}
+            v5[2] = v5
+            if v6[3] and v3[3].Grid ~= v6[3] then
+                v2[1][3].bindInventoryESPGrid()
+            end
+            v3[3].RefreshBusy = true
+            v3[3].RefreshAgain = false
+            v4 = {[1] = 3, [3] = v3[3].RefreshGeneration}
+            v4[2] = v4
+            v7 = {[1] = 3, [3] = os.clock()}
+            v7[2] = v7
+            v2[1][3].refreshInventoryESPVisibleCards()
+            task.spawn(v1:Ll({v3, v2[2], v7, v4, v5, v6, v2[1]}))
+            return
+        end
+    end
+end
+local function _w155(v1, v2)
+    return function()
+        local backpack2 = v2[1][3]:FindFirstChild("Backpack")
+        local v3 = {}
+        if backpack2 then
+            v3[#v3 + 1] = backpack2
+        end
+        local v4 = v2[1][3].Character
+        if v4 then
+            v3[#v3 + 1] = v4
+        end
+        return v3
+    end
+end
+local function _w156(v1, v2)
+    return function(v3)
+        v3 = {[1] = 3, [3] = v3}
+        v3[2] = v3
+        local v4
+        if not v2[1][3].FPSState.Enabled then
+            return
+        elseif v3[3].ClassName == "ParticleEmitter" then
+            v4 = v3[3]
+            v2[1][3].SaveInstanceProperty(v4, "Enabled")
+            pcall(v1:lm({v3}))
+            return
+        elseif v3[3].IsA(v3[3], "PostEffect") then
+            v4 = v3[3]
+            v2[1][3].SaveInstanceProperty(v4, "Enabled")
+            pcall(v1:nm({v3}))
+            return
+        else
+            v3[3].IsA(v3[3], "Light")
+            return
+        end
+    end
+end
+local function _w157(v1)
+    return function(v2)
+        local v3, isFavorite
+        if v2:GetAttribute("IsFavorite") == true or v2:GetAttribute("Favorite") == true or v2:GetAttribute("Favorited") == true then
+            return true
+        else
+            v2:FindFirstChild("Favorite")
+            isFavorite = v2:FindFirstChild("IsFavorite")
+            v3 = isFavorite
+            if v3 then
+                isFavorite:IsA("BoolValue")
+                v3 = isFavorite.Value == true
+            end
+            if v3 then
+                return true
+            else
+                return false
+            end
+        end
+    end
+end
+local function _w158(v1)
+    return function(v2)
+        return ({Candy_01 = 1, Candy_02 = 2, Candy_03 = 3, Candy_04 = 4})[v2] or 0
+    end
+end
+local function _w159(v1, v2)
+    return function()
+        return v2[1][3] and #v2[2][3](true) > 0
+    end
+end
+local function _w160(v1, v2)
+    return function(v3)
+        local v4 = v2[1][3].Character
+        local v5 = v4
+        if v4 then
+            v5 = v4:FindFirstChild("HumanoidRootPart")
+        end
+        local v6 = v5
+        if v5 then
+            v6 = v5.CFrame.LookVector
+        end
+        if not v6 then
+            v6 = Vector3.new(0, 0, -1)
+        end
+        local v7 = v6.X
+        local v8 = v6.Z
+        local vector3 = Vector3.new(v7, 0, v8)
+        if vector3.Magnitude < 0.001 then
+            vector3 = Vector3.new(0, 0, -1)
+        end
+        v8 = vector3.Unit
+        v7 = CFrame.lookAt
+        v7 = table.pack(v7(v3, v3 + v8))
+        return table.unpack(v7, 1, v7.n)
+    end
+end
+local function _w161(v1, v2)
+    return function(v3, v4)
+        local v5 = game
+        local v6
+        v5, v6 = v5.GetService, v5
+        v5 = {[1] = 3, [3] = v5(v6, "Lighting")}
+        v5[2] = v5
+        v6 = v5[3].FindFirstChild(v5[3], "REZEV8SimpleShader")
+        local v7, v8, v9, v10
+        if not v3 then
+            pcall(v1:Mi({v5, v2[1]}))
+            v2[1][3].ShaderOriginal = nil
+            if v6 then
+                v6:Destroy()
+            end
+        else
+            v8 = {}
+            v7 = {}
+            v9 = Color3.fromRGB
+            v9 = table.pack(v9(255, 250, 239))
+            v8[1], v8[2], v8[3], v8[4], v8[5] = 14, 2, 0.05, 0.12, 0.06
+            v1.j(v8, 6, table.unpack(v9, 1, v9.n))
+            v7.Daytime = v8
+            v8 = {}
+            v9 = Color3.fromRGB
+            v9 = v1.h(v9(255, 206, 169))
+            v8[1], v8[2], v8[3], v8[4], v8[5] = 18.2, 1.9, 0.09, 0.22, 0.06
+            v1.j(v8, 6, table.unpack(v9, 1, v9.n))
+            v7.Sunset = v8
+            v8 = {}
+            v9 = Color3.fromRGB
+            v9 = v1.h(v9(177, 194, 255))
+            v8[1], v8[2], v8[3], v8[4], v8[5] = 0, 1.2, -0.08, 0.22, -0.1
+            v1.j(v8, 6, table.unpack(v9, 1, v9.n))
+            v7.Night = v8
+            v8 = {}
+            v9 = Color3.fromRGB
+            v9 = v1.h(v9(214, 226, 245))
+            v8[1], v8[2], v8[3], v8[4], v8[5] = 11.5, 1.5, -0.03, 0.06, -0.13
+            v1.j(v8, 6, table.unpack(v9, 1, v9.n))
+            v7.Cloudy = v8
+            v7 = v7[v4] or v7.Daytime
+            v10 = v7[1]
+            v5[3].ClockTime = v10
+            v10 = v7[2]
+            v5[3].Brightness = v10
+            v6.Brightness = v7[3]
+            v6.Contrast = v7[4]
+            v6.Saturation = v7[5]
+            v6.TintColor = v7[6]
+        end
+    end
+end
+local function _w162(v1, v2)
+    return function()
+        local v3 = v2[1][3].SaveConfig
+        local pack = table.pack(v3())
+        return table.unpack(pack, 1, pack.n)
+    end
+end
+local function _w163(v1, v2)
+    return function()
+        v2[1][3].FogEnd = 1000000000
+    end
+end
+local function _w164(v1, v2)
+    return function(v3)
+        local v4
+        if v3.Name == "UIGridFrame" then
+            v4 = v1:mo({v2[1], v2[3], v2[2]})
+            task.defer(v4)
+        end
+    end
+end
+local function _w165(v1, v2)
+    return function()
+        v2[1][3].LandingConnection:Disconnect()
+    end
+end
+local function _w166(v1)
+    return function(v2)
+        local v3 = math.max
+        local v4 = math.floor
+        local pack = table.pack(v4(v2))
+        v3 = v3(0, table.unpack(pack, 1, pack.n))
+        local v5 = string.format
+        local floor5 = math.floor(v3 / 3600)
+        local v6 = math.floor(v3 / 60) % 60
+        local pack2 = table.pack(v5("%02d:%02d:%02d", floor5, v6, v3 % 60))
+        return table.unpack(pack2, 1, pack2.n)
+    end
+end
+local function _w167(v1, v2)
+    return function(v3)
+        v2[1][3].SetRenderingDisabled(v3)
+    end
+end
+local function _w168(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        local v4
+        v4, v3 = v3, v3.InvokeServer
+        v3 = table.pack(v3(v4))
+        return table.unpack(v3, 1, v3.n)
+    end
+end
+local function _w169(v1, v2)
+    return function()
+        local v3 = v2[2][3].RenderedEggs
+        local v4
+        if v2[1][3].Parent == v3 then
+            v3 = v2[2][3]
+            v3, v4 = v2[1][3], v3.SnapshotWorldEgg
+            v4(v3)
+        end
+    end
+end
+local function _w170(v1, v2)
+    return function()
+        local v3 = v2[2][3].FogEnd
+        v2[1][3].FPSState.Original.FogEnd = v3
+    end
+end
+local function _w171(v1, v2)
+    return function()
+        local v3, v4, v5, v6
+        while true do
+            v6 = v2[1][3].Parent
+            if v6 then
+                v5 = #v2[5][3]
+                v6 = v2[6][3] <= v5
+            end
+            if v6 then
+                v5 = v2[6][3]
+                v5, v3 = v2[5][3], v5 + 23
+                v6 = math.min(v3, #v5)
+                v5 = v6
+                v3 = v2[6][3]
+                if v3 <= v5 then
+                    while true do
+                        v4 = v2[5][3][v3]
+                        if v4 and v4.Parent then
+                            pcall(v2[4][3], v4)
+                        end
+                        v2[5][3][v3] = false
+                        v3 = v3 + 1
+                        if v3 > v5 then
+                            break
+                        end
+                    end
+                end
+                v2[6][3], v5 = v6 + 1, task
+                v5.wait()
+                continue
+            end
+            break
+        end
+        v3 = #v2[5][3]
+        if v2[6][3] > v3 then
+            v2[5][3], v2[6][3] = {}, 1
+        end
+        v2[2][3], v3 = false, v2[5][3]
+        v3, v6 = 0, #v3
+        if v6 > 0 then
+            v2[2][3], v3 = true, task
+            v3, v6 = v2[3][3], v3.defer
+            v6(v3)
+        end
+    end
+end
+local function _w172(v1, v2)
+    return function(v3, v4)
+        local getMyPlot3 = v2[1][3].GetMyPlot()
+        local v5 = getMyPlot3
+        if getMyPlot3 then
+            v5 = getMyPlot3:FindFirstChild("Baseplate")
+        end
+        local v6 = v5
+        if v5 then
+            v6 = v5:IsA("BasePart")
+        end
+        local v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, pointToObjectSpace2, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34
+        if not v6 then
+            return nil, "Own ranch footprint unavailable"
+        else
+            pointToObjectSpace2 = v5.CFrame:PointToObjectSpace(v3)
+            v6 = v5.CFrame:PointToObjectSpace(v4)
+            v13 = {[1] = 3, [3] = v5.Size.X * 0.5 + 8}
+            v13[2] = v13
+            v21 = {[1] = 3, [3] = v5.Size.Z * 0.5 + 8}
+            v21[2] = v21
+            v22 = v1:nj({v13, v21})
+            if v22(pointToObjectSpace2) or v22(v6) then
+                return nil, "Saved drop route starts/ends inside own ranch safety boundary"
+            else
+                v11 = v1:oj({v13, v21})
+                if not v11(pointToObjectSpace2, v6) then
+                    return {[1] = v4}, nil
+                else
+                    v33 = v13[3] + 40
+                    v15 = {}
+                    v7 = {}
+                    v8 = v21[3] + 40
+                    v15.X = pointToObjectSpace2.X
+                    v15.Z = pointToObjectSpace2.Z
+                    v7[1], v7[2], v7[3], v7[4], v7[5], v7[6] = v15, {
+                        X = v6.X,
+                        Z = v6.Z,
+                    }, {
+                        X = -v33,
+                        Z = -v8,
+                    }, {
+                        X = -v33,
+                        Z = v8,
+                    }, {
+                        X = v33,
+                        Z = -v8,
+                    }, {
+                        X = v33,
+                        Z = v8,
+                    }
+                    v25 = {}
+                    v19 = v7
+                    v25[1] = 0
+                    v7 = v25
+                    v25 = {}
+                    v15 = {}
+                    v9 = 1
+                    v17 = #v19
+                    if 1 <= v17 then
+                        while true do
+                            v30 = nil
+                            v31 = #v19
+                            v29 = math.huge
+                            v28 = 1
+                            if 1 <= v31 then
+                                while true do
+                                    if not v15[v28] and (v7[v28] or math.huge) < v29 then
+                                        v30 = v28
+                                        v29 = v7[v28]
+                                    end
+                                    v28 = v28 + 1
+                                    if v28 > v31 then
+                                        break
+                                    end
+                                end
+                            end
+                            if v30 then
+                                if v30 ~= 2 then
+                                    v15[v30] = true
+                                    v31 = #v19
+                                    v28 = 1
+                                    if 1 <= v31 then
+                                        while true do
+                                            v12 = v28 ~= v30 and not v15[v28]
+                                            if v12 then
+                                                v34 = v19[v28]
+                                                v12 = not v11(v19[v30], v34)
+                                            end
+                                            if v12 then
+                                                v23 = v19[v28].X
+                                                v12 = v19[v30].X - v23
+                                                v34 = v19[v28].Z
+                                                v24 = v19[v30].Z - v34
+                                                v23 = v29 + math.sqrt(v12 * v12 + v24 * v24)
+                                                if v23 < (v7[v28] or math.huge) then
+                                                    v7[v28] = v23
+                                                    v25[v28] = v30
+                                                end
+                                            end
+                                            v28 = v28 + 1
+                                            if v28 > v31 then
+                                                break
+                                            end
+                                        end
+                                    end
+                                    v9 = v9 + 1
+                                    if v9 <= v17 then
+                                        continue
+                                    end
+                                    break
+                                end
+                                break
+                            end
+                            break
+                        end
+                    end
+                    if not v7[2] then
+                        return nil, "Cannot find route around own ranch"
+                    else
+                        v17 = 2
+                        v9 = {}
+                        while true do
+                            if v17 and v17 ~= 1 then
+                                table.insert(v9, 1, v17)
+                                v17 = v25[v17]
+                                continue
+                            end
+                            break
+                        end
+                        if v17 ~= 1 then
+                            return nil, "Incomplete protected drop route"
+                        else
+                            v10 = {}
+                            v30, v29, v28 = ipairs(v9)
+                            v30, v29, v28 = v1.g(v30, v29, v28)
+                            v31, v16 = v30(v29, v28)
+                            v28 = v31
+                            if v28 ~= nil then
+                                while true do
+                                    if v16 == 2 then
+                                        v10[#v10 + 1] = v4
+                                    else
+                                        v12 = v19[v16]
+                                        v20 = (v6.Y - pointToObjectSpace2.Y) * (v31 / #v9)
+                                        v26, v20, v23 = 1, #v10, pointToObjectSpace2.Y + v20
+                                        v34, v20, v18 = v20 + 1, v5.CFrame, Vector3
+                                        v27, v18, v14, v32 = v12.Z, v12.X, v18.new, v23
+                                        v14 = table.pack(v14(v18, v32, v27))
+                                        v10[v34] = v20:PointToWorldSpace(table.unpack(v14, 1, v14.n))
+                                    end
+                                    v31, v16 = v30(v29, v28)
+                                    v28 = v31
+                                    if v28 == nil then
+                                        break
+                                    end
+                                end
+                            end
+                            return v10, nil
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+local function _w173(v1, v2)
+    return function()
+        v2[1][3].Enabled = false
+    end
+end
+local function _w174(v1, v2)
+    return function()
+        local v3 = v2[2][3].WaterWaveSpeed
+        v2[1][3].FPSState.Original.WaterWaveSpeed = v3
+    end
+end
+local function _w175(v1, v2)
+    return function()
+        local v3, v4, v5
+        v3, v4, v5 = ipairs(v2[1][3].RarityNames)
+        v3, v4, v5 = v1.g(v3, v4, v5)
+        local v6, v7
+        v6, v7 = v3(v4, v5)
+        local v8 = {}
+        local v9, v10
+        if v6 ~= nil then
+            while true do
+                v10 = {}
+                v9 = table.insert
+                v10[1], v10[2] = v7, nil
+                v9(v8, v10)
+                v6, v7 = v3(v4, v5)
+                v5 = v6
+                if v5 == nil then
+                    break
+                end
+            end
+        end
+        return v8
+    end
+end
+local function _w176(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        v3.ScrollRefreshQueued = false
+        v3 = v3.Enabled
+        local v4, v5
+        if v3 then
+            v4 = v2[1][3]
+            v4, v5 = v2[3][3], v4.Grid
+            v3 = v5 == v4
+        end
+        if v3 then
+            v2[2][3].refreshInventoryESPVisibleCards()
+        end
+    end
+end
+local function _w177(v1)
+    return function(v2)
+        local v3
+        if not v2 then
+            return nil
+        else
+            v3 = v2.GetAttribute
+            v3 = v1.h(v3(v2, "Weight"))
+            tonumber(v1.i(v3))
+            v3 = v2:FindFirstChild("Weight")
+            if v3 and v3:IsA("NumberValue") then
+                return tonumber(v3.Value)
+            else
+                return nil
+            end
+        end
+    end
+end
+local function _w178(v1)
+    return function(v2)
+        local v3 = tostring(v2:GetAttribute("PetName") or v2.Name or "")
+        return v3:match("^(.-) %[") or v3
+    end
+end
+local function _w179(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        local v4
+        v3, v4 = v2[2][3], v3.ShownEggKG
+        v4 = table.pack(v4(v3))
+        return table.unpack(v4, 1, v4.n)
+    end
+end
+local function _w180(v1, v2)
+    return function()
+        local v3, clock3, v4, v5
+        if not (v2[1][3].AutoCandy or v2[1][3].EventAutoRitual) then
+            return false
+        elseif type(v2[1][3].CandyHUDState) ~= "function" then
+            return false
+        else
+            clock3 = os.clock()
+            if clock3 - v2[1][3].EventCarryReadAt >= 0.16 then
+                v4 = v2[1][3]
+                v5, v3 = pcall(v4.CandyHUDState)
+                v4.EventCarryReadValue = v5 and type(v3) == "table" and v3.carry == true
+                v2[1][3].EventCarryReadAt = clock3
+            end
+            return v2[1][3].EventCarryReadValue == true
+        end
+    end
+end
+local function _w181(v1, v2)
+    return function()
+        v2[1][3]:Set3dRenderingEnabled(not v2[2][3])
+    end
+end
+local function _w182(v1, v2)
+    return function()
+        local v3 = v2[2][3]
+        local v4 = v2[1][3]
+        local v5 = v2[3][3]
+        local v6
+        v6, v5 = v5, v5.JSONEncode
+        v5 = table.pack(v5(v6, v3))
+        writefile(v4, table.unpack(v5, 1, v5.n))
+    end
+end
+local function _w183(v1, v2)
+    return function()
+        local getMyPlot4 = v2[1][3].GetMyPlot()
+        local v3 = v2[2][3].Character and v2[2][3].Character:FindFirstChild("HumanoidRootPart")
+        local v4, pointToObjectSpace3, v5, basePart
+        if not getMyPlot4 or not v3 then
+            return false
+        else
+            getMyPlot4:FindFirstChild("Baseplate")
+            basePart = getMyPlot4:FindFirstChildWhichIsA("BasePart", true)
+            if not basePart then
+                return false
+            else
+                pointToObjectSpace3 = basePart.CFrame:PointToObjectSpace(v3.Position)
+                v5 = math.abs(pointToObjectSpace3.X) <= basePart.Size.X * 0.5 + 2
+                if v5 then
+                    v4 = pointToObjectSpace3.Z
+                    v5 = math.abs(v4) <= basePart.Size.Z * 0.5 + 2
+                end
+                if v5 then
+                    v5 = math.abs(pointToObjectSpace3.Y) <= 90
+                end
+                return v5
+            end
+        end
+    end
+end
+local function _w184(v1, v2)
+    return function(v3)
+        local o
+        local v4 = 0
+        local v5 = v2[1][3].InventoryEggContainers
+        v5 = v1.h(v5())
+        local v6, v7
+        v7, v5, v6 = ipairs(v1.i(v5))
+        v7, v5, v6 = v1.g(v7, v5, v6)
+        local v8, v9
+        v9, v8 = v7(v5, v6)
+        local v10, v11, v12
+        if v9 ~= nil then
+            local v13 = {}
+            while true do
+                v11 = v8.GetChildren
+                v11 = v1.h(v11(v8))
+                v10, v11, v12 = ipairs(v1.i(v11))
+                v10, v11, v12 = v1.g(v10, v11, v12)
+                for v14, o in v10, v11, v12 do
+                    if not v13[o] and v2[1][3].InventoryEggType(o) == v3 then
+                        v13[o] = true
+                        v4 = v4 + 1
+                    end
+                end
+                v9, v8 = v7(v5, v6)
+                v6 = v9
+                if v6 == nil then
+                    break
+                end
+            end
+        end
+        return v4
+    end
+end
+local function _w185(v1, v2)
+    return function(v3)
+        local v4, v5, v6
+        v4, v6, v5 = ipairs(v2[1][3])
+        v4, v6, v5 = v1.g(v4, v6, v5)
+        local v7, v8
+        v7, v8 = v4(v6, v5)
+        local v9, v10, v11, v12, v13, v14, v15
+        if v7 ~= nil then
+            local __cont2 = false
+            while true do
+                if not v8 then
+                    v7, v8 = v4(v6, v5)
+                    v5 = v7
+                    if v5 ~= nil then
+                        continue
+                    end
+                    return nil
+                end
+                v13, v14, v11 = ipairs(v3)
+                v13, v14, v11 = v1.g(v13, v14, v11)
+                v10, v9 = v13(v14, v11)
+                v11 = v10
+                if v11 == nil then
+                    v7, v8 = v4(v6, v5)
+                    v5 = v7
+                    if v5 ~= nil then
+                        continue
+                    end
+                    return nil
+                end
+                while true do
+                    v12 = v8:GetAttribute(v9)
+                    if v12 == nil then
+                        v15 = v8:FindFirstChild(v9)
+                        if v15 and v15:IsA("ValueBase") then
+                            v12 = v15.Value
+                        end
+                    end
+                    if not (v12 ~= nil and v2[2][3].webhookVariantName(v12) ~= "Normal") then
+                        v10, v9 = v13(v14, v11)
+                        v11 = v10
+                        if v11 == nil then
+                            v7, v8 = v4(v6, v5)
+                            v5 = v7
+                            if v5 ~= nil then
+                                __cont2 = true
+                                break
+                            end
+                            return nil
+                        else
+                            continue
+                        end
+                    end
+                    break
+                end
+                if __cont2 then
+                    __cont2 = false
+                    continue
+                end
+                break
+            end
+            v15 = table.pack(tostring(v12))
+            return table.unpack(v15, 1, v15.n)
+        end
+        return nil
+    end
+end
+local function _w186(v1)
+    return function(v2)
+        local v3, v4, v5
+        v5, v3, v4 = pairs(v2)
+        v5, v3, v4 = v1.g(v5, v3, v4)
+        local v6, v7
+        v6, v7 = v5(v3, v4)
+        local v8 = {}
+        if v6 ~= nil then
+            while true do
+                v8[#v8 + 1] = v7
+                v6, v7 = v5(v3, v4)
+                v4 = v6
+                if v4 == nil then
+                    break
+                end
+            end
+        end
+        return v8
+    end
+end
+local function _w187(v1)
+    return function(v2)
+        local v3
+        if not v2 or not v2.Parent then
+            return false
+        else
+            v3 = v2
+            while v3 do
+                if not (v3:IsA("GuiObject") and not v3.Visible) then
+                    v3:IsA("ScreenGui")
+                    v3 = v3.Parent
+                    continue
+                end
+                return false
+            end
+            return true
+        end
+    end
+end
+local function _w188(v1, v2)
+    return function(inventoryESPEnabled)
+        v2[1][3].InventoryESPEnabled = inventoryESPEnabled
+        if type(v2[1][3].SetInventoryESPEnabled) == "function" then
+            v2[1][3].SetInventoryESPEnabled(inventoryESPEnabled)
+        end
+    end
+end
+local function _w189(v1, v2)
+    return function()
+        local j
+        local v3, v4, v5, v6, v7, v8
+        if not (not v2[1][3].Alive or not v2[3][3].Enabled) then
+            v8, v7, v3 = pairs(v2[3][3].CardConnections or {})
+            v8, v7, v3 = v1.g(v8, v7, v3)
+            for j in v8, v7, v3 do
+                if j.Parent and v2[2][3].getInventoryESPCardToolName(j) == v2[4][3].Name then
+                    v2[3][3].CardCache[j] = nil
+                    v4 = v2[2][3]
+                    v5, v4, v6 = v2[3][3], j, v4.processInventoryESPCard
+                    v6(v4, v5.ToolLookup or {}, {})
+                end
+            end
+            return
+        end
+    end
+end
+local function _w190(v1, v2)
+    return function(v3)
+        local toolName, cleanInventoryESPText, v4
+        if not (not v3 or not v3.Parent) then
+            toolName = v3:FindFirstChild("ToolName", true)
+            if toolName and toolName:IsA("TextLabel") then
+                v4 = toolName.Text
+                cleanInventoryESPText = v2[1][3].cleanInventoryESPText(v4)
+                if cleanInventoryESPText ~= "" then
+                    return cleanInventoryESPText
+                end
+            end
+        end
+        return nil
+    end
+end
+local function _w191(v1, v2)
+    return function()
+        local headlessRitual2 = workspace:FindFirstChild("HeadlessRitual")
+        local v3 = headlessRitual2
+        if headlessRitual2 then
+            v3 = headlessRitual2:FindFirstChild("Altar")
+        end
+        local v4 = v3
+        if v3 then
+            v4 = v2[1][3](v3)
+        end
+        if not v4 then
+            v4 = Vector3.new(-46377.51, 40352.1, -19678.11)
+        end
+        return v4
+    end
+end
+local function _w192(v1)
+    return function(v2)
+        return v2
+    end
+end
+local function _w193(v1, v2)
+    return function(placePattern)
+        v2[1][3].PlacePattern = placePattern
+    end
+end
+local function _w194(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        v3.CFrame = v2[2][3]
+        v3.AssemblyLinearVelocity = Vector3.zero
+        v3.AssemblyAngularVelocity = Vector3.zero
+    end
+end
+local function _w195(v1, v2)
+    return function()
+        local v3, v4, v5
+        while true do
+            if v2[1][3].Alive then
+                v2[1][3].TaskRelease("Pickup")
+                v2[1][3].TaskInvalidate("Pickup")
+                v3 = v2[1][3]
+                v3.StopFarmHover()
+                v3 = v3.InstantRecoveryPending
+                v2[1][3].InstantEmergencyRanchReturn("Auto Pick-Up stopped")
+                v2[1][3].SafeInstantPOVExit("Auto Pickup idle OFF")
+                v5 = v2[1][3]
+                v5.NoMatchesSince = nil
+                v4, v5, v3 = "🔴 Auto Pick-Up Off", v5.setLabel, v2[5][3]
+                v5(v3, "🔴 Auto Pick-Up Off")
+                v5 = v2[1][3]
+                v5.FarmBusy = false
+                v5.FarmFails = 0
+                task.wait(0.2)
+                continue
+            end
+            break
+        end
+    end
+end
+local function _w196(v1, v2)
+    return function(v3)
+        v2[1][3] = v3
+    end
+end
+local function _w197(v1, v2)
+    return function(v3, v4)
+        local getCharacter2 = v2[1][3].GetCharacter()
+        local v5 = getCharacter2
+        if getCharacter2 then
+            v5 = getCharacter2:FindFirstChild("HumanoidRootPart")
+        end
+        local v6 = v5
+        if v5 then
+            v6 = typeof(v3) == "CFrame"
+        end
+        local clock4
+        if not v6 then
+            return false, "no root or target"
+        elseif (v5.Position - v3.Position).Magnitude > 12 then
+            return false, "not at saved position"
+        else
+            v2[1][3].StartFarmHover(v5, v3, "Saved Drop arrival verification")
+            clock4 = os.clock()
+            if v2[1][3].Alive and v2[2][3] and os.clock() - clock4 < (v4 and 0.22 or 0.75) then
+                v2[1][3].HasCarriedEgg()
+                return false, "egg disappeared after TP, BEFORE BasketDrop"
+            end
+            if not v2[1][3].Alive or not v2[2][3] then
+                return false, "pickup stopped"
+            else
+                return v2[1][3].HasCarriedEgg(), "carry stable at saved position"
+            end
+        end
+    end
+end
+local function _w198(v1, v2)
+    return function(v3)
+        local v4 = tostring(v3.PetName or ""):match("^(.-) %[") or tostring(v3.PetName or "")
+        local v5 = "Speed"
+        local v6 = v2[1][3][v4]
+        local v7 = {}
+        v7[1], v7[2], v7[3], v7[4], v7[5], v7[6] = "RideSpeed", "RidingSpeed", "MountSpeed", "MovementSpeed", "WalkSpeed", "Speed"
+        local v8 = {[1] = 3, [3] = v7}
+        v8[2] = v8
+        v7 = v1:Ho({v8})
+        local v9, v10, v11, v12, v13
+        if type(v6) == "table" then
+            v12, v9, v10 = ipairs(v8[3])
+            v12, v9, v10 = v1.g(v12, v9, v10)
+            v11, v13 = v12(v9, v10)
+            v10 = v11
+            if v10 ~= nil then
+                while true do
+                    v5 = tonumber(v6[v13])
+                    if not (v5 and v5 > 0 and v5 < 100000) then
+                        v11, v13 = v12(v9, v10)
+                        v10 = v11
+                        if v10 ~= nil then
+                            continue
+                        end
+                        type(v6.Ride)
+                        v12 = tonumber(v6.Ride.Speed) or tonumber(v6.Ride.MovementSpeed)
+                        if v12 and v12 > 0 and v12 < 100000 then
+                            return v12
+                        end
+                        return v7(v3.Tool) or v7(v3.Model)
+                    end
+                    break
+                end
+                return v5
+            end
+        end
+        return v7(v3.Tool) or v7(v3.Model)
+    end
+end
+local function _w199(v1, v2)
+    return function()
+        v2[1][3]:SetText(tostring(nil))
+    end
+end
+local function _w200(v1, v2)
+    return function()
+        local v3 = v2[2][3].FPSState.Original.WaterTransparency
+        v2[1][3].WaterTransparency = v3
+    end
+end
+local function _w201(v1, v2)
+    return function(v3)
+        local clock5 = os.clock()
+        local v4
+        while true do
+            v4 = v2[1][3].ReadCarriedEggTimer()
+            if not v4 then
+                if not (not v2[1][3].Alive or not v2[2][3] or v2[1][3].HasCarriedEgg) then
+                    task.wait(0.06)
+                    if os.clock() - clock5 < (v3 or 1.5) then
+                        continue
+                    end
+                    break
+                end
+                return nil
+            end
+            return v4
+        end
+        v4 = v2[1][3].ReadCarriedEggTimer
+        v4 = table.pack(v4())
+        return table.unpack(v4, 1, v4.n)
+    end
+end
+local function _w202(v1)
+    return function(v2)
+        local v3 = v2
+        local v4 = string.lower
+        if not v3 then
+            v3 = ""
+        end
+        local v5 = v1.h(tostring(v3))
+        v4 = v4(v1.i(v5))
+        local v6
+        v4, v5, v3, v6 = v4.gsub, v4, "grizlly", "grizzly"
+        return v4(v5, "grizlly", "grizzly")
+    end
+end
+local function _w203(v1, v2)
+    return function(v3, target, reason)
+        v3 = {[1] = 3, [3] = v3}
+        v3[2] = v3
+        local v4, v5, v6, v7, v8, v9, v10, v11, v12, v13
+        if not v3[3] or not v3[3].Parent or not v2[1][3].Alive or not v2[3][3] then
+            return false
+        else
+            if typeof(target) ~= "CFrame" then
+                return false
+            end
+            v5 = v2[1][3].FarmHover
+            if v5 and v5.Root == v3[3] and v5.Active then
+                v5.Target = target
+                v5.Reason = reason
+            else
+                v2[1][3].StopFarmHover()
+                v11 = {
+                    [1] = 3,
+                    [3] = {Root = v3[3], Target = target, Reason = reason, Active = true, Connections = {}},
+                }
+                v11[2] = v11
+                v9 = v2[1][3]
+                v9.FarmHover = v11[3]
+                v9 = {[1] = 3, [3] = v9}
+                v9[2] = v9
+                v9[3], v13 = v1:vj({v2[1], v2[3], v11, v3}), pcall
+                v13, v6 = v13(v1:wj({v2[2], v9}))
+                if v13 and v6 then
+                    table.insert(v11[3].Connections, v6)
+                end
+                v8 = table.insert
+                v7 = v11[3].Connections
+                v4 = v9[3]
+                v12 = v2[2][3].Heartbeat
+                v12, v10 = v12.Connect, v12
+                v12 = table.pack(v12(v10, v4))
+                v8(v7, table.unpack(v12, 1, v12.n))
+                v9[3]()
+            end
+            return true
+        end
+    end
+end
+local function _w204(v1, v2)
+    return function()
+        local v3, v4
+        if v2[1][3].FPSState.Enabled then
+            v4 = pcall
+            pcall(v1:Sl({v2[2]}))
+            v4(v1:Wl({v2[2]}))
+            v4(v1:Yl({v2[2]}))
+            v4(v1:_m())
+            v4(v1:bm())
+            v4 = workspace
+            v4, v3 = v4.FindFirstChildOfClass, v4
+            v4 = {[1] = 3, [3] = v4(v3, "Terrain")}
+            v4[2] = v4
+            if v4[3] then
+                v3 = pcall
+                pcall(v1:am({v4}))
+                v3(v1:Tl({v4}))
+                v3(v1:Vl({v4}))
+                v3(v1:Xl({v4}))
+                if sethiddenproperty then
+                    pcall(v1:Ul({v4}))
+                end
+            end
+        end
+    end
+end
+local function _w205(v1, v2)
+    return function()
+        local shopGuy = workspace:FindFirstChild("ShopGuy")
+        local v3 = shopGuy
+        if shopGuy then
+            v3 = shopGuy:FindFirstChild("Halloween")
+        end
+        local v4 = v3
+        if v3 then
+            v4 = v2[1][3](v3)
+        end
+        local v5, v6
+        if not v4 then
+            v5 = v2[2][3]
+            v6, v5 = v5, v5.GetTagged
+            v6 = v5(v6, "HalloweenShopPrompt")[1]
+            v4 = v6 and v2[1][3](v6)
+        end
+        return v4
+    end
+end
+local function _w206(v1, v2)
+    return function()
+        local n, f
+        local v3 = v2[1][3]
+        local v4
+        v3, v4 = v3.FindFirstChildOfClass, v3
+        v3 = {[1] = 3, [3] = v3(v4, "PlayerGui")}
+        v3[2] = v3
+        local v5, v6, v7, v8, v9, v10, v11, v12
+        if not v3[3] then
+            return {carry = false, spoil = false, full = false, gui = false}
+        else
+            v4 = false
+            n = v3[3]
+            v7 = false
+            v10 = v1:Hn({v3})
+            v12 = v3[3].GetDescendants
+            v12 = v1.h(v12(n))
+            v8, v12, n = ipairs(v1.i(v12))
+            v8, v12, n = v1.g(v8, v12, n)
+            for n, f in v8, v12, n do
+                if f:IsA("TextLabel") or f:IsA("TextButton") or f:IsA("TextBox") then
+                    v9 = string.lower
+                    v6 = f.Text or ""
+                    v11 = table.pack(tostring(v6))
+                    v9 = v9(table.unpack(v11, 1, v11.n))
+                    if (string.find(v9, "candy will spoil", 1, true) or string.find(v9, "hands full", 1, true)) and v10(f) then
+                        string.find(v9, "candy will spoil", 1, true)
+                        v4 = true
+                        string.find(v9, "hands full", 1, true)
+                        v7 = true
+                    end
+                end
+            end
+            v12 = {}
+            n = v4 or v7
+            v12.carry = n
+            v12.spoil = v4
+            v12.full = v7
+            v12.gui = true
+            v8 = v12
+            n = v7 and "HANDS_FULL" or "NO_HANDS_FULL"
+            v12 = n .. "/" .. (v4 and "SPOIL_HUD" or "NO_SPOIL_HUD")
+            if v12 ~= v2[2][3].CandyLastHUD then
+                n = v2[2][3]
+                n.CandyLastHUD = v12
+                n, f, v5 = n.CandyLog, v12, "CANDY_HUD"
+                n("CANDY_HUD", f)
+            end
+            return v8
+        end
+    end
+end
+local function _w207(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        local v4
+        v4, v3 = v3, v3.Clone
+        v3 = table.pack(v3(v4))
+        return table.unpack(v3, 1, v3.n)
+    end
+end
+local function _w208(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        local v4 = {}
+        v4.EggKey = tostring(v2[2][3])
+        v3:FireServer(v4)
+    end
+end
+local function _w209(v1, v2)
+    return function()
+        v2[1][3](v2[3][3](true), v1:Eq({v2[2], v2[4]}))
+    end
+end
+local function _w210(v1, v2)
+    return function()
+        local candyPad2, v3, basket6, v4, v5, v6, v7, v8
+        if not v2[1][3].EventManualDropRequested or v2[1][3].CandyBusy or v2[1][3].FarmBusy or v2[3][3]() then
+            return false
+        else
+            basket6 = v2[2][3]:FindFirstChild("Basket")
+            if basket6 and #basket6:GetChildren() > 0 then
+                return false
+            else
+                v7 = v2[4][3]()
+                if not v7 then
+                    return false
+                else
+                    candyPad2 = v2[1][3].CandyPad()
+                    v8 = candyPad2
+                    if v8 then
+                        v5 = candyPad2.Position.X
+                        v4 = candyPad2.Size.Y
+                        v3 = candyPad2.Position.Y + v4 * 0.5
+                        v3, v6 = candyPad2.Position, v3 + 6
+                        v3 = v3.Z
+                        v8 = Vector3.new(v5, v6, v3)
+                    end
+                    if not v8 then
+                        v8 = v2[1][3].CandyHome.Position
+                    end
+                    v7.CFrame = v2[1][3].UprightCFrame(v8)
+                    v6 = v2[1][3]
+                    v6.Stabilize()
+                    v6, v5 = false, v6
+                    v5.EventManualDropRequested = false
+                    v6, v5, v3 = "EVENT_TP_DROP_OFF", v5.CandyLog, "Manual button request completed"
+                    v5("EVENT_TP_DROP_OFF", "Manual button request completed")
+                    return true
+                end
+            end
+        end
+    end
+end
+local function _w211(v1, v2)
+    return function()
+        local v3, v4, v5, v6
+        if v2[1][3].Alive and v2[1][3].AutoReconnect then
+            v3 = game
+            v6, v3 = v3, v3.GetService
+            v4, v3, v5 = v3(v6, "TeleportService").Teleport, game, "TeleportService"
+            v3 = v3:GetService("TeleportService")
+            v5 = v2[2][3]
+            v4 = not pcall(v4, v3, game.PlaceId, v5)
+            if v4 then
+                v2[1][3].ReconnectAttempted = false
+            end
+        end
+    end
+end
+local function _w212(v1, v2)
+    return function(v3, v4)
+        v3 = {[1] = 3, [3] = v3}
+        v3[2] = v3
+        v4 = {[1] = 3, [3] = v4}
+        v4[2] = v4
+        local v5, v6
+        if not (v2[1][3] or #v3[3] == 0) then
+            v2[1][3], v5, v6 = true, v1:Cq({v3, v2[6], v2[5], v2[4], v2[2], v4, v2[3]}), pcall
+            v6(v5)
+            v6 = os.clock() + 6
+            v6, v2[3][3] = false, v6
+            v2[1][3] = false
+            return
+        end
+    end
+end
+local function _w213(v1, v2)
+    return function(autoAntiAFK)
+        v2[1][3].AutoAntiAFK = autoAntiAFK
+    end
+end
+local function _w214(v1, v2)
+    return function()
+        local v3 = v2[2][3].WaterTransparency
+        v2[1][3].FPSState.Original.WaterTransparency = v3
+    end
+end
+local function _w215(v1, v2)
+    return function()
+        v2[1][3]:TeleportToPlaceInstance(game.PlaceId, game.JobId, v2[2][3])
+    end
+end
+local function _w216(v1, v2)
+    return function()
+        while true do
+            if v2[1][3].Alive then
+                task.wait(0.3)
+                continue
+            end
+            break
+        end
+    end
+end
+local function _w217(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        local v4
+        v3, v4 = v3.FUSE_PET_LIST, v3.normalizeSelection
+        v4 = v1.h(v4(v3))
+        local v5
+        v5, v4, v3 = ipairs(v1.i(v4))
+        v5, v4, v3 = v1.g(v5, v4, v3)
+        local v6, v7
+        v7, v6 = v5(v4, v3)
+        local v8 = {}
+        if v7 ~= nil then
+            while true do
+                v8[v6] = true
+                v7, v6 = v5(v4, v3)
+                v3 = v7
+                if v3 == nil then
+                    break
+                end
+            end
+        end
+        v5 = {}
+        v3 = v2[1][3].petCategoryOptions
+        v3 = v1.h(v3())
+        v4, v3, v7 = ipairs(v1.i(v3))
+        v4, v3, v7 = v1.g(v4, v3, v7)
+        local v9
+        v6, v9 = v4(v3, v7)
+        if v6 ~= nil then
+            while true do
+                if v8[v9[1]] then
+                    v5[#v5 + 1] = v9
+                end
+                v6, v9 = v4(v3, v7)
+                v7 = v6
+                if v7 == nil then
+                    break
+                end
+            end
+        end
+        return v5
+    end
+end
+local function _w218(v1)
+    return function(v2, v3)
+        local v4 = v3[3]
+        if v2[3] ~= v4 then
+            return v2[3] > v3[3]
+        else
+            return v2[1] < v3[1]
+        end
+    end
+end
+local function _w219(v1, v2)
+    return function()
+        local v3 = 1
+        local v4, v5, v6, v7, v8, v9, v10
+        while true do
+            if v2[1][3].Alive then
+                v5 = v2[1][3].GetMyPlot()
+                v10 = v5 and v5:FindFirstChild("Baseplate")
+                v4 = v2[3][3].Character
+                v6 = v4 and v4:FindFirstChild("HumanoidRootPart")
+                if v10 and v6 and v6.Parent then
+                    v7 = v10.CFrame:PointToObjectSpace(v6.Position)
+                    v8 = math.abs(v7.X) <= v10.Size.X * 0.5
+                    if v8 then
+                        v9 = v7.Z
+                        v8 = math.abs(v9) <= v10.Size.Z * 0.5
+                    end
+                    if v8 then
+                        v9 = v7.Y
+                        v8 = math.abs(v9) <= 25
+                    end
+                    if v8 and v2[1][3].IsAtInstantRanchCenter() then
+                        v2[2][3] = true
+                    else
+                        v7 = v2[1][3].TeleportToMyPlot()
+                        v8, v2[2][3] = task, v7
+                        v7, v8 = v8.wait, 0.12
+                        v7(0.12)
+                        v3 = v3 + 1
+                        if v3 <= 12 then
+                            continue
+                        end
+                    end
+                else
+                    v2[1][3].TeleportToMyPlot()
+                    v7 = v2[2][3]
+                    v8, v2[2][3] = task, v7
+                    v7, v8 = v8.wait, 0.12
+                    v7(0.12)
+                    v3 = v3 + 1
+                    if v3 <= 12 then
+                        continue
+                    end
+                end
+                break
+            end
+            break
+        end
+        task.wait(0.1)
+        v3 = v2[1][3].IsAtInstantRanchCenter()
+        v2[2][3] = v3
+        local v11, v12
+        if not v2[2][3] then
+            v3 = v2[1][3].GetMyPlot()
+            v12 = {[1] = 3, [3] = v3 and v3:FindFirstChild("Baseplate")}
+            v12[2] = v12
+            v11 = v2[3][3].Character
+            v5 = {[1] = 3, [3] = v11 and v11:FindFirstChild("HumanoidRootPart")}
+            v5[2] = v5
+            if v12[3] and v5[3] and v5[3].Parent then
+                pcall(v1:rj({v5, v12, v2[1]}))
+                task.wait(0.1)
+                v10 = v2[1][3].IsAtInstantRanchCenter()
+                v2[2][3] = v10
+            end
+        end
+        v2[1][3].InstantRecoveryPending = false
+        if v2[2][3] then
+            v2[1][3].StopInstantCameraProxy(true)
+            v12 = v2[1][3]
+            v12, v11, v3 = v2[4][3], "🟢 Instant stopped • returned to ranch", v12.setLabel
+            v3(v12, "🟢 Instant stopped • returned to ranch")
+        end
+    end
+end
+local function _w220(v1, v2)
+    return function(v3)
+        local v4 = v2[1][3].WebhookPetAttribute
+        v4 = v4(v3, {[1] = "PetName"}) or type(v3) == "table" or v3 or "Unknown Pet"
+        v4 = tostring(v4)
+        return v4:match("^(.-) %[") or v4
+    end
+end
+local function _w221(v1, v2)
+    return function(v3)
+        local v4, v5, withIconLabel
+        if not v3 then
+            return ""
+        else
+            withIconLabel = v3:FindFirstChild("WithIconLabel", true)
+            if withIconLabel and withIconLabel:IsA("TextLabel") then
+                v4 = v2[1][3].cleanInventoryESPText
+                v5 = withIconLabel.Text
+                v4 = table.pack(v4(v5))
+                return table.unpack(v4, 1, v4.n)
+            else
+                return ""
+            end
+        end
+    end
+end
+local function _w222(v1, v2)
+    return function()
+        v2[1][3]:Destroy()
+    end
+end
+local function _w223(v1, v2)
+    return function(pickupPriority)
+        v2[1][3].PickupPriority = pickupPriority
+    end
+end
+local function _w224(v1, v2)
+    return function()
+        local gameServices, v3
+        if not v2[1][3].NativeAgingLoaded then
+            gameServices = v2[2][3]:FindFirstChild("GameServices")
+            v3 = gameServices and gameServices:FindFirstChild("PetAging")
+            if v3 then
+                v2[1][3].NativeAgingLoaded = require(v3)
+            end
+        end
+        return v2[1][3].NativeAgingLoaded
+    end
+end
+local function _w225(v1, v2)
+    return function(v3, v4, v5, v6)
+        local k, _
+        local v7, v8, v9, v10, v11, v12
+        if not v2[1][3].RenderedEggs or not v4 then
+            return nil
+        else
+            v11 = 65
+            v9 = nil
+            v10 = v6 or v4.Position
+            v12 = v2[1][3].RenderedEggs
+            k, v12 = v12, v12.GetChildren
+            v12 = v1.h(v12(k))
+            v7, v12, k = ipairs(v1.i(v12))
+            v7, v12, k = v1.g(v7, v12, k)
+            for k, _ in v7, v12, k do
+                if _.Name == v3 and not (v5 and v5[_]) then
+                    v8 = (v2[1][3].GetEggPart(_).Position - v10).Magnitude
+                    if v8 < v11 then
+                        v9 = _
+                        v11 = v8
+                    end
+                end
+            end
+            return v9
+        end
+    end
+end
+local function _w226(v1, v2)
+    return function(eventCandyPriority)
+        v2[1][3].EventCandyPriority = eventCandyPriority
+    end
+end
+local function _w227(v1, v2)
+    return function()
+        if v2[1][3] then
+            task.wait(0.2)
+            v2[2][3].ToggleHideEggs(true)
+        end
+    end
+end
+local function _w228(v1, v2)
+    return function(v3, v4)
+        local v5, v6, v7, v8
+        if not v4 then
+            return false, "OBJECT_MISSING"
+        else
+            v4:GetAttribute("Id")
+            v4:GetAttribute("DoorId")
+            v4:GetAttribute("PumpkinId")
+            v6 = {[1] = 3, [3] = v4:GetAttribute("SpawnId")}
+            v6[2] = v6
+            if type(v6[3]) ~= "string" and type(v6[3]) ~= "number" then
+                return false, "NO_REPLICATED_ID_OR_KNOWN_PROMPT"
+            else
+                v7 = v2[1][3]
+                v5, v7 = v7, v7.FindFirstChild
+                v7 = {[1] = 3, [3] = v7(v5, v3)}
+                v7[2] = v7
+                if not v7[3] then
+                    return false, "REMOTE_MISSING"
+                else
+                    v5, v8 = pcall(v1:ol({v7, v6}))
+                    return v5, v5 and "REMOTE_SENT_UNVERIFIED" or tostring(v8)
+                end
+            end
+        end
+    end
+end
+local function _w229(v1, v2)
+    return function(v3)
+        if not (not v2[1][3].InstantCameraProxy or v2[1][3].InstantRecoveryPending) then
+            v2[1][3].TraceRideDrop("INSTANT_POV_RECOVERY_REQUIRED", tostring(v3 or "unknown"))
+            v2[1][3].InstantEmergencyRanchReturn(v3 or "non-ranch cleanup")
+            return
+        end
+    end
+end
+local function _w230(v1, v2)
+    return function()
+        local v3 = v2[1][3].GetMyPlot
+        local pack = table.pack(v3())
+        return table.unpack(pack, 1, pack.n)
+    end
+end
+local function _w231(v1, v2)
+    return function()
+        if v2[1][3].StopInstantCameraProxy then
+            v2[1][3].StopInstantCameraProxy()
+        end
+    end
+end
+local function _w232(v1, v2)
+    return function(v3)
+        local v4 = v3
+        if v3 then
+            v4 = v3.Parent
+        end
+        if v4 then
+            v4 = v2[1][3].AutoCandy
+        end
+        if v4 then
+            v4 = v2[1][3].Alive
+        end
+        local v5, getCharacter3, v6, v7, v8, candyBalance3, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, candyPosition, v23, v24
+        if not v4 then
+            return false
+        else
+            getCharacter3 = v2[1][3].GetCharacter()
+            v4 = getCharacter3 and getCharacter3:FindFirstChild("HumanoidRootPart")
+            if not v4 or not v2[1][3].IsFastRideMounted() then
+                return false
+            else
+                candyPosition = v2[1][3].CandyPosition(v3)
+                if not candyPosition then
+                    v14 = v2[1][3]
+                    v24, v14, v12 = v3.Name, "CANDY_NO_POSITION", v14.CandyLog
+                    v12("CANDY_NO_POSITION", v24)
+                    return false
+                else
+                    tonumber(v2[1][3].EffectiveMountedSpeed and v2[1][3].EffectiveMountedSpeed())
+                    v12 = tonumber(getCharacter3:FindFirstChildOfClass("Humanoid") and getCharacter3:FindFirstChildOfClass("Humanoid").WalkSpeed)
+                    if not v12 or v12 <= 0 then
+                        v2[1][3].CandyLog("CANDY_SPEED_UNKNOWN", tostring(v12))
+                        return false
+                    else
+                        v6 = v2[1][3]
+                        v15 = candyPosition.X
+                        v8 = v6.CandyHome.Position.X
+                        v19, v14, v15 = v6.CandyHome, v15 - v8, candyPosition.Z
+                        v24 = v15 - v19.Position.Z
+                        v15 = math.sqrt(v14 * v14 + v24 * v24)
+                        v8 = math.max(0, 0.75 * v15 / v12 - 2.5)
+                        v19 = v2[1][3]
+                        candyBalance3 = v19.CandyBalance()
+                        v6, v19 = "🟡 Picking up candy", v19.CandySetStatus
+                        v19("🟡 Picking up candy")
+                        v6 = Vector3.new
+                        v4.CFrame = v2[1][3].UprightCFrame(candyPosition + v6(0, 2, 0))
+                        v2[1][3].Stabilize()
+                        task.wait(0.2)
+                        if not (v2[1][3].Alive and v2[1][3].AutoCandy and not v2[1][3].FarmBusy and v4.Parent) then
+                            return false
+                        else
+                            v19 = os.clock()
+                            v6 = v2[1][3].CandyGetIDs(v3)
+                            v10 = v2[2][3]
+                            v20, v10 = v10, v10.FindFirstChild
+                            v10 = {[1] = 3, [3] = v10(v20, "CollectCandy")}
+                            v10[2] = v10
+                            v17 = v10[3]
+                            v20 = false
+                            if v17 then
+                                v17 = #v6 > 0
+                            end
+                            if v17 then
+                                v17 = 1
+                                local __brk1 = false
+                                local __cont2 = false
+                                while true do
+                                    if v2[1][3].Alive and v2[1][3].AutoCandy and not v2[1][3].FarmBusy and v4.Parent then
+                                        v22 = {[1] = 3, [3] = v6[1]}
+                                        v22[2] = v22
+                                        v16, v11 = pcall(v1:Go({v10, v22}))
+                                        v21 = v2[1][3]
+                                        v21, v7, v13, v23 = "CANDY_FAST_COLLECT", v22[3], v21.CandyLog, tostring
+                                        v23 = v23(v7)
+                                        v13("CANDY_FAST_COLLECT", v23 .. " #" .. v17 .. " ok=" .. tostring(v16) .. " detail=" .. tostring(v16 and "requested" or v11))
+                                        v13 = os.clock() + 0.16
+                                        while true do
+                                            if v2[1][3].CandyHUDState().carry or not v3.Parent then
+                                                break
+                                            else
+                                                task.wait(0.045)
+                                                if os.clock() < v13 then
+                                                    continue
+                                                end
+                                            end
+                                            if not v20 then
+                                                v17 = v17 + 1
+                                                if v17 <= 5 then
+                                                    __cont2 = true
+                                                    break
+                                                end
+                                            end
+                                            __brk1 = true
+                                            break
+                                        end
+                                        if __brk1 then
+                                            break
+                                        end
+                                        if __cont2 then
+                                            __cont2 = false
+                                            continue
+                                        end
+                                        v20 = true
+                                        break
+                                    end
+                                    break
+                                end
+                            end
+                            if not v20 and v3.Parent then
+                                v17 = v3:FindFirstChildWhichIsA("ProximityPrompt", true)
+                                if v17 and type(fireproximityprompt) == "function" then
+                                    v5 = pcall(fireproximityprompt, v17)
+                                    v2[1][3].CandyLog("CANDY_PROMPT_FALLBACK", "ok=" .. tostring(v5))
+                                    v9 = v2[1][3].CandyWaitGone
+                                    v9 = v9(v3, 0.23) or v2[1][3].CandyHUDState().carry
+                                    v20 = v9
+                                end
+                            end
+                            if v2[1][3].CandyHUDState().carry then
+                                v20 = true
+                            end
+                            if not v20 then
+                                v5 = v2[1][3]
+                                v9, v17, v5, v22 = v3.Name, v5.CandyLog, "CANDY_UNCONFIRMED", " disappeared=false"
+                                v17("CANDY_UNCONFIRMED", v9 .. " disappeared=false")
+                                return false
+                            else
+                                v17 = v2[1][3].CandyHUDState().carry
+                                v5 = os.clock() + 1.65
+                                while true do
+                                    if v2[1][3].Alive and v2[1][3].AutoCandy and not v2[1][3].FarmBusy and not v17 and os.clock() < v5 then
+                                        task.wait(0.07)
+                                        v17 = v2[1][3].CandyHUDState().carry
+                                        continue
+                                    end
+                                    break
+                                end
+                                if not v17 then
+                                    v22 = v2[1][3]
+                                    v16, v22, v9, v11 = v3.Name, "CANDY_PICKUP_UNCONFIRMED", v22.CandyLog, " model gone but no carried-candy HUD"
+                                    v9("CANDY_PICKUP_UNCONFIRMED", v16 .. " model gone but no carried-candy HUD")
+                                    return false
+                                else
+                                    v9 = v2[1][3]
+                                    v9.CandyCarryPending = true
+                                    v9.CandyPendingBalance = candyBalance3
+                                    v16, v9, v13, v22, v7 = v3.Name, v9.CandyLog, " XZ=", "CANDY_CARRY_CONFIRMED", string
+                                    v7, v23, v18 = "%.1f", v7.format, v15
+                                    v23 = v23("%.1f", v18)
+                                    v9("CANDY_CARRY_CONFIRMED", v16 .. " XZ=" .. v23 .. " speed=" .. string.format("%.2f", v12) .. " wait=" .. string.format("%.2f", v8))
+                                    v22 = v2[1][3]
+                                    v13, v16, v9, v22, v11 = candyBalance3, v3.Name, v22.CandyReturnHome, v4, v19
+                                    v9 = table.pack(v9(v22, v16, v11, v13))
+                                    return table.unpack(v9, 1, v9.n)
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+local function _w233(v1, v2)
+    return function()
+        local playerGui4 = v2[1][3]:FindFirstChild("PlayerGui")
+        local v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17
+        if playerGui4 then
+            v4 = playerGui4.GetDescendants
+            v4 = v1.h(v4(playerGui4))
+            v10, v4, v6 = ipairs(v1.i(v4))
+            v10, v4, v6 = v1.g(v10, v4, v6)
+            v15, v12 = v10(v4, v6)
+            v6 = v15
+            if v6 ~= nil then
+                local __brk3 = false
+                while true do
+                    if not (v12:IsA("GuiButton") and v2[3][3](v12)) then
+                        v15, v12 = v10(v4, v6)
+                        v6 = v15
+                        if v6 ~= nil then
+                            continue
+                        end
+                        return
+                    end
+                    v13 = v2[2][3](v12)
+                    if not (v13 == "sell" or v13 == "yes" or v13 == "confirm") then
+                        v15, v12 = v10(v4, v6)
+                        v6 = v15
+                        if v6 ~= nil then
+                            continue
+                        end
+                        return
+                    end
+                    v14 = 1
+                    v7 = v12.Parent
+                    while not (not v7 or v7 == playerGui4) do
+                        v9 = false
+                        v8 = v7.GetDescendants
+                        v8 = v1.h(v8(v7))
+                        v17, v8, v3 = ipairs(v1.i(v8))
+                        v17, v8, v3 = v1.g(v17, v8, v3)
+                        v11, v5 = v17(v8, v3)
+                        v3 = v11
+                        do
+                            local shouldExit = false
+                            if v3 ~= nil then
+                                while true do
+                                    if v5:IsA("GuiButton") and v5 ~= v12 and v2[3][3](v5) then
+                                        v16 = v2[2][3](v5)
+                                        if v16 == "keep" or v16 == "no" or v16 == "cancel" then
+                                            break
+                                        else
+                                            v11, v5 = v17(v8, v3)
+                                            v3 = v11
+                                            if v3 ~= nil then
+                                                continue
+                                            end
+                                        end
+                                    else
+                                        v11, v5 = v17(v8, v3)
+                                        v3 = v11
+                                        if v3 ~= nil then
+                                            continue
+                                        end
+                                    end
+                                    shouldExit = true
+                                    break
+                                end
+                                if shouldExit then
+                                    break
+                                end
+                                v9 = true
+                            end
+                        end
+                        if not v9 then
+                            v7 = v7.Parent
+                            v14 = v14 + 1
+                            if v14 > 4 or false or false then
+                                break
+                            else
+                                continue
+                            end
+                        end
+                        __brk3 = true
+                        break
+                    end
+                    if __brk3 then
+                        break
+                    end
+                    v15, v12 = v10(v4, v6)
+                    v6 = v15
+                    if v6 ~= nil then
+                        continue
+                    end
+                    return
+                end
+                v2[4][3](v12)
+                return
+            end
+            return
+        end
+    end
+end
+local function _w235(v1, v2)
+    return function()
+        local _, n
+        local v3, v4, max, v5, v6, v7, v8, v9, v10, v11, v12, v13, floor6
+        if v2[1][3] then
+            v6 = v2[1][3]
+            v8 = v6.REZETitleIcon
+            v6 = {[1] = 3, [3] = v6.REZETitleLabel}
+            v6[2] = v6
+            if v8 and v8:IsA("ImageLabel") then
+                v8.Image = "rbxthumb://type=Asset&id=88022909172536&w=420&h=420"
+                v8.ImageTransparency = 0
+                v8.BackgroundTransparency = 1
+                v8.AnchorPoint = Vector2.new(0, 0.5)
+                v8.Size = UDim2.fromOffset(30, 30)
+                v8.ScaleType = Enum.ScaleType.Fit
+                v8.Visible = true
+            end
+            v9 = v6[3]
+            if v9 then
+                v3 = v6[3]
+                v9 = v6[3].IsA(v3, "TextLabel")
+            end
+            if v9 then
+                v12 = v6[3]
+                v3 = v6[3].GetChildren
+                v3 = v1.h(v3(v12))
+                v9, v3, v12 = ipairs(v1.i(v3))
+                v9, v3, v12 = v1.g(v9, v3, v12)
+                for _, n in v9, v3, v12 do
+                    if n:IsA("UIGradient") then
+                        n:Destroy()
+                    end
+                end
+                v6[3].RichText = true
+                v6[3].Text = "<b><font color=\"#FAFBFD\">REZE</font><font color=\"#9781FF\">HUB</font></b>"
+                v9 = Color3.fromRGB(250, 251, 253)
+                v6[3].TextColor3 = v9
+                v6[3].TextTransparency = 0
+                v6[3].TextScaled = false
+                v9 = Enum.Font.GothamBold
+                v6[3].Font = v9
+                v6[3].TextSize = 20
+                v9 = Enum.TextXAlignment.Left
+                v6[3].TextXAlignment = v9
+                v9 = Vector2.new(0, 0.5)
+                v6[3].AnchorPoint = v9
+                v9 = v6[3].Parent
+                if v9 and v8 and v8.Parent == v9 then
+                    v3 = {[1] = 3, [3] = Vector2.new(2000, 80)}
+                    v3[2] = v3
+                    v12 = 90
+                    v4, n = pcall(v1:Rq({v2[2], v3, v6}))
+                    if v4 and n and n > 0 then
+                        v12 = n
+                    end
+                    v7 = v8.AbsoluteSize.X
+                    max = math.max(v7, 30)
+                    _, v10 = 2, v9.AbsoluteSize.X - (max + 5 + v12)
+                    floor6 = math.floor(v10 / 2)
+                    _, v10, v5, v11 = 0, UDim2.new, floor6, 0.5
+                    v8.Position = v10(0, v5, 0.5, 0)
+                    _, v13, v10, v11 = 0, 5, UDim2.new, floor6 + max
+                    v5, v13, v11 = v11 + 5, 0, 0.5
+                    v10 = v10(0, v5, 0.5, 0)
+                    v6[3].Position = v10
+                    v10 = UDim2.fromOffset
+                    _ = v12 + 4
+                    v5 = math.max
+                    v11 = v9.AbsoluteSize.Y - 4
+                    v5 = table.pack(v5(v11, 24))
+                    v10 = v10(_, table.unpack(v5, 1, v5.n))
+                    v6[3].Size = v10
+                end
+            end
+        end
+    end
+end
+local function _w236(v1, v2)
+    return function(v3, v4)
+        local getCharacter4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, getEggPart, v17, v18, v19, v20, v21, v22, v23, v24, v25, getEggPart2, v26, v27
+        if v2[1][3].InstantCycleCancelled() then
+            return false, "instant cancelled"
+        else
+            v2[1][3].HasCarriedEgg()
+            v13 = v2[1][3].InstantPairTiming
+            if v2[1][3].Alive and v2[3][3] and os.clock() < v13.NotBefore then
+                v2[1][3].HasCarriedEgg()
+                return false, "carry appeared during quiet window"
+            end
+            v18 = v2[1][3].Alive and v2[3][3] and v3.Parent
+            if not v18 or v2[1][3].HasCarriedEgg() or v2[1][3].InstantCycleCancelled() then
+                return false, "cancelled or carrying"
+            else
+                getEggPart = v2[1][3].GetEggPart(v3)
+                v18 = v2[1][3].FindActiveWorldEggConfiguration and v2[1][3].FindActiveWorldEggConfiguration(v3)
+                v12 = v2[2][3]
+                v14, v12 = v12, v12.FindFirstChild
+                v12 = {[1] = 3, [3] = v12(v14, "EggPickup")}
+                v12[2] = v12
+                v14 = v2[2][3]
+                v5, v14 = v14, v14.FindFirstChild
+                v14 = {[1] = 3, [3] = v14(v5, "TeleportToPlot")}
+                v14[2] = v14
+                if not (v14[3] and v14[3].IsA(v14[3], "RemoteEvent")) then
+                    return false, "TeleportToPlot not available"
+                else
+                    v5 = {[1] = 3, [3] = v18}
+                    v5[2] = v5
+                    v19 = v18 and v18:GetAttribute("Position")
+                    v25 = typeof(v19) == "Vector3" and getEggPart and (v19 - getEggPart.Position).Magnitude or math.huge
+                    v22 = {
+                        [1] = 3,
+                        [3] = v12[3] and v12[3].IsA(v12[3], "RemoteEvent") and v18 and v18.Parent and v5[3] and #v5[3] == 36 and v5[3].match(v5[3], "^[%da-fA-F%-]+$") and v18:GetAttribute("Egg") == v3.Name and v25 <= 14,
+                    }
+                    v22[2] = v22
+                    v9 = {[1] = 3, [3] = nil}
+                    v9[2] = v9
+                    if not v22[3] then
+                        v9[3] = v3:FindFirstChild("Pickup", true)
+                        if v9[3] then
+                            v9[3].IsA(v9[3], "ProximityPrompt")
+                        end
+                        v9[3] = v3:FindFirstChildWhichIsA("ProximityPrompt", true)
+                        v11 = v9[3] and v9[3].Enabled and typeof(fireproximityprompt) == "function"
+                        return false, "no valid UUID or egg prompt"
+                    end
+                    getCharacter4 = v2[1][3].GetCharacter()
+                    v11 = getCharacter4 and getCharacter4:FindFirstChild("HumanoidRootPart")
+                    getEggPart2 = v2[1][3].GetEggPart(v3)
+                    v24 = v11 and getEggPart2
+                    if v24 then
+                        v8 = getEggPart2.Position
+                        v24 = (v11.Position - v8).Magnitude
+                    end
+                    if not v24 or v24 > 12 then
+                        v6 = v2[1][3]
+                        v23, v21, v6, v26, v8 = v3.Name, tostring, "INSTANT_PREHOME_OUT_OF_RANGE", v6.TraceRideDrop, "egg="
+                        v26("INSTANT_PREHOME_OUT_OF_RANGE", "egg=" .. v21(v23) .. " d=" .. tostring(v24))
+                        return false, "not near target egg before home"
+                    else
+                        v8 = {}
+                        v26 = v2[1][3]
+                        v8.Name = v3.Name
+                        v8.At = os.clock()
+                        v8.Position = getEggPart and getEggPart.Position
+                        v26.RecentPickupHint = v8
+                        v13.Attempts = v13.Attempts + 1
+                        v26 = v2[1][3].TraceRideDrop
+                        v21 = tostring(v3.Name)
+                        v7 = v13.PreHomeSettle
+                        v20 = string.format("%.2f", v7)
+                        v17 = v2[1][3].HasCarriedEgg
+                        v17 = table.pack(v17())
+                        v26("INSTANT_PAIR_ARMED", "egg=" .. v21 .. " preHomeSettle=" .. v20 .. " carry=" .. tostring(table.unpack(v17, 1, v17.n)))
+                        v2[1][3].HasCarriedEgg()
+                        v2[1][3].InstantCycleCancelled()
+                        v26, v6 = pcall(v1:Ol({v14}))
+                        v8 = os.clock()
+                        if not v26 then
+                            v2[1][3].InstantHomeReturnArmed = false
+                            return false, "home remote error: " .. tostring(v6)
+                        else
+                            v27, v21 = pcall(v1:Pl({v22, v5, v12, v9}))
+                            v23 = os.clock()
+                            v13.LastHomeAt = v8
+                            v13.LastPickupAt = v23
+                            v13.NotBefore = v23 + 2.4
+                            v15 = v2[1][3]
+                            v10, v16, v15, v7, v20 = v3.Name, v15.TraceRideDrop, "INSTANT_HOME_SENT", tostring, "egg="
+                            v7 = v7(v10)
+                            v16("INSTANT_HOME_SENT", "egg=" .. v7 .. " t=" .. string.format("%.4f", v8))
+                            v15 = v2[1][3]
+                            v7, v10, v16, v15, v20 = tostring, v3.Name, v15.TraceRideDrop, "INSTANT_PICKUP_SENT", "egg="
+                            v7 = v7(v10)
+                            v16("INSTANT_PICKUP_SENT", "egg=" .. v7 .. " method=" .. tostring(v22[3] and "UUID" or "prompt") .. " deltaHome=" .. string.format("%.4f", v23 - v8) .. " dPre=" .. string.format("%.1f", v24) .. " ok=" .. tostring(v27))
+                            if not v27 then
+                                return false, "pickup error: " .. tostring(v21)
+                            else
+                                v20 = v22[3] and v5[3] or "prompt"
+                                v15 = table.pack(tostring(v20))
+                                return true, table.unpack(v15, 1, v15.n)
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+local function _w237(v1, v2)
+    return function(v3, v4)
+        local v5 = ""
+        local v6 = 0
+        local v7 = #v3 - 1
+        local v8, v9, v10, v11
+        if 0 <= v7 then
+            while true do
+                v10 = v2[1][3]
+                v8 = v2[3][3]
+                v9 = v2[2][3](v3, v6 + 1)
+                v11 = v2[2][3]
+                v11 = table.pack(v11(v4, v6 % #v4 + 1))
+                v8 = table.pack(v8(v9, table.unpack(v11, 1, v11.n)))
+                v5 = v5 .. v10(table.unpack(v8, 1, v8.n))
+                v6 = v6 + 1
+                if v6 > v7 then
+                    break
+                end
+            end
+        end
+        return v5
+    end
+end
+local function _w238(v1, v2)
+    return function()
+        local v3, v4, v5, v6, v7
+        if (v2[1][3].AutoCandy or v2[1][3].EventAutoRitual) and not v2[1][3].CandyEnsureEventRide("event scan", 3) then
+            return nil
+        else
+            v2[1][3].EventScanCancelled = false
+            v5 = not v2[3][3]()
+            v4 = v2[1][3].EventScanCamera
+            if not v5 then
+                v5 = not v4
+            end
+            if not v5 then
+                v5 = not v4.Camera
+            end
+            if not v5 then
+                v5 = not (v2[1][3].EventScanReplica and v2[1][3].EventScanReplica.Parent == workspace)
+            end
+            if not v5 then
+                v5 = v4
+            end
+            if v5 then
+                v2[1][3].CandyLog("EVENT_SCAN_POV_BLOCKED", "preview could not be armed")
+                if v4 then
+                    v2[1][3].StopHalloweenScanCamera(true)
+                end
+                return nil
+            else
+                v2[2][3].Heartbeat:Wait()
+                v5 = workspace.CurrentCamera
+                v7 = v5 ~= v4.Camera
+                if not v7 then
+                    v3 = Enum.CameraType.Scriptable
+                    v7 = v5.CameraType ~= v3
+                end
+                if v7 then
+                    v2[1][3].CandyLog("EVENT_SCAN_POV_BLOCKED", "camera not confirmed after frame")
+                    v2[1][3].StopHalloweenScanCamera(true)
+                    return nil
+                else
+                    v2[1][3].CandyLog("EVENT_SCAN_POV", "pre-scan view confirmed")
+                    v7, v6 = pcall(v2[4][3])
+                    v2[1][3].StopHalloweenScanCamera(true)
+                    v2[1][3].EventScanCancelled = false
+                    if not v7 then
+                        error(v6, 0)
+                    end
+                    return v6
+                end
+            end
+        end
+    end
+end
+local function _w239(v1, v2)
+    return function(hatchKGRule, hatchKGThreshold)
+        local v3 = v2[1][3]
+        local v4
+        v3.HatchKGRule, v4 = hatchKGRule, v3
+        v4.HatchKGThreshold = hatchKGThreshold
+    end
+end
+local function _w240(v1, v2)
+    return function(v3, v4)
+        local v5, v6, v7
+        if not v3 or not v3.Parent or v2[1][3](v3) then
+            v2[1][3](v3)
+            v7 = v2[3][3]
+            v7, v6, v5 = v2[2][3], "🟠 Favorite protected • Fusion skipped", v7.setLabel
+            v5(v7, "🟠 Favorite protected • Fusion skipped")
+            return true
+        else
+            return false
+        end
+    end
+end
+local function _w241(v1, v2)
+    return function()
+        local v3 = v2[1][3].Character
+        local v4 = v3
+        if v3 then
+            v4 = v3:FindFirstChildOfClass("Humanoid")
+        end
+        v4 = {[1] = 3, [3] = v4}
+        v4[2] = v4
+        local v5 = v3
+        if v3 then
+            v5 = v3:FindFirstChild("HumanoidRootPart")
+        end
+        v5 = {[1] = 3, [3] = v5}
+        v5[2] = v5
+        if not (not v4[3] or not v5[3]) then
+            pcall(v1:fn({v5, v4}))
+            return
+        end
+    end
+end
+local function _w242(v1, v2)
+    return function(v3)
+        local v4 = v2[1][3].Connections
+        table.insert(v4, v3)
+    end
+end
+local function _w243(v1, v2)
+    return function()
+        return v2[1][3] and not v2[2][3].FarmPaused() and not v2[2][3].TaskShouldStop("Sell")
+    end
+end
+local function _w244(v1, v2)
+    return function(v3)
+        local v4, v5
+        if not (v2[1][3] or v2[6][3]) then
+            if type(v3) == "table" then
+                v3 = v3.Text
+            end
+            v3 = tostring(v3 or v2[5][3][1])
+            table.find(v2[5][3], v3)
+            v5 = v2[4][3] == "PickupMode"
+            v5[3], v4 = v2[8][3], v2[4][3]
+            v5[3][v4] = v3
+            v4, v5[3] = "PickupMode", v4
+            if v5[3] == "PickupMode" then
+                v2[8][3].PickupModeSchema = 2
+            end
+            v2[9][3](v3)
+            v2[7][3].SaveConfig()
+            return
+        end
+    end
+end
+local function _w245(v1, v2)
+    return function()
+        while true do
+            if v2[1][3].Alive then
+                if os.clock() <= v2[3][3] then
+                    pcall(v2[2][3])
+                    task.wait(0.25)
+                else
+                    task.wait(0.5)
+                end
+                continue
+            end
+            break
+        end
+    end
+end
+local function _w246(v1)
+    return function(v2)
+        local v3 = {}
+        if type(v2) == "string" then
+            if v2 ~= "" then
+                return {[1] = v2}
+            else
+                return v3
+            end
+        else
+            type(v2)
+            return v3
+        end
+    end
+end
+local function _w247(v1, v2)
+    return function(feedSelectedFoods)
+        v2[1][3].FeedSelectedFoods = feedSelectedFoods
+    end
+end
+local function _w248(v1, v2)
+    return function(infiniteJump)
+        v2[1][3].InfiniteJump = infiniteJump
+    end
+end
+local function _w249(v1, v2)
+    return function(v3)
+        local v4, v6, v7, clock6, v8, v9, v10, v11, v12, v13
+        if not v3 then
+            return nil
+        else
+            clock6 = os.clock()
+            v4 = v2[1][3].EggKGCache
+            v4, v8, v6, v9 = v3.FindFirstChild, "EggData", v3, v4[v3]
+            v4 = v4(v6, "EggData")
+            v6 = v3:FindFirstChild("Data")
+            v8 = v1:Tm({v2[1]})
+            v7 = {[1] = 3, [3] = v8(v4) or v8(v6)}
+            v7[2] = v7
+            if v7[3] == nil and v4 == nil then
+                type(v9)
+                return v9.KG
+            end
+            if v7[3] == nil then
+                v2[1][3].EggKGCache[v3] = {SampledAt = clock6, Raw = nil, KG = nil}
+                return nil
+            elseif type(v9) == "table" and v9.Raw == v7[3] and v9.KG ~= nil then
+                v9.SampledAt = clock6
+                return v9.KG
+            else
+                v13, v10 = pcall(v1:Um({v2[2], v7}))
+                if not v13 or type(v10) ~= "number" or false or v10 == math.huge then
+                    v10 = nil
+                end
+                v11 = {}
+                v12 = v2[1][3].EggKGCache
+                v11.Raw = v7[3]
+                v11.KG = v10
+                v11.SampledAt = clock6
+                v12[v3] = v11
+                return v10
+            end
+        end
+    end
+end
+local function _w250(v1, v2)
+    return function()
+        local v3, v4, v5, v6, v7
+        while true do
+            if v2[1][3].Alive then
+                v2[1][3].FarmPaused()
+                v4 = v2[1][3]
+                v7, v4 = v4.BgRun, v4.PlaceBestPets
+                v7(v4)
+                v3 = v2[2][3]
+                v7 = math.clamp(tonumber(v3.PlacePetsInterval) or 10, 1, 120)
+                v2[1][3].NextPlaceAttemptAt = os.clock() + v7
+                while true do
+                    if v2[1][3].Alive and v2[6][3] and os.clock() < v2[1][3].NextPlaceAttemptAt then
+                        v4 = math.max
+                        v5 = math.ceil
+                        v6 = v2[1][3].NextPlaceAttemptAt - os.clock()
+                        v5 = v1.h(v5(v6))
+                        v4 = v4(0, v1.i(v5))
+                        v5 = v2[3][3]
+                        v2[1][3].setLabel(v5, "🟡 Cooldown: " .. v4 .. "s")
+                        task.wait(0.3)
+                        continue
+                    end
+                    break
+                end
+                continue
+            end
+            break
+        end
+    end
+end
+local function _w251(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        local v4
+        v3, v4 = v3.GetNetworkPing, v3
+        return v3(v4) * 1000
+    end
+end
+local function _w252(v1, v2)
+    return function()
+        local v3 = v2[1][3].Character
+        local v4 = v3
+        if v3 then
+            v4 = v3:FindFirstChild("HumanoidRootPart")
+        end
+        local v5 = v3
+        if v3 then
+            v5 = v3:FindFirstChildOfClass("Humanoid")
+        end
+        local v6 = v4
+        if v4 then
+            v6 = v5
+        end
+        local petMountJoint, petKey2, v7, v8
+        if v6 then
+            petMountJoint = v4:FindFirstChild("PetMountJoint")
+            v6 = petMountJoint and petMountJoint:IsA("JointInstance") and petMountJoint.Part1
+            if not v6 and v5.SeatPart then
+                v6 = v5.SeatPart
+            end
+            if v6 then
+                workspace:FindFirstChild("GameObjects")
+                v8 = v6
+                if v8 and v8 ~= workspace then
+                    v8:IsA("Model")
+                    v7 = tostring(v8:GetAttribute("PetName") or v8.Name)
+                    if type(v2[2][3][v7]) ~= "table" then
+                        break
+                    end
+                    petKey2 = v8:GetAttribute("PetKey")
+                    return petKey2 and tostring(petKey2) or nil, v7, v8
+                end
+            end
+        end
+        return nil, nil, nil
+    end
+end
+local function _w253(v1, v2)
+    return function()
+        local v3, v4, v5, v6
+        if v2[1][3] then
+            v5 = v2[2][3]
+            v6 = v2[5][3]
+            v3 = v2[3][3]
+            v4 = v2[4][3]
+            v3 = table.pack(v3(v6, v4, v5, false))
+        else
+            v4 = v2[4][3]
+            v6 = v2[5][3]
+            v3 = v2[3][3]
+            v5 = v2[2][3]
+            v3 = table.pack(v3(v6, v4, v5))
+        end
+        return table.unpack(v3, 1, v3.n)
+    end
+end
+local function _w254(v1, v2)
+    return function(v3, v4)
+        local v5 = v2[1][3].ShopStockData[v3]
+        local v6
+        if type(v5) ~= "table" then
+            return 0
+        else
+            v6 = v5[v4]
+            if type(v6) ~= "table" then
+                return 0
+            else
+                return tonumber(v6.Amount) or 0
+            end
+        end
+    end
+end
+local function _w255(v1, v2)
+    return function(v3)
+        v2[1][3] = v3
+    end
+end
+local function _w256(v1, v2)
+    return function()
+        local e, d
+        local fusionSlots2 = v2[1][3]:FindFirstChild("FusionSlots")
+        local v3 = {}
+        local v4, v5, v6, v7, v8, in_, v9, v10
+        if fusionSlots2 then
+            in_ = v1:in_()
+            v5 = fusionSlots2.GetAttributes
+            v5 = v1.h(v5(fusionSlots2))
+            v7, v5, e = pairs(v1.i(v5))
+            v7, v5, e = v1.g(v7, v5, e)
+            v4, d = v7(v5, e)
+            e = v4
+            if e ~= nil then
+                while true do
+                    v8 = tonumber(string.match(v4, "^Slot(%d)$") or string.match(v4, "^Pet(%d)$") or string.match(v4, "^(%d)$"))
+                    if v8 and v8 >= 1 and v8 <= 4 and in_(d) then
+                        v3[v8] = true
+                    end
+                    v4, d = v7(v5, e)
+                    e = v4
+                    if e == nil then
+                        break
+                    end
+                end
+            end
+            v5 = fusionSlots2.GetChildren
+            v5 = v1.h(v5(fusionSlots2))
+            v7, v5, e = ipairs(v1.i(v5))
+            v7, v5, e = v1.g(v7, v5, e)
+            for e, d in v7, v5, e do
+                v6 = string.match
+                v10 = d.Name
+                v6 = table.pack(v6(v10, "(%d)"))
+                v8 = tonumber(table.unpack(v6, 1, v6.n))
+                if v8 and v8 >= 1 and v8 <= 4 then
+                    d:IsA("ValueBase")
+                    v10 = in_(d.Value) or #d:GetChildren() > 0
+                    if not v10 then
+                        v9 = d.GetAttributes
+                        v9 = table.pack(v9(d))
+                        v10 = next(table.unpack(v9, 1, v9.n)) ~= nil
+                    end
+                    if v10 then
+                        v3[v8] = true
+                    end
+                end
+            end
+        end
+        return v3
+    end
+end
+local function _w257(v1, v2)
+    return function(v3)
+        local v4 = {}
+        local v5 = {[1] = 3, [3] = {}}
+        v5[2] = v5
+        local v6 = {[1] = 3, [3] = v4}
+        v6[2] = v6
+        v4 = {[1] = 3, [3] = v4}
+        v4[2] = v4
+        v4[3] = v1:Bo({v6, v5})
+        local v7 = v1:Ao({v4})
+        v7(v3)
+        local v8 = v2[1][3].FindActiveWorldEggConfiguration
+        v8 = v1.h(v8(v3))
+        v7(v1.i(v8))
+        local v9, v10, v11
+        if #v5[3] == 0 then
+            return nil
+        else
+            v8 = v5[3]
+            v9 = table.concat(v8, "+")
+            v8, v9, v11, v10 = v9, v9.gsub, "+", "%s*%+%s*"
+            v9 = table.pack(v9(v8, "%s*%+%s*", "+"))
+            return table.unpack(v9, 1, v9.n)
+        end
+    end
+end
+local function _w258(v1, v2)
+    return function(v3)
+        if not (not v2[1][3].Alive or not v2[1][3].AutoReconnect or v2[1][3].ReconnectAttempted) then
+            tostring(v3.Name):lower():find("errorprompt", 1, true)
+            return
+        end
+    end
+end
+local function _w259(v1, v2)
+    return function()
+        while true do
+            if v2[1][3].Alive then
+                task.wait(1)
+                continue
+            end
+            break
+        end
+        pcall(v2[2][3].clearInventoryESP)
+    end
+end
+local function _w260(v1, v2)
+    return function(v3)
+        v3 = tostring(v3 or "")
+        local v4 = v2[1][3]
+        local v5 = v4.InventoryESPState
+        v4 = type(v4.getInventoryESPEffectiveEggLuck) == "function" and v2[1][3].getInventoryESPEffectiveEggLuck(v3, nil) or nil
+        local formatCompactNumber, v6, v7
+        if type(v4) ~= "number" or v4 < 0 or v4 >= math.huge then
+            return "syncing"
+        else
+            v6 = v5.EggLuckCache[v3]
+            v7 = v5.LuckRevision or 0
+            if v6 and v6.Revision == v7 then
+                return v6.Text
+            else
+                formatCompactNumber = v2[1][3].formatCompactNumber(v4, 2)
+                v5.EggLuckCache[v3] = {Text = formatCompactNumber, Revision = v7}
+                return formatCompactNumber
+            end
+        end
+    end
+end
+local function _w261(v1, v2)
+    return function(v3, v4)
+        local H, f
+        local v5 = v2[1][3].EggTrackerCycle
+        local v6, v7, v8
+        v8, v7, v6 = pairs(v5.HeldOldRows or v5.Rows)
+        v8, v7, v6 = v1.g(v8, v7, v6)
+        local v9
+        f, v9 = v8(v7, v6)
+        local v10 = {}
+        if f ~= nil then
+            while true do
+                v10[#v10 + 1] = v9
+                f, v9 = v8(v7, v6)
+                v6 = f
+                if v6 == nil then
+                    break
+                end
+            end
+        end
+        table.sort(v10, v1:Gp({v2[6]}))
+        v7 = {}
+        v7[1] = "<b>Eggs in World: " .. tostring(v3 or 0) .. " • Resets in: " .. v2[5][3](v4) .. "</b>"
+        v8 = v7
+        v6, v7 = "", #v7 + 1
+        v7[v7] = ""
+        local v11, v12, v13, v14, v15, v16, v17, v18
+        if #v10 == 0 then
+            v8[#v8 + 1] = "No eggs detected."
+        else
+            v7, v6, f = ipairs(v10)
+            v7, v6, f = v1.g(v7, v6, f)
+            for f, H in v7, v6, f do
+                v11 = H.Rarity
+                v14 = v2[2][3][v11] or v2[2][3].Common
+                v17 = v2[4][3](v14)
+                v14 = tonumber(H.KG)
+                v18 = H.Name
+                v13 = v2[3][3](v18)
+                v18 = v14 and v14 > 0
+                if v18 then
+                    v12 = v2[3][3]
+                    v16 = v2[1][3].FormatESPKG
+                    v16 = table.pack(v16(v14))
+                    v18 = " • " .. v12(table.unpack(v16, 1, v16.n))
+                end
+                if not v18 then
+                    v18 = ""
+                end
+                v11, v18, v15 = v13 .. v18, tonumber, H.Current
+                v18 = v18(v15) or 0
+                v8[#v8 + 1] = "<font color=\"" .. v17 .. "\">" .. v11 .. "</font>: " .. "<font color=\"" .. (v18 > 0 and "#59E391" or "#FF646E") .. "\">" .. tostring(H.Current or 0) .. "/" .. tostring(H.Maximum or 0) .. "</font>"
+            end
+        end
+        v6, v7, f = v8, table.concat, "\n"
+        v7 = table.pack(v7(v6, "\n"))
+        return table.unpack(v7, 1, v7.n)
+    end
+end
+local function _w262(v1, v2)
+    return function(v3)
+        v2[1][3] = v3
+    end
+end
+local function _w263(v1, v2)
+    return function(v3, v4)
+        local getMyPlot5 = v2[1][3].GetMyPlot()
+        local v5 = getMyPlot5
+        if getMyPlot5 then
+            v5 = getMyPlot5:FindFirstChild("Baseplate")
+        end
+        local v6, v7, v8
+        if not v5 or not v5:IsA("BasePart") or typeof(v3) ~= "Vector3" or not v4 or v4 <= 0 then
+            return nil
+        else
+            v8 = v5.Position - v3
+            v7 = v8.Z
+            v6 = Vector3.new(v8.X, 0, v7).Magnitude
+            return math.max(0, 0.75 * v6 / v4 - 2.5), v6
+        end
+    end
+end
+local function _w264(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        local candyHUDState = v3.CandyHUDState()
+        v3 = v3.CandyCarryPending or candyHUDState.carry
+        local v4, v5, v6, v7
+        if v3 then
+            v3 = v2[1][3]
+            v3.CandyCarryPending = true
+            v3, v5 = v3.CandyPendingBalance, nil
+            if v3 == nil then
+                v3 = v2[1][3]
+                v3.CandyPendingBalance = v3.CandyBalance()
+            end
+            v2[1][3].CandySetStatus("🟠 Carry pending; confirming candy drop-off")
+            v6 = v2[1][3]
+            v2[1][3].CandyLog("CANDY_CARRY_RECOVERY", "hud=" .. v6.CandyLastHUD)
+            v5, v7, v6, v3 = v2[2][3], "carried candy recovery", os, v6.CandyReturnHome
+            v3(v5, "carried candy recovery", v6.clock(), v2[1][3].CandyPendingBalance)
+        else
+            v4 = v2[1][3].CandyEvent.Position
+            if (v2[2][3].Position - v4).Magnitude > 1500 then
+                v7 = v2[1][3]
+                v5 = v7.CandyEvent
+                v2[2][3].CFrame = v5
+                v7.Stabilize()
+                v3, v5, v7 = v7.CandyLog, "CANDY_EVENT_ENTER", "legacy source CFrame"
+                v3("CANDY_EVENT_ENTER", "legacy source CFrame")
+                task.wait(0.5)
+            end
+            v3 = v2[1][3].CandyFindNearest()
+            if not v3 then
+                v2[1][3].CandySetStatus("🟡 Waiting for Halloween candy")
+                v2[1][3].CandyRefreshStream()
+                task.wait(0.2)
+            else
+                v5 = v2[1][3]
+                v5.CandyLastVisibleAt = os.clock()
+                v7, v5 = v3, v5.CandyCollect
+                v7 = not v5(v7) and v3.Parent
+                if v7 then
+                    v2[1][3].CandySkip[v3] = os.clock() + 2
+                end
+                if not v2[1][3].CandyCarryPending then
+                    v2[1][3].CandySetStatus("🟠 Candy pickup unconfirmed; see diagnostics")
+                end
+            end
+        end
+    end
+end
+local function _w265(v1, v2, v3, v4)
+    v1.Jr[v4] = v1.Uq(v2, v3)
+    return v1.Jr[v4]
+end
+local function _w266(v1, v2)
+    return function()
+        v2[1][3].Enabled = false
+    end
+end
+local function _w267(v1, v2)
+    return function()
+        local v, _
+        local v3, v4, v5
+        v5, v3, v4 = ipairs(v2[1][3]())
+        v5, v3, v4 = v1.g(v5, v3, v4)
+        local v6, v7
+        v7, v6 = v5(v3, v4)
+        local v8 = {}
+        local v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, prediction, v25
+        if v7 ~= nil then
+            while true do
+                v17 = v2[6][3]
+                v17, v25 = v6.Name, v17.GetEggRarityStyle
+                v25, v17, v14, v24 = v25(v17)
+                v16, _ = v2[6][3].VisualRarityAllowed, v25
+                v16 = v16(_)
+                if v16 then
+                    v16 = v2[5][3](v6)
+                    v8[v6] = true
+                    _ = v2[6][3].RanchESPObjects[v6]
+                    if not _ or not _.Parent then
+                        _, v12 = Instance.new("BillboardGui"), "REZEHUB_RanchEggESP"
+                        _.Name = "REZEHUB_RanchEggESP"
+                        _.AlwaysOnTop = true
+                        _.LightInfluence = 0
+                        _.ZIndexBehavior = Enum.ZIndexBehavior.Global
+                        _.MaxDistance = 1000000
+                        _.Size = UDim2.fromOffset(500, 74)
+                        _.StudsOffset = Vector3.new(0, 4.8, 0)
+                        _.Parent = v2[4][3]:WaitForChild("PlayerGui")
+                        v12 = v2[2][3]
+                        v12(_, "Prediction", 0)
+                        v12(_, "EggInfo", 24)
+                        v12(_, "HatchState", 48)
+                        v2[6][3].RanchESPObjects[v6] = _
+                    end
+                    _.Adornee = v16
+                    v12, v23, v15 = v2[7][3](v6)
+                    prediction = _:FindFirstChild("Prediction")
+                    if prediction then
+                        prediction.Text = v12 and v12 .. " • " .. tostring(v15) .. " • (" .. v2[3][3](v23) .. ")" or "Prediction syncing..."
+                        v10 = v2[6][3]
+                        v10, v22, v21 = prediction, v2[8][3], v10.ApplyEggRarityStyle
+                        v21(v10, v22[v15] or v2[8][3].Common, nil, 0)
+                    end
+                    v21 = _:FindFirstChild("EggInfo")
+                    if v21 then
+                        v21.Text = v6.Name .. " • " .. v25
+                        v2[6][3].ApplyEggRarityStyle(v21, v17, v14, v24)
+                    end
+                    v10 = v2[6][3].GetEggKG(v6)
+                    v, v18, v22, v11, v20 = "Mutation", {}, ipairs, "SpawnMutation", {}
+                    v20[1], v20[2] = "Mutation", "SpawnMutation"
+                    v22, v19, v9 = v22(v20)
+                    v22, v19, v9 = v1.g(v22, v19, v9)
+                    for _, v in v22, v19, v9 do
+                        v11 = v6:GetAttribute(v)
+                        if v11 and tostring(v11) ~= "" and tostring(v11) ~= "None" then
+                            v18[#v18 + 1] = tostring(v11)
+                        end
+                    end
+                    v22 = _:FindFirstChild("HatchState")
+                    if v22 then
+                        v19 = v10 and v2[6][3].FormatESPKG(v10) or "? KG"
+                        v20 = #v18 > 0
+                        if v20 then
+                            v11, v13, v = v18, "+", table.concat
+                            v20 = v(v11, "+") .. " • "
+                        end
+                        if not v20 then
+                            v20 = ""
+                        end
+                        v22.Text = v20 .. v19
+                        v20, v13, v, v9, v11 = v22, v24, v17, v2[6][3].ApplyEggRarityStyle, v14
+                        v9(v20, v, v11, v13)
+                    end
+                end
+                v7, v6 = v5(v3, v4)
+                v4 = v7
+                if v4 == nil then
+                    break
+                end
+            end
+        end
+        v5, v3, v4 = pairs(v2[6][3].RanchESPObjects)
+        v5, v3, v4 = v1.g(v5, v3, v4)
+        v7, v6 = v5(v3, v4)
+        if v7 ~= nil then
+            while true do
+                v6 = {[1] = 3, [3] = v6}
+                v6[2] = v6
+                if not v8[v7] or not v7.Parent or not v6[3] or not v6[3].Parent then
+                    if v6[3] then
+                        pcall(v1:Mq({v6}))
+                    end
+                    v2[6][3].RanchESPObjects[v7] = nil
+                end
+                v7, v6 = v5(v3, v4)
+                v4 = v7
+                if v4 == nil then
+                    break
+                end
+            end
+        end
+    end
+end
+local function _w268(v1, v2)
+    return function()
+        local v3, v4
+        while true do
+            if v2[1][3].Alive then
+                v2[1][3].syncNativeAutobuy("Food", true, false)
+                v3 = v2[5][3]
+                v2[1][3].setLabel(v3, "🟢 Native food autobuy")
+                v2[1][3].syncNativeAutobuy("Gears", true, false)
+                v3 = v2[2][3]
+                v2[1][3].setLabel(v3, "🟢 Native gear autobuy")
+                v4 = os.clock() + 12
+                while true do
+                    if v2[1][3].Alive and os.clock() < v4 then
+                        task.wait(0.5)
+                        continue
+                    end
+                    break
+                end
+                if v2[1][3].Alive then
+                    v2[1][3].syncNativeAutobuy("Food", true, true)
+                    v2[1][3].syncNativeAutobuy("Gears", true, true)
+                    continue
+                end
+                continue
+            end
+            break
+        end
+    end
+end
+local function _w269(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        v3.AssemblyLinearVelocity = Vector3.zero
+        v3.AssemblyAngularVelocity = Vector3.zero
+        v3 = v2[2][3]
+        v3.PlatformStand = false
+        v3 = v3:GetState()
+        if v3 == Enum.HumanoidStateType.FallingDown or v3 == Enum.HumanoidStateType.Ragdoll or v3 == Enum.HumanoidStateType.PlatformStanding then
+            v2[2][3]:ChangeState(Enum.HumanoidStateType.GettingUp)
+        end
+    end
+end
+local function _w270(v1, v2)
+    return function()
+        local v3 = v2[1][3].Enabled
+        local v4, v5
+        if v3 then
+            v4 = v2[3][3]
+            v4, v5 = v2[2][3], v4.Parent
+            v3 = v5 == v4
+        end
+        if v3 then
+            v2[4][3](v2[3][3], true)
+        end
+    end
+end
+local function _w271(v1, v2)
+    return function()
+        while true do
+            if v2[1][3].Alive then
+                v2[1][3].SafeHatchUpgrade(false)
+                task.wait(0.4)
+                continue
+            end
+            break
+        end
+    end
+end
+local function _w272(v1, v2)
+    return function()
+        local _, D, d, k
+        local v3, v4, v5, v6, v7, v8, v9, v10, v11, backpack3, v12, v13, v14, v15, feedPet, v16, v17, data, normalizeSelection, v18, v19
+        while true do
+            if v2[1][3].Alive then
+                v2[1][3].FarmPaused()
+                feedPet = v2[5][3]:FindFirstChild("FeedPet")
+                backpack3 = v2[4][3]:FindFirstChildOfClass("Backpack")
+                v14 = {}
+                v11 = v2[2][3]
+                normalizeSelection = v2[1][3].normalizeSelection(v11.FeedFoods)
+                v11 = {}
+                v7, v17, d = ipairs(normalizeSelection)
+                v7, v17, d = v1.g(v7, v17, d)
+                for d, k in v7, v17, d do
+                    v12, _ = v2[1][3].NormalizeFoodName, k
+                    v11[v12(_)] = true
+                end
+                if backpack3 and #normalizeSelection > 0 then
+                    v17 = backpack3.GetChildren
+                    v17 = v1.h(v17(backpack3))
+                    v7, v17, d = ipairs(v1.i(v17))
+                    v7, v17, d = v1.g(v7, v17, d)
+                    for d, k in v7, v17, d do
+                        v12 = k:IsA("Tool")
+                        if v12 then
+                            v10 = v2[1][3]
+                            v10, _ = k.Name, v10.NormalizeFoodName
+                            v12 = v11[_(v10)]
+                        end
+                        if v12 then
+                            v12 = k:FindFirstChild("Data")
+                            _ = v12 and v12:FindFirstChild("Amount")
+                            if not _ or tonumber(_.Value) == nil or tonumber(_.Value) > 0 then
+                                v14[#v14 + 1] = k
+                            end
+                        end
+                    end
+                    d, v7, v17 = v1:no({v2[1]}), table.sort, v14
+                    v7(v17, d)
+                end
+                if not feedPet or not feedPet:IsA("RemoteEvent") then
+                    v17 = v2[1][3]
+                    v17, v7, d = v2[3][3], v17.setLabel, "🔴 Feed remote missing"
+                    v7(v17, "🔴 Feed remote missing")
+                elseif #normalizeSelection == 0 then
+                    v7, v17, d = v2[1][3].setLabel, v2[3][3], "🟡 Select food in Feed Pets"
+                    v7(v17, "🟡 Select food in Feed Pets")
+                else
+                    v2[1][3].feedOnOwnRanch()
+                    v7 = false
+                    d = v2[1][3].feedGetActivePets
+                    d = v1.h(d())
+                    v17, d, v16 = ipairs(v1.i(d))
+                    v17, d, v16 = v1.g(v17, d, v16)
+                    k, v12 = v17(d, v16)
+                    v16 = k
+                    if v16 ~= nil then
+                        while true do
+                            _ = not v2[1][3].Alive or not v2[6][3] or v2[1][3].FarmPaused()
+                            if not _ then
+                                v12:GetAttribute("PetKey")
+                                _ = tostring(v12.Name)
+                                D, v10 = v12, v2[1][3].feedGetAge
+                                v10 = v10(D)
+                                D = v2[1][3].FeedState.LastByKey[_] or 0
+                                if _ and v10 and v10 < 100 and os.clock() - D > 1 and v2[1][3].PetMatchesFilter(v12, "Feed") then
+                                    v18 = nil
+                                    data, v3, v4 = ipairs(v14)
+                                    data, v3, v4 = v1.g(data, v3, v4)
+                                    v8, v5 = data(v3, v4)
+                                    v4 = v8
+                                    do
+                                        local shouldExit = false
+                                        if v4 ~= nil then
+                                            while true do
+                                                v13 = v5.Parent and v5:FindFirstChild("Data")
+                                                v15 = v13 and v13:FindFirstChild("Amount")
+                                                if v5.Parent and not v15 then
+                                                    break
+                                                else
+                                                    v8, v5 = data(v3, v4)
+                                                    v4 = v8
+                                                    if v4 ~= nil then
+                                                        continue
+                                                    end
+                                                end
+                                                shouldExit = true
+                                                break
+                                            end
+                                            if shouldExit then
+                                                break
+                                            end
+                                            v18 = v5
+                                        end
+                                    end
+                                    if v18 and v2[1][3].feedOnOwnRanch() then
+                                        data = v18:FindFirstChild("Data")
+                                        v3 = data and data:FindFirstChild("Amount")
+                                        v4 = v3 and tonumber(v3.Value)
+                                        v13 = feedPet.FireServer
+                                        v19 = tostring(_)
+                                        v6 = v18.Name
+                                        v9 = v1.h(tostring(v6))
+                                        if pcall(v13, feedPet, v19, v1.i(v9)) then
+                                            v2[1][3].FeedState.LastByKey[_] = os.clock()
+                                            v7 = true
+                                            v15 = false
+                                            v13 = os.clock() + 0.8
+                                            while true do
+                                                task.wait(0.1)
+                                                v19 = v3 and tonumber(v3.Value)
+                                                v9 = v2[1][3].feedGetAge(v12)
+                                                v6 = v4 and v19 and v19 < v4 or v9
+                                                v15 = v6
+                                                if not v6 then
+                                                    v6 = os.clock() >= v13
+                                                end
+                                                if not v6 then
+                                                    v6 = not v2[1][3].Alive
+                                                end
+                                                if v6 then
+                                                    break
+                                                end
+                                            end
+                                            if v15 then
+                                                v2[1][3].FeedState.LastAction = os.clock()
+                                                v9 = v2[1][3]
+                                                v9, v19, v6 = v2[3][3], v9.setLabel, "🟢 Pet fed"
+                                                v19(v9, "🟢 Pet fed")
+                                            else
+                                                v9 = v2[1][3]
+                                                v9, v6, v19 = v2[3][3], "🟡 Feed sent, verifying", v9.setLabel
+                                                v19(v9, "🟡 Feed sent, verifying")
+                                            end
+                                        end
+                                    end
+                                end
+                                k, v12 = v17(d, v16)
+                                v16 = k
+                                if v16 ~= nil then
+                                    continue
+                                end
+                                break
+                            end
+                            break
+                        end
+                    end
+                    if not v7 then
+                        v17 = v2[1][3].feedGetActivePets()
+                        d = 0
+                        v16 = 0
+                        k, v12, _ = ipairs(v17)
+                        k, v12, _ = v1.g(k, v12, _)
+                        for _, D in k, v12, _ do
+                            v18 = v2[1][3].feedGetAge(D)
+                            if v18 == nil then
+                                v16 = v16 + 1
+                            elseif v18 < 100 then
+                                d = d + 1
+                            end
+                        end
+                        if #v17 == 0 then
+                            v12 = v2[1][3]
+                            v12, k, _ = v2[3][3], v12.setLabel, "🟡 Scanning active pets"
+                            k(v12, "🟡 Scanning active pets")
+                        elseif d > 0 then
+                            v12 = v2[1][3]
+                            _, v12, k = "🟡 Checking eligible pets", v2[3][3], v12.setLabel
+                            k(v12, "🟡 Checking eligible pets")
+                        elseif v16 > 0 then
+                            v12 = v2[1][3]
+                            v12, _, k = v2[3][3], "🟡 Reading pet ages", v12.setLabel
+                            k(v12, "🟡 Reading pet ages")
+                        else
+                            _, k, v12 = "🟡 All pets age 100", v2[1][3].setLabel, v2[3][3]
+                            k(v12, "🟡 All pets age 100")
+                        end
+                    end
+                end
+                task.wait(0.7)
+                continue
+            end
+            break
+        end
+    end
+end
+local function _w273(v1, v2)
+    return function()
+        v2[1][3](false)
+        local v3, v4
+        if v2[3][3].EventAutoBuyHalloweenEgg and not v2[3][3].AutoCandy and not v2[3][3].EventAutoRitual then
+            v3 = v2[3][3]
+            v3.EventStage = "BUY HALLOWEEN EGG"
+            v3.CandyBusy = true
+            v3 = v2[5][3]()
+            v2[3][3].CandyBusy = false
+            return v3
+        else
+            v4 = v2[3][3].EventFrozen
+            return v2[2][3](v4)
+        end
+    end
+end
+local function _w274(v1, v2)
+    return function()
+        return v2[1][3]
+    end
+end
+local function _w275(v1, v2)
+    return function()
+        v2[1][3]:Disconnect()
+    end
+end
+local function _w276(v1, v2)
+    return function()
+        v2[1][3].GameplayPaused = false
+    end
+end
+local function _w277(v1, v2)
+    return function()
+        local v3, v4
+        if not (not v2[1][3].Alive or not v2[1][3].AutoAntiAFK) then
+            v2[2][3]:CaptureController()
+            v4 = v2[2][3]
+            v3 = Vector2.new
+            v3 = table.pack(v3())
+            v4:ClickButton2(table.unpack(v3, 1, v3.n))
+            return
+        end
+    end
+end
+local function _w278(v1)
+    return function(v2)
+        local _, q
+        local v3 = {[1] = 3, [3] = {}}
+        v3[2] = v3
+        local v4 = {[1] = 3, [3] = {}}
+        v4[2] = v4
+        local v5 = {[1] = 3, [3] = {}}
+        v5[2] = v5
+        local getAttributes = v2.GetAttributes
+        local v6 = v1:Ui({v4, v5, v3})
+        getAttributes = v1.h(getAttributes(v2))
+        local v7, v8
+        v7, getAttributes, v8 = pairs(v1.i(getAttributes))
+        v7, getAttributes, v8 = v1.g(v7, getAttributes, v8)
+        local v9, v10
+        v10, v9 = v7(getAttributes, v8)
+        if v10 ~= nil then
+            while true do
+                v6(v9)
+                v10, v9 = v7(getAttributes, v8)
+                v8 = v10
+                if v8 == nil then
+                    break
+                end
+            end
+        end
+        getAttributes = v2.GetDescendants
+        getAttributes = v1.h(getAttributes(v2))
+        v7, getAttributes, v8 = ipairs(v1.i(getAttributes))
+        v7, getAttributes, v8 = v1.g(v7, getAttributes, v8)
+        v10, v9 = v7(getAttributes, v8)
+        local v11, v12
+        if v10 ~= nil then
+            while true do
+                if v9:IsA("StringValue") then
+                    v6(v9.Value)
+                end
+                _ = v9.GetAttributes
+                _ = v1.h(_(v9))
+                v11, _, v12 = pairs(v1.i(_))
+                v11, _, v12 = v1.g(v11, _, v12)
+                for _, q in v11, _, v12 do
+                    v6(q)
+                end
+                v10, v9 = v7(getAttributes, v8)
+                v8 = v10
+                if v8 == nil then
+                    break
+                end
+            end
+        end
+        return v5[3]
+    end
+end
+local function _w279(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        v3.bindInventoryESPTools()
+        v3.bindInventoryESPHotbar()
+        v3.getActualHatchLuckMultiplier()
+        if v2[3][3].Grid == nil then
+            v2[1][3].bindInventoryESPGrid()
+        end
+        v2[1][3].clearInventoryESPEmptyHotbarCards()
+        local clock7 = os.clock()
+        local v4
+        if v2[3][3].ToolsDirty or clock7 - v2[2][3] >= 8 then
+            v4, v2[2][3] = v2[1][3], clock7
+            v3, v4 = v4.queueInventoryESPRefresh, 0.05
+            v3(0.05)
+        end
+    end
+end
+local function _w280(v1, v2)
+    return function(v3)
+        local v4 = v2[1][3] and v2[1][3]:GetAttribute(v3 .. "StartedAt")
+        return type(v4) == "number" and v4 > 0
+    end
+end
+local function _w281(v1, v2)
+    return function()
+        v2[1][3]:Destroy()
+    end
+end
+local function _w282(v1, v2)
+    return function()
+        local v3 = v2[1][3].Character
+        local v4 = v3
+        if v3 then
+            v4 = v3:FindFirstChildOfClass("Humanoid")
+        end
+        if v4 then
+            v2[2][3].CameraSubject = v4
+        end
+        local v5 = Enum.CameraType.Custom
+        v2[2][3].CameraType = v5
+    end
+end
+local function _w283(v1, v2)
+    return function(v3, v4)
+        local v5, v6
+        v5, v6 = v2[1][3].ReadEggWebhookVariants(v3)
+        local v7
+        if type(v4) == "table" then
+            v7, v5 = v6, v5 or v4.Mutation
+            if not v7 then
+                v7 = v4.SpawnMutation
+            end
+            v6 = v7
+        end
+        v7 = v2[1][3].WebhookCanonicalMutationTrait
+        v7 = table.pack(v7(v5, v6))
+        return table.unpack(v7, 1, v7.n)
+    end
+end
+local function _w284(v1, v2)
+    return function(v3)
+        local basket7 = v2[1][3]:FindFirstChild("Basket")
+        local clock8, getChildren
+        if basket7 then
+            clock8 = os.clock()
+            v3 = v3 or 3
+            while true do
+                if os.clock() - clock8 < v3 then
+                    getChildren = basket7:GetChildren()
+                    if #getChildren <= 0 then
+                        task.wait(0.1)
+                        continue
+                    end
+                    return getChildren[1]
+                end
+                break
+            end
+        end
+        return nil
+    end
+end
+local function _w285(v1, v2)
+    return function(v3)
+        local v4, v5, v6
+        if v2[1][3].CandyLastMessage ~= v3 then
+            v4 = v2[1][3]
+            v4.CandyLastMessage = v3
+            v5, v4, v6 = v2[2][3], v4.setLabel, v3
+            v4(v5, v6)
+        end
+    end
+end
+local function _w286(v1, v2)
+    return function(v3)
+        local v4, v5
+        if v2[1][3](v3) then
+            v4 = v2[3][3]
+            v4[#v4 + 1] = v3
+            v5, v2[2][3] = task, true
+            v5, v4 = v2[4][3], v5.defer
+            v4(v5)
+        end
+    end
+end
+local function _w287(v1, v2)
+    return function(v3)
+        local v4
+        v2[1][3], v4 = v3, v2[3][3]
+        if v4.SyncNativeAutobuy then
+            v2[3][3].SyncNativeAutobuy("Food", v3, false)
+        end
+        v4 = v2[3][3]
+        local v5, v6
+        v4, v6, v5 = v2[2][3], v3, v4.setLabel
+        if v6 then
+            v6 = "🟡 Waiting for food stock"
+        end
+        if not v6 then
+            v6 = "🔴 Auto Buy Food Off"
+        end
+        v5(v4, v6)
+    end
+end
+local function _w288(v1, v2)
+    return function(v3)
+        if v2[1][3] == "Sell" then
+            v2[3][3] = v3
+        end
+    end
+end
+local function _w289(v1, v2)
+    return function()
+        v2[1][3].SaveConfig()
+    end
+end
+local function _w290(v1, v2)
+    return function(v3)
+        v2[1][3] = v3
+    end
+end
+local function _w291(v1, v2)
+    return function()
+        sethiddenproperty(v2[1][3], "Decoration", false)
+    end
+end
+local function _w292(v1, v2)
+    return function(v3)
+        local v4, v5, v6
+        v4, v6, v5 = pairs(v2[1][3].FeedFoodInfo)
+        v4, v6, v5 = v1.g(v4, v6, v5)
+        local v7, v8
+        v8, v7 = v4(v6, v5)
+        local v9, v10
+        if v8 ~= nil then
+            while true do
+                v9 = v2[1][3]
+                v9, v10 = v3.Name, v9.NormalizeFoodName
+                v10 = v10(v9)
+                if v10 ~= v2[1][3].NormalizeFoodName(v8) then
+                    v8, v7 = v4(v6, v5)
+                    v5 = v8
+                    if v5 ~= nil then
+                        continue
+                    end
+                    return 0
+                end
+                break
+            end
+            return tonumber(v7.XP) or 0
+        end
+        return 0
+    end
+end
+local function _w293(v1, v2)
+    return function(v3, v4, v5, v6)
+        local v7 = v3
+        if v3 then
+            v7 = v3.Parent
+        end
+        if v7 then
+            v7 = v2[1][3].Alive
+        end
+        if v7 then
+            v7 = v2[1][3].AutoCandy
+        end
+        local v8, clock9, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, candyPad3
+        if v7 then
+            v2[1][3].CandyEnsureEventRide("candy drop-off", 4)
+            clock9 = os.clock()
+            v13 = v2[1][3]
+            v7 = v13.CandyBalance()
+            v15 = v13
+            v13 = v15.CandyHome.Position
+            candyPad3 = v15.CandyPad()
+            v15 = candyPad3
+            if v15 then
+                v12 = candyPad3.Size.Y
+                v15 = candyPad3.Position.Y + v12 * 0.5
+            end
+            if not v15 then
+                v15 = nil
+            end
+            v11 = v2[1][3]
+            v16 = v11.CandyHUDState().carry
+            if not (v11.CandyCarryPending or v16) then
+                v2[1][3].CandyLog("CANDY_RETURN_NO_CARRY", tostring(v4) .. " • no confirmed candy")
+            else
+                v3.CFrame = v2[1][3].UprightCFrame(v13)
+                v18 = v2[1][3]
+                v18.Stabilize()
+                v11, v27, v19, v18 = v18.CandyLog, tostring, v4, "CANDY_HOME_ENTER"
+                v11("CANDY_HOME_ENTER", v27(v19) .. " padTop=" .. tostring(v15) .. " balanceBefore=" .. tostring(v6))
+                while true do
+                    if v2[1][3].Alive and v2[1][3].AutoCandy and v2[1][3].TaskOwner == "Event" and v3.Parent and os.clock() - clock9 < 9 then
+                        task.wait(0.12)
+                        os.clock()
+                        v27 = v2[1][3]
+                        v27.CandyHUDState()
+                        v23 = v3.Position
+                        v27 = v27.CandyXZFromBase(v23) <= 14
+                        v19 = v2[1][3].CandyBalance()
+                        if not (v7 ~= nil and v19 ~= nil and v19 > v7 and v27) then
+                            v2[1][3].CandySetStatus("🟡 Waiting for candy deposit at event pad")
+                            v8 = v2[1][3]
+                            v8, v25 = v3.Position, v8.CandyXZFromBase
+                            v25 = v25(v8)
+                            if v25 > 16 then
+                                v3.CFrame = v2[1][3].UprightCFrame(v13)
+                                v8 = v2[1][3]
+                                v8.Stabilize()
+                                v8, v25, v20 = "CANDY_HOME_DRIFT", v8.CandyLog, "returned to drop-off pad XZ"
+                                v25("CANDY_HOME_DRIFT", "returned to drop-off pad XZ")
+                                continue
+                            end
+                            continue
+                        end
+                        v25 = v2[1][3]
+                        v25.CandyCarryPending = false
+                        v25.CandyPendingBalance = nil
+                        v25.CandyDepositReceipts = v25.CandyDepositReceipts + 1
+                        v25.CandyCount = v25.CandyCount + 1
+                        v24, v20, v8, v25 = v4, tostring, "CANDY_DEPOSIT_CONFIRMED", v25.CandyLog
+                        v20 = v20(v24)
+                        v21 = v15 and v3.Position.Y - v15
+                        v25("CANDY_DEPOSIT_CONFIRMED", v20 .. " evidence=HalloweenCandy balance increased " .. tostring(v7) .. "->" .. tostring(v19) .. " yAbovePad=" .. tostring(v21))
+                        return true
+                    end
+                    break
+                end
+                v11 = v2[1][3].CandyLog
+                v27 = tostring(v4)
+                v20 = v2[1][3]
+                v8 = v20.CandyLastHUD
+                v26 = tostring(v6)
+                v17 = v20.CandyBalance
+                v17 = table.pack(v17())
+                v9 = tostring(table.unpack(v17, 1, v17.n))
+                v10 = string.format
+                v22 = v20.CandyXZFromBase
+                v14 = v3.Position
+                v22 = table.pack(v22(v14))
+                v11("CANDY_DEPOSIT_UNCONFIRMED", v27 .. " hud=" .. v8 .. " balanceBefore=" .. v26 .. " balanceNow=" .. v9 .. " rootXZ=" .. v10("%.2f", table.unpack(v22, 1, v22.n)) .. " padTop=" .. tostring(v15))
+                v2[1][3].CandySetStatus("🟠 Candy still carried / deposit unconfirmed")
+            end
+        end
+        return false
+    end
+end
+local function _w294(v1, v2)
+    return function()
+        if v2[1][3].Alive and v2[1][3].InstantCameraProxy and v2[1][3].PickupMode == "Instant" then
+            task.defer(v1:Gm({v2[1]}))
+            return
+        end
+    end
+end
+local function _w295(v1, v2)
+    return function(v3)
+        if v3 then
+            pcall(v1:Wm({v2[1]}))
+            if type(sethiddenproperty) == "function" then
+                pcall(sethiddenproperty, v2[1][3], "GameplayPaused", false)
+            end
+            return
+        end
+    end
+end
+local function _w296(v1, v2)
+    return function(v3)
+        v3 = {[1] = 3, [3] = v3}
+        v3[2] = v3
+        if v2[1][3].FPSState.Enabled then
+            task.defer(v1:Tp({v2[1], v3}))
+        end
+    end
+end
+local function _w297(v1, v2)
+    return function(v3, v4)
+        if v4 == "Halves" then
+            return v2[1][3](v3)
+        else
+            return nil
+        end
+    end
+end
+local function _w298(v1)
+    return function(parent)
+        local REZEInventoryESPValue = parent:FindFirstChild("REZEInventoryESPValue")
+        local v2 = REZEInventoryESPValue
+        if REZEInventoryESPValue then
+            v2 = REZEInventoryESPValue:IsA("TextLabel")
+        end
+        local v3
+        if v2 then
+            REZEInventoryESPValue.TextScaled = false
+            REZEInventoryESPValue.TextWrapped = false
+            REZEInventoryESPValue.TextTruncate = Enum.TextTruncate.None
+            REZEInventoryESPValue:FindFirstChildOfClass("UITextSizeConstraint"):Destroy()
+            REZEInventoryESPValue.BackgroundColor3 = Color3.fromRGB(15, 15, 19)
+            REZEInventoryESPValue.BackgroundTransparency = 0.43
+            REZEInventoryESPValue.BorderSizePixel = 0
+            if not REZEInventoryESPValue:FindFirstChild("REZEESPTextCorner") then
+                v3 = Instance.new("UICorner")
+                v3.Name = "REZEESPTextCorner"
+                v3.CornerRadius = UDim.new(0, 3)
+                v3.Parent = REZEInventoryESPValue
+            end
+            if REZEInventoryESPValue.TextSize < 3 or REZEInventoryESPValue.TextSize > 11 then
+                REZEInventoryESPValue.TextSize = 11
+            end
+            return REZEInventoryESPValue
+        else
+            v2 = Instance.new("TextLabel")
+            v2.Name = "REZEInventoryESPValue"
+            v2.AnchorPoint = Vector2.new(0.5, 0.5)
+            v2.Position = UDim2.fromScale(0.5, 0.5)
+            v2.Size = UDim2.fromOffset(30, 16)
+            v2.BackgroundColor3 = Color3.fromRGB(15, 15, 19)
+            v2.BackgroundTransparency = 0.43
+            v2.BorderSizePixel = 0
+            v3 = Instance.new("UICorner")
+            v3.Name = "REZEESPTextCorner"
+            v3.CornerRadius = UDim.new(0, 3)
+            v3.Parent = v2
+            v2.Font = Enum.Font.GothamBold
+            v2.TextColor3 = Color3.fromRGB(255, 255, 255)
+            v2.TextSize = 11
+            v2.TextScaled = false
+            v2.TextWrapped = false
+            v2.TextTruncate = Enum.TextTruncate.None
+            v2.ClipsDescendants = true
+            v2.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+            v2.TextStrokeTransparency = 0.2
+            v2.TextXAlignment = Enum.TextXAlignment.Center
+            v2.TextYAlignment = Enum.TextYAlignment.Center
+            v2.ZIndex = 10000
+            v2.Parent = parent
+            return v2
+        end
+    end
+end
+local function _w299(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        local v4
+        v3, v4 = v2[2][3], v3.InstantCameraProxy
+    end
+end
+local function _w300(v1)
+    return function()
+        local v2, v3
+        v2, v3 = pcall(v1:D())
+        local v4 = v2
+        if v2 then
+            v4 = type(v3) == "string"
+        end
+        if v4 then
+            v4 = #v3 > 100
+        end
+        assert(v4, "[REZEHUB] Could not download the original UI library: " .. tostring(v3))
+        local v5
+        v5, v4 = loadstring(v3)
+        assert(v5, "[REZEHUB] UI library compile failed: " .. tostring(v4))
+        local v6, v7
+        v6, v7 = pcall(v5)
+        local v8 = v6
+        if v6 then
+            v8 = type(v7) == "table"
+        end
+        assert(v8, "[REZEHUB] UI library failed to initialize: " .. tostring(v7))
+        return v7
+    end
+end
+local function _w301(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        local v4, v5
+        v3, v4, v5 = v2[2][3], v3.Bind, "GameplayPaused"
+        local v6
+        v3, v6 = v3.GetPropertyChangedSignal, v3
+        v4(v3(v6, "GameplayPaused"), v1:vm({v2[1]}))
+    end
+end
+local function _w302(v1, v2)
+    return function()
+        local v3 = {[1] = 3, [3] = 0}
+        v3[2] = v3
+        local v4, v5, v6, v7
+        while true do
+            v7 = v2[1][3].Alive and v2[3][3].Enabled
+            if v7 then
+                v4 = v2[3][3].WorkerGeneration
+                v7 = v2[2][3] == v4
+            end
+            if v7 then
+                v7, v6 = pcall(v1:lo({v2[4], v3, v2[3]}))
+                if not v7 then
+                    v2[4][3].diagnose("esp.worker", v6)
+                end
+                v5 = v2[4][3].LowEndTuning.InventorySafetyRefresh
+                task.wait(v5)
+                continue
+            end
+            break
+        end
+        v6 = v2[3][3].WorkerGeneration
+        if v2[2][3] == v6 then
+            v2[3][3].Running = false
+        end
+    end
+end
+local function _w303(v1, v2)
+    return function(v3)
+        v3 = {[1] = 3, [3] = v3}
+        v3[2] = v3
+        local v4, v5
+        v5, v4 = pcall(v1:Oq({v2[1], v3}))
+        local v6 = v5
+        if v5 then
+            v6 = v4 ~= nil
+        end
+        local v7, v8, v9, v10, v11
+        if v6 then
+            return v4
+        else
+            v8 = {}
+            v7 = v2[3][3]
+            v8[1], v8[2] = v2[1][3], v7
+            v6, v9, v11 = ipairs(v8)
+            v6, v9, v11 = v1.g(v6, v9, v11)
+            v8, v10 = v6(v9, v11)
+            v11 = v8
+            if v11 ~= nil then
+                while true do
+                    if not v10 then
+                        v8, v10 = v6(v9, v11)
+                        v11 = v8
+                        if v11 ~= nil then
+                            continue
+                        end
+                        return nil
+                    end
+                    v7 = v10:FindFirstChild(v3[3])
+                    if not (v7 and v7:IsA("ValueBase")) then
+                        v8, v10 = v6(v9, v11)
+                        v11 = v8
+                        if v11 ~= nil then
+                            continue
+                        end
+                        return nil
+                    end
+                    break
+                end
+                return v7.Value
+            end
+            return nil
+        end
+    end
+end
+local function _w304(v1, v2)
+    return function(hideUIOnStart)
+        v2[1][3].HideUIOnStart = hideUIOnStart
+    end
+end
+local function _w305(v1, v2)
+    return function(v3)
+        local v4 = v3
+        if v3 then
+            v4 = v3:IsA("ProximityPrompt")
+        end
+        if v4 then
+            v4 = v3:IsDescendantOf(workspace)
+        end
+        if v4 then
+            v4 = not v2[1][3][v3]
+        end
+        local v5, v6, v7, v8, v9
+        if not v4 then
+            return nil
+        else
+            v2[1][3][v3] = true
+            v5 = v2[3][3](v3)
+            if not v5 or (v5 - v2[2][3]).Magnitude > 150 then
+                return nil
+            else
+                v4 = tostring(v3.ActionText or ""):lower()
+                if v4 ~= "pick up" and v4 ~= "pickup" and v4 ~= "claim" then
+                    return nil
+                else
+                    v7 = tostring(v3.ObjectText or "")
+                    v8 = 1
+                    v6 = v3.Parent
+                    while true do
+                        if not (not v6 or v6 == workspace) then
+                            v7, v6 = v7 .. " " .. tostring(v6.Name), v6.Parent
+                            v8 = v8 + 1
+                            if v8 <= 4 then
+                                continue
+                            end
+                            break
+                        end
+                        break
+                    end
+                    v8 = v7:lower():gsub("[^%w]", "")
+                    v9 = nil
+                    if v8:find("ritualcandypot", 1, true) then
+                        v9 = "Ritual Candy Pot"
+                    else
+                        v8:find("headlessegg", 1, true)
+                    end
+                    if v9 then
+                        return v3, v5, v9
+                    else
+                        return nil
+                    end
+                end
+            end
+        end
+    end
+end
+local function _w306(v1, v2)
+    return function(v3, v4)
+        local v5 = v2[1][3]
+        local v6
+        v5, v6 = v3.Rarity, v5.DynamicRarityRank
+        local v7 = v6[v5] or 0
+        v5 = v2[1][3].DynamicRarityRank
+        local v8 = v4.Rarity
+        v6 = v5[v8] or 0
+        local v9
+        if v7 ~= v6 then
+            return v7 > v6
+        else
+            v8 = v4.Price
+            if v3.Price ~= v8 then
+                return v3.Price > v4.Price
+            else
+                v9 = v4.Name
+                return v3.Name < v9
+            end
+        end
+    end
+end
+local function _w307(v1, v2)
+    return function()
+        local v3
+        while true do
+            if v2[1][3].Alive then
+                v2[1][3].TaskWants("FuseClaim")
+                v3 = v2[2][3]
+                v2[1][3].TaskRun("FuseClaim", v3, true)
+                task.wait(0.5)
+                continue
+            end
+            break
+        end
+    end
+end
+local function _w308(v1, v2)
+    return function()
+        local v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17
+        if v2[1][3].TeleportToMyPlot() then
+            task.wait(0.13)
+            v16 = v2[3][3]
+            v12, v16 = v16, v16.FindFirstChild
+            v16 = {[1] = 3, [3] = v16(v12, "Remotes")}
+            v16[2] = v16
+            if v16[3] then
+                v12 = v2[5][3]:GetPlot(v2[4][3])
+                v6 = v12 and v12:FindFirstChild("Eggs")
+                if v6 then
+                    v4 = v6.GetChildren
+                    v4 = v1.h(v4(v6))
+                    v13, v4, v5 = ipairs(v1.i(v4))
+                    v13, v4, v5 = v1.g(v13, v4, v5)
+                    v17, v9 = v13(v4, v5)
+                    v5 = v17
+                    if v5 ~= nil then
+                        while true do
+                            if not v2[1][3].TaskShouldStop("Hatch") then
+                                v9:GetAttribute("EggKey")
+                                v8 = {[1] = 3, [3] = v9:FindFirstChild("EggKey")}
+                                v8[2] = v8
+                                if v8[3] and v2[1][3].IsEggReadyToHatch(v9) then
+                                    if v2[2][3] and v2[1][3].IsEggMatchingHatchFilter(v9) then
+                                    end
+                                    v11 = {Kind = "Hatch", Key = nil}
+                                    v11.ExpiresAt = os.clock() + 12
+                                    v3 = {}
+                                    v3.EggName = tostring(v9.Name)
+                                    v15 = v9.Name
+                                    v3.LuckText = v2[1][3].WebhookEffectiveLuck(v15, v9)
+                                    v11.Context = v3
+                                    v14 = v2[1][3]
+                                    v10 = v11
+                                    v14.PendingPetAlerts[#v14.PendingPetAlerts + 1] = v11
+                                    v11 = pcall(v1:Xn({v16, v8}))
+                                    do
+                                        local shouldExit = false
+                                        if not v11 then
+                                            v14 = #v2[1][3].PendingPetAlerts
+                                            if v14 >= 1 then
+                                                while true do
+                                                    if v2[1][3].PendingPetAlerts[v14] == v10 then
+                                                        break
+                                                    else
+                                                        v14 = v14 + -1
+                                                        if v14 >= 1 then
+                                                            continue
+                                                        end
+                                                    end
+                                                    shouldExit = true
+                                                    break
+                                                end
+                                                if shouldExit then
+                                                    break
+                                                end
+                                                v7 = v2[1][3].PendingPetAlerts
+                                                table.remove(v7, v14)
+                                            end
+                                        end
+                                    end
+                                    task.wait(0.2)
+                                end
+                                v17, v9 = v13(v4, v5)
+                                v5 = v17
+                                if v5 ~= nil then
+                                    continue
+                                end
+                                break
+                            end
+                            break
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+local function _w309(v1, v2)
+    return function()
+        local v3 = v2[1][3].Enabled
+        local v4
+        if v3 then
+            v4 = v2[1][3].WorkerGeneration
+            v3 = v2[3][3] == v4
+        end
+        if v3 then
+            v2[2][3].bindInventoryESPGrid()
+        end
+    end
+end
+local function _w310(v1, v2)
+    return function(placeKGRule, placeKGThreshold)
+        local v3 = v2[1][3]
+        local v4
+        v3.PlaceKGRule, v4 = placeKGRule, v3
+        v4.PlaceKGThreshold = placeKGThreshold
+    end
+end
+local function _w311(v1, v2)
+    return function(v3, v4)
+        local v5 = v1:oo({v2[1]})
+        return v5(v3) > v5(v4)
+    end
+end
+local function _w312(v1, v2)
+    return function()
+        v2[1][3]:FireServer()
+    end
+end
+local function _w313(v1, v2)
+    return function(v3, v4)
+        v4 = {[1] = 3, [3] = v4}
+        v4[2] = v4
+        local findFirstChild3 = v2[1][3]:FindFirstChild(v3)
+        local v5 = findFirstChild3
+        if findFirstChild3 then
+            v5 = findFirstChild3:IsA("RemoteEvent")
+        end
+        local v6
+        if v5 then
+            v6 = v1:vl({v2[3], v4})
+            v5 = findFirstChild3.OnClientEvent:Connect(v6)
+            v6 = v2[2][3]
+            v6.Hooks[#v6.Hooks + 1] = v5
+        end
+    end
+end
+local function _w314(v1, v2)
+    return function(v3)
+        local getEggKG = v2[1][3].GetEggKG(v3)
+        return getEggKG ~= nil and v2[1][3].FormatKG(getEggKG) or nil
+    end
+end
+local function _w315(v1, v2)
+    return function()
+        v2[1][3].Enabled = false
+    end
+end
+local function _w316(v1, v2)
+    return function()
+        local g, n
+        local playerGui5 = v2[1][3]:FindFirstChildOfClass("PlayerGui")
+        local v3 = {}
+        local lower3, v4, v5, v6, v7, v8
+        if playerGui5 then
+            v7 = playerGui5.GetDescendants
+            v7 = v1.h(v7(playerGui5))
+            v4, v7, g = ipairs(v1.i(v7))
+            v4, v7, g = v1.g(v4, v7, g)
+            for g, n in v4, v7, g do
+                if n:IsA("TextLabel") or n:IsA("TextButton") then
+                    v8 = tostring(n.Text or "")
+                    lower3 = v8:lower()
+                    if lower3:find("egg delivery failed", 1, true) or lower3:find("code at-", 1, true) then
+                        v5 = true
+                        v6 = n
+                        if v6 and v6 ~= playerGui5 then
+                            v6:IsA("GuiObject")
+                            v5 = false
+                        end
+                        if v5 then
+                            v3[n] = v8
+                        end
+                    end
+                end
+            end
+        end
+        return v3
+    end
+end
+local function _w317(v1, v2)
+    return function()
+        local v3 = v2[1][3].EggTrackerCycle
+        local v4
+        v3, v4 = v2[3][3], v3.Timer
+        v3 = v3()
+        local v5, v6, v7, v8, v9, playerGui6, v10, v11, v12
+        if v3 ~= nil then
+            return v3
+        else
+            v11 = os.clock()
+            playerGui6 = v2[2][3]:FindFirstChildOfClass("PlayerGui")
+            v8 = playerGui6 and playerGui6:FindFirstChild("Main")
+            v12 = v8 and v8:FindFirstChild("EggTracker")
+            v10 = v12 and v12:FindFirstChild("Timer", true)
+            if v10 and v10:IsA("TextLabel") then
+                v7 = tostring(v10.Text or "")
+                if v7 ~= v4.Raw or v10 ~= v4.UILabel then
+                    v4.Raw = v7
+                    v4.UILabel = v10
+                    v6 = v2[4][3](v7)
+                    v4.Seconds = v6
+                    v4.SampleAt = v6 and v11 or nil
+                end
+                if v4.Seconds and v4.SampleAt then
+                    v5 = v11 - v4.SampleAt
+                    v6 = v4.Seconds - v5
+                    if v6 >= -0.75 then
+                        v4.Source = "PlayerGui.Main.EggTracker.Timer (fallback)"
+                        v9 = math.max
+                        v9 = table.pack(v9(0, v6))
+                        return table.unpack(v9, 1, v9.n)
+                    end
+                    v4.Source = "unavailable"
+                    return nil
+                end
+            else
+                v4.Raw = nil
+                v4.UILabel = nil
+                v4.Seconds = nil
+                v4.SampleAt = nil
+            end
+            v4.Source = "unavailable"
+            return nil
+        end
+    end
+end
+local function _w318(v1, v2)
+    return function(v3)
+        local v4 = v2[1][3]
+        local v5 = math.clamp
+        local v6 = tonumber(v3) or 10
+        local pack = table.pack(v5(v6, 1, 120))
+        v4.PlacePetsInterval = tostring(table.unpack(pack, 1, pack.n))
+    end
+end
+local function _w319(v1, v2)
+    return function()
+        local v3 = v2[2][3].FPSState.Original.WaterWaveSpeed
+        v2[1][3].WaterWaveSpeed = v3
+    end
+end
+local function _w320(v1, v2)
+    return function(v3, v4, v5, v6)
+        local v7, v8
+        v7, v8 = pcall(v2[1][3].FinishEggInternal, v3, v4, v5, v6)
+        v2[1][3].StopFarmHover()
+        local v9 = v7
+        if v7 then
+            v9 = v8
+        end
+        if v9 then
+            v9 = v2[1][3].PickupMode == "Instant"
+        end
+        if v9 then
+            v9 = v2[1][3].InstantCameraProxy
+        end
+        local v10
+        do
+            local shouldExit = false
+            if v9 then
+                v9 = os.clock() + 1.5
+                v10 = v2[1][3].InstantCameraProxy and v2[1][3].Alive and not v2[1][3].InstantRecoveryPending and os.clock() < v9
+                if v10 then
+                    v2[1][3].IsAtInstantRanchCenter()
+                    break
+                end
+                shouldExit = true
+                break
+            end
+        end
+        if v2[1][3].InstantCameraProxy and v2[1][3].PickupMode == "Instant" and not v2[1][3].InstantRecoveryPending then
+            v2[1][3].InstantEmergencyRanchReturn(v7 and v8 and "delivery confirmed before ranch camera arrival" or "Instant delivery interrupted")
+        end
+        v10 = v2[1][3].PickupMode
+        if v10 == "Instant" and v2[1][3].SafeInstantPOVExit then
+            v2[1][3].SafeInstantPOVExit("FinishEgg end")
+        end
+        if not v7 then
+            warn("[REZEHUB][Egg Delivery] " .. tostring(v8))
+            v10 = v2[2][3]
+            v2[1][3].setLabel(v10, "🔴 Delivery interrupted • see console")
+            return false
+        else
+            return v8
+        end
+    end
+end
+local function _w321(v1, v2)
+    return function(cFrame)
+        local getCharacter5 = v2[1][3].GetCharacter()
+        local v3 = getCharacter5
+        if getCharacter5 then
+            v3 = getCharacter5:FindFirstChild("HumanoidRootPart")
+        end
+        if not v3 or typeof(cFrame) ~= "CFrame" then
+            return false
+        else
+            v3.CFrame = cFrame
+            v2[1][3].Stabilize()
+            return true
+        end
+    end
+end
+local function _w322(v1, v2)
+    return function()
+        v2[1][3]:SetVisible(v2[2][3])
+    end
+end
+local function _w323(v1, v2)
+    return function()
+        if not v2[1][3]:IsDescendantOf(workspace) then
+            return true
+        elseif v2[1][3].Enabled == false then
+            return true
+        else
+            return false
+        end
+    end
+end
+local function _w324(v1, v2)
+    return function(v3)
+        local v4, v5, v6, v7, v8, v9
+        if not (v2[1][3].InstantRecoveryPending and not v3) then
+            v4 = v2[1][3]
+            v4.InstantHomeReturnArmed = false
+            v4.InstantDeliveryConfirmed = false
+            v4 = {[1] = 3, [3] = v4.InstantCameraProxy}
+            v4[2] = v4
+            v4.InstantCameraProxy = nil
+            v6 = {[1] = 3, [3] = v4.InstantVisualEgg}
+            v6[2] = v6
+            v4.InstantVisualEgg = nil
+            if v6[3] and v6[3].Parent == nil then
+                pcall(v1:nn({v6}))
+            end
+            if v4[3] then
+                v7 = workspace.CurrentCamera
+                v9 = v7
+                if v9 then
+                    v5 = v4[3].Humanoid
+                    v9 = v7.CameraSubject == v5
+                end
+                if v9 then
+                    v9 = v2[2][3].Character
+                    v8 = v9 and v9:FindFirstChildOfClass("Humanoid")
+                    if v8 then
+                        v7.CameraSubject = v8
+                    end
+                end
+                if v4[3].Model and v4[3].Model.Parent then
+                    v4[3].Model:Destroy()
+                end
+            end
+            return
+        end
+    end
+end
+local function _w325(v1, v2)
+    return function()
+        local v3 = v2[1][3].InstantCameraProxy
+        local v4 = workspace.CurrentCamera
+        local v5 = v3
+        if v3 then
+            v5 = v3.Model
+        end
+        if v5 then
+            v5 = v3.Model.Parent == workspace
+        end
+        if v5 then
+            v5 = v3.Humanoid
+        end
+        if v5 then
+            v5 = v3.Humanoid.Parent
+        end
+        if v5 then
+            v5 = v4
+        end
+        if not v5 then
+            return false
+        else
+            if v4.CameraSubject ~= v3.Humanoid then
+                v4.CameraSubject = v3.Humanoid
+            end
+            v5 = Enum.CameraType.Custom
+            if v4.CameraType ~= v5 then
+                v4.CameraType = Enum.CameraType.Custom
+            end
+            return v4.CameraSubject == v3.Humanoid
+        end
+    end
+end
+local function _w326(v1, v2)
+    return function(v3)
+        local v4 = v3
+        if v4 and v4 ~= v2[1][3] then
+            v4:IsA("GuiObject")
+            return false
+        end
+        return true
+    end
+end
+local function _w327(v1, v2, v3, ...)
+    v1.Yq, v1.Uq, v1.Wq = v1:Yq(), v1:Uq(), v1:Wq()
+    return v1:k()(v2, v3, ...)
+end
+local function _w328(v1, v2)
+    return function(v3)
+        local v4, v5
+        if not v3 then
+            return nil
+        else
+            v5 = v3:GetAttribute("Weight")
+            if v5 == nil then
+                v4 = v3:FindFirstChild("Weight")
+                if v4 and v4:IsA("ValueBase") then
+                    v5 = v4.Value
+                end
+            end
+            v4 = v2[1][3].ParseKG
+            v4 = table.pack(v4(v5))
+            return table.unpack(v4, 1, v4.n)
+        end
+    end
+end
+local function _w329(v1, v2, v3, v4)
+    v1.zr[v4] = v1.Wq(v2, v3)
+    return v1.zr[v4]
+end
+local function _w330(v1, v2)
+    return function()
+        local v3 = v2[10][3]
+        local v4
+        v4, v3 = v3, v3.WaitForChild
+        v3 = {[1] = 3, [3] = v3(v4, "SellItems")}
+        v3[2] = v3
+        v4 = v2[10][3]
+        local v5
+        v4, v5 = v4.WaitForChild, v4
+        v4 = {[1] = 3, [3] = v4(v5, "ConfirmRequest")}
+        v4[2] = v4
+        v5 = workspace:WaitForChild("Stalls"):WaitForChild("Sell")
+        local v6, v7
+        v6, v5, v7 = v5, v5.WaitForChild, "Richie"
+        v5 = {[1] = 3, [3] = v5(v6, "Richie")}
+        v5[2] = v5
+        v7 = v2[6][3]
+        local v8
+        v8, v7 = v7, v7.WaitForChild
+        v7 = v1.h(v7(v8, "SellValue"))
+        v6 = {[1] = 3, [3] = require(v1.i(v7))}
+        v6[2] = v6
+        v7 = {[1] = 3, [3] = 0}
+        v7[2] = v7
+        v8 = {[1] = 3, [3] = nil}
+        v8[2] = v8
+        local v9 = {[1] = 3, [3] = false}
+        v9[2] = v9
+        local v10 = {[1] = 3, [3] = {}}
+        v10[2] = v10
+        local v11 = v2[5][3]
+        local v12, v13
+        v13, v11, v12 = v1:bq({v8}), v3[3].OnClientEvent, v11.Bind
+        v12(v11, v13)
+        v12 = {[1] = 3, [3] = v12}
+        v12[2] = v12
+        v12[3] = v1:jq({v12})
+        v11 = {[1] = 3, [3] = v11}
+        v11[2] = v11
+        local v14, v15
+        v13, v11[3], v14, v15 = ipairs, v1:cq({v7, v10, v12, v4}), "Remotes", v2[4][3]
+        v15 = v15:WaitForChild("Remotes")
+        local v16
+        v16, v15 = v15, v15.GetDescendants
+        v15 = v1.h(v15(v16))
+        v13, v15, v16 = v13(v1.i(v15))
+        v13, v15, v16 = v1.g(v13, v15, v16)
+        local v17
+        v14, v17 = v13(v15, v16)
+        v16 = v14
+        local v18, v19, v20
+        if v14 ~= nil then
+            while true do
+                v17 = {[1] = 3, [3] = v17}
+                v17[2] = v17
+                v18 = "RemoteEvent"
+                v20 = v17[3]
+                if v17[3].IsA(v20, "RemoteEvent") and v17[3] == v4[3] then
+                    v20 = v2[5][3]
+                    v18, v20, v19 = v1:gq({v11, v17}), v17[3].OnClientEvent, v20.Bind
+                    v19(v20, v18)
+                end
+                v14, v17 = v13(v15, v16)
+                v16 = v14
+                if v16 == nil then
+                    break
+                end
+            end
+        end
+        v13 = {[1] = 3, [3] = v13}
+        v13[2] = v13
+        v13[3] = v1:mq({v2[2]})
+        v15 = {[1] = 3, [3] = v15}
+        v15[2] = v15
+        v15[3] = v1:dq()
+        v16 = {[1] = 3, [3] = v16}
+        v16[2] = v16
+        v16[3] = v1:kq()
+        v14 = {[1] = 3, [3] = v14}
+        v14[2] = v14
+        v14[3], v19 = v1:qq({v2[2], v15, v13, v16}), task
+        v17, v19 = v19.spawn, v1:nq({v2[5], v14, v7})
+        v17(v19)
+        v17 = {[1] = 3, [3] = v17}
+        v17[2] = v17
+        v17[3] = v1:rq()
+        v19 = {[1] = 3, [3] = v19}
+        v19[2] = v19
+        v19[3] = v1:oq({v2[2]})
+        v20 = {[1] = 3, [3] = v20}
+        v20[2] = v20
+        v20[3] = v1:iq()
+        v18 = {[1] = 3, [3] = v18}
+        v18[2] = v18
+        v18[3] = v1:hq({v19})
+        local v21 = {[1] = 3, [3] = nil}
+        v21[2] = v21
+        local v22
+        v22, v21[3] = v2[5][3], v1:eq({v17, v20, v18, v2[2], v2[7], v2[3], v2[8], v6, v2[5]})
+        local v23
+        v23, v22 = v22.TaskNeeds, v1:sq({v2[9], v21})
+        v23.Sell = v22
+        v23 = {[1] = 3, [3] = v23}
+        v23[2] = v23
+        v23[3] = v1:fq({v5, v2[2]})
+        v22 = {[1] = 3, [3] = v22}
+        v22[2] = v22
+        local v24
+        v22[3], v24 = v1:lq({v9, v2[5], v7, v23, v3, v8}), task
+        local v25
+        v25, v24 = v24.spawn, v1:pq({v2[5], v22, v2[9], v21})
+        v25(v24)
+        v24 = v1:aq({v2[5], v22, v2[1], v21})
+        task.spawn(v24)
+    end
+end
+local function _w331(v1, v2)
+    return function()
+        local n, k, d
+        local v3 = v2[1][3].InventoryESPState
+        local v4, v5, v6, v7, v8, v9, v10, v11
+        if not (not v2[2][3].Alive or not v3.Enabled) then
+            v2[1][3].bindInventoryESPHotbar()
+            v4 = {}
+            v7 = v3.HotbarCards
+            v10 = {}
+            if not v7 then
+                v7 = {}
+            end
+            v6, v7, v5 = pairs(v7)
+            v6, v7, v5 = v1.g(v6, v7, v5)
+            for n in v6, v7, v5 do
+                if n.Parent then
+                    k, v8, v9, v11 = n, v10, v4, v2[1][3].processInventoryESPCard
+                    v11(k, v9, v8)
+                end
+            end
+            v2[1][3].clearInventoryESPEmptyHotbarCards()
+            v6 = v3.Grid
+            if v6 and v6.Parent then
+                v5, n, d = ipairs(v3.GridCardList)
+                v5, n, d = v1.g(v5, n, d)
+                for d, k in v5, n, d do
+                    if k.Parent == v6 and k:IsA("GuiObject") and v2[1][3].isInventoryESPCardInViewport(k, v6) then
+                        v2[1][3].bindInventoryESPCard(k)
+                        v2[1][3].processInventoryESPCard(k, v4, v10)
+                    end
+                end
+            end
+            return
+        end
+    end
+end
+local function _w332(v1, v2)
+    return function()
+        return v2[1][3], "🔴 Auto Sell Off"
+    end
+end
+local function _w333(v1, v2)
+    return function(v3)
+        local v4 = v2[6][3]
+        v4.EventStage = "CLAIM RITUAL REWARD"
+        local v5
+        v5, v4 = "🟡 Ritual: claiming ", v4.CandySetStatus
+        v4("🟡 Ritual: claiming ")
+        v2[8][3](nil)
+        v2[7][3](nil)
+        task.wait(0.32)
+        if not v2[11][3]() then
+            return "REWARD_CHARACTER_MISSING"
+        end
+        return nil
+    end
+end
+local function _w334(v1, v2)
+    return function()
+        local getAttributeChangedSignal = v2[1][3]:GetAttributeChangedSignal("EggInventoryId")
+        local v3, v4
+        v4, getAttributeChangedSignal, v3 = getAttributeChangedSignal, getAttributeChangedSignal.Connect, v1:Rm({v2[2], v2[1]})
+        getAttributeChangedSignal = table.pack(getAttributeChangedSignal(v4, v3))
+        return table.unpack(getAttributeChangedSignal, 1, getAttributeChangedSignal.n)
+    end
+end
+local function _w335(v1, v2)
+    return function(v3)
+        local d
+        local v4 = os.clock()
+        local v5, v6, v7, v8, v9, v10, v11
+        if v4 - v2[1][3] >= 0.75 then
+            v2[1][3], v5 = v4, table
+            v6, v5 = v5.clear, v2[3][3]
+            v6(v5)
+            v5 = v2[5][3]
+            v5, v6 = v2[4][3], v5.normalizeSelection
+            v6 = v6(v5.SelectedESPRarities)
+            v2[2][3], v5, v7 = #v6 == 0, ipairs, v6
+            v5, v7, v10 = v5(v7)
+            v5, v7, v10 = v1.g(v5, v7, v10)
+            for v13, d in v5, v7, v10 do
+                v9 = v2[3][3]
+                v11 = tostring(d)
+                v11, v8 = v11.lower, v11
+                v9[v11(v8)] = true
+            end
+        end
+        v6 = v2[2][3]
+        local v12
+        if not v6 then
+            v7 = v2[3][3]
+            v10 = tostring(v3)
+            v10, v12 = v10.lower, v10
+            v5, v7 = v7[v10(v12)], true
+            v6 = v5 == true
+        end
+        return v6
+    end
+end
+local function _w336(v1, v2)
+    return function(v3, v4, v5, v6)
+        v5 = {[1] = 3, [3] = v5}
+        v5[2] = v5
+        v6 = {[1] = 3, [3] = v6}
+        v6[2] = v6
+        local v7 = v2[1][3]
+        v7.YieldUIPaint()
+        local v8, v9
+        v9, v7, v8 = v4, v3, v7.boxFor
+        v8 = {[1] = 3, [3] = v8(v7, v9)}
+        v8[2] = v8
+        local v10
+        if not v8[3] then
+            return
+        else
+            v7, v9 = pcall(v1:Xm({v8, v6, v5, v2[1]}))
+            if not v7 then
+                v10 = "Button " .. v5[3]
+                v2[1][3].notifyError(v10, v9)
+            end
+            return v9
+        end
+    end
+end
+local function _w338(v1, v2)
+    return function()
+    end
+end
+local function _w339(v1, v2)
+    return function()
+        local v3 = {[1] = 3, [3] = v2[1][3].EggTrackerCycle.Timer}
+        v3[2] = v3
+        local v4 = os.clock()
+        local v5
+        if v3[3].ModuleStarted and not v3[3].Module and v4 - (v3[3].ResolveAt or v4) > 5 then
+            v5 = v3[3].ResolveSerial or 0
+            v3[3].ResolveSerial = v5 + 1
+            v3[3].ModuleStarted = false
+        end
+        local v6, v7, v8, v9
+        if not v3[3].Module and not v3[3].ModuleStarted and v4 - (v3[3].LastResolveAttempt or -math.huge) >= 3 then
+            v9 = v2[2][3]:FindFirstChild("GameServices")
+            v5 = {[1] = 3, [3] = v9 and v9:FindFirstChild("EggCycle")}
+            v5[2] = v5
+            v3[3].LastResolveAttempt = v4
+            if v5[3] and v5[3].IsA(v5[3], "ModuleScript") then
+                v3[3].ModuleStarted = true
+                v3[3].ResolveAt = v4
+                v7 = v3[3].ResolveSerial or 0
+                v3[3].ResolveSerial = v7 + 1
+                v8 = {[1] = 3, [3] = v3[3].ResolveSerial}
+                v8[2] = v8
+                v6 = v1:Fp({v5, v8, v2[1], v3})
+                task.spawn(v6)
+            end
+        end
+        if v3[3].Reading and v4 - (v3[3].ReadAt or v4) > 3 then
+            v5 = v3[3].ReadSerial or 0
+            v3[3].ReadSerial = v5 + 1
+            v3[3].Reading = false
+        end
+        if v3[3].Module and not v3[3].Reading and v4 - (v3[3].ReadAt or -math.huge) >= 0.75 then
+            v3[3].Reading = true
+            v3[3].ReadAt = v4
+            v5 = v3[3].ReadSerial or 0
+            v3[3].ReadSerial = v5 + 1
+            v9 = {[1] = 3, [3] = v3[3].ReadSerial}
+            v9[2] = v9
+            task.spawn(v1:Ep({v3, v9, v2[1]}))
+        end
+        if v3[3].ModuleSampleAt and v3[3].ModuleSeconds and v4 - v3[3].ModuleSampleAt <= 2.5 then
+            v3[3].Source = "GameServices.EggCycle.SecondsRemaining"
+            v9 = math.max
+            v8 = v3[3].ModuleSeconds
+            v6 = v3[3].ModuleSampleAt
+            v9 = table.pack(v9(0, v8 - (v4 - v6)))
+            return table.unpack(v9, 1, v9.n)
+        else
+            return nil
+        end
+    end
+end
+local function _w340(v1, v2)
+    return function()
+        local v3 = v2[2][3].FPSState.Original.WaterWaveSize
+        v2[1][3].WaterWaveSize = v3
+    end
+end
+local function _w341(v1, v2)
+    return function(v3)
+        local v4, v5, v6
+        v6, v4, v5 = ipairs(v2[1][3].EggNames)
+        v6, v4, v5 = v1.g(v6, v4, v5)
+        local v7, v8
+        v8, v7 = v6(v4, v5)
+        local v9 = {}
+        local v10, v11, v12, v13, v14, v15
+        if v8 ~= nil then
+            while true do
+                v12 = v2[2][3][v7] or {}
+                v13 = tostring(v12.Rarity or "Common")
+                if v3 then
+                    v15 = v12.Luck or v12.BaseLuck or v12.HatchLuck
+                    v14 = tonumber(v15) or 0
+                    v13 = v13 .. " • " .. v2[1][3].formatCompactNumber(v14) .. " Luck"
+                end
+                v10 = table.insert
+                v11 = {}
+                v11[1], v11[2] = v7, v13
+                v10(v9, v11)
+                v8, v7 = v6(v4, v5)
+                v5 = v8
+                if v5 == nil then
+                    break
+                end
+            end
+        end
+        return v9
+    end
+end
+local function _w342(v1, v2)
+    return function()
+        local v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16
+        if not v2[1][3].EventAutoRitual then
+            return false
+        else
+            v8 = os.clock()
+            if v8 < (v2[1][3].EventRitualPriorityGrace or 0) then
+                return false
+            elseif v8 - (v2[1][3].EventRitualCheckAt or -100) < 0.55 then
+                return v2[1][3].EventRitualCheckResult == true
+            else
+                v12 = v2[1][3]
+                v12.EventRitualCheckAt = v8
+                v11, v12, v16 = "RitualView", (v12.EventRitualRewardPendingUntil or 0) > v8, v2[3][3]
+                v16 = v16:FindFirstChild("RitualView")
+                if not v12 then
+                    v11 = v2[3][3]:GetAttribute("RitualYin")
+                    v5 = v2[3][3]
+                    v13 = v11 == true
+                    v5, v14 = v5.GetAttribute, v5
+                    v5, v11 = v16, v5(v14, "RitualYang") == true
+                    if v5 then
+                        v14 = v16.GetAttribute
+                        v14 = table.pack(v14(v16, "YinStartedAt"))
+                        v5 = tonumber(table.unpack(v14, 1, v14.n))
+                    end
+                    v14 = v16
+                    if v14 then
+                        v15 = v16.GetAttribute
+                        v15 = table.pack(v15(v16, "YangStartedAt"))
+                        v14 = tonumber(table.unpack(v15, 1, v15.n))
+                    end
+                    v12 = (v13 or v5) and v11 and not (v5 and v5 > 0 and v14 > 0)
+                end
+                if not v12 then
+                    v11 = v2[2][3]
+                    v5, v11 = v11, v11.GetTagged
+                    v11 = v1.h(v11(v5, "HalloweenRitualPrompt"))
+                    v13, v11, v5 = ipairs(v1.i(v11))
+                    v13, v11, v5 = v1.g(v13, v11, v5)
+                    v14, v15 = v13(v11, v5)
+                    v5 = v14
+                    if v5 ~= nil then
+                        while true do
+                            if v15:IsA("ProximityPrompt") and v15:IsDescendantOf(workspace) and v15.Enabled and v15:GetAttribute("RitualAvailable") == true then
+                                v9, v3 = v2[4][3](v15)
+                                v7 = v3 == "Collect" and v9
+                                if v7 then
+                                    v6 = v2[3][3]
+                                    v6, v4, v10 = v6.GetAttribute, "Ritual" .. v9, v6
+                                    v7 = v6(v10, v4) ~= true
+                                end
+                                if v7 then
+                                    break
+                                else
+                                    v14, v15 = v13(v11, v5)
+                                    v5 = v14
+                                    if v5 ~= nil then
+                                        continue
+                                    end
+                                end
+                            else
+                                v14, v15 = v13(v11, v5)
+                                v5 = v14
+                                if v5 ~= nil then
+                                    continue
+                                end
+                            end
+                            v13 = v2[1][3]
+                            v13.EventRitualCheckResult = v12 == true
+                            v13 = v13.EventRitualCheckResult
+                            return v13
+                        end
+                        v12 = true
+                    end
+                end
+                v13 = v2[1][3]
+                v13.EventRitualCheckResult = v12 == true
+                return v13.EventRitualCheckResult
+            end
+        end
+    end
+end
+local function _w343(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        v3.FPSGeneration = v3.FPSGeneration + 1
+        v3 = {[1] = 3, [3] = v3.FPSGeneration}
+        v3[2] = v3
+        task.spawn(v1:Kn({v2[1], v3}))
+    end
+end
+local function _w344(v1, v2)
+    return function()
+        v2[1][3]:FireServer(v2[2][3], true, "Yes")
+    end
+end
+local function _w345(v1, v2)
+    return function(v3, v4, v8, ...)
+        local v5 = v2[1][3].PumpkinResult
+        local v6 = {}
+        v6.Time = os.clock()
+        local v7 = {}
+        v1.j(v7, 1, v4, v8, ...)
+        v6.Args = v7
+        v5[v3] = v6
+    end
+end
+local function _w346(v1, v2)
+    return function(v3)
+        v3 = {[1] = 3, [3] = v3}
+        v3[2] = v3
+        local v4 = v1:ep()
+        local v5 = v4(v3[3])
+        local v6, v7, v8, v9, v10, v11, v12, v13
+        if v5 then
+            return v5
+        else
+            v10 = v2[1][3].RenderedEggs
+            if v10 then
+                v11 = v2[1][3].RenderedEggs
+                v10 = v3[3].Parent == v11
+            end
+            if v10 then
+                v10 = type(v2[1][3].FindActiveWorldEggConfiguration) == "function"
+            end
+            if v10 then
+                v11 = v2[1][3]
+                v11, v8 = v3[3], v11.FindActiveWorldEggConfiguration
+                v10, v8 = pcall(v8, v11)
+                if v10 and v8 then
+                    v4(v8)
+                end
+            end
+            v8 = v3[3]
+            v10 = v3[3].FindFirstChild(v8, "Handle")
+            if not v4(v10) then
+                v4(v10 and v10:FindFirstChild("EggBase"))
+            end
+            v9 = v3[3]
+            v11 = v3[3].FindFirstChild
+            v11 = v1.h(v11(v9, "EggData"))
+            v5 = v4(v1.i(v11))
+            v11 = v3[3].GetDescendants
+            v9 = v3[3]
+            v11 = v1.h(v11(v9))
+            v8, v11, v9 = ipairs(v1.i(v11))
+            v8, v11, v9 = v1.g(v8, v11, v9)
+            v13, v7 = v8(v11, v9)
+            v9 = v13
+            if v9 ~= nil then
+                while true do
+                    v5 = v4(v7)
+                    if not v5 then
+                        v13, v7 = v8(v11, v9)
+                        v9 = v13
+                        if v9 ~= nil then
+                            continue
+                        end
+                        v8 = nil
+                        v11, v9 = pcall(v1:fp({v3}))
+                        if v11 and type(v9) == "number" and math.abs(v9 - 1) > 0.001 then
+                            v8 = v9
+                        end
+                        if not v8 and v10 and v10:IsA("BasePart") then
+                            v13 = v2[1][3]
+                            v13.EggTemplates = v13.EggTemplates or {}
+                            v12 = v3[3].Name
+                            v13 = v2[1][3].EggTemplates[v12]
+                            if v13 == nil then
+                                v7 = v2[3][3]:FindFirstChild(v3[3].Name, true)
+                                if v7 and v7:IsA("Model") and v7:FindFirstChild("Handle") then
+                                    v13 = v7
+                                else
+                                    v13 = false
+                                end
+                                v6 = v3[3].Name
+                                v2[1][3].EggTemplates[v6] = v13
+                            end
+                            v7 = v13 and v13:FindFirstChild("Handle")
+                            if v7 and v7:IsA("BasePart") and v7.Size.X > 0 then
+                                v6 = v7.Size.X
+                                v8 = v10.Size.X / v6
+                            end
+                        end
+                        if v8 then
+                            v13 = tonumber(v2[2][3].EggInflateFrom) or 1.5
+                            v7 = tonumber(v2[2][3].EggInflateFactor) or 2
+                            if v8 > (v13 + v13 * v7) / 2 then
+                                v8 = v8 / v7
+                            end
+                            return v8, true
+                        else
+                            return nil
+                        end
+                    end
+                    break
+                end
+                return v5
+            end
+        end
+    end
+end
+local function _w347(v1, v2)
+    return function(v3, v4)
+        local format3 = string.format("[%.2f] %s | %s", os.clock(), tostring(v3), tostring(v4 or ""))
+        local v5 = v2[1][3].CandyLogs
+        table.insert(v5, format3)
+        if #v2[1][3].CandyLogs > 110 then
+            v5 = v2[1][3].CandyLogs
+            table.remove(v5, 1)
+        end
+    end
+end
+local function _w348(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        local v4 = "REZEV8_" .. v2[6][3]
+        local v5 = {Text = v2[5][3], Values = v2[4][3]}
+        local v6 = v2[2][3]
+        local v7, v8
+        v8, v6, v7 = v2[3][3], v2[7][3], v6.normalizeSelection
+        v5.Default = v7(v6[v8])
+        v5.Multi = true
+        v5.Searchable = true
+        v5.MaxVisibleDropdownItems = 8
+        local v9
+        v9, v3 = v3, v3.AddDropdown
+        v3 = table.pack(v3(v9, v4, v5))
+        return table.unpack(v3, 1, v3.n)
+    end
+end
+local function _w349(v1, v2)
+    return function()
+        local v3
+        if v2[1][3].PickupMode == "Instant" then
+            v2[1][3].AutoDropEgg = false
+            v2[3][3].AutoDropEgg = false
+            v3 = v2[1][3]
+            v3.DropSafezoneActive = false
+            v3.ReturnPreviouslyDropped = false
+        end
+        v3 = v2[1][3].AutoDropEgg and v2[1][3].PickupMode ~= "Instant"
+        local v4 = v2[1][3].setLabel
+        local v5 = v2[5][3]
+        local v6 = v2[1][3].savedPositionText
+        v6 = v1.h(v6())
+        v4(v5, v1.i(v6))
+        v5 = v2[5][3]
+        v2[1][3].setVisible(v5, v3)
+        v5 = v2[4][3]
+        v2[1][3].setVisible(v5, v3)
+        v5 = v2[1][3]
+        local v7
+        v7, v5, v4 = v2[1][3], v2[2][3], v5.setVisible
+        v6, v7 = v7.PickupMode, "Instant"
+        v4(v5, v6 ~= "Instant")
+    end
+end
+(function()
+    local v1, v2, v3 = type, getmetatable, pairs
+    return function(v4, v5, v6)
+        if v1(v4) ~= "function" then
+            local v7 = v2(v4)
+            if v7 ~= nil and v7.__iter ~= nil then
+                return v7.__iter(v4)
+            elseif (v7 and v7.__call) == nil and v1(v4) == "table" then
+                return v3(v4)
+            end
+        end
+        return v4, v5, v6
+    end
+end)()
+local function _w351(v1, v2)
+    return function(v3)
+        local v4, v5, v6
+        if v2[1][3].Alive then
+            v6 = os.clock()
+            if not (v6 - v2[1][3].LastHopAttempt < 35) then
+                v2[1][3].LastHopAttempt = v6
+                v4, v5 = pcall(v1:Lp({v2[5]}))
+                v5 = {[1] = 3, [3] = v5}
+                v5[2] = v5
+                if v4 and v5[3] then
+                    return false
+                else
+                    warn("[REZEHUB] No public server available for auto-hop")
+                end
+            end
+        end
+        return false
+    end
+end
+local function _w352(v1, v2)
+    return function()
+        local _, g
+        local plots = workspace:WaitForChild("Plots", 10)
+        local v3 = not plots
+        local v4, v5
+        if not v3 then
+            v3 = {[1] = 3, [3] = v3}
+            v3[2] = v3
+            v4, v3[3], v5, g = plots.GetChildren, v1:Mn({v2[1], v2[2]}), ipairs, plots
+            v4 = v1.h(v4(g))
+            v5, v4, g = v5(v1.i(v4))
+            v5, v4, g = v1.g(v5, v4, g)
+            for g, _ in v5, v4, g do
+                v3[3](_)
+            end
+            v4 = v2[1][3]
+            v4, v5, g = plots.ChildAdded, v4.Bind, v1:Nn({v3})
+            v5(v4, g)
+            return
+        end
+    end
+end
+local function _w353(v1, v2)
+    return function(v3, v4)
+        local v5 = type(v2[1][3][v3]) == "table" and v2[1][3][v3] or {}
+        local v6 = type(v2[1][3][v4]) == "table" and v2[1][3][v4] or {}
+        local v7 = v2[3][3]
+        local v8, v9
+        v9, v8, v7 = v5.Rarity, v7.DynamicRarityRank, tostring
+        local v10 = v8[v7(v9)] or 0
+        v7 = v2[3][3].DynamicRarityRank
+        local v11 = v6.Rarity
+        v8 = v7[tostring(v11)] or 0
+        if v10 ~= v8 then
+            return v10 > v8
+        else
+            if v2[2][3] then
+                v7 = tonumber(v5.Luck or v5.BaseLuck or v5.HatchLuck)
+                v11 = v6.Luck or v6.BaseLuck or v6.HatchLuck
+                v9 = tonumber(v11) or 0
+                if v7 ~= v9 then
+                    return v7 > v9
+                end
+            end
+            return tostring(v3) < tostring(v4)
+        end
+    end
+end
+local function _w354(v1, v2)
+    return function()
+        v2[1][3]:Disconnect()
+    end
+end
+local function _w355(v1, v2)
+    return function()
+        local _, f
+        local v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14
+        if not (v2[1][3] and v2[6][3].IsFastRideMounted()) then
+            v2[6][3].FarmPaused()
+            v4 = v2[2][3].Character
+            v11 = v4 and v4:FindFirstChildOfClass("Humanoid")
+            v10 = v4 and v4:FindFirstChild("HumanoidRootPart")
+            if not (not v11 or not v10 or v11.Health <= 0) then
+                v9 = {}
+                v13 = v2[6][3].GetAllPetsSorted
+                v13 = v1.h(v13())
+                v6, v13, v7 = ipairs(v1.i(v13))
+                v6, v13, v7 = v1.g(v6, v13, v7)
+                for _, f in v6, v13, v7 do
+                    if f.Tool or f.Model then
+                        v9[#v9 + 1] = f
+                    end
+                end
+                if #v9 ~= 0 then
+                    v7 = v2[6][3].GetMaxPetCapacity()
+                    v13 = math.min(v7, #v9)
+                    v7 = {}
+                    v8, f, v14 = v13, 1, {}
+                    if 1 <= v8 then
+                        while true do
+                            v7[f] = v9[f]
+                            _, v12 = v9[f].Key, true
+                            v14[_] = true
+                            f = f + 1
+                            if f > v8 then
+                                break
+                            end
+                        end
+                    end
+                    f, v5, v8 = {}, v9, ipairs
+                    v8, v5, _ = v8(v5)
+                    v8, v5, _ = v1.g(v8, v5, _)
+                    v12, v3 = v8(v5, _)
+                    _ = v12
+                    if _ ~= nil then
+                        while true do
+                            if not v2[6][3].FarmPaused() then
+                                v12, v3 = v8(v5, _)
+                                _ = v12
+                                if _ ~= nil then
+                                    continue
+                                end
+                                break
+                            end
+                            break
+                        end
+                    end
+                    v8, v5, _ = ipairs(v7)
+                    v8, v5, _ = v1.g(v8, v5, _)
+                    v12, v3 = v8(v5, _)
+                    _ = v12
+                    if _ ~= nil then
+                        while true do
+                            if not (v2[5][3] or v2[4][3] or v2[6][3].FarmPaused()) then
+                                v12, v3 = v8(v5, _)
+                                _ = v12
+                                if _ ~= nil then
+                                    continue
+                                end
+                                break
+                            end
+                            break
+                        end
+                    end
+                    v5 = v2[2][3]
+                    v5, _ = v5.GetAttribute, v5
+                    if v5(_, "IsRiding") ~= true and not v2[5][3] and not v2[4][3] then
+                        v11:UnequipTools()
+                    end
+                    return
+                end
+            end
+        end
+    end
+end
+local function _w356(v1, v2)
+    return function(v3)
+        v2[1][3] = v3
+    end
+end
+local function _w357(v1, v2)
+    return function(v3, v4, v5)
+        local v6, v7, v8, v9, v10
+        if not v2[1][3].TaskAcquire(v3) then
+            return false, "NOT_MY_TURN"
+        else
+            v7 = v2[2][3].Character
+            v9 = {[1] = 3, [3] = v7 and v7:FindFirstChild("HumanoidRootPart")}
+            v9[2] = v9
+            v8 = {[1] = 3, [3] = v9[3] and v9[3].CFrame or nil}
+            v8[2] = v8
+            v10, v6 = pcall(v4)
+            if v5 and v8[3] and v9[3] and v9[3].Parent and v2[2][3].Character == v7 then
+                pcall(v1:Pp({v9, v8}))
+            end
+            v2[1][3].TaskRelease(v3)
+            v2[1][3].TaskInvalidate()
+            if not v10 then
+                warn("[REZEHUB Priority] " .. v3 .. ": " .. tostring(v6))
+            end
+            return v10, v6
+        end
+    end
+end
+local function _w358(v1, v2)
+    return function(v3)
+        local v4, v5, v6
+        v5, v4, v6 = pairs(v2[1][3])
+        v5, v4, v6 = v1.g(v5, v4, v6)
+        local v7, v8
+        v8, v7 = v5(v4, v6)
+        local v9 = {}
+        local v10, v11
+        if v8 ~= nil then
+            while true do
+                if type(v8) == "string" and type(v7) == "table" and type(v7.StatMultiplier) == "number" then
+                    v10 = v7.Source ~= nil
+                    if v3 and v10 or not v3 then
+                        v11 = {}
+                        v11[1], v11[2], v11[3] = v8, "x" .. tostring(v7.StatMultiplier), v7.StatMultiplier
+                        v9[#v9 + 1] = v11
+                    end
+                end
+                v8, v7 = v5(v4, v6)
+                v6 = v8
+                if v6 == nil then
+                    break
+                end
+            end
+        end
+        table.sort(v9, v1:Cm())
+        v6 = {}
+        v6[1], v6[2], v6[3] = "Normal", "x1", 1
+        v9[#v9 + 1] = v6
+        return v9
+    end
+end
+local function _w359(v1, v2)
+    return function(v3, v4)
+        local v5 = v2[1][3].InventoryESPState
+        v3 = tostring(v3 or "")
+        local v6
+        if v4 and v4:GetAttribute("EggBuildComplete") == true then
+            v6 = v2[1][3].getInventoryESPWorldLuck(v4)
+            if type(v6) == "number" and v6 >= 0 and v6 < math.huge then
+                return v6, true
+            end
+        end
+        v6 = v2[1][3].getInventoryESPEggBaseLuck(v3)
+        local getActualHatchLuckMultiplier = v2[1][3].getActualHatchLuckMultiplier()
+        local v7 = v6
+        if v6 then
+            v7 = getActualHatchLuckMultiplier
+        end
+        if v7 then
+            v7 = v6 * getActualHatchLuckMultiplier
+            if v7 >= 0 and v7 < math.huge then
+                return v7, false
+            end
+        end
+        v7 = v4
+        if v4 then
+            v7 = v2[1][3].getInventoryESPExplicitLuck(v4)
+        end
+        if not v7 then
+            v7 = nil
+        end
+        local v8 = v7
+        if v7 then
+            v8 = v7 >= 0
+        end
+        if v8 then
+            v8 = v7 < math.huge
+        end
+        if v8 then
+            return v7, true
+        end
+        local v9 = v6
+        v8 = v5.PlotLuckCalibration
+        if v6 then
+            v9 = v8
+        end
+        if v9 then
+            v9 = v8 > 0
+        end
+        if v9 then
+            v9 = v6 * v8
+            if v9 >= 0 and v9 < math.huge then
+                return v9, false
+            end
+        end
+        return nil, false
+    end
+end
+local function _w360(v1, v2)
+    return function()
+        if v2[1][3].FPSConnection then
+            v2[1][3].FPSConnection:Disconnect()
+            v2[1][3].FPSConnection = nil
+        end
+        local v3 = v2[1][3]
+        local v4 = v1:Sp({v2[1]})
+        v3.FPSConnection = workspace.DescendantAdded:Connect(v4)
+    end
+end
+local function _w361(v1, v2)
+    return function()
+        local v3 = v2[1][3].PickupMode
+        local v4, v5, v6, v7, v8, v9, v10
+        if v3 ~= "Instant" or not v2[3][3] then
+            return true
+        else
+            v2[1][3].IsFastRideMounted()
+            v2[1][3].InstantDismountBusy = true
+            v6 = v2[2][3]
+            v3, v6 = v6, v6.FindFirstChild
+            v6 = {[1] = 3, [3] = v6(v3, "PetDismount")}
+            v6[2] = v6
+            v5 = v6[3]
+            if v5 then
+                v9 = v6[3]
+                v5 = v6[3].IsA(v9, "RemoteEvent")
+            end
+            if not v5 then
+                v3 = v2[1][3]
+                v3.InstantDismountBusy = false
+                v3, v5, v9 = v3.setLabel, v2[4][3], "🟠 Instant: dismount remote missing"
+                v3(v5, "🟠 Instant: dismount remote missing")
+                return false
+            else
+                v3, v5 = pcall(v1:go({v6}))
+                if not v3 then
+                    v9 = v2[1][3]
+                    v9.InstantDismountBusy = false
+                    v9, v4, v10 = v9.setLabel, "🟠 Instant: dismount failed", v2[4][3]
+                    v9(v10, "🟠 Instant: dismount failed")
+                    v9 = v2[1][3].TraceRideDrop
+                    v4 = table.pack(tostring(v5))
+                    v9("INSTANT_DISMOUNT_ERROR", table.unpack(v4, 1, v4.n))
+                    return false
+                else
+                    v9 = os.clock() + 1.7
+                    if v2[1][3].Alive and v2[3][3] and os.clock() < v9 then
+                        v10 = not v2[1][3].IsFastRideMounted()
+                        break
+                    end
+                    v7 = v2[1][3]
+                    v4, v7, v10 = v7, false, not v7.IsFastRideMounted()
+                    v4.InstantDismountBusy = false
+                    if not v10 then
+                        v7 = v2[1][3]
+                        v7, v8, v4 = v2[4][3], "🟠 Instant: waiting to dismount", v7.setLabel
+                        v4(v7, "🟠 Instant: waiting to dismount")
+                    end
+                    return v10
+                end
+            end
+        end
+    end
+end
+local function _w362(v1, v2)
+    return function()
+        local v3, v4, v5, v6
+        if not (v2[1][3].IsFastRideMounted and v2[1][3].IsFastRideMounted()) then
+            return true, "ON_FOOT"
+        else
+            v6 = v2[3][3]
+            v6, v5 = v6.FindFirstChild, v6
+            v6 = {[1] = 3, [3] = v6(v5, "PetDismount")}
+            v6[2] = v6
+            v4 = v6[3]
+            if v4 then
+                v3 = v6[3]
+                v4 = v6[3].IsA(v3, "RemoteEvent")
+            end
+            if not v4 then
+                return false, "PET_DISMOUNT_REMOTE_MISSING"
+            else
+                v5, v4 = pcall(v1:Yk({v6}))
+                if not v5 then
+                    return false, "PET_DISMOUNT_ERROR_" .. tostring(v4)
+                else
+                    v3 = 1
+                    while true do
+                        if not v2[2][3]() then
+                            v2[4][3]()
+                            task.wait(0.1)
+                            v3 = v3 + 1
+                            if v3 <= 18 then
+                                continue
+                            end
+                            return false, "PET_DISMOUNT_UNCONFIRMED"
+                        end
+                        return false, "YIELD_EGG"
+                    end
+                    return false, "PET_DISMOUNT_UNCONFIRMED"
+                end
+            end
+        end
+    end
+end
+local function _w363(v1, v2)
+    return function(v3)
+        v2[1][3].AutoCandy = v3
+        if not v3 and v2[1][3].EventScanCamera then
+            v2[1][3].EventScanCancelled = true
+        end
+        local v4 = v2[1][3]
+        v4.CandyLastMessage = nil
+        local v5, v6
+        v4, v5, v6 = v4.setVisible, v3, v2[3][3]
+        v4(v6, v5)
+        v6 = v2[1][3]
+        v5, v6, v4 = v3, v2[2][3], v6.setLabel
+        if v5 then
+            v5 = "🟡 Waiting for Halloween items"
+        end
+        if not v5 then
+            v5 = "🔴 Auto Farm Holloween Off"
+        end
+        v4(v6, v5)
+    end
+end
+local function _w364(v1, v2)
+    return function()
+        if v2[1][3].Alive then
+            pcall(v2[1][3].RefreshDynamicDropdowns, false)
+        end
+    end
+end
+local function _w365(v1, v2)
+    return function(v3)
+        v2[1][3] = v3
+    end
+end
+local function _w366(v1, v2)
+    return function(v3, v4, v5)
+        local v6 = v2[1][3].InventoryESPState
+        local v7, v8, v9, v10, getInventoryESPCardToolName, v11, v12, v13, v14, inventoryESPCardIdentity, v15, v16
+        if not (not v6.Enabled or not v3 or not v3.Parent or not v3:IsA("GuiObject")) then
+            getInventoryESPCardToolName = v2[1][3].getInventoryESPCardToolName(v3)
+            v11 = v2[1][3].getInventoryESPCardDetailText(v3)
+            v9 = v6.CardCache[v3]
+            v10 = v6.CardStable[v3]
+            v7 = v6.Overlays[v3]
+            inventoryESPCardIdentity = v2[1][3].inventoryESPCardIdentity(v3, getInventoryESPCardToolName, v11)
+            if getInventoryESPCardToolName and inventoryESPCardIdentity and not v10 then
+                v14 = v6.RecentDisplayByIdentity[inventoryESPCardIdentity]
+                if v14 and os.clock() - v14.At <= 180 then
+                    v16 = {
+                        Name = getInventoryESPCardToolName,
+                        Detail = v11,
+                        Text = v14.Text,
+                        Color = v14.Color,
+                        Tool = nil,
+                    }
+                    v16, v10 = v6.CardStable, v16
+                    v16[v3] = v10
+                    v16 = v2[1][3].createInventoryESPOverlay(v3)
+                    v16, v7 = v6.Overlays, v16
+                    v16[v3] = v7
+                    v7.Text = v10.Text
+                    v7.TextColor3 = v10.Color
+                    v15 = v10.Text
+                    v2[1][3].fitInventoryESPOverlay(v3, v7, v15)
+                end
+            end
+            if v9 and v9.Type == "Egg" then
+                v2[1][3].getActualHatchLuckMultiplier()
+            end
+            if v9 and v9.Name == getInventoryESPCardToolName and v9.Detail == v11 and v9.Revision == v6.ToolRevision and v9.Type ~= "Egg" and v7 and v7.Parent == v3 then
+                v5[v9.Tool] = true
+                if v10 then
+                    v16 = v10.Text
+                    if v7.Text ~= v16 then
+                        v7.Text = v10.Text
+                    end
+                    v7.TextColor3 = v10.Color
+                    v16 = v2[1][3]
+                    v12, v16, v13, v14 = v10.Text, v3, v7, v16.fitInventoryESPOverlay
+                    v14(v16, v13, v12)
+                end
+            else
+                v14 = v2[1][3].detectInventoryESPCardInfo(v3, v4, v5)
+                if not v14 and v6.HotbarCards and v6.HotbarCards[v3] and not getInventoryESPCardToolName then
+                    v13 = v6.CardCache
+                    v6.CardStable[v3] = nil
+                    v13[v3] = nil
+                    v2[1][3].removeInventoryESPOverlay(v3)
+                else
+                    v16 = "🍀" .. tostring(v14.LuckText or "syncing")
+                    if v14.Type == "Pet" then
+                        v15 = v2[1][3]
+                        v8, v15, v12 = v14.Tool, v14.Name, v15.getInventoryESPPetRarityColor
+                        v13 = v12(v15, v8)
+                    else
+                        v15 = v14.Name
+                        v12 = v2[1][3].getExplicitEggRarity(v15)
+                        if type(v2[1][3].normalizeRarityName) == "function" then
+                            v15 = v2[1][3].normalizeRarityName
+                            v15 = v15(v12) or v12
+                            v12 = v15
+                        end
+                        v13 = v2[2][3][tostring(v12 or "Common")] or v2[2][3].Common
+                    end
+                    v7.Text = v16
+                    v7.TextColor3 = v13
+                    v2[1][3].fitInventoryESPOverlay(v3, v7, v16)
+                    v6.RecentDisplayByIdentity = v6.RecentDisplayByIdentity or {}
+                    if inventoryESPCardIdentity then
+                        v12 = v6.RecentDisplayByIdentity
+                        v8 = {Text = v16, Color = v13}
+                        v8.At = os.clock()
+                        v12[inventoryESPCardIdentity] = v8
+                    end
+                    v8 = {
+                        Name = getInventoryESPCardToolName,
+                        Detail = v11,
+                        Text = v16,
+                        Color = v13,
+                        Tool = v14.Tool,
+                    }
+                    v6.CardStable[v3] = v8
+                    v8 = {}
+                    v12 = v6.CardCache
+                    v8.Name = getInventoryESPCardToolName
+                    v8.Detail = v11
+                    v8.Revision = v6.ToolRevision
+                    v8.Type = v14.Type
+                    v8.LuckRevision = v6.LuckRevision or 0
+                    v8.Tool = v14.Tool
+                    v12[v3] = v8
+                end
+            end
+            return
+        end
+    end
+end
+local function _w367(v1, v2)
+    return function()
+        local savedData2 = v2[1][3]:FindFirstChild("SavedData")
+        local v3 = savedData2
+        if savedData2 then
+            v3 = savedData2:FindFirstChild("HatchUpgrades")
+        end
+        local v4 = savedData2
+        if savedData2 then
+            v4 = savedData2:FindFirstChild("Cash")
+        end
+        local v5, v6, v7, v8, v9, v10, v11, v12
+        if not v4 or not v3 then
+            return nil, nil, v3
+        else
+            v6 = v2[4][3]
+            v12 = nil
+            if v6 then
+                v6 = type(v2[4][3].GetPaidUpgrades) == "function"
+            end
+            if v6 then
+                v6 = type(v2[4][3].GetPrice) == "function"
+            end
+            if v6 then
+                v11 = v2[4][3]
+                v11, v10 = v3.Value, v11.GetPaidUpgrades
+                v6, v10 = pcall(v10, v11)
+                if not v6 then
+                    v5 = v2[4][3]
+                    v8 = v3.Value
+                    v11, v7 = pcall(v5.GetPaidUpgrades, v5, v8)
+                    v10 = v7
+                    v6 = v11
+                end
+                if v6 and tonumber(v10) then
+                    v7 = v2[4][3].GetPrice
+                    v5 = v1.h(tonumber(v10))
+                    v11, v7 = pcall(v7, v1.i(v5))
+                    if not v11 then
+                        v9 = v2[4][3]
+                        v5, v8 = pcall(v9.GetPrice, v9, tonumber(v10))
+                        v7 = v8
+                    end
+                    v12 = tonumber(v7)
+                end
+            end
+            v6 = v2[1][3]:FindFirstChild("PlayerGui")
+            v10 = v6 and v6:FindFirstChild("Upgrade")
+            v11 = v10 and v10:FindFirstChild("Purchase")
+            v7 = v11 and v11:FindFirstChild("Price")
+            if v7 and v7:IsA("TextLabel") then
+                v8 = v2[2][3]
+                v8, v5 = v7.Text, v8.parsePriceText
+                v5 = v5(v8)
+                if v5 and v5 > (v12 or 0) then
+                    v12 = v5
+                end
+            end
+            return v12, tonumber(v4.Value), v3
+        end
+    end
+end
+local function _w368(v1, v2)
+    return function()
+        return v2[1][3] == true and v2[2][3].FarmBusy == true
+    end
+end
+local function _w369(v1, v2, v3, v4)
+    v1.Fr[v4] = v1.Wq(v2, v3)
+    return v1.Fr[v4]
+end
+local function _w370(v1, v2)
+    return function(v3)
+        local gsub3 = tostring(v3 or ""):gsub("^%s+", ""):gsub("%s+$", "")
+        local v4, lower4
+        if gsub3 ~= "" then
+            lower4 = gsub3:lower()
+            if not (lower4 == "none" or lower4 == "normal" or lower4 == "default" or lower4 == "nil" or lower4 == "false") then
+                v2[1][3][lower4] = true
+                v4 = v2[2][3]
+                v4[#v4 + 1] = gsub3
+                return
+            end
+        end
+    end
+end
+local function _w371(v1, v2)
+    return function(v3)
+        local j, e
+        local findFirstChild4, v4, v5, v6, v7
+        if v3 then
+            v7 = v2[1][3]
+            v5 = v3.GetAttribute
+            v5 = v1.h(v5(v3, "Mutation"))
+            v7(v1.i(v5))
+            v5 = v3.GetAttribute
+            v7 = v2[1][3]
+            v5 = v1.h(v5(v3, "SpawnMutation"))
+            v7(v1.i(v5))
+            v4 = {}
+            v4[1], v4[2] = "Mutation", "SpawnMutation"
+            v7, v5, j = ipairs(v4)
+            v7, v5, j = v1.g(v7, v5, j)
+            for j, e in v7, v5, j do
+                findFirstChild4 = v3:FindFirstChild(e)
+                if findFirstChild4 and findFirstChild4:IsA("ValueBase") then
+                    v6 = findFirstChild4.Value
+                    v2[1][3](v6)
+                end
+            end
+            return
+        end
+    end
+end
+local function _w372(v1, v2)
+    return function()
+        local _, k
+        local v3 = nil
+        local v4 = {}
+        local v5 = v2[1][3]
+        local v6
+        v5, v6 = v5.FindFirstChildOfClass, v5
+        v4[1], v4[2] = v5(v6, "Backpack"), v2[1][3].Character
+        local v7, v8, v9
+        v7, v9, v8 = ipairs(v4)
+        v7, v9, v8 = v1.g(v7, v9, v8)
+        v4, v5 = v7(v9, v8)
+        local petKey3, v10, v11, v12, v13
+        if v4 ~= nil then
+            local v14 = {}
+            while true do
+                if v5 then
+                    v10 = v5.GetChildren
+                    v10 = v1.h(v10(v5))
+                    v6, v10, k = ipairs(v1.i(v10))
+                    v6, v10, k = v1.g(v6, v10, k)
+                    for k, _ in v6, v10, k do
+                        if _:IsA("Tool") then
+                            petKey3 = _:GetAttribute("PetKey")
+                            if petKey3 ~= nil and not v14[tostring(petKey3)] then
+                                v14[tostring(petKey3)] = true
+                                v13 = {Key = petKey3}
+                                v13.PetName = _:GetAttribute("PetName") or _.Name
+                                v13.Tool = _
+                                v13.Model = nil
+                                v13.Placed = false
+                                v11 = v13
+                                v12, v13 = v13, v2[2][3].ReadPetRideSpeed
+                                v11.Speed = v13(v12)
+                                v11.Income = v2[2][3].CalculatePetIncome(_)
+                                if v11.Speed and not v3 then
+                                    v3 = v11
+                                end
+                            end
+                        end
+                    end
+                end
+                v4, v5 = v7(v9, v8)
+                v8 = v4
+                if v8 == nil then
+                    break
+                end
+            end
+        end
+        return v3
+    end
+end
+local function _w373(v1, v2)
+    return function()
+        local h
+        local v3 = v2[1][3].InventoryESPState
+        local v4, v5, v6
+        v5, v6, v4 = ipairs(v3.ToolContainerConnections or {})
+        v5, v6, v4 = v1.g(v5, v6, v4)
+        local v7, v8
+        v8, v7 = v5(v6, v4)
+        if v8 ~= nil then
+            while true do
+                v7:Disconnect()
+                v8, v7 = v5(v6, v4)
+                v4 = v8
+                if v4 == nil then
+                    break
+                end
+            end
+        end
+        v5, v6, v4 = pairs(v3.ToolConnections or {})
+        v5, v6, v4 = v1.g(v5, v6, v4)
+        v8, v7 = v5(v6, v4)
+        local v9, v10, v11
+        if v8 ~= nil then
+            while true do
+                v11, v10, v9 = ipairs(v7)
+                v11, v10, v9 = v1.g(v11, v10, v9)
+                for v12, h in v11, v10, v9 do
+                    h:Disconnect()
+                end
+                v8, v7 = v5(v6, v4)
+                v4 = v8
+                if v4 == nil then
+                    break
+                end
+            end
+        end
+        v3.ToolContainerConnections, v6 = {}, {}
+        v3.ToolConnections = v6
+        v3.Backpack = nil
+        v3.Character = nil
+        v3.ToolLookup = nil
+        v3.ToolsDirty = true
+    end
+end
+local function _w374(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        local v4
+        v4, v3 = v3, v3.Clone
+        v3 = table.pack(v3(v4))
+        return table.unpack(v3, 1, v3.n)
+    end
+end
+local function _w375(v1, v2)
+    return function()
+        local v3 = v2[1][3].Character
+        local v4, v5, v6, v7, v8, v9
+        if v3 then
+            v5 = v3.GetChildren
+            v5 = v1.h(v5(v3))
+            v9, v5, v6 = ipairs(v1.i(v5))
+            v9, v5, v6 = v1.g(v9, v5, v6)
+            v7, v8 = v9(v5, v6)
+            v6 = v7
+            if v6 ~= nil then
+                while true do
+                    v4 = v8:IsA("Tool") or v8:IsA("Model") or v8:IsA("BasePart")
+                    if not v4 then
+                        v7, v8 = v9(v5, v6)
+                        v6 = v7
+                        if v6 ~= nil then
+                            continue
+                        end
+                        return nil
+                    end
+                    v4 = tostring(v8:GetAttribute("EggName") or v8.Name)
+                    if not v2[2][3].IsKnownEggName(v4) then
+                        v7, v8 = v9(v5, v6)
+                        v6 = v7
+                        if v6 ~= nil then
+                            continue
+                        end
+                        return nil
+                    end
+                    break
+                end
+                return v4
+            end
+        end
+        return nil
+    end
+end
+local function _w376(v1, v2)
+    return function()
+        local v3 = not v2[1][3]
+        local v4, v5
+        if not v3 then
+            v4 = v2[2][3]
+            v5, v4 = v4, v4.GetAttribute
+            v3 = v4(v5, "FusionPresentationPending") == true
+        end
+        local getServerTimeNow, v6
+        if v3 then
+            return false
+        else
+            v3 = v2[2][3]:FindFirstChild("FusionResult")
+            if v3 and v3:FindFirstChild("Pet") then
+                return true
+            else
+                v4 = v2[2][3]:FindFirstChild("FusionSlots")
+                v5 = v4 ~= nil and v4:GetAttribute("FusionStatus") == "Waiting"
+                if v5 then
+                    getServerTimeNow = workspace:GetServerTimeNow()
+                    v6 = v4.GetAttribute
+                    v6 = table.pack(v6(v4, "EndsAt"))
+                    v5 = getServerTimeNow >= (tonumber(table.unpack(v6, 1, v6.n)) or math.huge)
+                end
+                return v5
+            end
+        end
+    end
+end
+local function _w377(v1, v2)
+    return function(v3)
+        local v4 = v2[1][3][tostring(v3 or "")]
+        return type(v4) == "table" and v4.Rarity or nil
+    end
+end
+local function _w378(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        local v4
+        v3, v4 = v2[3][3], v3.FarmHover
+        local v5
+        if not (v4 ~= v3 or not v2[3][3].Active) then
+            v5 = v2[4][3]
+            v5.AssemblyLinearVelocity = Vector3.zero
+            v5.AssemblyAngularVelocity = Vector3.zero
+            v5.CFrame = v2[3][3].Target
+            return
+        end
+    end
+end
+local function _w379(v1, v2)
+    return function()
+        local v3 = v2[1][3] and v2[1][3].Value or 0
+        local maxPets = v2[2][3]:GetAttribute("MaxPets")
+        local v4 = 5 + math.floor(v3)
+        local v5 = maxPets
+        if maxPets then
+            v5 = maxPets > 0
+        end
+        if v5 then
+            v5 = math.max
+            v5 = table.pack(v5(maxPets, v4))
+            return table.unpack(v5, 1, v5.n)
+        else
+            return v4
+        end
+    end
+end
+local function _w380(v1, v2)
+    return function(v3)
+        v3 = {[1] = 3, [3] = v3}
+        v3[2] = v3
+        local v4 = v2[1][3]
+        local v5
+        v4, v5 = v4.FindFirstChild, v4
+        v4 = {[1] = 3, [3] = v4(v5, "Plot")}
+        v4[2] = v4
+        v4[3] = v4[3] and v4[3].FindFirstChild(v4[3], "Upgrades")
+        v5 = not v4[3]
+        local v6
+        if not v5 then
+            v6 = v4[3]
+            v5 = not v4[3].IsA(v6, "RemoteEvent")
+        end
+        local v7, v8, v9, v10, v11, v12, v13, v14
+        if v5 then
+            v10 = v2[3][3]
+            v6, v10, v5 = "🔴 Upgrade remote missing", v2[2][3], v10.setLabel
+            v5(v10, "🔴 Upgrade remote missing")
+        else
+            v5, v10, v6 = v2[3][3].hatchLuckNextPrice()
+            if not v5 or v5 <= 0 then
+                v13 = v2[2][3]
+                v2[3][3].setLabel(v13, "🟡 Waiting for price")
+            else
+                v9 = os.clock()
+                v8 = v2[3][3].HatchLuckState.LastSentAt
+                v8, v13 = v3[3], v9 - v8
+                if v8 then
+                    v8 = 5
+                end
+                if not v8 then
+                    v8 = 1
+                end
+                if not (v13 < v8) then
+                    v2[3][3].HatchLuckState.LastSentAt = v9
+                    v13 = v6 and tostring(v6.Value) or nil
+                    if not pcall(v1:ip({v3, v4})) then
+                        v14 = v2[2][3]
+                        v2[3][3].setLabel(v14, "🔴 Upgrade failed")
+                    else
+                        v14 = v2[2][3]
+                        v2[3][3].setLabel(v14, "🟡 Confirming upgrade")
+                        v7 = os.clock() + 1.2
+                        if v2[3][3].Alive and os.clock() < v7 then
+                            v12 = v6.Value
+                            v2[3][3].HatchLuckState.LastLevel = v12
+                            v12 = v2[3][3]
+                            v11, v12, v14 = "🟢 Hatch Luck upgraded", v2[2][3], v12.setLabel
+                            v14(v12, "🟢 Hatch Luck upgraded")
+                            return true
+                        end
+                        v12 = v2[2][3]
+                        v2[3][3].setLabel(v12, "🟡 Awaiting upgrade")
+                    end
+                end
+            end
+        end
+        return false
+    end
+end
+local function _w381(v1, v2)
+    return function(v3)
+        local v4, v5, v6, parseCompactNumber, handle
+        if not v3 or not v3.Parent then
+            return nil
+        else
+            handle = v3:FindFirstChild("Handle")
+            v5 = handle and handle:FindFirstChild("EggLuck")
+            v4 = v5 and v5:FindFirstChild("Luck")
+            if not v4 then
+                v6 = v3:FindFirstChild("EggLuck", true)
+                v4 = v6 and v6:FindFirstChild("Luck")
+            end
+            if not v4 then
+                v6 = v3:FindFirstChild("LuckDisplay", true)
+                v4 = v6 and v6:FindFirstChild("Luck")
+            end
+            if v4 and v4:IsA("TextLabel") then
+                v6 = tostring(v4.Text or ""):gsub(",", ""):gsub("[Ll][Uu][Cc][Kk]", ""):gsub(":", ""):gsub("^%s+", ""):gsub("%s+$", "")
+                parseCompactNumber = v2[1][3].parseCompactNumber(v6)
+                if type(parseCompactNumber) == "number" and parseCompactNumber >= 0 and parseCompactNumber < math.huge then
+                    return parseCompactNumber
+                end
+            end
+            v6 = v2[1][3].getInventoryESPExplicitLuck
+            v6 = table.pack(v6(v3))
+            return table.unpack(v6, 1, v6.n)
+        end
+    end
+end
+local function _w382(v1, v2)
+    return function(v3, v4)
+        v3 = {[1] = 3, [3] = v3}
+        v3[2] = v3
+        v4 = {[1] = 3, [3] = v4}
+        v4[2] = v4
+        if not (not v3[3] or type(v3[3].SetText) ~= "function") then
+            pcall(v1:Rl({v3, v4}))
+            return
+        end
+    end
+end
+local function _w383(v1, v2)
+    return function()
+        while true do
+            if v2[1][3].Alive then
+                pcall(v1:Nl({v2[1], v2[2]}))
+                task.wait(2)
+                continue
+            end
+            break
+        end
+    end
+end
+local function _w384(v1, v2)
+    return function(v3)
+        local n, _, p
+        v3 = {[1] = 3, [3] = v3}
+        v3[2] = v3
+        local v4 = {
+            EggName = v3[3],
+            BeforeIDs = {},
+            BeforeTools = {},
+            Connections = {},
+            NewReceipts = {},
+            SeenNewIDs = {},
+            NewMatchingTools = {},
+        }
+        v4.Started = os.clock()
+        v4.Closed = false
+        local v5 = v2[1][3]
+        v4.BreakWasSeen = v5.IsEggBreakWarningActive()
+        v4.CarryWasSeen = v5.HasCarriedEgg()
+        v4.OldFailureNotices = v5.VisibleDeliveryFailureNotices()
+        v4.WorldBefore = {}
+        local v6 = {[1] = 3, [3] = v4}
+        v6[2] = v6
+        v4 = v2[1][3].RenderedEggs
+        local v7
+        if v4 then
+            v7 = v2[1][3].RenderedEggs
+            v7, v5 = v7.GetChildren, v7
+            v7 = v1.h(v7(v5))
+            v4, v7, v5 = ipairs(v1.i(v7))
+            v4, v7, v5 = v1.g(v4, v7, v5)
+            for _, n in v4, v7, v5 do
+                v6[3].WorldBefore[n] = true
+            end
+        end
+        v4 = {[1] = 3, [3] = v4}
+        v4[2] = v4
+        v5, v4[3] = v2[1][3], v1:Lm()
+        v7 = v5.InventoryEggContainers()
+        local v8
+        v5, v8, n = ipairs(v7)
+        v5, v8, n = v1.g(v5, v8, n)
+        local v9, v10
+        v9, v10 = v5(v8, n)
+        local v11, v12, v13
+        if v9 ~= nil then
+            while true do
+                v13 = v10.GetChildren
+                v13 = v1.h(v13(v10))
+                v12, v13, _ = ipairs(v1.i(v13))
+                v12, v13, _ = v1.g(v12, v13, _)
+                for _, p in v12, v13, _ do
+                    if p:IsA("Tool") then
+                        v6[3].BeforeTools[p] = true
+                        v11 = v4[3](p)
+                        v6[3].BeforeIDs[v11] = true
+                    end
+                end
+                v9, v10 = v5(v8, n)
+                n = v9
+                if n == nil then
+                    break
+                end
+            end
+        end
+        v5 = {[1] = 3, [3] = v5}
+        v5[2] = v5
+        v5[3], n, v8 = v1:Mm({v6, v2[1], v4, v3}), v7, ipairs
+        v8, n, v9 = v8(n)
+        v8, n, v9 = v1.g(v8, n, v9)
+        v10, v12 = v8(n, v9)
+        local v14
+        if v10 ~= nil then
+            while true do
+                v13 = v6[3].Connections
+                p, v14 = 1, #v6[3].Connections
+                v14, v11, _ = v12.ChildAdded, v1:Km({v5, v6}), v14 + 1
+                v13[_] = v14:Connect(v11)
+                v10, v12 = v8(n, v9)
+                v9 = v10
+                if v9 == nil then
+                    break
+                end
+            end
+        end
+        v8 = v1:Nm({v2[1], v5})
+        v6[3].Check = v8
+        v8 = v1:Om()
+        v6[3].Stop = v8
+        return v6[3]
+    end
+end
+local function _w385(v1, v2)
+    return function(v3)
+        local v4, v5, v6
+        if v2[1][3].InstantRecoveryPending then
+            return
+        else
+            v4 = v2[1][3].PickupMode == "Instant"
+            if v2[1][3].InstantCameraProxy or v4 then
+                v6 = v2[1][3]
+                v6.InstantCancelEpoch = v6.InstantCancelEpoch + 1
+                v6.InstantRecoveryPending = true
+                v6.InstantEmergencyReason = tostring(v3 or "Interrupted")
+                v6 = v2[1][3]
+                v6.InstantExpectedBasketClear = nil
+                v6.LastCarryAttempt = nil
+                v6 = v6.StopFarmHover
+                v6 = {[1] = 3, [3] = v2[1][3].TeleportToMyPlot()}
+                v6[2] = v6
+                if not v6[3] then
+                    v5 = v2[3][3]
+                    v2[1][3].setLabel(v5, "🟠 Interrupted • finding ranch before restoring POV")
+                end
+                task.spawn(v1:pj({v2[1], v6, v2[2], v2[3]}))
+                return
+            end
+        end
+    end
+end
+local function _w386(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        local v4
+        v3, v4 = v2[3][3], v3.DiscoveredCount
+        v4 = v4(v3.Value)
+        local v5 = v2[1][3]
+        v5, v3 = v2[2][3], v5.StageAt
+        v3 = v3(v5.Value)
+        if not v3 then
+            return false
+        else
+            return v4 >= v3.Goal
+        end
+    end
+end
+local function _w387(v1, v2)
+    return function(v3)
+        local v4 = v2[1][3].InventoryESPState
+        local v5 = {[1] = 3, [3] = v4.Overlays[v3]}
+        v5[2] = v5
+        if v5[3] and v5[3].Parent then
+            pcall(v1:To({v5}))
+        end
+        v4.Overlays[v3] = nil
+    end
+end
+local function _w388(v1, v2)
+    return function(v3)
+        local v4, v5
+        if not v2[1][3] then
+            v4 = v2[5][3]
+            v5 = v3 == true
+            v2[3][3][v4] = v5
+            v2[4][3](v5)
+            v2[2][3].SaveConfig()
+        end
+    end
+end
+local function _w389(v1, v2)
+    return function(v3)
+        v2[1][3] = v3
+    end
+end
+local function _w390(v1)
+    return function(v2)
+        local v3, v4, v5, v6, v7, v8, v9, eggData
+        if v2 then
+            v2:FindFirstChild("Data")
+            eggData = v2:FindFirstChild("EggData")
+            v5 = {}
+            v9 = "FinalLuck"
+            v5[1], v5[2], v5[3], v5[4], v5[5] = "EffectiveLuck", "FinalLuck", "TotalLuck", "ActualLuck", "CurrentLuck"
+            v7, v6, v8 = ipairs(v5)
+            v7, v6, v8 = v1.g(v7, v6, v8)
+            v5, v3 = v7(v6, v8)
+            v8 = v5
+            if v8 ~= nil then
+                while true do
+                    v4 = v2.GetAttribute
+                    v4 = v1.h(v4(v2, v3))
+                    v9 = tonumber(v1.i(v4))
+                    if not v9 and eggData then
+                        v4 = eggData:FindFirstChild(v3)
+                        if v4 and v4:IsA("ValueBase") then
+                            v9 = tonumber(v4.Value)
+                        end
+                    end
+                    if not (v9 and v9 >= 0 and v9 < math.huge) then
+                        v5, v3 = v7(v6, v8)
+                        v8 = v5
+                        if v8 ~= nil then
+                            continue
+                        end
+                        return nil
+                    end
+                    break
+                end
+                return v9
+            end
+        end
+        return nil
+    end
+end
+local function _w391(v1, v2)
+    return function()
+        v2[1][3].EventScanPetReplica:Destroy()
+    end
+end
+local function _w392(v1, v2)
+    return function(v3)
+        local v4, v5, v6, v7, v8, v9, v10, v11, v12
+        if typeof(v3) ~= "Instance" then
+            return nil, nil
+        else
+            v5 = {}
+            v9 = v3:FindFirstChild("EggData")
+            v7 = v3:FindFirstChild("Data")
+            v6 = v3.FindFirstChild
+            v6 = v1.h(v6(v3, "Handle"))
+            v5[1], v5[2], v5[3] = v3, v9, v7
+            v1.j(v5, 4, v1.i(v6))
+            v11 = {[1] = 3, [3] = v5}
+            v11[2] = v11
+            v5 = type(v2[1][3].FindActiveWorldEggConfiguration) == "function" and v2[1][3].RenderedEggs
+            if v5 then
+                v9 = v2[1][3].RenderedEggs
+                v5 = v3.Parent == v9
+            end
+            if v5 then
+                v5, v4 = pcall(v2[1][3].FindActiveWorldEggConfiguration, v3)
+                if v5 and v4 then
+                    v11[3][#v11[3] + 1] = v4
+                end
+            end
+            v5 = v1:Jn({v11, v2[1]})
+            v6 = {}
+            v6[1], v6[2] = "Mutation", "MutationName"
+            v12, v6, v7, v4, v10, v9, v8 = "SpawnTrait", "SpawnMutation", {}, v5(v6), "Traits", v5, "Trait"
+            v7[1], v7[2], v7[3], v7[4] = "SpawnMutation", "SpawnTrait", "Trait", "Traits"
+            v9 = table.pack(v9(v7))
+            return v4, table.unpack(v9, 1, v9.n)
+        end
+    end
+end
+local function _w393(v1, v2)
+    return function(v3)
+        local v4 = not v3
+        local v5
+        if not v4 then
+            v5 = v3.Name
+            v4 = not v2[1][3].IsKnownEggName(v5)
+        end
+        if not v4 then
+            if not v3:IsA("BasePart") then
+                v3:IsA("Model")
+                v3:IsA("Folder")
+            end
+            return
+        end
+    end
+end
+local function _w394(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        local v4
+        v4, v3 = v3, v3.Clone
+        v3 = table.pack(v3(v4))
+        return table.unpack(v3, 1, v3.n)
+    end
+end
+local function _w396(v1, v2)
+    return function()
+        local v3 = v2[2][3]
+        v2[1][3].LocalTransparencyModifier = v3
+    end
+end
+local function _w397(v1, v2)
+    return function()
+        v2[1][3]:FireServer()
+    end
+end
+local function _w398(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        readfile(v2[2][3])
+        local v4
+        v4, v3 = v3, v3.JSONDecode
+        v3 = table.pack(v3(v4, v1))
+        return table.unpack(v3, 1, v3.n)
+    end
+end
+local function _w399(v1)
+    return function(v2)
+        local v3, v4, floor7, v5
+        if type(v2) ~= "number" then
+            return "Syncing..."
+        else
+            v5 = math.max
+            v3 = math.ceil
+            v3 = table.pack(v3(v2))
+            v5 = v5(0, table.unpack(v3, 1, v3.n))
+            v4 = string.format
+            floor7 = math.floor(v5 / 60)
+            v4 = table.pack(v4("%02d:%02d", floor7, v5 % 60))
+            return table.unpack(v4, 1, v4.n)
+        end
+    end
+end
+local function _w400(v1)
+    return function(v2)
+        local gsub4 = tostring(v2 or ""):gsub("&", "&amp;"):gsub("<", "&lt;"):gsub(">", "&gt;"):gsub("\"", "&quot;")
+        local v3, v4, v5
+        v3, v5, gsub4, v4 = "&apos;", gsub4, gsub4.gsub, "'"
+        gsub4 = table.pack(gsub4(v5, "'", "&apos;"))
+        return table.unpack(gsub4, 1, gsub4.n)
+    end
+end
+local function _w401(v1, v2)
+    return function(v3)
+        local v4 = tonumber(v3) or 0
+        v3 = v4
+        v4 = v4 < 0 or false or v3 == math.huge
+        if v4 then
+            return "Unknown"
+        else
+            return v2[1][3].formatCompactNumber(v3) .. " KG"
+        end
+    end
+end
+local function _w402(v1, v2)
+    return function(v3)
+        local v4, getEggPart3, v5, REZEHUB_EggESP, eggName, eggDetails, v6, v7, v8, v9
+        if v2[1][3].ActiveESP[v3] then
+            return
+        else
+            getEggPart3 = v2[1][3].GetEggPart(v3)
+            if getEggPart3 then
+                v6 = v2[1][3]
+                v6, v4 = v3.Name, v6.GetEggRarityStyle
+                v4, v6, v5, v9 = v4(v6)
+                REZEHUB_EggESP = Instance.new("BillboardGui")
+                REZEHUB_EggESP.Name = "REZEHUB_EggESP"
+                REZEHUB_EggESP.Adornee = getEggPart3
+                REZEHUB_EggESP.Size = UDim2.fromOffset(480, 44)
+                REZEHUB_EggESP.StudsOffset = Vector3.new(0, 3.5, 0)
+                REZEHUB_EggESP.AlwaysOnTop = true
+                REZEHUB_EggESP.LightInfluence = 0
+                REZEHUB_EggESP.MaxDistance = 1000000
+                REZEHUB_EggESP.ZIndexBehavior = Enum.ZIndexBehavior.Global
+                REZEHUB_EggESP.Parent = getEggPart3
+                eggName = Instance.new("TextLabel")
+                eggName.Name = "EggName"
+                eggName.Size = UDim2.new(1, 0, 0, 21)
+                eggName.Position = UDim2.fromOffset(0, 0)
+                eggName.BackgroundTransparency = 1
+                eggName.TextColor3 = v6
+                eggName.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+                eggName.TextStrokeTransparency = 0
+                eggName.Font = Enum.Font.GothamBold
+                eggName.TextSize = 16
+                eggName.TextScaled = false
+                eggName.TextWrapped = false
+                eggName.TextXAlignment = Enum.TextXAlignment.Center
+                eggName.Text = v3.Name .. " • " .. v4
+                eggName.ZIndex = 10
+                eggName.Parent = REZEHUB_EggESP
+                eggDetails = Instance.new("TextLabel")
+                eggDetails.Name = "EggDetails"
+                eggDetails.Size = UDim2.new(1, 0, 0, 19)
+                eggDetails.Position = UDim2.fromOffset(0, 20)
+                eggDetails.BackgroundTransparency = 1
+                eggDetails.TextColor3 = v6
+                eggDetails.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+                eggDetails.TextStrokeTransparency = 0
+                eggDetails.Font = Enum.Font.GothamBold
+                eggDetails.TextSize = 14
+                eggDetails.TextScaled = false
+                eggDetails.TextWrapped = false
+                eggDetails.TextXAlignment = Enum.TextXAlignment.Center
+                eggDetails.Text = "? KG • ?m"
+                eggDetails.ZIndex = 10
+                eggDetails.Parent = REZEHUB_EggESP
+                v2[1][3].ApplyEggRarityStyle(eggName, v6, v5, v9)
+                v2[1][3].ApplyEggRarityStyle(eggDetails, v6, v5, v9)
+                v7 = {}
+                v8 = v2[1][3].ActiveESP
+                v7.Billboard = REZEHUB_EggESP
+                v7.NameLabel = eggName
+                v7.DetailsLabel = eggDetails
+                v7.Part = getEggPart3
+                v7.LastRarity = v4
+                v7.NextWeightTry = 0
+                v7.NextMutationTry = 0
+                v7.NextStyleTry = 0
+                v7.LastGradientSequence = v5
+                v8[v3] = v7
+                return
+            end
+        end
+    end
+end
+local function _w403(v1, v2)
+    return function()
+        local v3 = {[1] = v2[1][3]}
+        local v4 = 0
+        local v5, v6, v7, getChildren2
+        while true do
+            if v2[2][3].Alive and #v3 > 0 then
+                v6 = v3[#v3]
+                v3[#v3] = nil
+                if v6:IsA("Model") and v6:FindFirstChild("Handle") then
+                    v5 = v6.Name
+                    v2[2][3].EggTemplates[v5] = v6
+                end
+                getChildren2 = v6:GetChildren()
+                v7 = #getChildren2
+                v5 = 1
+                if 1 <= v7 then
+                    while true do
+                        v3[#v3 + 1] = getChildren2[v5]
+                        v5 = v5 + 1
+                        if v5 > v7 then
+                            break
+                        end
+                    end
+                end
+                v7, v4 = 24, v4 + 1
+                if v4 % 24 == 0 then
+                    task.wait()
+                    continue
+                end
+                continue
+            end
+            break
+        end
+        v6 = v2[2][3]
+        v6.EggTemplateIndexReady = v6.Alive and #v3 == 0
+        v2[2][3].EggTemplateIndexScanning = false
+    end
+end
+local function _w405(v1, v2)
+    return function(v3)
+        local v4 = v2[1][3]
+        v4.GridCardList = nil
+        v4 = not v4.Enabled or not v3:IsA("GuiObject")
+        if not v4 then
+            return
+        end
+    end
+end
+local function _w406(v1, v2)
+    return function(v3)
+        local v4, match, v5, luckDisplay, v6, handle2
+        if not (not v3 or v3:GetAttribute("EggBuildComplete") ~= true) then
+            handle2 = v3:FindFirstChild("Handle")
+            v6 = handle2 and handle2:FindFirstChild("EggLuck") or v3:FindFirstChild("EggLuck", true)
+            v4 = v6 and v6:FindFirstChild("Luck", true)
+            if not v4 then
+                luckDisplay = v3:FindFirstChild("LuckDisplay", true)
+                v4 = luckDisplay and luckDisplay:FindFirstChild("Luck", true)
+            end
+            if v4 and v4:IsA("TextLabel") then
+                match = tostring(v4.Text or ""):lower():gsub(",", ""):match("([%d%.]+%a*)")
+                v5 = match and v2[1][3].ParseKG(match) or nil
+                if v5 and v5 >= 0 then
+                    return v5
+                end
+            end
+        end
+        return nil
+    end
+end
+local function _w407(v1, v2, v3, v4)
+    v1.vr[v4] = v1.Uq(v2, v3)
+    return v1.vr[v4]
+end
+local function _w408(v1, v2)
+    return function(v3)
+        local _, p
+        local v4 = v2[1][3].EggTrackerCycle
+        local v5 = v2[3][3]()
+        local v6 = v2[5][3]()
+        local v7 = v6
+        local v8 = false
+        if v6 then
+            v7 = v4.LastResetToken
+        end
+        if v7 then
+            v7 = v6 ~= v4.LastResetToken
+        end
+        if v7 then
+            v8 = true
+        end
+        if v6 then
+            v4.LastResetToken = v6
+        end
+        local v9, v10, v11
+        if type(v5) == "number" then
+            v7 = v4.LastResetSeconds
+            v10 = v3 + v5
+            if v5 <= 3 then
+                v4.ResetArmed = true
+            end
+            if type(v7) == "number" then
+                if v5 > v7 + 20 then
+                    v8 = true
+                end
+                if v4.ResetArmed and v7 <= 6 and v5 >= 8 then
+                    v8 = true
+                end
+            end
+            v9 = v4.ExpectedResetAt
+            if v9 then
+                v11 = v4.ExpectedResetAt
+                v9 = math.abs(v10 - v11) > 20
+            end
+            if v9 then
+                v8 = true
+            end
+            v4.ExpectedResetAt = v10
+            v4.LastResetSeconds = v5
+        end
+        if v8 then
+            v4.ResetArmed = false
+        end
+        v7 = v8
+        if v8 then
+            v7 = v3 - v4.LastResetAt > 2
+        end
+        if v7 then
+            v4.LastResetAt = v3
+            v4.HeldOldRows = v4.Rows
+            v4.Rows = {}
+            v4.ResetGraceUntil = v3 + 1.35
+            v4.WeightAttemptedAt = setmetatable({}, {__mode = "k"})
+        end
+        local v12
+        v7, v10, v9, v12 = v2[4][3](v3)
+        local v13, v14, v15, v16, v17, v18, v19
+        if not v12 then
+            return nil, v5
+        elseif v3 < v4.ResetGraceUntil then
+            return v12, v5
+        else
+            v4.HeldOldRows = nil
+            v11, v13, _ = pairs(v4.Rows)
+            v11, v13, _ = v1.g(v11, v13, _)
+            for _, p in v11, v13, _ do
+                p.SeenThisRefresh = false
+            end
+            v11, v13, _ = pairs(v7)
+            v11, v13, _ = v1.g(v11, v13, _)
+            v17, p = v11(v13, _)
+            _ = v17
+            if _ ~= nil then
+                while true do
+                    v14 = v4.Rows[v17]
+                    if not v14 then
+                        v15 = {Name = v17, Rarity = v2[1][3].GetEggRarityStyle(v17)}
+                        v19 = v2[2][3][v17] or {}
+                        v15.Luck = tonumber(v19.Luck) or 0
+                        v15.Current = p
+                        v15.Maximum = p
+                        v15.KG = v9[v17]
+                        v15.LastSeen = v3
+                        v15, v14 = v4.Rows, v15
+                        v15[v17] = v14
+                    end
+                    v14.Rarity = v2[1][3].GetEggRarityStyle(v17)
+                    v14.Current = p
+                    v15 = v14.Maximum or 0
+                    v14.Maximum = math.max(v15, p)
+                    v18 = v9[v17] or 0
+                    v19 = v14.KG or 0
+                    v16 = math.max(v18, v19) > 0
+                    if v16 then
+                        v15 = v9[v17] or 0
+                        v18 = v14.KG or 0
+                        v16 = math.max(v15, v18)
+                    end
+                    if not v16 then
+                        v16 = nil
+                    end
+                    v14.KG = v16
+                    v14.LastSeen = v3
+                    v14.MissingSince = nil
+                    v14.SeenThisRefresh = true
+                    v17, p = v11(v13, _)
+                    _ = v17
+                    if _ == nil then
+                        break
+                    end
+                end
+            end
+            v11, v13, _ = pairs(v4.Rows)
+            v11, v13, _ = v1.g(v11, v13, _)
+            for _, p in v11, v13, _ do
+                if not p.SeenThisRefresh then
+                    p.MissingSince = p.MissingSince
+                    if v3 - p.MissingSince >= 1.5 then
+                        p.Current = 0
+                    end
+                end
+            end
+            return v12, v5
+        end
+    end
+end
+local function _w409(v1)
+    return function(v2)
+        local v3, v4, v5, clamp3, v6, v7
+        if typeof(v2) ~= "Color3" then
+            return "#EBEBEB"
+        else
+            v5 = math
+            v3 = string.format
+            v6 = v2.R * 255
+            clamp3 = v5.clamp(v5.floor(v6 + 0.5), 0, 255)
+            v7 = v2.G * 255
+            v5 = math.clamp(math.floor(v7 + 0.5), 0, 255)
+            v6 = math.clamp
+            v4 = v2.B * 255
+            v7 = math.floor(v4 + 0.5)
+            v6 = table.pack(v6(v7, 0, 255))
+            v3 = table.pack(v3("#%02X%02X%02X", clamp3, v5, table.unpack(v6, 1, v6.n)))
+            return table.unpack(v3, 1, v3.n)
+        end
+    end
+end
+local function _w410(v1, v2)
+    return function(v3)
+        local _, k
+        local v4 = {}
+        local v5, v6, v7
+        v7, v6, v5 = ipairs(v2[1][3])
+        v7, v6, v5 = v1.g(v7, v6, v5)
+        local v8, v9
+        v9, v8 = v7(v6, v5)
+        local v10, v11, v12, v13
+        if v9 ~= nil then
+            while true do
+                v10 = v2[3][3]
+                v13, _ = v10.CandyHome.Position.X, v8[1]
+                k, v12, v13 = v13 + _, v10, v8[3]
+                v11 = v12.CandyHome.Position
+                v11, _ = v8[2], v11.Z
+                v4[#v4 + 1] = Vector3.new(k, v13, _ + v11)
+                v9, v8 = v7(v6, v5)
+                v5 = v9
+                if v5 == nil then
+                    break
+                end
+            end
+        end
+        v7 = {}
+        v6, v5, v9 = pairs(v2[3][3].EventGeometry)
+        v6, v5, v9 = v1.g(v6, v5, v9)
+        local v14
+        v8, v14 = v6(v5, v9)
+        if v8 ~= nil then
+            while true do
+                if typeof(v14) == "Vector3" then
+                    v7[#v7 + 1] = v14
+                end
+                v8, v14 = v6(v5, v9)
+                v9 = v8
+                if v9 == nil then
+                    break
+                end
+            end
+        end
+        local v15, v16, v17, v18
+        if #v7 >= 25 then
+            v6 = {}
+            v5 = {}
+            while true do
+                if #v5 < 16 then
+                    v8 = 0
+                    v9 = nil
+                    v14, v15, k = ipairs(v7)
+                    v14, v15, k = v1.g(v14, v15, k)
+                    for k, _ in v14, v15, k do
+                        v11 = 0
+                        v10, v12, v16 = ipairs(v7)
+                        v10, v12, v16 = v1.g(v10, v12, v16)
+                        v17, v18 = v10(v12, v16)
+                        v16 = v17
+                        if v16 ~= nil then
+                            while true do
+                                if not v6[v17] and v2[2][3](_, v18) < 235 then
+                                    v11 = v11 + 1
+                                end
+                                v17, v18 = v10(v12, v16)
+                                v16 = v17
+                                if v16 == nil then
+                                    break
+                                end
+                            end
+                        end
+                        if v11 > v8 then
+                            v8 = v11
+                            v9 = _
+                        end
+                    end
+                    if v9 then
+                        v5[#v5 + 1] = v9
+                        v14, v15, k = ipairs(v7)
+                        v14, v15, k = v1.g(v14, v15, k)
+                        v13, _ = v14(v15, k)
+                        k = v13
+                        if k ~= nil then
+                            while true do
+                                if v2[2][3](_, v9) < 235 then
+                                    v6[v13] = true
+                                end
+                                v13, _ = v14(v15, k)
+                                k = v13
+                                if k == nil then
+                                    break
+                                end
+                            end
+                            continue
+                        end
+                        continue
+                    end
+                    break
+                end
+                break
+            end
+            if #v5 >= 7 then
+                v4 = v5
+            end
+        end
+        v5 = v3
+        v6 = {}
+        while true do
+            if #v4 > 0 then
+                v9 = 1
+                v8 = math.huge
+                v14, v15, k = ipairs(v4)
+                v14, v15, k = v1.g(v14, v15, k)
+                v13, _ = v14(v15, k)
+                k = v13
+                if k ~= nil then
+                    while true do
+                        v11 = v2[2][3](_, v5)
+                        if v11 < v8 then
+                            v9 = v13
+                            v8 = v11
+                        end
+                        v13, _ = v14(v15, k)
+                        k = v13
+                        if k == nil then
+                            break
+                        end
+                    end
+                end
+                k, v14, v15 = v9, table.remove, v4
+                v14 = v14(v15, k)
+                v6[#v6 + 1] = v14
+                v5 = v14
+                continue
+            end
+            break
+        end
+        return v6
+    end
+end
+local function _w411(v1, v2)
+    return function(v3)
+        local v4, v5, v6, v7, v8, v9, v10
+        if not (typeof(v3) ~= "Instance") then
+            v6, v8, v10 = ipairs(v2[1][3])
+            v6, v8, v10 = v1.g(v6, v8, v10)
+            v5, v7 = v6(v8, v10)
+            v10 = v5
+            if v10 ~= nil then
+                while true do
+                    v4 = v3.GetAttribute
+                    v4 = v1.h(v4(v3, v7))
+                    v9 = tonumber(v1.i(v4))
+                    if not v9 then
+                        v4 = v3:FindFirstChild(v7)
+                        if v4 and v4:IsA("NumberValue") then
+                            v9 = tonumber(v4.Value)
+                        end
+                    end
+                    if not (v9 and v9 > 0 and v9 < 100000) then
+                        v5, v7 = v6(v8, v10)
+                        v10 = v5
+                        if v10 ~= nil then
+                            continue
+                        end
+                        return nil
+                    end
+                    break
+                end
+                return v9
+            end
+        end
+        return nil
+    end
+end
+local function _w412(v1, v2)
+    return function()
+        local v3 = v2[1][3].Character
+        local v4 = v3
+        if v3 then
+            v4 = v3:FindFirstChild("HumanoidRootPart")
+        end
+        local v5, v6, v7, v8
+        if not v4 then
+            v8 = v2[5][3]
+            v2[3][3].setLabel(v8, "🔴 Character unavailable")
+        else
+            v8 = v2[3][3]
+            v5 = v4.Position
+            v8.SavedDropPosition = {
+                X = v5.X,
+                Y = v5.Y,
+                Z = v5.Z,
+            }
+            v8.DropSafeNames = {}
+            v8.DropSafezoneActive = false
+            v8.ReturnPreviouslyDropped = false
+            v7 = v2[3][3]
+            v6 = v7.SavedDropPosition
+            v2[4][3].SavedDropPosition = v6
+            v7.SaveConfig()
+            v2[2][3]()
+            v7, v6, v8 = "🟢 Drop location saved", v2[5][3], v7.setLabel
+            v8(v6, "🟢 Drop location saved")
+        end
+    end
+end
+local function _w413(v1, v2)
+    return function(v3, v4, v5, v6, v7, v8, v9)
+        local q, s
+        v5 = {[1] = 3, [3] = v5}
+        v5[2] = v5
+        v6 = {[1] = 3, [3] = v6}
+        v6[2] = v6
+        v7 = {[1] = 3, [3] = v7}
+        v7[2] = v7
+        v9 = {[1] = 3, [3] = v9}
+        v9[2] = v9
+        local v10 = v2[1][3]
+        v10.YieldUIPaint()
+        local v11, v12
+        v10, v11, v12 = v3, v4, v10.boxFor
+        v12 = {[1] = 3, [3] = v12(v10, v11)}
+        v12[2] = v12
+        local v13, v14, v15, v16, v17, v18, v19
+        if not v12[3] then
+            return
+        else
+            v11 = v2[1][3]
+            v17, v11, v10 = v8, v7[3], v11.DecorateOptions
+            v10, v11, v17 = v10(v11, v17)
+            v17 = {[1] = 3, [3] = v17}
+            v17[2] = v17
+            v16 = {[1] = 3, [3] = {}}
+            v16[2] = v16
+            v14, q = v2[1][3].normalizeSelection, v2[3][3]
+            q = q[v7[3]]
+            v14 = v1.h(v14(q))
+            v15, v14, q = ipairs(v1.i(v14))
+            v15, v14, q = v1.g(v15, v14, q)
+            for q, s in v15, v14, q do
+                if v10[s] then
+                    v18 = #v16[3]
+                    v18, v19 = v10[s], v18 + 1
+                    v16[3][v19] = v18
+                end
+            end
+            v15, v14 = pcall(v1:Ko({v12, v16, v5, v17, v6}))
+            q = not v15 or not v14
+            if q then
+                v13, s = "Dropdown " .. v5[3], v14
+                v2[1][3].notifyError(v13, s)
+                return
+            else
+                v2[2][3][v5[3]] = v14
+                q = v2[1][3].SavedDropdownRegistry
+                s = {Control = v14, Key = v7[3], Kind = "decorated"}
+                q[v5[3]] = s
+                v13 = {Kind = "decorated", Key = v7[3], Control = v14, ToName = v11, ToDisplay = v10}
+                s, v19, v18 = table.concat, v17[3], "\000"
+                v13.Signature = s(v19, "\000")
+                q = {[1] = 3, [3] = v13}
+                q[2] = q
+                v2[1][3].DynamicDropdowns[v5[3]] = q[3]
+                v14:OnChanged(v1:Lo({v2[4], v7, v9, v2[3], q, v2[1]}))
+                return v14
+            end
+        end
+    end
+end
+local function _w414(v1, v2)
+    return function()
+        v2[1][3]:InputHoldBegin()
+        local v3 = v2[1][3]
+        local v4 = math.max
+        task.wait(v4(0.1, tonumber(v3.HoldDuration) or 0) + 0.12)
+        v2[1][3]:InputHoldEnd()
+    end
+end
+local function _w415(v1)
+    return function(v2)
+        local v3, v4, v5, v6, data2, v7, v8, v9
+        if not (not v2 or not v2.Parent) then
+            data2 = v2:FindFirstChild("Data")
+            v5 = {}
+            v3 = "FinalLuck"
+            v5[1], v5[2], v5[3], v5[4], v5[5], v5[6], v5[7], v5[8] = "EffectiveLuck", "FinalLuck", "TotalLuck", "ActualLuck", "CurrentLuck", "EggLuck", "HatchLuck", "Luck"
+            v4, v7, v9 = ipairs(v5)
+            v4, v7, v9 = v1.g(v4, v7, v9)
+            v5, v8 = v4(v7, v9)
+            v9 = v5
+            if v9 ~= nil then
+                while true do
+                    v6 = v2.GetAttribute
+                    v6 = v1.h(v6(v2, v8))
+                    v3 = tonumber(v1.i(v6))
+                    if v3 == nil and data2 then
+                        v6 = data2:FindFirstChild(v8)
+                        if v6 and v6:IsA("ValueBase") then
+                            v3 = tonumber(v6.Value)
+                        end
+                    end
+                    if not (v3 and v3 >= 0 and v3 < math.huge) then
+                        v5, v8 = v4(v7, v9)
+                        v9 = v5
+                        if v9 ~= nil then
+                            continue
+                        end
+                        return nil
+                    end
+                    break
+                end
+                return v3
+            end
+        end
+        return nil
+    end
+end
+local function _w416(v1, v2)
+    return function()
+        task.wait(1.5)
+        if v2[1][3] then
+            v2[2][3].ToggleHideEggs(true)
+        end
+    end
+end
+local function _w417(v1, v2)
+    return function()
+        game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, v2[1][3])
+    end
+end
+local function _w418(v1, v2)
+    return function()
+        local v3 = v2[1][3].Enabled
+        local v4
+        if v3 then
+            v4 = v2[1][3].WorkerGeneration
+            v3 = v2[3][3] == v4
+        end
+        if v3 then
+            v2[2][3].bindInventoryESPGrid()
+        end
+    end
+end
+local function _w419(v1, v2)
+    return function(v3)
+        v3 = {[1] = 3, [3] = v3}
+        v3[2] = v3
+        if not (typeof(v3[3]) ~= "Vector3") then
+            task.spawn(v1:pl({v2[1], v3}))
+        end
+    end
+end
+local function _w420(v1, v2)
+    return function()
+        local _, k
+        local v3 = 0
+        local v4 = setmetatable({}, {__mode = "k"})
+        local v5 = v2[1][3].getInventoryESPToolContainers
+        v5 = v1.h(v5())
+        local v6, v7
+        v6, v5, v7 = ipairs(v1.i(v5))
+        v6, v5, v7 = v1.g(v6, v5, v7)
+        local v8, v9
+        v8, v9 = v6(v5, v7)
+        local v10, v11
+        if v8 ~= nil then
+            while true do
+                v11 = v9.GetChildren
+                v11 = v1.h(v11(v9))
+                v10, v11, k = ipairs(v1.i(v11))
+                v10, v11, k = v1.g(v10, v11, k)
+                for k, _ in v10, v11, k do
+                    if _:IsA("Tool") and not v4[_] and _:GetAttribute("PetKey") ~= nil then
+                        v4[_] = true
+                        v3 = v3 + 1
+                    end
+                end
+                v8, v9 = v6(v5, v7)
+                v7 = v8
+                if v7 == nil then
+                    break
+                end
+            end
+        end
+        return v3
+    end
+end
+local function _w421(v1, v2)
+    return function()
+        local v3 = v2[2][3].WaterReflectance
+        v2[1][3].FPSState.Original.WaterReflectance = v3
+    end
+end
+local function _w422(v1)
+    return function()
+    end
+end
+local function _w423(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        local v4
+        v4, v3 = v3, v3.GetPivot
+        v3 = table.pack(v3(v4))
+        return table.unpack(v3, 1, v3.n)
+    end
+end
+local function _w424(v1, v2)
+    return function()
+        local v3, v4, v5, v6
+        while true do
+            if v2[1][3].Alive then
+                v2[1][3].TaskWants("Place")
+                v3 = v2[1][3]
+                v4, v6, v5, v3 = v1:zj({v2[1], v2[3], v2[2], v2[4]}), v3.TaskRun, true, "Place"
+                v6("Place", v4, true)
+                task.wait(0.3)
+                continue
+            end
+            break
+        end
+    end
+end
+local function _w425(v1, v2)
+    return function()
+        if type(isfile) ~= "function" or isfile(v2[1][3].AutoExecuteBootPath) then
+            delfile(v2[1][3].AutoExecuteBootPath)
+        end
+    end
+end
+local function _w426(v1, v2)
+    return function(v3)
+        if v3.Name == "Basket" then
+            v2[1][3].HookEggBasket(v3)
+        end
+    end
+end
+local function _w427(v1, v2)
+    return function()
+        v2[1][3].HideConnection:Disconnect()
+    end
+end
+local function _w428(v1)
+    return function(v2, v3)
+        warn("[REZEHUB Inventory ESP][" .. tostring(v2) .. "] " .. tostring(v3))
+    end
+end
+local function _w430(v1, v2)
+    return function()
+        local v3 = v2[1][3].Character
+        local humanoidRootPart2, humanoid
+        if v3 then
+            humanoid = v3:FindFirstChildOfClass("Humanoid")
+            humanoidRootPart2 = v3:FindFirstChild("HumanoidRootPart")
+            if not (not humanoid or not humanoidRootPart2) then
+                return v3
+            end
+        end
+        return nil
+    end
+end
+local function _w431(v1, v2)
+    return function(v3)
+        local v4 = v2[3][3]
+        v2[1][3].SetSimpleShader(v3, v4.ShaderPreset)
+        local v5 = v2[2][3]
+        v2[1][3].setVisible(v5, v3)
+    end
+end
+local function _w432(v1, v2)
+    return function()
+        v2[1][3].FPSState.Original.MeshPartDetailLevel = settings().Rendering.MeshPartDetailLevel
+    end
+end
+local function _w433(v1, v2)
+    return function(v3)
+        v2[1][3] = v3
+    end
+end
+local function _w434(v1, v2)
+    return function(v3)
+        local headlessRitual3 = workspace:FindFirstChild("HeadlessRitual")
+        local v4 = headlessRitual3
+        if headlessRitual3 then
+            v4 = headlessRitual3:FindFirstChild("Altar")
+        end
+        local v5 = v4
+        if v4 then
+            v5 = v4:FindFirstChild(v3 .. "Placement")
+        end
+        local v6 = v5
+        if v5 then
+            v6 = v5:FindFirstChild("RitualPrompt")
+        end
+        local v7 = v6
+        if v6 then
+            v7 = v6:IsA("ProximityPrompt")
+        end
+        if v7 then
+            v7 = v6:IsDescendantOf(workspace)
+        end
+        local v8, v9, v10, v11, v12, v13
+        if v7 then
+            return v6
+        else
+            v10 = v2[1][3]
+            v10, v13 = v10.GetTagged, v10
+            v10 = v1.h(v10(v13, "HalloweenRitualPrompt"))
+            v7, v10, v13 = ipairs(v1.i(v10))
+            v7, v10, v13 = v1.g(v7, v10, v13)
+            v8, v9 = v7(v10, v13)
+            v13 = v8
+            if v13 ~= nil then
+                while true do
+                    v12, v11 = v2[2][3](v9)
+                    if not (v9:IsA("ProximityPrompt") and v12 == v3 and v11 == "Place" and v9:IsDescendantOf(workspace)) then
+                        v8, v9 = v7(v10, v13)
+                        v13 = v8
+                        if v13 ~= nil then
+                            continue
+                        end
+                        return nil
+                    end
+                    break
+                end
+                return v9
+            end
+            return nil
+        end
+    end
+end
+local function _w435(v1, v2)
+    return function()
+        local v3, v4, v5, v6
+        while true do
+            if v2[1][3].Alive then
+                v2[1][3].TaskWants("Sell")
+                v4 = v2[1][3]
+                v6, v5, v4, v3 = true, v1:Dq({v2[2], v2[3], v2[4], v2[1]}), "Sell", v4.TaskRun
+                v3("Sell", v5, true)
+                task.wait(2)
+                continue
+            end
+            break
+        end
+    end
+end
+local function _w436(v1, v2)
+    return function(v3)
+        v2[1][3] = v3
+    end
+end
+local function _w437(v1, v2)
+    return function()
+        local serverData = v2[1][3]:FindFirstChild("ServerData")
+        local v3, lastEggResetTime
+        if not serverData then
+            return nil
+        else
+            lastEggResetTime = serverData:FindFirstChild("LastEggResetTime")
+            v3 = lastEggResetTime and lastEggResetTime:IsA("ValueBase") and lastEggResetTime.Value or serverData:GetAttribute("LastEggResetTime")
+            if v3 == nil or tostring(v3) == "" then
+                return nil
+            else
+                return tostring(v3)
+            end
+        end
+    end
+end
+local function _w438(v1, v2)
+    return function()
+        local getDescendants = workspace:GetDescendants()
+        v2[1][3] = getDescendants
+    end
+end
+local function _w439(v1, v2)
+    return function()
+        v2[1][3].EventScanPetReplica:Destroy()
+    end
+end
+local function _w440(v1, v2)
+    return function()
+        if v2[1][3].Alive and v2[2][3].InventoryESP == true then
+            v2[1][3].SetInventoryESPEnabled(true)
+        end
+    end
+end
+local function _w441(v1)
+    return function(v2)
+        local v3 = ""
+        if v2:IsA("TextButton") then
+            v3 = v2.Text
+        end
+        local v4, v5, v6, v7, v8, v9
+        do
+            local shouldExit = false
+            if v3 == "" then
+                v5 = v2.GetDescendants
+                v5 = v1.h(v5(v2))
+                v7, v5, v6 = ipairs(v1.i(v5))
+                v7, v5, v6 = v1.g(v7, v5, v6)
+                v4, v9 = v7(v5, v6)
+                v6 = v4
+                if v6 ~= nil then
+                    while true do
+                        v8 = v9:IsA("TextLabel") and v9.Text ~= ""
+                        if v8 then
+                            break
+                        else
+                            v4, v9 = v7(v5, v6)
+                            v6 = v4
+                            if v6 ~= nil then
+                                continue
+                            end
+                        end
+                        shouldExit = true
+                        break
+                    end
+                    if shouldExit then
+                        break
+                    end
+                    v3 = v9.Text
+                end
+            end
+        end
+        v5 = string.gsub(v3, "<[^>]+>", "")
+        v4, v6, v5, v7 = "", "%s+$", string.gsub(v5, "^%s+", ""), string.gsub
+        v5, v7 = v7(v5, "%s+$", ""), string.lower
+        v7 = table.pack(v7(v5))
+        return table.unpack(v7, 1, v7.n)
+    end
+end
+local function _w442(v1)
+    return function(v2)
+        local v3 = v2
+        if v2 then
+            v3 = v2:GetAttribute("PetName")
+        end
+        return v3
+    end
+end
+local function _w443(v1, v2)
+    return function()
+        v2[1][3]:FireServer()
+    end
+end
+local function _w444(v1, v2)
+    return function()
+        local _, k
+        local v3 = v2[1][3].GetAll
+        v3 = v1.h(v3())
+        local v4, v5
+        v5, v3, v4 = pairs(v1.i(v3))
+        v5, v3, v4 = v1.g(v5, v3, v4)
+        local v6, v7
+        v6, v7 = v5(v3, v4)
+        local v8 = {}
+        local v9, v10, v11, v12
+        if v6 ~= nil then
+            while true do
+                v11 = v2[3][3].UserId
+                if v7.OwnerUserId == v11 and v7.Model and v7.Model.Parent then
+                    v9, k, v12, v11 = v8, v7.PetKey, table.insert, {}
+                    v11.Key = k
+                    k = tonumber(v7.DisplayIncome) or tonumber(v7.Income) or 0
+                    v11.Income = k
+                    v11.Placed = true
+                    v11.Model = v7.Model
+                    k = v7.PetName or v7.Model.Name
+                    v11.PetName = k
+                    v10 = v7.Model
+                    _, v10 = v10, v10.GetPivot
+                    v11.Position = v10(_).Position
+                    v12(v9, v11)
+                end
+                v6, v7 = v5(v3, v4)
+                v4 = v6
+                if v4 == nil then
+                    break
+                end
+            end
+        end
+        v6 = v2[3][3]
+        v3 = {}
+        v6, v12, v7, v4 = v6.FindFirstChildOfClass, "Backpack", v6, v6.Character
+        v6 = v1.h(v6(v7, "Backpack"))
+        v3[1] = v4
+        v1.j(v3, 2, v1.i(v6))
+        v5, v3 = v3, ipairs
+        v3, v4, v6 = v3(v5)
+        v3, v4, v6 = v1.g(v3, v4, v6)
+        v7, v12 = v3(v4, v6)
+        local v13, v14
+        if v7 ~= nil then
+            while true do
+                if v12 then
+                    v11 = v12.GetChildren
+                    v11 = v1.h(v11(v12))
+                    v9, v11, k = ipairs(v1.i(v11))
+                    v9, v11, k = v1.g(v9, v11, k)
+                    for k, _ in v9, v11, k do
+                        if _:IsA("Tool") and _:GetAttribute("PetKey") then
+                            v14 = table.insert
+                            v13 = {}
+                            v13.Key = _:GetAttribute("PetKey")
+                            v13.Income = v2[2][3].CalculatePetIncome(_)
+                            v13.Placed = false
+                            v13.PetName = _:GetAttribute("PetName") or _.Name
+                            v13.Tool = _
+                            v14(v8, v13)
+                        end
+                    end
+                end
+                v7, v12 = v3(v4, v6)
+                v6 = v7
+                if v6 == nil then
+                    break
+                end
+            end
+        end
+        v6 = v1:Rp()
+        table.sort(v8, v6)
+        return v8
+    end
+end
+local function _w445(v1, v2)
+    return function()
+        local v3, v4
+        v4, v3 = pcall(v1:Ml({v2[1], v2[6], v2[5], v2[4], v2[2], v2[7]}))
+        local v5 = v2[1][3].RefreshGeneration
+        local v6
+        if v2[4][3] == v5 then
+            v6 = v2[1][3]
+            v6.RefreshBusy = false
+            v6.LastRefreshMs = (os.clock() - v2[3][3]) * 1000
+            if not v4 then
+                v2[7][3].diagnose("esp.refresh", tostring(v3))
+            end
+            if v2[1][3].RefreshAgain and v2[2][3].Alive and v2[1][3].Enabled then
+                v2[1][3].RefreshAgain = false
+                v2[7][3].queueInventoryESPRefresh(0)
+            end
+        end
+    end
+end
+local function _w446(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        local v4, v5, v6
+        v3, v5, v6, v4 = v2[3][3], v3.setLabel, v2[4][3], v2[2][3]
+        v4 = v4(v6) and "🟢 URL READY" or "🔴 Paste a webhook URL"
+        v5(v3, v4)
+    end
+end
+local function _w447(v1, v2)
+    return function()
+        local v3, v4
+        if v2[1][3]:IsA("RemoteFunction") then
+            v3 = v2[1][3]
+            v4, v3 = v3, v3.InvokeServer
+            v3 = table.pack(v3(v4, "Halloween Egg"))
+            return table.unpack(v3, 1, v3.n)
+        else
+            v2[1][3]:FireServer("Halloween Egg")
+            return nil
+        end
+    end
+end
+local function _w448(v1, v2)
+    return function()
+        local v3, v4
+        if not v2[1][3] or not v2[1][3].Parent then
+            return false
+        else
+            v4 = v2[2][3].Character
+            v3 = {[1] = 3, [3] = v4 and v4:FindFirstChild("HumanoidRootPart")}
+            v3[2] = v3
+            if not v3[3] then
+                return false
+            else
+                pcall(v1:xq({v2[1], v3}))
+                task.wait(0.3)
+                return true
+            end
+        end
+    end
+end
+local function _w449(v1, v2)
+    return function(v3)
+        local v4
+        v4, v2[1][3] = v2[3][3], v3
+        local v5, v6
+        v6, v4, v5 = v4.setLabel, v2[2][3], v3
+        if v5 then
+            v5 = "🟡 Checking active pets"
+        end
+        if not v5 then
+            v5 = "🔴 Auto Feed Off"
+        end
+        v6(v4, v5)
+    end
+end
+local function _w450(v1)
+    return function(v2)
+        local v3 = tostring(v2)
+        local v4, v5
+        if type(debug) == "table" and type(debug.traceback) == "function" then
+            v4, v5 = pcall(debug.traceback, v3, 2)
+            if v4 and type(v5) == "string" then
+                v3 = v5
+            end
+        end
+        return v3
+    end
+end
+local function _w451(v1, v2)
+    return function()
+        local v3 = tonumber(v2[1][3].Cap)
+        local v4 = v3
+        if v3 then
+            v4 = v2[6][3].Value >= v3
+        end
+        local v5, v6, v7, v8, v9, v10, v11, v12, v13, v14
+        if v4 then
+            return false
+        else
+            v10 = v2[6][3]
+            v4 = v2[1][3].GetCost(v10.Value)
+            if v2[5][3].Value < v4 then
+                return false
+            else
+                v10 = v2[6][3].Value + 1
+                v6 = v2[4][3].RebirthRequirements
+                if not v6 then
+                    return true
+                else
+                    v13 = math.clamp
+                    v7 = math.max
+                    v7 = v1.h(v7(#v6, 1))
+                    v11 = {[1] = 3, [3] = v6[v13(v10, 1, v1.i(v7))]}
+                    v11[2] = v11
+                    if not v11[3] then
+                        return true
+                    else
+                        v13 = v1:In({v11})
+                        v5 = v2[3][3]
+                        v5, v7 = v5.FindFirstChildOfClass, v5
+                        v5 = v1.h(v5(v7, "Backpack"))
+                        if v13(v1.i(v5)) or v13(v2[3][3].Character) then
+                            return true
+                        else
+                            v9 = v2[3][3].Character
+                            v5 = v9 and v9:FindFirstChild("HumanoidRootPart")
+                            v7 = v5 and v5:FindFirstChild("PetMountJoint")
+                            v14 = v7 and v7.Parent
+                            if v14 then
+                                v8 = v14:GetAttribute("PetName") or v14.Name
+                                v12 = v11[3]
+                                if string.find(v8, v12) then
+                                    return true
+                                end
+                            end
+                            return false
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+local function _w452(v1, v2)
+    return function()
+        local v3 = v1:Rn({v2[1]})
+        local v4 = v3("Eggs", v2[6][3])
+        local v5, v6
+        v5, v2[6][3], v4, v6 = "Pets", v4, v3, v2[5][3]
+        v4 = v4("Pets", v6)
+        v6, v2[5][3], v4, v5 = v2[4][3], v4, v3, "Mutations"
+        v4 = v4("Mutations", v6)
+        v2[4][3], v6, v5, v4 = v4, v2[2][3], "Foods", v3
+        v4 = v4("Foods", v6)
+        v6, v5, v4, v2[2][3] = v2[7][3], "Shop", v3, v4
+        v4 = v4("Shop", v6)
+        local v7
+        v2[7][3], v7 = v4, {}
+        v4, v7 = v7, {}
+        v7, v5 = {}, v7
+        local v8
+        v8, v6, v7 = v2[6][3], v7, pairs
+        local v9
+        v7, v8, v9 = v7(v8)
+        v7, v8, v9 = v1.g(v7, v8, v9)
+        local v10, v11
+        v10, v11 = v7(v8, v9)
+        if v10 ~= nil then
+            while true do
+                if type(v10) == "string" and type(v11) == "table" then
+                    v4[#v4 + 1] = v10
+                    if type(v11.Rarity) == "string" then
+                        v6[v11.Rarity] = true
+                    end
+                end
+                v10, v11 = v7(v8, v9)
+                v9 = v10
+                if v9 == nil then
+                    break
+                end
+            end
+        end
+        v7, v8, v9 = pairs(v2[5][3])
+        v7, v8, v9 = v1.g(v7, v8, v9)
+        v10, v11 = v7(v8, v9)
+        if v10 ~= nil then
+            while true do
+                if type(v10) == "string" and type(v11) == "table" then
+                    v5[#v5 + 1] = v10
+                    if type(v11.Rarity) == "string" then
+                        v6[v11.Rarity] = true
+                    end
+                end
+                v10, v11 = v7(v8, v9)
+                v9 = v10
+                if v9 == nil then
+                    break
+                end
+            end
+        end
+        v8 = v2[3][3]
+        v8, v9, v7, v10 = v4, v2[6][3], v8.SortNamesByRarity, true
+        v7(v8, v9, true)
+        v8 = v2[3][3]
+        v8, v9, v7 = v5, v2[5][3], v8.SortNamesByRarity
+        v7(v8, v9)
+        v7 = {}
+        v8, v9, v10 = pairs(v6)
+        v8, v9, v10 = v1.g(v8, v9, v10)
+        v11 = v8(v9, v10)
+        if v11 ~= nil then
+            while true do
+                v7[#v7 + 1] = v11
+                v11 = v8(v9, v10)
+                v10 = v11
+                if v10 == nil then
+                    break
+                end
+            end
+        end
+        v10 = v1:Qn({v2[3]})
+        table.sort(v7, v10)
+        v8 = v2[3][3]
+        v8.EggNames, v11 = v4, v8
+        v8.PET_LIST = v5
+        v8.FUSE_PET_LIST = v5
+        v11.RarityNames = v7
+        v8.EggPriority, v11 = {}, {}
+        v8.RarityPriority = v11
+        v8, v9, v10 = ipairs(v4)
+        v8, v9, v10 = v1.g(v8, v9, v10)
+        local v12
+        v11, v12 = v8(v9, v10)
+        if v11 ~= nil then
+            while true do
+                v2[3][3].EggPriority[v12] = v11
+                v11, v12 = v8(v9, v10)
+                v10 = v11
+                if v10 == nil then
+                    break
+                end
+            end
+        end
+        v8, v9, v10 = ipairs(v7)
+        v8, v9, v10 = v1.g(v8, v9, v10)
+        v11, v12 = v8(v9, v10)
+        if v11 ~= nil then
+            while true do
+                v2[3][3].RarityPriority[v12] = v11
+                v11, v12 = v8(v9, v10)
+                v10 = v11
+                if v10 == nil then
+                    break
+                end
+            end
+        end
+        v8 = {}
+        v9, v10, v11 = pairs(v2[2][3])
+        v9, v10, v11 = v1.g(v9, v10, v11)
+        local v13
+        v12, v13 = v9(v10, v11)
+        if v12 ~= nil then
+            while true do
+                if type(v12) == "string" and type(v13) == "table" and type(v13.XP) == "number" then
+                    v8[v12] = {Rarity = v13.Rarity, XP = v13.XP}
+                end
+                v12, v13 = v9(v10, v11)
+                v11 = v12
+                if v11 == nil then
+                    break
+                end
+            end
+        end
+        v2[3][3].FeedFoodInfo = v8
+        v10 = v2[3][3]
+        v9 = v1:Sn({v2[7], v2[3]})
+        v12 = v9("Food")
+        v13 = v9("Gears")
+        v10.FoodShop = v12
+        v10.GearShop = v13
+    end
+end
+local function _w453(v1, v2)
+    return function(v3)
+        v2[1][3] = v3 or true
+    end
+end
+local function _w454(v1, v2)
+    return function()
+        local getCharacter6, v3
+        if not v2[1][3].IsFastRideMounted() then
+            getCharacter6 = v2[1][3].GetCharacter()
+            v3 = getCharacter6 and getCharacter6:FindFirstChildOfClass("Humanoid")
+            if v3 then
+                v3:UnequipTools()
+            end
+        end
+    end
+end
+local function _w455(v1, v2)
+    return function(v3)
+        local v4 = 0
+        local v5 = 1
+        while true do
+            v4 = v4 * 85 + ("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!#$%&()*+-;<=>?@^_`{|}~"):find(v3:sub(v5, v5), 1, true) - 1
+            v5 = v5 + 1
+            if v5 > 5 then
+                break
+            end
+        end
+        v5 = v2[1][3]
+        local v6 = v2[3][3](v4, 24)
+        local v7 = v2[2][3](v2[3][3](v4, 16), 255)
+        local v8 = v2[2][3](v2[3][3](v4, 8), 255)
+        local v9 = v2[2][3]
+        local pack = table.pack(v9(v4, 255))
+        v5 = table.pack(v5(v6, v7, v8, table.unpack(pack, 1, pack.n)))
+        return table.unpack(v5, 1, v5.n)
+    end
+end
+local function _w456(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        local v4 = v1.h(getconnections(v3))
+        local v5
+        v5, v4, v3 = ipairs(v1.i(v4))
+        v5, v4, v3 = v1.g(v5, v4, v3)
+        local v6, v7
+        v6, v7 = v5(v4, v3)
+        if v6 ~= nil then
+            while true do
+                v7 = {[1] = 3, [3] = v7}
+                v7[2] = v7
+                pcall(v1:Bq({v7}))
+                v2[2][3] = true
+                v6, v7 = v5(v4, v3)
+                v3 = v6
+                if v3 == nil then
+                    break
+                end
+            end
+        end
+    end
+end
+local function _w457(v1)
+    return function(v2)
+        local v3 = v2
+        if v2 then
+            v3 = v2:IsA("ProximityPrompt")
+        end
+        local ritualHalf, v4
+        if not v3 then
+            return nil, nil
+        else
+            v4 = v2.Parent
+            if v4 and v4 ~= workspace then
+                if v4.Name ~= "YinPlacement" then
+                    return v4.Name, "Collect"
+                end
+                return "Yin", "Place"
+            end
+            v3 = tostring(v2.ActionText or ""):lower()
+            if v3:find("place yin", 1, true) then
+                return "Yin", "Place"
+            else
+                v3:find("place yang", 1, true)
+                ritualHalf = v2:GetAttribute("RitualHalf")
+                if ritualHalf == "Yin" or ritualHalf == "Yang" then
+                    return ritualHalf, "Place"
+                else
+                    return nil, "Reward"
+                end
+            end
+        end
+    end
+end
+local function _w458(v1, v2)
+    return function()
+        local gameData = v2[1][3]:FindFirstChild("GameData")
+        local v3 = gameData
+        if gameData then
+            v3 = gameData:FindFirstChild("Pets")
+        end
+        local v4 = gameData
+        if gameData then
+            v4 = gameData:FindFirstChild("Mutations")
+        end
+        if not v3 or not v4 then
+            error("Pets/Mutations module missing")
+        end
+        local v5 = require(v3)
+        local v6 = require(v4)
+        if type(v5) ~= "table" or type(v6) ~= "table" then
+            error("Invalid native data")
+        end
+        local v7 = v2[2][3]
+        local v8
+        v7.PetGameData, v8 = v5, v7
+        v8.Mutations = v6
+        v7, v8 = v8, true
+        v7.NativeModulesLoaded = true
+        v7.PreparedGrid = nil
+    end
+end
+local function _w459(v1)
+    return function(v2)
+        local v3 = math.clamp(tonumber(v2) or 0, 0, 1) * 100
+        local v4
+        if v3 >= 10 then
+            v4 = math.floor
+            v4 = table.pack(v4(v3 + 0.5))
+            return tostring(table.unpack(v4, 1, v4.n)) .. "%"
+        else
+            return tostring(math.floor(v3 * 100 + 0.5) / 100) .. "%"
+        end
+    end
+end
+local function _w460(v1, v2)
+    return function(v3)
+        v2[1][3].RollbackEnabled = false
+        local v4 = v3
+        if v3 then
+            v4 = not v2[3][3]
+        end
+        local v5, v6
+        if v4 then
+            v5, v2[3][3] = v2[5][3], true
+            v6, v5, v4 = "🔴 Premium users only", v2[4][3], v5.setLabel
+            v4(v5, "🔴 Premium users only")
+            v4 = {[1] = 3, [3] = v2[2][3].Rollback}
+            v4[2] = v4
+            if v4[3] and type(v4[3].SetValue) == "function" then
+                pcall(v1:Hm({v4}))
+            end
+            v2[3][3] = false
+        end
+    end
+end
+local function _w461(v1, v2)
+    return function()
+        local d, k
+        local v3 = 1
+        local v4, v5, v6, v7, v8, v9
+        while true do
+            if v2[1][3].Alive then
+                v5 = v2[2][3].REZETitleLabel
+                v4 = v5 and v5:FindFirstAncestorOfClass("ScreenGui")
+                if v4 then
+                    v6 = v4.GetDescendants
+                    v6 = v1.h(v6(v4))
+                    v9, v6, d = ipairs(v1.i(v6))
+                    v9, v6, d = v1.g(v9, v6, d)
+                    for d, k in v9, v6, d do
+                        if k:IsA("TextLabel") and k.Text == "__REZE_SESSION_OVERVIEW_MOUNT__" then
+                            v8 = k.Parent
+                            v7 = v8 and v8:FindFirstChild("REZESessionOverviewGrid", true)
+                            k.Text = ""
+                            k.Visible = false
+                            if v8 and v8:IsA("Frame") and not v7 and not v8:FindFirstChildOfClass("UIListLayout") then
+                                v8.Visible = false
+                                v8.Size = UDim2.new(1, 0, 0, 0)
+                            end
+                        end
+                    end
+                end
+                task.wait(0.3)
+                v3 = v3 + 1
+                if v3 <= 18 then
+                    continue
+                end
+                return
+            end
+            break
+        end
+    end
+end
+local function _w462(v1)
+    return function(v2)
+        local gsub5 = tostring(v2 or ""):lower():gsub("%s+egg$", ""):gsub("^%s+", "")
+        local v3, v4, v5
+        v4, v3, v5, gsub5 = "%s+$", gsub5, "", gsub5.gsub
+        gsub5 = table.pack(gsub5(v3, "%s+$", ""))
+        return table.unpack(gsub5, 1, gsub5.n)
+    end
+end
+local function _w463(v1, v2)
+    return function(v3, v4)
+        local v5 = v2[1][3].DynamicRarityRank[v3] or 0
+        local v6 = v2[1][3].DynamicRarityRank[v4] or 0
+        if v5 ~= v6 then
+            return v5 > v6
+        else
+            return v3 < v4
+        end
+    end
+end
+local function _w464(v1, v2)
+    return function(v3)
+        local v4 = v3.X
+        local v5 = math.abs(v4) < v2[1][3]
+        if v5 then
+            v4 = v3.Z
+            v5 = math.abs(v4) < v2[2][3]
+        end
+        return v5
+    end
+end
+local function _w465(v1)
+    return function(v2, v3, v4)
+        local eggInventoryId2
+        if not v2 then
+            return nil
+        else
+            v2:GetAttribute("PetKey")
+            eggInventoryId2 = v2:GetAttribute("EggInventoryId")
+            if eggInventoryId2 then
+                return "egg:" .. tostring(eggInventoryId2)
+            elseif type(v3) == "string" and v3 ~= "" then
+                return "card:" .. v3 .. "|" .. tostring(v4 or "")
+            else
+                return nil
+            end
+        end
+    end
+end
+local function _w466(v1, v2)
+    return function()
+        v2[1][3]:SetValue(v2[2][3], true)
+    end
+end
+local function _w467(v1, v2)
+    return function()
+        local A
+        local v3, v4, v5, v6, v7, concat, v8, v9, v10, floor8, v11, getCharacter7, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21
+        while true do
+            if v2[1][3].Alive then
+                getCharacter7 = v2[1][3].GetCharacter()
+                v5 = getCharacter7 and getCharacter7:FindFirstChild("HumanoidRootPart")
+                v4, v20, v18 = pairs(v2[1][3].ActiveESP)
+                v4, v20, v18 = v1.g(v4, v20, v18)
+                for A in v4, v20, v18 do
+                    v12 = not A or not A.Parent
+                    if not v12 then
+                        v15 = v2[1][3].RenderedEggs
+                        v12 = A.Parent ~= v15
+                    end
+                    if v12 then
+                        v2[1][3].RemoveESP(A)
+                    end
+                end
+                v20 = v2[1][3].RenderedEggs
+                v20, v18 = v20.GetChildren, v20
+                v20 = v1.h(v20(v18))
+                v4, v20, v18 = ipairs(v1.i(v20))
+                v4, v20, v18 = v1.g(v4, v20, v18)
+                A, v7 = v4(v20, v18)
+                v18 = A
+                if v18 ~= nil then
+                    while true do
+                        if A > 1 and A % 10 == 1 then
+                            task.wait()
+                        end
+                        if not (not v2[1][3].Alive or not v2[3][3]) then
+                            v12 = v7.Name
+                            v10 = v2[2][3][v12]
+                            v15 = v10 and tostring(v10.Rarity or "Common") or "Common"
+                            if v2[1][3].VisualRarityAllowed and v2[1][3].VisualRarityAllowed(v15) then
+                                if not v2[1][3].ActiveESP[v7] then
+                                    v2[1][3].CreateESP(v7)
+                                end
+                                v13 = v2[1][3].ActiveESP[v7]
+                                if v13 and v5 and v13.Part then
+                                    v6 = os.clock()
+                                    v9 = v13.Part.Position
+                                    v8 = (v5.Position - v9).Magnitude
+                                    floor8 = math.floor(v8 + 0.5)
+                                    if v6 >= v13.NextWeightTry then
+                                        v13.NextWeightTry = v6 + (v13.WeightText and 1.5 or 0.35)
+                                        v8 = v2[1][3].GetEggKG(v7)
+                                        if v8 then
+                                            v13.WeightText = v2[1][3].FormatESPKG(v8)
+                                        end
+                                    end
+                                    if v6 >= v13.NextMutationTry then
+                                        v13.NextMutationTry = v6 + (v13.MutationText and 2 or 1)
+                                        v8 = v2[1][3].GetWorldEggESPMutation(v7)
+                                        if v8 then
+                                            v13.MutationText = v8
+                                        end
+                                    end
+                                    v8 = v12 .. " • " .. v15
+                                    if v13.LastNameText ~= v8 then
+                                        v13.NameLabel.Text = v8
+                                        v13.LastNameText = v8
+                                    end
+                                    if v6 >= v13.NextStyleTry or v13.LastRarity ~= v15 then
+                                        v13.NextStyleTry = v6 + 3
+                                        v14, concat, v9, v16 = v2[1][3].GetEggRarityStyle(v12)
+                                        if v13.LastRarity ~= v15 or v13.LastGradientSequence ~= v9 then
+                                            v17 = v2[1][3]
+                                            v11, v17, v21, v3, v19 = v16, v13.NameLabel, v9, v17.ApplyEggRarityStyle, concat
+                                            v3(v17, v19, v21, v11)
+                                            v17 = v13.DetailsLabel
+                                            v2[1][3].ApplyEggRarityStyle(v17, concat, v9, v16)
+                                            v13.LastRarity = v15
+                                            v13.LastGradientSequence = v9
+                                        end
+                                    end
+                                    v14 = {}
+                                    if v13.MutationText then
+                                        v14[#v14 + 1] = v13.MutationText
+                                    end
+                                    v14[#v14 + 1] = v13.WeightText or "? KG"
+                                    v14[#v14 + 1] = tostring(floor8) .. "m"
+                                    concat = table.concat(v14, " • ")
+                                    if v13.LastDetailsText ~= concat then
+                                        v13.DetailsLabel.Text = concat
+                                        v13.LastDetailsText = concat
+                                    end
+                                end
+                            else
+                                v2[1][3].RemoveESP(v7)
+                            end
+                            A, v7 = v4(v20, v18)
+                            v18 = A
+                            if v18 ~= nil then
+                                continue
+                            end
+                            break
+                        end
+                        break
+                    end
+                end
+                task.wait(0.2)
+                continue
+            end
+            break
+        end
+        pcall(v2[1][3].ClearAllESP)
+    end
+end
+local function _w468(v1, v2)
+    return function(v3)
+        local v4, v5, v6, v7, v8, v9, v10, v11, v12
+        if v2[1][3].IsFastRideMounted() then
+            return true
+        else
+            v9 = {[1] = 3, [3] = v3}
+            v9[2] = v9
+            v11 = v9[3] and v9[3].Parent
+            if v11 then
+                v12 = v9[3].GetAttribute
+                v10 = v9[3]
+                v12 = table.pack(v12(v10, "PetKey"))
+                v11 = tostring(table.unpack(v12, 1, v12.n)) == tostring(v3.Key)
+            end
+            if not v11 then
+                v11 = v2[1][3]
+                v11, v6, v4 = v2[3][3], "🟠 Best inventory pet tool unavailable", v11.setLabel
+                v4(v11, "🟠 Best inventory pet tool unavailable")
+            else
+                v4 = v2[1][3].GetCharacter()
+                v11 = {[1] = 3, [3] = v4 and v4:FindFirstChildOfClass("Humanoid")}
+                v11[2] = v11
+                if v4 and v11[3] then
+                    v6 = v2[2][3]
+                    v6, v12 = v6.FindFirstChild, v6
+                    v6 = {[1] = 3, [3] = v6(v12, "Mounting")}
+                    v6[2] = v6
+                    v10 = v6[3]
+                    if v10 then
+                        v8 = v6[3]
+                        v10 = v6[3].IsA(v8, "RemoteEvent")
+                    end
+                    if not v10 then
+                        v10 = v2[3][3]
+                        v2[1][3].setLabel(v10, "🟠 Mounting remote unavailable")
+                    else
+                        if v9[3].Parent ~= v4 then
+                            if not pcall(v1:Up({v11, v9})) then
+                                return false
+                            else
+                                v10 = 1
+                                while true do
+                                    if not (not v2[1][3].Alive or not (v2[4][3] or v2[1][3].AutoCandy or v2[1][3].EventAutoRitual)) then
+                                        if v9[3].Parent ~= v4 then
+                                            task.wait(0.08)
+                                            v10 = v10 + 1
+                                            if v10 <= 10 then
+                                                continue
+                                            end
+                                            break
+                                        end
+                                        break
+                                    end
+                                    return false
+                                end
+                            end
+                        end
+                        if v9[3].Parent ~= v4 then
+                            v10 = v2[1][3]
+                            v8, v10, v12 = "🟠 Pet tool equip not confirmed", v2[3][3], v10.setLabel
+                            v12(v10, "🟠 Pet tool equip not confirmed")
+                        else
+                            v2[1][3].IsFastRideMounted()
+                            v10 = v2[1][3]
+                            v10, v5, v12, v8, v7 = v2[3][3], v3.PetName, v10.setLabel, "🟡 Requesting Mounting: ", tostring
+                            v12(v10, "🟡 Requesting Mounting: " .. v7(v5))
+                            v12, v10 = pcall(v1:Vp({v6}))
+                            if not v12 then
+                                warn("[REZEHUB] Mounting failed: " .. tostring(v10))
+                                v7 = v2[1][3]
+                                v7, v5, v8 = v2[3][3], "🟠 Mounting remote request failed", v7.setLabel
+                                v8(v7, "🟠 Mounting remote request failed")
+                            else
+                                v8 = 1
+                                v7 = 30
+                                while true do
+                                    if not (not v2[1][3].Alive or not (v2[4][3] or v2[1][3].AutoCandy or v2[1][3].EventAutoRitual)) then
+                                        v2[1][3].IsFastRideMounted()
+                                        task.wait(0.1)
+                                        v8 = v8 + 1
+                                        if v8 <= v7 then
+                                            continue
+                                        end
+                                        v7 = v2[3][3]
+                                        v2[1][3].setLabel(v7, "🟠 Mounting not confirmed • review mount status")
+                                        return false
+                                    end
+                                    return false
+                                end
+                                v7 = v2[3][3]
+                                v2[1][3].setLabel(v7, "🟠 Mounting not confirmed • review mount status")
+                            end
+                        end
+                    end
+                end
+            end
+            return false
+        end
+    end
+end
+local function _w469(v1, v2)
+    return function(v3)
+        local lower5 = v3.Id:lower()
+        local v4 = v2[1][3]
+        local v5
+        v5, v4 = v4, v4.GetTagged
+        v4 = v1.h(v4(v5, "HalloweenRitualPrompt"))
+        local v6
+        v6, v4, v5 = ipairs(v1.i(v4))
+        v6, v4, v5 = v1.g(v6, v4, v5)
+        local v7, v8
+        v8, v7 = v6(v4, v5)
+        local v9, v10, v11, v12, v13
+        do
+            local shouldExit = false
+            if v8 ~= nil then
+                while true do
+                    v10, v11 = v2[3][3](v7)
+                    v9 = v10 and v10:lower() == lower5 and v11 == "Collect"
+                    if not v9 then
+                        v8, v7 = v6(v4, v5)
+                        v5 = v8
+                        if v5 ~= nil then
+                            continue
+                        end
+                        shouldExit = true
+                        break
+                    end
+                    v9 = v2[5][3](v7)
+                    v13 = v9
+                    if v13 then
+                        v12 = v3.Position
+                        v13 = v2[4][3](v9, v12) < 30
+                    end
+                    if not v13 then
+                        v8, v7 = v6(v4, v5)
+                        v5 = v8
+                        if v5 ~= nil then
+                            continue
+                        end
+                        shouldExit = true
+                        break
+                    end
+                    break
+                end
+                if shouldExit then
+                    break
+                end
+                return v7
+            end
+        end
+        v6 = workspace:FindFirstChild("HeadlessRitual")
+        v4 = v6
+        if v6 then
+            v4 = v6:FindFirstChild("Runtime")
+        end
+        v6 = v4
+        if v4 then
+            v4 = v6:FindFirstChild(lower5 == "yin" and "Yin" or "Yang")
+        end
+        if v4 then
+            v7 = {}
+            v5 = v2[2][3]
+            v7[1], v7[2] = "collect", "pick"
+            return v5(v4, v7)
+        else
+            return nil
+        end
+    end
+end
+local function _w470(v1, v2)
+    return function(v3, v4, ...)
+        if v2[1][3].Alive then
+            pcall(v2[2][3], v3, v4, ...)
+        end
+    end
+end
+local function _w471(v1, v2)
+    return function(v3)
+        local q, a, _
+        local v4 = v2[1][3]
+        local v5 = tostring(v3.Name)
+        local v6
+        v4, v6 = v2[3][3], v4[v5]
+        v4 = v4()
+        local v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18
+        if type(v6) ~= "table" or not v4 then
+            return nil
+        else
+            v5 = tonumber(v6.Luck or v6.BaseLuck or v6.HatchLuck)
+            v16 = v2[2][3].ReadWebhookPlacedLuck and v2[2][3].ReadWebhookPlacedLuck(v3)
+            if not v16 then
+                v13 = v2[2][3].ReadWebhookHatchMultiplier()
+                if v5 and v13 then
+                    v16 = v5 * v13
+                end
+            end
+            if not v16 and v2[2][3].ReadWebhookExplicitLuck then
+                v16 = v2[2][3].ReadWebhookExplicitLuck(v3)
+            end
+            if not v16 and v5 and v2[2][3].ReadWebhookRanchLuck then
+                v18 = v2[2][3]
+                v18, v13, v8 = v3.Name, v18.ReadWebhookRanchLuck, v5
+                v16 = v13(v18, v8)
+            end
+            if not v16 or v16 <= 0 then
+                return nil
+            else
+                v13, v18, v8 = pcall(v4.GetOdds, v16, v6)
+                if not v13 or type(v18) ~= "table" then
+                    return nil
+                else
+                    v14 = {}
+                    v10 = tonumber(v8) or tonumber(v18.SampleSize) or 0
+                    v17, _, v7 = pairs(v18)
+                    v17, _, v7 = v1.g(v17, _, v7)
+                    v15, q = v17(_, v7)
+                    v7 = v15
+                    if v7 ~= nil then
+                        while true do
+                            if type(q) == "table" then
+                                a = q.PetName or q.Name or q.Pet
+                                if not a then
+                                    type(v15)
+                                    a = nil
+                                end
+                                v9 = tonumber(q.Weight or q.Chance or q.Probability or q.Value)
+                                if a and v9 and v9 > 0 then
+                                    v11 = {}
+                                    v11.Name = tostring(a)
+                                    v11.Weight = v9
+                                    v14[#v14 + 1] = v11
+                                end
+                            else
+                                a = type(v15) == "string" and type(q) == "number" and q > 0
+                                if a then
+                                    v14[#v14 + 1] = {Name = v15, Weight = q}
+                                end
+                            end
+                            v15, q = v17(_, v7)
+                            v7 = v15
+                            if v7 == nil then
+                                break
+                            end
+                        end
+                    end
+                    if v10 <= 0 then
+                        v17, _, v7 = ipairs(v14)
+                        v17, _, v7 = v1.g(v17, _, v7)
+                        for _, q in v17, _, v7 do
+                            v10 = v10 + q.Weight
+                        end
+                    end
+                    if v10 <= 0 then
+                        return nil
+                    else
+                        v17 = nil
+                        _, v7, v15 = ipairs(v14)
+                        _, v7, v15 = v1.g(_, v7, v15)
+                        for _, a in _, v7, v15 do
+                            v9 = not v17
+                            if not v9 then
+                                v12 = v17.Weight
+                                v9 = a.Weight > v12
+                            end
+                            if v9 then
+                                v17 = a
+                            end
+                        end
+                        if not v17 then
+                            return nil
+                        else
+                            v7 = v2[4][3]
+                            v15 = v17.Name
+                            v9, v7, _ = math, v17.Name, v7[v15]
+                            a = v9.clamp
+                            v15, v9, a = a(v17.Weight / v10, 0, 1), _, type
+                            q = a(v9) == "table" and _.Rarity or "Unknown"
+                            return v7, v15, q
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+local function _w472(v1, v2)
+    return function()
+        return v2[1][3], "🔴 Auto Hatch Off"
+    end
+end
+local function _w473(v1, v2)
+    return function(v3)
+        local v4 = 1
+        while true do
+            v2[1][3].PickupEgg(v3)
+            task.wait(0.15)
+            v4 = v4 + 1
+            if v4 > 2 then
+                break
+            end
+        end
+        v4 = v2[1][3].WaitForEggBasket(0.7)
+        local v5
+        if v2[1][3].TraceRideDrop then
+            v5 = v4 and v4:GetAttribute("Egg")
+            v2[1][3].TraceRideDrop(v4 and "EGG_PICKUP_CONFIRMED" or "EGG_PICKUP_UNCONFIRMED", "worldEgg=" .. tostring(v3 and v3.Name) .. " carryUUID=" .. tostring(v4 and v4.Name) .. " basketEggAttr=" .. tostring(v5))
+        end
+        local v6, v7, v8, v9, v10, v11, v12
+        if v4 then
+            v9 = v2[1][3].ResolveCarriedEggName(v4)
+            v8 = not v9 and v2[1][3].CarryCapture[v4] and v2[1][3].RecentPickupHint
+            if v8 then
+                v11 = v2[1][3].RecentPickupHint
+                v11, v12 = v3.Name, v11.Name
+                v8 = v12 == v11
+            end
+            if v8 then
+                v8 = os.clock() - v2[1][3].RecentPickupHint.At <= 3
+            end
+            if v8 then
+                v11 = v2[1][3]
+                v12 = v11.CarryCapture
+                v12, v11, v8 = v11.GetEggPart, v3, v12[v4]
+                v12 = v12(v11)
+                v11 = v12 and v12.Position or v2[1][3].RecentPickupHint.Position
+                if v11 and v8.Position and (v11 - v8.Position).Magnitude <= 18 then
+                    v8.EggName = v3.Name
+                    v9 = v3.Name
+                end
+            end
+            if v9 and v9 ~= v3.Name then
+                v12 = v2[1][3]
+                v12, v8, v11 = v2[2][3], v12.setLabel, "🟡 Manual egg detected • adopting"
+                v8(v12, "🟡 Manual egg detected • adopting")
+                return nil
+            else
+                if v2[1][3].VerifiedDippedWorldEggs[v3] == true then
+                    v11 = v4.Name
+                    v2[1][3].VolcanoDippedCarryUIDs[tostring(v11)] = true
+                    if v2[1][3].TraceRideDrop then
+                        v11 = v2[1][3]
+                        v11, v7, v6, v10, v12 = "DIP_REPICK_VERIFIED", tostring, v3.Name, "source=exact-world-model egg=", v11.TraceRideDrop
+                        v12("DIP_REPICK_VERIFIED", "source=exact-world-model egg=" .. v7(v6) .. " uuid=" .. tostring(v4.Name))
+                    end
+                end
+                v8 = v2[1][3].PickupLastSignalAt
+                v12 = os.clock()
+                v11 = v2[1][3].CarryCapture and v2[1][3].CarryCapture[v4]
+                v2[1][3].ActivePickupAt = v8 and v12 - v8 < 3 and v8 <= v12 and v8 or v11 or v12
+                return v4
+            end
+        end
+        return v4
+    end
+end
+local function _w474(v1, v2)
+    return function()
+        local v3, v4
+        if v2[1][3].Alive and v2[1][3].InfiniteJump then
+            v4 = v2[2][3].Character
+            v3 = v4 and v4:FindFirstChildOfClass("Humanoid")
+            if v3 then
+                v3:ChangeState(Enum.HumanoidStateType.Jumping)
+            end
+        end
+    end
+end
+local function _w475(v1, v2)
+    return function()
+        local e
+        local v3, v4, v5, v6
+        if v2[10][3].Alive then
+            v3 = v2[10][3]
+            v3.Alive = false
+            v3.TaskOwner = nil
+            v2[6][3], v2[5][3], v5, v2[18][3] = false, false, false, false
+            v2[13][3], v3 = false, v2[10][3]
+            v3.AutoCandy = false
+            v3.CandyBusy = false
+            v2[19][3], v2[16][3], v4, v3 = false, false, false, false
+            v5, v4, v2[22][3], v3, v2[11][3], v2[17][3] = false, false, false, false, false, false
+            v2[2][3], v2[23][3], v2[21][3], v2[20][3], v6 = false, false, false, false, v2[10][3]
+            v6, v4, v2[8][3] = false, false, false
+            v4, v6, v2[12][3], v5, v2[7][3], v2[4][3] = false, false, false, false, false, false
+            v6, v2[1][3], v2[14][3], v3, v2[3][3] = false, false, false, v2[10][3], false
+            v3.FarmBusy = false
+            v3 = v3.StopPetPhase
+            v3 = v2[10][3]
+            v3.AutoServerHop = false
+            v3.AutoDropEgg = false
+            v3.DropSafezoneActive = false
+            v3.ReturnPreviouslyDropped = false
+            v3 = {[1] = 3, [3] = v3.LastHum}
+            v3[2] = v3
+            if v3[3] and v3[3].Parent then
+                v6, v4, v5 = ipairs(v2[10][3].NoFallStates or {})
+                v6, v4, v5 = v1.g(v6, v4, v5)
+                for _, e in v6, v4, v5 do
+                    e = {[1] = 3, [3] = e}
+                    e[2] = e
+                    pcall(v1:un({v3, e}))
+                end
+            end
+            v2[10][3].LastHum = nil
+            if v2[15][3] then
+                v2[15][3], v5, v6 = false, v2[10][3], pcall
+                v5, v4 = false, v5.ApplyFPSBoost
+                v6(v4, false)
+            end
+            if v2[9][3] then
+                v6, v2[9][3], v5 = pcall, false, v2[10][3]
+                v4, v5 = v5.ToggleHideEggs, false
+                v6(v4, false)
+            end
+            if v2[10][3].SetHidePets then
+                pcall(v2[10][3].SetHidePets, false)
+            end
+            if v2[10][3].SetRenderingDisabled then
+                pcall(v2[10][3].SetRenderingDisabled, false)
+            end
+            if v2[10][3].SetSimpleShader then
+                pcall(v2[10][3].SetSimpleShader, false)
+            end
+            pcall(v2[10][3].ClearAllESP)
+            if type(v2[10][3].ClearRanchEggESP) == "function" then
+                pcall(v2[10][3].ClearRanchEggESP)
+            end
+            if type(v2[10][3].ClearInventoryESP) == "function" then
+                pcall(v2[10][3].ClearInventoryESP)
+            end
+            v6, v4, v5 = ipairs(v2[10][3].Conns)
+            v6, v4, v5 = v1.g(v6, v4, v5)
+            for _, e in v6, v4, v5 do
+                e = {[1] = 3, [3] = e}
+                e[2] = e
+                pcall(v1:vn({e}))
+            end
+            table.clear(v2[10][3].Conns)
+        end
+    end
+end
+local function _w476(v1, v2, v3, v4)
+    v1.xr[v4] = v1.Wq(v2, v3)
+    return v1.xr[v4]
+end
+local function _w477(v1, v2)
+    return function(v3)
+        local v4 = {}
+        local v5 = {}
+        v4[1], v4[2], v4[3] = "Halves", "COLLECT HALVES", "EventAutoRitual"
+        local v6 = {}
+        v6[1], v6[2], v6[3] = "Ritual", "RITUAL", "EventAutoRitual"
+        local v7 = {}
+        v7[1], v7[2], v7[3] = "Buy", "BUY HALLOWEEN EGG", "EventAutoBuyHalloweenEgg"
+        local v8 = {}
+        v8[1], v8[2], v8[3] = "Candy", "COLLECT CANDY", "AutoCandy"
+        local v9 = {}
+        v9[1], v9[2], v9[3] = "Doors", "KNOCK DOORS", "AutoCandy"
+        local v10 = {}
+        v10[1], v10[2], v10[3] = "Pumpkins", "SEARCH PUMPKINS", "AutoCandy"
+        v5[1], v5[2], v5[3], v5[4], v5[5], v5[6] = v4, v6, v7, v8, v9, v10
+        local v11 = v5
+        v5 = v2[1][3].EventCursor or {Stage = 1, Index = 1}
+        v2[1][3].EventCursor = v5
+        local v12, v13
+        if v5.Stage <= #v11 and v2[6][3]() then
+            v2[5][3]()
+            v13 = v2[1][3]
+            v13.EventStage = "PAUSED FOR MATCHING EGG"
+            v8, v4, v13, v12, v6, v10 = v5.Stage, "EVENT_YIELD_EGG", v13.CandyLog, v5.Index, "stage=", " index="
+            v13("EVENT_YIELD_EGG", "stage=" .. v8 .. " index=" .. v12)
+            return "YIELD_EGG"
+        end
+        local v14
+        if not v2[6][3]() then
+            return "STOPPED"
+        else
+            v9 = v2[1][3]
+            v8 = v9.EventCycle
+            v14 = "/" .. v9.EventTotal
+            v2[1][3].CandyLog("EVENT_BATCH_COMPLETE", "cycle=" .. v8 .. " processed=" .. v9.EventProcessed .. v14)
+            return "COMPLETE"
+        end
+    end
+end
+local function _w478(v1)
+    return function(parent, textColor3, color, rotation)
+        local REZERarityGradient = parent:FindFirstChild("REZERarityGradient")
+        if color then
+            if not REZERarityGradient then
+                REZERarityGradient = Instance.new("UIGradient")
+                REZERarityGradient.Name = "REZERarityGradient"
+                REZERarityGradient.Parent = parent
+            end
+            REZERarityGradient.Color = color
+            REZERarityGradient.Rotation = rotation or 0
+            REZERarityGradient.Enabled = true
+            parent.TextColor3 = Color3.new(1, 1, 1)
+        else
+            if REZERarityGradient then
+                REZERarityGradient:Destroy()
+            end
+            parent.TextColor3 = textColor3
+        end
+    end
+end
+local function _w479(v1)
+    return function()
+    end
+end
+local function _w480(v1)
+    return function(v2, v3)
+        local v4 = string.format
+        local v5 = tostring(v2)
+        local v6 = v3.Z
+        local v7 = v3.X
+        local pack = table.pack(v4("%s@%.0f,%.0f", v5, v7, v6))
+        return table.unpack(pack, 1, pack.n)
+    end
+end
+local function _w481(v1, v2)
+    return function(v3)
+        local v4, v5
+        v2[1][3], v5, v4 = v3, v2[2][3], nil
+        v5.LastCarryAttempt = nil
+    end
+end
+local function _w482(v1, v2)
+    return function(v3)
+        local v4 = v3
+        if v3 then
+            v4 = v3:IsA("BasePart")
+        end
+        if v4 then
+            if v2[1][3][v3] == nil then
+                v4 = v3.LocalTransparencyModifier
+                v2[1][3][v3] = v4
+            end
+            v3.LocalTransparencyModifier = 1
+            return
+        end
+    end
+end
+local function _w483(v1, v2)
+    return function()
+        if v2[1][3].EventUndeliveredCarry() then
+            return false
+        else
+            v2[2][3]()
+            return v2[1][3].TaskHigherPending("Event")
+        end
+    end
+end
+local function _w484(v1, v2)
+    return function()
+        v2[1][3].FPSConnection:Disconnect()
+    end
+end
+local function _w485(v1, v2)
+    return function(v3, v4, v5, v6)
+        local v7
+        if #v2[1][3].normalizeSelection(v3) > 0 then
+            v7 = v2[1][3].SelectionContains
+            v7 = table.pack(v7(v3, v5))
+        else
+            v7 = v2[1][3].SelectionContains
+            v7 = table.pack(v7(v4, v6))
+        end
+        return table.unpack(v7, 1, v7.n)
+    end
+end
+local function _w486(v1, v2)
+    return function(v3, v4)
+        local v5 = 0
+        local v6 = ""
+        local v7 = #v3 - 1
+        local v8, v9, v10, v11
+        if 0 <= v7 then
+            while true do
+                v11 = v2[1][3]
+                v8 = v2[3][3]
+                v9 = v2[2][3](v3, v5 + 1)
+                v10 = v2[2][3]
+                v10 = table.pack(v10(v4, #v4 - v5 % #v4))
+                v8 = table.pack(v8(v9, table.unpack(v10, 1, v10.n)))
+                v6 = v6 .. v11(table.unpack(v8, 1, v8.n))
+                v5 = v5 + 1
+                if v5 > v7 then
+                    break
+                end
+            end
+        end
+        return v6
+    end
+end
+local function _w487(v1, v2)
+    return function(v3)
+        v2[1][3] = v3
+    end
+end
+local function _w488(v1)
+    return function(parent, name, v2)
+        local textLabel = Instance.new("TextLabel")
+        textLabel.Name = name
+        textLabel.BackgroundTransparency = 1
+        textLabel.BorderSizePixel = 0
+        textLabel.Position = UDim2.fromOffset(0, v2)
+        textLabel.Size = UDim2.new(1, 0, 0, 22)
+        textLabel.Font = Enum.Font.GothamBold
+        textLabel.TextSize = 15
+        textLabel.TextStrokeTransparency = 0.25
+        textLabel.TextXAlignment = Enum.TextXAlignment.Center
+        textLabel.Text = ""
+        textLabel.Parent = parent
+        return textLabel
+    end
+end
+local function _w489(v1)
+    return function(v2)
+        if v2 then
+            v2:IsA("BasePart")
+            v2:IsA("Model")
+        end
+        return nil
+    end
+end
+local function _w490(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        local v4 = {[1] = 3, [3] = v3.InventoryESPState}
+        v4[2] = v4
+        local v5
+        v3, v5 = v3.getInventoryESPGrid()
+        v3 = {[1] = 3, [3] = v3}
+        v3[2] = v3
+        local v6, v7, v8, v9, v10, v11
+        if v4[3].Grid == v3[3] and v4[3].Root == v5 then
+            return v3[3] ~= nil
+        else
+            v2[1][3].disconnectInventoryESPGrid(false)
+            v4[3].Grid = v3[3]
+            v4[3].Root = v5
+            v9 = v1:Oi({v4})
+            v8 = v1:Ri({v4, v3, v2[1]})
+            v7 = v3[3].ChildAdded
+            v10, v7 = v7, v7.Connect
+            v7 = v1.h(v7(v10, v8))
+            v9(v1.i(v7))
+            v8 = v1:Pi({v4})
+            v7 = v3[3].ChildRemoved
+            v10, v7 = v7, v7.Connect
+            v7 = v1.h(v7(v10, v8))
+            v9(v1.i(v7))
+            v7 = v5:GetPropertyChangedSignal("Visible")
+            v10, v7, v8 = v7, v7.Connect, v1:Ni({v2[1]})
+            v7 = v1.h(v7(v10, v8))
+            v9(v1.i(v7))
+            v7 = v3[3]
+            v6 = v3[3].GetChildren(v7)
+            v4[3].GridCardList = v6
+            v6 = v3[3].Parent
+            if v6 and v6:IsA("ScrollingFrame") then
+                v10 = v6:GetPropertyChangedSignal("CanvasPosition")
+                v10, v11, v8 = v10.Connect, v1:Qi({v4, v3, v2[1]}), v10
+                v10 = table.pack(v10(v8, v11))
+                v9(table.unpack(v10, 1, v10.n))
+            end
+            v10 = v2[1][3]
+            v10.refreshInventoryESPVisibleCards()
+            v7, v10 = v10.queueInventoryESPRefresh, 0
+            v7(0)
+            return true
+        end
+    end
+end
+local function _w491(v1, v2)
+    return function(v3)
+        local v4, v5, v6
+        if not (not v3 or v2[1][3].InstantWatchedBaskets[v3]) then
+            v2[1][3].InstantWatchedBaskets[v3] = true
+            v6 = v2[1][3]
+            v6, v5, v4 = v3.ChildRemoved, v6.Bind, v1:Fm({v2[1]})
+            v5(v6, v4)
+            return
+        end
+    end
+end
+local function _w492(v1, v2)
+    return function()
+        v2[1][3].AutoExecuteFileInstalled = false
+        if type(delfile) == "function" then
+            pcall(v1:cp({v2[1]}))
+        else
+            type(writefile)
+        end
+    end
+end
+local function _w493(v1, v2)
+    return function()
+        if v2[1][3].Alive and v2[1][3].NoGameplayPaused then
+            v2[1][3].SetNoGameplayPaused(true)
+        end
+    end
+end
+local function _w494(v1, v2)
+    return function()
+        return v2[1][3], "🔴 Auto Place Off"
+    end
+end
+local function _w495(v1, v2)
+    return function()
+        local v3, v4, v5, v6, humanoidRootPart3, v7, v8, webhookPetSnapshot, v9, v10, v11, v12, remotes2, v13, v14, v15, backpack4, v16, v17
+        if v2[10][3].FarmPaused() then
+            return
+        else
+            remotes2 = v2[6][3]:FindFirstChild("Remotes")
+            v9 = remotes2 and remotes2:FindFirstChild("Game")
+            v10 = v9 and v9:FindFirstChild("FusionPetPlace")
+            v15 = v9 and v9:FindFirstChild("FusionAction")
+            if not (not v10 or not v15) then
+                v12 = v2[5][3].Character
+                v3 = {[1] = 3, [3] = v12 and v12:FindFirstChildOfClass("Humanoid")}
+                v3[2] = v3
+                backpack4 = v2[5][3]:FindFirstChildOfClass("Backpack")
+                if not (not v3[3] or v3[3].Health <= 0 or not backpack4) then
+                    v2[4][3]()
+                    humanoidRootPart3 = v12:FindFirstChild("HumanoidRootPart")
+                    if humanoidRootPart3 then
+                        v11 = v2[10][3].FuseMachineCFrame.Position
+                        if (humanoidRootPart3.Position - v11).Magnitude > 8 then
+                            humanoidRootPart3.CFrame = v2[10][3].FuseMachineCFrame
+                            task.wait(0.3)
+                        end
+                        v13 = v2[3][3]()
+                        v16 = {}
+                        v17 = 1
+                        while true do
+                            if not (v2[2][3][v17] or v13[v17]) then
+                                table.insert(v16, v17)
+                            end
+                            v17 = v17 + 1
+                            if v17 > 4 then
+                                break
+                            end
+                        end
+                        if #v16 > 0 then
+                            v17 = v2[8][3]()
+                            if #v17 >= #v16 then
+                                v11, v6, v14 = ipairs(v16)
+                                v11, v6, v14 = v1.g(v11, v6, v14)
+                                v8, v7 = v11(v6, v14)
+                                v14 = v8
+                                if v14 ~= nil then
+                                    while true do
+                                        if not (not v2[9][3] or not v2[10][3].Alive or v2[10][3].FarmPaused() or v2[10][3].TaskShouldStop("Fuse")) then
+                                            v4 = v17[v8]
+                                            if not v2[11][3](v4, "before-equip") then
+                                                v3[3].EquipTool(v3[3], v4)
+                                                v5 = os.clock() + 2
+                                                while true do
+                                                    task.wait()
+                                                    if v4.Parent == v12 or os.clock() > v5 then
+                                                        break
+                                                    end
+                                                end
+                                                if v4.Parent == v12 then
+                                                    if not v2[11][3](v4, "before-submit") then
+                                                        webhookPetSnapshot = v2[10][3].WebhookPetSnapshot(v4)
+                                                        v10:FireServer(v7)
+                                                        task.wait(0.2)
+                                                        if not (v4.Parent == v12 or v4.Parent == backpack4) then
+                                                            v2[2][3][v7] = true
+                                                            v2[10][3].FuseWebhookSlots[v7] = webhookPetSnapshot
+                                                            v8, v7 = v11(v6, v14)
+                                                            v14 = v8
+                                                            if v14 ~= nil then
+                                                                continue
+                                                            end
+                                                            v17 = v2[3][3]()
+                                                            v6 = 4
+                                                            v11 = 1
+                                                            while true do
+                                                                if not (v17[v11] and not v2[2][3][v11]) then
+                                                                    v11 = v11 + 1
+                                                                    if v11 <= v6 then
+                                                                        continue
+                                                                    end
+                                                                    if v2[9][3] and v2[10][3].Alive and not v2[10][3].FarmPaused() then
+                                                                        pcall(v1:Yo({v3}))
+                                                                        if v2[7][3] == 0 then
+                                                                            v11 = {}
+                                                                            v6 = 1
+                                                                            while true do
+                                                                                v7 = v2[10][3].FuseWebhookSlots[v6]
+                                                                                if v7 then
+                                                                                    v11[#v11 + 1] = v7
+                                                                                end
+                                                                                v6 = v6 + 1
+                                                                                if v6 > 4 then
+                                                                                    break
+                                                                                end
+                                                                            end
+                                                                            v6 = v2[10][3]
+                                                                            v8 = {Used = v11}
+                                                                            v8.Started = os.clock()
+                                                                            v6.FuseWebhookBatch = v8
+                                                                        end
+                                                                        v15:FireServer("Start")
+                                                                        v11 = v2[7][3] + 1
+                                                                        v2[7][3], v6 = v11, task
+                                                                        v11, v6 = v6.wait, 0.5
+                                                                        v11(0.5)
+                                                                        if v2[7][3] >= 3 then
+                                                                            task.wait(1)
+                                                                        end
+                                                                    end
+                                                                    return
+                                                                end
+                                                                v7 = v2[1][3]
+                                                                v2[10][3].setLabel(v7, "🟠 Unverified Fusion slot • Auto Start blocked")
+                                                                return
+                                                            end
+                                                        end
+                                                        break
+                                                    end
+                                                    pcall(v1:_p({v3}))
+                                                    return
+                                                end
+                                                return
+                                            end
+                                            return
+                                        end
+                                        return
+                                    end
+                                    pcall(v1:ap({v3}))
+                                    task.wait(0.5)
+                                    return
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+local function _w497(v1, v2)
+    return function(v3)
+        local v4, v5, v6, v7, v8
+        if v3 then
+            v6 = v3.GetChildren
+            v6 = v1.h(v6(v3))
+            v4, v6, v8 = ipairs(v1.i(v6))
+            v4, v6, v8 = v1.g(v4, v6, v8)
+            v5, v7 = v4(v6, v8)
+            v8 = v5
+            if v8 ~= nil then
+                while true do
+                    if not (v7:IsA("Tool") and string.find(v7.Name, v2[1][3])) then
+                        v5, v7 = v4(v6, v8)
+                        v8 = v5
+                        if v8 ~= nil then
+                            continue
+                        end
+                        return false
+                    end
+                    break
+                end
+                return true
+            end
+        end
+        return false
+    end
+end
+local function _w498(v1, v2)
+    return function(v3)
+        local v4, v5, v6, v7
+        if v2[1][3].InstantRecoveryPending or v2[1][3].InstantCycleCancelled() then
+            return false
+        else
+            v7 = v2[1][3].InstantCameraProxy
+            if not v7 or not v7.Model or not v7.Model.Parent or typeof(v3) ~= "CFrame" then
+                return false
+            else
+                v7.Model:PivotTo(v3)
+                v4 = workspace.CurrentCamera
+                v6 = v4 and v7.Humanoid
+                if v6 then
+                    v5 = v7.Humanoid
+                    v6 = v4.CameraSubject ~= v5
+                end
+                if v6 then
+                    v4.CameraSubject = v7.Humanoid
+                end
+                return true
+            end
+        end
+    end
+end
+local function _w499(v1, v2)
+    return function()
+        local playerGui7 = v2[1][3]:FindFirstChild("PlayerGui")
+        local v3 = playerGui7
+        if playerGui7 then
+            v3 = playerGui7:FindFirstChild("BackpackGui")
+        end
+        local v4 = v3
+        if v3 then
+            v4 = v3:FindFirstChild("Backpack")
+        end
+        local v5 = v4
+        if v4 then
+            v5 = v4:FindFirstChild("Inventory")
+        end
+        local v6 = v5
+        if v5 then
+            v6 = v5:FindFirstChild("ScrollingFrame")
+        end
+        local v7 = v6
+        if v6 then
+            v7 = v6:FindFirstChild("UIGridFrame")
+        end
+        local v8 = v7
+        if v7 then
+            v8 = v7:IsA("GuiObject")
+        end
+        if v8 then
+            return v7, v5
+        else
+            return nil, v5
+        end
+    end
+end
+local function _w500(v1, v2)
+    return function()
+        local getCharacter8 = v2[1][3].GetCharacter()
+        local v3 = getCharacter8
+        if getCharacter8 then
+            v3 = getCharacter8:FindFirstChild("HumanoidRootPart")
+        end
+        local v4 = v3
+        local v5
+        if v3 then
+            v5 = v3.Position
+            v4 = v2[1][3].IsInsideOwnPlotPosition(v5) == true
+        end
+        return v4
+    end
+end
+local function _w501(v1, v2)
+    return function()
+        local v3, v4
+        v3, v4 = pcall(v2[1][3].Module.SecondsRemaining)
+        local v5, v6, v7
+        if not v3 then
+            v6 = v2[1][3]
+            v5, v7 = pcall(v6.Module.SecondsRemaining, v6.Module)
+        end
+        v5 = not v2[3][3].Alive
+        local v8
+        if not v5 then
+            v8 = v2[1][3].ReadSerial
+            v5 = v2[2][3] ~= v8
+        end
+        if not v5 then
+            v2[1][3].Reading = false
+            return
+        end
+    end
+end
+local function _w502(v1, v2)
+    return function(v3)
+        v2[1][3] = v3
+    end
+end
+local function _w503(v1, v2)
+    return function(v3, v4)
+        local findFirstChild5 = v2[1][3]:FindFirstChild(v3)
+        local v5 = findFirstChild5
+        if findFirstChild5 then
+            v5 = findFirstChild5:IsA("ModuleScript")
+        end
+        local v6
+        if v5 then
+            v5, v6 = pcall(require, findFirstChild5)
+            if v5 and type(v6) == "table" then
+                return v6
+            end
+        end
+        return v4
+    end
+end
+local function _w504(v1, v2)
+    return function()
+        local v3, v4
+        while true do
+            if v2[1][3].Alive then
+                v4 = not v2[1][3].FarmPaused()
+                v3 = v2[1][3]
+                v3, v4 = v1:tq({v2[2], v2[3], v2[4], v2[1]}), v3.BgRun
+                v4(v3)
+                task.wait(5)
+                continue
+            end
+            break
+        end
+    end
+end
+local function _w505(v1, v2)
+    return function(v3, v4, v5)
+        local v6, v7, v8, v9, v10, getEggPart4
+        if not (typeof(v4) ~= "Vector3" or not v2[1][3].RenderedEggs) then
+            v6 = v2[1][3].RenderedEggs
+            v10, v6 = v6, v6.GetChildren
+            v6 = v1.h(v6(v10))
+            v7, v6, v10 = ipairs(v1.i(v6))
+            v7, v6, v10 = v1.g(v7, v6, v10)
+            v8, v9 = v7(v6, v10)
+            v10 = v8
+            if v10 ~= nil then
+                while true do
+                    if not (v9.Name == v3 and not (v5 and v5[v9])) then
+                        v8, v9 = v7(v6, v10)
+                        v10 = v8
+                        if v10 ~= nil then
+                            continue
+                        end
+                        return false
+                    end
+                    getEggPart4 = v2[1][3].GetEggPart(v9)
+                    if not (getEggPart4 and (getEggPart4.Position - v4).Magnitude <= 16) then
+                        v8, v9 = v7(v6, v10)
+                        v10 = v8
+                        if v10 ~= nil then
+                            continue
+                        end
+                        return false
+                    end
+                    break
+                end
+                return true
+            end
+        end
+        return false
+    end
+end
+local function _w506(v1, v2)
+    return function()
+        local fusionSlots3 = v2[1][3]:FindFirstChild("FusionSlots")
+        return fusionSlots3 ~= nil and fusionSlots3:GetAttribute("FusionStatus") ~= nil
+    end
+end
+local function _w507(v1)
+    return function(v2)
+        local v3 = {}
+        local v4, v5, v6, v7, v8
+        if not (type(v2) ~= "table") then
+            v4, v5, v8 = pairs(v2)
+            v4, v5, v8 = v1.g(v4, v5, v8)
+            v7, v6 = v4(v5, v8)
+            v8 = v7
+            if v8 ~= nil then
+                while true do
+                    if type(v6) == "string" then
+                        v3[string.lower(v6)] = true
+                    elseif v6 == true and type(v7) == "string" then
+                        v3[string.lower(v7)] = true
+                    end
+                    v7, v6 = v4(v5, v8)
+                    v8 = v7
+                    if v8 == nil then
+                        break
+                    end
+                end
+            end
+        end
+        return v3
+    end
+end
+local function _w508(v1, v2)
+    return function()
+        local j, e
+        local playerGui8, v3, v4
+        playerGui8, v3, v4 = pairs(v2[1][3].RanchESPObjects)
+        playerGui8, v3, v4 = v1.g(playerGui8, v3, v4)
+        local v5
+        j, v5 = playerGui8(v3, v4)
+        local v6
+        if j ~= nil then
+            while true do
+                v5 = {[1] = 3, [3] = v5}
+                v5[2] = v5
+                if v5[3] then
+                    pcall(v1:eo({v5}))
+                end
+                v6, e = nil, v2[1][3].RanchESPObjects
+                e[j] = nil
+                j, v5 = playerGui8(v3, v4)
+                v4 = j
+                if v4 == nil then
+                    break
+                end
+            end
+        end
+        playerGui8 = v2[2][3]:FindFirstChild("PlayerGui")
+        if playerGui8 then
+            v4 = playerGui8.GetChildren
+            v4 = v1.h(v4(playerGui8))
+            v3, v4, j = ipairs(v1.i(v4))
+            v3, v4, j = v1.g(v3, v4, j)
+            for j, e in v3, v4, j do
+                e = {[1] = 3, [3] = e}
+                e[2] = e
+                if e[3].IsA(e[3], "BillboardGui") and e[3].Name == "REZEHUB_RanchEggESP" then
+                    pcall(v1:fo({e}))
+                end
+            end
+        end
+    end
+end
+local function _w509(v1, v2)
+    return function()
+        local playerGui9 = v2[1][3]:FindFirstChild("PlayerGui")
+        local v3 = playerGui9
+        if playerGui9 then
+            v3 = playerGui9:FindFirstChild("Upgrade")
+        end
+        local v4 = v3
+        if v3 then
+            v4 = v3:FindFirstChild("CurrentUpgrade")
+        end
+        local v5 = v4
+        if v4 then
+            v5 = v4:IsA("TextLabel")
+        end
+        local v6, v7
+        if v5 then
+            v5 = tostring(v4.Text or ""):gsub(",", "")
+            v6 = v5.match
+            v6 = table.pack(v6(v5, "([%d%.]+)%s*[xX]"))
+            v7 = tonumber(table.unpack(v6, 1, v6.n))
+            if v7 and v7 >= 1 and v7 < 1000000000000000 then
+                v2[2][3] = v7
+            end
+        end
+        v5 = v2[2][3]
+        if v5 then
+            v6 = v2[2][3]
+            v5 = string.format("%.1fx", v6)
+        end
+        if not v5 then
+            v5 = "—"
+        end
+        return v5
+    end
+end
+local function _w510(v1, v2)
+    return function(v3, v4)
+        local v5, v6, v7, v8, v9, getMyPlot6, v10, v11, v12, v13, v14, v15, v16
+        if type(v2[1][3].GetMyPlot) ~= "function" then
+            return nil
+        else
+            getMyPlot6 = v2[1][3].GetMyPlot()
+            v5 = getMyPlot6 and getMyPlot6:FindFirstChild("Eggs")
+            if not v5 then
+                return nil
+            else
+                v10 = 0
+                v14 = {}
+                v15 = v5.GetChildren
+                v15 = v1.h(v15(v5))
+                v12, v15, v11 = ipairs(v1.i(v15))
+                v12, v15, v11 = v1.g(v12, v15, v11)
+                v9, v13 = v12(v15, v11)
+                v11 = v9
+                if v11 ~= nil then
+                    while true do
+                        v16, v10 = 12, v10 + 1
+                        if v10 <= 12 then
+                            v16 = v2[1][3].ReadWebhookPlacedLuck(v13)
+                            if not (v16 and v16 >= 0) then
+                                v9, v13 = v12(v15, v11)
+                                v11 = v9
+                                if v11 ~= nil then
+                                    continue
+                                end
+                                break
+                            end
+                            if tostring(v13.Name) ~= tostring(v3) then
+                                v6 = v13.Name
+                                v7 = v2[2][3][v6]
+                                v8 = v7 and tonumber(v7.Luck or v7.BaseLuck or v7.HatchLuck)
+                                if v8 and v8 > 0 and v16 > 0 then
+                                    v6 = v16 / v8
+                                    if v6 >= 1 and v6 < 1e+35 then
+                                        v14[#v14 + 1] = v6
+                                    end
+                                end
+                                v9, v13 = v12(v15, v11)
+                                v11 = v9
+                                if v11 ~= nil then
+                                    continue
+                                end
+                                break
+                            end
+                            return v16
+                        end
+                        break
+                    end
+                end
+                if v4 and v4 >= 0 and #v14 >= 2 then
+                    table.sort(v14)
+                    v12 = v14[math.floor((#v14 + 1) / 2)]
+                    v15, v11, v9 = ipairs(v14)
+                    v15, v11, v9 = v1.g(v15, v11, v9)
+                    v13, v16 = v15(v11, v9)
+                    v9 = v13
+                    if v9 ~= nil then
+                        while true do
+                            if math.abs(v16 - v12) <= math.max(0.001, v12 * 0.02) then
+                                v13, v16 = v15(v11, v9)
+                                v9 = v13
+                                if v9 ~= nil then
+                                    continue
+                                end
+                                return v4 * v12
+                            end
+                            break
+                        end
+                        return nil
+                    end
+                    return v4 * v12
+                else
+                    return nil
+                end
+            end
+        end
+    end
+end
+local function _w511(v1, v2)
+    return function()
+        v2[1][3].HoldDuration = 0
+    end
+end
+local function _w512(v1, v2)
+    return function()
+        local v3, v4
+        while true do
+            if v2[1][3].Alive then
+                task.wait(12)
+                v4, v3 = pcall(v2[1][3].RefreshDynamicDropdowns, false)
+                if not v4 then
+                    warn("[REZEHUB] GameData dropdown scan: " .. tostring(v3))
+                    continue
+                end
+                continue
+            end
+            break
+        end
+    end
+end
+local function _w513(v1, v2)
+    return function()
+        local v3 = {[1] = 3, [3] = v2[1][3].DynamicRarityRank}
+        v3[2] = v3
+        local v4, v5, v6
+        v5, v6, v4 = pairs(v2[1][3].FeedFoodInfo)
+        v5, v6, v4 = v1.g(v5, v6, v4)
+        local v7, v8
+        v8, v7 = v5(v6, v4)
+        local v9 = {}
+        local gsub6, v10
+        if v8 ~= nil then
+            while true do
+                gsub6 = tostring(v7.XP or 0):reverse():gsub("(%d%d%d)", "%1,"):reverse():gsub("^,", "")
+                v10 = {}
+                v10[1], v10[2] = v8, v7.Rarity .. " • +" .. gsub6 .. " XP"
+                v9[#v9 + 1] = v10
+                v8, v7 = v5(v6, v4)
+                v4 = v8
+                if v4 == nil then
+                    break
+                end
+            end
+        end
+        table.sort(v9, v1:qn({v3, v2[1]}))
+        return v9
+    end
+end
+local function _w514(v1, v2)
+    return function(eventAutoBuyHalloweenEgg)
+        local v3 = v2[1][3]
+        v3.EventAutoBuyHalloweenEgg = eventAutoBuyHalloweenEgg
+        v3.EventFrozenReady = false
+        v3.EventCursor = nil
+        v3.EventNextBuyAt = 0
+        if eventAutoBuyHalloweenEgg then
+            v2[1][3].EventHalloweenEggPrice = nil
+        end
+        local v4
+        if not eventAutoBuyHalloweenEgg and not v2[1][3].AutoCandy and not v2[1][3].EventAutoRitual then
+            v4 = v2[2][3]
+            v2[1][3].setLabel(v4, "🔴 Halloween Automations Off")
+        end
+    end
+end
+local function _w515(v1, v2)
+    return function()
+        local v3, v4
+        while true do
+            if v2[1][3].Alive then
+                v3, v4 = pcall(v2[2][3])
+                if not v3 then
+                    warn("[REZEHUB Ranch ESP] " .. tostring(v4))
+                end
+                task.wait(0.85)
+                continue
+            end
+            break
+        end
+        v2[1][3].ClearRanchEggESP()
+    end
+end
+local function _w516(v1, v2)
+    return function()
+        v2[1][3]:SetStateEnabled(v2[2][3], true)
+    end
+end
+local function _w517(v1, v2)
+    return function(v3)
+        local v4 = v2[1][3][tostring(v3 or "")]
+        return type(v4) == "table" and v4.Rarity or "Common"
+    end
+end
+local function _w518(v1, v2)
+    return function()
+        if type(v2[1][3].Library.Unload) == "function" then
+            v2[1][3].Library:Unload()
+        end
+    end
+end
+local function _w519(v1, v2)
+    return function(v3, v4, v5)
+        local _, o, q
+        local v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28
+        if typeof(v3) ~= "CFrame" or not v2[1][3].IsFastRideMounted() then
+            v18 = v2[1][3]
+            v21, v18, v17 = "🔴 Ride unavailable", v2[3][3], v18.setLabel
+            v17(v18, "🔴 Ride unavailable")
+            return false
+        else
+            v17 = v2[1][3].GetCharacter()
+            v18 = v17 and v17:FindFirstChild("HumanoidRootPart")
+            if not v18 then
+                return false
+            else
+                v21 = tonumber(v2[1][3].FastRideState.Speed)
+                if not v21 or v21 <= 0 then
+                    v10 = v17:FindFirstChildOfClass("Humanoid")
+                    v21 = v10 and tonumber(v10.WalkSpeed)
+                end
+                if not v21 or v21 <= 0 then
+                    v19 = v2[3][3]
+                    v2[1][3].setLabel(v19, "🔴 Pet speed unavailable")
+                    return false
+                else
+                    type(v5)
+                    v19 = {}
+                    v5 = {}
+                    v19[1] = v3.Position
+                    v10, v19 = v19, v5.AvoidOwnRanch
+                    if v19 then
+                        v20 = v2[1][3]
+                        v20, v19, v6 = v18.Position, v20.SavedDropRoute, v3.Position
+                        v19, v20 = v19(v20, v6)
+                        if not v19 then
+                            v24, o, v6, v14, _ = v20, tostring, v2[1][3].setLabel, v2[3][3], "🔴 Drop route blocked: "
+                            v6(v14, "🔴 Drop route blocked: " .. o(v24))
+                            return false
+                        else
+                            v10 = v19
+                        end
+                    end
+                    v6 = v17.GetDescendants
+                    v19 = {}
+                    v6 = v1.h(v6(v17))
+                    v20, v6, v14 = ipairs(v1.i(v6))
+                    v20, v6, v14 = v1.g(v20, v6, v14)
+                    for _, o in v20, v6, v14 do
+                        if o:IsA("BasePart") then
+                            v19[o] = o.CanCollide
+                            o.CanCollide = false
+                        end
+                    end
+                    v2[1][3].FastRideState.PhaseActive = true
+                    v6 = v18.Position
+                    v20 = 0
+                    v14, _, o = ipairs(v10)
+                    v14, _, o = v1.g(v14, _, o)
+                    for _, q in v14, _, o do
+                        v6, v20 = q, v20 + (q - v6).Magnitude
+                    end
+                    v14 = os.clock()
+                    q, v7, v9, v24 = 8, v5.MinWait, tonumber, math.max
+                    v9 = v9(v7) or 0
+                    o, _ = false, v20 / v21 * 3 + v24(8, v9)
+                    v7 = v2[1][3]
+                    q = 1
+                    v22, v13, v7, v9, v15 = v4, tostring, v2[3][3], v7.setLabel, "🟡 Phasing to "
+                    v9(v7, "🟡 Phasing to " .. v13(v22))
+                    while true do
+                        if v2[1][3].Alive and v2[2][3] and v2[1][3].FastRideState.PhaseActive and v18.Parent and v2[1][3].IsFastRideMounted() and os.clock() - v14 < _ then
+                            v7 = v2[4][3].Heartbeat
+                            v7, v15 = v7.Wait, v7
+                            v9 = math.min(v7(v15), 0.12)
+                            if not v2[1][3].HasCarriedEgg() then
+                                v13 = v2[1][3]
+                                v13, v15 = v18.Position, v13.IsInsideOwnPlotPosition
+                                v15 = v15(v13)
+                                o = true
+                            else
+                                v7 = v10[q]
+                                if not v7 then
+                                    o = true
+                                else
+                                    v15 = v7 - v18.Position
+                                    v13 = v15.Magnitude
+                                    if v13 <= 4 then
+                                        v22, q = #v10, q + 1
+                                        if q > v22 then
+                                            o = true
+                                        else
+                                            continue
+                                        end
+                                    else
+                                        v26 = v5.ExpiryAt
+                                        v23 = v5.LastTimerSeenAt
+                                        v22, v26, v23, v16 = v2[1][3].ObserveDeliveryCooldown(v26, v23)
+                                        v5.ExpiryAt = v26
+                                        v5.LastTimerSeenAt = v23
+                                        v28 = v22
+                                        v12 = v5.EmergencyTarget
+                                        if v28 then
+                                            v28 = v22 > 0
+                                        end
+                                        if v28 then
+                                            v28 = v22 <= 1
+                                        end
+                                        if v28 then
+                                            v28 = typeof(v12) == "CFrame"
+                                        end
+                                        if v28 then
+                                            break
+                                        else
+                                            v8 = v15.Unit
+                                            v25 = math.min
+                                            v28 = v18.Position + v8 * v25(v13, v21 * v9)
+                                            v27 = v4 == "Ranch" and v2[1][3].IsInsideOwnPlotPosition(v28) == true and v5.PickupAt and tonumber(v5.MinWait)
+                                            if v27 then
+                                                v8 = os.clock()
+                                                v25 = v5.PickupAt
+                                                v8, v11 = v5.MinWait, v8 - v25
+                                                v27 = v11 < v8
+                                            end
+                                            if v27 then
+                                                v18.AssemblyLinearVelocity = Vector3.zero
+                                                v18.AssemblyAngularVelocity = Vector3.zero
+                                                v11 = v2[1][3]
+                                                v8, v11, v27 = "🟡 Waiting outside ranch for valid delivery timing", v2[3][3], v11.setLabel
+                                                v27(v11, "🟡 Waiting outside ranch for valid delivery timing")
+                                            else
+                                                v18.CFrame = v2[1][3].UprightCFrame(v28)
+                                                v18.AssemblyLinearVelocity = Vector3.zero
+                                                v18.AssemblyAngularVelocity = Vector3.zero
+                                            end
+                                            continue
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                        if v18.Parent and (v18.Position - v3.Position).Magnitude <= 4 then
+                            o = true
+                        end
+                        v2[1][3].FastRideState.PhaseActive = false
+                        v9, v7, v15 = pairs(v19)
+                        v9, v7, v15 = v1.g(v9, v7, v15)
+                        v13, v22 = v9(v7, v15)
+                        v15 = v13
+                        if v15 ~= nil then
+                            while true do
+                                if v13 and v13.Parent then
+                                    v13.CanCollide = v22
+                                end
+                                v13, v22 = v9(v7, v15)
+                                v15 = v13
+                                if v15 == nil then
+                                    break
+                                end
+                            end
+                        end
+                        if not o then
+                            v7 = v2[1][3]
+                            v7, v15, v9 = v2[3][3], "🔴 Phase interrupted", v7.setLabel
+                            v9(v7, "🔴 Phase interrupted")
+                        end
+                        return o, false
+                    end
+                    v18.CFrame = v12
+                    v18.AssemblyLinearVelocity = Vector3.zero
+                    v18.AssemblyAngularVelocity = Vector3.zero
+                    v28 = tostring(v5.EmergencyLabel or v4)
+                    v11 = v2[3][3]
+                    v2[1][3].setLabel(v11, "🟠 Egg cooldown <=1s • Emergency TP to " .. v28)
+                    warn("[REZEHUB][Auto Pick-Up] Emergency TP to " .. v28 .. " at " .. string.format("%.2fs", v22) .. " (" .. v16 .. ")")
+                    v2[1][3].FastRideState.PhaseActive = false
+                    v9, v7, v15 = pairs(v19)
+                    v9, v7, v15 = v1.g(v9, v7, v15)
+                    v13, v22 = v9(v7, v15)
+                    v15 = v13
+                    if v15 ~= nil then
+                        while true do
+                            if v13 and v13.Parent then
+                                v13.CanCollide = v22
+                            end
+                            v13, v22 = v9(v7, v15)
+                            v15 = v13
+                            if v15 == nil then
+                                break
+                            end
+                        end
+                    end
+                    return true, true
+                end
+            end
+        end
+    end
+end
+local function _w520(v1, v2)
+    return function()
+        local v3 = 1
+        local v4 = #v2[1][3]
+        local v5, v6, min3, v7
+        if 1 <= v4 then
+            while true do
+                if not (not v2[6][3]() or not v2[5][3].Alive or v2[5][3].TaskShouldStop("Sell")) then
+                    v6 = {}
+                    v5 = v3
+                    v7 = v2[1][3]
+                    min3 = math.min(v3 + 30 - 1, #v7)
+                    if v5 <= min3 then
+                        while true do
+                            table.insert(v6, v2[1][3][v5])
+                            v5 = v5 + 1
+                            if v5 > min3 then
+                                break
+                            end
+                        end
+                    end
+                    if v2[6][3]() and v2[5][3].Alive and not v2[5][3].TaskShouldStop("Sell") then
+                        v2[4][3]()
+                        break
+                    end
+                    task.wait(1.2)
+                    v3 = v3 + 30
+                    if v3 <= v4 then
+                        continue
+                    end
+                    break
+                end
+                break
+            end
+        end
+    end
+end
+local function _w521(v1, v2)
+    return function(v3, v4, v5, v6, v7, v8, v9)
+        v5 = {[1] = 3, [3] = v5}
+        v5[2] = v5
+        v6 = {[1] = 3, [3] = v6}
+        v6[2] = v6
+        v7 = {[1] = 3, [3] = v7}
+        v7[2] = v7
+        v8 = {[1] = 3, [3] = v8}
+        v8[2] = v8
+        v9 = {[1] = 3, [3] = v9}
+        v9[2] = v9
+        local v10 = v2[1][3]
+        v10.YieldUIPaint()
+        local v11, v12
+        v12, v11, v10 = v10.boxFor, v4, v3
+        v12 = {[1] = 3, [3] = v12(v10, v11)}
+        v12[2] = v12
+        local v13
+        if not v12[3] then
+            return
+        else
+            v10, v11 = pcall(v1:ym({v12, v7, v8, v2[3], v6, v5}))
+            if not v10 or not v11 then
+                v13 = "Input " .. v5[3]
+                v2[1][3].notifyError(v13, v11)
+                return
+            else
+                v2[2][3][v5[3]] = v11
+                v11:OnChanged(v1:xm({v2[4], v2[1], v2[3], v9, v7}))
+                return v11
+            end
+        end
+    end
+end
+local function _w522(v1, v2)
+    return function(v3)
+        local v4
+        v2[1][3], v4 = v3, v2[3][3]
+        local v5, v6, v7
+        if v4.SyncNativeAutobuy then
+            v4 = v2[3][3]
+            v6, v5, v4, v7 = v2[2][3], v4.SyncNativeAutobuy, "Gears", false
+            v5("Gears", v6, false)
+        end
+    end
+end
+local function _w523(v1, v2)
+    return function(v3)
+        v2[1][3].REZEHUB_RAP_STARTUP_STAGE = tostring(v3)
+    end
+end
+local function _w524(v1)
+    return function(v2)
+        local v3
+        if type(v2) ~= "table" then
+            return nil
+        else
+            v3 = tostring(v2.Image or v2.Icon or v2.Thumbnail or v2.ImageId or v2.IconId or "")
+            if v3:match("^https?://") then
+                return {url = v3}
+            else
+                v3:match("rbxassetid://(%d+)")
+                v3:match("rbxthumb://.-[?&]id=(%d+)")
+                v3:match("[?&]assetId=(%d+)")
+                v3:match("^%d+$")
+                return nil
+            end
+        end
+    end
+end
+local function _w525(v1, v2)
+    return function(v3)
+        local getMyPlot7 = v2[1][3].GetMyPlot()
+        local v4 = getMyPlot7
+        if getMyPlot7 then
+            v4 = getMyPlot7:FindFirstChild("Baseplate")
+        end
+        local v5 = v4
+        if v4 then
+            v5 = v4:IsA("BasePart")
+        end
+        local pointToObjectSpace4, v6
+        if not v5 then
+            return nil
+        else
+            pointToObjectSpace4 = v4.CFrame:PointToObjectSpace(v3)
+            v6 = pointToObjectSpace4.X
+            v5 = math.abs(v6) <= v4.Size.X * 0.5
+            if v5 then
+                v6 = pointToObjectSpace4.Z
+                v5 = math.abs(v6) <= v4.Size.Z * 0.5
+            end
+            return v5
+        end
+    end
+end
+local function _w527(v1, v2)
+    return function()
+        v2[1][3]:FireServer(v2[2][3])
+    end
+end
+local function _w528(v1, v2)
+    return function()
+        local v3 = v2[2][3]
+        local v4 = v2[1][3]
+        local v5
+        v4, v5 = v4.GetAttribute, v4
+        v4 = table.pack(v4(v5, v3))
+        return table.unpack(v4, 1, v4.n)
+    end
+end
+local function _w529(v1, v2)
+    return function(v3)
+        v3 = {[1] = 3, [3] = v3}
+        v3[2] = v3
+        local v4 = v2[1][3].Alive and v2[1][3].PromptTapEnabled
+        local v5
+        if v4 then
+            v5 = v3[3]
+            v4 = v3[3].IsA(v5, "ProximityPrompt")
+        end
+        if v4 then
+            pcall(v1:jm({v3}))
+        end
+    end
+end
+local function _w530(v1, v2)
+    return function(v3)
+        return not v2[1][3].Alive or v2[1][3].TaskOwner ~= v3 or v2[1][3].TaskHigherPending(v3)
+    end
+end
+local function _w531(v1, v2)
+    return function(v3)
+        local v4 = v2[1][3].InventoryESPState
+        local v5 = os.clock()
+        if not (not v3 and v5 - (v4.LastLuckCalibrationAt or 0) < 45) then
+            v4.LastLuckCalibrationAt = v5
+            type(v2[1][3].getHomePlot)
+        end
+        return false
+    end
+end
+local function _w532(v1, v2)
+    return function()
+        local v3, v4, v5, v6, v7, v8, v9, v10
+        if v2[1][3].IsFastRideMounted() then
+            v10 = v2[1][3]
+            v10.CandyUnmountedSince = nil
+            v10, v5 = v10.MountedPetDescriptor()
+            v4 = v5 or "Unknown"
+            if v2[1][3].CandyActiveMountName ~= v4 then
+                v9 = v2[1][3]
+                v9.CandyActiveMountName = v4
+                v9, v3, v8, v6, v7 = v9.CandyLog, "CANDY_RIDE_LOCKED", "mounted=", tostring, v4
+                v6 = v6(v7)
+                v9("CANDY_RIDE_LOCKED", "mounted=" .. v6 .. " key=" .. tostring(v10 or "unavailable") .. " • preserving current ride until dismount")
+            end
+            return true
+        else
+            v2[1][3].CandyActiveMountName = nil
+            v10 = os.clock()
+            if not v2[1][3].CandyUnmountedSince then
+                v5 = v2[1][3]
+                v5.CandyUnmountedSince = v10
+                v9, v5, v4 = "waiting for stable unmounted state", v5.CandyLog, "CANDY_DISMOUNT_DETECTED"
+                v5("CANDY_DISMOUNT_DETECTED", "waiting for stable unmounted state")
+                return false
+            else
+                v5 = v10 - v2[1][3].CandyUnmountedSince
+                if v5 < 0.85 or v10 < 0 then
+                    return false
+                else
+                    v5 = v2[1][3].FindFastestRidePet()
+                    if not v5 then
+                        v2[1][3].CandySetStatus("🔴 No rideable inventory pet")
+                        return false
+                    else
+                        v4 = v2[1][3]
+                        v4.CandyMountRetryAt = v10 + 4
+                        v8, v4, v9, v3 = v5.PetName, v4.CandySetStatus, "🟡 Mounting best inventory pet: ", tostring
+                        v4("🟡 Mounting best inventory pet: " .. v3(v8))
+                        v4 = v2[1][3].TryMountInventoryPet(v5)
+                        v3 = v2[1][3]
+                        v3, v8, v7, v6, v9 = "CANDY_MOUNT_ATTEMPT", "pet=", v5.PetName, tostring, v3.CandyLog
+                        v9("CANDY_MOUNT_ATTEMPT", "pet=" .. v6(v7) .. " success=" .. tostring(v4) .. " after=stable unmount")
+                        if v4 and v2[1][3].IsFastRideMounted() then
+                            v2[1][3].CandyUnmountedSince = nil
+                            return true
+                        else
+                            return false
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+local function _w533(v1, v2)
+    return function(v3)
+        v2[1][3](v3)
+    end
+end
+local function _w534(v1, v2)
+    return function()
+        v2[1][3]:SetStateEnabled(v2[2][3], false)
+    end
+end
+local function _w535(v1, v2)
+    return function(v3)
+        local v4 = v3
+        local v5 = v2[1][3]
+        if v3 then
+            v4 = math.max(0, os.clock() - v3)
+        end
+        if not v4 then
+            v4 = 0
+        end
+        v5.LastDeliveryDuration = v4
+        v5 = v2[1][3]
+        v5.DeliveredEggCount = (v5.DeliveredEggCount or 0) + 1
+        v5 = v2[1][3]
+        v5.TotalDeliveryDuration = (v5.TotalDeliveryDuration or 0) + v2[1][3].LastDeliveryDuration
+    end
+end
+local function _w536(v1, v2)
+    return function(v3, v4)
+        local v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, clamp4, v19, v20
+        if not v3 or not v3:IsA("BasePart") then
+            return nil
+        else
+            v19 = math.max
+            v7 = math.floor
+            v11 = tonumber(v4) or 0
+            v7 = v1.h(v7(v11))
+            v6 = v19(0, v1.i(v7)) % 10
+            if v2[1][3].PlacePattern == "Spiral Position" then
+                v12 = v6 * math.pi * 0.65
+                v10 = 0.12 + 0.075 * v6
+                v7 = v10 * math.cos(v12)
+                v11 = v10 * math.sin(v12)
+            else
+                v8 = {}
+                v10 = {}
+                v8[1], v8[2] = -0.7, -0.7
+                v13 = {}
+                v13[1], v13[2] = -0.25, -0.7
+                v14 = {}
+                v14[1], v14[2] = 0.25, -0.7
+                v15 = {}
+                v15[1], v15[2] = 0.7, -0.7
+                v5 = {}
+                v5[1], v5[2] = 0.45, -0.35
+                v18 = {}
+                v18[1], v18[2] = 0, 0
+                v20 = {}
+                v20[1], v20[2] = -0.45, 0.35
+                v9 = {}
+                v9[1], v9[2] = -0.7, 0.7
+                v17 = {}
+                v17[1], v17[2] = 0, 0.7
+                v16 = {}
+                v16[1], v16[2] = 0.7, 0.7
+                v10[1], v10[2], v10[3], v10[4], v10[5], v10[6], v10[7], v10[8], v10[9], v10[10] = v8, v13, v14, v15, v5, v18, v20, v9, v17, v16
+                v7 = v10[v6 + 1][1]
+                v11 = v10[v6 + 1][2]
+            end
+            v10 = math.clamp(v7, -0.78, 0.78)
+            v8 = v3.Size.X / 2
+            clamp4 = math.clamp(v11, -0.78, 0.78)
+            v14 = CFrame.new
+            v5 = v3.Size.Y / 2 + 1.5
+            v18 = clamp4 * (v3.Size.Z / 2 - 3)
+            return (v3.CFrame * v14(v10 * (v8 - 3), v5, v18)).Position
+        end
+    end
+end
+local function _w537(v1, v2)
+    return function()
+        v2[1][3]:UnequipTools()
+    end
+end
+local function _w538(v1, v2)
+    return function()
+        v2[1][3]:Destroy()
+    end
+end
+local function _w539(v1, v2)
+    return function()
+        if v2[1][3]:IsA("RemoteFunction") then
+            v2[1][3]:InvokeServer(v2[2][3])
+        else
+            v2[1][3]:IsA("RemoteEvent")
+            error("Unsupported CollectCandy class")
+        end
+    end
+end
+local function _w540(v1, v2)
+    return function()
+        local v3, v4
+        v3, v2[1][3], v4 = v2[3][3], true, false
+        v3.AutoExecute = false
+        if type(v2[5][3].RemoveAutoExecute) == "function" then
+            pcall(v2[5][3].RemoveAutoExecute)
+        end
+        v2[5][3].StopFeatures()
+        v3 = false
+        if type(delfile) == "function" and type(isfile) == "function" then
+            v4 = not isfile(v2[4][3])
+            v3 = true
+        end
+        local v5
+        if not v3 then
+            v5, v2[1][3], v4 = "[REZEHUB] Reset Config could not remove the file; check executor file permissions.", false, warn
+            v4("[REZEHUB] Reset Config could not remove the file; check executor file permissions.")
+        else
+            v4, v5 = pcall(v1:bp({v2[2]}))
+            if not v4 then
+                warn("[REZEHUB] Reset completed, rejoin manually: " .. tostring(v5))
+            end
+        end
+    end
+end
+local function _w541(v1, v2)
+    return function()
+        local v3 = v2[1][3].InventoryESPState
+        local v4
+        v3.Enabled, v4 = false, false
+        v3.Running = false
+        v3.CardUpdateQueued = setmetatable({}, {__mode = "k"})
+        v3.RecentDisplayByIdentity = {}
+        v3.WorkerGeneration = (v3.WorkerGeneration or 0) + 1
+        v2[1][3].disconnectInventoryESPGrid(true)
+        v2[1][3].disconnectInventoryESPTools()
+        local v5, v6
+        v6, v4, v5 = pairs(v3.Overlays)
+        v6, v4, v5 = v1.g(v6, v4, v5)
+        local v7 = v6(v4, v5)
+        if v7 ~= nil then
+            while true do
+                v3.CardStable[v7] = nil
+                v2[1][3].removeInventoryESPOverlay(v7)
+                v7 = v6(v4, v5)
+                v5 = v7
+                if v5 == nil then
+                    break
+                end
+            end
+        end
+        v6, v4, v5 = ipairs(v3.LifetimeConnections or {})
+        v6, v4, v5 = v1.g(v6, v4, v5)
+        local v8
+        v7, v8 = v6(v4, v5)
+        if v7 ~= nil then
+            while true do
+                v8:Disconnect()
+                v7, v8 = v6(v4, v5)
+                v5 = v7
+                if v5 == nil then
+                    break
+                end
+            end
+        end
+        v3.LifetimeConnections = {}
+        if v3.TotalLabel then
+            v3.TotalLabel:Destroy()
+            v3.TotalLabel = nil
+        end
+        v3.Root = nil
+    end
+end
+local function _w542(v1, v2)
+    return function()
+        v2[1][3]:SetValue(false, true)
+    end
+end
+local function _w543(v1, v2)
+    return function(v3)
+        local v4 = v2[1][3]
+        v4.NoGameplayPaused = v3
+        local v5
+        v4, v5 = v4.SetNoGameplayPaused, v3
+        v4(v5)
+    end
+end
+local function _w544(v1, v2)
+    return function(v3)
+        if v2[1][3].Alive and v2[1][3].HidePetsEnabled then
+            v2[2][3](v3)
+        end
+    end
+end
+local function _w546(v1)
+    return function(v2)
+    end
+end
+local function _w547(v1, v2)
+    return function(v3)
+        local getNativePetIncomeFromTool, v4, v5
+        if not v3 or not v3.Parent then
+            return nil
+        else
+            getNativePetIncomeFromTool = v2[1][3].getNativePetIncomeFromTool(v3)
+            if getNativePetIncomeFromTool == nil then
+                return nil
+            else
+                v4 = v2[1][3].getPetNameFromObject
+                v4 = v4(v3) or ""
+                v5 = tostring(v4)
+                return getNativePetIncomeFromTool, tostring(v3:GetAttribute("PetKey") or ""), v5
+            end
+        end
+    end
+end
+local function _w548(v1, v2)
+    return function()
+        if v2[1][3]:IsA("RemoteEvent") then
+            v2[1][3]:FireServer(v2[2][3])
+        else
+            v2[1][3]:IsA("RemoteFunction")
+            error("BasketDrop isn't an Event or Function")
+        end
+    end
+end
+local function _w549(v1, v2)
+    return function()
+        v2[1][3].HoldDuration = 0
+    end
+end
+local function _w550(v1, v2)
+    return function()
+        local v3 = v2[1][3].Enabled
+        local v4
+        if v3 then
+            v4 = v2[2][3]
+            v3 = v2[3][3].Parent == v4
+        end
+        local v5, v6
+        if v3 then
+            v6 = v2[4][3]
+            v5, v6, v3 = v2[1][3], v2[3][3], v6.processInventoryESPCard
+            v3(v6, v5.ToolLookup or {}, {})
+        end
+    end
+end
+local function _w551(v1, v2, v3, v4)
+    v1.Rr[v4] = v1.Uq(v2, v3)
+    return v1.Rr[v4]
+end
+local function _w552(v1, v2)
+    return function()
+        local v3, v4
+        if not v2[1][3].Parent then
+            v3 = v2[1][3]
+            v4, v3 = v3, v3.Clone
+            v3 = table.pack(v3(v4))
+            return table.unpack(v3, 1, v3.n)
+        else
+            v4 = v2[1][3]
+            v3 = v4.Archivable
+            v4.Archivable = true
+            v4 = v4:Clone()
+            v2[1][3].Archivable = v3
+            return v4
+        end
+    end
+end
+local function _w553(v1, v2)
+    return function(v3, v4)
+        local v5 = os.clock()
+        local v6 = v2[1][3].ReadCarriedEggTimer and v2[1][3].ReadCarriedEggTimer() or nil
+        if type(v6) == "number" and v6 > 0 then
+            return v6, v5 + v6, v5, "visible"
+        else
+            type(v3)
+            return nil, v3, v4, "unavailable"
+        end
+    end
+end
+local function _w554(v1, v2)
+    return function()
+        v2[1][3][v2[3][3]] = v2[2][3]
+    end
+end
+local function _w555(v1, v2)
+    return function()
+        if v2[1][3] and v2[2][3].FarmBusy then
+            v2[2][3].PickupLastSignalAt = os.clock()
+        end
+    end
+end
+local function _w556(v1, v2)
+    return function(v3)
+        local v4 = tostring(v3 or "")
+        local v5, v6, v7
+        v7, v6, v5 = pairs(v2[1][3])
+        v7, v6, v5 = v1.g(v7, v6, v5)
+        local v8 = v7(v6, v5)
+        local v9
+        if v8 ~= nil then
+            while true do
+                v9 = string.lower
+                tostring(v8)
+                v9 = v9(v1)
+                if v9 ~= string.lower(v4) then
+                    v8 = v7(v6, v5)
+                    v5 = v8
+                    if v5 ~= nil then
+                        continue
+                    end
+                    return v4 ~= "" and v4 or nil
+                end
+                break
+            end
+            return v8
+        end
+        return v4 ~= "" and v4 or nil
+    end
+end
+local function _w557(v1)
+    return function()
+        local v2 = game
+        local v3
+        v3, v2 = v2, v2.HttpGet
+        v2 = table.pack(v2(v3, "https://raw.githubusercontent.com/ronzzofficial/ronzz-loader/refs/heads/main/library.luau", true))
+        return table.unpack(v2, 1, v2.n)
+    end
+end
+local function _w558(v1, v2)
+    return function()
+        v2[1][3].ActiveVolcanicTween:Cancel()
+    end
+end
+local function _w559(v1, v2)
+    return function()
+        local h, j, _, k, f
+        local v3 = {[1] = 3, [3] = {}}
+        v3[2] = v3
+        local v4 = {[1] = 3, [3] = {}}
+        v4[2] = v4
+        local v5 = v2[1][3]
+        local v6 = v1:Vm({v4, v3})
+        local getMyPlot8 = v5.GetMyPlot()
+        v5 = getMyPlot8
+        if getMyPlot8 then
+            v5 = getMyPlot8:FindFirstChild("Eggs")
+        end
+        local v7, plots2, v8
+        if v5 then
+            v8 = v5.GetChildren
+            v8 = v1.h(v8(v5))
+            plots2, v8, v7 = ipairs(v1.i(v8))
+            plots2, v8, v7 = v1.g(plots2, v8, v7)
+            for _, k in plots2, v8, v7 do
+                v6(k)
+            end
+        end
+        plots2 = workspace:FindFirstChild("Plots")
+        local owner, v9, v10, v11, v12
+        if plots2 then
+            v7 = plots2.GetChildren
+            v7 = v1.h(v7(plots2))
+            v8, v7, f = ipairs(v1.i(v7))
+            v8, v7, f = v1.g(v8, v7, f)
+            for f, h in v8, v7, f do
+                _ = h:FindFirstChild("Eggs")
+                if _ and h ~= getMyPlot8 then
+                    owner = h:GetAttribute("Owner")
+                    if tostring(owner) == tostring(v2[2][3].UserId) or tostring(owner) == v2[2][3].Name then
+                        v12 = _.GetChildren
+                        v12 = v1.h(v12(_))
+                        v10, v12, v9 = ipairs(v1.i(v12))
+                        v10, v12, v9 = v1.g(v10, v12, v9)
+                        for _, j in v10, v12, v9 do
+                            v6(j)
+                        end
+                    else
+                        v12 = _.GetChildren
+                        v12 = v1.h(v12(_))
+                        v10, v12, v9 = ipairs(v1.i(v12))
+                        v10, v12, v9 = v1.g(v10, v12, v9)
+                        for _, j in v10, v12, v9 do
+                            v11 = j:GetAttribute("Owner") or j:GetAttribute("OwnerUserId")
+                            if tostring(v11) == tostring(v2[2][3].UserId) or tostring(v11) == v2[2][3].Name then
+                                v6(j)
+                            end
+                        end
+                    end
+                end
+            end
+        end
+        return v3[3]
+    end
+end
+local function _w560(v1, v2)
+    return function()
+        local g, _, e
+        local v3 = v2[1][3].InventoryESPState
+        local v4, v5, v6
+        if v3.Enabled then
+            v4, v6, g = {}, ipairs, v2[1][3]
+            v5 = g.getInventoryESPHotbarCards
+            v5 = v1.h(v5())
+            v6, v5, g = v6(v1.i(v5))
+            v6, v5, g = v1.g(v6, v5, g)
+            for g, _ in v6, v5, g do
+                v4[_] = true
+                v2[1][3].bindInventoryESPCard(_)
+            end
+            v6, v5, g = pairs(v3.HotbarCards or {})
+            v6, v5, g = v1.g(v6, v5, g)
+            for e in v6, v5, g do
+                if not v4[e] then
+                    v2[1][3].unbindInventoryESPCard(e, true)
+                end
+            end
+            v3.HotbarCards = v4
+        end
+    end
+end
+local function _w561(v1, v2)
+    return function()
+        local v3 = v2[2][3]
+        local v4 = v2[1][3]
+        local v5
+        v4, v5 = v4.GetAttribute, v4
+        v4 = table.pack(v4(v5, v3))
+        return table.unpack(v4, 1, v4.n)
+    end
+end
+local function _w562(v1, v2)
+    return function()
+        local v3, v4, v5, v6
+        if v2[1][3].AutoExecuteQueued then
+            return true
+        else
+            v6 = nil
+            if type(queue_on_teleport) == "function" then
+                v6 = queue_on_teleport
+            else
+                type(queueonteleport)
+                if type(syn) == "table" and type(syn.queue_on_teleport) == "function" then
+                    v6 = syn.queue_on_teleport
+                else
+                    v3 = type(fluxus) == "table"
+                end
+            end
+            v2[1][3].AutoExecuteQueueSupported = type(v6) == "function"
+            if not v6 then
+                return false
+            else
+                v4 = v2[1][3].MakeAutoExecuteBootstrap
+                v4 = table.pack(v4())
+                v3, v5 = pcall(v6, table.unpack(v4, 1, v4.n))
+                warn("[REZEHUB Auto Execute] Teleport queue: " .. tostring(v5))
+                return v3
+            end
+        end
+    end
+end
+local function _w563(v1, v2)
+    return function(v3, v4)
+        if v4 == "Alive" then
+            return v2[1][3].Alive == true
+        else
+            return nil
+        end
+    end
+end
+local function _w564(v1, v2)
+    return function(v3)
+        local v4, v5
+        v4, v5 = pcall(v1:Qo({v2[1]}))
+        local v6, v7, v8, v9, v10
+        if not (not v4 or type(v5) ~= "table") then
+            v6, v9, v7 = pairs(v5)
+            v6, v9, v7 = v1.g(v6, v9, v7)
+            v8, v10 = v6(v9, v7)
+            v7 = v8
+            if v7 ~= nil then
+                while true do
+                    if not (type(v10) == "table" and v10.Model and v10.Model.Parent and tostring(v10.PetKey) == tostring(v3) and tonumber(v10.OwnerUserId) == v2[2][3].UserId) then
+                        v8, v10 = v6(v9, v7)
+                        v7 = v8
+                        if v7 ~= nil then
+                            continue
+                        end
+                        return nil
+                    end
+                    break
+                end
+                return v10.Model
+            end
+        end
+        return nil
+    end
+end
+local function _w565(v1, v2)
+    return function(v3, v4, v5)
+        local v6, v7, v8, getEggPart5, v9, v10, v11
+        if v2[1][3].Alive and v2[3][3] and v2[1][3].PickupMode == "Instant" then
+            v2[1][3].EnsureInstantOnFoot()
+            v2[1][3].HasCarriedEgg()
+            v11 = v2[1][3]
+            v11, v8, v6 = v2[2][3], v11.setLabel, "🟡 Instant • Retrieving egg"
+            v8(v11, "🟡 Instant • Retrieving egg")
+            v8 = 1
+            while true do
+                if v2[1][3].Alive and v2[3][3] and v3 and v3.Parent then
+                    v2[1][3].TeleportToEgg(v3)
+                    v9 = v2[2][3]
+                    v2[1][3].setLabel(v9, "🟡 Instant • syncing egg position")
+                    v7 = task.wait
+                    v9 = math.max
+                    v10 = v2[1][3].InstantPairTiming.PreHomeSettle or 0.34
+                    v9 = v1.h(v9(v8 == 1 and 0.34 or 0.4, v10))
+                    v7(v1.i(v9))
+                    v2[1][3].HasCarriedEgg()
+                    v7 = v2[1][3].GetCharacter()
+                    v9 = v7 and v7:FindFirstChild("HumanoidRootPart")
+                    getEggPart5 = v2[1][3].GetEggPart(v3)
+                    if not (v9 and getEggPart5 and (v9.Position - getEggPart5.Position).Magnitude > 7) then
+                        v2[1][3].InstantPairAndVerify(v3, v4, v5, true)
+                        v2[1][3].HasCarriedEgg()
+                        task.wait(0.12)
+                        v8 = v8 + 1
+                        if v8 <= 2 then
+                            continue
+                        end
+                        break
+                    end
+                    if v2[1][3].TeleportToEgg(v3) then
+                        task.wait(0.12)
+                        v2[1][3].InstantPairAndVerify(v3, v4, v5, true)
+                        v2[1][3].HasCarriedEgg()
+                        task.wait(0.12)
+                        v8 = v8 + 1
+                        if v8 <= 2 then
+                            continue
+                        end
+                        break
+                    end
+                    return false
+                end
+                break
+            end
+        end
+        return false
+    end
+end
+local function _w566(v1, v2)
+    return function()
+        v2[1][3]:Destroy()
+    end
+end
+local function _w567(v1, v2)
+    return function(v3)
+        local v4 = #v3 % 5
+        if v4 > 0 then
+            v3 = v3 .. ("~"):rep(5 - v4)
+        end
+        local v5 = v1:ar({v2[3], v2[2], v2[4]})
+        local v6 = v2[1][3](v3, ".....", v5)
+        local v7
+        v7, v6 = v6, v6.sub
+        v6 = table.pack(v6(v7, 1, v4 > 0 and -(5 - v4) - 1 or -1))
+        return table.unpack(v6, 1, v6.n)
+    end
+end
+local function _w568(v1, v2)
+    return function()
+        v2[1][3].Enabled = false
+    end
+end
+local function _w569(v1, v2)
+    return function()
+        return v2[1][3] or v2[2][3], "🔴 Auto Fuse Off"
+    end
+end
+local function _w570(v1, v2)
+    return function()
+        v2[1][3]:FireServer()
+    end
+end
+local function _w571(v1, v2)
+    return function(pickupRule, pickupThreshold)
+        local v3 = v2[1][3]
+        local v4
+        v3.PickupRule, v4 = pickupRule, v3
+        v4.PickupThreshold = pickupThreshold
+    end
+end
+local function _w572(v1, v2)
+    return function(v3)
+        v3 = {[1] = 3, [3] = v3}
+        v3[2] = v3
+        local v4, v5, v6
+        if type(v3[3]) ~= "string" or v3[3] == "" then
+            return false
+        else
+            v4 = {[1] = 3, [3] = v2[1][3].BasketDrop}
+            v4[2] = v4
+            if not v4[3] then
+                return false
+            else
+                v6, v5 = pcall(v1:Qp({v4, v3}))
+                if not v6 then
+                    warn("[REZEHUB] BasketDrop failed: " .. tostring(v5))
+                end
+                return v6
+            end
+        end
+    end
+end
+local function _w573(v1)
+    return function(v2)
+        local gsub7 = tostring(v2 or ""):gsub("^%s+", ""):gsub("%s+$", "")
+        if gsub7 == "" or gsub7:lower() == "none" or gsub7:lower() == "nil" or gsub7:lower() == "no mutation" or gsub7:lower() == "no trait" then
+            return "Normal"
+        else
+            return gsub7
+        end
+    end
+end
+local function _w574(v1, v2)
+    return function()
+        local _, d, k, q
+        local v3 = v2[1][3].InventoryESPState
+        local v4, v5, v6, v7, v8, v9, v10, v11, v12, v13
+        if not v3.ToolsDirty and v3.ToolLookup then
+            return v3.ToolLookup
+        else
+            v7 = {}
+            v13 = 0
+            v4 = 0
+            v11 = v2[1][3].getInventoryESPToolContainers
+            v11 = v1.h(v11())
+            v5, v11, d = ipairs(v1.i(v11))
+            v5, v11, d = v1.g(v5, v11, d)
+            for d, k in v5, v11, d do
+                _ = k.GetChildren
+                _ = v1.h(_(k))
+                v12, _, v9 = ipairs(v1.i(_))
+                v12, _, v9 = v1.g(v12, _, v9)
+                for _, q in v12, _, v9 do
+                    v4, v8 = v4 + 1, 128
+                    if v4 % 128 == 0 then
+                        task.wait()
+                    end
+                    if q:IsA("Tool") then
+                        q:GetAttribute("PetKey")
+                        v6, v13, v10 = q.Name, v13 + 1, q.Name
+                        v7[v10] = v7[v6] or {}
+                        v8 = v7[q.Name]
+                        table.insert(v8, q)
+                    end
+                end
+            end
+            v3.ToolLookup, v5 = v7, false
+            v3.ToolsDirty = false
+            v3.LastPetCount = v13
+            v3.LastEggCount = 0
+            return v7
+        end
+    end
+end
+local function _w575(v1)
+    return function(v2, v3)
+        local v4 = v2.X
+        local v5 = v3.X
+        local v6
+        v4, v6, v5 = v2.Z, v4 - v5, v3.Z
+        local v7
+        v7, v5 = v4 - v5, math
+        local v8
+        v4, v8, v5 = v5.sqrt, v7 * v7, v6 * v6
+        v4 = table.pack(v4(v5 + v8))
+        return table.unpack(v4, 1, v4.n)
+    end
+end
+local function _w576(v1)
+    return function(v2, v3)
+        return v2.playing < v3.playing
+    end
+end
+local function _w577(v1, v2)
+    return function(v3, v4, v5, v6)
+        local p, _, l
+        local v7 = v5
+        if v5 then
+            v7 = v5[tostring(v4 or "")]
+        end
+        local v8, v9, v10, v11, v12, v13, petKey4, v14, v15, v16, v17, lower6, lower7
+        if not v7 or #v7 == 0 then
+            return nil
+        else
+            petKey4 = v3:GetAttribute("PetKey")
+            if petKey4 ~= nil then
+                lower7, v14, v13 = ipairs(v7)
+                lower7, v14, v13 = v1.g(lower7, v14, v13)
+                v10, v11 = lower7(v14, v13)
+                v13 = v10
+                if v13 ~= nil then
+                    while true do
+                        v8 = v11.GetAttribute
+                        v8 = table.pack(v8(v11, "PetKey"))
+                        if tostring(table.unpack(v8, 1, v8.n)) ~= tostring(petKey4) then
+                            v10, v11 = lower7(v14, v13)
+                            v13 = v10
+                            if v13 ~= nil then
+                                continue
+                            end
+                            lower7 = v2[1][3].getInventoryESPCardDetailText(v3):lower()
+                            v14 = nil
+                            v13 = -math.huge
+                            v10, v11, _ = ipairs(v7)
+                            v10, v11, _ = v1.g(v10, v11, _)
+                            for _, p in v10, v11, _ do
+                                if not v6[p] then
+                                    v12 = 0
+                                    v16 = {}
+                                    v16[1], v16[2] = "Mutation", "SpawnMutation"
+                                    v17, v9, v15 = ipairs(v16)
+                                    v17, v9, v15 = v1.g(v17, v9, v15)
+                                    for _, l in v17, v9, v15 do
+                                        lower6 = tostring(p:GetAttribute(l) or ""):lower()
+                                        if lower6 ~= "" and lower6 ~= "none" and lower7:find(lower6, 1, true) then
+                                            v12 = v12 + 10
+                                        end
+                                    end
+                                    if v12 > v13 then
+                                        v14 = p
+                                        v13 = v12
+                                    elseif v12 == v13 and v14 then
+                                        if tostring(p:GetAttribute("PetKey") or p.Name) < tostring(v14:GetAttribute("PetKey") or v14.Name) then
+                                            v14 = p
+                                        end
+                                    end
+                                end
+                            end
+                            if not v14 then
+                                v14 = v7[1]
+                            end
+                            if v14 then
+                                v6[v14] = true
+                            end
+                            return v14
+                        end
+                        break
+                    end
+                    v6[v11] = true
+                    return v11
+                end
+            end
+        end
+    end
+end
+local function _w578(v1, v2)
+    return function(taskOwner, v3)
+        local v4
+        if not v2[1][3].Alive then
+            return false
+        else
+            v2[1][3].TaskWants(taskOwner)
+            v4 = v2[1][3]
+            v4.TaskOwner = taskOwner
+            v4.TaskOwnerSince = os.clock()
+            return true
+        end
+    end
+end
+local function _w579(v1)
+    return function(v2, v3)
+        warn("[REZEHUB V8] " .. tostring(v2) .. ": " .. tostring(v3))
+    end
+end
+local function _w580(v1, v2)
+    return function()
+        local d
+        local v3, v4, v5, getChildren3, v6, v7
+        if v2[1][3].Alive then
+            getChildren3 = workspace:GetChildren()
+            v3 = 0
+            while true do
+                if v2[1][3].Alive and #getChildren3 > 0 then
+                    v6 = {[1] = 3, [3] = table.remove(getChildren3)}
+                    v6[2] = v6
+                    v7 = v6[3]
+                    if v6[3].IsA(v7, "ProximityPrompt") then
+                        pcall(v1:Hq({v6}))
+                    end
+                    v7 = v6[3].GetChildren
+                    v4 = v6[3]
+                    v7 = v1.h(v7(v4))
+                    v5, v7, v4 = ipairs(v1.i(v7))
+                    v5, v7, v4 = v1.g(v5, v7, v4)
+                    for v8, d in v5, v7, v4 do
+                        getChildren3[#getChildren3 + 1] = d
+                    end
+                    v3, v7 = v3 + 1, 35
+                    if v3 % 35 == 0 then
+                        task.wait()
+                    end
+                    continue
+                end
+                break
+            end
+        end
+    end
+end
+local function _w581(v1, v2)
+    return function()
+        local v3, v4, v5, v6
+        while true do
+            if v2[1][3].Alive then
+                v2[1][3].TaskWants("Fuse")
+                v6 = v2[1][3]
+                v3, v6, v5, v4 = v2[2][3], "Fuse", true, v6.TaskRun
+                v4("Fuse", v3, true)
+                task.wait(0.5)
+                continue
+            end
+            break
+        end
+    end
+end
+local function _w582(v1, v2)
+    return function()
+        local g, o, _, w
+        local v3 = v2[1][3]:FindFirstChild("Pets") or v2[1][3]:FindFirstChild("OwnedPets")
+        local v4 = {}
+        local v5, v6, v7, v8, v9, v10
+        if v3 then
+            v10 = v3.GetChildren
+            v10 = v1.h(v10(v3))
+            v8, v10, g = ipairs(v1.i(v10))
+            v8, v10, g = v1.g(v8, v10, g)
+            for g, w in v8, v10, g do
+                v9 = w:GetAttribute("PetName") or w.Name
+                v5 = string.match
+                v5 = v5(v9, "^(.-) %[") or v9
+                _, v7 = 0, #v2[6][3]
+                v6 = v7 == 0
+                if not v6 then
+                    _, o = string.lower, v5
+                    v6 = v2[5][3][_(o)]
+                end
+                if v6 then
+                    v6 = not v2[4][3](w)
+                end
+                if v6 then
+                    v6, v7, _ = v2[2][3].PetMatchesFilter, w, "Favorite"
+                    v6 = v6(v7, "Favorite")
+                end
+                if v6 then
+                    v6, v7, _ = table.insert, v4, {}
+                    _.Instance = w
+                    o = w:GetAttribute("PetKey") or w.Name
+                    _.Key = o
+                    v6(v7, _)
+                end
+            end
+        end
+        v10 = {}
+        g = v2[3][3]
+        local v11
+        g, v11 = g.FindFirstChildOfClass, g
+        v10[1], v10[2] = g(v11, "Backpack"), v2[3][3].Character
+        v10, v8 = ipairs, v10
+        v10, g, v11 = v10(v8)
+        v10, g, v11 = v1.g(v10, g, v11)
+        w, v9 = v10(g, v11)
+        local v12, v13, v14, v15, petName2, v16
+        if w ~= nil then
+            while true do
+                if v9 then
+                    v6 = v9.GetChildren
+                    v6 = v1.h(v6(v9))
+                    v5, v6, v7 = ipairs(v1.i(v6))
+                    v5, v6, v7 = v1.g(v5, v6, v7)
+                    for _, o in v5, v6, v7 do
+                        if o:IsA("Tool") then
+                            petName2 = o:GetAttribute("PetName")
+                            v12 = string.match
+                            v12 = v12(petName2, "^(.-) %[") or petName2
+                            v16 = #v2[6][3] == 0
+                            if not v16 then
+                                v15 = string.lower
+                                v16 = v2[5][3][v15(v12)]
+                            end
+                            if v16 then
+                                v16 = not v2[4][3](o)
+                            end
+                            if v16 then
+                                v16 = v2[2][3].PetMatchesFilter(o, "Favorite")
+                            end
+                            if v16 then
+                                v16 = o:GetAttribute("PetKey")
+                                v14 = {}
+                                v13 = table.insert
+                                v14.Instance = o
+                                v14.Key = v16
+                                v13(v4, v14)
+                            end
+                        end
+                    end
+                end
+                w, v9 = v10(g, v11)
+                v11 = w
+                if v11 == nil then
+                    break
+                end
+            end
+        end
+        return v4
+    end
+end
+local function _w583(v1, v2)
+    return function(v3, v4)
+        local v5 = v2[1][3][v3]
+        local v6 = v5
+        if v5 then
+            v6 = v5[v4]
+        end
+        return v6
+    end
+end
+local function _w584(v1, v2)
+    return function()
+        local v3, v4, v5
+        if not (v2[1][3] or os.clock() < v2[3][3]) then
+            v3 = os.clock() + 8
+            v2[3][3], v3, v4 = v3, v2[2][3], "SellValue"
+            v3, v5 = v3.FindFirstChild, v3
+            v3 = {[1] = 3, [3] = v3(v5, "SellValue")}
+            v3[2] = v3
+            v5 = v3[3]
+            if v5 then
+                v4 = v3[3]
+                v5 = v3[3].IsA(v4, "ModuleScript")
+            end
+            if v5 then
+                v4 = v1:Kl({v3, v2[1]})
+                task.spawn(v4)
+            end
+            return
+        end
+    end
+end
+local function _w585(v1, v2)
+    return function(v3, v4, v5)
+        v5 = {[1] = 3, [3] = v5}
+        v5[2] = v5
+        local v6 = v2[1][3]
+        v6.YieldUIPaint()
+        local v7, v8
+        v6, v7, v8 = v3, v4, v6.boxFor
+        v8 = {[1] = 3, [3] = v8(v6, v7)}
+        v8[2] = v8
+        if v8[3] then
+            v6, v7 = pcall(v1:Gn({v8, v5}))
+            v2[1][3].notifyError("Label", v7)
+        end
+        return nil
+    end
+end
+local function _w586(v1)
+    return function(v2)
+        v2 = tonumber(v2)
+        local v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18
+        if not v2 or false or v2 < 0 or v2 == math.huge then
+            return "Syncing"
+        else
+            v15 = {}
+            v11 = {}
+            v11[1], v11[2] = 1e+33, "Dc"
+            v8 = {}
+            v8[1], v8[2] = 1e+30, "No"
+            v7 = {}
+            v7[1], v7[2] = 1e+27, "Oc"
+            v16 = {}
+            v16[1], v16[2] = 1e+24, "Sp"
+            v6 = {}
+            v6[1], v6[2] = 1e+21, "Sx"
+            v17 = {}
+            v17[1], v17[2] = 1000000000000000000, "Qi"
+            v18 = {}
+            v18[1], v18[2] = 1000000000000000, "Qa"
+            v3 = {}
+            v3[1], v3[2] = 1000000000000, "T"
+            v9 = {}
+            v9[1], v9[2] = 1000000000, "B"
+            v4 = {}
+            v4[1], v4[2] = 1000000, "M"
+            v10 = {}
+            v10[1], v10[2] = 1000, "K"
+            v15[1], v15[2], v15[3], v15[4], v15[5], v15[6], v15[7], v15[8], v15[9], v15[10], v15[11] = v11, v8, v7, v16, v6, v17, v18, v3, v9, v4, v10
+            v14, v5, v12 = ipairs(v15)
+            v14, v5, v12 = v1.g(v14, v5, v12)
+            v15, v13 = v14(v5, v12)
+            v12 = v15
+            if v12 ~= nil then
+                while true do
+                    if v2 < v13[1] then
+                        v15, v13 = v14(v5, v12)
+                        v12 = v15
+                        if v12 ~= nil then
+                            continue
+                        end
+                        v14 = string.format("%.2f", v2):gsub("0+$", "")
+                        v15, v14, v5, v12 = "", v14.gsub, v14, "%.$"
+                        return v14(v5, "%.$", "")
+                    end
+                    break
+                end
+                v8 = string.format("%.2f", v2 / v13[1]):gsub("0+$", "")
+                v16, v7, v6, v8 = "%.$", v8, "", v8.gsub
+                return v8(v7, "%.$", "") .. v13[2]
+            end
+        end
+    end
+end
+local function _w587(v1)
+    return function(v2)
+    end
+end
+local function _w588(v1)
+    return function(v2)
+        return v2 ~= nil and v2 ~= "" and v2 ~= false and v2 ~= 0
+    end
+end
+local function _w589(v1, v2)
+    return function(v3)
+        local h, f
+        local v4, v5, v6, v7, v8, v9, v10, v11
+        if not v3 then
+            return false
+        else
+            v9 = v2[1][3].CarryCapture
+            if not (v9 and v9.Position and v9.At) then
+                return false
+            else
+                v11 = v3.GetAttribute
+                v11 = v1.h(v11(v3, "Weight"))
+                v5 = tonumber(v1.i(v11))
+                v8 = nil
+                v7 = 0
+                v11 = v9.EggName
+                v4, v10, f = ipairs(v2[1][3].RecentWorldEggRemoved)
+                v4, v10, f = v1.g(v4, v10, f)
+                for f, h in v4, v10, f do
+                    if h.Position and h.At and math.abs(h.At - v9.At) <= 2.5 and (h.Position - v9.Position).Magnitude <= 18 and not v11 and not v5 then
+                        v8, v7 = h, v7 + 1
+                    end
+                end
+                if v7 == 1 and v8 and v8.DipVerified then
+                    v9.DipVerified = true
+                    v9.EggName = v8.Name
+                    v10 = v2[1][3]
+                    v10, f, v4 = tostring, v3.Name, v10.VolcanoDippedCarryUIDs
+                    v4[v10(f)] = true
+                    v4, v10, v6, h, f = v2[1][3].TraceRideDrop, "DIP_REPICK_VERIFIED", v8.Name, tostring, "source=manual-unique-world-removal egg="
+                    v4("DIP_REPICK_VERIFIED", "source=manual-unique-world-removal egg=" .. h(v6) .. " uuid=" .. tostring(v3.Name))
+                    return true
+                else
+                    return false
+                end
+            end
+        end
+    end
+end
+local function _w590(v1, v2)
+    return function(v3)
+        v2[1][3] = v3
+    end
+end
+local function _w591(v1)
+    return function(v2)
+        local v3, v4
+        v3, v4 = tostring(v2 or ""):gsub("<.->", ""):gsub(",", ""):match("(%d+%.?%d*)%s*([KMBTQa]*)")
+        local v5, match2
+        if not v3 then
+            return nil
+        else
+            v5 = ({
+                K = 1000,
+                M = 1000000,
+                B = 1000000000,
+                T = 1000000000000,
+                Qa = 1000000000000000,
+            })[v4] or 1
+            match2 = v3:match("%.(%d+)")
+            return (tonumber(v3) or 0) * v5 + v5 / 10 ^ (match2 and #match2 or 0)
+        end
+    end
+end
+local function _w592(v1, v2)
+    return function()
+        if not v2[1][3] then
+            v2[3][3].EnsureFolders()
+        end
+    end
+end
+local function _w593(v1, v2)
+    return function()
+        local d, _
+        local v3, v4, v5, v6, getState, v7
+        if not v2[1][3] then
+            return
+        else
+            v2[3][3].IsFastRideMounted()
+            v6 = v2[2][3].Character
+            v5 = {[1] = 3, [3] = v6 and v6:FindFirstChildOfClass("Humanoid")}
+            v5[2] = v5
+            v3 = v6 and v6:FindFirstChild("HumanoidRootPart")
+            if not (not v5[3] or not v3 or v5[3].Health <= 0) then
+                if v2[3][3].LastHum ~= v5[3] then
+                    v2[3][3].LastHum = v5[3]
+                    getState, v4, v7 = ipairs(v2[3][3].NoFallStates)
+                    getState, v4, v7 = v1.g(getState, v4, v7)
+                    for _, d in getState, v4, v7 do
+                        d = {[1] = 3, [3] = d}
+                        d[2] = d
+                        pcall(v1:Np({v5, d}))
+                    end
+                end
+                v4 = v5[3]
+                getState = v5[3].GetState(v4)
+                if getState == Enum.HumanoidStateType.FallingDown or getState == Enum.HumanoidStateType.Ragdoll or getState == Enum.HumanoidStateType.PlatformStanding then
+                    v5[3].PlatformStand = false
+                    _, v7, v4 = Enum.HumanoidStateType.GettingUp, v5[3], v5[3].ChangeState
+                    v4(v7, _)
+                end
+                if v3.CFrame.UpVector.Y < 0.9 then
+                    v3.AssemblyAngularVelocity = Vector3.zero
+                    v7 = v3.Position
+                    v3.CFrame = v2[3][3].UprightCFrame(v7)
+                end
+                return
+            end
+        end
+    end
+end
+local function _w594(v1, v2)
+    return function()
+        local _, n
+        local v3, v4, v5, v6, v7, v8, v9, v10, v11, v12
+        while true do
+            if v2[1][3] then
+                type(v2[6][3])
+                v11 = {[1] = 3, [3] = v2[6][3]}
+                v11[2] = v11
+                if #v11[3] > 0 or v2[5][3].PetHasExplicitFilter("Favorite") then
+                    v9 = {[1] = 3, [3] = {}}
+                    v9[2] = v9
+                    v5, v6, v7 = ipairs(v11[3])
+                    v5, v6, v7 = v1.g(v5, v6, v7)
+                    for _, n in v5, v6, v7 do
+                        v9[3][string.lower(n)] = true
+                    end
+                    v5 = {[1] = 3, [3] = v5}
+                    v5[2] = v5
+                    v5[3] = v1:bo()
+                    v7 = v1:ao({v2[4], v2[5], v2[2], v5, v9, v11})()
+                    if #v7 > 0 then
+                        v10, n, v8 = ipairs(v7)
+                        v10, n, v8 = v1.g(v10, n, v8)
+                        v12, v4 = v10(n, v8)
+                        v8 = v12
+                        if v8 ~= nil then
+                            while true do
+                                v4 = {[1] = 3, [3] = v4}
+                                v4[2] = v4
+                                if not v2[1][3] then
+                                    break
+                                else
+                                    pcall(v1:_o({v2[3], v4}))
+                                    v3, _ = task.wait, 0.3
+                                    v3(0.3)
+                                    v12, v4 = v10(n, v8)
+                                    v8 = v12
+                                    if v8 ~= nil then
+                                        continue
+                                    end
+                                end
+                                break
+                            end
+                        end
+                    end
+                end
+                task.wait(10)
+                continue
+            end
+            break
+        end
+    end
+end
+local function _w595(v1, v2)
+    return function()
+        local gameData2 = v2[1][3]:FindFirstChild("GameData")
+        local v3 = gameData2
+        if gameData2 then
+            v3 = gameData2:FindFirstChild("Halloween")
+        end
+        local v4 = v3
+        if v3 then
+            v4 = v3:IsA("ModuleScript")
+        end
+        local v5, v6, v7, v8
+        if v4 then
+            v4, v6 = pcall(require, v3)
+            if v4 and type(v6) == "table" then
+                v8 = v6.Eggs
+                v5 = type(v8) == "table" and v8["Halloween Egg"]
+                if type(v5) == "table" then
+                    v7 = tonumber(v5.Price or v5.CandyPrice or v5.Cost)
+                    if v7 and v7 > 0 then
+                        v2[2][3].EventHalloweenEggPrice = v7
+                        return v7
+                    end
+                end
+            end
+        end
+        v4 = tonumber(v2[2][3].EventHalloweenEggPrice)
+        v6 = v4
+        if v4 then
+            v6 = v4 > 0
+        end
+        if v6 then
+            v6 = v4
+        end
+        if not v6 then
+            v6 = nil
+        end
+        return v6
+    end
+end
+local function _w596(v1, v2)
+    return function(v3, v4, v5)
+        local _, q, I
+        local v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23
+        if not v4 then
+            return false, "no-delivery-monitor"
+        else
+            v9 = os.clock()
+            v10 = v1:Eo({v2[1]})
+            if v2[1][3].Alive and v2[2][3] and os.clock() - v9 < (v5 or 4.5) then
+                v13 = nil
+                v8, v16, _ = pairs(v2[1][3].VisibleDeliveryFailureNotices())
+                v8, v16, _ = v1.g(v8, v16, _)
+                v12, v19 = v8(v16, _)
+                _ = v12
+                if _ ~= nil then
+                    while true do
+                        if v4.OldFailureNotices[v12] ~= v19 then
+                            break
+                        else
+                            v12, v19 = v8(v16, _)
+                            _ = v12
+                            if _ ~= nil then
+                                continue
+                            end
+                        end
+                        return false, "server-rejection:" .. tostring(nil)
+                    end
+                    v13 = v19
+                end
+                return false, "server-rejection:" .. tostring(v13)
+            end
+            v13, v18 = v4:Check()
+            if v13 then
+                _ = v18.Type or "receipt"
+                return true, _ .. ":" .. tostring(v18.Name)
+            else
+                v8 = {}
+                _ = v2[1][3].InventoryEggContainers
+                _ = v1.h(_())
+                v16, _, v12 = ipairs(v1.i(_))
+                v16, _, v12 = v1.g(v16, _, v12)
+                for _, q in v16, _, v12 do
+                    v23 = q.GetChildren
+                    v23 = v1.h(v23(q))
+                    v14, v23, v7 = ipairs(v1.i(v23))
+                    v14, v23, v7 = v1.g(v14, v23, v7)
+                    for _, I in v14, v23, v7 do
+                        if I:IsA("Tool") and I:GetAttribute("EggInventoryId") ~= nil then
+                            v8[#v8 + 1] = tostring(I.Name)
+                        end
+                    end
+                end
+                v14 = v2[1][3].HasCarriedEgg
+                v14 = table.pack(v14())
+                q = tostring(table.unpack(v14, 1, v14.n))
+                v11 = tostring(true)
+                v20 = tostring(v4.BreakWasSeen)
+                v22 = tostring(v10())
+                v17 = v2[1][3].CountInventoryEgg
+                v17 = table.pack(v17(v3))
+                v15 = tostring(table.unpack(v17, 1, v17.n))
+                v21 = table.concat
+                v6 = math.min
+                v6 = table.pack(v6(5, #v8))
+                return false, "no-home-clear-or-new-inventory-receipt; basket=" .. q .. "; warning=" .. v11 .. "; sawWarning=" .. v20 .. "; atOwnRanch=" .. v22 .. "; afterCount=" .. v15 .. "; inventorySample=" .. v21(v8, ",", 1, table.unpack(v6, 1, v6.n))
+            end
+        end
+    end
+end
+local function _w597(v1)
+    return function(v2)
+        local v3, v4, v5, v6, v7, v8
+        if v2:IsA("BasePart") then
+            return v2
+        else
+            v2:IsA("Model")
+            v8 = {}
+            v3 = "PrimaryPart"
+            v8[1], v8[2], v8[3], v8[4], v8[5], v8[6] = "RootPart", "PrimaryPart", "Handle", "Egg", "Main", "Hitbox"
+            v6, v7, v4 = ipairs(v8)
+            v6, v7, v4 = v1.g(v6, v7, v4)
+            v8, v5 = v6(v7, v4)
+            v4 = v8
+            if v4 ~= nil then
+                while true do
+                    v3 = v2:FindFirstChild(v5, true)
+                    if not (v3 and v3:IsA("BasePart")) then
+                        v8, v5 = v6(v7, v4)
+                        v4 = v8
+                        if v4 ~= nil then
+                            continue
+                        end
+                        v6 = v2.FindFirstChildWhichIsA
+                        v6 = table.pack(v6(v2, "BasePart", true))
+                        return table.unpack(v6, 1, v6.n)
+                    end
+                    break
+                end
+                return v3
+            end
+            v6 = v2.FindFirstChildWhichIsA
+            v6 = table.pack(v6(v2, "BasePart", true))
+            return table.unpack(v6, 1, v6.n)
+        end
+    end
+end
+local function _w598(v1)
+    return function()
+        local candyDropOff = workspace:FindFirstChild("CandyDropOff")
+        local v2 = candyDropOff
+        if candyDropOff then
+            v2 = candyDropOff:FindFirstChild("Pad")
+        end
+        local v3 = v2
+        if v2 then
+            v3 = v2:IsA("BasePart")
+        end
+        if v3 then
+            v3 = v2
+        end
+        if not v3 then
+            v3 = nil
+        end
+        return v3
+    end
+end
+local function _w599(v1)
+    return function(v2)
+        local v3, v4, v5, v6, v7, v8, v9, v10, v11, v12
+        if (tonumber(v2) or 0) == math.huge then
+            return "0"
+        else
+            v3 = {}
+            v9 = {}
+            v3[1], v3[2] = 1000000000000000, "Qa"
+            v8 = {}
+            v8[1], v8[2] = 1000000000000, "T"
+            v12 = {}
+            v12[1], v12[2] = 1000000000, "B"
+            v6 = {}
+            v6[1], v6[2] = 1000000, "M"
+            v5 = {}
+            v5[1], v5[2] = 1000, "K"
+            v9[1], v9[2], v9[3], v9[4], v9[5] = v3, v8, v12, v6, v5
+            v11, v10, v7 = ipairs(v9)
+            v11, v10, v7 = v1.g(v11, v10, v7)
+            v9, v4 = v11(v10, v7)
+            v7 = v9
+            if v7 ~= nil then
+                while true do
+                    if math.abs(v2) < v4[1] then
+                        v9, v4 = v11(v10, v7)
+                        v7 = v9
+                        if v7 ~= nil then
+                            continue
+                        end
+                        v11 = string.format("%.2f", v2):gsub("0+$", "")
+                        v10, v7, v11, v9 = v11, "%.$", v11.gsub, ""
+                        return v11(v10, "%.$", "")
+                    end
+                    break
+                end
+                v6 = v4[1]
+                v8 = string.format("%.2f", v2 / v6):gsub("0+$", "")
+                v5, v6, v8, v12 = "", "%.$", v8.gsub, v8
+                return v8(v12, "%.$", "") .. v4[2]
+            end
+        end
+    end
+end
+local function _w600(v1, v2)
+    return function(v3)
+        local v4 = v2[1][3]
+        local v5, v6, v7, v8
+        v5, v7, v8, v6, v4 = v2[1][3], v4.EggMatchesFilter, v2[3][3], v2[5][3], v3
+        local v9 = v5.HatchKGRule
+        local v10, v11
+        v10, v11, v5 = v2[4][3], v2[2][3], v5.HatchKGThreshold
+        v7 = table.pack(v7(v4, v8, v6, v9, v5, v10, v11))
+        return table.unpack(v7, 1, v7.n)
+    end
+end
+local function _w601(v1, v2)
+    return function()
+        local v3 = v2[2][3].WaterWaveSize
+        v2[1][3].FPSState.Original.WaterWaveSize = v3
+    end
+end
+local function _w602(v1, v2)
+    return function(v3, source)
+        local v4, v5, v6, v7, inventoryEggType, v8
+        if not (v2[1][3].Closed or not v3 or not v3:IsA("Tool")) then
+            v4 = v2[3][3](v3)
+            inventoryEggType = v2[2][3].InventoryEggType(v3)
+            v8 = not v2[1][3].BeforeTools[v3]
+            if (v4 and not v2[1][3].BeforeIDs[v4] or v8) and inventoryEggType == v2[4][3] then
+                v6 = v4
+                if not v2[1][3].NewReceipts[v6] then
+                    v5 = {}
+                    v7 = v2[1][3].NewReceipts
+                    v5.Source = source
+                    v5.Id = v4
+                    v5.Name = tostring(v3.Name)
+                    v5.EggType = inventoryEggType
+                    v5.At = os.clock()
+                    v5.Type = v4 and "new-egg-id" or "new-matching-tool"
+                    v7[v6] = v5
+                end
+            end
+            return
+        end
+    end
+end
+local function _w603(v1)
+    return function(v2)
+        v2 = {[1] = 3, [3] = v2}
+        v2[2] = v2
+        local v3
+        if not (v2[3] and v2[3].Parent) then
+            return nil
+        else
+            v3 = v2[3]
+            v2[3].IsA(v3, "BasePart")
+            v3 = v2[3]
+            v2[3].IsA(v3, "Model")
+            v2[3].FindFirstChildWhichIsA(v2[3], "BasePart", true)
+            v3 = v2[3].GetAttribute(v2[3], "Position")
+            if typeof(v3) == "Vector3" then
+                return v3
+            else
+                return nil
+            end
+        end
+    end
+end
+local function _w604(v1, v2)
+    return function()
+        v2[1][3].FastRideState.PhaseActive = false
+    end
+end
+local function _w605(v1, v2)
+    return function()
+        local savedData3 = v2[1][3]:FindFirstChild("SavedData")
+        local v3 = savedData3
+        if savedData3 then
+            v3 = savedData3:FindFirstChild("HasFinishedTutorial")
+        end
+        return v3 ~= nil and v3.Value == true
+    end
+end
+local function _w606(v1, v2)
+    return function(v3, v4)
+        local connect = v3:Connect(v4)
+        local v5 = v2[1][3].Conns
+        table.insert(v5, connect)
+        return connect
+    end
+end
+local function _w607(v1, v2)
+    return function()
+        local v3 = v2[2][3].FPSState.Original.ShadowSoftness
+        v2[1][3].ShadowSoftness = v3
+    end
+end
+local function _w608(v1, v2)
+    return function(v3, v4)
+        local v5 = v3
+        if v3 then
+            v5 = v3.Parent
+        end
+        if v5 then
+            v5 = v2[1][3].Alive
+        end
+        if v5 then
+            v5 = v2[3][3]
+        end
+        if v5 then
+            v5 = v2[1][3].HasCarriedEgg()
+        end
+        local v6, v7, v8, v9, v10, v11
+        if not v5 then
+            return false
+        else
+            v5 = v2[1][3]
+            v5, v10, v9 = v2[2][3], v5.setLabel, "🟡 Leaving volcanic lair"
+            v10(v5, "🟡 Leaving volcanic lair")
+            v5 = v2[1][3]
+            v5.StopFarmHover()
+            v3.CFrame = v5.VOLCANO_2_CFRAME
+            task.wait(0.2)
+            if v2[1][3].Alive and v2[3][3] and v3.Parent then
+                v2[1][3].HasCarriedEgg()
+            end
+            v5 = v2[1][3]
+            v10, v5 = v5.TweenToCFrame, v5.VOLCANO_1_CFRAME
+            v10(v5)
+            if v2[1][3].Alive and v2[3][3] and v3.Parent then
+                v2[1][3].HasCarriedEgg()
+            end
+            v7 = v2[1][3].VOLCANO_1_CFRAME.Position
+            if (v3.Position - v7).Magnitude > 6 then
+                v9 = v2[1][3]
+                v7, v9, v8, v5, v6, v11 = tostring, "VOLCANIC_LAIR_EXIT_FAILED", v2[1][3], v9.TraceRideDrop, v3.Position, "distance="
+                v5("VOLCANIC_LAIR_EXIT_FAILED", "distance=" .. v7((v6 - v8.VOLCANO_1_CFRAME.Position).Magnitude))
+                v9 = v2[1][3]
+                v11, v9, v5 = "🔴 Volcanic lair exit incomplete", v2[2][3], v9.setLabel
+                v5(v9, "🔴 Volcanic lair exit incomplete")
+                return false
+            else
+                v11 = v2[1][3].VOLCANO_1_CFRAME
+                v2[1][3].StartFarmHover(v3, v11, "VOLCANO_1 exit")
+                task.wait(0.5)
+                return true
+            end
+        end
+    end
+end
+local function _w609(v1, v2)
+    return function(v3)
+        v3 = v3 == true
+        local v4, v5
+        if v3 then
+            if not v2[1][3].FPSState.Enabled then
+                v4 = v2[1][3]
+                v4.SaveFPSOriginals()
+                v5, v4 = v4.FPSState, true
+                v5.Enabled = true
+                v5 = v2[1][3]
+                v5.FPSGeneration = v5.FPSGeneration + 1
+                v4 = v5
+                v5.ApplyGlobalFPSSettings()
+                v4.ConnectFPSWatcher()
+                v4.StartBackgroundOptimizer()
+            end
+            return
+        elseif not v2[1][3].FPSState.Enabled then
+            return
+        else
+            v2[1][3].FPSState.Enabled = false
+            v5 = v2[1][3]
+            v5.FPSGeneration = v5.FPSGeneration + 1
+            v5 = v5.FPSConnection
+            v4 = v1:Xp({v2[1]})
+            task.spawn(v4)
+            return
+        end
+    end
+end
+local function _w610(v1, v2)
+    return function()
+        local a, _, p
+        local v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14
+        if v2[1][3] then
+            return true
+        else
+            v7 = {[1] = 3, [3] = v2[3][3].REZETitleLabel}
+            v7[2] = v7
+            v3 = {
+                [1] = 3,
+                [3] = v7[3] and v7[3].FindFirstAncestorOfClass(v7[3], "ScreenGui"),
+            }
+            v3[2] = v3
+            if not v3[3] then
+                return false
+            else
+                v5, v2[1][3] = {}, true
+                v5, v13 = {}, v5
+                v13 = {[1] = 3, [3] = v13}
+                v13[2] = v13
+                v8 = {[1] = 3, [3] = v5}
+                v8[2] = v8
+                v5, v11, v9 = ipairs(v2[2][3])
+                v5, v11, v9 = v1.g(v5, v11, v9)
+                v12, v14 = v5(v11, v9)
+                v9 = v12
+                if v9 ~= nil then
+                    while true do
+                        v13[3][v14.Name] = true
+                        v6, v4, _ = ipairs(v14.Groups)
+                        v6, v4, _ = v1.g(v6, v4, _)
+                        for _, p in v6, v4, _ do
+                            v8[3][p[1]] = true
+                        end
+                        v12, v14 = v5(v11, v9)
+                        v9 = v12
+                        if v9 == nil then
+                            break
+                        end
+                    end
+                end
+                v12 = {}
+                v5 = {[1] = 3, [3] = v12}
+                v5[2] = v5
+                v11 = {[1] = 3, [3] = 1}
+                v11[2] = v11
+                v9 = {[1] = 3, [3] = false}
+                v9[2] = v9
+                v12 = {[1] = 3, [3] = v12}
+                v12[2] = v12
+                v12[3] = v1:A()
+                v14 = {[1] = 3, [3] = v14}
+                v14[2] = v14
+                v14[3] = v1:y({v12, v13, v7, v8})
+                v6 = {[1] = 3, [3] = v6}
+                v6[2] = v6
+                v6[3] = v1:B({v3, v9, v6, v14, v5, v11})
+                _ = v3[3].DescendantAdded
+                _:Connect(v1:z({v12, v9, v5, v6}))
+                p = v3[3]
+                v10 = v3[3].GetDescendants
+                v10 = v1.h(v10(p))
+                _, v10, p = ipairs(v1.i(v10))
+                _, v10, p = v1.g(_, v10, p)
+                for _, a in _, v10, p do
+                    if v12[3](a) then
+                        v5[3][#v5[3] + 1] = a
+                    end
+                end
+                _ = #v5[3] > 0 and not v9[3]
+                if _ then
+                    v10, v9[3] = task, true
+                    v10, _ = v6[3], v10.defer
+                    _(v10)
+                end
+                v10, _ = v2[4][3], task.defer
+                _(v10)
+                return true
+            end
+        end
+    end
+end
+local function _w611(v1, v2)
+    return function()
+        v2[1][3].EventScanReplica:Destroy()
+    end
+end
+local function _w613(v1, v2)
+    return function(v3)
+        local v4 = v2[1][3]
+        local v5 = type(v4[v3]) == "table" and v2[1][3][v3] or {}
+        local v6, v7
+        v6, v4, v7 = pairs(v5)
+        v6, v4, v7 = v1.g(v6, v4, v7)
+        local v8, v9
+        v9, v8 = v6(v4, v7)
+        local v10 = {}
+        if v9 ~= nil then
+            while true do
+                if type(v9) == "string" and type(v8) == "table" then
+                    v10[#v10 + 1] = v9
+                end
+                v9, v8 = v6(v4, v7)
+                v7 = v9
+                if v7 == nil then
+                    break
+                end
+            end
+        end
+        v2[2][3].SortNamesByRarity(v10, v5)
+        return v10
+    end
+end
+local function _w614(v1, v2)
+    return function()
+        local v3 = v2[2][3]
+        v2[1][3][v2[3][3]] = v3
+    end
+end
+local function _w615(v1, v2)
+    return function(v3)
+        v3 = tostring(v3 or "")
+        local v4, v5, v6, v7
+        if v3 == "" or v3 == "None" then
+            return 1
+        else
+            v4 = v2[1][3].InventoryESPState.Mutations
+            if type(v4.FactorFor) ~= "function" then
+                v2[1][3].diagnose("esp.mutation", "FactorFor unavailable")
+                return nil
+            else
+                v7, v5 = pcall(v4.FactorFor, v3)
+                v6 = v7 and tonumber(v5) or nil
+                v5 = v6
+                v6 = not v6 or false or v5 == math.huge
+                if v6 then
+                    v2[1][3].diagnose("esp.mutation", v3 .. ": factor unavailable")
+                    return nil
+                else
+                    return v5
+                end
+            end
+        end
+    end
+end
+local function _w616(v1, v2)
+    return function()
+        v2[1][3].WaterReflectance = 0
+    end
+end
+local function _w617(v1, v2)
+    return function(v3)
+        v2[1][3].SetAutoExecute(v3)
+    end
+end
+local function _w618(v1, v2)
+    return function()
+        v2[1][3]:InputHoldBegin()
+        local v3 = task.wait
+        local v4 = v2[1][3]
+        local v5 = math.max
+        local v6 = tonumber(v4.HoldDuration) or 0
+        local pack = table.pack(v5(0.05, v6))
+        v3(table.unpack(pack, 1, pack.n))
+        v2[1][3]:InputHoldEnd()
+    end
+end
+local function _w619(v1, v2)
+    return function(v3, v4)
+        local v5 = type(v2[1][3][v4]) == "table" and v2[1][3][v4] or {}
+        local v6, v7, v8
+        v7, v6, v8 = ipairs(v3)
+        v7, v6, v8 = v1.g(v7, v6, v8)
+        local v9, v10
+        v9, v10 = v7(v6, v8)
+        local v11 = {}
+        local v12, v13
+        if v9 ~= nil then
+            while true do
+                v12 = v5[v10]
+                if type(v12) == "table" then
+                    v13 = {Name = v10}
+                    v13.Price = tonumber(v12.Price) or 0
+                    v13.Rarity = tostring(v12.Rarity or "Unknown")
+                    v11[#v11 + 1] = v13
+                end
+                v9, v10 = v7(v6, v8)
+                v8 = v9
+                if v8 == nil then
+                    break
+                end
+            end
+        end
+        v8 = v1:Wp({v2[2]})
+        table.sort(v11, v8)
+        v7 = {}
+        v6, v8, v9 = ipairs(v11)
+        v6, v8, v9 = v1.g(v6, v8, v9)
+        v10, v12 = v6(v8, v9)
+        local v14, v15, v16
+        if v10 ~= nil then
+            while true do
+                v13 = {}
+                v16 = v12.Rarity
+                v14 = v2[2][3].formatCompactNumber
+                v15 = v12.Price
+                v13[1], v13[2] = v12.Name, v16 .. " • $" .. v14(v15)
+                v7[#v7 + 1] = v13
+                v10, v12 = v6(v8, v9)
+                v9 = v10
+                if v9 == nil then
+                    break
+                end
+            end
+        end
+        return v7
+    end
+end
+local function _w620(v1, v2)
+    return function(v3)
+        local v4
+        v4, v2[1][3] = v2[3][3], v3
+        if v4.SyncNativeAutobuy then
+            v2[3][3].SyncNativeAutobuy("Gears", v3, false)
+        end
+        v4 = v2[3][3]
+        local v5, v6
+        v6, v4, v5 = v3, v2[2][3], v4.setLabel
+        if v6 then
+            v6 = "🟡 Waiting for gear stock"
+        end
+        if not v6 then
+            v6 = "🔴 Auto Buy Gear Off"
+        end
+        v5(v4, v6)
+    end
+end
+local function _w621(v1, v2)
+    return function(v3)
+        v3 = {[1] = 3, [3] = v3}
+        v3[2] = v3
+        local v4, v5
+        v4, v5 = pcall(v1:_q({v2[1], v3}))
+        if not v4 then
+            warn("[REZEHUB] 3D rendering unavailable: " .. tostring(v5))
+        end
+        return v4
+    end
+end
+local function _w622(v1, v2)
+    return function()
+        local plots3 = workspace:FindFirstChild("Plots")
+        local owner2, v3, userId, v4, v5, v6, ownerUserId, v7
+        if plots3 then
+            v3 = plots3.GetChildren
+            v3 = v1.h(v3(plots3))
+            v4, v3, v5 = ipairs(v1.i(v3))
+            v4, v3, v5 = v1.g(v4, v3, v5)
+            v6, v7 = v4(v3, v5)
+            v5 = v6
+            if v5 ~= nil then
+                while true do
+                    owner2 = v7:GetAttribute("Owner")
+                    ownerUserId = v7:GetAttribute("OwnerUserId")
+                    userId = v7:GetAttribute("UserId")
+                    if not (v7:GetAttribute("NestsOwnerLoaded") == v2[1][3].UserId or owner2 == v2[1][3].Name or owner2 == v2[1][3].UserId or ownerUserId == v2[1][3].UserId or userId == v2[1][3].UserId) then
+                        v6, v7 = v4(v3, v5)
+                        v5 = v6
+                        if v5 ~= nil then
+                            continue
+                        end
+                        return nil
+                    end
+                    break
+                end
+                return v7
+            end
+        end
+        return nil
+    end
+end
+local function _w623(v1, v2)
+    return function()
+        os.clock()
+        local v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15
+        while true do
+            if v2[1][3].Alive then
+                v5 = os.clock()
+                v14, v7, v8 = pcall(v2[6][3], v5)
+                if v14 then
+                    v13, v15 = pcall(v2[5][3], v7, v8)
+                    if v13 and v15 ~= v2[1][3].EggTrackerCycle.LastText then
+                        v2[1][3].EggTrackerCycle.LastText = v15
+                        v2[4][3]()
+                        v2[2][3](v15)
+                    end
+                else
+                    warn("[REZEHUB][Eggs Tracker] " .. tostring(v7))
+                end
+                if v2[1][3].StatsUI then
+                    v2[1][3].StatsUI.Update()
+                end
+                v13 = v2[1][3].SessionUI
+                if v13 and not next(v13.Cards) then
+                    v13.Mount()
+                end
+                v10 = v2[7][3]
+                v4 = {}
+                if v10 then
+                    v10 = "RUNNING"
+                end
+                if not v10 then
+                    v10 = "OFF"
+                end
+                v4.Status = v10
+                v10 = v13
+                if v10 then
+                    v3 = v5 - v13.StartedAt
+                    v10 = v13.Duration(v3)
+                end
+                if not v10 then
+                    v10 = "—"
+                end
+                v4.Session = v10
+                v10 = v13
+                if v10 then
+                    v3 = v13.GetFPS
+                    v3 = table.pack(v3())
+                    v10 = tostring(table.unpack(v3, 1, v3.n))
+                end
+                if not v10 then
+                    v10 = "—"
+                end
+                v4.FPS = v10
+                v4.Ping = "—"
+                v4.Pickups = tostring(v2[1][3].SessionPickups or 0)
+                v4.Attempts = tostring(v2[1][3].SessionAttempts or 0)
+                v10 = v2[1][3].SessionLastPickup
+                if v10 then
+                    v11 = v2[1][3]
+                    v10 = string.format("%.1fs", v11.SessionLastPickup)
+                end
+                if not v10 then
+                    v10 = "—"
+                end
+                v4["Last Pickup"] = v10
+                v4.Average = v2[1][3].SessionAverage and string.format("%.1fs", v2[1][3].SessionAverage) or "—"
+                v10, v4, v15 = v1:Hp({v2[3]}), pcall, v4
+                v4, v10 = v4(v10)
+                if v4 and tonumber(v10) then
+                    v3 = string.format
+                    v12 = math.floor
+                    v12 = table.pack(v12(v10 + 0.5))
+                    v15.Ping = v3("%d ms", table.unpack(v12, 1, v12.n))
+                end
+                if v13 then
+                    v3, v11, v12 = pairs(v15)
+                    v3, v11, v12 = v1.g(v3, v11, v12)
+                    v6, v9 = v3(v11, v12)
+                    v12 = v6
+                    if v12 ~= nil then
+                        while true do
+                            if v13.Cards[v6] and v13.Cards[v6].Text ~= v9 then
+                                v13.Cards[v6].Text = v9
+                            end
+                            v6, v9 = v3(v11, v12)
+                            v12 = v6
+                            if v12 == nil then
+                                break
+                            end
+                        end
+                    end
+                    v13.UpdateAccount()
+                end
+                task.wait(1.2)
+                continue
+            end
+            break
+        end
+    end
+end
+local function _w624(v1, v2)
+    return function(v3, v4, cFrame, v5)
+        local h, _
+        local v6, v7, v8, v9, v10, v11, v12, getInstantOutsideRanchPOV, v13, v14, v15, v16
+        if not v2[1][3].InstantCycleCancelled() then
+            v2[1][3].EnsureInstantOnFoot()
+            v9 = v2[1][3].Alive and v2[3][3] and v2[1][3].HasCarriedEgg() and typeof(cFrame) == "CFrame" and v4
+            v9 = v2[1][3]
+            v9.StopFarmHover()
+            v14, v9 = v9, false
+            v14.InstantHomeReturnArmed = false
+            v14.InstantDeliveryConfirmed = false
+            v14, v9 = v14.GetInstantOutsideRanchPOV, v5
+            v14 = v14(v9)
+            if not v14 then
+                v11 = v2[5][3]
+                v2[1][3].setLabel(v11, "🔴 Instant • Ranch return unavailable")
+            else
+                v12 = v3 == "Volcanic Egg" and v2[1][3].InstantVisualEgg or nil
+                v2[1][3].StartInstantCameraProxy(v14, v12)
+                v2[1][3].InstantCycleCancelled()
+                v2[4][3].Heartbeat:Wait()
+                h, v11, v8, v16, v9 = v3, "INSTANT_POV_OUTSIDE_RANCH_ARMED", tostring, "egg=", v2[1][3].TraceRideDrop
+                v9("INSTANT_POV_OUTSIDE_RANCH_ARMED", "egg=" .. v8(h) .. " source=" .. tostring(v5) .. " position=" .. tostring(v14.Position))
+                v4.CFrame = cFrame
+                v2[1][3].TraceRideDrop("INSTANT_HIDDEN_DROP_TP", "egg=" .. tostring(v3))
+                v2[1][3].Stabilize()
+                task.wait(0.16)
+                v2[1][3].InstantCycleCancelled()
+                if v2[1][3].Alive and v2[3][3] then
+                    v2[1][3].HasCarriedEgg()
+                end
+                v9 = {}
+                if v2[1][3].RenderedEggs then
+                    v16 = v2[1][3].RenderedEggs
+                    v12, v16 = v16, v16.GetChildren
+                    v16 = v1.h(v16(v12))
+                    v11, v16, v12 = ipairs(v1.i(v16))
+                    v11, v16, v12 = v1.g(v11, v16, v12)
+                    for _, h in v11, v16, v12 do
+                        v9[h] = true
+                    end
+                end
+                v16 = v2[5][3]
+                v2[1][3].setLabel(v16, "🟡 Instant • Returning to ranch with egg")
+                _, v11, h, v16, v12 = v3, v2[1][3].TraceRideDrop, tostring, "INSTANT_DROP_REQUEST", "egg="
+                h = h(_)
+                v7 = v2[1][3].HasCarriedEgg
+                v7 = v1.h(v7())
+                v11("INSTANT_DROP_REQUEST", "egg=" .. h .. " basket=" .. tostring(v1.i(v7)))
+                v11 = v2[1][3]
+                v11.InstantExpectedBasketClear = "automatic-drop"
+                v11, v16 = v11.FireBasketDrop, v3
+                v11 = v11(v16)
+                if v11 then
+                    v2[1][3].WaitForBasketEmpty(2.3)
+                end
+                if v2[1][3].InstantExpectedBasketClear == "automatic-drop" then
+                    v2[1][3].InstantExpectedBasketClear = nil
+                end
+                if not v2[1][3].InstantCycleCancelled() then
+                    v8, _, v6, v12, h = "INSTANT_DROP_CLEARED", tostring, v3, v2[1][3].TraceRideDrop, "egg="
+                    v12("INSTANT_DROP_CLEARED", "egg=" .. _(v6))
+                    v12 = nil
+                    v8 = os.clock() + 3
+                    while true do
+                        h = v2[1][3].Alive and v2[3][3] and not v2[1][3].InstantCycleCancelled() and os.clock() < v8
+                        if h then
+                            _, v10, v6, h, v7 = v3, v9, v4, v2[1][3].FindDroppedEgg, cFrame.Position
+                            v12 = h(_, v6, v10, v7)
+                            if not v12 then
+                                _, h = 0.05, task.wait
+                                h(0.05)
+                                continue
+                            end
+                            break
+                        end
+                        break
+                    end
+                    if not v12 then
+                        h, _, v6 = v2[1][3].setLabel, v2[5][3], "🟠 Instant • Egg delivery not confirmed"
+                        h(_, "🟠 Instant • Egg delivery not confirmed")
+                    else
+                        _, h = v12, v2[1][3].GetEggPart
+                        h = h(_)
+                        _ = h and h.Position or cFrame.Position
+                        task.wait(0.4)
+                        if v2[1][3].HasCarriedEgg() or not (v2[1][3].Alive and v2[3][3] and v12.Parent) then
+                            v2[1][3].TraceRideDrop("INSTANT_DROP_HANDOFF_ABORT", "Basket refilled or egg removed")
+                        else
+                            v2[1][3].TraceRideDrop("INSTANT_DROP_READY", "egg=" .. tostring(v3))
+                            v10 = v2[5][3]
+                            v2[1][3].setLabel(v10, "🟡 Instant • Arriving at ranch • securing egg")
+                            v6 = 1
+                            while true do
+                                v15 = v2[1][3].Alive and v2[3][3] and v12.Parent
+                                if not (not v15 or v2[1][3].InstantCycleCancelled()) then
+                                    if v6 <= 1 then
+                                        v2[1][3].TraceRideDrop("INSTANT_DROP_PREHOME_SETTLE", "egg=" .. tostring(v3) .. " seconds=" .. string.format("%.2f", 0.34))
+                                        task.wait(0.34)
+                                        v2[1][3].HasCarriedEgg()
+                                        v2[1][3].InstantCycleCancelled()
+                                        v2[1][3].InstantPairAndVerify(v12, v3, _)
+                                        v2[1][3].HasCarriedEgg()
+                                        v6 = v6 + 1
+                                        if v6 <= 2 then
+                                            continue
+                                        end
+                                        break
+                                    end
+                                    getInstantOutsideRanchPOV = v2[1][3].GetInstantOutsideRanchPOV(v5)
+                                    if getInstantOutsideRanchPOV then
+                                        v2[1][3].StartInstantCameraProxy(getInstantOutsideRanchPOV)
+                                        v2[1][3].InstantHomeReturnArmed = false
+                                        v2[4][3].Heartbeat:Wait()
+                                        v2[1][3].InstantPOVReady()
+                                        v13 = Vector3.new
+                                        v4.CFrame = v2[1][3].UprightCFrame(_ + v13(0, 3, 0))
+                                        v2[1][3].Stabilize()
+                                        task.wait(0.12)
+                                        v2[1][3].TraceRideDrop("INSTANT_DROP_PREHOME_SETTLE", "egg=" .. tostring(v3) .. " seconds=" .. string.format("%.2f", 0.34))
+                                        task.wait(0.34)
+                                        v2[1][3].HasCarriedEgg()
+                                        v2[1][3].InstantCycleCancelled()
+                                        v2[1][3].InstantPairAndVerify(v12, v3, _)
+                                        v2[1][3].HasCarriedEgg()
+                                        v6 = v6 + 1
+                                        if v6 <= 2 then
+                                            continue
+                                        end
+                                        break
+                                    end
+                                    return false
+                                end
+                                break
+                            end
+                        end
+                    end
+                end
+            end
+        end
+        return false
+    end
+end
+local function _w625(v1, v2)
+    return function(v3, v4, v5)
+        local h
+        local autobuy = v2[1][3]:FindFirstChild("Autobuy")
+        local v6, v7, v8, v9, v10, v11
+        if not autobuy or not autobuy:IsA("RemoteEvent") then
+            if v4 then
+                v7 = v3 == "Food" and v2[5][3] or v2[4][3]
+                v2[6][3].setLabel(v7, "🔴 Native autobuy unavailable")
+            end
+            return false
+        else
+            v10 = v2[3][3]
+            v7 = {}
+            if v4 then
+                v6 = v2[6][3].normalizeSelection
+                v6 = v1.h(v6(v10))
+                v11, v6, v9 = ipairs(v1.i(v6))
+                v11, v6, v9 = v1.g(v11, v6, v9)
+                for v12, h in v11, v6, v9 do
+                    v7[tostring(h)] = true
+                end
+            end
+            v11 = v2[6][3].NativeBuyState.Applied[v3]
+            v6, v9, v8 = pairs(v11)
+            v6, v9, v8 = v1.g(v6, v9, v8)
+            for h in v6, v9, v8 do
+                if not v7[h] then
+                    pcall(autobuy.FireServer, autobuy, v3, h, false)
+                    v11[h] = nil
+                end
+            end
+            v6, v9, v8 = pairs(v7)
+            v6, v9, v8 = v1.g(v6, v9, v8)
+            for h in v6, v9, v8 do
+                if v5 or not v11[h] then
+                    pcall(autobuy.FireServer, autobuy, v3, h, true)
+                    v11[h] = true
+                end
+            end
+            v2[6][3].NativeBuyState.LastSync[v3] = os.clock()
+            return true
+        end
+    end
+end
+local function _w626(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        local v4 = false
+        if v3 then
+            v3 = v2[3][3].FindSelectedEgg
+        end
+        local v5
+        if v3 then
+            v3, v5 = pcall(v2[3][3].FindSelectedEgg)
+            v4 = v3 and v5 ~= nil
+        end
+        local v6, v7, v8, v9, v10, v11, v12
+        if v2[3][3].CandyBusy or v2[3][3].FarmBusy or v4 or v2[3][3].TaskOwner ~= nil or v2[3][3].HasCarriedEgg then
+            v3 = v2[3][3]
+            v3.EventManualDropRequested = true
+            v5, v3, v6 = v2[2][3], v3.setLabel, "🟠 TP DROP OFF queued; waiting for active delivery"
+            v3(v5, "🟠 TP DROP OFF queued; waiting for active delivery")
+        else
+            v3 = v2[3][3].GetCharacter()
+            v5 = v3 and v3:FindFirstChild("HumanoidRootPart")
+            if not v5 then
+                v10 = v2[2][3]
+                v2[3][3].setLabel(v10, "🔴 Character unavailable")
+            else
+                v6 = workspace:FindFirstChild("CandyDropOff")
+                v6 = v6 and v6:FindFirstChild("Pad")
+                v10 = v2[3][3].CandyHome and v2[3][3].CandyHome.Position or Vector3.new(-45842.9766, 40375.2734, -20118.6797)
+                v12 = v6 and v6:IsA("BasePart")
+                if v12 then
+                    v8 = v6.Position.X
+                    v9 = v6.Size.Y
+                    v11 = v6.Position.Y + v9 * 0.5
+                    v11, v7 = v6.Position, v11 + 6
+                    v11 = v11.Z
+                    v12 = Vector3.new(v8, v7, v11)
+                end
+                if not v12 then
+                    v12 = v10
+                end
+                v5.CFrame = CFrame.new(v12)
+                v8 = v2[3][3]
+                v8.EventManualDropRequested = false
+                v11, v7, v8 = "🟢 Teleported to Candy Drop-Off", v2[2][3], v8.setLabel
+                v8(v7, "🟢 Teleported to Candy Drop-Off")
+            end
+        end
+    end
+end
+local function _w627(v1, v2)
+    return function(v3)
+        v2[1][3][v2[6][3]] = v3
+        local v4 = v2[4][3]
+        local v5 = v2[5][3]
+        local v6, v7
+        v4, v6, v7 = v2[1][3], v4.ParseKG, v2[2][3]
+        v4 = v4[v7]
+        v6 = table.pack(v6(v4))
+        v5(v3, table.unpack(v6, 1, v6.n))
+        local v8 = v2[3][3]
+        v2[4][3].setVisible(v8, v3 ~= "Any")
+    end
+end
+local function _w628(v1, v2)
+    return function()
+        local v3 = v2[3][3].UprightCFrame
+        local v4 = v2[2][3]
+        v2[1][3].CFrame = v3(v4)
+        v2[3][3].Stabilize()
+    end
+end
+local function _w629(v1, v2)
+    return function(v3)
+        local v4 = v3
+        if v3 then
+            v4 = v3:IsA("BasePart")
+        end
+        local v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19
+        if not v4 then
+            return "PUMPKIN_ANCHOR_MISSING"
+        else
+            v7 = {[1] = 3, [3] = v3:GetAttribute("Id")}
+            v7[2] = v7
+            if type(v7[3]) ~= "string" and type(v7[3]) ~= "number" then
+                return "PUMPKIN_ID_MISSING"
+            else
+                v4 = "Pumpkin:" .. tostring(v7[3])
+                if (v2[10][3].Next[v4] or 0) > os.clock() then
+                    return "PUMPKIN_COOLDOWN"
+                else
+                    v10, v19 = v2[6][3](v3)
+                    if not v10 then
+                        if v19 == "PUMPKIN_SERVER_STATE_UNKNOWN" then
+                            v2[5][3](true)
+                        end
+                        return "PUMPKIN_SKIP_" .. tostring(v19)
+                    else
+                        v5 = v2[10][3].Pumpkin.RottenUntil
+                        v5, v12, v9 = v2[4][3], "SearchPumpkin", v5[v7[3]]
+                        v15, v5 = v5, v5.FindFirstChild
+                        v5 = {[1] = 3, [3] = v5(v15, "SearchPumpkin")}
+                        v5[2] = v5
+                        v12 = v5[3]
+                        if v12 then
+                            v16 = v5[3]
+                            v12 = v5[3].IsA(v16, "RemoteEvent")
+                        end
+                        if not v12 then
+                            return "SEARCH_REMOTE_MISSING"
+                        else
+                            v15 = 1
+                            while true do
+                                if not v2[2][3]() then
+                                    v2[7][3]()
+                                    v13, v17 = v2[6][3](v3)
+                                    if v13 then
+                                        v2[3][3](v3.Position)
+                                        v2[8][3](v3.Position)
+                                        task.wait(0.47)
+                                        v18 = v2[9][3]()
+                                        if not (not v18 or (v18.Position - v3.Position).Magnitude > 20.5) then
+                                            task.wait(0.3)
+                                            os.clock()
+                                            v14, v11 = pcall(v1:_l({v5, v7}))
+                                            if v14 then
+                                                v8 = os.clock() + 1.6
+                                                if os.clock() < v8 and v2[7][3]() then
+                                                    v2[2][3]()
+                                                    return "YIELD_EGG"
+                                                end
+                                                v6 = v7[3]
+                                                v2[1][3].CandyLog("EVENT_PUMPKIN_RETRY", tostring(v6) .. " attempt=" .. v15)
+                                                task.wait(0.3)
+                                                v15 = v15 + 1
+                                                if v15 <= 3 then
+                                                    continue
+                                                end
+                                                v2[10][3].Next[v4] = os.clock() + 1.5
+                                                return "PUMPKIN_UNCONFIRMED_RETRY_NEXT_CYCLE"
+                                            end
+                                            return "SEARCH_ERROR_" .. tostring(v11)
+                                        end
+                                        return "PUMPKIN_OUT_OF_RANGE"
+                                    end
+                                    return "PUMPKIN_SKIP_" .. tostring(v17)
+                                end
+                                return "YIELD_EGG"
+                            end
+                            v2[10][3].Next[v4] = os.clock() + 9
+                            return "PUMPKIN_STATE_UPDATED"
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+local function _w630(v1)
+    return function(v2)
+        local lower8 = tostring(v2 or ""):lower()
+        local v3, v4, v5
+        v4, v5, lower8, v3 = "[%s_%-]", lower8, lower8.gsub, ""
+        lower8 = table.pack(lower8(v5, "[%s_%-]", ""))
+        return table.unpack(lower8, 1, lower8.n)
+    end
+end
+local function _w631(v1, v2)
+    return function()
+        v2[1][3]:FireServer(v2[2][3])
+    end
+end
+local function _w632(v1, v2)
+    return function()
+        local getCharacter9, v3, v4, v5
+        if not v2[1][3].IsFastRideMounted() then
+            return nil
+        else
+            getCharacter9 = v2[1][3].GetCharacter()
+            v4 = getCharacter9 and getCharacter9:FindFirstChildOfClass("Humanoid")
+            v5 = v4 and tonumber(v4.WalkSpeed)
+            if v5 and v5 > 0 and v5 < 100000 then
+                return v5
+            else
+                v3 = tonumber(v2[1][3].FastRideState.Speed)
+                return v3 and v3 > 0 and v3 or nil
+            end
+        end
+    end
+end
+local function _w634(v1, v2)
+    return function()
+        local v3, v4
+        v4, v3 = pcall(v1:dl({v2[1]}))
+        local v5
+        if v2[3][3].Alive and v4 and type(v3) == "table" then
+            type(v3.Lit)
+            v5 = v3.Lit
+            v2[4][3].DoorLit = v5
+            v2[3][3].CandyLog("EVENT_STATE", "GetDoorState received")
+        end
+        v5 = v2[2][3]
+        v2[4][3].FetchBusy[v5] = false
+    end
+end
+local function _w635(v1, v2)
+    return function(v3, v4)
+        local v5 = v2[1][3]
+        local v6 = v5.CandyHome.Position
+        local v7, v8
+        v7, v8, v5 = 4, "ritual reward return", v5.CandyEnsureEventRide
+        v5 = v5("ritual reward return", 4)
+        local v9, v10, v11, v12, v13, v14
+        if not v5 then
+            return "RITUAL_REWARD_WAITING_FOR_MOUNT"
+        else
+            v14 = v2[3][3]()
+            v5 = v2[1][3].IsFastRideMounted()
+            if v5 then
+                v8 = v2[1][3].EffectiveMountedSpeed
+                v8 = table.pack(v8())
+                v5 = tonumber(table.unpack(v8, 1, v8.n))
+            end
+            if not v5 then
+                v5 = nil
+            end
+            if not v5 or v5 <= 0 then
+                v8 = v2[1][3].FindFastestRidePet()
+                v5 = v8 and tonumber(v8.Speed) or nil
+            end
+            if not v5 or v5 <= 0 then
+                v2[1][3].CandyLog("EVENT_RITUAL_TRAVEL", "ride speed unavailable; cannot estimate")
+                v5 = 60
+            end
+            v10 = v6.X
+            v11 = v14.X
+            v11, v10, v8 = v14.Z, v6.Z, v11 - v10
+            v7, v10 = v11 - v10, math
+            v10, v11, v12 = v8 * v8, v10.sqrt, v7 * v7
+            v11 = v11(v10 + v12)
+            v10 = math.max(0, 0.75 * v11 / v5 - 2.5)
+            v12 = v2[1][3].CandyLog
+            v9 = string.format
+            v13 = tostring(v3)
+            v9 = table.pack(v9("reward=%s distance=%.1f speed=%.1f wait=%.2f", v13, v11, v5, v10))
+            v12("EVENT_RITUAL_TRAVEL", table.unpack(v9, 1, v9.n))
+            v12 = os.clock() + v10
+            v2[1][3].CandySetStatus("🟡 Ritual: returning to drop-off")
+            v2[1][3].CandyBusy = true
+            if v2[1][3].Alive and v2[2][3]() and v2[1][3].EventAutoRitual and os.clock() < v12 then
+                v2[1][3].IsFastRideMounted()
+                v2[1][3].CandyEnsureEventRide("ritual reward travel", 3)
+                v2[1][3].CandyBusy = false
+                return "RITUAL_REWARD_WAITING_FOR_MOUNT"
+            end
+            if not v2[2][3]() or not (v2[1][3].EventAutoRitual or v2[1][3].EventRitualReturnPending) then
+                v2[1][3].CandyBusy = false
+                return "STOPPED"
+            else
+                v2[1][3].CandyEnsureEventRide("ritual drop-off teleport", 4)
+                task.wait(0.2)
+                v2[1][3].CandyBusy = false
+                return "RITUAL_RETURNED_TO_DROPOFF"
+            end
+        end
+    end
+end
+local function _w636(v1, v2)
+    return function()
+        v2[1][3]:FireServer()
+    end
+end
+local function _w637(v1, v2)
+    return function(v3)
+        local v4, v5
+        v5, v2[1][3], v4 = v2[3][3], v3, v2[1][3]
+        local v6, v7
+        v7, v6, v5 = v5.setLabel, v3, v2[2][3]
+        if v6 then
+            v6 = "🟡 Favoriting matching pets"
+        end
+        if not v6 then
+            v6 = "🔴 Auto Favorite Off"
+        end
+        v7(v5, v6)
+        v7 = v3
+        if v3 then
+            v7 = not v4
+        end
+        if v7 then
+            v7 = type(v2[4][3]) == "function"
+        end
+        if v7 then
+            task.spawn(v2[4][3])
+        end
+    end
+end
+local function _w638(v1)
+    return function(v2)
+        local gsub8 = tostring(v2 or ""):gsub("<[^<>]->", ""):gsub("^%s+", "")
+        local v3, v4, v5
+        v3, v5, v4, gsub8 = gsub8, "", "%s+$", gsub8.gsub
+        gsub8 = table.pack(gsub8(v3, "%s+$", ""))
+        return table.unpack(gsub8, 1, gsub8.n)
+    end
+end
+local function _w639(v1)
+    return function()
+        if makefolder then
+            isfolder("REZEHUB")
+            pcall(makefolder, "REZEHUB")
+            isfolder("REZEHUB.app")
+            pcall(makefolder, "REZEHUB.app")
+        end
+    end
+end
+local function _w640(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        local v4 = tostring(v2[2][3])
+        local v5, v6
+        v3, v6, v5 = v3.AddLabel, v3, true
+        v3 = table.pack(v3(v6, v4, true))
+        return table.unpack(v3, 1, v3.n)
+    end
+end
+local function _w641(v1, v2)
+    return function(v3, v4, v5)
+        if v5 <= 4 then
+            if type(v3) == "string" then
+                if #v3 >= 30 and string.find(v3, "^%x%x%x%x%x%x%x%x%-%x%x%x%x%-") then
+                    table.insert(v4, v3)
+                end
+            else
+                type(v3)
+            end
+            return
+        end
+    end
+end
+local function _w642(v1, v2)
+    return function(v3)
+        local v4 = {[1] = 3, [3] = v2[1][3].InventoryESPState}
+        v4[2] = v4
+        local v5, v6
+        if not (not v2[2][3].Alive or not v4[3].Enabled) then
+            v5 = {[1] = 3, [3] = v4[3].RefreshGeneration}
+            v5[2] = v5
+            v4[3].RefreshQueued = true
+            v6 = math.max
+            task.delay(v6(0, tonumber(v3) or 0), v1:yl({v5, v2[2], v4, v2[1]}))
+            return
+        end
+    end
+end
+local function _w643(v1, v2)
+    return function(v3)
+        local v4 = {}
+        local v5 = v2[1][3].WebhookPetAttribute
+        v4[1], v4[2], v4[3] = "Mutation", "MutationName", "PetMutation"
+        v5 = v5(v3, v4)
+        local v6 = v2[1][3].WebhookPetAttribute
+        local v7 = {}
+        v7[1], v7[2], v7[3], v7[4] = "SpawnMutation", "SpawnTrait", "Trait", "Traits"
+        v6 = v6(v3, v7)
+        v4 = v2[1][3].WebhookCanonicalMutationTrait
+        v4 = table.pack(v4(v5, v6))
+        return table.unpack(v4, 1, v4.n)
+    end
+end
+local function _w644(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        local v4
+        v4, v3 = v3, v3.Clone
+        v3 = table.pack(v3(v4))
+        return table.unpack(v3, 1, v3.n)
+    end
+end
+local function _w645(v1, v2)
+    return function()
+        local v3 = v2[1][3] and v2[1][3].TextLabel
+        local trackerEqualInset, v4, trackerContent, v5, v6, v7
+        if not v3 or not v3:IsA("TextLabel") or not v3.Parent then
+            return nil
+        else
+            v4 = v3.Parent
+            v5 = v4:FindFirstChild("REZETrackerTextSurface")
+            if not v5 then
+                v3.Visible = false
+                v3.Size = UDim2.new(1, 0, 0, 0)
+                v5 = Instance.new("Frame")
+                v5.Name = "REZETrackerTextSurface"
+                v5.LayoutOrder = v3.LayoutOrder
+                v5.BackgroundColor3 = Color3.fromRGB(21, 21, 26)
+                v5.AutomaticSize = Enum.AutomaticSize.Y
+                v5.BorderSizePixel = 0
+                v5.Parent = v4
+                v7 = Instance.new("UICorner")
+                v7.CornerRadius = UDim.new(0, 5)
+                v7.Parent = v5
+                v6 = Instance.new("UIStroke")
+                v6.Color = Color3.fromRGB(42, 42, 51)
+                v6.Thickness = 1
+                v6.Parent = v5
+                trackerEqualInset = Instance.new("UIPadding")
+                trackerEqualInset.Name = "TrackerEqualInset"
+                trackerEqualInset.Parent = v5
+                trackerContent = Instance.new("TextLabel")
+                trackerContent.Name = "TrackerContent"
+                trackerContent.BackgroundTransparency = 1
+                trackerContent.Font = Enum.Font.Code
+                trackerContent.RichText = true
+                trackerContent.TextWrapped = false
+                trackerContent.TextScaled = false
+                trackerContent.AutomaticSize = Enum.AutomaticSize.Y
+                trackerContent.TextSize = 15
+                trackerContent.TextXAlignment = Enum.TextXAlignment.Left
+                trackerContent.TextYAlignment = Enum.TextYAlignment.Top
+                trackerContent.TextColor3 = Color3.fromRGB(243, 243, 245)
+                trackerContent.Parent = v5
+            end
+            v5.Size = UDim2.new(1, 0, 0, 0)
+            v5.AutomaticSize = Enum.AutomaticSize.Y
+            v7 = v5:FindFirstChild("TrackerEqualInset")
+            if v7 then
+                v7.PaddingTop = UDim.new(0, 10)
+                v7.PaddingBottom = UDim.new(0, 10)
+                v7.PaddingLeft = UDim.new(0, 10)
+                v7.PaddingRight = UDim.new(0, 10)
+            end
+            v6 = v5:FindFirstChild("TrackerContent")
+            if v6 then
+                v6.Size = UDim2.new(1, 0, 0, 0)
+                v6.AutomaticSize = Enum.AutomaticSize.Y
+            end
+            return v5, v6
+        end
+    end
+end
+local function _w646(v1, v2)
+    return function(v3, v4, v11, ...)
+        local n
+        local v5, v6, v7, v8, v9
+        if not (os.clock() > v2[1][3]) then
+            v5 = v2[3][3]
+            v7 = {}
+            v9 = {}
+            v1.j(v9, 1, v4, v11, ...)
+            v9, v6, v8 = v7, v9, 0
+            v5(v6, v9, 0)
+            v5, v6, v9 = ipairs(v7)
+            v5, v6, v9 = v1.g(v5, v6, v9)
+            for v10, n in v5, v6, v9 do
+                n = {[1] = 3, [3] = n}
+                n[2] = n
+                if not v2[2][3][n[3]] then
+                    v2[2][3][n[3]] = true
+                    pcall(v1:vq({v2[4], n}))
+                end
+            end
+        end
+    end
+end
+local function _w647(v1, v2)
+    return function()
+        local v3 = v2[3][3].RefreshGeneration
+        if not (v2[1][3] ~= v3 or not v2[2][3].Alive or not v2[3][3].Enabled) then
+            v2[3][3].RefreshQueued = false
+            v2[4][3].refreshInventoryESPGrid()
+            return
+        end
+    end
+end
+local function _w648(v1, v2)
+    return function()
+        if v2[1][3] then
+            v2[3][3]:FireServer(v2[2][3])
+        else
+            fireproximityprompt(v2[4][3])
+        end
+    end
+end
+local function _w649(v1, v2)
+    return function(v3, v4, v5, v6)
+        local v7, v8, v9, uprightCFrame, v10
+        if not (v2[1][3].Alive and v2[3][3] and v2[1][3].PickupMode == "Instant" and v2[1][3].HasCarriedEgg()) then
+            return false
+        else
+            v9 = v2[1][3]
+            v9.CurrentEggWebhookSnapshot = v9.CaptureEggWebhookSnapshot(v5, v9.CurrentEggWebhookSnapshot)
+            v9 = v3 == "Volcanic Egg"
+            if not v9 and not v2[5][3] then
+                v2[1][3].TraceRideDrop("INSTANT_MANUAL_CARRY", "home remote blocked by carry: " .. tostring(v3))
+                v7 = v2[4][3]
+                v2[1][3].setLabel(v7, "🟠 Manual carry • use TP + Phase to deliver")
+                return false
+            else
+                if typeof(v6) ~= "Vector3" then
+                    v8 = v2[1][3]
+                    v8, v7, v10 = v2[4][3], v8.setLabel, "🟠 Instant • Ranch return unavailable"
+                    v7(v8, "🟠 Instant • Ranch return unavailable")
+                    return false
+                else
+                    v8 = Vector3.new
+                    uprightCFrame = v2[1][3].UprightCFrame(v6 + v8(0, 3, 0))
+                end
+                v2[1][3].TraceRideDrop("INSTANT_UNIFIED_HIDDEN_DROP", "egg=" .. tostring(v3) .. " dip=" .. tostring(v2[5][3]) .. " target=" .. (v9 and "lower-volcano" or "original-spawn"))
+                v8 = v2[1][3]
+                v8, v10, v7 = v2[4][3], "🟡 Instant • Returning to ranch with egg", v8.setLabel
+                v7(v8, "🟡 Instant • Returning to ranch with egg")
+                v7 = v2[1][3].InstantDropAndPair
+                v7 = table.pack(v7(v3, v4, uprightCFrame, v6))
+                return table.unpack(v7, 1, v7.n)
+            end
+        end
+    end
+end
+local function _w650(v1, v2)
+    return function()
+        v2[1][3].Enabled = false
+    end
+end
+local function _w651(v1, v2)
+    return function()
+        local v3, v4
+        v3, v4 = pcall(require, v2[1][3])
+        local v5 = not v2[3][3].Alive
+        local v6
+        if not v5 then
+            v6 = v2[4][3].ResolveSerial
+            v5 = v2[2][3] ~= v6
+        end
+        if not v5 then
+            v2[4][3].ModuleStarted = false
+            return
+        end
+    end
+end
+local function _w652(v1, v2)
+    return function(v3, v4, v5, v6, v7, v8, v9)
+        local q, s
+        v5 = {[1] = 3, [3] = v5}
+        v5[2] = v5
+        v6 = {[1] = 3, [3] = v6}
+        v6[2] = v6
+        v7 = {[1] = 3, [3] = v7}
+        v7[2] = v7
+        v9 = {[1] = 3, [3] = v9}
+        v9[2] = v9
+        local v10 = v2[1][3]
+        v10.YieldUIPaint()
+        local v11, v12
+        v11, v10, v12 = v10.boxFor, v3, v4
+        v11 = {[1] = 3, [3] = v11(v10, v12)}
+        v11[2] = v11
+        local v13, v14, v15, v16, v17, v18, v19
+        if not v11[3] then
+            return
+        else
+            v10, v12, v17 = v2[1][3].ShopDisplayOptions(v8)
+            v10 = {[1] = 3, [3] = v10}
+            v10[2] = v10
+            v18 = {[1] = 3, [3] = {}}
+            v18[2] = v18
+            v14, q = v2[1][3].normalizeSelection, v2[3][3]
+            q = q[v7[3]]
+            v14 = v1.h(v14(q))
+            v13, v14, q = ipairs(v1.i(v14))
+            v13, v14, q = v1.g(v13, v14, q)
+            for q, s in v13, v14, q do
+                if v17[s] then
+                    v16 = #v18[3]
+                    v16, v19 = v17[s], v16 + 1
+                    v18[3][v19] = v16
+                end
+            end
+            v13, v14 = pcall(v1:Em({v11, v18, v5, v10, v6}))
+            q = not v13 or not v14
+            if q then
+                v15, s = "Shop dropdown " .. v5[3], v14
+                v2[1][3].notifyError(v15, s)
+                return
+            else
+                v2[2][3][v5[3]] = v14
+                s = {}
+                q = v2[1][3].SavedDropdownRegistry
+                s.Control = v14
+                s.Key = v7[3]
+                s.Kind = "shop"
+                q[v5[3]] = s
+                v15 = {Kind = "shop", Key = v7[3], Control = v14, ToName = v12, ToDisplay = v17}
+                v16, s, v19 = "\000", table.concat, v10[3]
+                v15.Signature = s(v19, "\000")
+                q = {[1] = 3, [3] = v15}
+                q[2] = q
+                v2[1][3].DynamicDropdowns[v5[3]] = q[3]
+                v14:OnChanged(v1:Dm({v2[4], v7, v9, v2[3], q, v2[1]}))
+                return v14
+            end
+        end
+    end
+end
+local function _w653(v1, v2)
+    return function()
+        v2[1][3]:FireServer(v2[2][3])
+    end
+end
+local function _w654(v1, v2)
+    return function()
+        local v3, v4, v5, v6, v7
+        if not v2[1][3].IsFastRideMounted() then
+            return true
+        else
+            v3 = v2[3][3]
+            v3, v6 = v3.FindFirstChild, v3
+            v3 = {[1] = 3, [3] = v3(v6, "PetDismount")}
+            v3[2] = v3
+            if not (v3[3] and v3[3].IsA(v3[3], "RemoteEvent")) then
+                v5 = v2[2][3]
+                v2[1][3].setLabel(v5, "🟠 PetDismount remote unavailable")
+            else
+                v6, v5 = pcall(v1:xj({v3}))
+                if not v6 then
+                    warn("[REZEHUB] PetDismount failed: " .. tostring(v5))
+                    v7 = v2[2][3]
+                    v2[1][3].setLabel(v7, "🟠 PetDismount request failed")
+                else
+                    v7 = 24
+                    v4 = 1
+                    while true do
+                        if not (not v2[1][3].Alive or not v2[4][3]) then
+                            task.wait(0.1)
+                            v4 = v4 + 1
+                            if v4 <= v7 then
+                                continue
+                            end
+                            v7 = v2[2][3]
+                            v2[1][3].setLabel(v7, "🟠 PetDismount not confirmed")
+                            return false
+                        end
+                        return false
+                    end
+                    v7 = v2[2][3]
+                    v2[1][3].setLabel(v7, "🟠 PetDismount not confirmed")
+                end
+            end
+            return false
+        end
+    end
+end
+local function _w655(v1, v2)
+    return function()
+        v2[1][3].FPSState.Original.QualityLevel = settings().Rendering.QualityLevel
+    end
+end
+local function _w656(v1, v2)
+    return function(v3, v4)
+        local v5 = v2[1][3].InventoryESPState
+        local v6, v7, v8
+        v6, v7, v8 = ipairs(v5.CardConnections[v3] or {})
+        v6, v7, v8 = v1.g(v6, v7, v8)
+        local v9, v10
+        v9, v10 = v6(v7, v8)
+        if v9 ~= nil then
+            while true do
+                v10:Disconnect()
+                v9, v10 = v6(v7, v8)
+                v8 = v9
+                if v8 == nil then
+                    break
+                end
+            end
+        end
+        v5.CardConnections[v3] = nil
+        v5.CardCache[v3] = nil
+        if v4 == true then
+            v5.CardStable[v3] = nil
+            v2[1][3].removeInventoryESPOverlay(v3)
+        end
+    end
+end
+local function _w657(v1, v2)
+    return function()
+        if v2[1][3] then
+            v2[2][3]:FireServer("Max")
+        else
+            v2[2][3]:FireServer("Hatch Luck", 1)
+        end
+    end
+end
+local function _w658(v1)
+    return function()
+    end
+end
+local function _w659(v1)
+    return function()
+        return {
+            SelectedRarities = {},
+            SelectedEggs = {},
+            PickupMutations = {},
+            PickupTraits = {},
+            MinWeightText = "0",
+            PickupKGRule = "Any",
+            PickupKGThreshold = "0",
+            PickupPriority = "Rarest",
+            PickupMode = "TP",
+            PickupModeSchema = 0,
+            AutoDropEgg = false,
+            AutoServerHop = false,
+            SavedDropPosition = nil,
+            PlaceKGRule = "Any",
+            PlaceKGThreshold = "0",
+            PlaceMutations = {},
+            PlaceTraits = {},
+            PlacePattern = "Z Position",
+            HatchKGRule = "Any",
+            HatchKGThreshold = "0",
+            HatchMutations = {},
+            HatchTraits = {},
+            RollbackEnabled = false,
+            AutoVolcanoDip = false,
+            AutoPickup = false,
+            AutoCandy = false,
+            EventCandyPriority = "Farthest",
+            EventAutoDoors = false,
+            EventAutoPumpkins = false,
+            EventAutoRitual = false,
+            EventAutoHalves = false,
+            EventAutoBuyHalloweenEgg = false,
+            SelectedPlaceRarities = {},
+            SelectedPlaceEgg = {},
+            AutoPlaceEgg = false,
+            SelectedHatchRarities = {},
+            SelectedHatchEggs = {},
+            AutoHatchSelectedEggs = false,
+            AutoHatchEgg = false,
+            AutoEquipBestPet = false,
+            AutoFeedPets = false,
+            AutoUpgradeHatchLuck = false,
+            AutoUpgradeHatchLuckMax = false,
+            AutoRebirth = false,
+            AutoClaimIndex = false,
+            SelectedGear = {},
+            Autobuygear = false,
+            SelectedFood = {},
+            Autobuyfood = false,
+            SellMutations = {},
+            SellTraits = {},
+            SellKGRule = "Any",
+            SellKGThreshold = "0",
+            FeedRarities = {},
+            FeedNames = {},
+            FeedMutations = {},
+            FeedTraits = {},
+            FeedKGRule = "Any",
+            FeedKGThreshold = "0",
+            PlacePetRarities = {},
+            PlacePetNames = {},
+            PlacePetMutations = {},
+            PlacePetTraits = {},
+            PlacePetKGRule = "Any",
+            PlacePetKGThreshold = "0",
+            PlacePetsInterval = "10",
+            FusionRarities = {},
+            FusionMutations = {},
+            FusionTraits = {},
+            FusionKGRule = "Any",
+            FusionKGThreshold = "0",
+            FavoriteRarities = {},
+            FavoriteMutations = {},
+            FavoriteTraits = {},
+            FavoriteKGRule = "Any",
+            FavoriteKGThreshold = "0",
+            SelectedSellRarities = {},
+            SelectedPetToSell = {},
+            AutoSellPet = false,
+            AutoSellAllPets = false,
+            SelectedFavPet = {},
+            AutoFavoritePet = false,
+            SelectedFusePets = {},
+            AutoFuse = false,
+            AutoClaimFusedPets = false,
+            SelectedESPRarities = {},
+            SelectedESPEggs = {},
+            ESPEnabled = false,
+            RanchEggESP = false,
+            InventoryESP = false,
+            WebhookUrl = "",
+            WebhookEnabled = false,
+            WebhookPickupAlerts = true,
+            WebhookHatchAlerts = true,
+            WebhookFuseAlerts = true,
+            AntiAFK = false,
+            Noclip = false,
+            InfiniteJump = false,
+            WalkSpeedEnabled = false,
+            WalkSpeed = "16",
+            UIScale = "100",
+            NoGameplayPaused = true,
+            ShaderEnabled = false,
+            ShaderPreset = "Daytime",
+            HidePets = false,
+            Disable3DRendering = false,
+            FeedFood = "Any",
+            CompactNotifications = false,
+            HideUIOnStart = false,
+            AutoReconnect = false,
+            AutoExecute = false,
+            FPSBoost = false,
+            HideEggs = false,
+            ThemeName = "Dark",
+            ThemeEnabled = false,
+        }
+    end
+end
+local function _w660(v1)
+    return function(v2)
+        v2 = tonumber(v2)
+        local v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15
+        if not v2 then
+            return "—"
+        else
+            v5 = {}
+            v4 = {}
+            v5[1], v5[2] = 1000000000000000000, "Qi"
+            v3 = {}
+            v3[1], v3[2] = 1000000000000000, "Qa"
+            v6 = {}
+            v6[1], v6[2] = 1000000000000, "T"
+            v9 = {}
+            v9[1], v9[2] = 1000000000, "B"
+            v15 = {}
+            v15[1], v15[2] = 1000000, "M"
+            v14 = {}
+            v14[1], v14[2] = 1000, "K"
+            v4[1], v4[2], v4[3], v4[4], v4[5], v4[6] = v5, v3, v6, v9, v15, v14
+            v8, v13, v7 = ipairs(v4)
+            v8, v13, v7 = v1.g(v8, v13, v7)
+            v4, v11 = v8(v13, v7)
+            v7 = v4
+            if v7 ~= nil then
+                while true do
+                    if math.abs(v2) < v11[1] then
+                        v4, v11 = v8(v13, v7)
+                        v7 = v4
+                        if v7 ~= nil then
+                            continue
+                        end
+                        v7 = string.format("%.2f", math.floor(v2 * 100 + 1e-8) / 100):gsub("0+$", "")
+                        v5, v4, v7, v11 = "", v7, v7.gsub, "%.$"
+                        return "$" .. v7(v4, "%.$", "")
+                    end
+                    break
+                end
+                v6 = v2 / v11[1] * 100
+                v12 = math.floor(v6 + 1e-8) / 100
+                v15 = string.format("%.2f", v12):gsub("0+$", "")
+                v10, v14, v12, v15 = "", v15, "%.$", v15.gsub
+                return "$" .. v15(v14, "%.$", "") .. v11[2]
+            end
+        end
+    end
+end
+local function _w661(v1, v2)
+    return function()
+        local v3, v4, v5, v6, v7, v8
+        if not (not v2[1][3].Alive or not v2[2][3].Parent) then
+            v3 = v2[2][3]:GetAttribute("PetKey")
+            if v3 == nil then
+                v4 = os.clock() + 1.5
+                while true do
+                    task.wait(0.05)
+                    v3 = v2[2][3]:GetAttribute("PetKey")
+                    if not v2[1][3].Alive or not v2[2][3].Parent or v3 ~= nil or os.clock() > v4 then
+                        break
+                    end
+                end
+            end
+            if not (v3 == nil or not v2[1][3].Alive) then
+                v3 = tostring(v3)
+                v2[1][3].AlertSeenKeys[v3] = true
+                v4 = os.clock()
+                v5 = v2[1][3].PendingPetAlerts
+                v7 = #v5
+                if v7 >= 1 then
+                    while true do
+                        v5 = v2[1][3].PendingPetAlerts[v7]
+                        if v4 > v5.ExpiresAt then
+                            v6 = v2[1][3].PendingPetAlerts
+                            table.remove(v6, v7)
+                            v7 = v7 + -1
+                            if v7 >= 1 then
+                                continue
+                            end
+                        elseif v5.Key == nil or v5.Key == v3 then
+                            break
+                        else
+                            v7 = v7 + -1
+                            if v7 >= 1 then
+                                continue
+                            end
+                        end
+                        return
+                    end
+                    v6 = v2[1][3].PendingPetAlerts
+                    table.remove(v6, v7)
+                    task.wait(0.15)
+                    if v2[2][3].Parent then
+                        v8 = v2[2][3]
+                        v2[1][3].sendPetWebhook(v5, v8, v3)
+                    end
+                end
+                return
+            end
+        end
+    end
+end
+local function _w662(v1, v2)
+    return function(v3, v4, v5)
+        v3 = {[1] = 3, [3] = v3}
+        v3[2] = v3
+        local v6 = v3[3]
+        local v7
+        v7, v6 = v2[10][3](v6)
+        v7 = {[1] = 3, [3] = v7}
+        v7[2] = v7
+        v6 = {[1] = 3, [3] = v6}
+        v6[2] = v6
+        local v8 = v5
+        if v5 then
+            v8 = v7[3] ~= v5
+        end
+        local v9, v10, v11, v12, v13, v14, v16, v17
+        if v8 then
+            return "HALF_MISMATCH"
+        else
+            v8 = v2[6][3](v3[3])
+            if not v8 then
+                return "PROMPT_NO_POSITION"
+            else
+                v2[5][3]()
+                if v6[3] == "Place" then
+                    v10, v12 = v2[4][3]()
+                    if not v10 then
+                        return v12
+                    end
+                end
+                v2[2][3](v8)
+                v2[7][3](v8)
+                if v6[3] == "Place" then
+                    task.wait(0.14)
+                    v12 = v2[3][3]
+                    v12, v17, v10, v14, v16 = "EVENT_RITUAL_PROMPT", v7[3], v12.CandyLog, v2[8][3], v3[3]
+                    v14 = table.pack(v14(v16, v17))
+                    v10("EVENT_RITUAL_PROMPT", table.unpack(v14, 1, v14.n))
+                end
+                v10, v12 = v2[9][3](v3[3], v4)
+                if v6[3] == "Place" and not v10 then
+                    v14 = os.clock() + 1.6
+                    while true do
+                        if os.clock() < v14 and v2[11][3]() and not v2[5][3]() then
+                            task.wait(0.1)
+                            v16, v17 = v2[9][3](v3[3], v4)
+                            v10 = v16
+                            v12 = v17
+                            if not v10 then
+                                continue
+                            end
+                            break
+                        end
+                        break
+                    end
+                end
+                if not v10 then
+                    return "RITUAL_NOT_READY_" .. tostring(v12)
+                else
+                    v14 = v2[1][3]:FindFirstChild("RitualView")
+                    v16 = {
+                        [1] = 3,
+                        [3] = v14 and v7[3] and v14:GetAttribute(v7[3] .. "StartedAt"),
+                    }
+                    v16[2] = v16
+                    v17 = v1:ml({v6, v3, v7, v16, v2[1]})
+                    v11 = os.clock() + 1.8
+                    while true do
+                        if not v17() then
+                            v13 = v3[3]
+                            v9, v13 = v2[9][3](v13, v4)
+                            task.wait(0.09)
+                            os.clock()
+                            v9 = not v2[11][3]()
+                            continue
+                        end
+                        return "CONFIRMED"
+                    end
+                    return "UNCONFIRMED_AFTER_TWO_ATTEMPTS"
+                end
+            end
+        end
+    end
+end
+local function _w663(v1, v2)
+    return function()
+        local v3 = {}
+        local v4 = v2[1][3]
+        v3.Rows = {}
+        v3.LastResetToken = nil
+        v3.LastResetSeconds = nil
+        v3.LastResetAt = -math.huge
+        v3.ResetGraceUntil = 0
+        v3.ResetArmed = false
+        v3.ExpectedResetAt = nil
+        v3.HeldOldRows = nil
+        v3.WeightAttemptedAt = setmetatable({}, {__mode = "k"})
+        local v5 = {
+            Raw = nil,
+            Seconds = nil,
+            SampleAt = nil,
+            Module = nil,
+            ModuleStarted = false,
+            Reading = false,
+            ReadAt = 0,
+            ModuleSeconds = nil,
+            ModuleSampleAt = nil,
+        }
+        v3.Timer = v5
+        v3.LastText = nil
+        v4.EggTrackerCycle = v3
+        v4 = {[1] = 3, [3] = v4}
+        v4[2] = v4
+        v4[3] = v1:Bp()
+        local v6 = {[1] = 3, [3] = v3}
+        v6[2] = v6
+        v6[3] = v1:tp()
+        v3 = {[1] = 3, [3] = v3}
+        v3[2] = v3
+        v3[3] = v1:rp()
+        local v7 = {[1] = 3, [3] = nil}
+        v7[2] = v7
+        v7[3] = v1:sp({v2[1], v2[6]})
+        v5 = {[1] = 3, [3] = v5}
+        v5[2] = v5
+        v5[3] = v1:vp({v2[1], v2[5], v7, v3})
+        local v8 = {[1] = 3, [3] = nil}
+        v8[2] = v8
+        v8[3] = v1:xp({v2[6]})
+        local v9 = {[1] = 3, [3] = "k"}
+        v9[2] = v9
+        local v10, v11
+        v10, v9[3], v11 = {}, v1:yp(), 1
+        v10.Common = 1
+        v10.Uncommon = 2
+        v10.Rare = 3
+        v10.Epic = 4
+        v10.Legendary = 5
+        v10.Mythic = 6
+        v10.Divine = 7
+        v10.Ethereal = 8
+        local v12 = {[1] = 3, [3] = v10}
+        v12[2] = v12
+        v10 = {[1] = 3, [3] = v10}
+        v10[2] = v10
+        v10[3] = v1:wp({v2[1], v2[4]})
+        v11 = {[1] = 3, [3] = 8}
+        v11[2] = v11
+        v11[3] = v1:zp({v2[1], v2[4], v5, v10, v8})
+        local v13 = {[1] = 3, [3] = nil}
+        v13[2] = v13
+        v13[3] = v1:up({v2[1], v2[2], v6, v4, v9, v12})
+        local v14 = {[1] = 3, [3] = nil}
+        v14[2] = v14
+        v14[3] = v1:Ap({v2[7]})
+        local v15 = {[1] = 3, [3] = nil}
+        v15[2] = v15
+        local v16
+        v15[3], v16 = v1:Cp({v14}), v14[3]
+        v16()
+        local v17 = v14[3]
+        task.defer(v17)
+        v17 = v1:Dp({v2[1], v15, v2[5], v14, v13, v11, v2[3]})
+        task.spawn(v17)
+    end
+end
+local function _w664(v1, v2)
+    return function()
+        sethiddenproperty(v2[1][3], "Technology", 2)
+    end
+end
+local function _w665(v1)
+    local v2 = string
+    local v3, v4
+    v3, v4, v2 = v2.char, v2.byte, bit32
+    local bxor2 = v2.bxor
+    v3 = {[1] = 3, [3] = v3}
+    v3[2] = v3
+    v4 = {[1] = 3, [3] = v4}
+    v4[2] = v4
+    bxor2 = {[1] = 3, [3] = bxor2}
+    bxor2[2] = bxor2
+    return v1:Xq({v3, v4, bxor2})
+end
+local function _w666(v1)
+    local gsub9 = string.gsub
+    local v2 = {[1] = 3, [3] = string.char}
+    v2[2] = v2
+    gsub9 = {[1] = 3, [3] = gsub9}
+    gsub9[2] = gsub9
+    local band = bit32.band
+    local v3 = {[1] = 3, [3] = bit32.rshift}
+    v3[2] = v3
+    band = {[1] = 3, [3] = band}
+    band[2] = band
+    return v1:_r({gsub9, band, v2, v3})
+end
+local function _w667(v1, v2)
+    return function(v3)
+        local v4
+        v2[1][3], v4 = v3, v2[3][3]
+        local v5, v6
+        v6, v5, v4 = v4.setLabel, v3, v2[2][3]
+        if v5 then
+            v5 = "🟡 Waiting for fusion reward"
+        end
+        if not v5 then
+            v5 = "🔴 Auto Fuse Off"
+        end
+        v6(v4, v5)
+    end
+end
+local function _w668(v1, v2)
+    return function()
+        local v3, v4, v5
+        v3, v5, v4 = pairs(v2[1][3].FPSState.Instances)
+        v3, v5, v4 = v1.g(v3, v5, v4)
+        local v6, v7
+        v7, v6 = v3(v5, v4)
+        local v8, v9, v10, v11, v12
+        if v7 ~= nil then
+            while true do
+                v7 = {[1] = 3, [3] = v7}
+                v7[2] = v7
+                if v7[3] and v7[3].Parent then
+                    v8, v9, v11 = pairs(v6)
+                    v8, v9, v11 = v1.g(v8, v9, v11)
+                    v10, v12 = v8(v9, v11)
+                    v11 = v10
+                    if v11 ~= nil then
+                        while true do
+                            v10 = {[1] = 3, [3] = v10}
+                            v10[2] = v10
+                            v12 = {[1] = 3, [3] = v12}
+                            v12[2] = v12
+                            pcall(v1:bj({v7, v12, v10}))
+                            v10, v12 = v8(v9, v11)
+                            v11 = v10
+                            if v11 == nil then
+                                break
+                            end
+                        end
+                    end
+                end
+                v7, v6 = v3(v5, v4)
+                v4 = v7
+                if v4 == nil then
+                    break
+                end
+            end
+        end
+        v2[1][3].FPSState.Instances = {}
+    end
+end
+local function _w669(v1, v2)
+    return function()
+        local v3 = v1:wm({v2[1]})
+        task.delay(1, v3)
+    end
+end
+local function _w670(v1, v2)
+    return function(v3, v4, v5, v6)
+        local v7, v8, v9
+        if not v2[1][3] or not v3 or not v2[2][3][v3] then
+            return nil
+        else
+            v9, v7 = pcall(v2[1][3].PetWorth, v3, v4, v5, v6)
+            v8 = v9 and tonumber(v7) or nil
+            v7 = v8
+            v8 = v8 and true and v7 >= 0 and v7 < math.huge
+            if v8 then
+                return v7
+            else
+                return nil
+            end
+        end
+    end
+end
+local function _w671(v1, v2)
+    return function()
+        if not v2[1][3].ToolLookup or v2[1][3].ToolsDirty then
+            v2[6][3].buildInventoryESPToolLookup()
+        end
+        local v3 = not v2[5][3].Alive or not v2[1][3].Enabled
+        local v4
+        if not v3 then
+            v4 = v2[1][3].RefreshGeneration
+            v3 = v2[4][3] ~= v4
+        end
+        if not v3 then
+            v2[6][3].refreshInventoryESPVisibleCards()
+            return
+        end
+    end
+end
+local function _w672(v1, v2)
+    return function()
+        v2[1][3].WaterTransparency = 0
+    end
+end
+local function _w673(v1, v2)
+    return function(v3)
+        v3 = {[1] = 3, [3] = v3}
+        v3[2] = v3
+        local v4, basePart2
+        if not (v3[3] and v3[3].Parent) then
+            return nil
+        else
+            v4 = v3[3]
+            v3[3].IsA(v4, "ProximityPrompt")
+            v3[3].IsA(v3[3], "BasePart")
+            v3[3].IsA(v3[3], "Attachment")
+            v4 = v3[3]
+            v3[3].IsA(v4, "Model")
+            basePart2 = v3[3].FindFirstChildWhichIsA(v3[3], "BasePart", true)
+            return basePart2 and basePart2.Position or nil
+        end
+    end
+end
+local function _w674(v1, v2)
+    return function(v3, v4)
+        local v5 = v3
+        if v3 then
+            v5 = v3.Parent
+        end
+        if v5 then
+            v5 = v3:IsA("ProximityPrompt")
+        end
+        if v5 then
+            v5 = v3:IsDescendantOf(workspace)
+        end
+        local v6, ritualView, ritualOwnerUserId
+        if not v5 then
+            return false, "NOT_LIVE"
+        elseif v3:GetAttribute("RitualAvailable") ~= true then
+            return false, "NOT_AVAILABLE"
+        else
+            ritualOwnerUserId = v3:GetAttribute("RitualOwnerUserId")
+            if ritualOwnerUserId ~= nil and ritualOwnerUserId ~= v2[1][3].UserId then
+                return false, "NOT_OWNER"
+            else
+                v5, v6 = v2[2][3](v3)
+                if v4 and v6 ~= v4 then
+                    return false, "WRONG_KIND"
+                else
+                    ritualView = v2[1][3]:FindFirstChild("RitualView")
+                    if v6 == "Place" and v5 then
+                        if v2[1][3]:GetAttribute("Ritual" .. v5) ~= true then
+                            return false, "HALF_NOT_IN_INVENTORY"
+                        else
+                            return false, "RITUAL_PHASE_NOT_READY"
+                        end
+                    end
+                    if v3:GetAttribute("RitualGroupId") and not ritualView then
+                        return false, "GROUP_NOT_READY"
+                    else
+                        return true, "AVAILABLE"
+                    end
+                end
+            end
+        end
+    end
+end
+local function _w675(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        v3.RestoreAllInstances()
+        v3.RestoreGlobalFPSSettings()
+    end
+end
+local function _w676(v1, v2, v3, v4)
+    v1.Dr[v4] = v1.Uq(v2, v3)
+    return v1.Dr[v4]
+end
+local function _w677(v1, v2)
+    return function(v3)
+        local v4 = v3
+        if v3 then
+            v4 = v3:IsA("BasePart")
+        end
+        if v4 then
+            if v2[1][3][v3] == nil then
+                v2[1][3][v3] = v3.LocalTransparencyModifier
+            end
+            v3.LocalTransparencyModifier = 1
+            return
+        end
+    end
+end
+local function _w678(v1, v2)
+    return function()
+        return v2[1][3] and not v2[2][3].FarmPaused()
+    end
+end
+local function _w679(v1, v2)
+    return function()
+        local v3 = v2[2][3].FPSState.Original.LightingTechnology
+        v2[1][3].Technology = v3
+    end
+end
+local function _w680(v1, v2)
+    return function()
+        local v3 = v2[1][3].Character
+        local v4 = v3
+        if v3 then
+            v4 = v3:FindFirstChildOfClass("Humanoid")
+        end
+        local v5 = v3
+        if v3 then
+            v5 = v3:FindFirstChild("HumanoidRootPart")
+        end
+        local v6, v7, petMountJoint2, v8, v9, v10
+        if not v4 or not v5 then
+            return false
+        else
+            petMountJoint2 = v5:FindFirstChild("PetMountJoint")
+            if petMountJoint2 and petMountJoint2:IsA("JointInstance") and petMountJoint2.Part1 then
+                return true
+            else
+                v6 = {}
+                v6[1], v6[2], v6[3], v6[4] = "IsRiding", "Riding", "Mounted", "OnPet"
+                v7, v10, v8 = ipairs(v6)
+                v7, v10, v8 = v1.g(v7, v10, v8)
+                v6, v9 = v7(v10, v8)
+                v8 = v6
+                if v8 ~= nil then
+                    while true do
+                        if v2[1][3]:GetAttribute(v9) ~= true then
+                            v6, v9 = v7(v10, v8)
+                            v8 = v6
+                            if v8 ~= nil then
+                                continue
+                            end
+                            return false
+                        end
+                        break
+                    end
+                    return true
+                end
+                return false
+            end
+        end
+    end
+end
+local function _w681(v1, v2)
+    return function()
+        if v2[1][3].FPSState.Original.QualityLevel == nil then
+            pcall(v1:Fl({v2[1]}))
+        end
+        if v2[1][3].FPSState.Original.MeshPartDetailLevel == nil then
+            pcall(v1:Dl({v2[1]}))
+        end
+        if v2[1][3].FPSState.Original.GlobalShadows == nil then
+            pcall(v1:Gl({v2[1], v2[2]}))
+        end
+        if v2[1][3].FPSState.Original.FogEnd == nil then
+            pcall(v1:El({v2[1], v2[2]}))
+        end
+        if v2[1][3].FPSState.Original.ShadowSoftness == nil then
+            pcall(v1:zl({v2[1], v2[2]}))
+        end
+        if v2[1][3].FPSState.Original.LightingTechnology == nil then
+            pcall(v1:Cl({v2[1], v2[2]}))
+        end
+        local v3 = workspace
+        local v4
+        v4, v3 = v3, v3.FindFirstChildOfClass
+        v3 = {[1] = 3, [3] = v3(v4, "Terrain")}
+        v3[2] = v3
+        if v3[3] then
+            if v2[1][3].FPSState.Original.WaterWaveSize == nil then
+                pcall(v1:Bl({v2[1], v3}))
+            end
+            if v2[1][3].FPSState.Original.WaterWaveSpeed == nil then
+                pcall(v1:Jl({v2[1], v3}))
+            end
+            if v2[1][3].FPSState.Original.WaterReflectance == nil then
+                pcall(v1:Al({v2[1], v3}))
+            end
+            if v2[1][3].FPSState.Original.WaterTransparency == nil then
+                pcall(v1:Hl({v2[1], v3}))
+            end
+            if v2[1][3].FPSState.Original.TerrainDecoration == nil then
+                pcall(v1:Il({v2[1], v3}))
+            end
+        end
+    end
+end
+local function _w682(v1, v2)
+    return function(v3)
+        local v4 = v2[1][3][v3]
+        local v5 = v4
+        if v4 then
+            v5 = tostring(v4.Rarity or "Common")
+        end
+        if not v5 then
+            v5 = "Common"
+        end
+        local v6 = v2[3][3][v5] or v2[3][3].Common
+        local v7 = v2[2][3][v3]
+        local v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19
+        if v7 then
+            v11 = v7.Rotation
+            return v5, v6, v7.Color, v11
+        else
+            v19 = v2[4][3]:FindFirstChild("PlayerGui")
+            v14 = v19 and v19:FindFirstChild("Main")
+            v15 = v14 and v14:FindFirstChild("Index")
+            v11 = v15 and v15:FindFirstChild("Holders")
+            v16 = v11 and v11:FindFirstChild("EggsHolder")
+            v10 = v16 and v16:FindFirstChild(v3)
+            if v10 then
+                v8 = v10.GetDescendants
+                v8 = v1.h(v8(v10))
+                v9, v8, v13 = ipairs(v1.i(v8))
+                v9, v8, v13 = v1.g(v9, v8, v13)
+                v17, v12 = v9(v8, v13)
+                v13 = v17
+                if v13 ~= nil then
+                    while true do
+                        if not (v12:IsA("UIGradient") and v12.Name == v5) then
+                            v17, v12 = v9(v8, v13)
+                            v13 = v17
+                            if v13 ~= nil then
+                                continue
+                            end
+                            return v5, v6, nil, 0
+                        end
+                        break
+                    end
+                    v18 = {Color = v12.Color, Rotation = v12.Rotation}
+                    v18, v7 = v2[2][3], v18
+                    v18[v3] = v7
+                    return v5, v6, v7.Color, v7.Rotation
+                end
+            end
+            return v5, v6, nil, 0
+        end
+    end
+end
+local function _w683(v1, v2)
+    return function(v3)
+        if not (v2[1][3][v3] or v3.Name ~= "ToolName") then
+            v3:IsA("TextLabel")
+            v3:IsA("TextButton")
+            return
+        end
+    end
+end
+local function _w685(v1, v2)
+    return function(v3)
+        if v3.Name == "Basket" then
+            v2[1][3].WatchInstantManualBasketDrop(v3)
+        end
+    end
+end
+local function _w686(v1, v2)
+    return function(v3)
+        local v4
+        if type(v3) == "string" and v3 ~= "" and not v2[1][3][v3] then
+            v2[1][3][v3] = true
+            v4 = v2[3][3]
+            v4[#v4 + 1] = v3
+            v3:match("^Candy%d+_%d+$")
+            v4 = v2[2][3]
+            v4[#v4 + 1] = v3
+        end
+    end
+end
+local function _w687(v1, v2)
+    return function()
+        local v3, v4, v5
+        v4, v3, v5 = pairs(v2[1][3])
+        v4, v3, v5 = v1.g(v4, v3, v5)
+        local v6 = v4(v3, v5)
+        local v7 = {}
+        if v6 ~= nil then
+            while true do
+                if type(v6) == "string" then
+                    v7[#v7 + 1] = v6
+                end
+                v6 = v4(v3, v5)
+                v5 = v6
+                if v5 == nil then
+                    break
+                end
+            end
+        end
+        return v7
+    end
+end
+local function _w688(v1, v2)
+    return function(v3)
+        local h
+        local v4 = v2[1][3].InventoryEggContainers
+        v4 = v1.h(v4())
+        local v5, v6
+        v6, v4, v5 = ipairs(v1.i(v4))
+        v6, v4, v5 = v1.g(v6, v4, v5)
+        local v7, v8
+        v7, v8 = v6(v4, v5)
+        local v9, v10, v11
+        if v7 ~= nil then
+            while true do
+                v10 = v8.GetChildren
+                v10 = v1.h(v10(v8))
+                v11, v10, v9 = ipairs(v1.i(v10))
+                v11, v10, v9 = v1.g(v11, v10, v9)
+                for v12, h in v11, v10, v9 do
+                    v2[2][3](h, "inventory scan")
+                end
+                v7, v8 = v6(v4, v5)
+                v5 = v7
+                if v5 == nil then
+                    break
+                end
+            end
+        end
+        v6, v4, v5 = pairs(v3.NewReceipts)
+        v6, v4, v5 = v1.g(v6, v4, v5)
+        v7, v8 = v6(v4, v5)
+        if v7 == nil then
+            return false, nil
+        else
+            return true, v8
+        end
+    end
+end
+local function _w689(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        v3.EventBatchMode = true
+        v3.EventCycle = 0
+        v3.EventFrozen = {Candy = {}, Halves = {}, Doors = {}, Pumpkins = {}}
+        v3.EventScanHistory = {}
+        v3.EventGeometry = {}
+        v3.EventBusy = false
+        v3.EventStage = "IDLE"
+        v3.EventProcessed = 0
+        v3.EventTotal = 0
+        v3.EventCursor = nil
+        v3.EventFrozenReady = false
+        v3.EventRitualReturnPending = nil
+        v3.EventNextBuyAt = 0
+        v3.EventShopAttempts = 0
+        v3.EventShopSuccesses = 0
+        v3 = game
+        local v4
+        v3, v4 = v3.GetService, v3
+        v3 = {[1] = 3, [3] = v3(v4, "CollectionService")}
+        v3[2] = v3
+        local v5 = game
+        local v6
+        v6, v5 = v5, v5.GetService
+        v4 = {[1] = 3, [3] = v5(v6, "Players").LocalPlayer}
+        v4[2] = v4
+        v6 = {DoorLit = {}}
+        v6.Pumpkin = {RespawnAt = {}, DropUntil = {}, RottenUntil = {}}
+        v6.DoorResult = {}
+        v6.PumpkinResult = {}
+        v6.LastDoor = {}
+        v6.LastPumpkin = {}
+        v6.FetchAt = -math.huge
+        v6.FetchBusy = {}
+        v6.Hooks = {}
+        v6.Next = {}
+        v5 = {[1] = 3, [3] = v6}
+        v5[2] = v5
+        v6 = {[1] = 3, [3] = v6}
+        v6[2] = v6
+        local v7
+        v6[3], v7 = v1:Bk(), v1:qk({v2[6], v5, v2[1]})
+        v7("DoorState", v1:Uj({v5}))
+        v7("DoorKnocked", v1:Ej({v5}))
+        v7("PumpkinState", v1:uk({v5}))
+        v7("PumpkinSearched", v1:Ck({v5}))
+        local v8 = {[1] = 3, [3] = v7}
+        v8[2] = v8
+        v8[3] = v1:Yj({v5, v2[1], v2[6]})
+        local v9 = {[1] = 3, [3] = "PumpkinSearched"}
+        v9[2] = v9
+        local v10
+        v10, v9[3] = task, v1:Ij({v5, v8, v2[1]})
+        local v11
+        v11, v10 = v10.spawn, v1:Oj({v2[1], v5})
+        v11(v10)
+        v10 = {}
+        local v12 = {}
+        v12[1], v12[2], v12[3] = -2358, -348, 40391
+        local v13 = v12
+        local v14 = {}
+        v14[1], v14[2], v14[3] = -2078, -278, 40398
+        v12 = v14
+        local v15 = {}
+        v15[1], v15[2], v15[3] = -1600, -232, 40374
+        v14 = v15
+        local v16 = {}
+        v16[1], v16[2], v16[3] = -1234, -100, 40374
+        local v17 = {}
+        v15 = v16
+        v17[1], v17[2], v17[3] = -1095, 725, 40515
+        v16 = v17
+        local v18 = {}
+        v18[1], v18[2], v18[3] = -965, 505, 40514
+        v17 = v18
+        local v19 = {}
+        v19[1], v19[2], v19[3] = -801, 965, 40514
+        local v20 = {}
+        v18 = v19
+        v20[1], v20[2], v20[3] = -857, 608, 40514
+        v19 = v20
+        local v21 = {}
+        v21[1], v21[2], v21[3] = -533, 1294, 40347
+        local v22 = {}
+        v20 = v21
+        v22[1], v22[2], v22[3] = -374, 1033, 40346
+        local v23 = {}
+        v21 = v22
+        v23[1], v23[2], v23[3] = -369, 601, 40346
+        v22 = v23
+        local v24 = {}
+        v24[1], v24[2], v24[3] = -577, 292, 40347
+        local v25 = {}
+        v23 = v24
+        v25[1], v25[2], v25[3] = -295, 196, 40346
+        v24 = v25
+        local v26 = {}
+        v26[1], v26[2], v26[3] = -233, -335, 40372
+        v25 = v26
+        local v27 = {}
+        v27[1], v27[2], v27[3] = -201, 59, 40372
+        v26 = v27
+        local v28 = {}
+        v28[1], v28[2], v28[3] = -1080, 27, 40380
+        v27 = v28
+        v10[1], v10[2], v10[3], v10[4], v10[5], v10[6], v10[7], v10[8], v10[9], v10[10], v10[11], v10[12], v10[13], v10[14], v10[15], v10[16] = v13, v12, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v28
+        v28 = {}
+        v28[1], v28[2], v28[3] = -535, 441, 40353
+        v10[17] = v28
+        v11 = {[1] = 3, [3] = v10}
+        v11[2] = v11
+        v10 = {[1] = 3, [3] = v10}
+        v10[2] = v10
+        v10[3] = v1:Ak({v2[1]})
+        v13 = {[1] = 3, [3] = v28}
+        v13[2] = v13
+        v13[3], v15 = v1:Qj({v2[1]}), math
+        v12 = {[1] = 3, [3] = -v15.huge}
+        v12[2] = v12
+        v14 = {[1] = 3, [3] = false}
+        v14[2] = v14
+        v15 = {[1] = 3, [3] = v15}
+        v15[2] = v15
+        v15[3] = v1:Gj({v2[5], v14, v2[1], v12, v2[4]})
+        v16 = {[1] = 3, [3] = v16}
+        v16[2] = v16
+        v16[3] = v1:bk({v2[1], v15})
+        v17 = {[1] = 3, [3] = v17}
+        v17[2] = v17
+        v17[3] = v1:rk({v2[1], v2[4], v15, v13})
+        v18 = {[1] = 3, [3] = v18}
+        v18[2] = v18
+        v18[3] = v1:jk()
+        v19 = {[1] = 3, [3] = v19}
+        v19[2] = v19
+        v19[3] = v1:mk({v19})
+        v20 = {[1] = 3, [3] = v20}
+        v20[2] = v20
+        v20[3] = v1:lk()
+        v21 = {[1] = 3, [3] = v21}
+        v21[2] = v21
+        v21[3], v22, v23 = v1:Mj({v13, v2[1]}), v2[1][3], nil
+        v22.EventScanCamera = nil
+        v22.EventScanReplica = nil
+        v22.EventScanPetReplica = nil
+        v22.EventScanPetSource = nil
+        v22.EventScanCancelled = false
+        v22 = v1:ak({v2[1], v2[2], v2[4]})
+        v23 = v2[1][3]
+        v23.StopHalloweenScanCamera = v22
+        v22 = {[1] = 3, [3] = v22}
+        v22[2] = v22
+        v22[3] = v1:Nj({v2[1], v2[7], v2[4], v2[2]})
+        v23 = {[1] = 3, [3] = v23}
+        v23[2] = v23
+        v23[3] = v1:hk({v2[4]})
+        v24 = {[1] = 3, [3] = v24}
+        v24[2] = v24
+        v24[3] = v1:Aj()
+        v25 = {[1] = 3, [3] = v25}
+        v25[2] = v25
+        v25[3] = v1:Sj()
+        v26 = {[1] = 3, [3] = v26}
+        v26[2] = v26
+        v26[3] = v1:xk({v24, v2[1]})
+        v27 = {[1] = 3, [3] = v27}
+        v27[2] = v27
+        v27[3] = v1:ek({v5, v19})
+        v28 = {[1] = 3, [3] = v28}
+        v28[2] = v28
+        v28[3] = v1:kk({v6, v5})
+        local v29 = {[1] = 3, [3] = -535}
+        v29[2] = v29
+        v29[3] = v1:zk({v2[1], v4, v27, v3, v25, v26, v19, v28})
+        local v30 = {[1] = 3, [3] = 441}
+        v30[2] = v30
+        v30[3] = v1:Vj()
+        local v31 = {[1] = 3, [3] = 40353}
+        v31[2] = v31
+        v31[3] = v1:Jj({v11, v18, v2[1]})
+        local v32 = {[1] = 3, [3] = nil}
+        v32[2] = v32
+        v32[3] = v1:Lj({v18, v31, v16, v29, v9, v13, v10, v21, v23, v2[1], v30})
+        local v33 = {[1] = 3, [3] = nil}
+        v33[2] = v33
+        v33[3] = v1:Fj({v2[1], v2[2], v22, v32})
+        local v34 = {[1] = 3, [3] = nil}
+        v34[2] = v34
+        v34[3] = v1:_k({v25, v18, v2[1]})
+        local v35 = {[1] = 3, [3] = nil}
+        v35[2] = v35
+        v35[3] = v1:vk()
+        local v36 = {[1] = 3, [3] = nil}
+        v36[2] = v36
+        v36[3] = v1:ok({v2[1], v3, v4, v35})
+        local v37 = {[1] = 3, [3] = nil}
+        v37[2] = v37
+        v37[3] = v1:Dk({v4, v35})
+        local v38 = {[1] = 3, [3] = nil}
+        v38[2] = v38
+        v38[3] = v1:Kj({v3, v20, v35, v18, v19})
+        local v39 = {[1] = 3, [3] = nil}
+        v39[2] = v39
+        v39[3] = v1:yk({v3, v35})
+        local v40 = {[1] = 3, [3] = nil}
+        v40[2] = v40
+        v40[3] = v1:dk({v19})
+        local v41 = {[1] = 3, [3] = nil}
+        v41[2] = v41
+        v41[3] = v1:Pj({v2[1], v16, v2[6], v10})
+        local v42 = {[1] = 3, [3] = nil}
+        v42[2] = v42
+        v42[3] = v1:sk({v4, v13, v19, v2[1]})
+        local v43 = {[1] = 3, [3] = nil}
+        v43[2] = v43
+        local v44, v45
+        v45, v44, v43[3] = v1:fk({v2[6]}), v1:nk({v13, v21, v19}), v1:ck({v4, v21, v2[1], v41, v16, v19, v23, v42, v37, v35, v10})
+        local v46 = {[1] = 3, [3] = nil}
+        v46[2] = v46
+        v46[3] = v1:gk({v38, v3})
+        local v47 = {[1] = 3, [3] = nil}
+        v47[2] = v47
+        v47[3] = v1:Cj({v27, v10, v23, v16, v2[6], v5, v21, v13, v2[1]})
+        local v48 = {[1] = 3, [3] = nil}
+        v48[2] = v48
+        v48[3] = v1:Rj({v2[1], v16, v21, v2[6], v9, v28, v10, v23, v13, v5, v6})
+        local v49 = {[1] = 3, [3] = nil}
+        v49[2] = v49
+        v49[3] = v1:Dj({v4, v47, v48, v13, v2[1], v16, v23, v46, v43, v10, v28, v27, v21, v34})
+        local v50 = {[1] = 3, [3] = nil}
+        v50[2] = v50
+        v50[3] = v1:Tj({v19, v3})
+        local v51 = {[1] = 3, [3] = nil}
+        v51[2] = v51
+        v51[3] = v1:tk({v2[3], v2[1]})
+        local v52 = {[1] = 3, [3] = nil}
+        v52[2] = v52
+        v52[3] = v1:ik({v10, v51, v50, v2[4], v36, v16, v2[6], v13, v21, v2[1], v23})
+        local v53 = {[1] = 3, [3] = nil}
+        v53[2] = v53
+        v53[3] = v1:Ek({v4})
+        local v54 = {[1] = 3, [3] = nil}
+        v54[2] = v54
+        v54[3] = v1:Wj({v40, v3, v19})
+        local v55 = {[1] = 3, [3] = nil}
+        v55[2] = v55
+        v55[3] = v1:Fk({v2[1], v10, v40, v21})
+        local v56 = {[1] = 3, [3] = nil}
+        v56[2] = v56
+        v56[3] = v1:pk({v2[4], v40, v54, v41, v16, v2[1], v23, v21, v55, v53, v13, v10})
+        local v57 = {[1] = 3, [3] = nil}
+        v57[2] = v57
+        v57[3] = v1:Bj({v3, v2[1], v43, v16, v37, v35})
+        local v58 = {[1] = 3, [3] = nil}
+        v58[2] = v58
+        v58[3] = v1:Hj({v39, v42, v53, v56, v2[1], v57, v40, v21, v43, v4, v10, v23, v16, v41})
+        local v59 = {[1] = 3, [3] = nil}
+        v59[2] = v59
+        local v60
+        v59[3], v60 = v1:Xj({v2[1], v52, v36, v58, v16, v10, v51, v49}), task
+        local v61
+        v61, v60 = v60.spawn, v1:wk({v52, v55, v9, v16, v17, v10, v13, v59, v33, v2[1]})
+        v61(v60)
+    end
+end
+local function _w690(v1, v2)
+    return function()
+        v2[1][3].WaterWaveSpeed = 0
+    end
+end
+local function _w691(v1, v2)
+    return function()
+        settings().Rendering.QualityLevel = v2[1][3].FPSState.Original.QualityLevel
+    end
+end
+local function _w692(v1)
+    return function(v2, v3)
+        return v2.Id < v3.Id
+    end
+end
+local function _w693(v1, v2)
+    return function(v3, v4, v5)
+        local h, _
+        local v6, v7, basket8, v8, v9, v10, v11, v12, v13
+        if not (not v2[1][3].Alive or not v4 or not v4.Parent) then
+            v11 = v2[3][3]
+            v2[1][3].setLabel(v11, "🟡 Moving outside ranch")
+            v2[1][3].TeleportOutsidePlot(v4, v5)
+            task.wait(0.75)
+            basket8 = v2[4][3]:FindFirstChild("Basket")
+            if not basket8 or #basket8:GetChildren() == 0 then
+                v12 = v2[1][3]
+                v12, v6, v11 = v2[3][3], "🔴 Carry not confirmed", v12.setLabel
+                v11(v12, "🔴 Carry not confirmed")
+            else
+                v11 = v4.Position
+                v12 = {}
+                if v2[1][3].RenderedEggs then
+                    v7 = v2[1][3].RenderedEggs
+                    v9, v7 = v7, v7.GetChildren
+                    v7 = v1.h(v7(v9))
+                    v6, v7, v9 = ipairs(v1.i(v7))
+                    v6, v7, v9 = v1.g(v6, v7, v9)
+                    for _, h in v6, v7, v9 do
+                        v12[h] = true
+                    end
+                end
+                v7 = v2[1][3]
+                v7, v9, v6 = v2[3][3], "🟡 Dropping outside ranch", v7.setLabel
+                v6(v7, "🟡 Dropping outside ranch")
+                if not v2[1][3].FireBasketDrop(v3) then
+                    v7 = v2[3][3]
+                    v2[1][3].setLabel(v7, "🔴 Outside drop failed")
+                else
+                    v2[1][3].WaitForBasketEmpty(3)
+                    v6 = os.clock() + 8
+                    while true do
+                        if v2[1][3].Alive and v2[2][3] and v4.Parent and os.clock() < v6 then
+                            v9, h, v13, _, v7 = v3, v12, v4, v11, v2[1][3].FindDroppedEgg
+                            v7 = v7(v9, v13, h, _)
+                            if not (v7 and v7.Parent) then
+                                task.wait(0.25)
+                                continue
+                            end
+                            v9 = v2[1][3].GetEggPart(v7)
+                            if not v9 then
+                                task.wait(0.25)
+                                continue
+                            end
+                            v13, _, h = v2[1][3].setLabel, "🟡 Picking egg again", v2[3][3]
+                            v13(h, "🟡 Picking egg again")
+                            v13, h, v10 = v2[1][3].UprightCFrame, v9.Position, Vector3
+                            _, v8, v10 = v10.new, 3, 0
+                            v4.CFrame = v13(h + _(0, 3, 0))
+                            v2[1][3].Stabilize()
+                            v13, h = task.wait, 0.18
+                            v13(0.18)
+                            v13, h = v2[1][3].PickupAndConfirm, v7
+                            v13 = v13(h)
+                            h = v13 and v13.Parent
+                            if not h then
+                                task.wait(0.25)
+                                continue
+                            end
+                            _ = v2[1][3]
+                            _, h, v10 = v2[3][3], _.setLabel, "🟢 Egg picked again"
+                            h(_, "🟢 Egg picked again")
+                            return v13
+                        end
+                        break
+                    end
+                    v9 = v2[1][3]
+                    v9, v7, v13 = v2[3][3], v9.setLabel, "🔴 Outside re-pick failed"
+                    v7(v9, "🔴 Outside re-pick failed")
+                end
+            end
+        end
+        return nil
+    end
+end
+local function _w694(v1, v2)
+    return function()
+        local v3, v4, v5
+        if v2[1][3].FarmPaused() then
+            return false
+        else
+            v5 = v2[2][3].Character
+            v4 = v5 and v5:FindFirstChild("HumanoidRootPart")
+            if not v4 then
+                return false
+            else
+                v3 = v2[1][3].FuseMachineCFrame.Position
+                if (v4.Position - v3).Magnitude > 8 then
+                    v4.CFrame = v2[1][3].FuseMachineCFrame
+                    task.wait(0.2)
+                end
+                return true
+            end
+        end
+    end
+end
+local function _w695(v1, v2)
+    return function(v3, v4)
+        if v3 then
+            v2[1][3].StatusGates[v3] = v4
+        end
+    end
+end
+local function _w696(v1, v2)
+    return function()
+        local e
+        local v3 = v2[1][3]
+        local v4 = v3.FarmHover
+        v3.FarmHover = nil
+        local v5, v6
+        if v4 then
+            v4.Active = false
+            v3, v6, v5 = ipairs(v4.Connections)
+            v3, v6, v5 = v1.g(v3, v6, v5)
+            for v7, e in v3, v6, v5 do
+                e = {[1] = 3, [3] = e}
+                e[2] = e
+                pcall(v1:im({e}))
+            end
+            return
+        end
+    end
+end
+local function _w697(v1, v2)
+    return function()
+        local v3 = 0
+        local v4 = {[1] = 3, [3] = nil}
+        v4[2] = v4
+        pcall(v1:Ln({v4}))
+        local v5, v6, v7, v8
+        if v4[3] then
+            v5 = #v4[3]
+            v6 = 1
+            if 1 <= v5 then
+                while true do
+                    if v2[1][3].FPSState.Enabled then
+                        v8 = v2[1][3].FPSGeneration
+                        if v2[2][3] == v8 then
+                            v7 = v4[3][v6]
+                            v2[1][3].OptimizeInstance(v7)
+                            v8, v3 = 80, v3 + 1
+                            if v3 >= 80 then
+                                v3 = 0
+                                task.wait()
+                            end
+                            v6 = v6 + 1
+                            if v6 <= v5 then
+                                continue
+                            end
+                            return
+                        end
+                        break
+                    end
+                    return
+                end
+                return
+            end
+        end
+    end
+end
+local function _w698(v1, v2)
+    return function()
+        local v3, v4, basket9
+        if not v2[1][3] then
+            return false
+        else
+            basket9 = v2[5][3]:FindFirstChild("Basket")
+            if basket9 and #basket9:GetChildren() > 0 then
+                return true
+            else
+                if os.clock() - v2[4][3] > 0.16 then
+                    v4 = os.clock()
+                    v4, v3, v2[4][3] = pcall, v1:Hk({v2[3]}), v4
+                    v4, v3 = v4(v3)
+                    v2[2][3] = v4 and v3 ~= nil
+                end
+                return v2[2][3]
+            end
+        end
+    end
+end
+local function _w699(v1, v2)
+    return function(v3, v4, v5, v6)
+        local v7 = v2[1][3]
+        v7.CurrentEggWebhookSnapshot = v7.CaptureEggWebhookSnapshot(v5, v7.CurrentEggWebhookSnapshot)
+        local v8
+        v8, v7 = "Instant", v7.PickupMode
+        local v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, waitInitialCarryTimer, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, effectiveMountedSpeed, v40, v41
+        if v7 == "Instant" then
+            v7 = v2[1][3].FinishNewInstantEgg
+            v7 = table.pack(v7(v3, v4, v5, v6))
+            return table.unpack(v7, 1, v7.n)
+        else
+            v8 = v2[1][3].PickupMode
+            v7 = v8 == "TP + Phase" and "TP + Phase" or "TP"
+            v8 = v2[1][3].ActivePickupAt or os.clock()
+            waitInitialCarryTimer = v2[1][3].WaitInitialCarryTimer(1.8)
+            v15 = waitInitialCarryTimer and os.clock() + math.max(0, waitInitialCarryTimer) or nil
+            v27 = waitInitialCarryTimer and os.clock() or nil
+            v37 = v2[1][3]
+            effectiveMountedSpeed = v37.EffectiveMountedSpeed()
+            v40, v37, v23 = v6, v37.PredictDeliveryWait, effectiveMountedSpeed
+            v37, v40 = v37(v40, v23)
+            v23 = v2[1][3].DeliveryLocationKey(v3, v6)
+            v41 = v2[1][3].DeliveryRetryState[v23]
+            v19 = v41 and os.clock() - v41.At < 120 and v41.Failures or 0
+            v20 = v37 and v37 + v19 or nil
+            v11 = v7 == "TP" or v2[1][3].AutoDropEgg
+            if v11 and not v20 then
+                v24 = v2[3][3]
+                v2[1][3].setLabel(v24, "🔴 Delivery timing unavailable • refusing early drop")
+                return false
+            else
+                v2[1][3].HasCarriedEgg()
+                v2[1][3].IsFastRideMounted()
+                if v7 == "TP" then
+                    v2[1][3].WaitPickupStopwatch(v8, v20)
+                    v30 = string.format
+                    v2[1][3].TraceRideDrop("STOPWATCH_READY", "elapsed=" .. v30("%.2f", os.clock() - v8) .. " required=" .. tostring(v20) .. " dip=" .. tostring(v2[5][3]))
+                end
+                v21 = v5
+                v24 = v2[2][3]:FindFirstChild("Basket")
+                v12 = v24 and v24:GetChildren()[1]
+                if v12 then
+                    v21 = v12
+                end
+                v14 = v2[1][3]
+                v14.CurrentEggWebhookSnapshot = v14.CaptureEggWebhookSnapshot(v21, v14.CurrentEggWebhookSnapshot)
+                v14 = {[1] = 3, [3] = nil}
+                v14[2] = v14
+                v30 = v2[1][3].CountInventoryEgg(v3)
+                if v2[1][3].AutoDropEgg then
+                    v22 = v2[1][3].SavedDropPosition
+                    if type(v22) ~= "table" then
+                        v28 = v2[1][3]
+                        v28, v16, v34 = v2[3][3], v28.setLabel, "🔴 Save drop position first"
+                        v16(v28, "🔴 Save drop position first")
+                        return false
+                    else
+                        v39 = tonumber(v22.X)
+                        v31, v39, v16 = v22.Y, tonumber, v39
+                        v39 = v39(v31)
+                        v39, v28, v34 = v22.Z, v39, tonumber
+                        v34 = v34(v39)
+                        if not v16 or not v28 or not v34 then
+                            return false
+                        else
+                            v39 = v2[1][3].UprightCFrame
+                            v31 = Vector3.new
+                            v31 = v1.h(v31(v16, v28 + 3, v34))
+                            v33 = v39(v1.i(v31))
+                            v31 = v33.Position
+                            if v2[1][3].IsInsideOwnPlotPosition(v31) ~= false then
+                                v31 = v2[3][3]
+                                v2[1][3].setLabel(v31, "🔴 Save drop OUTSIDE your ranch to avoid auto-collection")
+                                return false
+                            end
+                        end
+                    end
+                else
+                    v22 = v2[1][3].GetMyPlot()
+                    v16 = v22 and v22:FindFirstChild("Baseplate")
+                    if not v16 or not v16:IsA("BasePart") then
+                        v34 = v2[1][3]
+                        v34, v28, v39 = v2[3][3], v34.setLabel, "🔴 Ranch unavailable"
+                        v28(v34, "🔴 Ranch unavailable")
+                        return false
+                    else
+                        v39 = v16.CFrame
+                        v31 = CFrame.new
+                        v33 = v2[1][3].UprightCFrame((v39 * v31(0, 3, 0)).Position)
+                    end
+                end
+                if not v2[1][3].AutoDropEgg then
+                    v14[3] = v2[1][3].BeginRanchReceiptWatch(v3)
+                    v14[3].OriginPosition = v6
+                    v2[1][3].TraceRideDrop("RANCH_RECEIPT_ARMED", "egg=" .. tostring(v3) .. " oldCount=" .. tostring(v30) .. " oldIDs=" .. tostring(v1:Do({v14})()))
+                end
+                v16 = v2[1][3]
+                v16.StopFarmHover()
+                v25, v9, v16, v31, v22, v28 = tostring, v2[1][3], "TRAVEL_BEGIN", " drop=", v16.TraceRideDrop, "mode="
+                v25 = v25(v9.AutoDropEgg)
+                v26 = v2[1][3].HasCarriedEgg
+                v26 = v1.h(v26())
+                v22("TRAVEL_BEGIN", "mode=" .. v7 .. " drop=" .. v25 .. " carry=" .. tostring(v1.i(v26)) .. " elapsed=" .. string.format("%.2f", os.clock() - v8) .. " target=" .. tostring(v33.Position) .. " from=" .. tostring(v4.Position))
+                v22 = v2[1][3].GetMyPlot()
+                if v22 then
+                    v22:FindFirstChild("Baseplate")
+                end
+                v28 = v2[1][3].AutoDropEgg and "Saved Position" or "Ranch"
+                v39 = false
+                if v7 == "TP" then
+                    v35 = v2[1][3]
+                    v35, v31, v25 = v2[3][3], v35.setLabel, "🟡 TP to destination"
+                    v31(v35, "🟡 TP to destination")
+                    v34 = v2[1][3].InstantTeleportTo(v33)
+                else
+                    v9 = v2[1][3]
+                    v31 = {
+                        AvoidOwnRanch = v9.AutoDropEgg,
+                        PickupAt = v8,
+                        MinWait = v20,
+                        ExpiryAt = v15,
+                        LastTimerSeenAt = v27,
+                        EmergencyTarget = v33,
+                        EmergencyLabel = v28,
+                    }
+                    v35 = v9.PhaseMountedTo
+                    v9 = v9.AutoDropEgg and "Saved Drop" or "Ranch"
+                    v35, v25 = v35(v33, v9, v31)
+                    v34 = v35
+                    v39 = v25
+                end
+                v31 = v2[1][3].TraceRideDrop
+                v29 = tostring(v34)
+                v38 = tostring(v39)
+                v32 = v2[1][3].HasCarriedEgg
+                v32 = table.pack(v32())
+                v31("TRAVEL_END", "reached=" .. v29 .. " emergency=" .. v38 .. " carried=" .. tostring(table.unpack(v32, 1, v32.n)) .. " pos=" .. tostring(v4.Position))
+                if not v34 then
+                    if v14[3] then
+                        v35 = v14[3]
+                        v14[3].Stop(v35)
+                    end
+                    return false
+                else
+                    v35 = v2[1][3]
+                    v25, v9, v35, v31 = v14[3], 4.5, v3, v35.ConfirmRanchDelivery
+                    v31, v35 = v31(v35, v25, 4.5)
+                    if v14[3] then
+                        v14[3].Stop(v14[3])
+                    end
+                    if not v31 then
+                        v25 = v2[1][3].TraceRideDrop
+                        v10 = tostring(v3)
+                        v17 = tostring(v35)
+                        v13 = tostring(v30)
+                        v18 = v2[1][3].CountInventoryEgg
+                        v18 = table.pack(v18(v3))
+                        v25("RANCH_RECEIPT_MISSING", "egg=" .. v10 .. " reason=" .. v17 .. " before=" .. v13 .. " after=" .. tostring(table.unpack(v18, 1, v18.n)))
+                        v25 = v2[1][3].DeliveryRetryState
+                        v29 = {}
+                        v29.Failures = math.min(v19 + 1, 12)
+                        v29.At = os.clock()
+                        v25[v23] = v29
+                        v9 = v2[3][3]
+                        v2[1][3].setLabel(v9, "🟠 Delivery evidence missing • review Egg pickup status")
+                        return false
+                    else
+                        v2[1][3].TraceRideDrop("RANCH_RECEIPT_VERIFIED", "egg=" .. tostring(v3) .. " proof=" .. tostring(v35) .. " elapsed=" .. string.format("%.2f", os.clock() - v8))
+                        v2[1][3].DeliveryRetryState[v23] = nil
+                        v2[1][3].RecordDeliveredEgg(v8)
+                        v25 = v2[2][3]:FindFirstChild("Basket")
+                        v29 = v25
+                        v9 = v2[1][3]
+                        if v29 then
+                            v29 = v25:GetChildren()[1] == v12
+                        end
+                        if v29 then
+                            v29 = v12
+                        end
+                        if not v29 then
+                            v29 = nil
+                        end
+                        v9.LastCarryAttempt = v29
+                        v2[1][3].LastCarryOutcome = "delivered"
+                        if v39 then
+                            v29 = v2[1][3]
+                            v29, v9, v36 = v2[3][3], v29.setLabel, "🟢 Emergency ranch delivery confirmed"
+                            v9(v29, "🟢 Emergency ranch delivery confirmed")
+                        else
+                            v29 = v2[3][3]
+                            v2[1][3].setLabel(v29, "🟢 Delivered to ranch • " .. v7)
+                        end
+                        v10 = v2[1][3]
+                        v26, v10, v38, v36 = v21, v3, v2[1][3].CurrentEggWebhookSnapshot, v10.SendWebhookNotification
+                        task.spawn(v36, v10, v26, v38)
+                        return true
+                    end
+                end
+            end
+        end
+    end
+end
+local function _w700(v1, v2)
+    return function()
+        local v3 = tostring(v2[1][3].Name or "Player")
+        local sub = v3:sub(1, 3)
+        local v4 = string.rep
+        local v5 = math.max
+        local pack = table.pack(v5(0, #v3 - 3))
+        v4 = v4("*", table.unpack(pack, 1, pack.n))
+        v4, v3 = v2[3][3], sub .. v4
+        local v6
+        v4, v6, sub = v2[5][3], "Player: ", v4.setLabel
+        sub(v4, "Player: " .. v3)
+        v4 = v2[3][3]
+        v4, v6, sub = v2[4][3], "Access: Keyless", v4.setLabel
+        sub(v4, "Access: Keyless")
+        v4 = v2[2][3]
+        v2[3][3].setLabel(v4, "Key remaining: Lifetime")
+    end
+end
+local function _w701(v1, v2)
+    return function(v3, v4)
+        local e
+        local lower9, v5, v6, v7, v8, webhookVariantName, v9, v10
+        if v3 ~= nil then
+            v10 = tostring(v3)
+            v8, v10, v6 = "[^+]+", v10.gmatch, v10
+            v10, v6, v8 = v10(v6, "[^+]+")
+            v10, v6, v8 = v1.g(v10, v6, v8)
+            for e in v10, v6, v8 do
+                webhookVariantName = v2[1][3].webhookVariantName(e)
+                lower9 = webhookVariantName:lower()
+                if lower9 ~= "normal" and lower9 ~= "default" and lower9 ~= "false" and not v2[3][3][lower9] then
+                    v2[3][3][lower9] = true
+                    v7 = v2[5][3][webhookVariantName]
+                    v5 = v4
+                    if lower9 == "gold" then
+                        v5 = "mutation"
+                    elseif type(v7) == "table" then
+                        if v7.Source ~= nil or v7.WeatherName ~= nil then
+                            v5 = "trait"
+                        end
+                    end
+                    if v5 == "trait" then
+                        v9 = v2[4][3]
+                    else
+                        v9 = v2[2][3]
+                    end
+                    v9[#v9 + 1] = webhookVariantName
+                end
+            end
+            return
+        end
+    end
+end
+local function _w702(v1, v2)
+    return function(v3, v4, originPosition, v5)
+        local beginRanchReceiptWatch = v2[1][3].BeginRanchReceiptWatch(v4)
+        beginRanchReceiptWatch.OriginPosition = originPosition
+        local v6 = v2[1][3].ActivePickupAt or os.clock()
+        local v7, v8
+        v7, v8 = v2[1][3].InstantPickupRequest(v3, beginRanchReceiptWatch)
+        local v9 = false
+        if v7 then
+            v9 = v2[1][3].InstantAwaitDelivery(v4, beginRanchReceiptWatch, v6, 2.7)
+        else
+            v2[1][3].TraceRideDrop("INSTANT_PAIR_NOT_SENT", "egg=" .. tostring(v4) .. " reason=" .. tostring(v8))
+            if beginRanchReceiptWatch:Check() then
+                v2[1][3].RecordDeliveredEgg(v6)
+                v2[1][3].LastCarryOutcome = "delivered"
+                v9 = true
+            end
+        end
+        beginRanchReceiptWatch:Stop()
+        if v2[1][3].InstantExpectedBasketClear == "delivery" then
+            v2[1][3].InstantExpectedBasketClear = nil
+        end
+        local v10, v11, v12, v13, v14, v15
+        if v2[1][3].InstantCycleCancelled() then
+            return false
+        elseif v9 then
+            v2[1][3].InstantDeliveryConfirmed = true
+            v15 = v2[2][3]:FindFirstChild("Basket")
+            v13 = v15 and v15:GetChildren()[1] or nil
+            v2[1][3].LastCarryAttempt = v13
+            v14 = v2[1][3]
+            v11, v12, v14, v10 = nil, v2[1][3].CurrentEggWebhookSnapshot, v4, v14.SendWebhookNotification
+            task.spawn(v10, v14, nil, v12)
+            return true
+        else
+            return false
+        end
+    end
+end
+local function _w703(v1, v2)
+    return function()
+        v2[1][3].RespawnConnection:Disconnect()
+    end
+end
+local function _w704(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        local v4 = false
+        local v5
+        v5, v3 = v3, v3.GetTagged
+        v3 = v1.h(v3(v5, "HalloweenRitualPrompt"))
+        local v6
+        v6, v3, v5 = ipairs(v1.i(v3))
+        v6, v3, v5 = v1.g(v6, v3, v5)
+        local v7, v8
+        v8, v7 = v6(v3, v5)
+        local v9, v10, v11, v12, v13, v14, v15
+        if v8 ~= nil then
+            while true do
+                v9, v14 = v2[6][3](v7)
+                if not (v14 == "Reward" and v2[5][3](v7, "Reward")) then
+                    v8, v7 = v6(v3, v5)
+                    v5 = v8
+                    if v5 ~= nil then
+                        continue
+                    end
+                    if v4 then
+                        v6 = v2[2][3]
+                        v6.EventRitualRewardPendingUntil = os.clock() + 18
+                        v6.EventRitualRewardNextTryAt = 0
+                    end
+                    return v4, nil
+                end
+                if not v2[4][3]() then
+                    v2[2][3].CandyBusy = true
+                    v10, v15 = pcall(v2[3][3], v7, "Reward")
+                    v11 = v2[2][3]
+                    v11.CandyBusy = false
+                    v13, v12, v11 = "EVENT_RITUAL_CAVE_OPEN", v10, v11.CandyLog
+                    if v12 then
+                        v12 = tostring(v15)
+                    end
+                    if not v12 then
+                        v12 = "ERROR_" .. tostring(v15)
+                    end
+                    v11("EVENT_RITUAL_CAVE_OPEN", v12)
+                    if v10 and v15 == "CONFIRMED" then
+                        v4 = true
+                    end
+                    v8, v7 = v6(v3, v5)
+                    v5 = v8
+                    if v5 ~= nil then
+                        continue
+                    end
+                    if v4 then
+                        v6 = v2[2][3]
+                        v6.EventRitualRewardPendingUntil = os.clock() + 18
+                        v6.EventRitualRewardNextTryAt = 0
+                    end
+                    return v4, nil
+                end
+                break
+            end
+            return false, "YIELD_EGG"
+        end
+        if v4 then
+            v6 = v2[2][3]
+            v6.EventRitualRewardPendingUntil = os.clock() + 18
+            v6.EventRitualRewardNextTryAt = 0
+        end
+        return v4, nil
+    end
+end
+local function _w705(v1, v2)
+    return function(v3)
+        local v4, v5, v6, v7, v8, v9
+        if type(v3) == "number" then
+            if not (v3 < 0 or v3 == math.huge) then
+                return v3
+            end
+            return nil
+        else
+            v5 = tostring(v3 or ""):lower():gsub("[%s,_]", ""):gsub("kg$", "")
+            v4 = tonumber(v5)
+            if v4 and v4 >= 0 and v4 < math.huge then
+                return v4
+            else
+                v7, v8 = v5:match("^(%d*%.?%d+)(%a+)$")
+                if v7 then
+                    v6 = v2[1][3].KGSuffixes[v8]
+                    if v6 then
+                        v9 = tonumber(v7) * v6
+                        if not (not v9 or false or v9 == math.huge or v9 < 0) then
+                            return v9
+                        end
+                    end
+                end
+                return nil
+            end
+        end
+    end
+end
+local function _w706(v1)
+    return function(v2)
+        local o, w, g, j
+        local plots4 = workspace:FindFirstChild("Plots")
+        local v3, hideEgg_Transparency, eggs, v4, hideEgg_CanCollide, v5, v6, v7, v8, v9, v10
+        if plots4 then
+            v8 = plots4.GetChildren
+            v8 = v1.h(v8(plots4))
+            v4, v8, g = ipairs(v1.i(v8))
+            v4, v8, g = v1.g(v4, v8, g)
+            for g, w in v4, v8, g do
+                eggs = w:FindFirstChild("Eggs")
+                if eggs then
+                    v10 = eggs.GetChildren
+                    v10 = v1.h(v10(eggs))
+                    v7, v10, v5 = ipairs(v1.i(v10))
+                    v7, v10, v5 = v1.g(v7, v10, v5)
+                    for _, o in v7, v10, v5 do
+                        if o:IsA("Model") or o:IsA("BasePart") then
+                            v6 = o.GetDescendants
+                            v6 = v1.h(v6(o))
+                            v3, v6, v9 = ipairs(v1.i(v6))
+                            v3, v6, v9 = v1.g(v3, v6, v9)
+                            for _, j in v3, v6, v9 do
+                                if j:IsA("BasePart") then
+                                    if v2 then
+                                        if j:GetAttribute("HideEgg_Transparency") == nil then
+                                            j:SetAttribute("HideEgg_Transparency", j.Transparency)
+                                        end
+                                        if j:GetAttribute("HideEgg_CanCollide") == nil then
+                                            j:SetAttribute("HideEgg_CanCollide", j.CanCollide)
+                                        end
+                                        j.Transparency = 1
+                                        j.CanCollide = false
+                                    else
+                                        hideEgg_Transparency = j:GetAttribute("HideEgg_Transparency")
+                                        hideEgg_CanCollide = j:GetAttribute("HideEgg_CanCollide")
+                                        if hideEgg_Transparency ~= nil then
+                                            j.Transparency = hideEgg_Transparency
+                                        end
+                                        if hideEgg_CanCollide ~= nil then
+                                            j.CanCollide = hideEgg_CanCollide
+                                        end
+                                    end
+                                else
+                                    j:IsA("Decal")
+                                    j:IsA("Texture")
+                                    j:IsA("BillboardGui")
+                                    j:IsA("SurfaceGui")
+                                    j:IsA("ParticleEmitter")
+                                    j:IsA("Beam")
+                                    j:IsA("Trail")
+                                    j:IsA("Fire")
+                                    j:IsA("Smoke")
+                                    j:IsA("Sparkles")
+                                    j:IsA("Light")
+                                    j:IsA("Highlight")
+                                    j:IsA("SelectionBox")
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+            return
+        end
+    end
+end
+local function _w707(v1, v2)
+    return function()
+        local h, f
+        local v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20
+        if not v2[1][3].RenderedEggs then
+            return nil
+        else
+            v2[1][3].FindPreviousSavedDrop()
+            v16 = v2[6][3].Character
+            v10 = v16 and v16:FindFirstChild("HumanoidRootPart")
+            v17 = v2[1][3].PickupPriority or "Rarest"
+            v11 = nil
+            v12 = nil
+            v19 = v2[1][3].RenderedEggs
+            v19, f = v19.GetChildren, v19
+            v19 = v1.h(v19(f))
+            v18, v19, f = ipairs(v1.i(v19))
+            v18, v19, f = v1.g(v18, v19, f)
+            for f, h in v18, v19, f do
+                v8 = not v2[1][3].IsInsideSavedDropSafezone(h)
+                if v8 then
+                    v7 = v2[1][3]
+                    v7, v20, v8, v6, v9 = h, v2[1][3], v7.EggMatchesFilter, v2[5][3], v2[4][3]
+                    v3 = v20.PickupRule
+                    v13, v5, v20 = v2[2][3], v2[7][3], v20.PickupThreshold
+                    v8 = v8(v7, v6, v9, v3, v20, v13, v5)
+                end
+                if v8 then
+                    v9 = v2[1][3]
+                    v9, v3, v6 = tostring, v2[3][3][h.Name].Rarity, v9.RarityPriority
+                    if not v3 then
+                        v3 = "Common"
+                    end
+                    v7 = v6[v9(v3)] or 999
+                    v6 = v2[1][3].GetEggPart(h)
+                    v9 = v6 and v10
+                    if v9 then
+                        v13 = v10.Position
+                        v9 = (v6.Position - v13).Magnitude
+                    end
+                    if not v9 then
+                        v9 = math.huge
+                    end
+                    v3 = v2[1][3].GetEggKG
+                    v3 = v3(h) or 0
+                    if v17 == "Has Mutation/Trait" then
+                        if v2[1][3].GetWorldEggESPMutation then
+                            v2[1][3].GetWorldEggESPMutation(h)
+                        end
+                        v5 = h:GetAttribute("Trait") or h:GetAttribute("SpawnMutation") or h:GetAttribute("SpawnTrait")
+                        if (v5 == nil or tostring(v5) == "Normal") and type(v2[1][3].FindActiveWorldEggConfiguration) == "function" then
+                            v14, v15 = pcall(v2[1][3].FindActiveWorldEggConfiguration, h)
+                            if v14 and v15 then
+                                v15:GetAttribute("Trait")
+                            end
+                        end
+                    end
+                    if v17 == "Nearest" then
+                        v5 = {}
+                        v5[1], v5[2], v5[3] = v9, v7, -v3
+                    else
+                        v5 = {}
+                        v5[1], v5[2], v5[3] = v7, -v3, v9
+                    end
+                    v13 = v5
+                    v5 = v12 == nil
+                    if v12 then
+                        v15 = #v13
+                        v14 = 1
+                        if 1 <= v15 then
+                            while true do
+                                v4 = v12[v14]
+                                if v13[v14] < v4 then
+                                    v5 = true
+                                elseif v13[v14] <= v12[v14] then
+                                    v14 = v14 + 1
+                                    if v14 <= v15 then
+                                        continue
+                                    end
+                                    break
+                                end
+                                break
+                            end
+                        end
+                    end
+                    if v5 then
+                        v11 = h
+                        v12 = v13
+                    end
+                end
+            end
+            return v11
+        end
+    end
+end
+local function _w708(v1, v2)
+    return function(v3)
+        local v4 = {[1] = 3, [3] = v2[1][3].InventoryESPState}
+        v4[2] = v4
+        local v5 = v2[3][3].InventoryESP
+        local v6, v7
+        v5, v7, v6 = v2[3][3], v5 ~= (v3 == true), v3 == true
+        v5.InventoryESP = v6
+        if v7 then
+            v2[1][3].saveEggToolSettings()
+        end
+        local v8, v9, v10, v11, v12
+        if not v3 then
+            v2[1][3].clearInventoryESP()
+        else
+            v4[3].Enabled, v6 = true, true
+            v4[3].Running = true
+            v4[3].CardConnections, v6 = {}, {}
+            v4[3].CardCache = v6
+            v6 = v4[3].ToolRevision or 0
+            v4[3].ToolRevision = v6 + 1
+            v6 = v4[3].WorkerGeneration or 0
+            v4[3].WorkerGeneration = v6 + 1
+            v5 = {[1] = 3, [3] = v4[3].WorkerGeneration}
+            v5[2] = v5
+            v11 = v2[1][3]
+            v11.refreshInventoryESPNameCaches()
+            v11.loadInventoryESPNativeModules()
+            v11.bindInventoryESPTools()
+            v11.bindInventoryESPHotbar()
+            v6, v11 = v11.queueInventoryESPRefresh, 0
+            v6(0)
+            task.spawn(v1:ho({v4, v2[1], v5}))
+            v4[3].LifetimeConnections = {}
+            v6 = v2[2][3]:FindFirstChild("PlayerGui")
+            if v6 then
+                v12 = v4[3].LifetimeConnections
+                v11 = table.insert
+                v10 = v1:ko({v4, v5, v2[1]})
+                v9 = v6.DescendantAdded
+                v8, v9 = v9, v9.Connect
+                v9 = table.pack(v9(v8, v10))
+                v11(v12, table.unpack(v9, 1, v9.n))
+            end
+            v11 = table.insert
+            v12 = v4[3].LifetimeConnections
+            v9 = v2[2][3].CharacterAdded
+            v10 = v1:jo({v2[1]})
+            v8, v9 = v9, v9.Connect
+            v9 = table.pack(v9(v8, v10))
+            v11(v12, table.unpack(v9, 1, v9.n))
+            v12 = v1:io({v2[4], v5, v4, v2[1]})
+            task.spawn(v12)
+        end
+    end
+end
+local function _w709(v1, v2)
+    return function(v3)
+        if v3 then
+            v2[1][3].TaskNeedCache[v3] = nil
+        else
+            table.clear(v2[1][3].TaskNeedCache)
+        end
+    end
+end
+local function _w710(v1, v2)
+    return function(v3)
+        local eggs2 = v3:WaitForChild("Eggs", 5)
+        local v4, v5, v6
+        if eggs2 then
+            v6 = v2[1][3]
+            v6, v4, v5 = eggs2.ChildAdded, v1:On({v2[2], v2[1]}), v6.Bind
+            v5(v6, v4)
+            return
+        end
+    end
+end
+local function _w711(v1, v2)
+    return function(v3)
+        local v4
+        v4, v2[1][3] = v2[3][3], v3
+        local v5, v6
+        v6, v5, v4 = v4.setLabel, v3, v2[2][3]
+        if v5 then
+            v5 = "🟢 Placing eggs"
+        end
+        if not v5 then
+            v5 = "🔴 Auto Place Off"
+        end
+        v6(v4, v5)
+    end
+end
+local function Tq(v1, v2, v3, v4, v9, ...)
+    local v5 = v1
+    local v6 = 0
+    local v7 = #v2
+    local v8 = v7 - 1
+    if 0 <= v8 then
+        while true do
+            v5[v2[(100183 * v6 + 35739) % v7 + 1]] = v5[v6 + 1]
+            v6 = v6 + 1
+            if v6 > v8 then
+                break
+            end
+        end
+    end
+    v6 = v1[v3]
+    v6 = table.pack(v6(v1, v4, v9, ...))
+    return table.unpack(v6, 1, v6.n)
+end
+local function _w713(v1)
+    return function(v2)
+    end
+end
+local function _w714(v1, v2)
+    return function()
+        local m, a, _, j
+        local v3, v4, v5, v6, getPivot, v7, v8, v9, v10, v11, v12, v13, isFastRideMounted, v14, v15
+        if v2[1][3].EventScanCamera then
+            return true
+        else
+            v14 = workspace.CurrentCamera
+            v11 = {[1] = 3, [3] = v2[3][3].Character}
+            v11[2] = v11
+            if not (v14 and v11[3]) then
+                return false
+            else
+                v9 = {
+                    [1] = 3,
+                    [3] = v11[3].FindFirstChild(v11[3], "HumanoidRootPart"),
+                }
+                v9[2] = v9
+                if not v9[3] then
+                    return false
+                else
+                    v8 = v11[3]
+                    getPivot = v11[3].GetPivot(v8)
+                    v8 = {[1] = 3, [3] = v14.CFrame}
+                    v8[2] = v8
+                    v7 = {[1] = 3, [3] = v14.Focus}
+                    v7[2] = v7
+                    isFastRideMounted = v2[1][3].IsFastRideMounted()
+                    v3 = isFastRideMounted
+                    if v3 then
+                        v15 = v2[1][3].MountedPetDescriptor
+                        v15 = table.pack(v15())
+                        v3 = select(3, table.unpack(v15, 1, v15.n))
+                    end
+                    if not v3 then
+                        v3 = nil
+                    end
+                    v3 = {[1] = 3, [3] = v3}
+                    v3[2] = v3
+                    if isFastRideMounted and not v3[3] then
+                        v15 = v11[3]
+                        v12 = v11[3].FindFirstChildOfClass(v15, "Humanoid")
+                        v15 = v9[3].FindFirstChild(v9[3], "PetMountJoint")
+                        v4 = v15 and v15:IsA("JointInstance") and v15.Part1 or v12
+                        _ = workspace
+                        _ = _:FindFirstChild("GameObjects")
+                        v13 = v4
+                        if v13 and v13 ~= workspace then
+                            v13:IsA("Model")
+                            v3[3], v5 = v13, _
+                            break
+                        end
+                    end
+                    if isFastRideMounted and not v3[3] then
+                        v2[1][3].CandyLog("EVENT_PREVIEW_BLOCKED", "mounted pet model not available")
+                        return false
+                    else
+                        v12 = nil
+                        if v3[3] then
+                            v15, v4 = pcall(v1:Ok({v9, v3}))
+                            if v15 then
+                                v12 = v4
+                            end
+                        end
+                        v15 = {[1] = 3, [3] = v2[1][3].EventScanReplica}
+                        v15[2] = v15
+                        _ = v15[3] and v15[3].Parent == nil and v15[3].FindFirstChild(v15[3], "HumanoidRootPart")
+                        if not _ then
+                            if v15[3] then
+                                pcall(v1:Uk({v15}))
+                            end
+                            v4 = v11[3].Archivable
+                            v11[3].Archivable = true
+                            _, v13 = pcall(v1:Pk({v11}))
+                            v11[3].Archivable = v4
+                            if not _ or not v13 then
+                                return false
+                            else
+                                v15[3], v5 = v13, "REZEHalloweenDropOffPreview_LocalOnly"
+                                v15[3].Name = "REZEHalloweenDropOffPreview_LocalOnly"
+                                a = v15[3]
+                                v10 = v15[3].GetDescendants
+                                v10 = v1.h(v10(a))
+                                v5, v10, a = ipairs(v1.i(v10))
+                                v5, v10, a = v1.g(v5, v10, a)
+                                for _, j in v5, v10, a do
+                                    m = j:IsA("LuaSourceContainer") or j:IsA("Sound") or j:IsA("ProximityPrompt")
+                                    if m then
+                                        j:Destroy()
+                                    else
+                                        j:IsA("BasePart")
+                                    end
+                                end
+                                v2[1][3].EventScanReplica = v15[3]
+                            end
+                        end
+                        v13 = v15[3].GetDescendants
+                        v4 = 0
+                        v5 = v15[3]
+                        v13 = v1.h(v13(v5))
+                        _, v13, v5 = ipairs(v1.i(v13))
+                        _, v13, v5 = v1.g(_, v13, v5)
+                        for _, a in _, v13, v5 do
+                            if a:IsA("BasePart") then
+                                a.LocalTransparencyModifier = 0
+                                v4 = v4 + 1
+                            end
+                        end
+                        if v4 == 0 then
+                            v13, _, v5 = "EVENT_PREVIEW_BLOCKED", v2[1][3].CandyLog, "avatar preview has no visible parts"
+                            _("EVENT_PREVIEW_BLOCKED", "avatar preview has no visible parts")
+                            return false
+                        else
+                            v15[3].Parent = workspace
+                            v13 = v15[3]
+                            v15[3].PivotTo(v13, getPivot)
+                            _ = not v3[3] and v2[1][3].EventScanPetReplica
+                            if _ then
+                                v13, _ = nil, v2[1][3].EventScanPetReplica
+                                _.Parent = nil
+                            elseif v3[3] then
+                                _ = v2[1][3].EventScanPetSource ~= v3[3] or not v2[1][3].EventScanPetReplica
+                                if _ then
+                                    pcall(v1:Sk({v2[1]}))
+                                    v2[1][3].EventScanPetReplica = nil
+                                    _ = v3[3].Archivable
+                                    v3[3].Archivable = true
+                                    v13, v5 = pcall(v1:Tk({v3}))
+                                    v3[3].Archivable = _
+                                    if v13 and v5 then
+                                        v5.Name = "REZEHalloweenMountedPetPreview_LocalOnly"
+                                        a = v5.GetDescendants
+                                        a = v1.h(a(v5))
+                                        v10, a, v6 = ipairs(v1.i(a))
+                                        v10, a, v6 = v1.g(v10, a, v6)
+                                        for _, m in v10, a, v6 do
+                                            if m:IsA("LuaSourceContainer") or m:IsA("Sound") or m:IsA("ProximityPrompt") then
+                                                m:Destroy()
+                                            else
+                                                m:IsA("BasePart")
+                                            end
+                                        end
+                                        v10 = v2[1][3]
+                                        v10.EventScanPetReplica = v5
+                                        v10.EventScanPetSource = v3[3]
+                                    end
+                                end
+                                _ = v2[1][3].EventScanPetReplica
+                                if not (_ and v12) then
+                                    v2[1][3].CandyLog("EVENT_PREVIEW_BLOCKED", "mounted pet preview clone/pose missing")
+                                    v15[3].Parent = nil
+                                    return false
+                                else
+                                    v13 = 0
+                                    v10 = _.GetDescendants
+                                    v10 = v1.h(v10(_))
+                                    v5, v10, a = ipairs(v1.i(v10))
+                                    v5, v10, a = v1.g(v5, v10, a)
+                                    for _, j in v5, v10, a do
+                                        if j:IsA("BasePart") then
+                                            j.LocalTransparencyModifier = 0
+                                            if j.Transparency < 0.95 then
+                                                v13 = v13 + 1
+                                            end
+                                        end
+                                    end
+                                    if v13 == 0 then
+                                        a, v5, v10 = "mounted pet preview invisible", v2[1][3].CandyLog, "EVENT_PREVIEW_BLOCKED"
+                                        v5("EVENT_PREVIEW_BLOCKED", "mounted pet preview invisible")
+                                        v15[3].Parent = nil
+                                        return false
+                                    else
+                                        _.Parent = workspace
+                                        a, v10, v5 = v9[3].CFrame * v12, _, _.PivotTo
+                                        v5(v10, a)
+                                    end
+                                end
+                            end
+                            _ = {[1] = 3, [3] = {}}
+                            _[2] = _
+                            v10 = {}
+                            v13 = v1:Lk({_})
+                            v10.Camera = v14
+                            v10.Type = v14.CameraType
+                            v10.Subject = v14.CameraSubject
+                            v10.CFrame = v14.CFrame
+                            v10.Focus = v14.Focus
+                            v10.Hidden = _[3]
+                            v10.RequirePetPreview = isFastRideMounted
+                            v10.GuardKey = "REZEHalloweenCameraGuard_" .. tostring(v2[2][3].UserId)
+                            v5 = {[1] = 3, [3] = v10}
+                            v5[2] = v5
+                            v2[1][3].EventScanCamera = v5[3]
+                            v10 = v2[3][3].CharacterAdded:Connect(v1:Rk({v2[1], v5}))
+                            v5[3].RespawnConnection = v10
+                            v6 = v11[3]
+                            a = v11[3].GetDescendants
+                            a = v1.h(a(v6))
+                            v10, a, v6 = ipairs(v1.i(a))
+                            v10, a, v6 = v1.g(v10, a, v6)
+                            for _, m in v10, a, v6 do
+                                v13(m)
+                            end
+                            if v3[3] then
+                                a = v3[3].GetDescendants
+                                v6 = v3[3]
+                                a = v1.h(a(v6))
+                                v10, a, v6 = ipairs(v1.i(a))
+                                v10, a, v6 = v1.g(v10, a, v6)
+                                for _, m in v10, a, v6 do
+                                    v13(m)
+                                end
+                            end
+                            v10 = v11[3].DescendantAdded:Connect(v13)
+                            v5[3].AppearanceConnection = v10
+                            v10 = {[1] = 3, [3] = 0}
+                            v10[2] = v10
+                            a = v2[4][3].Heartbeat
+                            j = v1:Qk({v2[1], v10, v5, _})
+                            a = a:Connect(j)
+                            v5[3].HideConnection = a
+                            pcall(v1:Mk({v2[4], v5}))
+                            a = v2[4][3]
+                            j = v5[3].GuardKey
+                            a:BindToRenderStep(j, Enum.RenderPriority.Camera.Value + 5, v1:Nk({v2[1], v8, v5, v7}))
+                            v14.CameraType = Enum.CameraType.Scriptable
+                            v14.CFrame = v8[3]
+                            v14.Focus = v7[3]
+                            return true
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+local function _w715(v1, v2)
+    return function()
+        local v3
+        while true do
+            if v2[1][3].Alive then
+                v2[1][3].IsFastRideMounted()
+                v2[1][3].EnsureInstantOnFoot()
+                v3 = v2[2][3] and v2[1][3].PickupMode == "Instant" and 0.14 or 0.55
+                task.wait(v3)
+                continue
+            end
+            break
+        end
+    end
+end
+local function _w716(v1, v2)
+    return function(v3, v4, v5)
+        return false
+    end
+end
+local function _w717(v1, v2)
+    return function(v3, v4)
+        local v5 = v2[2][3]
+        local v6
+        v5, v6 = v3[1], v5.FeedFoodInfo
+        local v7 = v6[v5].Rarity
+        local v8 = v2[1][3][v7] or 0
+        local v9 = v4[1]
+        local v10 = v2[2][3].FeedFoodInfo[v9].Rarity
+        local v11 = v2[1][3][v10] or 0
+        if v8 ~= v11 then
+            return v8 > v11
+        else
+            v6 = v4[1]
+            return v3[1] < v6
+        end
+    end
+end
+local function _w718(v1, v2)
+    return function(v3)
+        local d
+        v3 = {[1] = 3, [3] = v3}
+        v3[2] = v3
+        local match3, v4, v5, v6, v7, v8
+        if not v2[1][3] or type(v2[3][3]) ~= "string" or v2[3][3] == "" then
+            return false
+        else
+            v8 = fluxus
+            if type(v8) ~= "function" then
+                return false
+            else
+                match3 = v2[3][3]:match("^%s*(.-)%s*$")
+                if not match3:match("^https://[^/]+/api/webhooks/%d+/") then
+                    return false
+                else
+                    v3[3].username = "REZEHUB"
+                    v3[3].allowed_mentions = {parse = {}, users = {}, roles = {}}
+                    v7, v4, v6 = ipairs(v3[3].embeds or {})
+                    v7, v4, v6 = v1.g(v7, v4, v6)
+                    for v9, d in v7, v4, v6 do
+                        d.footer = {text = "discord.gg/CHpZkDtmPe"}
+                        d.timestamp = DateTime.now():ToIsoDate()
+                    end
+                    v7, v4 = pcall(v1:jp({v2[2], v3}))
+                    if not v7 then
+                        return false
+                    else
+                        d = {Url = match3, Method = "POST"}
+                        d.Headers = {["Content-Type"] = "application/json"}
+                        d.Body = v4
+                        v6, v5 = pcall(v8, d)
+                        if not v6 then
+                            return false
+                        else
+                            if type(v5) == "table" then
+                                d = tonumber(v5.StatusCode or v5.status_code or v5.Status)
+                                if d and d ~= 200 and d ~= 202 and d ~= 204 then
+                                    return false
+                                end
+                            end
+                            return true
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+local function _w719(v1)
+    return function(v2, v3)
+        v2 = {[1] = 3, [3] = v2}
+        v2[2] = v2
+        v3 = {[1] = 3, [3] = v3}
+        v3[2] = v3
+        local v4, v5, v6, v7, v8, v9
+        if v2[3] then
+            if type(v2[3]) == "table" then
+                type(v2[3].SetVisible)
+                pcall(v1:Co({v2, v3}))
+                v5 = "Container"
+                v7 = {}
+                v7[1], v7[2], v7[3], v7[4], v7[5], v7[6], v7[7], v7[8], v7[9], v7[10], v7[11] = "Frame", "Container", "Holder", "Root", "Row", "Element", "MainFrame", "Base", "Main", "TextLabel", "Button"
+                v8, v9, v6 = ipairs(v7)
+                v8, v9, v6 = v1.g(v8, v9, v6)
+                v7, v4 = v8(v9, v6)
+                v6 = v7
+                if v6 ~= nil then
+                    while true do
+                        v5 = v2[3][v4]
+                        if not (typeof(v5) == "Instance" and v5:IsA("GuiObject")) then
+                            v7, v4 = v8(v9, v6)
+                            v6 = v7
+                            if v6 ~= nil then
+                                continue
+                            end
+                            return
+                        end
+                        break
+                    end
+                    v5.Visible = v3[3]
+                    return
+                end
+            end
+        end
+    end
+end
+local function _w720(v1, v2)
+    return function()
+        local k, _
+        local v3 = v2[10][3]
+        v3.EventCycle = v3.EventCycle + 1
+        v3.EventStage = "FAST SCAN"
+        v3 = {Candy = {}, Halves = {}, Doors = {}, Pumpkins = {}, Anchors = {}}
+        local v4 = os.clock()
+        local v5 = v2[6][3]()
+        local v6 = v5
+        if v5 then
+            v6 = v5.Position
+        end
+        if not v6 then
+            v6 = v2[10][3].CandyHome.Position
+        end
+        v2[5][3](false)
+        v2[4][3](v3)
+        local v7 = v2[2][3](v6)
+        local v8, v9, v10
+        v9, v8, v10 = ipairs(v7)
+        v9, v8, v10 = v1.g(v9, v8, v10)
+        local v11
+        k, v11 = v9(v8, v10)
+        local v12, v13, v14, v15, v16
+        if k ~= nil then
+            while true do
+                _ = v2[10][3].EventScanCancelled or not v2[7][3]() or v2[3][3]()
+                if not _ then
+                    _ = workspace.CurrentCamera
+                    v12 = v2[10][3].EventScanCamera
+                    v16 = v12 and _ == v12.Camera
+                    if v16 then
+                        v13 = Enum.CameraType.Scriptable
+                        v16 = _.CameraType == v13
+                    end
+                    if v16 then
+                        v16 = v2[10][3].EventScanReplica
+                    end
+                    if v16 then
+                        v16 = v2[10][3].EventScanReplica.Parent == workspace
+                    end
+                    if v16 then
+                        v16 = not v12.RequirePetPreview
+                    end
+                    if not v16 then
+                        v14 = v2[10][3]
+                        v14.EventScanCancelled = true
+                        v15, v16, v14 = "camera lock lost; stopping scan", "EVENT_SCAN_POV_LOST", v14.CandyLog
+                        v14("EVENT_SCAN_POV_LOST", "camera lock lost; stopping scan")
+                    elseif os.clock() - v4 <= 3 then
+                        v2[8][3](v11)
+                        v2[10][3].CandySetStatus("🟡 Looking for Halloween items")
+                        k, v11 = v9(v8, v10)
+                        v10 = k
+                        if v10 ~= nil then
+                            continue
+                        end
+                        break
+                    end
+                    break
+                end
+                break
+            end
+        end
+        local v17, v18, v19, v20, v21, v22, v23, v24
+        if v2[10][3].EventScanCancelled then
+            v2[10][3].CandyLog("EVENT_SCAN_CANCEL", "Halloween toggle switched off")
+            return nil
+        else
+            v2[3][3]()
+            v2[4][3](v3)
+            v8, v16, v11, v12, v14, _, v9 = ipairs, "Pumpkins", {}, "Halves", "Doors", "Candy", {}
+            v11[1], v11[2], v11[3], v11[4] = "Candy", "Halves", "Doors", "Pumpkins"
+            v8, v10, k = v8(v11)
+            v8, v10, k = v1.g(v8, v10, k)
+            for k, _ in v8, v10, k do
+                v14 = v3[_]
+                v9[_] = v2[11][3](v14)
+            end
+            k = v2[10][3]
+            v8 = {[1] = 3, [3] = k.CandyHome.Position}
+            v8[2] = v8
+            v10 = {[1] = 3, [3] = k.EventCandyPriority or "Farthest"}
+            v10[2] = v10
+            k, _, v11 = table.sort, v1:Jk({v10, v8, v2[1]}), v9.Candy
+            k(v11, _)
+            k, v11, _ = table.sort, v9.Halves, v1:Kk()
+            k(v11, _)
+            k = v2[10][3]
+            k.EventFrozen = v9
+            k.EventFrozenReady = true
+            _ = {Stage = 1, Index = 1, RitualIndex = 1}
+            k.EventCursor = _
+            k.EventProcessed = 0
+            _ = k.AutoCandy
+            if _ then
+                v14 = #v9.Candy
+                v16 = #v9.Doors
+                v16, v12 = v9.Pumpkins, v14 + v16
+                _ = v12 + #v16
+            end
+            if not _ then
+                _ = 0
+            end
+            k.EventTotal = _ + (v2[10][3].EventAutoHalves and #v9.Halves or 0)
+            v11, k, _, v12 = 0, os.clock() - v4, pairs, v3.Anchors
+            _, v12, v14 = _(v12)
+            _, v12, v14 = v1.g(_, v12, v14)
+            v14 = _(v12, v14)
+            if v14 ~= nil then
+                while true do
+                    v11 = v11 + 1
+                    v14 = _(v12, v14)
+                    if v14 == nil then
+                        break
+                    end
+                end
+            end
+            v12, v16, _ = "EVENT_BATCH_FROZEN", string, v2[10][3].CandyLog
+            v16, v14, v13 = "cycle=%d scan=%.2fs visited=%d/%d anchors=%d/45 candy=%d halves=%d doors=%d pumpkins=%d priority=%s PARTIAL_IS_POSSIBLE", v16.format, v2[10][3]
+            v15, v19, v22, v17, v18, v13 = v13.EventCycle, #v7, v9.Candy, v11, 0, k
+            v23 = #v22
+            v22 = #v9.Halves
+            v20 = #v9.Doors
+            v24 = #v9.Pumpkins
+            v21 = v10[3]
+            v14 = v1.h(v14("cycle=%d scan=%.2fs visited=%d/%d anchors=%d/45 candy=%d halves=%d doors=%d pumpkins=%d priority=%s PARTIAL_IS_POSSIBLE", v15, v13, 0, v19, v17, v23, v22, v20, v24, v21))
+            _("EVENT_BATCH_FROZEN", v1.i(v14))
+            v12 = v2[10][3]
+            v15 = v12
+            _ = v12.EventScanHistory
+            v12, v16 = #v12.EventScanHistory + 1, string
+            v13, v16, v14 = v15, "cycle %d: %.2fs %d/%d hints | anchors %d/45 | candy %d | halves %d | doors %d | pumpkins %d", v16.format
+            v15, v17, v22, v19, v18, v13 = v13.EventCycle, v11, v9.Candy, #v7, 0, k
+            v24 = v9.Doors
+            v24, v20 = v9.Pumpkins, #v24
+            _[v12] = v14("cycle %d: %.2fs %d/%d hints | anchors %d/45 | candy %d | halves %d | doors %d | pumpkins %d", v15, v13, 0, v19, v17, #v22, #v9.Halves, v20, #v24)
+            v12, _ = 15, #v2[10][3].EventScanHistory
+            if _ > 15 then
+                v12 = v2[10][3].EventScanHistory
+                table.remove(v12, 1)
+            end
+            return v9
+        end
+    end
+end
+local function _w721(v1, v2)
+    return function()
+        local v3 = v2[2][3]
+        v2[1][3].setLabel(v3, "🔒 Turn OFF Auto Pick-Up Eggs before changing Mode")
+    end
+end
+local function _w722(v1, v2)
+    return function(v3)
+        local halloweenCandy = workspace:FindFirstChild("HalloweenCandy")
+        local v4, v5, v6, v7, v8, v9, v10, v11
+        if halloweenCandy then
+            v6 = halloweenCandy.GetChildren
+            v6 = v1.h(v6(halloweenCandy))
+            v10, v6, v9 = ipairs(v1.i(v6))
+            v10, v6, v9 = v1.g(v10, v6, v9)
+            v7, v8 = v10(v6, v9)
+            v9 = v7
+            if v9 ~= nil then
+                while true do
+                    v5 = v8.Name
+                    v5 = v5:match("^Candy_%d+$") and v8:GetAttribute("SpawnId") == v3.Id and v2[1][3](v8.Name) == v3.Rank
+                    if not v5 then
+                        v7, v8 = v10(v6, v9)
+                        v9 = v7
+                        if v9 ~= nil then
+                            continue
+                        end
+                        return nil
+                    end
+                    v5 = v2[3][3].CandyPosition(v8)
+                    v4 = v5
+                    if v4 then
+                        v11 = v3.Position
+                        v4 = v2[2][3](v5, v11) < 14
+                    end
+                    if not v4 then
+                        v7, v8 = v10(v6, v9)
+                        v9 = v7
+                        if v9 ~= nil then
+                            continue
+                        end
+                        return nil
+                    end
+                    break
+                end
+                return v8
+            end
+        end
+        return nil
+    end
+end
+local function _w723(v1, v2)
+    return function(v3, v4, v5, v6, v7, v8)
+        v5 = {[1] = 3, [3] = v5}
+        v5[2] = v5
+        v6 = {[1] = 3, [3] = v6}
+        v6[2] = v6
+        v7 = {[1] = 3, [3] = v7}
+        v7[2] = v7
+        v8 = {[1] = 3, [3] = v8}
+        v8[2] = v8
+        local v9 = v2[1][3]
+        v9.YieldUIPaint()
+        local v10, v11
+        v9, v11, v10 = v3, v4, v9.boxFor
+        v10 = {[1] = 3, [3] = v10(v9, v11)}
+        v10[2] = v10
+        local v12
+        if not v10[3] then
+            return
+        else
+            v9, v11 = pcall(v1:ej({v10, v7, v5, v2[3], v6}))
+            if not v9 or not v11 then
+                v12 = "Toggle " .. v5[3]
+                v2[1][3].notifyError(v12, v11)
+                return
+            else
+                v2[2][3][v5[3]] = v11
+                v11:OnChanged(v1:fj({v2[4], v2[1], v2[3], v8, v7}))
+                return v11
+            end
+        end
+    end
+end
+local function _w724(v1, v2)
+    return function()
+        local v3
+        while true do
+            if v2[10][3].Alive then
+                v2[6][3]()
+                v3 = v2[10][3]
+                v3.EventStage = "IDLE"
+                v3.EventBusy = false
+                v3.EventFrozenReady = false
+                v3.EventCursor = nil
+                task.wait(0.25)
+                continue
+            end
+            break
+        end
+    end
+end
+local function _w725(v1, v2)
+    return function()
+        v2[1][3].Control:SetValues(v2[3][3])
+        v2[1][3].Control:SetValue(v2[2][3], true)
+    end
+end
+local function _w726(v1, v2)
+    return function()
+        local ritualView2 = v2[1][3]:FindFirstChild("RitualView")
+        local v3, v4, v5
+        if ritualView2 then
+            v3 = ritualView2.GetAttribute
+            v3 = v1.h(v3(ritualView2, "YinStartedAt"))
+            v5 = tonumber(v1.i(v3))
+            v4 = ritualView2.GetAttribute
+            v4 = table.pack(v4(ritualView2, "YangStartedAt"))
+            v3 = tonumber(table.unpack(v4, 1, v4.n))
+            if v5 and v5 > 0 and v3 and v3 > 0 then
+                return tostring(ritualView2:GetAttribute("RoundId") or "round") .. ":" .. tostring(v5) .. ":" .. tostring(v3)
+            end
+        end
+        return nil
+    end
+end
+local function _w727(v1)
+    return function()
+        local v2, v3
+        v3, v2 = pcall(v1:xl())
+        local v4 = v3
+        if v3 then
+            v4 = v2
+        end
+        if not v4 then
+            v4 = 0
+        end
+        return v4
+    end
+end
+local function _w728(v1, v2)
+    return function()
+        v2[1][3]:EquipTool(v2[2][3])
+    end
+end
+local function _w729(v1, v2)
+    return function(v3)
+        v3 = tostring(v3 or "")
+        local v4 = v2[1][3].InventoryESPState
+        v4.BaseLuckCache = v4.BaseLuckCache or {}
+        local v5 = v4.BaseLuckCache[v3]
+        local v6, v7
+        if v5 ~= nil then
+            return v5 ~= false and v5 or nil
+        else
+            v6 = type(v2[3][3]) == "table" and v2[3][3][v3] or nil
+            if type(v6) ~= "table" and type(v2[2][3].Eggs) == "table" then
+                v6 = v2[2][3].Eggs[v3]
+            end
+            v7 = type(v6) == "table" and tonumber(v6.Luck) or nil
+            if v7 and v7 >= 0 then
+                v4.BaseLuckCache[v3] = v7
+            end
+            return v7
+        end
+    end
+end
+local function _w730(v1, v2)
+    return function(v3)
+        local v4
+        if type(v2[1][3].SetDPIScale) == "function" then
+            v4 = v2[1][3]
+            pcall(v4.SetDPIScale, v4, tonumber(v3) or 100)
+        end
+    end
+end
+local function _w731(v1, v2)
+    return function(v3)
+        if not (not v3 and os.clock() - v2[1][3].FetchAt < 9) then
+            v2[1][3].FetchAt = os.clock()
+            return
+        end
+    end
+end
+local function _w732(v1, v2)
+    return function(v3, v4)
+        v3 = {[1] = 3, [3] = v3}
+        v3[2] = v3
+        local v5, v6, v7, v8, v9, v10, parseKG
+        if typeof(v3[3]) == "Instance" then
+            parseKG, v8 = pcall(v1:mp({v2[1], v3}))
+            if parseKG and type(v8) == "string" and v8 ~= "" then
+                v5 = v2[1][3].ParseKG(v8)
+                return v5 and v2[1][3].FormatKG(v5) or v8
+            else
+                v5 = v1:kp({v2[1]})
+                v6 = v5(v3[3])
+                if not v6 then
+                    v7 = v3[3].FindFirstChild
+                    v9 = v3[3]
+                    v7 = table.pack(v7(v9, "EggData"))
+                    v6 = v5(table.unpack(v7, 1, v7.n))
+                end
+                if not v6 then
+                    v7 = v3[3].FindFirstChild
+                    v9 = v3[3]
+                    v7 = table.pack(v7(v9, "Data"))
+                    v6 = v5(table.unpack(v7, 1, v7.n))
+                end
+                if not v6 then
+                    v9 = v3[3]
+                    v7 = v3[3].FindFirstChild
+                    v7 = table.pack(v7(v9, "Handle"))
+                    v6 = v5(table.unpack(v7, 1, v7.n))
+                end
+                v6 = {[1] = 3, [3] = v6}
+                v6[2] = v6
+                if v6[3] ~= nil then
+                    v7, v9 = pcall(v1:lp({v2[2], v6}))
+                    v10 = v7 and type(v9) == "number" and true and v9 or v6[3]
+                    return v2[1][3].FormatKG and v2[1][3].FormatKG(v10) or string.format("%.2f kg", v10)
+                end
+            end
+        end
+        if type(v4) == "table" and type(v4.WeightText) == "string" and v4.WeightText ~= "" and v4.WeightText ~= "Unknown" then
+            v8 = v4.WeightText
+            parseKG = v2[1][3].ParseKG(v8)
+            return parseKG and v2[1][3].FormatKG(parseKG) or v4.WeightText
+        else
+            return "Unknown"
+        end
+    end
+end
+local function _w733(v1, v2)
+    return function()
+        local v3 = v2[1][3].PickupMode
+        local v4, v5, v6, v7, v8, v9, v10, v11, v12
+        if v3 then
+            v4 = v2[3][3].PickupModeLockShield
+            if not v4 or not v4.Parent then
+                v10 = nil
+                do
+                    local shouldExit = false
+                    if typeof(v3) == "Instance" and v3:IsA("GuiObject") then
+                        v10 = v3
+                    elseif type(v3) == "table" then
+                        v9 = "Container"
+                        v11 = {}
+                        v11[1], v11[2], v11[3], v11[4], v11[5], v11[6], v11[7], v11[8], v11[9], v11[10] = "Frame", "Container", "Holder", "Row", "Root", "Element", "MainFrame", "Base", "Main", "Button"
+                        v7, v8, v6 = ipairs(v11)
+                        v7, v8, v6 = v1.g(v7, v8, v6)
+                        v11, v5 = v7(v8, v6)
+                        v6 = v11
+                        if v6 ~= nil then
+                            while true do
+                                v9 = v3[v5]
+                                v12 = typeof(v9) == "Instance" and v9:IsA("GuiObject")
+                                if v12 then
+                                    break
+                                else
+                                    v11, v5 = v7(v8, v6)
+                                    v6 = v11
+                                    if v6 ~= nil then
+                                        continue
+                                    end
+                                end
+                                shouldExit = true
+                                break
+                            end
+                            if shouldExit then
+                                break
+                            end
+                            v10 = v9
+                        end
+                    end
+                end
+                v4 = Instance.new("TextButton")
+                v4.Name = "REZEPickupModeLock"
+                v4.Size = UDim2.fromScale(1, 1)
+                v4.Position = UDim2.fromScale(0, 0)
+                v4.Text = ""
+                v4.AutoButtonColor = false
+                v4.BackgroundColor3 = Color3.fromRGB(70, 70, 80)
+                v4.BackgroundTransparency = 0.88
+                v4.BorderSizePixel = 0
+                v4.Active = true
+                v4.ZIndex = v10.ZIndex + 25
+                v4.Parent = v10
+                v8 = v2[3][3]
+                v6, v7, v8 = v1:Ro({v2[2], v2[3]}), v8.Bind, v4.MouseButton1Click
+                v7(v8, v6)
+                v2[3][3].PickupModeLockShield = v4
+            end
+            return
+        end
+    end
+end
+local function _w734(v1, v2)
+    return function(v3)
+        local o
+        local v4 = 0
+        local v5 = v2[1][3]
+        local v6 = 0
+        local v7 = v5.EggTrackerCycle
+        v5 = v5.RenderedEggs
+        local v8 = {}
+        local v9 = {}
+        local v10 = {}
+        local v11, v12, v13, v14, v15, v16, v17, v18, v19, v20
+        if not v5 or not v5.Parent then
+            return v10, v8, v9, nil
+        else
+            v19 = v5.GetChildren
+            v19 = v1.h(v19(v5))
+            v17, v19, v12 = ipairs(v1.i(v19))
+            v17, v19, v12 = v1.g(v17, v19, v12)
+            for v21, o in v17, v19, v12 do
+                if o:IsA("Model") or o:IsA("BasePart") then
+                    v11 = tostring(o.Name or "")
+                    if v11 ~= "" and v2[2][3][v11] ~= nil then
+                        v10[v11] = (v10[v11] or 0) + 1
+                        v8[v11] = v8[v11]
+                        v4, v13 = v4 + 1, v2[1][3]
+                        v18 = v2[1][3].EggKGCache[o]
+                        v13 = type(v18) == "table" and v18.KG or v18
+                        v14 = not v13
+                        v16 = v7.WeightAttemptedAt[o]
+                        if v14 then
+                            v14 = v6 < 10
+                        end
+                        if v14 then
+                            v14 = not v16
+                        end
+                        if v14 then
+                            v7.WeightAttemptedAt[o] = v3
+                            v20, v6, v14 = v2[1][3], v6 + 1, pcall
+                            v20, v15 = o, v20.GetEggKG
+                            v14, v15 = v14(v15, v20)
+                            v13 = v15
+                        end
+                        v13 = tonumber(v13)
+                        if v13 and true and v13 >= 0 and v13 < math.huge then
+                            v20 = v9[v11] or 0
+                            v9[v11] = math.max(v13, v20)
+                        end
+                    end
+                end
+            end
+            return v10, v8, v9, v4
+        end
+    end
+end
+local function _w735(v1, v2)
+    return function()
+        local v3, v4, v5, v6
+        if type(writefile) ~= "function" then
+            return false
+        else
+            type(makefolder)
+            pcall(v1:Fq())
+            v4 = v2[1][3]
+            v5 = v4.AutoExecuteBootPath
+            v4 = v4.MakeAutoExecuteBootstrap
+            v4 = table.pack(v4())
+            v3, v6 = pcall(writefile, v5, table.unpack(v4, 1, v4.n))
+            v2[1][3].AutoExecuteFileInstalled = v3
+            if not v3 then
+                warn("[REZEHUB Auto Execute] Executor autoexec install: " .. tostring(v6))
+            end
+            return v3
+        end
+    end
+end
+local function _w736(v1, v2, v3, v4)
+    v1.Pr[v4] = v1.Wq(v2, v3)
+    return v1.Pr[v4]
+end
+local function _w737(v1, v2)
+    return function()
+        v2[1][3].Enabled = false
+    end
+end
+local function _w738(v1)
+    return function(v2, v3, v4)
+        local v5, max2, v6, v7, v8, v9, v10, v11, v12
+        if not (not v2 or not v3) then
+            tonumber(v2.AbsoluteSize.X)
+            max2 = math.max(9, 45)
+            v10 = tostring(v4 or v3.Text or ""):gsub("🍀", "@")
+            v11 = 1
+            v12 = 0
+            v7 = #v10
+            if 1 <= v7 then
+                while true do
+                    v6 = v10:sub(v11, v11)
+                    if v6 == " " then
+                        v12 = v12 + 0.33
+                    elseif v6 == "." or v6 == "," or v6 == ":" then
+                        v12 = v12 + 0.32
+                    else
+                        v6:match("%d")
+                        v6:match("%u")
+                        v12 = v12 + 0.57
+                    end
+                    v11 = v11 + 1
+                    if v11 > v7 then
+                        break
+                    end
+                end
+            end
+            v11 = 11
+            if v12 > 0 then
+                v11 = math.clamp(math.floor(max2 / (v12 * 1.06)), 3, 11)
+            end
+            if v3.TextScaled then
+                v3.TextScaled = false
+            end
+            if v3.TextWrapped then
+                v3.TextWrapped = false
+            end
+            v5 = Enum.TextTruncate.None
+            if v3.TextTruncate ~= v5 then
+                v3.TextTruncate = Enum.TextTruncate.None
+            end
+            if v3.TextSize ~= v11 then
+                v3.TextSize = v11
+            end
+            v7 = math.min
+            v6 = math.max
+            v8 = math.ceil
+            v8 = v1.h(v8(v12 * v11 * 1.06 + 4))
+            v6 = v1.h(v6(8, v1.i(v8)))
+            v7 = v7(48, v1.i(v6))
+            v5 = math.min
+            v9 = math.max
+            v9 = v1.h(v9(12, v11 + 5))
+            v8, v6, v9 = v5(17, v1.i(v9)), UDim2.fromOffset, v7
+            v6 = v6(v9, v8)
+            if v3.Size ~= v6 then
+                v3.Size = v6
+            end
+            v3.BackgroundTransparency = v10 == "" and 1 or 0.43
+            return
+        end
+    end
+end
+local function _w739(v1, v2)
+    return function()
+        local robloxPromptGui = game:GetService("CoreGui"):FindFirstChild("RobloxPromptGui")
+        local v3 = robloxPromptGui
+        if robloxPromptGui then
+            v3 = robloxPromptGui:FindFirstChild("promptOverlay")
+        end
+        local v4, v5
+        if v3 then
+            v4 = v2[1][3]
+            v4, v3, v5 = robloxPromptGui.ChildAdded, v4.Bind, v1:Ip({v2[1], v2[2]})
+            v3(v4, v5)
+        end
+    end
+end
+local function _w740(v1, v2)
+    return function(v3)
+        v3 = {[1] = 3, [3] = v3}
+        v3[2] = v3
+        v2[1][3](v3[3], true)
+        task.defer(v1:jj({v2[3], v2[2], v3, v2[1]}))
+    end
+end
+local function _w741(v1, v2)
+    return function()
+        local v3 = v2[1][3].GetCharacter()
+        local v4 = v3
+        if v3 then
+            v4 = v3:FindFirstChild("HumanoidRootPart")
+        end
+        return v4
+    end
+end
+local function _w742(v1, v2)
+    return function(max3, max4)
+        local v3 = v2[1][3]
+        local v4 = v3.InventoryESPState
+        local v5
+        v3, v5 = v3.getInventoryESPGrid()
+        local ensureInventoryESPCountLabel
+        if v5 then
+            max3 = math.max(0, tonumber(max3) or 0)
+            max4 = math.max(0, tonumber(max4) or 0)
+            v4.LastPetCount = math.floor(max3)
+            v4.LastEggCount = math.floor(max4)
+            ensureInventoryESPCountLabel = v2[1][3].ensureInventoryESPCountLabel(v5)
+            if ensureInventoryESPCountLabel then
+                ensureInventoryESPCountLabel.Text = "Pets: <font color=\"#43E17D\">" .. tostring(v4.LastPetCount) .. "</font> / Eggs: <font color=\"#F0DC60\">" .. tostring(v4.LastEggCount) .. "</font>"
+                return
+            end
+        end
+    end
+end
+local function _w743(v1, v2)
+    return function()
+        local n, f
+        local v3 = {[1] = 3, [3] = v2[1][3].InventoryESPState}
+        v3[2] = v3
+        local backpack5 = v2[3][3]:FindFirstChild("Backpack")
+        local v4 = v2[3][3].Character
+        local v5, v6, v7, v8, v9, v10, v11, v12
+        if not (v3[3].Backpack == backpack5 and v3[3].Character == v4) then
+            v11 = v2[1][3].disconnectInventoryESPTools
+            v11()
+            v3[3].Backpack = backpack5
+            v3[3].Character = v4
+            v11 = {[1] = 3, [3] = v11}
+            v11[2] = v11
+            v11[3], v6, n = v1:ij({v3, v2[1], v2[2]}), ipairs, v2[1][3]
+            v5 = n.getInventoryESPToolContainers
+            v5 = v1.h(v5())
+            v6, v5, n = v6(v1.i(v5))
+            v6, v5, n = v1.g(v6, v5, n)
+            for n, f in v6, v5, n do
+                f = {[1] = 3, [3] = f}
+                f[2] = f
+                v12 = table.insert
+                v7 = f[3].ChildAdded
+                v9 = v1:hj({v11, f, v3})
+                v8 = v3[3].ToolContainerConnections
+                v10, v7 = v7, v7.Connect
+                v7 = table.pack(v7(v10, v9))
+                v12(v8, table.unpack(v7, 1, v7.n))
+                v8 = v3[3].ToolContainerConnections
+                v7 = f[3].ChildRemoved
+                v9 = v1:gj({v11})
+                v12 = table.insert
+                v10, v7 = v7, v7.Connect
+                v7 = v1.h(v7(v10, v9))
+                v12(v8, table.unpack(v7, 1, v7.n))
+            end
+            if v3[3].ToolLookup == nil then
+                v3[3].ToolsDirty = true
+            end
+            return
+        end
+    end
+end
+local function _w744(v1, v2)
+    return function()
+        local getTargetEggsToPlace = v2[1][3].GetTargetEggsToPlace()
+        local v3, v4, getMyPlot9, v5, remotes3, v6, eggs3, v7, v8, v9, v10, baseplate2
+        if #getTargetEggsToPlace ~= 0 then
+            v9 = v2[1][3].GetCharacter()
+            v4 = v9 and v9:FindFirstChildOfClass("Humanoid")
+            if not (not v9 or not v4) then
+                getMyPlot9 = v2[1][3].GetMyPlot()
+                if getMyPlot9 then
+                    eggs3 = getMyPlot9:FindFirstChild("Eggs")
+                    if (eggs3 and #eggs3:GetChildren() or 0) >= v2[1][3].MAX_PLANTED_EGGS then
+                        return
+                    else
+                        baseplate2 = getMyPlot9:FindFirstChild("Baseplate")
+                        if not (not baseplate2 or not baseplate2:IsA("BasePart")) then
+                            remotes3 = v2[3][3]:FindFirstChild("Remotes")
+                            v7 = remotes3 and remotes3:FindFirstChild("Game")
+                            if v7 and v7:FindFirstChild("EggPlaced") then
+                                task.wait(0.12)
+                                v5, v10, v8 = ipairs(getTargetEggsToPlace)
+                                v5, v10, v8 = v1.g(v5, v10, v8)
+                                v6, v3 = v5(v10, v8)
+                                v8 = v6
+                                if v8 ~= nil then
+                                    while true do
+                                        if not (not v2[2][3] or v2[1][3].TaskShouldStop("Place")) then
+                                            getMyPlot9:FindFirstChild("Eggs")
+                                            if 0 < v2[1][3].MAX_PLANTED_EGGS then
+                                                if v3.Parent ~= v9 then
+                                                    v4:EquipTool(v3)
+                                                    task.wait(0.15)
+                                                end
+                                                if v3.Parent == v9 then
+                                                    v2[1][3].GetPatternPosition(baseplate2, 0)
+                                                end
+                                                v6, v3 = v5(v10, v8)
+                                                v8 = v6
+                                                if v8 ~= nil then
+                                                    continue
+                                                end
+                                                break
+                                            end
+                                            break
+                                        end
+                                        break
+                                    end
+                                end
+                                return
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+local function _w745(v1, v2)
+    return function()
+        v2[1][3].HideConnection:Disconnect()
+    end
+end
+local function _w746(v1)
+    return function()
+        local v2 = type(setclipboard) == "function" and setclipboard or type(toclipboard) == "function" or nil
+        if v2 then
+            pcall(v2, "https://discord.gg/CHpZkDtmPe")
+        end
+    end
+end
+local function _w747(v1, v2)
+    return function(v3, v4)
+        local v5 = v2[1][3].ShopStockData[v3]
+        local v6, v7
+        if type(v5) == "table" then
+            v6 = v5[v4]
+            if not (type(v6) ~= "table") then
+                v7 = tonumber(v6.Amount) or 0
+                v6.Amount = math.max(0, v7 - 1)
+            end
+            return
+        end
+    end
+end
+local function _w748(v1, v2)
+    return function(v3)
+        local a, j, _
+        local v4, v5, v6, optionsForDynamicDropdown, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16
+        if not v2[1][3].DynamicDropdownIsRefreshing then
+            v11 = v2[1][3]
+            v11.RebuildDynamicGameIndexes()
+            v9, v11, v8 = pairs(v11.DynamicDropdowns)
+            v9, v11, v8 = v1.g(v9, v11, v8)
+            v5, v10 = v9(v11, v8)
+            v8 = v5
+            if v8 ~= nil then
+                while true do
+                    v10 = {[1] = 3, [3] = v10}
+                    v10[2] = v10
+                    optionsForDynamicDropdown = v2[1][3].OptionsForDynamicDropdown(v5)
+                    if optionsForDynamicDropdown and v10[3].Control and type(v10[3].Control.SetValues) == "function" then
+                        v13 = nil
+                        v15 = nil
+                        v4 = {[1] = 3, [3] = nil}
+                        v4[2] = v4
+                        if v10[3].Kind == "plain" then
+                            v4[3] = optionsForDynamicDropdown
+                        else
+                            v12, _, v14 = v2[1][3].DecorateOptions, v10[3].Key, optionsForDynamicDropdown
+                            v12, _, v14 = v12(_, v14)
+                            v13, v15, v4[3] = v12, _, v14
+                        end
+                        v12, _, v14 = table.concat, v4[3], "\000"
+                        v12 = v12(_, "\000")
+                        _ = v3 or v10[3].Signature ~= v12
+                        if _ then
+                            _ = {[1] = 3, [3] = {}}
+                            _[2] = _
+                            v14 = {}
+                            v7, v6, a = ipairs(v4[3])
+                            v7, v6, a = v1.g(v7, v6, a)
+                            for _, j in v7, v6, a do
+                                v14[j] = true
+                            end
+                            if v10[3].Kind == "plain" then
+                                a = v2[1][3]
+                                a, v16, v6 = v2[2][3], v10[3].Key, a.normalizeSelection
+                                a = a[v16]
+                                v6 = v1.h(v6(a))
+                                v7, v6, a = ipairs(v1.i(v6))
+                                v7, v6, a = v1.g(v7, v6, a)
+                                for a, j in v7, v6, a do
+                                    if v14[j] then
+                                        _[3][j] = true
+                                    end
+                                end
+                            else
+                                a = v2[1][3]
+                                v16, v6, a = v10[3].Key, a.normalizeSelection, v2[2][3]
+                                a = a[v16]
+                                v6 = v1.h(v6(a))
+                                v7, v6, a = ipairs(v1.i(v6))
+                                v7, v6, a = v1.g(v7, v6, a)
+                                for a, j in v7, v6, a do
+                                    if v13[j] then
+                                        _[3][v13[j]] = true
+                                    end
+                                end
+                            end
+                            v2[1][3].DynamicDropdownIsRefreshing = true
+                            v7, v6 = pcall(v1:Yn({v10, _, v4}))
+                            v2[1][3].DynamicDropdownIsRefreshing = false
+                            if v7 then
+                                v10[3].Signature = v12
+                                if v15 then
+                                    v10[3].ToName = v15
+                                end
+                                if v13 then
+                                    v10[3].ToDisplay = v13
+                                end
+                                a, v16 = v2[1][3].DynamicDropdownRefreshErrors, nil
+                                a[v5] = nil
+                            elseif not v2[1][3].DynamicDropdownRefreshErrors[v5] then
+                                a, v16, j = v2[1][3].DynamicDropdownRefreshErrors, tostring, v6
+                                a[v5] = v16(j)
+                                warn("[REZEHUB] Dropdown refresh " .. v5 .. ": " .. tostring(v6))
+                            end
+                        end
+                    end
+                    v5, v10 = v9(v11, v8)
+                    v8 = v5
+                    if v8 == nil then
+                        break
+                    end
+                end
+            end
+        end
+    end
+end
+local function _w749(v1, v2)
+    return function()
+        local v3
+        if v2[1][3].Alive and v2[3][3].Enabled then
+            v2[2][3].refreshInventoryESPVisibleCards()
+            v3 = {[1] = 3, [3] = v2[3][3].LuckRevision}
+            v3[2] = v3
+            task.spawn(v1:Oo({v2[3], v2[2], v3}))
+        end
+    end
+end
+local function _w750(v1, v2)
+    return function()
+        local v3 = v2[10][3]:GetAttribute("RitualYin") == true
+        local ritualYang = v2[10][3]:GetAttribute("RitualYang")
+        local v4, v5
+        v4, ritualYang, v5 = "RitualView", v2[10][3], ritualYang == true
+        local v6
+        v6, ritualYang = ritualYang, ritualYang.FindFirstChild
+        ritualYang = {[1] = 3, [3] = ritualYang(v6, "RitualView")}
+        ritualYang[2] = ritualYang
+        v6 = v1:Ik({ritualYang})
+        local v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, ritualView3, v17, v18, v19, v20, v21, v22
+        if not (v3 or v6("Yin")) or not (v5 or v6("Yang")) then
+            v4, v20 = v2[6][3]()
+            if v20 == "YIELD_EGG" then
+                return v20
+            elseif v4 or os.clock() < (v2[5][3].EventRitualRewardPendingUntil or 0) then
+                v12 = v2[4][3](v4 and 6 or 2.5)
+                v2[5][3].CandyLog("EVENT_RITUAL_REWARD", v12)
+                return v12
+            else
+                return "WAITING_FOR_BOTH_HALVES_OR_REWARD"
+            end
+        else
+            v2[13][3]()
+            v4 = v2[7][3]()
+            v20 = v2[5][3]
+            v20.EventStage = "RITUAL ALTAR"
+            v20, v12 = v20.CandySetStatus, "🟡 Ritual: going to Sealed Cave"
+            v20("🟡 Ritual: going to Sealed Cave")
+            v2[5][3].CandyLog("EVENT_RITUAL_ALTAR", "Both halves owned, traveling to altar")
+            v20, v12 = v2[14][3]()
+            if not v20 then
+                v2[5][3].CandyLog("EVENT_RITUAL_MOUNT", v12)
+                v2[5][3].CandySetStatus("🟠 Ritual: unable to dismount")
+                return v12
+            else
+                v2[8][3](v4)
+                v2[12][3](v4)
+                task.wait(0.2)
+                v14 = nil
+                v7 = nil
+                v15 = os.clock() + 1.75
+                while true do
+                    if not v2[13][3]() then
+                        v2[11][3]()
+                        v13 = v2[1][3]("Yin")
+                        v13, v7, v8 = v2[1][3], v13, "Yang"
+                        v14, v13 = v13("Yang"), v7
+                        task.wait(0.12)
+                        if os.clock() < v15 then
+                            continue
+                        end
+                        break
+                    end
+                    return "YIELD_EGG"
+                end
+                v21 = {}
+                v13 = 0
+                v21[1], v21[2] = "Yin", "Yang"
+                v8, v17, v18 = ipairs(v21)
+                v8, v17, v18 = v1.g(v8, v17, v18)
+                v21, v16 = v8(v17, v18)
+                v18 = v21
+                do
+                    local shouldExit = false
+                    if v18 ~= nil then
+                        while true do
+                            if not v2[13][3]() then
+                                v2[11][3]()
+                                ritualView3 = v2[10][3]:FindFirstChild("RitualView")
+                                v9 = ritualView3
+                                if v9 then
+                                    v19 = ritualView3
+                                    v22 = v16 .. "StartedAt"
+                                    v9 = ritualView3.GetAttribute(v19, v22)
+                                end
+                                if type(v9) == "number" and v9 > 0 then
+                                    v11 = v16 .. " already placed"
+                                    v2[5][3].CandyLog("EVENT_RITUAL", v11)
+                                    v21, v16 = v8(v17, v18)
+                                    v18 = v21
+                                    if v18 ~= nil then
+                                        continue
+                                    end
+                                    shouldExit = true
+                                    break
+                                end
+                                v19 = v16 == "Yin" and v7 or v14
+                                if not v19 then
+                                    v10 = v16 .. "Placement.RitualPrompt not streamed at altar"
+                                    v2[5][3].CandyLog("EVENT_RITUAL_MISSING", v10)
+                                    v21, v16 = v8(v17, v18)
+                                    v18 = v21
+                                    if v18 ~= nil then
+                                        continue
+                                    end
+                                    shouldExit = true
+                                    break
+                                end
+                                v22 = v2[5][3]
+                                v22.EventStage = "PLACE " .. v16:upper()
+                                v22, v11 = v22.CandySetStatus, "🟡 Ritual: placing "
+                                v22("🟡 Ritual: placing " .. v16)
+                                v2[5][3].CandyBusy = true
+                                v22, v11 = pcall(v2[9][3], v19, "Place", v16)
+                                v2[5][3].CandyBusy = false
+                                v10, v13 = v22, v13 + 1
+                                if v10 then
+                                    v10 = tostring(v11)
+                                end
+                                if not v10 then
+                                    v10 = "ERROR_" .. tostring(v11)
+                                end
+                                v11 = v10
+                                v2[5][3].CandyLog("EVENT_RITUAL", "Place " .. v16 .. " " .. v11)
+                                if v11 ~= "YIELD_EGG" then
+                                    v10 = v2[2][3](v19, v16) .. " result=" .. v11
+                                    v2[5][3].CandyLog("EVENT_RITUAL_STATE", v10)
+                                    warn("[REZEHUB V12.13][EVENT_RITUAL_STATE] " .. v10)
+                                    v2[5][3].CandySetStatus("🟠 Ritual: " .. v16 .. " not placed")
+                                    v21, v16 = v8(v17, v18)
+                                    v18 = v21
+                                    if v18 ~= nil then
+                                        continue
+                                    end
+                                    shouldExit = true
+                                    break
+                                end
+                                break
+                            end
+                            return "YIELD_EGG"
+                        end
+                        if shouldExit then
+                            break
+                        end
+                        return "YIELD_EGG"
+                    end
+                end
+                v8, v17 = v2[6][3]()
+                if v17 == "YIELD_EGG" then
+                    return v17
+                else
+                    v18 = v2[3][3]()
+                    if v8 or os.clock() < (v2[5][3].EventRitualRewardPendingUntil or 0) or v18 then
+                        v16 = v2[4][3](v8 and 6 or 3)
+                        v2[5][3].CandyLog("EVENT_RITUAL_REWARD", v16)
+                        if v16 == "YIELD_EGG" then
+                            return "YIELD_EGG"
+                        end
+                    end
+                    if not v7 or not v14 then
+                        return "ALTAR_PROMPTS_PARTIAL"
+                    else
+                        return "RITUAL_ALREADY_PLACED"
+                    end
+                end
+            end
+        end
+    end
+end
+local function _w751(v1)
+    return function(v2)
+        local v3 = {
+            Secret = "#FF4040",
+            Common = "#EBEBEB",
+            Uncommon = "#00FF78",
+            Rare = "#00AAFF",
+            Epic = "#AA55FF",
+            Legendary = "#FF5500",
+            Mythic = "#FF00FF",
+            Divine = "#FFFF00",
+            Ethereal = "#AAFFFF",
+            Unknown = "#9DA1AD",
+        }
+        local v4, v5, v6
+        v4, v5, v6 = ipairs(v2)
+        v4, v5, v6 = v1.g(v4, v5, v6)
+        local v7, v8
+        v8, v7 = v4(v5, v6)
+        local v9 = {}
+        local v10 = {}
+        local v11 = {}
+        local v12, v13, v14, v15, v16, format4
+        if v8 ~= nil then
+            while true do
+                v15 = v7[1]
+                v14 = v7[2]
+                v13 = v14:match("^(.-) •") or "Unknown"
+                v12 = v14:match(" • (.*)$") or ""
+                v16 = v3[v13] or v3.Unknown
+                format4 = string.format("<b><font color=\"#F5F6F8\">%s</font></b><font color=\"%s\"> • %s</font><font color=\"#B3B6C2\"> • %s</font>", v15, v16, v13, v12)
+                v10[#v10 + 1] = format4
+                v11[format4] = v15
+                v9[v15] = format4
+                v8, v7 = v4(v5, v6)
+                v6 = v8
+                if v6 == nil then
+                    break
+                end
+            end
+        end
+        return v10, v11, v9
+    end
+end
+local function _w752(v1)
+    return function(v2)
+        v2 = tonumber(v2)
+        local v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13
+        if not v2 or false or v2 == math.huge or v2 == -math.huge then
+            return "? KG"
+        else
+            v2 = math.max(0, v2)
+            v4 = {}
+            v3 = {}
+            v4[1], v4[2] = 1000000000000000000, "Qi"
+            v7 = {}
+            v7[1], v7[2] = 1000000000000000, "Qa"
+            v9 = {}
+            v9[1], v9[2] = 1000000000000, "T"
+            v5 = {}
+            v5[1], v5[2] = 1000000000, "B"
+            v10 = {}
+            v10[1], v10[2] = 1000000, "M"
+            v6 = {}
+            v6[1], v6[2] = 1000, "K"
+            v3[1], v3[2], v3[3], v3[4], v3[5], v3[6] = v4, v7, v9, v5, v10, v6
+            v11, v3 = v3, ipairs
+            v3, v12, v4 = v3(v11)
+            v3, v12, v4 = v1.g(v3, v12, v4)
+            v7, v9 = v3(v12, v4)
+            v4 = v7
+            if v4 ~= nil then
+                while true do
+                    if v2 < v9[1] then
+                        v7, v9 = v3(v12, v4)
+                        v4 = v7
+                        if v4 ~= nil then
+                            continue
+                        end
+                        v12 = string.format("%.2f", v2):gsub("0+$", "")
+                        v12, v9, v7, v4 = v12.gsub, "", "%.$", v12
+                        return v12(v4, "%.$", "") .. " KG"
+                    end
+                    break
+                end
+                v8 = v9[1]
+                v10 = string.format("%.2f", v2 / v8):gsub("0+$", "")
+                v8, v6, v10, v13 = "%.$", v10, v10.gsub, ""
+                return v10(v6, "%.$", "") .. v9[2] .. " KG"
+            end
+        end
+    end
+end
+local function _w753(v1, v2)
+    return function(pickupMode)
+        local v3 = v2[1][3].PickupMode
+        local v4 = v3 == "Instant" and pickupMode ~= "Instant"
+        v2[1][3].PickupMode = pickupMode
+        local v5, v6
+        if pickupMode == "Instant" then
+            v2[1][3].AutoDropEgg = false
+            v2[3][3].AutoDropEgg = false
+            v3 = v2[1][3]
+            v3.DropSafezoneActive = false
+            v3.ReturnPreviouslyDropped = false
+            if v2[5][3] then
+                v2[4][3], v5 = true, v2[1][3]
+                v6, v3, v5 = false, v5.SetUIValue, v2[5][3]
+                v3(v5, false)
+                v2[4][3] = false
+            end
+        end
+        v3 = v4
+        if v4 then
+            v3 = v2[1][3].InstantCameraProxy
+        end
+        if v3 then
+            v3 = v2[1][3].InstantEmergencyRanchReturn
+        end
+        if v3 then
+            v2[1][3].InstantEmergencyRanchReturn("pickup mode changed")
+        end
+        v3 = v2[1][3]
+        v3.LastCarryAttempt = nil
+        v6, v5, v3 = "Instant", v2[5][3], v3.setVisible
+        v3(v5, pickupMode ~= "Instant")
+        if v2[2][3] then
+            v2[2][3]()
+        end
+        if pickupMode ~= "Instant" and v2[1][3].SafeInstantPOVExit then
+            v2[1][3].SafeInstantPOVExit("Mode changed out of Instant")
+        end
+    end
+end
+local function _w754(v1, v2)
+    return function()
+        v2[1][3].Enabled = false
+    end
+end
+local function _w755(v1, v2)
+    return function(v3, v4)
+        local v5
+        if v2[1][3].Alive and v2[1][3].AutoCandy then
+            v2[1][3].IsFastRideMounted()
+            v5 = os.clock() + math.max(0, tonumber(v4) or 3)
+            if v2[1][3].Alive and v2[1][3].AutoCandy and os.clock() <= v5 then
+                v2[1][3].IsFastRideMounted()
+                v2[1][3].CandyUnmountedSince = nil
+                return true
+            end
+            v2[1][3].CandyLog("EVENT_RIDE_NOT_READY", tostring(v3) .. " retries=" .. tostring(0))
+            v2[1][3].CandySetStatus("🟠 Waiting to ride best pet")
+        end
+        return false
+    end
+end
+local function _w756(v1, v2)
+    return function()
+        if v2[1][3].Alive then
+            v2[2][3].getActualHatchLuckMultiplier()
+        end
+    end
+end
+local function _w757(v1, v2)
+    return function(v3)
+        local f
+        local v4 = v2[1][3]
+        v4.HidePetsEnabled = v3 == true
+        v4 = v4.PetsHideConnection
+        if v4 then
+            v2[1][3].PetsHideConnection:Disconnect()
+            v2[1][3].PetsHideConnection = nil
+        end
+        local v5, v6, v7, v8, v9, v10, v11, v12
+        if not v3 then
+            v4, v9, v6 = pairs(v2[1][3].HiddenPetVisuals)
+            v4, v9, v6 = v1.g(v4, v9, v6)
+            v7, v8 = v4(v9, v6)
+            v6 = v7
+            if v6 ~= nil then
+                while true do
+                    v7 = {[1] = 3, [3] = v7}
+                    v7[2] = v7
+                    if v7[3] and v7[3].Parent then
+                        v10, v11, f = pairs(v8)
+                        v10, v11, f = v1.g(v10, v11, f)
+                        v5, v12 = v10(v11, f)
+                        f = v5
+                        if f ~= nil then
+                            while true do
+                                v5 = {[1] = 3, [3] = v5}
+                                v5[2] = v5
+                                v12 = {[1] = 3, [3] = v12}
+                                v12[2] = v12
+                                pcall(v1:fm({v7, v12, v5}))
+                                v5, v12 = v10(v11, f)
+                                f = v5
+                                if f == nil then
+                                    break
+                                end
+                            end
+                        end
+                    end
+                    v2[1][3].HiddenPetVisuals[v7[3]] = nil
+                    v7, v8 = v4(v9, v6)
+                    v6 = v7
+                    if v6 == nil then
+                        break
+                    end
+                end
+            end
+            return
+        else
+            v4 = v2[1][3].GetMyPlot()
+            v9 = v4 and v4:FindFirstChild("Pets")
+            v6 = not v9
+            if not v6 then
+                v6 = {[1] = 3, [3] = v6}
+                v6[2] = v6
+                v6[3], v7, v8, v10 = v1:em({v2[1]}), ipairs, v9.GetDescendants, v9
+                v8 = v1.h(v8(v10))
+                v7, v8, v10 = v7(v1.i(v8))
+                v7, v8, v10 = v1.g(v7, v8, v10)
+                for v13, f in v7, v8, v10 do
+                    v6[3](f)
+                end
+                v11 = v1:dm({v2[1], v6})
+                v8 = v9.DescendantAdded
+                v2[1][3].PetsHideConnection = v8:Connect(v11)
+                return
+            end
+        end
+    end
+end
+local function _w758(v1, v2)
+    return function(v3, v4, v5, v6, v7, v8, v9)
+        v5 = {[1] = 3, [3] = v5}
+        v5[2] = v5
+        v6 = {[1] = 3, [3] = v6}
+        v6[2] = v6
+        v7 = {[1] = 3, [3] = v7}
+        v7[2] = v7
+        v8 = {[1] = 3, [3] = v8}
+        v8[2] = v8
+        v9 = {[1] = 3, [3] = v9}
+        v9[2] = v9
+        local v10 = v2[1][3]
+        v10.YieldUIPaint()
+        local v11, v12
+        v10, v11, v12 = v3, v4, v10.boxFor
+        v12 = {[1] = 3, [3] = v12(v10, v11)}
+        v12[2] = v12
+        local v13, v14, v15, v16
+        if not v12[3] then
+            return nil
+        else
+            v10 = {
+                [1] = 3,
+                [3] = tostring(v2[3][3][v7[3]] or v8[3][1]),
+            }
+            v10[2] = v10
+            v13 = v10[3]
+            v15 = v8[3]
+            if not table.find(v15, v13) then
+                v10[3], v11 = v8[3][1], v2[3][3]
+                v11[v7[3]] = v10[3]
+            end
+            v11, v14 = pcall(v1:sj({v12, v10, v5, v8, v6}))
+            v14 = {[1] = 3, [3] = v14}
+            v14[2] = v14
+            if not v11 or not v14[3] then
+                v13 = "Dropdown " .. v5[3]
+                v16 = v14[3]
+                v2[1][3].notifyError(v13, v16)
+                return nil
+            else
+                v2[5][3][v5[3]] = v14[3]
+                v16 = {Control = v14[3], Key = v7[3], Kind = "single"}
+                v2[1][3].SavedDropdownRegistry[v5[3]] = v16
+                v15 = {[1] = 3, [3] = false}
+                v15[2] = v15
+                v14[3].OnChanged(v14[3], v1:tj({v2[4], v2[2], v14, v7, v8, v15, v2[1], v2[3], v9}))
+                return v14[3]
+            end
+        end
+    end
+end
+local function _w759(v1)
+    return function(v2, v3, v4, v5)
+        v2 = {[1] = 3, [3] = v2}
+        v2[2] = v2
+        v3 = {[1] = 3, [3] = v3}
+        v3[2] = v3
+        v5 = {[1] = 3, [3] = v5}
+        v5[2] = v5
+        local v6 = v4 == "Right"
+        local v7
+        if v6 then
+            v7 = {}
+            v7[1], v7[2], v7[3], v7[4] = "AddRightCollapsibleGroupbox", "AddRightGroupbox", "AddLeftCollapsibleGroupbox", "AddLeftGroupbox"
+            v6 = v7
+        end
+        if not v6 then
+            v7 = {}
+            v7[1], v7[2], v7[3], v7[4] = "AddLeftCollapsibleGroupbox", "AddLeftGroupbox", "AddRightCollapsibleGroupbox", "AddRightGroupbox"
+            v6 = v7
+        end
+        local v8, v9
+        v7, v8, v9 = ipairs(v6)
+        v7, v8, v9 = v1.g(v7, v8, v9)
+        local v10, v11
+        v11, v10 = v7(v8, v9)
+        local v12, v13, v14, v15
+        if v11 ~= nil then
+            while true do
+                v14 = {[1] = 3, [3] = v2[3][v10]}
+                v14[2] = v14
+                if type(v14[3]) ~= "function" then
+                    v11, v10 = v7(v8, v9)
+                    v9 = v11
+                    if v9 ~= nil then
+                        continue
+                    end
+                    warn("[REZEHUB] Couldn't create empty panel: " .. tostring(v3[3]))
+                    return nil
+                end
+                v13 = {
+                    [1] = 3,
+                    [3] = string.find(v10, "Collapsible", 1, true) ~= nil,
+                }
+                v13[2] = v13
+                v12, v15 = pcall(v1:C({v13, v5, v14, v3, v2}))
+                if not (v12 and v15) then
+                    v11, v10 = v7(v8, v9)
+                    v9 = v11
+                    if v9 ~= nil then
+                        continue
+                    end
+                    warn("[REZEHUB] Couldn't create empty panel: " .. tostring(v3[3]))
+                    return nil
+                end
+                break
+            end
+            return v15
+        end
+        warn("[REZEHUB] Couldn't create empty panel: " .. tostring(v3[3]))
+        return nil
+    end
+end
+local function _w760(v1)
+    return function()
+        local v2 = workspace
+        local v3
+        v3, v2 = v2, v2.GetServerTimeNow
+        v2 = table.pack(v2(v3))
+        return table.unpack(v2, 1, v2.n)
+    end
+end
+local function _w761(v1, v2)
+    return function(v3, v4)
+        local o, j, a, _, s
+        v4 = {[1] = 3, [3] = v4}
+        v4[2] = v4
+        local humanoid2, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14
+        if v2[1][3].InstantRecoveryPending or v2[1][3].InstantCycleCancelled() then
+            return false
+        elseif v2[1][3].InstantCameraProxy then
+            v13 = v2[1][3].MoveInstantCameraProxy
+            v13 = table.pack(v13(v3))
+            return table.unpack(v13, 1, v13.n)
+        else
+            v4[3], v14 = nil, v2[3][3]
+            v13 = {[1] = 3, [3] = v14.Character}
+            v13[2] = v13
+            v10 = v13[3]
+            v14 = workspace.CurrentCamera
+            if v10 then
+                v10 = v14
+            end
+            if v10 then
+                v10 = typeof(v3) == "CFrame"
+            end
+            if not v10 then
+                return false
+            else
+                v9 = v13[3].Archivable
+                if v2[1][3].EventScanCamera then
+                    if v4[3] then
+                        v4[3].Destroy(v4[3])
+                    end
+                    return false
+                else
+                    v13[3].Archivable = true
+                    v10, v12 = pcall(v1:zn({v13}))
+                    v13[3].Archivable = v9
+                    if not v10 or not v12 then
+                        if v4[3] then
+                            v4[3].Destroy(v4[3])
+                        end
+                        return false
+                    else
+                        v12.Name = "REZEInstantPOV_LocalOnly"
+                        v5 = v12.GetDescendants
+                        v5 = v1.h(v5(v12))
+                        humanoid2, v5, v6 = ipairs(v1.i(v5))
+                        humanoid2, v5, v6 = v1.g(humanoid2, v5, v6)
+                        for _, o in humanoid2, v5, v6 do
+                            if o:IsA("LuaSourceContainer") then
+                                o:Destroy()
+                            else
+                                o:IsA("BasePart")
+                                o:IsA("Sound")
+                                o:IsA("ProximityPrompt")
+                            end
+                        end
+                        humanoid2 = v12:FindFirstChildOfClass("Humanoid")
+                        v5 = v12:FindFirstChild("HumanoidRootPart")
+                        if not humanoid2 or not v5 then
+                            v12:Destroy()
+                            if v4[3] then
+                                v4[3].Destroy(v4[3])
+                            end
+                            return false
+                        else
+                            humanoid2.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.None
+                            v12.Parent = workspace
+                            v12:PivotTo(v3)
+                            if v4[3] then
+                                v6, _ = pcall(v1:xn({v4}))
+                                o = v6 and _
+                                if o then
+                                    v7 = _.GetDescendants
+                                    v7 = v1.h(v7(_))
+                                    o, v7, v11 = ipairs(v1.i(v7))
+                                    o, v7, v11 = v1.g(o, v7, v11)
+                                    for _, s in o, v7, v11 do
+                                        j = s:IsA("LuaSourceContainer") or s:IsA("ProximityPrompt")
+                                        if j then
+                                            s:Destroy()
+                                        else
+                                            s:IsA("BasePart")
+                                        end
+                                    end
+                                    _.Parent = v12
+                                    s, v7, a, v11 = -1.6, CFrame.new, -1, 1.4
+                                    v7 = v7(1.4, -1, -1.6)
+                                    v7, v11, a, o = _.IsA, _, "Model", v3 * v7
+                                    v7 = v7(v11, "Model")
+                                    if v7 then
+                                        _:PivotTo(o)
+                                    else
+                                        _:IsA("BasePart")
+                                        _:Destroy()
+                                    end
+                                end
+                            end
+                            v6 = {[1] = 3, [3] = {}}
+                            v6[2] = v6
+                            v7 = {}
+                            _ = v1:Cn({v6})
+                            v7.Model = v12
+                            v7.Humanoid = humanoid2
+                            v7.OriginalTransparency = v6[3]
+                            o = {[1] = 3, [3] = v7}
+                            o[2] = o
+                            v2[1][3].InstantCameraProxy = o[3]
+                            v14.CameraSubject = humanoid2
+                            v11 = v13[3].GetDescendants
+                            a = v13[3]
+                            v11 = v1.h(v11(a))
+                            v7, v11, a = ipairs(v1.i(v11))
+                            v7, v11, a = v1.g(v7, v11, a)
+                            for a, j in v7, v11, a do
+                                _(j)
+                            end
+                            v7 = v13[3].DescendantAdded:Connect(_)
+                            o[3].AppearanceConnection = v7
+                            v11 = v2[2][3]
+                            a = v1:Dn({v2[1], v6, o})
+                            v7 = v11.RenderStepped:Connect(a)
+                            o[3].HideConnection = v7
+                            v7 = "REZEInstantCameraGuard_" .. tostring(v2[4][3].UserId)
+                            o[3].CameraGuardKey = v7
+                            pcall(v1:yn({v2[2], o}))
+                            a = o[3].CameraGuardKey
+                            v8, j = 5, Enum.RenderPriority.Camera.Value
+                            v2[2][3]:BindToRenderStep(a, j + 5, v1:Bn({v2[1], o}))
+                            v7 = v2[2][3].Heartbeat
+                            a = v1:An({v2[1], o})
+                            v7 = v7:Connect(a)
+                            o[3].LandingConnection = v7
+                            return true
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+local function _w762(v1, v2)
+    return function(v3)
+        local v4
+        v2[1][3], v4 = v3, v2[3][3]
+        local v5, v6, v7
+        if v4.SyncNativeAutobuy then
+            v4 = v2[3][3]
+            v7, v6, v5, v4 = v2[2][3], false, v4.SyncNativeAutobuy, "Food"
+            v5("Food", v7, false)
+        end
+    end
+end
+local function _w763(v1, v2)
+    return function(v3, v4)
+        local normalizeSelection2 = v2[1][3].normalizeSelection(v3)
+        local v5, v6, v7, v8, v9, v10
+        if #normalizeSelection2 == 0 then
+            return true
+        else
+            v9 = tostring(v4 or ""):lower():gsub("^%s+", ""):gsub("%s+$", "")
+            v10, v5, v7 = ipairs(normalizeSelection2)
+            v10, v5, v7 = v1.g(v10, v5, v7)
+            v8, v6 = v10(v5, v7)
+            v7 = v8
+            if v7 ~= nil then
+                while true do
+                    if tostring(v6):lower() ~= v9 then
+                        v8, v6 = v10(v5, v7)
+                        v7 = v8
+                        if v7 ~= nil then
+                            continue
+                        end
+                        return false
+                    end
+                    break
+                end
+                return true
+            end
+            return false
+        end
+    end
+end
+local function _w765(v1, v2)
+    return function()
+        if v2[1][3].Set then
+            v2[1][3]:Set(v2[2][3])
+        elseif v2[1][3].Value ~= nil then
+            v2[1][3].Value = v2[2][3]
+        end
+    end
+end
+local function _w766(v1, v2)
+    return function(v3, v4)
+        v3 = {[1] = 3, [3] = v3}
+        v3[2] = v3
+        v4 = {[1] = 3, [3] = v4}
+        v4[2] = v4
+        local v5, v6, v7, v8
+        if v2[1][3].FetchBusy[v3[3]] then
+            return
+        else
+            v5 = v2[3][3]
+            v6, v5 = v5, v5.FindFirstChild
+            v5 = {[1] = 3, [3] = v5(v6, v3[3])}
+            v5[2] = v5
+            v7 = v5[3]
+            if v7 then
+                v8 = v5[3]
+                v7 = v5[3].IsA(v8, "RemoteFunction")
+            end
+            if v7 then
+                v2[1][3].FetchBusy[v3[3]] = true
+                v7 = v1:cl({v5, v3, v2[2], v2[1], v4})
+                task.spawn(v7)
+                return
+            end
+        end
+    end
+end
+local function _w767(v1, v2)
+    return function(v3)
+        local n
+        local v4, v5, v6, v7
+        if not (v2[1][3] or v2[6][3].DynamicDropdownIsRefreshing) then
+            v6 = {}
+            v5 = v2[6][3].normalizeSelection
+            v5 = v1.h(v5(v3))
+            v7, v5, v4 = ipairs(v1.i(v5))
+            v7, v5, v4 = v1.g(v7, v5, v4)
+            for v8, n in v7, v5, v4 do
+                if v2[5][3].ToName[n] then
+                    v6[#v6 + 1] = v2[5][3].ToName[n]
+                end
+            end
+            v5 = v2[2][3]
+            v2[4][3][v5] = v6
+            v2[3][3](v6)
+            v2[6][3].SaveConfig()
+            return
+        end
+    end
+end
+local function _w768(v1)
+    return function(v2)
+        local v3 = tostring(v2 or ""):gsub("<[^>]*>", ""):lower()
+        local v4, v5, v6
+        v6, v5, v4 = v3:match("(%d+):(%d%d):(%d%d)")
+        local v7, v8
+        if v6 then
+            return tonumber(v6) * 3600 + tonumber(v5) * 60 + tonumber(v4)
+        else
+            v8, v7 = v3:match("(%d+):(%d%d)")
+            v4 = v7
+            v5 = v8
+            if v5 then
+                return tonumber(v5) * 60 + tonumber(v4)
+            else
+                v8, v7 = v3:match("(%d+)%s*m")
+                v4 = v3:match("(%d+)%s*s")
+                if v4 then
+                    v8 = table.pack(tonumber(v4))
+                else
+                    v7 = v3.match
+                    v7 = table.pack(v7(v3, "^%s*(%d+)%s*$"))
+                    v8 = table.pack(tonumber(table.unpack(v7, 1, v7.n)))
+                end
+                return table.unpack(v8, 1, v8.n)
+            end
+        end
+    end
+end
+local function _w769(v1, v2)
+    return function(v3)
+        local v4
+        if v2[1][3].TaskOwner == v3 then
+            v4 = v2[1][3]
+            v4.TaskOwner = nil
+            v4.TaskOwnerSince = 0
+        end
+    end
+end
+local function _w770(v1, v2)
+    return function(v3)
+        v3 = {[1] = 3, [3] = v3}
+        v3[2] = v3
+        local v4, v5
+        if v3[3] then
+            v4 = v2[1][3]
+            v4, v5 = v3[3], v4.SnapshotWorldEgg
+            v5(v4)
+        end
+    end
+end
+local function _w771(v1, v2)
+    return function()
+        local j, e
+        local v3 = v2[1][3].InventoryESPState
+        local v4, v5, v6
+        if type(v3.PetNames) ~= "table" then
+            v3.PetNames = {}
+            v3.PetNamesLower = {}
+            v5 = v2[1][3].getAllPetNames
+            v5 = v1.h(v5())
+            v4, v5, j = ipairs(v1.i(v5))
+            v4, v5, j = v1.g(v4, v5, j)
+            for j, e in v4, v5, j do
+                v6 = tostring(e)
+                v3.PetNames[v6] = true
+                v3.PetNamesLower[v6:lower()] = v6
+            end
+        end
+        if type(v3.EggNames) ~= "table" then
+            v3.EggNames = {}
+            v3.EggNamesLower = {}
+            v5 = v2[1][3].getAllIndexedEggNames
+            v5 = v1.h(v5())
+            v4, v5, j = ipairs(v1.i(v5))
+            v4, v5, j = v1.g(v4, v5, j)
+            for j, e in v4, v5, j do
+                v6 = tostring(e)
+                v3.EggNames[v6] = true
+                v3.EggNamesLower[v6:lower()] = v6
+            end
+        end
+    end
+end
+(function()
+    local function v1(v2, v3, v4)
+        if v3 > v4 then
+            return
+        end
+        return v2[v3], v1(v2, v3 + 1, v4)
+    end
+    return function(v2)
+        return v1(v2[1], 1, v2[2])
+    end
+end)()
+local function _w773(v1, v2)
+    return function()
+        local v3, v4, v5
+        v4, v5, v3 = pairs(v2[1][3])
+        v4, v5, v3 = v1.g(v4, v5, v3)
+        local v6 = v4(v5, v3)
+        local v7 = {}
+        if v6 ~= nil then
+            while true do
+                if type(v6) == "string" then
+                    v7[#v7 + 1] = v6
+                end
+                v6 = v4(v5, v3)
+                v3 = v6
+                if v3 == nil then
+                    break
+                end
+            end
+        end
+        return v7
+    end
+end
+local function _w774(v1, v2)
+    return function(v3)
+        local v4 = v2[1][3]
+        v4.EventAutoRitual = v3
+        v4.EventFrozenReady = false
+        v4.EventCursor = nil
+        if not v3 and v2[1][3].EventScanCamera then
+            v2[1][3].EventScanCancelled = true
+        end
+        v2[1][3].EventAutoHalves = v3
+        v2[3][3].EventAutoHalves = v3
+        v4 = v3
+        if v3 then
+            v4 = not v2[1][3].AutoCandy
+        end
+        local v5
+        if v4 then
+            v5 = v2[2][3]
+            v2[1][3].setLabel(v5, "🟡 Waiting for Yin and Yang to spawn")
+        end
+    end
+end
+local function _w775(v1, v2)
+    return function(v3)
+        local v4 = {}
+        local v5 = {}
+        v5[1], v5[2] = "SelectedPetToSell", "SelectedSellRarities"
+        v4.Sell = v5
+        v5 = {}
+        v5[1], v5[2] = "FeedNames", "FeedRarities"
+        v4.Feed = v5
+        v5 = {}
+        v5[1], v5[2] = "PlacePetNames", "PlacePetRarities"
+        v4.Place = v5
+        v5 = {}
+        v5[1], v5[2] = "SelectedFusePets", "FusionRarities"
+        v4.Fusion = v5
+        v5 = {}
+        v5[1], v5[2] = "SelectedFavPet", "FavoriteRarities"
+        v4.Favorite = v5
+        local v6, v7
+        v6, v4, v7 = ipairs(v4[v3] or {})
+        v6, v4, v7 = v1.g(v6, v4, v7)
+        local v8
+        v5, v8 = v6(v4, v7)
+        local v9, v10, v11
+        if v5 ~= nil then
+            while true do
+                v11 = v2[1][3]
+                v11, v10 = v2[2][3], v11.normalizeSelection
+                v10, v9 = 0, #v10(v11[v8])
+                if v9 <= 0 then
+                    v5, v8 = v6(v4, v7)
+                    v7 = v5
+                    if v7 ~= nil then
+                        continue
+                    end
+                    v5 = v2[1][3]
+                    v5, v9, v7 = v2[2][3], "Mutations", v5.normalizeSelection
+                    v4, v7 = #v7(v5[v3 .. "Mutations"]), 0
+                    v6 = v4 > 0
+                    if not v6 then
+                        v5 = v2[2][3]
+                        v6 = #v2[1][3].normalizeSelection(v5[v3 .. "Traits"]) > 0
+                    end
+                    if v6 then
+                        return true
+                    else
+                        return (v2[2][3][v3 .. "KGRule"] or "Any") ~= "Any"
+                    end
+                end
+                break
+            end
+            return true
+        end
+    end
+end
+local function _w776(v1, v2)
+    return function()
+        local _, q
+        local v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18
+        if v2[1][3].Alive then
+            v9 = v2[3][3]
+            v8 = v2[1][3].DynamicDropdownIsRefreshing
+            v7, v2[3][3], v17 = v2[1][3], true, true
+            v7.DynamicDropdownIsRefreshing = true
+            v7, v17, v5 = pairs(v2[1][3].SavedDropdownRegistry)
+            v7, v17, v5 = v1.g(v7, v17, v5)
+            v13, v10 = v7(v17, v5)
+            v5 = v13
+            if v5 ~= nil then
+                while true do
+                    v18 = {[1] = 3, [3] = v10.Control}
+                    v18[2] = v18
+                    if v18[3] and type(v18[3].SetValue) == "function" then
+                        v14 = {[1] = 3, [3] = nil}
+                        v14[2] = v14
+                        if v10.Kind == "single" then
+                            _ = v10.Key
+                            v15, _ = v2[2][3][_], type
+                            v4 = _(v15) == "string"
+                            if v4 then
+                                v4, _ = table.find, v18[3].Values
+                                if not _ then
+                                    _ = {}
+                                end
+                                v4 = v4(_, v15)
+                            end
+                            if v4 then
+                                v14[3] = v15
+                            end
+                        else
+                            v14[3], _ = {}, v2[1][3]
+                            v15 = _.DynamicDropdowns[v13]
+                            v16, v11, _ = v10.Key, v2[2][3], _.normalizeSelection
+                            v11 = v11[v16]
+                            _ = v1.h(_(v11))
+                            v4, _, v11 = ipairs(v1.i(_))
+                            v4, _, v11 = v1.g(v4, _, v11)
+                            for _, q in v4, _, v11 do
+                                v3 = q
+                                if v15 and v15.ToDisplay then
+                                    v3 = v15.ToDisplay[q]
+                                end
+                                v12 = v3
+                                if v12 then
+                                    v6 = v18[3].Values or {}
+                                    v12 = table.find(v6, v3)
+                                end
+                                if v12 then
+                                    v14[3][v3] = true
+                                end
+                            end
+                        end
+                        if v14[3] ~= nil then
+                            v15, v4 = pcall(v1:Qq({v18, v14}))
+                            if not v15 then
+                                warn("[REZEHUB] Saved dropdown display " .. tostring(v13) .. ": " .. tostring(v4))
+                            end
+                        end
+                    end
+                    v13, v10 = v7(v17, v5)
+                    v5 = v13
+                    if v5 == nil then
+                        break
+                    end
+                end
+            end
+            v2[1][3].DynamicDropdownIsRefreshing = v8
+            v2[3][3] = v9
+        end
+    end
+end
+local function _w777(v1, v2)
+    return function(v3)
+        local v4
+        v2[1][3], v4 = v3, v2[3][3]
+        local v5, v6
+        v5, v4, v6 = v3, v2[2][3], v4.setLabel
+        if v5 then
+            v5 = "🟡 Fusing matching pets"
+        end
+        if not v5 then
+            v5 = "🔴 Auto Fuse Off"
+        end
+        v6(v4, v5)
+    end
+end
+local function _w778(v1, v2)
+    return function()
+        local v3 = v1:hp({v2[1]})
+        task.spawn(v3)
+    end
+end
+local function _w779(v1, v2)
+    return function(v3)
+        local e
+        local v4, v5, v6
+        if v3 ~= nil then
+            v4, v5, v6 = tostring(v3):lower():gmatch("[%a%d_]+")
+            v4, v5, v6 = v1.g(v4, v5, v6)
+            for e in v4, v5, v6 do
+                if e ~= "normal" and e ~= "none" and e ~= "nil" and e ~= "default" and e ~= "false" then
+                    v2[1][3][e] = true
+                end
+            end
+            return
+        end
+    end
+end
+local function _w780(v1, v2)
+    return function(v3)
+        local v4 = v2[1][3]
+        v4.WalkSpeedEnabled = v3
+        local v5, v6
+        v4, v5, v6 = v4.setVisible, v3, v2[2][3]
+        v4(v6, v5)
+    end
+end
+local function _w781(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        local v4 = v2[3][3]
+        local v5 = v4.TextSize
+        local v6, v7
+        v4, v6, v3, v7 = v4.Font, v2[2][3], v3.GetTextSize, v3
+        return v3(v7, "REZEHUB", v5, v4, v6).X
+    end
+end
+local function _w782(v1, v2)
+    return function()
+        task.spawn(v1:Jm({v2[1]}))
+    end
+end
+local function _w783(v1, v2)
+    return function(v3, v4)
+        v3 = {[1] = 3, [3] = v3}
+        v3[2] = v3
+        local v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26
+        if not v3[3] then
+            return false
+        else
+            v26 = {[1] = 3, [3] = nil}
+            v26[2] = v26
+            v24 = {[1] = 3, [3] = nil}
+            v24[2] = v24
+            v12 = v1:Nq({v3, v24, v26})
+            v15 = tostring(v12("PetName") or v3[3].Name)
+            v17 = v15:match("^(.-) %[") or v15
+            v25 = {}
+            v10 = v2[1][3][v17]
+            v25.Sell = "SelectedPetToSell"
+            v25.Feed = "FeedNames"
+            v25.Place = "PlacePetNames"
+            v25.Fusion = "SelectedFusePets"
+            v25.Favorite = "SelectedFavPet"
+            v8 = v25[v4]
+            v7 = ({
+                Sell = "SelectedSellRarities",
+                Feed = "FeedRarities",
+                Place = "PlacePetRarities",
+                Fusion = "FusionRarities",
+                Favorite = "FavoriteRarities",
+            })[v4]
+            v25 = v2[3][3][v4 .. "KGRule"] or "Any"
+            v23 = v2[3][3]
+            v18 = v23[v4 .. "Mutations"]
+            v23 = v23[v4 .. "Traits"]
+            v19 = v25 ~= "Any" or #v2[2][3].normalizeSelection(v18) > 0 or #v2[2][3].normalizeSelection(v23) > 0
+            do
+                local shouldExit = false
+                if v4 == "Feed" and not v10 then
+                    v9 = tostring(v12("PetKey") or v3[3].Name)
+                    v11, v13 = pcall(v2[4][3].GetAll)
+                    if v11 and type(v13) == "table" then
+                        v20, v21, v14 = pairs(v13)
+                        v20, v21, v14 = v1.g(v20, v21, v14)
+                        v16, v22 = v20(v21, v14)
+                        v14 = v16
+                        if v14 ~= nil then
+                            while true do
+                                v6 = type(v22) == "table" and tostring(v22.PetKey or v16) == v9
+                                if v6 then
+                                    break
+                                else
+                                    v16, v22 = v20(v21, v14)
+                                    v14 = v16
+                                    if v14 ~= nil then
+                                        continue
+                                    end
+                                end
+                                shouldExit = true
+                                break
+                            end
+                            if shouldExit then
+                                break
+                            end
+                            v6, v26[3], v5, v24[3] = tostring, v22.Model, v22.PetName, v22
+                            if not v5 then
+                                v5 = v26[3]
+                            end
+                            if not v5 then
+                                v5 = v17
+                            end
+                            v17 = v6(v5)
+                            v17, v6 = v17:match("^(.-) %[") or v17, v2[1][3]
+                            v10 = v6[v17]
+                        end
+                    end
+                end
+            end
+            v9 = v4 == "Feed" and v19 and not v24[3]
+            if v9 then
+                v11 = v3[3]
+                v9 = v3[3].IsA(v11, "GuiObject")
+            end
+            if v9 then
+                return false
+            else
+                v9 = tostring(v12("Rarity") or v10 or "Common")
+                v21 = v2[3][3]
+                v20 = v21[v8]
+                v16, v21, v14 = v9, v21[v7], v17
+                if not v2[2][3].CategoryRarityMatches(v20, v21, v14, v16) then
+                    return false
+                else
+                    v21 = {}
+                    v13 = v2[2][3].VariantMatches
+                    v21[1], v21[2] = v12("Mutation"), v12("MutationName")
+                    v13 = v13(v18, v21)
+                    v21 = {}
+                    v13 = v2[2][3].VariantMatches
+                    v21[1], v21[2], v21[3], v21[4] = v12("SpawnMutation"), v12("Trait"), v12("Traits"), v12("SpawnTrait")
+                    v13 = v13(v23, v21)
+                    v20 = v2[2][3]
+                    v22, v20, v14, v13 = "KGThreshold", v25, v2[3][3], v20.KGMatches
+                    v16, v21, v14 = "Weight", v14[v4 .. "KGThreshold"], v12
+                    v13 = v13(v20, v21, v14("Weight"))
+                    return true
+                end
+            end
+        end
+    end
+end
+local function _w784(v1, v2)
+    return function(v3)
+        v2[1][3] = v3
+    end
+end
+local function _w785(v1, v2)
+    return function()
+        v2[1][3].WaterWaveSize = 0
+    end
+end
+local function _w786(v1, v2)
+    return function(autoServerHop)
+        local v3 = v2[1][3]
+        v3.AutoServerHop = autoServerHop
+        v3.NoMatchesSince = nil
+    end
+end
+local function _w787(v1, v2)
+    return function()
+        local v3 = 1
+        while true do
+            if not v2[1][3].ShopStockReady then
+                pcall(v1:yj({v2[2]}))
+                task.wait(2)
+                v3 = v3 + 1
+                if v3 <= 10 then
+                    continue
+                end
+                break
+            end
+            break
+        end
+    end
+end
+local function _w788(v1, v2)
+    return function(v3)
+        local normalizeSelection3, v4
+        if not (v2[1][3] or v2[3][3].DynamicDropdownIsRefreshing) then
+            normalizeSelection3 = v2[3][3].normalizeSelection(v3)
+            v4 = v2[4][3]
+            v2[5][3][v4] = normalizeSelection3
+            v2[2][3](normalizeSelection3)
+            v2[3][3].SaveConfig()
+            return
+        end
+    end
+end
+local function _w789(v1, v2)
+    return function(v3)
+        local v4, v5
+        v5, v2[1][3], v4 = v2[3][3], v3, v3
+        if v4 then
+            v4 = os.clock()
+        end
+        if not v4 then
+            v4 = nil
+        end
+        v5.NextPlaceAttemptAt = v4
+        v4 = v2[2][3]
+        v2[3][3].setLabel(v4, v3 and "🟡 Cooldown: 0s" or "🔴 Auto Place Off")
+    end
+end
+local function _w790(v1, v2)
+    return function(v3)
+        local h
+        v3 = {[1] = 3, [3] = v3}
+        v3[2] = v3
+        local v4 = {[1] = 3, [3] = v2[1][3].InventoryESPState}
+        v4[2] = v4
+        local v5 = v3[3]
+        local v6, v7, v8, v9, v10, v11, v12
+        if not (not v3[3].IsA(v5, "GuiObject") or v4[3].CardConnections[v3[3]]) then
+            v6 = {[1] = 3, [3] = {}}
+            v6[2] = v6
+            v9 = {[1] = 3, [3] = {}}
+            v9[2] = v9
+            v4[3].CardConnections[v3[3]] = v6[3]
+            v7 = #v6[3]
+            v8, v7, v5 = v1:Yi({v2[1], v3}), v3[3].Destroying, v7 + 1
+            v7 = v7:Connect(v8)
+            v6[3][v5] = v7
+            v5 = {[1] = 3, [3] = v5}
+            v5[2] = v5
+            v5[3] = v1:_j({v4, v2[2], v3, v2[1]})
+            v7 = {[1] = 3, [3] = v7}
+            v7[2] = v7
+            v7[3], v11, v8 = v1:Xi({v9, v5, v6}), 1, #v6[3]
+            v8, v11, v12, v10 = v3[3].GetAttributeChangedSignal, v3[3], "PetKey", v8 + 1
+            v8 = v8(v11, "PetKey")
+            v8 = v8:Connect(v5[3])
+            v6[3][v10] = v8
+            v8 = #v6[3]
+            v8, v12, v10 = v3[3].DescendantAdded, v1:Wi({v7, v5}), v8 + 1
+            v8 = v8:Connect(v12)
+            v6[3][v10] = v8
+            v8 = v3[3].GetDescendants
+            v11 = v3[3]
+            v8 = v1.h(v8(v11))
+            v10, v8, v11 = ipairs(v1.i(v8))
+            v10, v8, v11 = v1.g(v10, v8, v11)
+            for v13, h in v10, v8, v11 do
+                v7[3](h)
+            end
+            return
+        end
+    end
+end
+local function _w792(v1)
+    return function()
+        if type(isfolder) ~= "function" or not isfolder("autoexec") then
+            makefolder("autoexec")
+        end
+    end
+end
+local function _w793(v1, v2)
+    return function(text)
+        local v3, v4
+        v3, v4 = v2[1][3]()
+        if not (not v3 or not v4) then
+            v4.Text = text
+            return
+        end
+    end
+end
+local function _w794(v1, v2)
+    return function(v3)
+        local v4 = v2[1][3].GetMyPlot()
+        local v5 = v4
+        if v4 then
+            v5 = v4:FindFirstChild("Baseplate")
+        end
+        local v6 = v5
+        if v5 then
+            v6 = v5:IsA("BasePart")
+        end
+        local v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17
+        if not v6 then
+            return nil
+        else
+            v14 = Vector3.new(0, 0, -1)
+            if typeof(v3) == "Vector3" then
+                v12 = v3.X
+                v15 = v5.Position.X
+                v17, v12, v7, v15 = v5.Position, 0, v12 - v15, v3.Z
+                v15 = v15 - v17.Z
+                v6 = Vector3.new(v7, 0, v15)
+                if v6.Magnitude > 0.5 then
+                    v7 = v5.CFrame:VectorToObjectSpace(v6)
+                    v17 = v7.Z
+                    v12 = Vector3.new(v7.X, 0, v17)
+                    if v12.Magnitude > 0.001 then
+                        v14 = v12.Unit
+                    end
+                end
+            end
+            v6 = v5.Size.X * 0.5
+            v7 = v5.Size.Z * 0.5
+            v12 = math.huge
+            if math.abs(v14.X) > 0.0001 then
+                v17 = math.abs
+                v16 = v14.X
+                v12 = math.min(v12, v6 / v17(v16))
+            end
+            v11 = v14.Z
+            if math.abs(v11) > 0.0001 then
+                v16 = v14.Z
+                v17 = math.abs
+                v12 = math.min(v12, v7 / v17(v16))
+            end
+            if v12 == math.huge then
+                return nil
+            else
+                v17 = v2[1][3]
+                v15 = v12 + v17.InstantOutsidePOVGap
+                v9 = v14.X * v15
+                v8 = v5.Size.Y * 0.5 + v17.InstantOutsidePOVHeight
+                v13 = v14.Z
+                v11 = (v5.CFrame * CFrame.new(v9, v8, v13 * v15)).Position
+                v17 = CFrame.lookAt
+                v10 = Vector3.new
+                v8 = v5.Position
+                v13, v9, v8 = v5.Position, v8.X, v11.Y
+                v13 = v13.Z
+                v10 = table.pack(v10(v9, v8, v13))
+                v17 = table.pack(v17(v11, table.unpack(v10, 1, v10.n)))
+                return table.unpack(v17, 1, v17.n)
+            end
+        end
+    end
+end
+local function _w795(v1, v2)
+    return function()
+        local v3 = v2[1][3].GetMyPlot()
+        local v4 = v3
+        if v3 then
+            v4 = v3:FindFirstChild("Baseplate")
+        end
+        local v5 = v2[2][3].Character
+        local v6 = v5
+        if v5 then
+            v6 = v5:FindFirstChild("HumanoidRootPart")
+        end
+        local v7 = v4
+        if v4 then
+            v7 = v4:IsA("BasePart")
+        end
+        if v7 then
+            v7 = v6
+        end
+        local v8, v9, v10, pointToObjectSpace5
+        if not v7 then
+            return false
+        else
+            pointToObjectSpace5 = v4.CFrame:PointToObjectSpace(v6.Position)
+            v8 = pointToObjectSpace5.X
+            v9 = math.abs(v8)
+            v10 = v4.Size.X
+            v7 = v9 <= math.min(18, v10 * 0.28)
+            if v7 then
+                v9 = math.abs(pointToObjectSpace5.Z)
+                v10 = v4.Size.Z
+                v7 = v9 <= math.min(18, v10 * 0.28)
+            end
+            if v7 then
+                v8 = pointToObjectSpace5.Y
+                v7 = math.abs(v8) <= 30
+            end
+            return v7
+        end
+    end
+end
+local function _w796(v1, v2)
+    return function()
+        local v3 = v2[2][3].Decoration
+        v2[1][3].FPSState.Original.TerrainDecoration = v3
+    end
+end
+local function h(...)
+    return {[1] = {...}, [2] = select("#", ...)}
+end
+local function _w798(v1, v2)
+    return function()
+        v2[1][3].TryServerHop(true)
+    end
+end
+local function _w799(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        local v4 = "REZEV8_" .. v2[3][3]
+        local v5 = {
+            Text = v2[5][3],
+            Values = v2[4][3],
+            Default = v2[2][3],
+            Multi = true,
+            Searchable = true,
+            MaxVisibleDropdownItems = 10,
+        }
+        local v6
+        v6, v3 = v3, v3.AddDropdown
+        v3 = table.pack(v3(v6, v4, v5))
+        return table.unpack(v3, 1, v3.n)
+    end
+end
+local function _w800(v1, v2)
+    return function()
+        settings().Rendering.MeshPartDetailLevel = v2[1][3].FPSState.Original.MeshPartDetailLevel
+    end
+end
+local function _w801(v1, v2)
+    return function(v3)
+        v2[1][3].SetHidePets(v3)
+    end
+end
+local function _w802(v1)
+    return function()
+    end
+end
+local function _w803(v1, v2)
+    return function()
+        local v3 = v2[2][3].FPSState.Original.TerrainDecoration
+        v2[1][3].Decoration = v3
+    end
+end
+local function _w804(v1, v2)
+    return function()
+        game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, v2[1][3])
+    end
+end
+local function _w805(v1, v2)
+    return function(v3)
+        local v4, v5
+        v2[1][3], v5, v4 = v3, v3, v2[3][3]
+        v4(v5)
+        v2[2][3]()
+    end
+end
+local function _w806(v1, v2)
+    return function(cFrame, v3)
+        local v4 = v2[1][3].GetCharacter()
+        local v5 = v4
+        if v4 then
+            v5 = v4:FindFirstChild("HumanoidRootPart")
+        end
+        local v6, v7, tweenInfo, v8, v9, v10, v11, v12
+        if v5 then
+            v7 = (v5.Position - cFrame.Position).Magnitude
+            v9 = typeof(v3) == "number" and v3 or v7 / 60
+            if v9 <= 0 then
+                v9 = 0.1
+            end
+            v10 = Enum
+            v8 = v10.EasingStyle.Linear
+            v6 = v10.EasingDirection
+            tweenInfo = TweenInfo.new(v9, v8, v6.Out)
+            v12 = {}
+            v11 = v2[2][3]
+            v12.CFrame = cFrame
+            v11 = v11:Create(v5, tweenInfo, v12)
+            v2[1][3].ActiveVolcanicTween = v11
+            v11:Play()
+            v11.Completed:Wait()
+            if v2[1][3].ActiveVolcanicTween == v11 then
+                v2[1][3].ActiveVolcanicTween = nil
+            end
+            return
+        end
+    end
+end
+local function _w807(v1, v2)
+    return function()
+        local k, _
+        local v3 = 0
+        local v4 = setmetatable({}, {__mode = "k"})
+        local v5 = v2[1][3].getInventoryESPToolContainers
+        v5 = v1.h(v5())
+        local v6, v7
+        v6, v5, v7 = ipairs(v1.i(v5))
+        v6, v5, v7 = v1.g(v6, v5, v7)
+        local v8, v9
+        v9, v8 = v6(v5, v7)
+        local data3, v10, v11, v12, v13, v14
+        if v9 ~= nil then
+            while true do
+                v12 = v8.GetChildren
+                v12 = v1.h(v12(v8))
+                v10, v12, k = ipairs(v1.i(v12))
+                v10, v12, k = v1.g(v10, v12, k)
+                for k, _ in v10, v12, k do
+                    if _:IsA("Tool") and not v4[_] and _:GetAttribute("EggInventoryId") ~= nil then
+                        v4[_] = true
+                        v11 = 1
+                        data3 = _:FindFirstChild("Data")
+                        v14 = data3 and data3:FindFirstChild("Amount")
+                        if v14 and v14:IsA("ValueBase") then
+                            v13 = v14.Value
+                            v11 = math.max(1, tonumber(v13) or 1)
+                        end
+                        v3 = v3 + v11
+                    end
+                end
+                v9, v8 = v6(v5, v7)
+                v7 = v9
+                if v7 == nil then
+                    break
+                end
+            end
+        end
+        return v3
+    end
+end
+local function _w808(v1, v2)
+    return function()
+        v2[1][3].HoldDuration = 0
+    end
+end
+local function _w809(v1, v2)
+    return function(v3)
+        local v4, v5, v6, v7, v8, v9, v10
+        if not (not v3 or v2[1][3].CarryCapture[v3]) then
+            v8 = v2[2][3].Character
+            v9 = v8 and v8:FindFirstChild("HumanoidRootPart")
+            v6 = v9 and v9.Position or nil
+            v10 = os.clock()
+            v4 = v2[1][3]
+            v7 = v4.CarryCapture
+            v5 = {At = v10, Position = v6}
+            v5.EggName = v4.ReadCarriedNameFromCharacter()
+            v7[v3] = v5
+            return
+        end
+    end
+end
+local function _w810(v1, v2)
+    return function(v3)
+        v2[1][3] = v3
+        local v4, v5
+        if v3 then
+            v4, v2[6][3], v5 = v2[5][3], false, false
+            v4.AutoUpgradeHatchLuck = false
+            v5 = v2[2][3].Luck
+            v2[4][3].SetUIValue(v5, false)
+        end
+        v5 = v2[4][3]
+        local v6
+        v5, v6, v4 = v2[3][3], v3, v5.setLabel
+        if v6 then
+            v6 = "🟡 Checking max cost"
+        end
+        if not v6 then
+            v6 = "🔴 Auto Upgrade Hatch Luck Off"
+        end
+        v4(v5, v6)
+    end
+end
+local function _w811(v1, v2, v3, v4)
+    v1.rr[v4] = v1.Wq(v2, v3)
+    return v1.rr[v4]
+end
+local function _w812(v1, v2)
+    return function(v3)
+        local _, q
+        local v4 = v2[1][3][v3]
+        local v5 = v4
+        if v4 then
+            v5 = v4.Parent
+        end
+        local v6, v7, v8, v9, getEggPart6, v10, v11, v12, v13, v14, v15
+        if v5 then
+            return v4
+        else
+            v5 = v2[3][3]:FindFirstChild("ServerData")
+            v8 = v5 and v5:FindFirstChild("ActiveEggs")
+            getEggPart6 = v2[2][3].GetEggPart(v3)
+            if not v8 or not getEggPart6 then
+                return nil
+            else
+                v15 = v1:Am()
+                v12 = v15(v3.Name)
+                if v12 == "" then
+                    return nil
+                else
+                    v13 = nil
+                    v14 = math
+                    v14, v7, v9, _, v11 = ipairs, v8, v14.huge, v8.GetChildren, v14.huge
+                    _ = v1.h(_(v7))
+                    v14, _, v7 = v14(v1.i(_))
+                    v14, _, v7 = v1.g(v14, _, v7)
+                    for _, q in v14, _, v7 do
+                        if v15(q:GetAttribute("Egg") or q:GetAttribute("EggName") or q:GetAttribute("DisplayName")) == v12 then
+                            v6 = q:GetAttribute("Position")
+                            if typeof(v6) ~= "Vector3" then
+                                v10 = q:GetAttribute("SpawnCFrame")
+                                if typeof(v10) == "CFrame" then
+                                    v6 = v10.Position
+                                end
+                            end
+                            if typeof(v6) == "Vector3" then
+                                v10 = (v6 - getEggPart6.Position).Magnitude
+                                if v10 < v11 then
+                                    v11, v13, v9 = v10, q, v11
+                                elseif v10 < v9 then
+                                    v9 = v10
+                                end
+                            end
+                        end
+                    end
+                    if not v13 or v11 > 14 or v9 <= 14 then
+                        return nil
+                    else
+                        v2[1][3][v3] = v13
+                        return v13
+                    end
+                end
+            end
+        end
+    end
+end
+local function _w813(v1, v2)
+    return function()
+        local v3, v4, v5, v6, v7, v8
+        if not (not v2[1][3] or not v2[3][3](v2[2][3])) then
+            v8 = {}
+            v5 = {}
+            v3 = v2[4][3].WebhookRequest
+            v7 = {}
+            v8.title = "🧪 REZEHUB Webhook Test"
+            v8.color = v2[4][3].WebhookRarityColor.Divine or 16765801
+            v8.description = "REZEHUB notifier is connected."
+            v4 = {}
+            v6 = {}
+            v4.name = "Status"
+            v4.value = "Webhook test received"
+            v4.inline = false
+            v6[1] = v4
+            v8.fields = v6
+            v5[1] = v8
+            v7.embeds = v5
+            v3(v7)
+            return
+        end
+    end
+end
+local function _w814(v1, v2)
+    return function()
+        v2[1][3]:Disconnect()
+    end
+end
+local function _w815(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        local v4 = workspace
+        local v5 = v2[2][3]
+        local v6
+        v4, v6 = v4.GetPartBoundsInRadius, v4
+        v4 = table.pack(v4(v6, v3, 150, v5))
+        return table.unpack(v4, 1, v4.n)
+    end
+end
+local function _w816(v1, v2)
+    return function(v3)
+        local e
+        local v4, v5, v6, v7, v8, v9, v10, v11
+        if v3 then
+            v10 = v3.GetChildren
+            v10 = v1.h(v10(v3))
+            v9, v10, v11 = ipairs(v1.i(v10))
+            v9, v10, v11 = v1.g(v9, v10, v11)
+            for v12, e in v9, v10, v11 do
+                if e:IsA("Tool") and e:GetAttribute("PetKey") then
+                    v7 = v2[1][3]
+                    v4, v6, v5, v8, v7 = "PetKey", e.GetAttribute, e, v7.AlertSeenKeys, tostring
+                    v6 = table.pack(v6(v5, "PetKey"))
+                    v8[v7(table.unpack(v6, 1, v6.n))] = true
+                end
+            end
+            v10 = v2[1][3]
+            v11, v9, v10 = v2[1][3], v10.Bind, v3.ChildAdded
+            v9(v10, v11.processNewPetAlert)
+            return
+        end
+    end
+end
+local function _w817(v1, v2)
+    return function()
+        local v3, v4
+        if not v2[1][3].UIBuildComplete then
+            v3 = v2[1][3]
+            v3.UIBuildSteps = v3.UIBuildSteps + 1
+            v4, v3 = 0, v3.UIBuildSteps % 4
+            if v3 == 0 then
+                task.wait()
+            end
+        end
+    end
+end
+local function _w818(v1, v2)
+    return function(v3, v4, v5)
+        local parseKG2, parseKG3
+        if v3 ~= "Above" and v3 ~= "Below" then
+            return true
+        else
+            parseKG2 = v2[1][3].ParseKG(v4)
+            parseKG3 = v2[1][3].ParseKG(v5)
+            if parseKG2 == nil or parseKG3 == nil then
+                return false
+            elseif v3 == "Above" then
+                return parseKG3 >= parseKG2
+            else
+                return parseKG3 <= parseKG2
+            end
+        end
+    end
+end
+local function _w819(v1, v2)
+    return function(v3, v4)
+        local v5 = os.clock() + v4
+        if v2[1][3].Alive and v2[1][3].AutoCandy and os.clock() < v5 then
+            return true
+        end
+        return not v3.Parent
+    end
+end
+local function _w820(v1, v2)
+    return function(v3, v4, v5)
+        v4 = {[1] = 3, [3] = v4}
+        v4[2] = v4
+        v5 = {[1] = 3, [3] = v5}
+        v5[2] = v5
+        local do_ = v1:do_({v4, v5, v2[1]})
+        table.sort(v3, do_)
+    end
+end
+local function _w821(v1, v2)
+    return function()
+        if type(v2[1][3].SetValue) == "function" then
+            v2[1][3]:SetValue(v2[2][3], true)
+        else
+            type(v2[1][3].Set)
+        end
+    end
+end
+local function _w822(v1, v2)
+    return function()
+        v2[1][3].ActiveVolcanicTween:Cancel()
+    end
+end
+local function _w823(v1, v2)
+    return function()
+        local v3 = v2[1][3].InstantRecoveryPending
+        local v4
+        if not v3 then
+            v4 = v2[1][3]
+            v3 = v4.InstantCycleEpoch ~= v4.InstantCancelEpoch
+        end
+        return v3
+    end
+end
+local function _w824(v1, v2)
+    return function(v3)
+        local v4 = v2[1][3].InventoryESPState
+        v4.RefreshGeneration = v4.RefreshGeneration + 1
+        local v5, v6
+        v4.RefreshQueued, v5, v6 = false, false, false
+        v4.RefreshBusy = false
+        v4.RefreshAgain = false
+        local v7
+        v7, v6, v5 = ipairs(v4.Connections)
+        v7, v6, v5 = v1.g(v7, v6, v5)
+        local v8, v9
+        v8, v9 = v7(v6, v5)
+        if v8 ~= nil then
+            while true do
+                v9:Disconnect()
+                v8, v9 = v7(v6, v5)
+                v5 = v8
+                if v5 == nil then
+                    break
+                end
+            end
+        end
+        v4.Connections = {}
+        v7, v6, v5 = pairs(v4.CardConnections or {})
+        v7, v6, v5 = v1.g(v7, v6, v5)
+        v8 = v7(v6, v5)
+        if v8 ~= nil then
+            while true do
+                v2[1][3].unbindInventoryESPCard(v8, v3 == true)
+                v8 = v7(v6, v5)
+                v5 = v8
+                if v5 == nil then
+                    break
+                end
+            end
+        end
+        v4.Grid = nil
+        v4.GridCardList = nil
+        v4.PreparedGrid = nil
+        v4.ScrollRefreshQueued = false
+    end
+end
+local function _w825(v1)
+    return function(v2, v3)
+        local v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15
+        if v2 then
+            v2:IsA("ProximityPrompt")
+            v7, v9, v5 = ipairs(v2:GetDescendants())
+            v7, v9, v5 = v1.g(v7, v9, v5)
+            v8, v4 = v7(v9, v5)
+            v5 = v8
+            if v5 ~= nil then
+                local __cont2 = false
+                while true do
+                    if not v4:IsA("ProximityPrompt") then
+                        v8, v4 = v7(v9, v5)
+                        v5 = v8
+                        if v5 ~= nil then
+                            continue
+                        end
+                        return nil
+                    end
+                    v10 = tostring(v4.ActionText or ""):lower()
+                    v11 = tostring(v4.ObjectText or ""):lower()
+                    if v3 then
+                        v15, v13, v14 = ipairs(v3)
+                        v15, v13, v14 = v1.g(v15, v13, v14)
+                        v12, v6 = v15(v13, v14)
+                        v14 = v12
+                        if v14 == nil then
+                            v8, v4 = v7(v9, v5)
+                            v5 = v8
+                            if v5 ~= nil then
+                                continue
+                            end
+                            return nil
+                        end
+                        while true do
+                            if not (v10:find(v6, 1, true) or v11:find(v6, 1, true)) then
+                                v12, v6 = v15(v13, v14)
+                                v14 = v12
+                                if v14 == nil then
+                                    v8, v4 = v7(v9, v5)
+                                    v5 = v8
+                                    if v5 ~= nil then
+                                        __cont2 = true
+                                        break
+                                    end
+                                    return nil
+                                else
+                                    continue
+                                end
+                            end
+                            break
+                        end
+                        if __cont2 then
+                            __cont2 = false
+                            continue
+                        end
+                        break
+                    end
+                    return v4
+                end
+                return v4
+            end
+        end
+        return nil
+    end
+end
+local function _w826(v1, v2)
+    return function()
+        local v3 = v2[1][3].REZETitleLabel
+        local v4 = v3
+        if v3 then
+            v4 = v3:FindFirstAncestorOfClass("ScreenGui")
+        end
+        local v5, v6, v7, v8, v9, v10, v11
+        if v4 then
+            v6 = v4.GetDescendants
+            v6 = v1.h(v6(v4))
+            v10, v6, v9 = ipairs(v1.i(v6))
+            v10, v6, v9 = v1.g(v10, v6, v9)
+            v5, v11 = v10(v6, v9)
+            v9 = v5
+            if v9 ~= nil then
+                while true do
+                    if not ((v11:IsA("TextLabel") or v11:IsA("TextButton")) and tostring(v11.Text) == "PREMIUM") then
+                        v5, v11 = v10(v6, v9)
+                        v9 = v5
+                        if v9 ~= nil then
+                            continue
+                        end
+                        return
+                    end
+                    break
+                end
+                v8 = {[1] = 3, [3] = v11}
+                v8[2] = v8
+                v7 = 1
+                while true do
+                    if not v8[3].IsA(v8[3], "GuiButton") then
+                        v8[3].Parent:IsA("GuiObject")
+                        v8[3] = v8[3].Parent
+                        v7 = v7 + 1
+                        if v7 <= 4 then
+                            continue
+                        end
+                        break
+                    end
+                    break
+                end
+                if v8[3].IsA(v8[3], "GuiButton") then
+                    pcall(v1:F({v8}))
+                    v8[3].AutoButtonColor = false
+                else
+                    v8[3].IsA(v8[3], "GuiObject")
+                end
+                return
+            end
+            return
+        end
+    end
+end
+local function _w827(v1, v2)
+    return function(v3, v4)
+        local v5 = v4
+        if v4 then
+            v5 = v4:GetAttribute("Rarity")
+        end
+        local v6, v7
+        if not v5 or tostring(v5) == "" then
+            v6 = v2[1][3].InventoryESPState.PetGameData
+            v7 = type(v6) == "table" and v6[tostring(v3 or "")]
+            v5 = type(v7) == "table" and v7.Rarity or nil
+        end
+        if not v5 and type(v2[1][3].getPetRarityByName) == "function" then
+            v5 = v2[1][3].getPetRarityByName(v3)
+        end
+        v6 = type(v2[1][3].normalizeRarityName) == "function" and v2[1][3].normalizeRarityName(v5) or v5
+        v6 = v2[2][3][tostring(v6 or "Common")] or v2[2][3].Common
+        return v6
+    end
+end
+local function _w828(v1, v2)
+    return function()
+        v2[1][3]:SetStateEnabled(v2[2][3], true)
+    end
+end
+local function _w829(v1, v2)
+    return function(v3)
+        local v4 = v3
+        if v3 then
+            v4 = v3:IsA("BasePart")
+        end
+        if v4 then
+            v4 = v3:IsDescendantOf(workspace)
+        end
+        local v5, proximityPrompt, v6, v7, v8
+        if not v4 then
+            return false, "PUMPKIN_SPAWN_NOT_PRESENT"
+        else
+            v8 = v3:GetAttribute("Id")
+            if type(v8) ~= "string" and type(v8) ~= "number" then
+                return false, "PUMPKIN_ID_MISSING"
+            elseif v3:GetAttribute("SpawnReady") ~= true then
+                return false, "PUMPKIN_NO_INTERACTION"
+            else
+                v4 = v2[1][3]()
+                v7 = tonumber(v2[2][3].Pumpkin.RottenUntil[v8])
+                if not v7 then
+                    return false, "PUMPKIN_SERVER_STATE_UNKNOWN"
+                elseif v7 <= v4 then
+                    return false, "PUMPKIN_NOT_ROTTEN"
+                else
+                    v5 = tonumber(v2[2][3].Pumpkin.RespawnAt[v8])
+                    if v5 and v5 > v4 then
+                        return false, "PUMPKIN_WAIT_RESPAWN"
+                    elseif v3:GetAttribute("SearchAvailable") == false then
+                        return false, "PUMPKIN_SEARCH_NOT_AVAILABLE"
+                    else
+                        proximityPrompt = v3:FindFirstChildWhichIsA("ProximityPrompt", true)
+                        if proximityPrompt and not proximityPrompt.Enabled then
+                            return false, "PUMPKIN_PROMPT_DISABLED"
+                        else
+                            v6 = v2[2][3].Next["Pumpkin:" .. tostring(v8)]
+                            if 0 > os.clock() then
+                                return false, "PUMPKIN_COOLDOWN"
+                            else
+                                return true, "READY", v3.Position
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+local function _w830(v1, v2)
+    return function()
+        local v3 = -math.huge
+        v2[1][3].HatchLuckCheckedAt = v3
+        v3 = v1:Po({v2[3], v2[2]})
+        task.defer(v3)
+    end
+end
+local function _w831(v1, v2)
+    return function()
+        local remotes4, v3, v4
+        if v2[1][3].CanRebirth() then
+            remotes4 = v2[2][3]:FindFirstChild("Remotes")
+            v3 = remotes4 and remotes4:FindFirstChild("Game")
+            v4 = v3 and v3:FindFirstChild("Rebirth")
+            if v4 then
+                v4:FireServer()
+            end
+        end
+    end
+end
+local function _w832(v1, v2)
+    return function()
+        local v3 = {[1] = 3, [3] = v2[1][3].InventoryESPState}
+        v3[2] = v3
+        local v4 = os.clock()
+        local v5, v6, v7, v8, v9, v10
+        if v4 - (v3[3].HatchLuckCheckedAt or -math.huge) < 0.7 then
+            return v3[3].HatchLuckMultiplier
+        else
+            v3[3].HatchLuckCheckedAt = v4
+            v7 = v2[3][3].ReadWebhookHatchMultiplier and v2[3][3].ReadWebhookHatchMultiplier()
+            if v7 and v7 >= 1 then
+                if v3[3].HatchLuckMultiplier ~= v7 then
+                    v3[3].HatchLuckMultiplier = v7
+                    v6 = v3[3].LuckRevision or 0
+                    v3[3].LuckRevision = v6 + 1
+                    v3[3].EggLuckCache = {}
+                    v3[3].CardCache = {}
+                    v2[1][3].queueInventoryESPRefresh(0)
+                end
+                return v7
+            else
+                v5 = v3[3].HatchLuckMultiplierLabel
+                if not v5 or not v5.Parent then
+                    v6 = v2[2][3]:FindFirstChild("PlayerGui")
+                    v10 = v6 and v6:FindFirstChild("Upgrade")
+                    v8 = v10 and v10:FindFirstChild("CurrentUpgrade")
+                    v5 = v8
+                    v3[3].HatchLuckMultiplierLabel = v8
+                end
+                if v5 and v5 ~= v3[3].HatchLuckWatchedLabel then
+                    v3[3].HatchLuckLabelConnection:Disconnect()
+                    v3[3].HatchLuckWatchedLabel = v5
+                    v3[3].HatchLuckLabelConnection = nil
+                    v5:IsA("TextLabel")
+                    v6 = v5:GetPropertyChangedSignal("Text"):Connect(v1:No({v3, v2[1], v2[4]}))
+                    v3[3].HatchLuckLabelConnection = v6
+                end
+                v6 = nil
+                if v5 and v5:IsA("TextLabel") then
+                    v10 = tostring(v5.Text or ""):gsub(",", "")
+                    v9 = v10.match
+                    v9 = table.pack(v9(v10, "([%d%.]+)%s*[xX]"))
+                    v6 = tonumber(table.unpack(v9, 1, v9.n))
+                end
+                if v6 and v6 >= 1 and v6 < 1000000000000000 then
+                    if v3[3].HatchLuckMultiplier ~= v6 then
+                        v3[3].HatchLuckMultiplier = v6
+                        v8 = v3[3].LuckRevision or 0
+                        v3[3].LuckRevision = v8 + 1
+                        v3[3].EggLuckCache = {}
+                        v8 = v1:Mo({v2[4], v2[1], v3})
+                        task.defer(v8)
+                    end
+                end
+                return v3[3].HatchLuckMultiplier
+            end
+        end
+    end
+end
+local function _w833(v1, v2)
+    return function()
+        local v3
+        if v2[1][3].AutoExecute ~= true then
+            return "Auto Execute OFF"
+        else
+            v3 = v2[2][3].AutoExecuteFileInstalled and "autoexec file written" or "manual executor autoexec needed"
+            return (v2[2][3].AutoExecuteQueued and "TP queued" or "TP queue unavailable") .. " | " .. v3
+        end
+    end
+end
+local function _w834(v1, v2)
+    return function()
+        pcall(v1:ql({v2[1], v2[2]}))
+    end
+end
+local function _w835(v1)
+    return function(v2, v3)
+        local v4, v5, v6
+        if not (not v2 or not v2.Parent or not v3) then
+            v4 = v2.Parent
+            v5 = v4.Parent
+            v6 = v5 and v5:FindFirstChildOfClass("UIListLayout")
+            if v5 and v5:IsA("GuiObject") and v6 and not v4:FindFirstChildOfClass("UIListLayout") then
+                v3.LayoutOrder = v4.LayoutOrder
+                v3.Parent = v5
+                v4:Destroy()
+            else
+                v2.Text = ""
+                v2.Visible = false
+                v2.Size = UDim2.fromOffset(0, 0)
+                v4:IsA("GuiObject")
+            end
+            return
+        end
+    end
+end
+local function _w836(v1, v2)
+    return function()
+        local v3, v4, v5, v6, getEggPart7, v7, v8, v9, v10, v11, v12, v13, v14, v15
+        if not (v2[1][3].PickupMode == "Instant") then
+            v7 = v2[1][3]
+            v6 = v7.SavedDropPosition
+            if v7.ReturnPreviouslyDropped and type(v6) == "table" then
+                v9 = v2[1][3].RenderedEggs
+                v9, v11 = v9.GetChildren, v9
+                v9 = v1.h(v9(v11))
+                v7, v9, v11 = ipairs(v1.i(v9))
+                v7, v9, v11 = v1.g(v7, v9, v11)
+                v4, v15 = v7(v9, v11)
+                v11 = v4
+                if v11 ~= nil then
+                    while true do
+                        getEggPart7 = v2[1][3].GetEggPart(v15)
+                        v12 = v15.Name
+                        v10 = getEggPart7
+                        v5 = v2[1][3].DropSafeNames[v12]
+                        if v10 then
+                            v10 = v5
+                        end
+                        if v10 then
+                            v10 = v5 > 0
+                        end
+                        if not v10 then
+                            v4, v15 = v7(v9, v11)
+                            v11 = v4
+                            if v11 ~= nil then
+                                continue
+                            end
+                            v2[1][3].ReturnPreviouslyDropped = false
+                            return nil
+                        end
+                        v13 = getEggPart7.Position
+                        v8, v12, v13 = v6.X, v13.X, tonumber
+                        v13 = v13(v8) or math.huge
+                        v10 = v12 - v13
+                        v3 = v6.Z
+                        v12 = getEggPart7.Position.Z - (tonumber(v3) or math.huge)
+                        v14 = v2[1][3]
+                        v3 = v14.DropSafezoneRadius
+                        v14 = v14.DropSafezoneRadius
+                        if v10 * v10 + v12 * v12 > v3 * v14 then
+                            v4, v15 = v7(v9, v11)
+                            v11 = v4
+                            if v11 ~= nil then
+                                continue
+                            end
+                            v2[1][3].ReturnPreviouslyDropped = false
+                            return nil
+                        end
+                        break
+                    end
+                    return v15
+                end
+                v2[1][3].ReturnPreviouslyDropped = false
+            end
+        end
+        return nil
+    end
+end
+local function _w837(v1, v2)
+    return function()
+        local v3 = v2[2][3]
+        return v2[1][3][v3]
+    end
+end
+local function _w838(v1, v2)
+    return function(autoReconnect)
+        v2[1][3].AutoReconnect = autoReconnect
+    end
+end
+local function _w839(v1, v2)
+    return function()
+        v2[1][3].queueInventoryESPRefresh(0)
+    end
+end
+local function _w840(v1, v2)
+    return function(v3, v4, v5, v6)
+        local v7, v8, max5, v9, v10, v11, v12, v13, v14, webhookEggWeight, max6, v15, v16, v17, v18, v19, webhookMutationTrait, v20, v21
+        if not (not v2[1][3] or v2[6][3].WebhookPickupAlerts == false) then
+            v21 = {}
+            v12 = tostring(v21.Rarity or "Common")
+            webhookEggWeight = v2[4][3].WebhookEggWeight(v4, v5)
+            webhookMutationTrait = v2[4][3].WebhookMutationTrait(v4, v5)
+            v10 = v2[4][3].SessionUI
+            v7 = v10 and v10.Duration and v10.Duration(os.clock() - (v10.StartedAt or os.clock())) or "Unknown"
+            v20 = v2[4][3]
+            max5 = math.max(0, tonumber(v20.LastDeliveryDuration) or 0)
+            v11 = v2[4][3]
+            max6 = math.max(0, tonumber(v11.DeliveredEggCount) or 0)
+            v18 = max6 > 0 and (tonumber(v2[4][3].TotalDeliveryDuration) or 0) / max6 or 0
+            v20 = v2[4][3].WebhookEffectiveLuck(v3, v4)
+            v13 = {}
+            v13.title = "🥚 " .. tostring(v3) .. " • " .. tostring(webhookEggWeight)
+            v13.description = "By User:  ||**" .. tostring(v2[2][3].Name) .. "**||"
+            v13.color = v2[4][3].WebhookRarityColor[v12] or v2[4][3].WebhookRarityColor.Common
+            v17 = {}
+            v14 = {}
+            v17.name = "🥚 Egg Details"
+            v16 = v6 or v2[4][3].PickupMode or "TP"
+            v17.value = "```⭐ Rarity: " .. v12 .. "\n🍀 Luck: " .. tostring(v20) .. "\n🧬 Mutation/Trait: " .. webhookMutationTrait .. "\n💨 Pick-up Mode: " .. tostring(v16) .. "```"
+            v17.inline = false
+            v19 = {name = "🎒 Session Pickup"}
+            v19.value = "```🥚 Pickups: " .. tostring(max6) .. "\n⚡ Duration: " .. string.format("%.2fs", max5) .. "\n⏱️ Average: " .. string.format("%.2fs", v18) .. "\n🕒 Session: " .. tostring(v7) .. "```"
+            v19.inline = false
+            v14[1], v14[2] = v17, v19
+            v13.fields = v14
+            v13, v11 = v21.Image, v13
+            if not v13 then
+                v13 = v21.Icon
+            end
+            if not v13 then
+                v13 = v21.Thumbnail
+            end
+            if not v13 then
+                v13 = v21.ImageId
+            end
+            if not v13 then
+                v13 = v21.IconId
+            end
+            if not v13 then
+                v9 = v2[3][3]:FindFirstChildOfClass("PlayerGui")
+                v14 = v9 and v9:FindFirstChild("Main")
+                v14 = v14 and v14:FindFirstChild("Index")
+                v15 = v14 and v14:FindFirstChild("Holders")
+                v17 = v15 and v15:FindFirstChild("EggsHolder")
+                v19 = v17 and v17:FindFirstChild(v3)
+                v8 = v19 and v19:FindFirstChildWhichIsA("ImageLabel", true)
+                v13 = v8 and v8.Image
+            end
+            v13 = tostring(v13 or "")
+            if v13:match("^https?://") then
+                v11.thumbnail = {url = v13}
+            else
+                v13:match("rbxassetid://(%d+)")
+                v13:match("rbxthumb://.-[?&]id=(%d+)")
+                v13:match("[?&]assetId=(%d+)")
+                v13:match("^%d+$")
+            end
+            v14 = {}
+            v17 = {}
+            v9 = v2[4][3].WebhookRequest
+            v17[1] = v11
+            v14.embeds = v17
+            v9(v14)
+            return
+        end
+    end
+end
+local function _w841(v1, v2)
+    return function(v3, treat, v4, reason)
+        local v5 = v2[1][3].DoorResult
+        local v6 = {}
+        v6.Time = os.clock()
+        v6.Treat = treat
+        v6.Reason = reason
+        v5[v3] = v6
+    end
+end
+local function _w842(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        local v4
+        v4, v3 = v3, v3.Clone
+        v3 = table.pack(v3(v4))
+        return table.unpack(v3, 1, v3.n)
+    end
+end
+local function _w843(v1, v2)
+    return function()
+        local v3, v4
+        v4, v3 = pcall(v1:Iq({v2[1], v2[3], v2[2]}))
+        local v5 = v4
+        if v4 then
+            v5 = v3 == true
+        end
+        return v5
+    end
+end
+local function _w844(v1, v2)
+    return function(v3, v4)
+        local v5 = {[1] = 3, [3] = {}}
+        v5[2] = v5
+        local v6 = {[1] = 3, [3] = {}}
+        v6[2] = v6
+        local v7 = {[1] = 3, [3] = {}}
+        v7[2] = v7
+        local v8 = v1:Im({v2[1], v6, v5, v7, v2[2]})
+        v8(v3, "mutation")
+        v8(v4, "trait")
+        local v9, v10, v11
+        v10, v9, v11 = ipairs(v7[3])
+        v10, v9, v11 = v1.g(v10, v9, v11)
+        local v12, v13
+        v12, v13 = v10(v9, v11)
+        if v12 ~= nil then
+            while true do
+                v6[3][#v6[3] + 1] = v13
+                v12, v13 = v10(v9, v11)
+                v11 = v12
+                if v11 == nil then
+                    break
+                end
+            end
+        end
+        return #v6[3] > 0 and table.concat(v6[3], "+") or "Normal"
+    end
+end
+local function _w845(v1, v2)
+    return function()
+        v2[1][3](v2[3][3](false), v1:uq({v2[2], v2[4]}))
+    end
+end
+local function _w846(v1, v2)
+    return function()
+        v2[1][3].TryServerHop()
+    end
+end
+local function _w847(v1, v2)
+    return function()
+        local v3, v4
+        if not v2[1][3] then
+            return false
+        else
+            v4 = v2[2][3].GetMyPlot()
+            v3 = v4 and v4:FindFirstChild("Eggs")
+            if not v4 or not v3 or #v3:GetChildren() >= v2[2][3].MAX_PLANTED_EGGS then
+                return false
+            else
+                return #v2[2][3].GetTargetEggsToPlace() > 0
+            end
+        end
+    end
+end
+local function _w848(v1, v2)
+    return function(v3)
+        local d, k, g, w, _
+        local halloweenCandy2 = workspace:FindFirstChild("HalloweenCandy")
+        local v4, v5, v6, v7
+        if halloweenCandy2 then
+            v4 = halloweenCandy2.GetChildren
+            v4 = v1.h(v4(halloweenCandy2))
+            v7, v4, g = ipairs(v1.i(v4))
+            v7, v4, g = v1.g(v7, v4, g)
+            for _, w in v7, v4, g do
+                d = w.Name
+                d = d:match("^Candy_%d+$")
+                if d then
+                    d = w:GetAttribute("SpawnId")
+                    k, v6 = w, v2[1][3].CandyPosition
+                    v6 = v6(k)
+                    k = type(d) == "string" and d:match("^Candy%d+_%d+$") and v6
+                    if k then
+                        v5 = w.Name
+                        k = v2[6][3]
+                        k(v3.Candy, d, w, v6, "Candy", v2[5][3](v5))
+                    end
+                end
+            end
+        end
+        local v8, v9, v10
+        if v2[1][3].EventAutoRitual then
+            v4 = v2[4][3]
+            g, v4 = v4, v4.GetTagged
+            v4 = v1.h(v4(g, "HalloweenRitualPrompt"))
+            v7, v4, g = ipairs(v1.i(v4))
+            v7, v4, g = v1.g(v7, v4, g)
+            for g, w in v7, v4, g do
+                d = w:IsA("ProximityPrompt") and w:IsDescendantOf(workspace)
+                if d then
+                    d = w.Parent
+                    k = d and d ~= workspace
+                    if k then
+                        break
+                    end
+                    _ = "RitualOwnerUserId"
+                    k = w:GetAttribute("RitualOwnerUserId")
+                    break
+                end
+            end
+            v7 = workspace:FindFirstChild("HeadlessRitual")
+            v4 = v7 and v7:FindFirstChild("Runtime")
+            g = v4.GetChildren
+            g = v1.h(g(v4))
+            v4, g, v10 = ipairs(v1.i(g))
+            v4, g, v10 = v1.g(v4, g, v10)
+            for _, d in v4, g, v10 do
+                v6 = d.Name:lower()
+                k = v6 == "yin" or v6 == "yang"
+                if k then
+                    k = v2[7][3](d)
+                    v2[6][3](v3.Halves, v6, d, k, "Half", 0)
+                end
+            end
+        end
+        v7 = workspace:FindFirstChild("HalloweenArea")
+        v4 = v7
+        if v7 then
+            v4 = v7:FindFirstChild("CandySpawns")
+        end
+        if v4 then
+            g = v7.GetChildren
+            g = v1.h(g(v7))
+            v4, g, v10 = ipairs(v1.i(g))
+            v4, g, v10 = v1.g(v4, g, v10)
+            for _, d in v4, g, v10 do
+                v6 = d.Name
+                k = v6
+                v6 = v6:match("^Near%d+$") or d.Name:match("^Mid%d+$") or d.Name:match("^Far%d+$")
+                if v6 then
+                    v3.Anchors[d.Name] = true
+                end
+            end
+        end
+        g, d, v4, v10 = ipairs, "TrickOrTreatHouseModel", {}, v2[4][3]
+        w, v10 = v10, v10.GetTagged
+        v10 = v1.h(v10(w, "TrickOrTreatHouseModel"))
+        g, v10, w = g(v1.i(v10))
+        g, v10, w = v1.g(g, v10, w)
+        d, v6 = g(v10, w)
+        if d ~= nil then
+            while true do
+                if v6.Parent then
+                    v4[v6] = true
+                end
+                d, v6 = g(v10, w)
+                w = d
+                if w == nil then
+                    break
+                end
+            end
+        end
+        if not next(v4) and not v3.DoorFallbackDone then
+            v3.DoorFallbackDone = true
+            g = workspace:FindFirstChild("Model")
+            w = g and g:GetDescendants() or {}
+            v10, w, d = ipairs(w)
+            v10, w, d = v1.g(v10, w, d)
+            for _, k in v10, w, d do
+                if k.Name == "TrickOrTreatHouseModel" and k:IsA("Model") then
+                    v4[k] = true
+                end
+            end
+        end
+        g, v10, w = pairs(v4)
+        g, v10, w = v1.g(g, v10, w)
+        d = g(v10, w)
+        if d ~= nil then
+            while true do
+                k, v8, _, v9 = v2[3][3](d)
+                if k then
+                    v2[6][3](v3.Doors, d:GetAttribute("Id"), d, v9, "Door", 0)
+                end
+                d = g(v10, w)
+                w = d
+                if w == nil then
+                    break
+                end
+            end
+        end
+        v10 = v2[4][3]
+        v10, w = v10.GetTagged, v10
+        v10 = v1.h(v10(w, "HalloweenPumpkinSpawn"))
+        g, v10, w = ipairs(v1.i(v10))
+        g, v10, w = v1.g(g, v10, w)
+        d, v6 = g(v10, w)
+        if d ~= nil then
+            while true do
+                if v2[8][3](v6) then
+                    v2[6][3](v3.Pumpkins, v6:GetAttribute("Id"), v6, v6.Position, "Pumpkin", 0)
+                end
+                d, v6 = g(v10, w)
+                w = d
+                if w == nil then
+                    break
+                end
+            end
+        end
+    end
+end
+local function _w849(v1, v2)
+    return function()
+        local g
+        local v3 = v2[1][3].InventoryESPState
+        local getInventoryESPCardToolName2, v4, v5, v6
+        if v3.Enabled then
+            v4, v5, v6 = pairs(v3.HotbarCards or {})
+            v4, v5, v6 = v1.g(v4, v5, v6)
+            for g in v4, v5, v6 do
+                getInventoryESPCardToolName2 = v2[1][3].getInventoryESPCardToolName(g)
+                if not getInventoryESPCardToolName2 or getInventoryESPCardToolName2 == "" then
+                    v3.CardStable[g] = nil
+                    v3.CardCache[g] = nil
+                    v2[1][3].removeInventoryESPOverlay(g)
+                end
+            end
+        end
+    end
+end
+local function _w850(v1, v2)
+    return function(v3)
+        local v4, v5
+        if not v2[1][3] then
+            v5 = tostring(v3 or "")
+            v4 = v2[5][3]
+            v2[3][3][v4] = v5
+            v2[4][3](v5)
+            v2[2][3].SaveConfig()
+        end
+    end
+end
+local function _w851(v1, v2)
+    return function(compactNotifications)
+        v2[1][3].CompactNotifications = compactNotifications
+    end
+end
+local function _w852(v1, v2)
+    return function()
+        local v3, v4, v5, v6, v7
+        if not v2[1][3].Alive or not (v2[3][3] or v2[1][3].AutoCandy or v2[1][3].EventAutoRitual) then
+            return false
+        else
+            v3 = v2[1][3]
+            v7 = v3.FastRideState
+            v3 = v3.IsFastRideMounted()
+            if v3 then
+                v7.UnmountedSince = nil
+                v3, v4 = v2[1][3].MountedPetDescriptor()
+                v7.ObservedSpecies = v4
+                v7.Key = v3
+                v7.MountKeyVerified = true
+                v5 = v2[2][3].Character and v2[2][3].Character:FindFirstChildOfClass("Humanoid")
+                if v5 then
+                    v7.LiveWalkSpeed = tonumber(v5.WalkSpeed)
+                end
+                return true
+            elseif os.clock() - v7.UnmountedSince < 0.85 then
+                return false
+            else
+                os.clock()
+                v3 = v2[1][3].FindFastestRidePet()
+                if not v3 then
+                    v5 = v2[4][3]
+                    v2[1][3].setLabel(v5, "🟡 No ride pet in inventory")
+                    return false
+                else
+                    v7.MountRetryAt = os.clock() + 4
+                    v6 = v3.PetName
+                    v2[1][3].TraceRideDrop("MOUNT_WHILE_UNMOUNTED", "requested=" .. tostring(v6) .. " key=" .. tostring(v3.Key))
+                    v4 = v2[1][3].TryMountInventoryPet
+                    v4 = table.pack(v4(v3))
+                    return table.unpack(v4, 1, v4.n)
+                end
+            end
+        end
+    end
+end
+local function _w853(v1, v2)
+    return function()
+        local v3 = v2[2][3]
+        local v4 = v2[1][3].CFrame
+        local v5
+        v5, v3 = v3, v3.GetPivot
+        v3 = table.pack(v3(v5))
+        local v6
+        v6, v4 = v4, v4.ToObjectSpace
+        v4 = table.pack(v4(v6, table.unpack(v3, 1, v3.n)))
+        return table.unpack(v4, 1, v4.n)
+    end
+end
+local function _w854(v1, v2)
+    return function(v3)
+        local v4, REZEInventoryESPTotal
+        if not v3 or not v3.Parent then
+            return nil
+        else
+            v4 = {[1] = 3, [3] = v2[1][3].InventoryESPState}
+            v4[2] = v4
+            if v4[3].TotalLabel and v4[3].TotalLabel.Parent and v4[3].TotalLabel.Parent == v3 then
+                return v4[3].TotalLabel
+            else
+                v4[3].Root = v3
+                REZEInventoryESPTotal = Instance.new("TextLabel")
+                REZEInventoryESPTotal.Name = "REZEInventoryESPTotal"
+                REZEInventoryESPTotal.AnchorPoint = Vector2.new(0.5, 0)
+                REZEInventoryESPTotal.Position = UDim2.new(0.5, 0, 0, 3)
+                REZEInventoryESPTotal.Size = UDim2.new(0, 320, 0, 22)
+                REZEInventoryESPTotal.BackgroundTransparency = 1
+                REZEInventoryESPTotal.BorderSizePixel = 0
+                REZEInventoryESPTotal.Font = Enum.Font.GothamBold
+                REZEInventoryESPTotal.TextSize = 14
+                REZEInventoryESPTotal.RichText = true
+                REZEInventoryESPTotal.TextStrokeTransparency = 0.35
+                REZEInventoryESPTotal.TextColor3 = Color3.fromRGB(255, 255, 255)
+                REZEInventoryESPTotal.ZIndex = 10001
+                REZEInventoryESPTotal.Parent = v3
+                v4[3].TotalLabel = REZEInventoryESPTotal
+                return REZEInventoryESPTotal
+            end
+        end
+    end
+end
+local function _w855(v1, v2)
+    return function()
+        local v3, v4, v5
+        v3, v4, v5 = pairs(v2[1][3].ActiveESP)
+        v3, v4, v5 = v1.g(v3, v4, v5)
+        local v6, v7
+        v7, v6 = v3(v4, v5)
+        if v7 ~= nil then
+            while true do
+                v2[1][3].RemoveESP(v7)
+                v7, v6 = v3(v4, v5)
+                v5 = v7
+                if v5 == nil then
+                    break
+                end
+            end
+        end
+    end
+end
+local function _w856(v1, v2)
+    return function()
+        local v3 = v2[1][3] and v2[1][3].Parent
+        local v4 = v3
+        if v3 then
+            v4 = v3:IsA("Attachment")
+        end
+        local v5
+        if v4 then
+            v5 = v3.WorldPosition
+            return (v2[3][3].Position - v5).Magnitude
+        else
+            return v2[3][3]
+        end
+    end
+end
+local function _w857(v1, v2)
+    return function(v3)
+        local v4 = v3.Name
+        local v5 = string.match
+        v5 = v5(v4, "^(.-) %[") or v3:GetAttribute("PetName") or v3.Name
+        v4 = v2[1][3][v5]
+        local v6 = v4
+        if v4 then
+            v6 = tonumber(v4.Income)
+        end
+        if not v6 then
+            v6 = 0
+        end
+        local v7, v8, spawnMutation, v9, v10, v11
+        if v6 <= 0 then
+            return 0
+        else
+            v9 = v3.GetAttribute
+            v9 = v1.h(v9(v3, "Weight"))
+            v8 = tonumber(v1.i(v9)) or 1
+            v9 = v3:GetAttribute("Mutation")
+            spawnMutation = v3:GetAttribute("SpawnMutation")
+            v11 = v2[3][3].CombinedFactor and v2[3][3].CombinedFactor(v9, spawnMutation) or 1
+            v10 = math.floor
+            v7 = math.floor(v6 * (v8 / (v2[2][3].WeightStandardKG or 1))) * v11
+            v10 = table.pack(v10(v7))
+            return table.unpack(v10, 1, v10.n)
+        end
+    end
+end
+local function _w858(v1, v2)
+    return function(v3, v4)
+        local v5 = v4.X
+        local v6 = v3.X
+        local v7
+        v6, v5, v7 = v3.Z, v4.Z, v5 - v6
+        local v8, v9, v10, v11, v12, v13, v14
+        v14, v13, v5, v12, v11, v9, v6, v10, v8 = {}, {}, 0, v2[1][3], v3.X, v5 - v6, 1, v7, ipairs
+        v13[1], v13[2], v13[3] = v11, v10, v12
+        v11 = {}
+        v11[1], v11[2], v11[3] = v3.Z, v9, v2[2][3]
+        v14[1], v14[2] = v13, v11
+        local v15, v16
+        v8, v15, v16 = v8(v14)
+        v8, v15, v16 = v1.g(v8, v15, v16)
+        local v17
+        v14, v17 = v8(v15, v16)
+        local v18, v19
+        if v14 ~= nil then
+            while true do
+                v11 = v17[2]
+                v10 = v17[3]
+                v13 = v17[1]
+                if math.abs(v11) < 1e-8 then
+                    if math.abs(v13) < v10 then
+                        v14, v17 = v8(v15, v16)
+                        v16 = v14
+                        if v16 ~= nil then
+                            continue
+                        end
+                        return v5 <= v6
+                    end
+                    return false
+                end
+                v12 = (-v10 - v13) / v11
+                v18 = (v10 - v13) / v11
+                if v12 > v18 then
+                    v19, v18 = v18, v12
+                    v12 = v19
+                end
+                v5 = math.max(v5, v12)
+                v6 = math.min(v6, v18)
+                if v5 <= v6 then
+                    v14, v17 = v8(v15, v16)
+                    v16 = v14
+                    if v16 ~= nil then
+                        continue
+                    end
+                    return v5 <= v6
+                end
+                break
+            end
+            return false
+        end
+        return v5 <= v6
+    end
+end
+local function _w859(v1, v2, v3, v4)
+    v1.nr[v4] = v1.Uq(v2, v3)
+    return v1.nr[v4]
+end
+local function _w860(v1, v2)
+    return function(v3, v4, v5, v6)
+        local v7, v8
+        v8, v7 = v2[1][3].ConfirmRanchDelivery(v3, v4, v6 or 2.7)
+        local v9, v10, v11, v12, v13, v14, v15, v16, v17, v18
+        if v8 then
+            v2[1][3].RecordDeliveredEgg(v5)
+            v2[1][3].LastCarryOutcome = "delivered"
+            v12 = v2[3][3]:FindFirstChild("Basket")
+            v15 = v12 and v12:GetChildren()[1] or nil
+            v2[1][3].LastCarryAttempt = v15
+            v2[1][3].InstantPairTiming.PreHomeSettle = 0.34
+            v2[1][3].TraceRideDrop("INSTANT_DELIVERY_CONFIRMED", "egg=" .. tostring(v3) .. " proof=" .. tostring(v7))
+            v15 = v2[1][3]
+            v15, v17, v13 = v2[2][3], "🟢 Instant • delivery confirmed", v15.setLabel
+            v13(v15, "🟢 Instant • delivery confirmed")
+            return true, v7
+        else
+            v14 = v2[1][3]
+            v13 = math.min
+            v17 = v14.InstantPairTiming.PreHomeSettle or 0.34
+            v2[1][3].InstantPairTiming.PreHomeSettle = v13(0.55, v17 + 0.08)
+            v12 = v2[1][3].TraceRideDrop
+            v11 = tostring(v3)
+            v10 = tostring(v7)
+            v9 = v2[1][3].HasCarriedEgg
+            v9 = table.pack(v9())
+            v18 = tostring(table.unpack(v9, 1, v9.n))
+            v16 = v2[1][3]
+            v12("INSTANT_UNCONFIRMED", "egg=" .. v11 .. " proof=" .. v10 .. " carry=" .. v18 .. " nextPreHomeSettle=" .. tostring(v16.InstantPairTiming.PreHomeSettle))
+            if v16.HasCarriedEgg() then
+                v13 = v2[2][3]
+                v2[1][3].setLabel(v13, "🟠 Instant • carrying; no more home remote")
+            else
+                v13 = v2[2][3]
+                v2[1][3].setLabel(v13, "🟠 Instant • waiting to retry target")
+            end
+            return v8, v7
+        end
+    end
+end
+local function _w861(v1, v2)
+    return function()
+        v2[1][3]:UnbindFromRenderStep(v2[2][3].CameraGuardKey)
+    end
+end
+local function _w862(v1, v2)
+    return function(v3)
+        local v4 = v3
+        if v4 and v4 ~= v2[1][3].PlayerGui then
+            v4:IsA("GuiObject")
+            return false
+        end
+        return true
+    end
+end
+local function _w863(v1, v2)
+    return function()
+        return v2[1][3].FindSelectedEgg and v2[1][3].FindSelectedEgg()
+    end
+end
+local function _w864(v1, v2, v3, v4)
+    v1.Lr[v4] = v1.Wq(v2, v3)
+    return v1.Lr[v4]
+end
+local function _w865(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        local v4 = {Text = v2[3][3]}
+        v4.Func = v1:Ym({v2[2], v2[3], v2[4]})
+        local v5
+        v5, v3 = v3, v3.AddButton
+        v3 = table.pack(v3(v5, v4))
+        return table.unpack(v3, 1, v3.n)
+    end
+end
+local function _w866(v1, v2)
+    return function()
+        local v3 = v2[1][3].GetAll
+        local pack = table.pack(v3())
+        return table.unpack(pack, 1, pack.n)
+    end
+end
+local function _w867(v1, v2)
+    return function()
+        firesignal(v2[1][3].Activated)
+    end
+end
+local function _w868(v1, v2)
+    return function(v3, v4)
+        v2[1][3].DoorLit[v3] = v4 == true
+    end
+end
+local function _w869(v1, v2)
+    return function(v3)
+        local v4
+        v2[1][3], v4 = v3, v2[3][3]
+        local v5, v6
+        v4, v5, v6 = v2[2][3], v3, v4.setLabel
+        if v5 then
+            v5 = "🟡 Selling matching pets"
+        end
+        if not v5 then
+            v5 = "🔴 Auto Sell Off"
+        end
+        v6(v4, v5)
+    end
+end
+local function _w870(v1, v2)
+    return function(v3)
+        local parseKG4 = v2[1][3].ParseKG(v3)
+        local v4 = v2[4][3]
+        local v5 = v2[2][3][v4]
+        v2[3][3](v5, parseKG4)
+    end
+end
+local function _w871(v1, v2)
+    return function()
+        local v3, v4
+        v4, v3 = pcall(v2[1][3])
+        local v5
+        if not v4 then
+            v5 = v2[2][3]
+            v2[3][3].notifyError(v5, v3)
+        end
+    end
+end
+local function _w872(v1, v2)
+    return function(v3)
+        v3 = {[1] = 3, [3] = v3}
+        v3[2] = v3
+        v2[1][3](v3[3], "ChildAdded")
+        local v4, v5, v6
+        if v3[3] and v3[3].IsA(v3[3], "Tool") then
+            v5, v6 = pcall(v1:Qm({v3, v2[1]}))
+            if v5 and v6 then
+                v4 = v2[2][3]
+                v4.Connections[#v4.Connections + 1] = v6
+            end
+            task.defer(v1:Pm({v2[1], v3}))
+        end
+    end
+end
+local function _w873(v1)
+    return function(v2)
+        local petName3 = v2:GetAttribute("PetName")
+        local v3, v4
+        if typeof(petName3) ~= "string" then
+            v3 = v2.Name
+            v4 = string.match
+            v4 = v4(v3, "^(.-) %[") or v2.Name
+            petName3 = v4
+        end
+        return petName3
+    end
+end
+local function _w874(v1, v2)
+    return function()
+        local v3 = v2[2][3]
+        local v4 = v2[1][3]
+        local v5
+        v5, v4 = v4, v4.JSONEncode
+        v4 = table.pack(v4(v5, v3))
+        return table.unpack(v4, 1, v4.n)
+    end
+end
+local function _w875(v1, v2)
+    return function()
+        local v3 = v2[1][3] and v2[1][3].TextLabel
+        local v4, v5, v6, v7, REZESessionOverviewGrid, v8, v9, v10
+        do
+            local shouldExit = false
+            if not v3 or not v3.Parent then
+                v10 = v2[3][3].REZETitleLabel
+                v7 = v10 and v10:FindFirstAncestorOfClass("ScreenGui")
+                if v7 then
+                    v4 = v7.GetDescendants
+                    v4 = v1.h(v4(v7))
+                    REZESessionOverviewGrid, v4, v8 = ipairs(v1.i(v4))
+                    REZESessionOverviewGrid, v4, v8 = v1.g(REZESessionOverviewGrid, v4, v8)
+                    v6, v5 = REZESessionOverviewGrid(v4, v8)
+                    v8 = v6
+                    if v8 ~= nil then
+                        while true do
+                            v9 = v5:IsA("TextLabel") and v5.Text == "__REZE_SESSION_OVERVIEW_MOUNT__"
+                            if v9 then
+                                break
+                            else
+                                v6, v5 = REZESessionOverviewGrid(v4, v8)
+                                v8 = v6
+                                if v8 ~= nil then
+                                    continue
+                                end
+                            end
+                            shouldExit = true
+                            break
+                        end
+                        if shouldExit then
+                            break
+                        end
+                        v3 = v5
+                    end
+                end
+            end
+        end
+        local v11, frame2, uICorner4, accent2, uIStroke2, textLabel2, v12, v13
+        if not v3 or not v3.Parent then
+            return false
+        else
+            v10 = v3.Parent
+            if not v10:FindFirstChild("REZESessionOverviewGrid") then
+                v3.Visible = false
+                v3.Size = UDim2.new(1, 0, 0, 0)
+                REZESessionOverviewGrid = Instance.new("Frame")
+                REZESessionOverviewGrid.Name = "REZESessionOverviewGrid"
+                REZESessionOverviewGrid.BackgroundTransparency = 1
+                REZESessionOverviewGrid.BorderSizePixel = 0
+                REZESessionOverviewGrid.Size = UDim2.new(1, 0, 0, 206)
+                REZESessionOverviewGrid.LayoutOrder = v3.LayoutOrder
+                REZESessionOverviewGrid.Parent = v10
+                v2[2][3].MountCardsWithoutPlaceholder(v3, REZESessionOverviewGrid)
+                v4 = Instance.new("UIGridLayout")
+                v4.CellPadding = UDim2.fromOffset(6, 6)
+                v4.CellSize = UDim2.new(0.5, -3, 0, 47)
+                v4.FillDirectionMaxCells = 2
+                v4.SortOrder = Enum.SortOrder.LayoutOrder
+                v4.Parent = REZESessionOverviewGrid
+                v11 = {}
+                v8 = {
+                    Status = "#9B7CFF",
+                    Session = "#6F91FF",
+                    FPS = "#49DEA5",
+                    Ping = "#677EFF",
+                    Pickups = "#E157BC",
+                    Attempts = "#53C97D",
+                    ["Last Pickup"] = "#FFC73E",
+                    Average = "#FF893B",
+                }
+                v11[1], v11[2], v11[3], v11[4], v11[5], v11[6], v11[7], v11[8] = "Status", "Session", "FPS", "Ping", "Pickups", "Attempts", "Last Pickup", "Average"
+                v6, v5, v9 = ipairs(v11)
+                v6, v5, v9 = v1.g(v6, v5, v9)
+                v11, v13 = v6(v5, v9)
+                v9 = v11
+                if v9 ~= nil then
+                    while true do
+                        frame2 = Instance.new("Frame")
+                        frame2.Name = "REZESessionCard_" .. v13:gsub("%W", "")
+                        frame2.LayoutOrder = v11
+                        frame2.BackgroundColor3 = Color3.fromRGB(29, 29, 35)
+                        frame2.BorderSizePixel = 0
+                        frame2.Parent = REZESessionOverviewGrid
+                        uICorner4 = Instance.new("UICorner")
+                        uICorner4.CornerRadius = UDim.new(0, 5)
+                        uICorner4.Parent = frame2
+                        uIStroke2 = Instance.new("UIStroke")
+                        uIStroke2.Color = Color3.fromRGB(45, 45, 55)
+                        uIStroke2.Thickness = 1
+                        uIStroke2.Parent = frame2
+                        accent2 = Instance.new("Frame")
+                        accent2.Name = "Accent"
+                        accent2.Position = UDim2.new(0, 0, 0.2, 0)
+                        accent2.Size = UDim2.new(0, 2, 0.6, 0)
+                        v12 = v8[v13] or "#FFFFFF"
+                        accent2.BackgroundColor3 = Color3.fromHex(v12)
+                        accent2.BorderSizePixel = 0
+                        accent2.Parent = frame2
+                        textLabel2 = Instance.new("TextLabel")
+                        textLabel2.BackgroundTransparency = 1
+                        textLabel2.Position = UDim2.fromOffset(11, 6)
+                        textLabel2.Size = UDim2.new(1, -16, 0, 14)
+                        textLabel2.Font = Enum.Font.GothamMedium
+                        textLabel2.Text = string.upper(v13)
+                        textLabel2.TextColor3 = Color3.fromRGB(140, 140, 151)
+                        textLabel2.TextSize = 10
+                        textLabel2.TextXAlignment = Enum.TextXAlignment.Left
+                        textLabel2.Parent = frame2
+                        v12 = Instance.new("TextLabel")
+                        v12.BackgroundTransparency = 1
+                        v12.Position = UDim2.fromOffset(11, 22)
+                        v12.Size = UDim2.new(1, -16, 0, 18)
+                        v12.Font = Enum.Font.GothamBold
+                        v12.Text = "—"
+                        v12.TextColor3 = Color3.fromRGB(245, 245, 247)
+                        v12.TextSize = 14
+                        v12.TextXAlignment = Enum.TextXAlignment.Left
+                        v12.TextTruncate = Enum.TextTruncate.AtEnd
+                        v12.Parent = frame2
+                        v2[4][3][v13] = v12
+                        v11, v13 = v6(v5, v9)
+                        v9 = v11
+                        if v9 == nil then
+                            break
+                        end
+                    end
+                end
+            end
+            return true
+        end
+    end
+end
+local function _w876(v1, v2)
+    return function(v3, v4)
+        v3 = {[1] = 3, [3] = v3}
+        v3[2] = v3
+        v4 = {[1] = 3, [3] = v4}
+        v4[2] = v4
+        local v5, v6, v7
+        if v3[3] then
+            v7 = v2[1][3].FPSState.Instances[v3[3]]
+            if not v7 then
+                v7 = {}
+                v2[1][3].FPSState.Instances[v3[3]] = v7
+            end
+            if v7[v4[3]] == nil then
+                v5, v6 = pcall(v1:hm({v3, v4}))
+                if v5 then
+                    v7[v4[3]] = v6
+                end
+            end
+        end
+    end
+end
+local function _w877(v1, v2)
+    return function()
+        local v3, v4, v5, v6, v7, v8, v9, v10
+        if not v2[1][3].Alive then
+            return
+        else
+            v7 = os.clock()
+            if v7 - v2[4][3] >= 2 then
+                v8, v2[4][3], v6 = v2[2][3], v7, pcall
+                v6, v8 = v6(v8)
+                if not v6 then
+                    warn("[REZEHUB] Live Stats refresh failed: " .. tostring(v8))
+                else
+                    v9, v3, v10 = pairs(v8)
+                    v9, v3, v10 = v1.g(v9, v3, v10)
+                    v4, v5 = v9(v3, v10)
+                    v10 = v4
+                    if v10 ~= nil then
+                        while true do
+                            if v2[3][3][v4] and v2[3][3][v4].Parent and v2[3][3][v4].Text ~= v5 then
+                                v2[3][3][v4].Text = v5
+                            end
+                            v4, v5 = v9(v3, v10)
+                            v10 = v4
+                            if v10 == nil then
+                                break
+                            end
+                        end
+                    end
+                end
+                return
+            end
+        end
+    end
+end
+local function _w878(v1, v2, v3, v4)
+    v1.pr[v4] = v1.Wq(v2, v3)
+    return v1.pr[v4]
+end
+local function _w879(v1, v2)
+    return function(v3)
+        local v4
+        v4, v2[1][3] = v2[2][3], v3
+        v4()
+    end
+end
+local function _w880(v1, v2)
+    return function()
+        pcall(v1:So({v2[1], v2[2]}))
+    end
+end
+local function _w881(v1, v2)
+    return function(v3)
+        local v4, v5, v6, v7, v8, v9, v10
+        if not (not v3 or not v3:IsA("Tool")) then
+            v4 = {}
+            v6 = "Type"
+            v4[1], v4[2], v4[3], v4[4] = v3:GetAttribute("EggName") or false, v3:GetAttribute("EggType") or false, v3:GetAttribute("Type") or false, v3.Name
+            v4, v8 = ipairs, v4
+            v4, v9, v7 = v4(v8)
+            v4, v9, v7 = v1.g(v4, v9, v7)
+            v10, v5 = v4(v9, v7)
+            v7 = v10
+            if v7 ~= nil then
+                while true do
+                    v6 = type(v5)
+                    if v6 ~= "string" then
+                        v10, v5 = v4(v9, v7)
+                        v7 = v10
+                        if v7 ~= nil then
+                            continue
+                        end
+                        return nil
+                    end
+                    if not v2[1][3][v5] then
+                        v5:match("^(.-)%s*%[")
+                        v6 = v5:match("^(.-)%s*%(")
+                        if not (v6 and v2[1][3][v6]) then
+                            v10, v5 = v4(v9, v7)
+                            v7 = v10
+                            if v7 ~= nil then
+                                continue
+                            end
+                            return nil
+                        end
+                        break
+                    end
+                    return v5
+                end
+                return v6
+            end
+        end
+        return nil
+    end
+end
+local function _w882(v1, v2)
+    return function()
+        local v3
+        if not v2[1][3] then
+            return false
+        else
+            v3 = v2[3][3]:FindFirstChild("Basket")
+            if v3 and #v3:GetChildren() > 0 then
+                return true
+            else
+                return v2[2][3].FindSelectedEgg() ~= nil
+            end
+        end
+    end
+end
+local function _w883(v1, v2)
+    return function()
+        v2[1][3]("01-enter-feature-runtime")
+        local v3 = v2[3][3].REZEHUB_RAP_RUNTIME_STATUS
+        if v3 then
+            v3.Stage = "resolving-game-data"
+        end
+        v2[1][3]("02-create-namespace")
+        local v4 = {[1] = 3, [3] = {Alive = true, Conns = {}}}
+        v4[2] = v4
+        local v5 = v1:Cf()
+        v4[3].TrimNum = v5
+        v4[3].KGSuffixes = {
+            [""] = 1,
+            k = 1000,
+            m = 1000000,
+            b = 1000000000,
+            t = 1000000000000,
+            q = 1000000000000000,
+            qa = 1000000000000000,
+            qd = 1000000000000000,
+            qi = 1000000000000000000,
+            qt = 1000000000000000000,
+            qn = 1000000000000000000,
+            sx = 1e+21,
+            se = 1e+21,
+            sp = 1e+24,
+            oc = 1e+27,
+            no = 1e+30,
+            dc = 1e+33,
+            ud = 1e+36,
+            dd = 1e+39,
+            td = 1e+42,
+            qad = 1e+45,
+            qid = 1e+48,
+            sxd = 1e+51,
+            spd = 1e+54,
+            ocd = 1e+57,
+            nod = 1e+60,
+            vg = 1e+63,
+        }
+        v5 = v1:ka({v4})
+        v4[3].ParseKG = v5
+        v5 = v1:W({v4})
+        v4[3].Bind = v5
+        while true do
+            task.wait()
+            if game:IsLoaded() and game.Players.LocalPlayer then
+                break
+            end
+        end
+        v5 = game
+        local v6
+        v6, v5 = v5, v5.GetService
+        v5 = {[1] = 3, [3] = v5(v6, "VirtualUser")}
+        v5[2] = v5
+        v4[3].AutoAntiAFK = false
+        local v7 = game
+        local v8
+        v7, v8 = v7.GetService, v7
+        v4[3].Bind(v7(v8, "Players").LocalPlayer.Idled, v1:bf({v4, v5}))
+        v6 = cloneref or clonereference or v1:xc()
+        local v9 = game
+        v7, v9 = v9, v9.GetService
+        v9 = v1.h(v9(v7, "ReplicatedStorage"))
+        local v10 = {[1] = 3, [3] = v6(v1.i(v9))}
+        v10[2] = v10
+        v7 = game
+        v8, v7 = v7, v7.GetService
+        v7 = v1.h(v7(v8, "RunService"))
+        v9 = {[1] = 3, [3] = v6(v1.i(v7))}
+        v9[2] = v9
+        v8 = game
+        local v11
+        v8, v11 = v8.GetService, v8
+        v8 = v1.h(v8(v11, "Players"))
+        v7 = v6(v1.i(v8))
+        v11 = game
+        local v12
+        v12, v11 = v11, v11.GetService
+        v11 = v1.h(v11(v12, "HttpService"))
+        v8 = {[1] = 3, [3] = v6(v1.i(v11))}
+        v8[2] = v8
+        v12 = game
+        local v13
+        v13, v12 = v12, v12.GetService
+        v12 = v1.h(v12(v13, "Lighting"))
+        v11 = {[1] = 3, [3] = v6(v1.i(v12))}
+        v11[2] = v11
+        v13 = game
+        local v14
+        v13, v14 = v13.GetService, v13
+        v13 = v1.h(v13(v14, "TeleportService"))
+        v12 = {[1] = 3, [3] = v6(v1.i(v13))}
+        v12[2] = v12
+        v14 = game
+        local v15
+        v15, v14 = v14, v14.GetService
+        v14 = table.pack(v14(v15, "TweenService"))
+        v13 = {[1] = 3, [3] = v6(table.unpack(v14, 1, v14.n))}
+        v13[2] = v13
+        v15 = game
+        local v16
+        v15, v16 = v15.GetService, v15
+        v15 = v1.h(v15(v16, "UserInputService"))
+        v6(v1.i(v15))
+        v15 = {[1] = 3, [3] = v7.LocalPlayer}
+        v15[2] = v15
+        v16 = {[1] = 3, [3] = v15[3]}
+        v16[2] = v16
+        local v17 = v16[3]
+        local v18 = {[1] = 3, [3] = v16[3].WaitForChild(v17, "SavedData")}
+        v18[2] = v18
+        local v19 = v18[3]
+        v17 = {[1] = 3, [3] = v18[3].WaitForChild(v19, "Cash")}
+        v17[2] = v17
+        v19 = {[1] = 3, [3] = v18[3].WaitForChild(v18[3], "Rebirths")}
+        v19[2] = v19
+        local v20 = v18[3]
+        local v21 = {[1] = 3, [3] = v18[3].WaitForChild(v20, "OwnedPets")}
+        v21[2] = v21
+        local v22 = v18[3]
+        v20 = {[1] = 3, [3] = v18[3].WaitForChild(v22, "IndexRewardStage")}
+        v20[2] = v20
+        v2[1][3]("03-wait-game-services")
+        v22 = {
+            [1] = 3,
+            [3] = v10[3].WaitForChild(v10[3], "GameServices"),
+        }
+        v22[2] = v22
+        local v23 = {[1] = 3, [3] = v10[3].WaitForChild(v10[3], "GameData")}
+        v23[2] = v23
+        v2[1][3]("04-require-general-service")
+        local v24 = v22[3]
+        local waitForChild = v22[3].WaitForChild
+        waitForChild = v1.h(waitForChild(v24, "General"))
+        local v25 = {[1] = 3, [3] = require(v1.i(waitForChild))}
+        v25[2] = v25
+        v2[1][3]("05-require-pet-aging")
+        local v26 = v22[3]
+        v24 = v22[3].WaitForChild
+        v24 = v1.h(v24(v26, "PetAging"))
+        waitForChild = {[1] = 3, [3] = require(v1.i(v24))}
+        waitForChild[2] = waitForChild
+        v26 = v22[3].WaitForChild
+        local v27 = v22[3]
+        v26 = v1.h(v26(v27, "DayNight"))
+        v24 = {[1] = 3, [3] = require(v1.i(v26))}
+        v24[2] = v24
+        task.wait()
+        v2[1][3]("06-require-pets-data")
+        v27 = v23[3].WaitForChild
+        local v28 = v23[3]
+        v27 = v1.h(v27(v28, "Pets"))
+        v26 = {[1] = 3, [3] = require(v1.i(v27))}
+        v26[2] = v26
+        v28 = v23[3].WaitForChild
+        local v29 = v23[3]
+        v28 = v1.h(v28(v29, "Mutations"))
+        v27 = {[1] = 3, [3] = require(v1.i(v28))}
+        v27[2] = v27
+        local v30 = v23[3]
+        v29 = v23[3].WaitForChild
+        v29 = v1.h(v29(v30, "Foods"))
+        v28 = {[1] = 3, [3] = require(v1.i(v29))}
+        v28[2] = v28
+        v30 = v23[3].WaitForChild
+        local v31 = v23[3]
+        v30 = v1.h(v30(v31, "Shop"))
+        v29 = {[1] = 3, [3] = require(v1.i(v30))}
+        v29[2] = v29
+        task.wait()
+        v31 = v23[3].WaitForChild
+        local v32 = v23[3]
+        v31 = v1.h(v31(v32, "Eggs"))
+        v30 = {[1] = 3, [3] = require(v1.i(v31))}
+        v30[2] = v30
+        local v33 = v23[3]
+        v32 = v23[3].WaitForChild
+        v32 = v1.h(v32(v33, "General"))
+        v31 = {[1] = 3, [3] = require(v1.i(v32))}
+        v31[2] = v31
+        v33 = v23[3].WaitForChild
+        local v34 = v23[3]
+        v33 = v1.h(v33(v34, "Rebirths"))
+        v32 = {[1] = 3, [3] = require(v1.i(v33))}
+        v32[2] = v32
+        local v35 = v23[3]
+        v34 = v23[3].WaitForChild
+        v34 = v1.h(v34(v35, "IndexRewards"))
+        v33 = {[1] = 3, [3] = require(v1.i(v34))}
+        v33[2] = v33
+        task.wait()
+        v2[1][3]("07-require-pet-renderer")
+        local v36 = v16[3]
+        v35 = v16[3].WaitForChild(v36, "PlayerScripts"):WaitForChild("Game"):WaitForChild("Pets")
+        local v37
+        v36, v35, v37 = v35, v35.WaitForChild, "PetRenderer"
+        v35 = v1.h(v35(v36, "PetRenderer"))
+        v34 = {[1] = 3, [3] = require(v1.i(v35))}
+        v34[2] = v34
+        v2[1][3]("08-resolve-remotes")
+        v35 = v10[3].WaitForChild(v10[3], "Remotes")
+        v35, v36, v37 = v35.WaitForChild, v35, "Game"
+        v35 = {[1] = 3, [3] = v35(v36, "Game")}
+        v35[2] = v35
+        v35[3].WaitForChild(v35[3], "BuyWithCash")
+        v37 = {[1] = 3, [3] = v35[3].WaitForChild(v35[3], "ShopStock")}
+        v37[2] = v37
+        local v38 = v35[3]
+        local restock = v35[3].WaitForChild(v38, "Restock")
+        local v39 = v35[3]
+        v38 = {[1] = 3, [3] = v35[3].WaitForChild(v39, "PlacePet")}
+        v38[2] = v38
+        v39 = {[1] = 3, [3] = v35[3].WaitForChild(v35[3], "PickupPet")}
+        v39[2] = v39
+        local v40 = {
+            [1] = 3,
+            [3] = v35[3].WaitForChild(v35[3], "ClaimIndexReward"),
+        }
+        v40[2] = v40
+        local v41 = {
+            [1] = 3,
+            [3] = v35[3].WaitForChild(v35[3], "FavoritePet"),
+        }
+        v41[2] = v41
+        local net = v10[3].WaitForChild(v10[3], "packages"):WaitForChild("Net")
+        local v42, v43
+        v43, net, v42 = net, net.WaitForChild, "RE/VolcanoDip"
+        net = {[1] = 3, [3] = net(v43, "RE/VolcanoDip")}
+        net[2] = net
+        local v44 = string.lower
+        local v45 = v15[3].Name
+        local v46 = v1.h(tostring(v45))
+        v43 = {[1] = 3, [3] = "REZEHUB.app" .. "/" .. v44(v1.i(v46)) .. ".json"}
+        v43[2] = v43
+        v42 = {[1] = 3, [3] = false}
+        v42[2] = v42
+        local zb2 = v1:zb()
+        v4[3].NewDefaultConfig = zb2
+        v2[1][3]("09-default-config")
+        zb2 = {[1] = 3, [3] = v4[3].NewDefaultConfig()}
+        zb2[2] = zb2
+        local v47 = v1:Mc()
+        v4[3].EnsureFolders = v47
+        v47 = v1:xe({v4, v8, v43, zb2})
+        v4[3].LoadConfig = v47
+        v47 = v1:Pa({v42, v8, v4, zb2, v43})
+        v4[3].SaveConfig = v47
+        v2[1][3]("10-config-loaded")
+        v4[3].LoadConfig()
+        v4[3].AutoExecuteQueued = false
+        v4[3].AutoExecuteFileInstalled = false
+        v4[3].AutoExecuteQueueSupported = false
+        v4[3].AutoExecuteBootPath = "autoexec/REZEHUB_RideAPet_AutoExecute.lua"
+        v4[3].AutoExecuteLoaderURL = "https://raw.githubusercontent.com/windey1/rezehub-beta/refs/heads/main/loader.lua"
+        v47 = v1:Cc()
+        v4[3].MakeAutoExecuteBootstrap = v47
+        v47 = v1:mf({v4})
+        v4[3].QueueAutoExecute = v47
+        v47 = v1:fi({v4})
+        v4[3].InstallAutoExecute = v47
+        v47 = v1:Pg({v4})
+        v4[3].RemoveAutoExecute = v47
+        v47 = v1:wa({zb2, v4})
+        v4[3].AutoExecuteStatus = v47
+        v47 = v1:J({zb2, v4})
+        v4[3].SetAutoExecute = v47
+        if tostring(zb2[3].UIScale) == "98" then
+            zb2[3].UIScale = "100"
+        end
+        if type(v2[5][3].SetDPIScale) == "function" then
+            pcall(v1:yb({v2[5], zb2}))
+        end
+        zb2[3].RollbackEnabled = false
+        zb2[3].AutoSellAllPets = false
+        if zb2[3].AutoUpgradeHatchLuck and zb2[3].AutoUpgradeHatchLuckMax then
+            zb2[3].AutoUpgradeHatchLuckMax = false
+        end
+        v47 = (zb2[3].PickupKGRule == "Above" or zb2[3].PickupKGRule == "Below") and zb2[3].PickupKGRule or "Any"
+        zb2[3].PickupKGRule = v47
+        if zb2[3].PickupPriority == "Has Trait/Mutation" then
+            zb2[3].PickupPriority = "Has Mutation/Trait"
+        end
+        v44 = {}
+        v47 = table.find
+        v44[1], v44[2], v44[3], v44[4], v44[5] = "Rarest", "Nearest", "Farthest", "Highest KG", "Has Mutation/Trait"
+        local v48
+        v44, v48 = zb2[3].PickupPriority, v44
+        v47 = v47(v48, v44) and zb2[3].PickupPriority or "Rarest"
+        zb2[3].PickupPriority = v47
+        if tonumber(zb2[3].PickupModeSchema or 0) < 2 then
+            if zb2[3].PickupMode == "Instant" then
+                zb2[3].PickupMode = "TP"
+            end
+            zb2[3].PickupModeSchema = 2
+            v4[3].SaveConfig()
+        end
+        v47 = table.find
+        v44 = {}
+        v44[1], v44[2], v44[3] = "TP", "Instant", "TP + Phase"
+        v48, v44 = v44, zb2[3].PickupMode
+        v47 = v47(v48, v44) and zb2[3].PickupMode or "TP"
+        zb2[3].PickupMode = v47
+        if type(zb2[3].FeedFoods) ~= "table" then
+            v47 = tostring(zb2[3].FeedFood or "")
+            zb2[3].FeedFoods = v47 ~= "" and v47 ~= "Any" and {[1] = v47} or {}
+        end
+        v46 = {}
+        v46[1], v46[2], v46[3] = "SelectedFood", "FeedFoods", "SelectedGear"
+        v47, v48, v44 = ipairs(v46)
+        v47, v48, v44 = v1.g(v47, v48, v44)
+        v46, v45 = v47(v48, v44)
+        local v49, v50, v51, v52, v53, v54
+        if v46 ~= nil then
+            while true do
+                v49 = zb2[3][v45]
+                if type(v49) == "table" then
+                    v53, v50, v52 = pairs(v49)
+                    v53, v50, v52 = v1.g(v53, v50, v52)
+                    v51, v54 = v53(v50, v52)
+                    v52 = v51
+                    if v52 ~= nil then
+                        while true do
+                            if v54 == "Dragon Fruit" then
+                                v49[v51] = "Dragonfruit"
+                            end
+                            if v54 == "Name Tag" then
+                                v49[v51] = "NameTag"
+                            end
+                            v51, v54 = v53(v50, v52)
+                            v52 = v51
+                            if v52 == nil then
+                                break
+                            end
+                        end
+                    end
+                end
+                v46, v45 = v47(v48, v44)
+                v44 = v46
+                if v44 == nil then
+                    break
+                end
+            end
+        end
+        v47 = zb2[3].AntiAFK == true
+        v4[3].AutoAntiAFK = v47
+        v2[1][3]("11-restore-selections")
+        v47 = {[1] = 3, [3] = zb2[3].SelectedEggs or {}}
+        v47[2] = v47
+        v48 = {[1] = 3, [3] = zb2[3].SelectedRarities or {}}
+        v48[2] = v48
+        v44 = {[1] = 3, [3] = zb2[3].PickupMutations or {}}
+        v44[2] = v44
+        v46 = {[1] = 3, [3] = zb2[3].PickupTraits or {}}
+        v46[2] = v46
+        v45 = {[1] = 3, [3] = zb2[3].SelectedPlaceEgg or {}}
+        v45[2] = v45
+        v49 = {[1] = 3, [3] = zb2[3].SelectedPlaceRarities or {}}
+        v49[2] = v49
+        v53 = {[1] = 3, [3] = zb2[3].SelectedHatchRarities or {}}
+        v53[2] = v53
+        v50 = {[1] = 3, [3] = zb2[3].SelectedHatchEggs or {}}
+        v50[2] = v50
+        v52 = {[1] = 3, [3] = zb2[3].SelectedGear or {}}
+        v52[2] = v52
+        v51 = {[1] = 3, [3] = zb2[3].SelectedFood or {}}
+        v51[2] = v51
+        v54 = {[1] = 3, [3] = zb2[3].SelectedPetToSell or {}}
+        v54[2] = v54
+        local v55 = {[1] = 3, [3] = zb2[3].SelectedSellRarities or {}}
+        v55[2] = v55
+        local v56 = {[1] = 3, [3] = zb2[3].SelectedFavPet or {}}
+        v56[2] = v56
+        if type(zb2[3].SelectedFusePets) ~= "table" then
+            zb2[3].SelectedFusePets = {}
+        end
+        local v57 = {[1] = 3, [3] = zb2[3].SelectedFusePets}
+        v57[2] = v57
+        local v58 = {[1] = 3, [3] = zb2[3].SelectedESPRarities or {}}
+        v58[2] = v58
+        local v59 = zb2[3].MinWeightText
+        local v60 = v4[3].ParseKG(v59) or 0
+        v4[3].MinKG = v60
+        v60 = {[1] = 3, [3] = zb2[3].AutoVolcanoDip or false}
+        v60[2] = v60
+        v59 = {[1] = 3, [3] = zb2[3].AutoPickup or false}
+        v59[2] = v59
+        local v61 = zb2[3].AutoCandy == true
+        v4[3].AutoCandy = v61
+        v4[3].EventBatchMode = true
+        v61 = table.find
+        local v62 = {}
+        v62[1], v62[2], v62[3] = "Farthest", "Nearest", "Most Candy"
+        local v63
+        v62, v63 = zb2[3].EventCandyPriority, v62
+        v61 = v61(v63, v62) and zb2[3].EventCandyPriority or "Farthest"
+        zb2[3].EventCandyPriority = v61
+        v61 = zb2[3].EventCandyPriority
+        v4[3].EventCandyPriority = v61
+        v61 = zb2[3].EventAutoDoors == true
+        v4[3].EventAutoDoors = v61
+        v61 = zb2[3].EventAutoPumpkins == true
+        v4[3].EventAutoPumpkins = v61
+        v61 = zb2[3].EventAutoRitual == true
+        v4[3].EventAutoRitual = v61
+        v61 = v4[3].EventAutoRitual
+        v4[3].EventAutoHalves = v61
+        v61 = v4[3].EventAutoRitual
+        zb2[3].EventAutoHalves = v61
+        v61 = zb2[3].EventAutoBuyHalloweenEgg == true
+        v4[3].EventAutoBuyHalloweenEgg = v61
+        v4[3].EventManualDropRequested = false
+        if v4[3].EventAutoDoors or v4[3].EventAutoPumpkins then
+            v4[3].AutoCandy = true
+            zb2[3].AutoCandy = true
+            v4[3].EventAutoDoors = false
+            v4[3].EventAutoPumpkins = false
+            zb2[3].EventAutoDoors = false
+            zb2[3].EventAutoPumpkins = false
+            v4[3].SaveConfig()
+        end
+        v61 = v35[3].FindFirstChild(v35[3], "EggPickup")
+        v63 = v61
+        if v61 then
+            v63 = v61:IsA("RemoteEvent")
+        end
+        if v63 then
+            v62 = v61.OnClientEvent
+            v4[3].Bind(v62, v1:If({v59, v4}))
+        end
+        v61 = zb2[3].PickupKGRule
+        v4[3].PickupRule = v61
+        v61 = v4[3].ParseKG(zb2[3].PickupKGThreshold)
+        v4[3].PickupThreshold = v61
+        v61 = zb2[3].PickupPriority
+        v4[3].PickupPriority = v61
+        v61 = zb2[3].PickupMode
+        v4[3].PickupMode = v61
+        v4[3].DeliveryRetryState = {}
+        v61 = zb2[3].AutoDropEgg == true
+        v4[3].AutoDropEgg = v61
+        if v4[3].PickupMode == "Instant" and v4[3].AutoDropEgg then
+            v4[3].AutoDropEgg = false
+            zb2[3].AutoDropEgg = false
+            v4[3].SaveConfig()
+        end
+        v61 = type(zb2[3].SavedDropPosition) == "table" and zb2[3].SavedDropPosition or nil
+        v4[3].SavedDropPosition = v61
+        v61 = zb2[3].AutoServerHop == true
+        v4[3].AutoServerHop = v61
+        v61 = zb2[3].PlaceKGRule or "Any"
+        v4[3].PlaceKGRule = v61
+        v63 = zb2[3].PlaceKGThreshold
+        v61 = v4[3].ParseKG(v63)
+        v4[3].PlaceKGThreshold = v61
+        v61 = zb2[3].HatchKGRule or "Any"
+        v4[3].HatchKGRule = v61
+        v63 = zb2[3].HatchKGThreshold
+        v61 = v4[3].ParseKG(v63)
+        v4[3].HatchKGThreshold = v61
+        v61 = zb2[3].PlacePattern or "Z Position"
+        v4[3].PlacePattern = v61
+        v61 = {[1] = 3, [3] = zb2[3].PlaceMutations or {}}
+        v61[2] = v61
+        v63 = {[1] = 3, [3] = zb2[3].PlaceTraits or {}}
+        v63[2] = v63
+        v62 = {[1] = 3, [3] = zb2[3].HatchMutations or {}}
+        v62[2] = v62
+        local v64 = {[1] = 3, [3] = zb2[3].HatchTraits or {}}
+        v64[2] = v64
+        v4[3].NoMatchesSince = nil
+        local v65 = -math.huge
+        v4[3].LastHopAttempt = v65
+        v4[3].FarmBusy = false
+        v4[3].FarmFails = 0
+        v4[3].BgBusy = 0
+        v65 = v1:pa({v59, v4})
+        v4[3].FarmPaused = v65
+        v4[3].TaskPriority = {
+            Pickup = 1,
+            Place = 2,
+            Hatch = 3,
+            FuseClaim = 4,
+            Fuse = 5,
+            Sell = 6,
+            Event = 7,
+        }
+        v4[3].TaskNeeds = {}
+        v4[3].TaskOwner = nil
+        v4[3].TaskOwnerSince = 0
+        v4[3].TaskNeedCache = {}
+        v4[3].TaskLogAt = {}
+        v65 = v1:cg({v4})
+        v4[3].TaskWants = v65
+        v65 = v1:De({v4})
+        v4[3].TaskInvalidate = v65
+        v65 = -math.huge
+        v4[3].EventCarryReadAt = v65
+        v4[3].EventCarryReadValue = false
+        v65 = v1:R({v4})
+        v4[3].EventUndeliveredCarry = v65
+        v65 = v1:pd({v4})
+        v4[3].TaskHigherPending = v65
+        v65 = v1:kg({v4})
+        v4[3].TaskAcquire = v65
+        v65 = v1:oh({v4})
+        v4[3].TaskRelease = v65
+        v65 = v1:zd({v4})
+        v4[3].TaskShouldStop = v65
+        v65 = v1:Kh({v4, v16})
+        v4[3].TaskRun = v65
+        v65 = v1:ga({v4})
+        v4[3].BgRun = v65
+        v65 = {[1] = 3, [3] = zb2[3].AutoPlaceEgg or false}
+        v65[2] = v65
+        local v66 = {[1] = 3, [3] = zb2[3].AutoHatchSelectedEggs or false}
+        v66[2] = v66
+        local v67 = {[1] = 3, [3] = false}
+        v67[2] = v67
+        local v68 = {[1] = 3, [3] = zb2[3].AutoEquipBestPet or false}
+        v68[2] = v68
+        local v69 = {[1] = 3, [3] = zb2[3].AutoFeedPets == true}
+        v69[2] = v69
+        local v70 = {[1] = 3, [3] = zb2[3].AutoUpgradeHatchLuck or false}
+        v70[2] = v70
+        local v71 = {[1] = 3, [3] = zb2[3].AutoUpgradeHatchLuckMax or false}
+        v71[2] = v71
+        local v72 = {[1] = 3, [3] = zb2[3].AutoRebirth or false}
+        v72[2] = v72
+        local v73 = {[1] = 3, [3] = zb2[3].AutoClaimIndex or false}
+        v73[2] = v73
+        local v74 = {[1] = 3, [3] = zb2[3].Autobuygear or false}
+        v74[2] = v74
+        local v75 = {[1] = 3, [3] = zb2[3].Autobuyfood or false}
+        v75[2] = v75
+        local v76 = {[1] = 3, [3] = zb2[3].AutoSellPet or false}
+        v76[2] = v76
+        local v77 = {[1] = 3, [3] = false}
+        v77[2] = v77
+        local v78 = {[1] = 3, [3] = zb2[3].AutoFavoritePet or false}
+        v78[2] = v78
+        local v79 = {[1] = 3, [3] = zb2[3].AutoFuse == true}
+        v79[2] = v79
+        local v80 = {[1] = 3, [3] = zb2[3].AutoClaimFusedPets == true}
+        v80[2] = v80
+        local v81 = {[1] = 3, [3] = zb2[3].ESPEnabled or false}
+        v81[2] = v81
+        local v82 = {[1] = 3, [3] = zb2[3].WebhookUrl or ""}
+        v82[2] = v82
+        local v83 = {[1] = 3, [3] = zb2[3].WebhookEnabled or false}
+        v83[2] = v83
+        local v84 = {[1] = 3, [3] = zb2[3].FPSBoost or false}
+        v84[2] = v84
+        local v85 = {[1] = 3, [3] = zb2[3].HideEggs or false}
+        v85[2] = v85
+        local v86 = {[1] = 3, [3] = nil}
+        v86[2] = v86
+        v2[1][3]("12-ui-reference-state")
+        local v87 = {[1] = 3, [3] = {}}
+        v87[2] = v87
+        local ib2 = v1:Ib()
+        v4[3].SetUIValue = ib2
+        v4[3].WebhookRarityColor = {
+            Ethereal = 16745466,
+            Divine = 16765801,
+            Mythic = 16744584,
+            Legendary = 16759895,
+            Epic = 12947967,
+            Rare = 7582463,
+            Uncommon = 8247454,
+            Common = 14474725,
+        }
+        ib2 = v1:_h({v83, v8, v82})
+        v4[3].WebhookRequest = ib2
+        ib2 = v1:ch({v4, v31})
+        v4[3].WebhookEggWeight = ib2
+        ib2 = v1:Ng()
+        v4[3].FormatWebhookLuck = ib2
+        ib2 = v1:Pf({v16, v4})
+        v4[3].ReadWebhookHatchMultiplier = ib2
+        ib2 = v1:sh({v4})
+        v4[3].ReadWebhookPlacedLuck = ib2
+        ib2 = v1:Eb()
+        v4[3].ReadWebhookExplicitLuck = ib2
+        ib2 = v1:we({v4, v30})
+        v4[3].ReadWebhookRanchLuck = ib2
+        ib2 = v1:Da({v4, v30})
+        v4[3].WebhookEffectiveLuck = ib2
+        ib2 = v1:df()
+        v4[3].webhookVariantName = ib2
+        ib2 = v1:gd({v4, v27})
+        v4[3].WebhookCanonicalMutationTrait = ib2
+        ib2 = v1:Le({v4})
+        v4[3].ReadEggWebhookVariants = ib2
+        ib2 = v1:ii({v4})
+        v4[3].WebhookMutationTrait = ib2
+        ib2 = v1:hc({v4})
+        v4[3].CaptureEggWebhookSnapshot = ib2
+        ib2 = v1:eb({v83, v15, v16, v4, v30, zb2})
+        v4[3].SendWebhookNotification = ib2
+        ib2 = v1:bb()
+        v4[3].WebhookPetAttribute = ib2
+        ib2 = v1:Jg({v4})
+        v4[3].WebhookPetMutationTrait = ib2
+        ib2 = v1:Vg({v4})
+        v4[3].WebhookPetName = ib2
+        ib2 = v1:ud({v4})
+        v4[3].WebhookPetWeight = ib2
+        ib2 = v1:ri({v4})
+        v4[3].WebhookPetSnapshot = ib2
+        ib2 = v1:Sb()
+        v4[3].WebhookPetThumbnail = ib2
+        v4[3].PendingPetAlerts = {}
+        v4[3].AlertSeenKeys = {}
+        v4[3].FuseWebhookSlots = {}
+        ib2 = v1:Jb({v83, v15, v30, v26, v4, zb2})
+        v4[3].sendPetWebhook = ib2
+        ib2 = v1:si({v4})
+        v4[3].processNewPetAlert = ib2
+        ib2 = v1:vd({v4})
+        v4[3].watchPetContainer = ib2
+        v2[1][3]("13-pet-notification-watchers")
+        local v88 = v15[3]
+        ib2 = v4[3].watchPetContainer
+        local findFirstChildOfClass = v15[3].FindFirstChildOfClass
+        findFirstChildOfClass = v1.h(findFirstChildOfClass(v88, "Backpack"))
+        ib2(v1.i(findFirstChildOfClass))
+        if v15[3].Character then
+            v4[3].watchPetContainer(v15[3].Character)
+        end
+        v4[3].Bind(v15[3].CharacterAdded, v4[3].watchPetContainer)
+        ib2 = v4[3].Bind
+        v88 = v1:kc({v4})
+        ib2(v15[3].CharacterAdded, v88)
+        ib2 = v1:wd({v15})
+        v4[3].GetCharacter = ib2
+        ib2 = v1:Re({v15})
+        v4[3].UprightCFrame = ib2
+        ib2 = v1:Sd({v15})
+        v4[3].Stabilize = ib2
+        ib2 = v1:gc({v15})
+        v4[3].GetMyPlot = ib2
+        ib2 = v1:Me({v4})
+        v4[3].TeleportToMyPlot = ib2
+        findFirstChildOfClass = {Enabled = false, Processing = false}
+        findFirstChildOfClass.Original = {
+            GlobalShadows = nil,
+            FogEnd = nil,
+            ShadowSoftness = nil,
+            QualityLevel = nil,
+            MeshPartDetailLevel = nil,
+            WaterWaveSize = nil,
+            WaterWaveSpeed = nil,
+            WaterReflectance = nil,
+            WaterTransparency = nil,
+            LightingTechnology = nil,
+            TerrainDecoration = nil,
+        }
+        findFirstChildOfClass.Instances = {}
+        v4[3].FPSState = findFirstChildOfClass
+        v4[3].FPSConnection = nil
+        v4[3].FPSGeneration = 0
+        ib2 = v1:rb({v4, v11})
+        v4[3].SaveFPSOriginals = ib2
+        v4[3].SaveFPSOriginals()
+        ib2 = v1:_c({v4})
+        v4[3].SaveInstanceProperty = ib2
+        ib2 = v1:mc({v4})
+        v4[3].OptimizeInstance = ib2
+        ib2 = v1:Ob({v4, v11})
+        v4[3].ApplyGlobalFPSSettings = ib2
+        ib2 = v1:Ne({v4})
+        v4[3].StartBackgroundOptimizer = ib2
+        ib2 = v1:Uh({v4})
+        v4[3].ConnectFPSWatcher = ib2
+        ib2 = v1:qa({v4})
+        v4[3].RestoreAllInstances = ib2
+        ib2 = v1:zf({v4, v11})
+        v4[3].RestoreGlobalFPSSettings = ib2
+        ib2 = v1:ai({v4})
+        v4[3].ApplyFPSBoost = ib2
+        if v84[3] then
+            task.delay(1, v1:_e({v84, v4}))
+        end
+        ib2 = v1:Df()
+        v4[3].ToggleHideEggs = ib2
+        findFirstChildOfClass = v1:Jh({v85, v4})
+        task.spawn(findFirstChildOfClass)
+        findFirstChildOfClass = v1:Qe({v4, v85})
+        task.spawn(findFirstChildOfClass)
+        ib2 = workspace:WaitForChild("RenderedEggs")
+        v4[3].RenderedEggs = ib2
+        ib2 = setmetatable({}, {__mode = "k"})
+        v4[3].CarryCapture = ib2
+        v4[3].CarryObserved = {}
+        v4[3].RecentWorldEggRemoved = {}
+        ib2 = setmetatable({}, {__mode = "k"})
+        v4[3].WorldEggSnapshots = ib2
+        ib2 = v1:Kg({v4})
+        v4[3].SnapshotWorldEgg = ib2
+        v4[3].VolcanoDippedCarryUIDs = {}
+        v4[3].VolcanoAttemptedCarryUIDs = {}
+        if type(v2[3][3].REZEHUB_VERIFIED_DIP_WORLD) ~= "table" then
+            v2[3][3].REZEHUB_VERIFIED_DIP_WORLD = setmetatable({}, {__mode = "k"})
+        end
+        ib2 = v2[3][3].REZEHUB_VERIFIED_DIP_WORLD
+        v4[3].VerifiedDippedWorldEggs = ib2
+        ib2 = v1:xh({v4})
+        v4[3].TryTransferVerifiedWorldDipToCarry = ib2
+        ib2 = v1:Bf({v4})
+        v4[3].IsVerifiedDippedCarry = ib2
+        ib2 = v1:Yc({v16, v4})
+        v4[3].MarkCurrentCarryDipped = ib2
+        v4[3].DropSafezoneActive = false
+        v4[3].DropSafezoneRadius = 14
+        v4[3].DropSafeNames = {}
+        v4[3].ReturnPreviouslyDropped = false
+        ib2 = v1:Gi({v30})
+        v4[3].IsKnownEggName = ib2
+        ib2 = v1:bi({v16, v4})
+        v4[3].ReadCarriedNameFromCharacter = ib2
+        ib2 = v1:Oc({v16, v4})
+        v4[3].ResolveCarriedEggName = ib2
+        ib2 = v1:Xf({v4, v16})
+        v4[3].CaptureCarriedEgg = ib2
+        ib2 = v1:Sg({v4})
+        v4[3].HookEggBasket = ib2
+        if v16[3].FindFirstChild(v16[3], "Basket") then
+            v4[3].HookEggBasket(v16[3].Basket)
+        end
+        v88 = v1:yh({v4})
+        v4[3].Bind(v16[3].ChildAdded, v88)
+        findFirstChildOfClass = v4[3].RenderedEggs
+        v88, findFirstChildOfClass = findFirstChildOfClass, findFirstChildOfClass.GetChildren
+        findFirstChildOfClass = v1.h(findFirstChildOfClass(v88))
+        ib2, findFirstChildOfClass, v88 = ipairs(v1.i(findFirstChildOfClass))
+        ib2, findFirstChildOfClass, v88 = v1.g(ib2, findFirstChildOfClass, v88)
+        local v89, v90
+        v90, v89 = ib2(findFirstChildOfClass, v88)
+        if v90 ~= nil then
+            while true do
+                v4[3].SnapshotWorldEgg(v89)
+                v90, v89 = ib2(findFirstChildOfClass, v88)
+                v88 = v90
+                if v88 == nil then
+                    break
+                end
+            end
+        end
+        ib2 = v4[3].Bind
+        v88 = v4[3].RenderedEggs
+        v88, findFirstChildOfClass = v1:Ga({v4}), v88.ChildAdded
+        ib2(findFirstChildOfClass, v88)
+        findFirstChildOfClass = v4[3].RenderedEggs.ChildRemoved
+        v4[3].Bind(findFirstChildOfClass, v1:Td({v4}))
+        v4[3].DynamicRarityRank = {
+            Secret = 9,
+            Ethereal = 8,
+            Divine = 7,
+            Mythic = 6,
+            Legendary = 5,
+            Epic = 4,
+            Rare = 3,
+            Uncommon = 2,
+            Common = 1,
+        }
+        v4[3].EggNames, v90 = {}, {}
+        v4[3].RarityNames = {}
+        v4[3].PET_LIST = {}
+        v4[3].FUSE_PET_LIST = v90
+        v4[3].EggPriority, findFirstChildOfClass = {}, {}
+        v4[3].RarityPriority = findFirstChildOfClass
+        v4[3].DynamicDropdowns = {}
+        v4[3].SavedDropdownRegistry = {}
+        v4[3].DynamicDropdownRefreshErrors = {}
+        v4[3].FeedFoodInfo = {}
+        v4[3].GearShop, findFirstChildOfClass = {}, {}
+        v4[3].FoodShop = findFirstChildOfClass
+        ib2 = v1:nf({v4})
+        v4[3].SortNamesByRarity = ib2
+        ib2 = v1:Xe({v23, v28, v4, v27, v26, v30, v29})
+        v4[3].RebuildDynamicGameIndexes = ib2
+        v4[3].RebuildDynamicGameIndexes()
+        v4[3].ShopStockData = {}
+        v4[3].ShopStockReady = false
+        ib2 = v4[3].Bind
+        v88 = v1:Ha({v4})
+        ib2(restock.OnClientEvent, v88)
+        findFirstChildOfClass = v1:jb({v4, v37})
+        task.spawn(findFirstChildOfClass)
+        ib2 = v1:gb({v4})
+        v4[3].GetShopStock = ib2
+        ib2 = v1:qc({v4})
+        v4[3].ReduceShopStock = ib2
+        ib2 = v1:_a()
+        v4[3].NormalizeFoodName = ib2
+        ib2, findFirstChildOfClass, v88 = ipairs(zb2[3].FeedFoods or {})
+        ib2, findFirstChildOfClass, v88 = v1.g(ib2, findFirstChildOfClass, v88)
+        v90, v89 = ib2(findFirstChildOfClass, v88)
+        if v90 ~= nil then
+            while true do
+                if v4[3].NormalizeFoodName(v89) == "dragonfruit" then
+                    zb2[3].FeedFoods[v90] = "Dragonfruit"
+                end
+                v90, v89 = ib2(findFirstChildOfClass, v88)
+                v88 = v90
+                if v88 == nil then
+                    break
+                end
+            end
+        end
+        ib2 = CFrame.new(-4917.03369, 41286.2031, -3704.17529, -0.76919955, 5.31099609e-8, 0.639008641, 1.79985058e-8, 1, -6.14475582e-8, -0.639008641, -3.57642307e-8, -0.76919955)
+        v4[3].platformCFrame = ib2
+        v4[3].platform = nil
+        ib2 = v1:Jd()
+        v4[3].normalizeSelection = ib2
+        ib2 = v1:td({v4})
+        v4[3].SelectionContains = ib2
+        ib2 = v1:ph({v4})
+        v4[3].CategoryRarityMatches = ib2
+        ib2 = v1:pc({v4})
+        v4[3].KGMatches = ib2
+        ib2 = v1:eg({v4})
+        v4[3].VariantMatches = ib2
+        ib2 = v1:uh()
+        v4[3].notifyError = ib2
+        ib2 = v1:th({v2[4]})
+        v4[3].boxFor = ib2
+        ib2 = {[1] = 3, [3] = true}
+        ib2[2] = ib2
+        v4[3].UIBuildComplete = false
+        v4[3].UIBuildSteps = 0
+        findFirstChildOfClass = v1:hd({v4})
+        v4[3].YieldUIPaint = findFirstChildOfClass
+        findFirstChildOfClass = v1:va({v4, v87, zb2, ib2})
+        v4[3].addToggle = findFirstChildOfClass
+        findFirstChildOfClass = v1:ti({v4, v87, zb2, ib2})
+        v4[3].addDropdown = findFirstChildOfClass
+        findFirstChildOfClass = v1:yc({v4, v87, zb2, ib2})
+        v4[3].addInput = findFirstChildOfClass
+        findFirstChildOfClass = v1:Cd({v4})
+        v4[3].addButton = findFirstChildOfClass
+        findFirstChildOfClass = v1:Ae({v4})
+        v4[3].addLabel = findFirstChildOfClass
+        findFirstChildOfClass = v1:Kb({v4})
+        v4[3].setLabel = findFirstChildOfClass
+        findFirstChildOfClass = v1:Xa({v4, v59, zb2, ib2, v87})
+        v4[3].addSingle = findFirstChildOfClass
+        findFirstChildOfClass = v1:Mf()
+        v4[3].setVisible = findFirstChildOfClass
+        findFirstChildOfClass = v1:lg({zb2, v4})
+        v4[3].addKGControls = findFirstChildOfClass
+        findFirstChildOfClass = v1:Pb()
+        v4[3].DecorateOptions = findFirstChildOfClass
+        findFirstChildOfClass = v1:og({v4, v87, zb2, ib2})
+        v4[3].addDecoratedMulti = findFirstChildOfClass
+        findFirstChildOfClass = v1:Wc({v27})
+        v4[3].MutationTraitOptions = findFirstChildOfClass
+        findFirstChildOfClass = {[1] = 3, [3] = v4[3].MutationTraitOptions(false)}
+        findFirstChildOfClass[2] = findFirstChildOfClass
+        v88 = {[1] = 3, [3] = v4[3].MutationTraitOptions(true)}
+        v88[2] = v88
+        v90 = v1:lb({v4})
+        v4[3].rarityOptions = v90
+        v90 = v1:Nc()
+        v4[3].formatCompactNumber = v90
+        v90 = v4[3].formatCompactNumber
+        v4[3].FormatCompactLuck = v90
+        v90 = v1:ya({v4, v30})
+        v4[3].eggCategoryOptions = v90
+        v90 = {[1] = 3, [3] = v4[3].DynamicRarityRank}
+        v90[2] = v90
+        v89 = v1:ra({v4, v90, v26})
+        v4[3].petCategoryOptions = v89
+        v89 = v1:I({v4})
+        v4[3].petCategoryOptionsForFuse = v89
+        v89 = v1:Bi({v26, v4, zb2, v34})
+        v4[3].PetMatchesFilter = v89
+        v89 = v1:Lb({v4, zb2})
+        v4[3].PetHasExplicitFilter = v89
+        v89 = v1:se({v4})
+        v4[3].FeedFoodOptions = v89
+        v89 = v1:Ld({v88, v4, v54, v78, v79, v69, v57, v56, findFirstChildOfClass, v76})
+        v4[3].addPetFilterGroup = v89
+        v2[1][3]("14-egg-ui-controls")
+        local v91 = v59[3] and "🟡 Searching for eggs" or "🔴 Auto Pick-Up Off"
+        v89 = {[1] = 3, [3] = v4[3].addLabel("EGGS", "Pick-Up Eggs", v91)}
+        v89[2] = v89
+        v4[3].addLabel("EGGS", "Pick-Up Eggs", "Collect world eggs.")
+        v4[3].addDecoratedMulti("EGGS", "Pick-Up Eggs", "PickupRarities", "Rarity", "SelectedRarities", v4[3].rarityOptions(), v1:Qc({v48}))
+        v2[1][3]("14b-egg-luck-dropdown")
+        v4[3].addDecoratedMulti("EGGS", "Pick-Up Eggs", "PickupEggs", "Category", "SelectedEggs", v4[3].eggCategoryOptions(true), v1:K({v47}))
+        local v92 = v4[3].addDecoratedMulti
+        local v93 = v1:Qf({v44})
+        v92("EGGS", "Pick-Up Eggs", "PickupMutation", "Mutation", "PickupMutations", findFirstChildOfClass[3], v93)
+        v93 = v1:gi({v46})
+        v4[3].addDecoratedMulti("EGGS", "Pick-Up Eggs", "PickupTrait", "Trait", "PickupTraits", v88[3], v93)
+        local v94 = v1:Hf({v4})
+        v4[3].addKGControls("EGGS", "Pick-Up Eggs", "Pickup", "PickupKGRule", "PickupKGThreshold", v94)
+        v92 = v4[3].addSingle
+        v93 = {}
+        v93[1], v93[2], v93[3], v93[4], v93[5] = "Rarest", "Nearest", "Farthest", "Highest KG", "Has Mutation/Trait"
+        v93, v94 = v1:Ii({v4}), v93
+        v92("EGGS", "Pick-Up Eggs", "Priority", "Priority", "PickupPriority", v94, v93)
+        v92 = {[1] = 3, [3] = nil}
+        v92[2] = v92
+        local v95 = {[1] = 3, [3] = nil}
+        v95[2] = v95
+        v91 = v4[3].addSingle
+        local v96 = {}
+        v96[1], v96[2], v96[3] = "TP", "Instant", "TP + Phase"
+        local v97
+        v96, v97 = v1:Ad({v4, v95, zb2, ib2, v92}), v96
+        v91("EGGS", "Pick-Up Eggs", "PickupMode", "Mode", "PickupMode", v97, v96)
+        v91 = v1:sb({v4, v89})
+        v4[3].PickupModeBlockedNotice = v91
+        v91 = v1:ug({v87, v59, v4})
+        v4[3].UpdatePickupModeLock = v91
+        v4[3].UpdatePickupModeLock()
+        v4[3].addToggle("EGGS", "Pick-Up Eggs", "VolcanoDip", "Auto Volcano Dip", "AutoVolcanoDip", v1:Wa({v60, v4}))
+        v91 = v1:ed({v4})
+        v4[3].savedPositionText = v91
+        v91 = {[1] = 3, [3] = nil}
+        v91[2] = v91
+        local v98 = {[1] = 3, [3] = nil}
+        v98[2] = v98
+        local v99, v100
+        v93, v99, v96, v97, v95[3], v94, v100 = "DropEgg", v4[3].addToggle, "AutoDropEgg", "Auto Drop Egg", v1:Ci({v4, v92, zb2, v98, v91}), "Pick-Up Eggs", "EGGS"
+        v99 = v99("EGGS", "Pick-Up Eggs", "DropEgg", "Auto Drop Egg", "AutoDropEgg", v1:Ea({v4, v95, zb2}))
+        v99, v93, v100, v94, v92[3] = v4[3].addLabel, v4[3].savedPositionText, "EGGS", "Pick-Up Eggs", v99
+        v93 = v1.h(v93())
+        v99 = v99("EGGS", "Pick-Up Eggs", v1.i(v93))
+        v99, v100, v97, v91[3], v94, v93 = v4[3].addButton, "EGGS", v1:Ac({v16, v95, v4, zb2, v89}), v99, "Pick-Up Eggs", "Save Position"
+        v98[3], v99 = v99("EGGS", "Pick-Up Eggs", "Save Position", v97), v95[3]
+        v99()
+        local ba2 = v1:ba({v4})
+        v4[3].addToggle("EGGS", "Pick-Up Eggs", "ServerHopAuto", "Auto Server Hop", "AutoServerHop", ba2)
+        v4[3].addToggle("EGGS", "Pick-Up Eggs", "Farm", "Auto Pick-Up Eggs", "AutoPickup", v1:Ec({v59, v89, v4}))
+        v4[3].PromptTapEnabled = true
+        v99 = v4[3].Bind
+        v94 = v1:lc({v4})
+        v99(workspace.DescendantAdded, v94)
+        v99 = v4[3].Bind
+        v94 = game:GetService("ProximityPromptService")
+        v94, v100 = v1:sa({v4}), v94.PromptShown
+        v99(v100, v94)
+        task.delay(3, v1:ni({v4}))
+        v2[1][3]("15-event-ui-controls")
+        v93 = (v4[3].AutoCandy or v4[3].EventAutoRitual or v4[3].EventAutoBuyHalloweenEgg) and "🟡 Waiting for Halloween items" or "🔴 Halloween Automations Off"
+        v99 = {
+            [1] = 3,
+            [3] = v4[3].addLabel("EVENT", "Halloween Event", v93),
+        }
+        v99[2] = v99
+        v100 = {[1] = 3, [3] = nil}
+        v100[2] = v100
+        v4[3].addToggle("EVENT", "Halloween Event", "AutoCandy", "Auto Farm Holloween", "AutoCandy", v1:Vc({v4, v99, v100}))
+        v94 = v4[3].addSingle
+        local v101 = {}
+        v101[1], v101[2], v101[3] = "Farthest", "Nearest", "Most Candy"
+        local v102
+        v102, v101 = v101, v1:ma({v4})
+        v100[3], v94 = v94("EVENT", "Halloween Event", "CandyPriority", "Priority", "EventCandyPriority", v102, v101), v4[3].setVisible
+        v97 = v4[3].AutoCandy
+        v94(v100[3], v97)
+        v4[3].addToggle("EVENT", "Halloween Event", "AutoRitual", "Auto Headless Ritual", "EventAutoRitual", v1:qb({v4, v99, zb2}))
+        v4[3].addToggle("EVENT", "Halloween Event", "AutoBuyHalloweenEgg", "Auto Buy Halloween Egg", "EventAutoBuyHalloweenEgg", v1:Ve({v4, v99}))
+        ba2 = v1:of({v59, v99, v4})
+        v4[3].addButton("EVENT", "Halloween Event", "TP DROP OFF", ba2)
+        v2[1][3]("16-place-ui-controls")
+        v96 = v65[3] and "🟢 Placing eggs" or "🔴 Auto Place Off"
+        v94 = {[1] = 3, [3] = v4[3].addLabel("EGGS", "Place Eggs", v96)}
+        v94[2] = v94
+        v4[3].addLabel("EGGS", "Place Eggs", "Place selected eggs.")
+        v4[3].addDecoratedMulti("EGGS", "Place Eggs", "PlaceRarity", "Rarity", "SelectedPlaceRarities", v4[3].rarityOptions(), v1:rf({v49}))
+        v4[3].addDecoratedMulti("EGGS", "Place Eggs", "PlaceNames", "Category", "SelectedPlaceEgg", v4[3].eggCategoryOptions(false), v1:Rh({v45}))
+        v101 = findFirstChildOfClass[3]
+        v4[3].addDecoratedMulti("EGGS", "Place Eggs", "PlaceMutations", "Mutation", "PlaceMutations", v101, v1:S({v61}))
+        v93 = v4[3].addDecoratedMulti
+        local v103 = v1:Vh({v63})
+        v93("EGGS", "Place Eggs", "PlaceTraits", "Trait", "PlaceTraits", v88[3], v103)
+        v101 = v1:xg({v4})
+        v4[3].addKGControls("EGGS", "Place Eggs", "Place", "PlaceKGRule", "PlaceKGThreshold", v101)
+        v93 = v4[3].addSingle
+        v103 = {}
+        v103[1], v103[2], v103[3], v103[4] = "Z Position", "Spiral Position", "Grid Position", "Heart Position"
+        v101, v103 = v103, v1:pg({v4})
+        v93("EGGS", "Place Eggs", "Pattern", "Pattern", "PlacePattern", v101, v103)
+        v4[3].addToggle("EGGS", "Place Eggs", "AutoPlace", "Auto Place Eggs", "AutoPlaceEgg", v1:L({v65, v94, v4}))
+        v2[1][3]("17-hatch-ui-controls")
+        ba2 = v66[3] and "🟢 Hatching eggs" or "🔴 Auto Hatch Off"
+        v93 = {[1] = 3, [3] = v4[3].addLabel("EGGS", "Hatch Eggs", ba2)}
+        v93[2] = v93
+        v4[3].addLabel("EGGS", "Hatch Eggs", "Hatch selected eggs.")
+        v4[3].addDecoratedMulti("EGGS", "Hatch Eggs", "HatchRarity", "Rarity", "SelectedHatchRarities", v4[3].rarityOptions(), v1:ah({v53}))
+        v4[3].addDecoratedMulti("EGGS", "Hatch Eggs", "HatchNames", "Category", "SelectedHatchEggs", v4[3].eggCategoryOptions(false), v1:gh({v50}))
+        v97 = v4[3].addDecoratedMulti
+        local sa2 = v1:Sa({v62})
+        v97("EGGS", "Hatch Eggs", "HatchMutations", "Mutation", "HatchMutations", findFirstChildOfClass[3], sa2)
+        v103 = v88[3]
+        v4[3].addDecoratedMulti("EGGS", "Hatch Eggs", "HatchTraits", "Trait", "HatchTraits", v103, v1:Og({v64}))
+        v103 = v1:Md({v4})
+        v4[3].addKGControls("EGGS", "Hatch Eggs", "Hatch", "HatchKGRule", "HatchKGThreshold", v103)
+        v4[3].addToggle("EGGS", "Hatch Eggs", "HatchSelected", "Auto Hatch Eggs", "AutoHatchSelectedEggs", v1:Dd({v66, v93, v4}))
+        v2[1][3]("18-pet-ui-controls")
+        v97 = {
+            [1] = 3,
+            [3] = v4[3].addPetFilterGroup("Sell Pets", "Sell", "SelectedPetToSell", "SelectedSellRarities"),
+        }
+        v97[2] = v97
+        v4[3].addToggle("PETS", "Sell Pets", "AutoSell", "Auto Sell Pets", "AutoSellPet", v1:qe({v76, v97, v4}))
+        v96 = {
+            [1] = 3,
+            [3] = v4[3].addPetFilterGroup("Feed Pets", "Feed", "FeedNames", "FeedRarities"),
+        }
+        v96[2] = v96
+        local v104 = v1:Fi({v69, v96, v4})
+        v4[3].addToggle("PETS", "Feed Pets", "AutoFeed", "Auto Feed Active Pets", "AutoFeedPets", v104)
+        v101 = v68[3] and "🟡 Placing best pets" or "🔴 Auto Place Off"
+        ba2 = {[1] = 3, [3] = v4[3].addLabel("PETS", "Place Pets", v101)}
+        ba2[2] = ba2
+        v4[3].addLabel("PETS", "Place Pets", "Place strongest pets.")
+        v4[3].addInput("PETS", "Place Pets", "PlacePetsInterval", "Interval (seconds)", "PlacePetsInterval", "10", v1:Gg({zb2}))
+        v4[3].addToggle("PETS", "Place Pets", "EquipBest", "Auto Place Best Pets", "AutoEquipBestPet", v1:Eg({v68, ba2, v4}))
+        local v105 = {
+            [1] = 3,
+            [3] = v4[3].addPetFilterGroup("Pets Fusion", "Fusion", "SelectedFusePets", "FusionRarities"),
+        }
+        v105[2] = v105
+        local v106 = v1:ec({v79, v105, v4})
+        v4[3].addToggle("PETS", "Pets Fusion", "Fuse", "Auto Fuse Pets", "AutoFuse", v106)
+        v106 = v1:H({v80, v105, v4, v79})
+        v4[3].addToggle("PETS", "Pets Fusion", "FuseClaim", "Auto Claim Fused Pets", "AutoClaimFusedPets", v106)
+        v4[3].StatusGates = {}
+        v102 = v1:Id({v4})
+        v4[3].gateStatus = v102
+        v103 = v1:dh({v59})
+        v4[3].gateStatus(v89[3], v103)
+        v101 = v94[3]
+        v4[3].gateStatus(v101, v1:ic({v65}))
+        v103 = v1:Oe({v66})
+        v101 = v93[3]
+        v4[3].gateStatus(v101, v103)
+        v101 = v97[3]
+        v4[3].gateStatus(v101, v1:wc({v76}))
+        v101 = v105[3]
+        v4[3].gateStatus(v101, v1:He({v79, v80}))
+        v103 = v1:Sh({v4})
+        v101 = v99[3]
+        v4[3].gateStatus(v101, v103)
+        v102 = {
+            [1] = 3,
+            [3] = v4[3].addPetFilterGroup("Favorite Pets", "Favorite", "SelectedFavPet", "FavoriteRarities"),
+        }
+        v102[2] = v102
+        local v107 = v1:Oh({v78, v102, v4, v86})
+        v4[3].addToggle("PETS", "Favorite Pets", "FavEnabled", "Auto Favorite Pets", "AutoFavoritePet", v107)
+        v2[1][3]("19-progression-ui-controls")
+        v104 = (v70[3] or v71[3]) and "🟡 Checking upgrade cost" or "🔴 Auto Upgrade Hatch Luck Off"
+        v101 = {
+            [1] = 3,
+            [3] = v4[3].addLabel("PROGRESSION", "Hatch Luck", v104),
+        }
+        v101[2] = v101
+        v4[3].addLabel("PROGRESSION", "Hatch Luck", "Upgrade when affordable.")
+        local cb2 = v1:Cb({v70, v87, v101, v4, zb2, v71})
+        v4[3].addToggle("PROGRESSION", "Hatch Luck", "Luck", "Auto Upgrade Hatch Luck", "AutoUpgradeHatchLuck", cb2)
+        v4[3].addToggle("PROGRESSION", "Hatch Luck", "LuckMax", "Auto Upgrade Hatch Luck (Max)", "AutoUpgradeHatchLuckMax", v1:T({v71, v87, v101, v4, zb2, v70}))
+        v4[3].addToggle("PROGRESSION", "Index", "Index", "Auto Claim Index Reward", "AutoClaimIndex", v1:Yb({v73}))
+        v4[3].addToggle("PROGRESSION", "Rebirth", "Rebirth", "Auto Rebirth", "AutoRebirth", v1:re({v72}))
+        v103 = {
+            [1] = 3,
+            [3] = v4[3].addLabel("PREMIUM", "Vuln", "🔴 Premium users only"),
+        }
+        v103[2] = v103
+        v4[3].addLabel("PREMIUM", "Vuln", "Premium access required.")
+        sa2 = {[1] = 3, [3] = false}
+        sa2[2] = sa2
+        v4[3].addToggle("PREMIUM", "Vuln", "Rollback", "Rollback", "RollbackEnabled", v1:dd({zb2, v87, sa2, v103, v4}))
+        v4[3].addButton("PREMIUM", "Vuln", "Rejoin", v1:Gc({v12, v16}))
+        v104 = v1:Yh({v29, v4})
+        v4[3].shopOptions = v104
+        v104 = v4[3].shopOptions
+        v4[3].ShopOptions = v104
+        v104 = v1:Aa()
+        v4[3].ShopDisplayOptions = v104
+        v104 = v1:ad({v4, v87, zb2, ib2})
+        v4[3].addShopMulti = v104
+        v2[1][3]("20-shop-ui-controls")
+        v107 = v75[3] and "🟡 Waiting for food stock" or "🔴 Auto Buy Food Off"
+        v104 = {[1] = 3, [3] = v4[3].addLabel("SHOP", "Foods Shop", v107)}
+        v104[2] = v104
+        v4[3].addLabel("SHOP", "Foods Shop", "Auto-buy selected food.")
+        v4[3].addShopMulti("SHOP", "Foods Shop", "FoodNames", "Food", "SelectedFood", v4[3].shopOptions(v4[3].FoodShop, "Food"), v1:Xb({v51, v75, v4}))
+        local v108 = v1:Nd({v75, v104, v4})
+        v4[3].addToggle("SHOP", "Foods Shop", "BuyFood", "Auto Buy Foods", "Autobuyfood", v108)
+        cb2 = v74[3] and "🟡 Waiting for gear stock" or "🔴 Auto Buy Gear Off"
+        local v109 = {[1] = 3, [3] = v4[3].addLabel("SHOP", "Gears Shop", cb2)}
+        v109[2] = v109
+        v4[3].addLabel("SHOP", "Gears Shop", "Auto-buy selected gear.")
+        v4[3].addShopMulti("SHOP", "Gears Shop", "GearNames", "Gear", "SelectedGear", v4[3].shopOptions(v4[3].GearShop, "Gears"), v1:ki({v52, v74, v4}))
+        v4[3].addToggle("SHOP", "Gears Shop", "BuyGear", "Auto Buy Gears", "Autobuygear", v1:pf({v74, v109, v4}))
+        v2[1][3]("21-settings-ui-controls")
+        v4[3].addToggle("SETTINGS", "Player", "Noclip", "Noclip", "Noclip", v1:ng({v4}))
+        v4[3].addToggle("SETTINGS", "Player", "InfiniteJump", "Infinity Jump", "InfiniteJump", v1:Ia({v4}))
+        v106 = {[1] = 3, [3] = nil}
+        v106[2] = v106
+        v4[3].addToggle("SETTINGS", "Player", "WalkEnabled", "Walk Speed", "WalkSpeedEnabled", v1:Gb({v4, v106}))
+        v107 = v4[3].addInput("SETTINGS", "Player", "WalkSpeed", "Walk Speed", "WalkSpeed", "16", v1:Ja({v4}))
+        v107, v106[3] = v4[3].setVisible, v107
+        local v110 = zb2[3].WalkSpeedEnabled == true
+        v107(v106[3], v110)
+        v2[1][3]("22-runtime-ui-controls")
+        v4[3].addToggle("SETTINGS", "Runtime", "Idle", "Anti AFK", "AntiAFK", v1:Fg({v4}))
+        v4[3].addToggle("SETTINGS", "Runtime", "AutoReconnect", "Auto Reconnect", "AutoReconnect", v1:mh({v4}))
+        v4[3].addToggle("SETTINGS", "Runtime", "AutoExecute", "Auto Execute", "AutoExecute", v1:xi({v4}))
+        if zb2[3].AutoExecute == true then
+            v4[3].SetAutoExecute(true)
+        end
+        v2[1][3]("23-interface-ui-controls")
+        v106 = v4[3].addSingle
+        local v111 = {}
+        v111[1], v111[2], v111[3], v111[4], v111[5] = "80", "90", "100", "110", "120"
+        local v112
+        v112, v111 = v111, v1:hb({v2[5]})
+        v106("SETTINGS", "Interface", "UIScale", "UI Scale", "UIScale", v112, v111)
+        v112 = v1:Bc({v4})
+        v4[3].addToggle("SETTINGS", "Interface", "CompactNotif", "Compact Notifications", "CompactNotifications", v112)
+        v4[3].addToggle("SETTINGS", "Interface", "HideOnStart", "Hide UI On Start", "HideUIOnStart", v1:lf({v4}))
+        v4[3].addToggle("SETTINGS", "Interface", "NoGameplayPaused", "No Gameplay Paused", "NoGameplayPaused", v1:ef({v4}))
+        v106 = zb2[3].AutoReconnect == true
+        v4[3].AutoReconnect = v106
+        v4[3].ReconnectAttempted = false
+        pcall(v1:jh({v4, v16}))
+        v106 = zb2[3].Noclip == true
+        v4[3].Noclip = v106
+        v106 = zb2[3].InfiniteJump == true
+        v4[3].InfiniteJump = v106
+        v106 = zb2[3].WalkSpeedEnabled == true
+        v4[3].WalkSpeedEnabled = v106
+        cb2 = zb2[3].WalkSpeed
+        v106 = math.clamp(tonumber(cb2) or 16, 0, 120)
+        v4[3].WalkSpeedValue = v106
+        cb2 = game
+        v106 = v4[3].Bind
+        cb2, v110 = cb2.GetService, cb2
+        v107, cb2 = cb2(v110, "UserInputService").JumpRequest, v1:Rf({v4, v16})
+        v106(v107, cb2)
+        v107 = v1:Ue({v4, v59, v16})
+        task.spawn(v107)
+        v106 = v1:yd({v16})
+        v4[3].SetNoGameplayPaused = v106
+        v106 = zb2[3].NoGameplayPaused ~= false
+        v4[3].NoGameplayPaused = v106
+        pcall(v1:rc({v4, v16}))
+        v107 = v4[3].NoGameplayPaused
+        v4[3].SetNoGameplayPaused(v107)
+        v106 = setmetatable({}, {__mode = "k"})
+        v4[3].HiddenPetVisuals = v106
+        v106 = v1:Ub({v4})
+        v4[3].SetHidePets = v106
+        v106 = v1:ci({v9})
+        v4[3].SetRenderingDisabled = v106
+        v4[3].ShaderOriginal = nil
+        v106 = v1:M({v4})
+        v4[3].SetSimpleShader = v106
+        if zb2[3].HidePets then
+            v4[3].SetHidePets(true)
+        end
+        if zb2[3].Disable3DRendering then
+            v4[3].SetRenderingDisabled(true)
+        end
+        if zb2[3].ShaderEnabled then
+            cb2 = zb2[3].ShaderPreset
+            v4[3].SetSimpleShader(true, cb2)
+        end
+        v112 = v1:Ef({v84, v4})
+        v4[3].addToggle("SETTINGS", "Performance", "Boost", "FPS Boost", "FPSBoost", v112)
+        v4[3].addToggle("SETTINGS", "Performance", "HideEggs", "Hide Ranch Eggs", "HideEggs", v1:qh({v85, v4}))
+        v4[3].addToggle("SETTINGS", "Performance", "HidePets", "Hide Pets", "HidePets", v1:Dc({v4}))
+        v4[3].addToggle("SETTINGS", "Performance", "Disable3DRendering", "Disable 3D Rendering", "Disable3DRendering", v1:jd({v4}))
+        v4[3].addDecoratedMulti("SETTINGS", "Visual", "EspRarities", "Rarity", "SelectedESPRarities", v4[3].rarityOptions(), v1:Nb({v58}))
+        v4[3].addToggle("SETTINGS", "Visual", "ESP", "Egg ESP", "ESPEnabled", v1:Gd({v81}))
+        v4[3].addToggle("SETTINGS", "Visual", "RanchEggESP", "Ranch Egg ESP", "RanchEggESP", v1:Ud({v4}))
+        v4[3].addToggle("SETTINGS", "Visual", "InventoryESP", "Inventory ESP", "InventoryESP", v1:md({v4}))
+        v106 = {[1] = 3, [3] = nil}
+        v106[2] = v106
+        v4[3].addToggle("SETTINGS", "Visual", "ShaderEnabled", "Simple Shader", "ShaderEnabled", v1:Be({v4, v106, zb2}))
+        v107 = v4[3].addSingle
+        local v113 = {}
+        v113[1], v113[2], v113[3], v113[4] = "Daytime", "Sunset", "Night", "Cloudy"
+        v113, v111 = v1:Uf({zb2, v4}), v113
+        v106[3], v107 = v107("SETTINGS", "Visual", "ShaderPreset", "Shader", "ShaderPreset", v111, v113), v4[3].setVisible
+        v110 = zb2[3].ShaderEnabled == true
+        v107(v106[3], v110)
+        v106 = {
+            [1] = 3,
+            [3] = v4[3].addLabel("SETTINGS", "Webhook", "🔴 Paste a webhook URL"),
+        }
+        v106[2] = v106
+        v107 = {[1] = 3, [3] = nil}
+        v107[2] = v107
+        cb2 = {[1] = 3, [3] = nil}
+        cb2[2] = cb2
+        v110 = {[1] = 3, [3] = nil}
+        v110[2] = v110
+        local v114 = {[1] = 3, [3] = nil}
+        v114[2] = v114
+        v108 = {[1] = 3, [3] = "Shader"}
+        v108[2] = v108
+        v108[3] = v1:ca()
+        v112 = {[1] = 3, [3] = "ShaderPreset"}
+        v112[2] = v112
+        v112[3] = v1:Va({v4, v108, v106, v82})
+        v111 = {[1] = 3, [3] = v111}
+        v111[2] = v111
+        local v115, v116, v117, v118
+        v115, v118, v116, v113, v117, v111[3] = "SETTINGS", "WebhookUrl", "Webhook URL", v4[3].addInput, "Webhook", v1:Hb({v4, v110, v114, cb2, v107})
+        v113("SETTINGS", "Webhook", "WebhookUrl", "Webhook URL", "WebhookUrl", "https://discord.com/api/webhooks/...", v1:Ka({v82, v112}))
+        v4[3].addToggle("SETTINGS", "Webhook", "WebhookEnabled", "Send Webhooks", "WebhookEnabled", v1:wh({v83, v112, v111}))
+        v116 = v1:P({v83, v82, v108, v4})
+        v113 = v4[3].addButton("SETTINGS", "Webhook", "Test Webhook", v116)
+        local v119, v120
+        v118, v120, v114[3], v117, v116, v115, v113, v119 = "PickupAlerts", v1:Y(), v113, "Webhook", "Pickup Alerts", "SETTINGS", v4[3].addToggle, "WebhookPickupAlerts"
+        v113 = v113("SETTINGS", "Webhook", "PickupAlerts", "Pickup Alerts", "WebhookPickupAlerts", v120)
+        v115, v113, v107[3], v118, v120, v116, v119, v117 = "SETTINGS", v4[3].addToggle, v113, "HatchAlerts", v1:Wf(), "Hatch Alerts", "WebhookHatchAlerts", "Webhook"
+        v115, cb2[3], v119, v120, v116, v113, v117, v118 = "SETTINGS", v113("SETTINGS", "Webhook", "HatchAlerts", "Hatch Alerts", "WebhookHatchAlerts", v120), "WebhookFuseAlerts", v1:Di(), "Fuse Alerts", v4[3].addToggle, "Webhook", "FuseAlerts"
+        v110[3], v113, v115 = v113("SETTINGS", "Webhook", "FuseAlerts", "Fuse Alerts", "WebhookFuseAlerts", v120), v111[3], v83[3]
+        v113(v115)
+        v112[3]()
+        v114 = v1:Ie()
+        v4[3].addButton("HOME", "Quick Actions", "Copy Discord", v114)
+        v114 = v1:Wg({v16})
+        v4[3].addButton("HOME", "Quick Actions", "Rejoin", v114)
+        v114 = v1:kd({v4})
+        v4[3].addButton("HOME", "Quick Actions", "Server Hop", v114)
+        v114 = v4[3].TeleportToMyPlot
+        v4[3].addButton("HOME", "Quick Actions", "TP Ranch", v114)
+        v106 = v1:Ch({v4, v16, v59, v12, v8})
+        v4[3].TryServerHop = v106
+        v106 = v1:ja()
+        v4[3].MountCardsWithoutPlaceholder = v106
+        v106 = {
+            [1] = 3,
+            [3] = v4[3].addLabel("HOME", "Session", "__REZE_SESSION_OVERVIEW_MOUNT__"),
+        }
+        v106[2] = v106
+        v107 = {
+            [1] = 3,
+            [3] = v4[3].addLabel("HOME", "Stats", "__REZE_LIVE_STATS_MOUNT__"),
+        }
+        v107[2] = v107
+        cb2 = {
+            [1] = 3,
+            [3] = v4[3].addLabel("EGGS", "Eggs Tracker", "Tracking rendered eggs..."),
+        }
+        cb2[2] = cb2
+        v110 = {
+            [1] = 3,
+            [3] = v4[3].addLabel("HOME", "Account", "Account details"),
+        }
+        v110[2] = v110
+        v114 = {
+            [1] = 3,
+            [3] = v4[3].addLabel("HOME", "Account", "Access: checking..."),
+        }
+        v114[2] = v114
+        v108 = {
+            [1] = 3,
+            [3] = v4[3].addLabel("HOME", "Account", "Key remaining: checking..."),
+        }
+        v108[2] = v108
+        v112 = {[1] = 3, [3] = {}}
+        v112[2] = v112
+        v111 = os.clock()
+        v113 = {[1] = 3, [3] = 0}
+        v113[2] = v113
+        v115 = {[1] = 3, [3] = 0}
+        v115[2] = v115
+        v117 = {[1] = 3, [3] = os.clock()}
+        v117[2] = v117
+        v119 = v1:Ab({v113, v115, v117})
+        v116 = v9[3].RenderStepped
+        v4[3].Bind(v116, v119)
+        v118 = v1:ff()
+        v4[3].sessionTimeText = v118
+        v118 = v1:be({v106, v4, v2[2], v112})
+        v4[3].mountSessionOverview = v118
+        task.defer(v4[3].mountSessionOverview)
+        v119 = v4[3].mountSessionOverview
+        task.delay(0.5, v119)
+        v118 = v1:Tb({v16, v108, v4, v114, v110})
+        v4[3].updateAccountUI = v118
+        task.defer(v4[3].updateAccountUI)
+        v116 = {
+            Cards = v112[3],
+            StartedAt = v111,
+            Mount = v4[3].mountSessionOverview,
+            UpdateAccount = v4[3].updateAccountUI,
+            Duration = v4[3].sessionTimeText,
+        }
+        v116.GetFPS = v1:Ma({v115})
+        v4[3].SessionUI = v116
+        v110 = {[1] = 3, [3] = {}}
+        v110[2] = v110
+        v114 = {[1] = 3, [3] = nil}
+        v114[2] = v114
+        v108 = {[1] = 3, [3] = 0}
+        v108[2] = v108
+        v112 = {[1] = 3, [3] = nil}
+        v112[2] = v112
+        v111 = {[1] = 3, [3] = 0}
+        v111[2] = v111
+        v113 = {
+            [1] = 3,
+            [3] = {
+                CASH = "#FBC94E",
+                ["INCOME / SEC"] = "#48D58E",
+                LUCK = "#FF9749",
+                ["EGG INVENTORY"] = "#E27ABF",
+                ["PET INVENTORY"] = "#53A8FF",
+                ["TOTAL PET VALUE"] = "#AF85FF",
+            },
+        }
+        v113[2] = v113
+        v117 = {}
+        v117[1], v117[2], v117[3], v117[4], v117[5], v117[6] = "CASH", "INCOME / SEC", "LUCK", "EGG INVENTORY", "PET INVENTORY", "TOTAL PET VALUE"
+        v115 = {[1] = 3, [3] = v117}
+        v115[2] = v115
+        v118 = {
+            CASH = "💰",
+            ["INCOME / SEC"] = "📈",
+            LUCK = "🍀",
+            ["EGG INVENTORY"] = "🥚",
+            ["PET INVENTORY"] = "🐾",
+            ["TOTAL PET VALUE"] = "💎",
+        }
+        v117 = {[1] = 3, [3] = v118}
+        v117[2] = v117
+        v118 = {[1] = 3, [3] = v118}
+        v118[2] = v118
+        v118[3] = v1:Lh({v107, v113, v110, v115, v4, v2[2], v117})
+        v116 = {[1] = 3, [3] = "💎"}
+        v116[2] = v116
+        v116[3] = v1:tb({v114, v22, v108})
+        v119 = {[1] = 3, [3] = "LUCK"}
+        v119[2] = v119
+        v119[3] = v1:Od({v16, v112})
+        v120 = {[1] = 3, [3] = "EGG INVENTORY"}
+        v120[2] = v120
+        v120[3] = v1:oa()
+        local v121 = {[1] = 3, [3] = "PET INVENTORY"}
+        v121[2] = v121
+        v121[3] = v1:fa({v114, v26})
+        local v122 = {[1] = 3, [3] = "TOTAL PET VALUE"}
+        v122[2] = v122
+        v122[3] = v1:tg()
+        local v123 = {[1] = 3, [3] = nil}
+        v123[2] = v123
+        v123[3] = v1:Wd({v116, v121, v120, v119, v122, v17, v16, v34, v4})
+        local v124 = v1:sg({v4, v123, v110, v111, v118})
+        local v125 = {Cards = v110[3], Mount = v118[3], Update = v124}
+        v4[3].StatsUI = v125
+        task.defer(v118[3])
+        task.delay(0.5, v118[3])
+        v114 = v1:nb({v4, v2[2]})
+        task.spawn(v114)
+        v110 = v1:Kf({v4})
+        v4[3].OptionsForDynamicDropdown = v110
+        v110 = v1:cf({v4, zb2})
+        v4[3].RefreshDynamicDropdowns = v110
+        task.spawn(v1:yf({v4}))
+        v114 = v23[3].ChildAdded
+        v4[3].Bind(v114, v1:tc({v4}))
+        v110 = v1:Hi({v4, zb2, ib2})
+        v4[3].RestoreSavedDropdownDisplays = v110
+        task.defer(v1:Xg({v4, ib2}))
+        v2[1][3]("24-egg-part-helpers")
+        v110 = v1:ge()
+        v4[3].GetEggPart = v110
+        v110 = v1:Tg({v30, v4})
+        v4[3].EggMatchesFilter = v110
+        v110 = v1:Rb({v4})
+        v4[3].IsInsideSavedDropSafezone = v110
+        v110 = v1:nh({v4})
+        v4[3].FindPreviousSavedDrop = v110
+        v110 = v1:ua({v4, v44, v30, v47, v48, v16, v46})
+        v4[3].FindSelectedEgg = v110
+        v110 = v4[3].FindSelectedEgg
+        v4[3].FindSelectedEgg = v110
+        v114 = v1:Lc({v59, v4, v16})
+        v4[3].TaskNeeds.Pickup = v114
+        v110 = v1:eh({v4, v35, v16})
+        v4[3].PickupEgg = v110
+        v110 = v1:Ba({v4})
+        v4[3].TeleportToEgg = v110
+        v110 = v1:ee({v4, v13})
+        v4[3].TweenToCFrame = v110
+        v4[3].ActiveESP = {}
+        v114 = {}
+        v114.Common = Color3.fromRGB(235, 235, 235)
+        v114.Uncommon = Color3.fromRGB(0, 255, 120)
+        v114.Rare = Color3.fromRGB(0, 170, 255)
+        v114.Epic = Color3.fromRGB(170, 85, 255)
+        v114.Legendary = Color3.fromRGB(255, 85, 0)
+        v114.Mythic = Color3.fromRGB(255, 0, 255)
+        v114.Divine = Color3.fromRGB(255, 255, 0)
+        v114.Ethereal = Color3.fromRGB(170, 255, 255)
+        v110 = {[1] = 3, [3] = v114}
+        v110[2] = v110
+        v114 = {[1] = 3, [3] = {}}
+        v114[2] = v114
+        v2[1][3]("25-egg-rarity-helpers")
+        v108 = v1:jc({v30, v114, v110, v16})
+        v4[3].GetEggRarityStyle = v108
+        v108 = v1:rh()
+        v4[3].ApplyEggRarityStyle = v108
+        v108 = v1:Yf()
+        v4[3].FormatESPKG = v108
+        v108 = {[1] = 3, [3] = setmetatable({}, {__mode = "k"})}
+        v108[2] = v108
+        v112 = v1:Jc({v108, v4, v10})
+        v4[3].FindActiveWorldEggConfiguration = v112
+        v112 = v4[3].FindActiveWorldEggConfiguration
+        v4[3].FindActiveWorldEggConfiguration = v112
+        v112 = v1:Ff({v4})
+        v4[3].GetWorldEggESPMutation = v112
+        v112 = v1:Ug({v4, v31, v10})
+        v4[3].GetEggWeight = v112
+        v112 = v1:ig({v4})
+        v4[3].FormatKG = v112
+        v112 = setmetatable({}, {__mode = "k"})
+        v4[3].EggKGCache = v112
+        v112 = v1:od({v4, v31})
+        v4[3].GetEggKG = v112
+        v112 = v1:Pe({v4})
+        v4[3].GetEggWeightText = v112
+        v112 = v1:nc({v4})
+        v4[3].RemoveESP = v112
+        v112 = v1:Ji({v4})
+        v4[3].ClearAllESP = v112
+        v2[1][3]("26-esp-ui-builder")
+        v112 = v1:Nf({v4})
+        v4[3].CreateESP = v112
+        v112 = {[1] = 3, [3] = {}}
+        v112[2] = v112
+        v111 = {[1] = 3, [3] = true}
+        v111[2] = v111
+        v113 = {[1] = 3, [3] = -math.huge}
+        v113[2] = v113
+        v115 = v1:Qh({v113, v111, v112, zb2, v4})
+        v4[3].VisualRarityAllowed = v115
+        task.spawn(v1:li({v4, v30, v81}))
+        v112 = setmetatable({}, {__mode = "k"})
+        v4[3].RanchESPObjects = v112
+        v112 = zb2[3].RanchEggESP == true
+        v4[3].RanchEggESPEnabled = v112
+        v112 = {[1] = 3, [3] = nil}
+        v112[2] = v112
+        v111 = {[1] = 3, [3] = 0}
+        v111[2] = v111
+        v113 = {[1] = 3, [3] = true}
+        v113[2] = v113
+        v113[3] = v1:Je({v112, v10, v111})
+        v115 = {[1] = 3, [3] = "k"}
+        v115[2] = v115
+        v115[3] = v1:Bg()
+        v117 = {[1] = 3, [3] = math}
+        v117[2] = v117
+        v117[3] = v1:fc({v30, v4, v113, v26})
+        v118 = {[1] = 3, [3] = v118}
+        v118[2] = v118
+        v118[3] = v1:Xh()
+        v116 = {[1] = 3, [3] = v116}
+        v116[2] = v116
+        v116[3] = v1:rd({v4, v16})
+        v119 = {[1] = 3, [3] = v119}
+        v119[2] = v119
+        v119[3] = v1:fd()
+        v120 = {[1] = 3, [3] = v120}
+        v120[2] = v120
+        v120[3], v121 = v1:zi({v116, v119, v115, v16, v118, v4, v117, v110}), v1:qf({v4, v16})
+        v4[3].ClearRanchEggESP = v121
+        task.spawn(v1:kh({v4, v120}))
+        v112 = {[1] = 3, [3] = {}}
+        v112[2] = v112
+        v111 = {[1] = 3, [3] = zb2[3]}
+        v111[2] = v111
+        v117 = {}
+        v117.__index = v1:wi({v4})
+        v113 = {[1] = 3, [3] = setmetatable({}, v117)}
+        v113[2] = v113
+        v115 = {[1] = 3, [3] = v30[3]}
+        v115[2] = v115
+        v117 = {[1] = 3, [3] = {Eggs = v30[3]}}
+        v117[2] = v117
+        v118 = {[1] = 3, [3] = v110[3]}
+        v118[2] = v118
+        v112[3].LowEndTuning = {InventorySafetyRefresh = 6}
+        v116 = v1:cd()
+        v112[3].diagnose = v116
+        v116 = v1:dg({v4})
+        v112[3].saveEggToolSettings = v116
+        v116 = v1:ui({v4})
+        v112[3].getHomePlot = v116
+        v116 = v1:Se({v26})
+        v112[3].getAllPetNames = v116
+        v116 = v1:Pd({v30})
+        v112[3].getAllIndexedEggNames = v116
+        v116 = v1:V()
+        v112[3].getPetNameFromObject = v116
+        v116 = v1:Xc({v118})
+        v112[3].normalizeRarityName = v116
+        v116 = v1:X({v26})
+        v112[3].getPetRarityByName = v116
+        v116 = v1:db({v30})
+        v112[3].getExplicitEggRarity = v116
+        v116 = v1:Rd()
+        v112[3].formatCompactNumber = v116
+        v116 = v1:yi()
+        v112[3].parseCompactNumber = v116
+        v116 = v1:oe({v112, v10, v26})
+        v112[3].getNativePetIncomeFromTool = v116
+        v116 = v112[3].InventoryESPState
+        if not v116 then
+            v119 = {CardConnections = {}, CardCache = {}}
+            v119.CardStable = setmetatable({}, {__mode = "k"})
+            v119.ToolRevision = 0
+            v119.Enabled = false
+            v119.Overlays = setmetatable({}, {__mode = "k"})
+            v119.TotalLabel = nil
+            v119.Root = nil
+            v119.Grid = nil
+            v119.Connections = {}
+            v119.Running = false
+            v119.RefreshQueued = false
+            v119.RefreshGeneration = 0
+            v119.PetNames = nil
+            v119.PetNamesLower = nil
+            v119.EggNames = nil
+            v119.EggNamesLower = nil
+            v119.EggLuckCache = {}
+            v119.PetGameData = nil
+            v119.Mutations = nil
+            v119.NativeModulesLoaded = false
+            v119.LastPetCount = 0
+            v119.LastEggCount = 0
+            v116 = v119
+        end
+        v112[3].InventoryESPState = v116
+        v119 = v112[3].InventoryESPState.CardStable or setmetatable({}, {__mode = "k"})
+        v112[3].InventoryESPState.CardStable = v119
+        v116 = v1:Ai()
+        v112[3].cleanInventoryESPText = v116
+        v116 = v1:dc({v16})
+        v112[3].getInventoryESPGrid = v116
+        v116 = v1:Dh({v112})
+        v112[3].refreshInventoryESPNameCaches = v116
+        v116 = v1:oc({v112, v113, v10})
+        v112[3].loadInventoryESPNativeModules = v116
+        v116 = v1:Mb({v112})
+        v112[3].getInventoryEggLuckTextByName = v116
+        v116 = v1:Hc({v112})
+        v112[3].getInventoryESPCardToolName = v116
+        v116 = v1:_d({v112})
+        v112[3].getInventoryESPCardDetailText = v116
+        v116 = v1:fe({v16})
+        v112[3].getInventoryESPToolContainers = v116
+        v116 = v1:vg({v112})
+        v112[3].buildInventoryESPToolLookup = v116
+        v116 = v1:Tf({v112})
+        v112[3].pickInventoryESPPetTool = v116
+        v116 = v1:he({v112})
+        v112[3].getInventoryESPMutationFactor = v116
+        v116 = v1:mg()
+        v112[3].roundInventoryESPWeight = v116
+        v116 = v1:wb({v112})
+        v112[3].getInventoryESPPetIncomeFromTool = v116
+        v116 = v1:ib({v112})
+        v112[3].getInventoryESPPetCount = v116
+        v116 = v1:ne({v112})
+        v112[3].getInventoryESPEggCount = v116
+        v116 = v1:ji({v112})
+        v112[3].ensureInventoryESPCountLabel = v116
+        v116 = v1:Uc({v112})
+        v112[3].updateInventoryESPHeader = v116
+        v116 = v1:Ta()
+        v112[3].createInventoryESPOverlay = v116
+        v116 = v1:O()
+        v112[3].fitInventoryESPOverlay = v116
+        v116 = v1:sf()
+        v112[3].inventoryESPCardIdentity = v116
+        v116 = v1:zg({v112})
+        v112[3].removeInventoryESPOverlay = v116
+        v116 = v1:ub()
+        v112[3].isInventoryESPCardInViewport = v116
+        v116 = v1:ye({v112})
+        v112[3].detectInventoryESPCardInfo = v116
+        v116 = v1:ce({v112, v118})
+        v112[3].getInventoryESPPetRarityColor = v116
+        v116 = v1:me({v112, v118})
+        v112[3].processInventoryESPCard = v116
+        v116 = v1:Tc({v112, v113})
+        v112[3].refreshInventoryESPVisibleCards = v116
+        v116 = v1:vb({v112, v113})
+        v112[3].refreshInventoryESPGrid = v116
+        v116 = v1:pb({v112, v113})
+        v112[3].queueInventoryESPRefresh = v116
+        v116 = v1:Hh({v112})
+        v112[3].unbindInventoryESPCard = v116
+        v116 = v1:la({v112, v113})
+        v112[3].bindInventoryESPCard = v116
+        v116 = v1:qi({v112})
+        v112[3].disconnectInventoryESPTools = v116
+        v116 = v1:xa({v112, v113, v16})
+        v112[3].bindInventoryESPTools = v116
+        v116 = v1:Vb({v112})
+        v112[3].disconnectInventoryESPGrid = v116
+        v116 = v1:Q({v112})
+        v112[3].bindInventoryESPGrid = v116
+        v116 = v1:de({v112})
+        v112[3].clearInventoryESP = v116
+        v116 = v1:uf({v112, v16, v111, v113})
+        v112[3].setInventoryESPEnabled = v116
+        v119 = v112[3].InventoryESPState.LuckByTool or setmetatable({}, {__mode = "k"})
+        v112[3].InventoryESPState.LuckByTool = v119
+        v119 = v112[3].InventoryESPState.PlotLuckByName or {}
+        v112[3].InventoryESPState.PlotLuckByName = v119
+        v116 = v1:Of({v112, v117, v115})
+        v112[3].getInventoryESPEggBaseLuck = v116
+        v116 = v1:qg({v112, v16, v4, v113})
+        v112[3].getActualHatchLuckMultiplier = v116
+        v116 = v1:Bh()
+        v112[3].getInventoryESPExplicitLuck = v116
+        v116 = v1:N({v112})
+        v112[3].getInventoryESPWorldLuck = v116
+        v116 = v1:fg({v112})
+        v112[3].refreshInventoryESPPlotLuckCalibration = v116
+        v116 = v1:Fe({v112})
+        v112[3].getInventoryESPEffectiveEggLuck = v116
+        v116 = v1:kf()
+        v112[3].getInventoryESPEggTool = v116
+        v116 = v1:ha({v16})
+        v112[3].getInventoryESPHotbarCards = v116
+        v116 = v1:ac({v112})
+        v112[3].bindInventoryESPHotbar = v116
+        v116 = v1:id({v112})
+        v112[3].clearInventoryESPEmptyHotbarCards = v116
+        v116 = v1:Xd({v4, v112})
+        v4[3].SetInventoryESPEnabled = v116
+        v116 = v1:ta({v112})
+        v4[3].ClearInventoryESP = v116
+        v119 = v1:Oa({v4, zb2})
+        task.defer(v119)
+        task.spawn(v1:le({v4, v112}))
+        v112, v86[3] = v1:hf({v78, v16, v41, v18, v4, v56}), v1:hf({v78, v16, v41, v18, v4, v56})
+        v111, v86[3], v115, v118 = {}, v112, {}, {}
+        v115.Food = v118
+        v115.Gears = {}
+        v111.Applied = v115
+        v111.LastSync = {Food = 0, Gears = 0}
+        v4[3].NativeBuyState = v111
+        v2[1][3]("27-shop-runtime")
+        v112 = v1:Ei({v35, v51, v52, v109, v104, v4})
+        v4[3].syncNativeAutobuy = v112
+        v112 = v4[3].syncNativeAutobuy
+        v4[3].SyncNativeAutobuy = v112
+        v111 = v1:zc({v4, v109, v75, v74, v104})
+        task.spawn(v111)
+        v4[3].FeedState = {LastAction = 0, LastByKey = {}, Status = "idle"}
+        v112 = v1:wf({v16, v4})
+        v4[3].feedGetActivePets = v112
+        v112 = v1:_g()
+        v4[3].feedGetAge = v112
+        v112 = v1:Vf({v4, v16})
+        v4[3].feedOnOwnRanch = v112
+        task.spawn(v1:xf({v4, zb2, v96, v16, v35, v69}))
+        v1:ei({v77, v16, v54, v10, v4, v22, v55, v26, v76, v35})()
+        v4[3].MAX_PLANTED_EGGS = 10
+        v112 = v1:U()
+        v4[3].GetRandomPlotPosition = v112
+        v112 = v1:We({v4})
+        v4[3].GetPatternPosition = v112
+        v2[1][3]("28-auto-place-helpers")
+        v112 = v1:Mg({v15, v45, v63, v49, v4, v16, v61})
+        v4[3].GetTargetEggsToPlace = v112
+        v111 = v1:vh({v65, v4})
+        v4[3].TaskNeeds.Place = v111
+        v111 = v1:kb({v4, v10, v65, v30})
+        task.spawn(v111)
+        v112 = v1:Ig({v30, v24, v31})
+        v4[3].IsEggReadyToHatch = v112
+        v112 = v1:za({v4, v64, v53, v62, v50})
+        v4[3].IsEggMatchingHatchFilter = v112
+        v111 = v1:Dg({v66, v4})
+        v4[3].TaskNeeds.Hatch = v111
+        task.spawn(v1:_f({v4, v15, v25, v10, v66, v67}))
+        v112 = v1:vi({v19, v16})
+        v4[3].GetMaxPetCapacity = v112
+        v112 = v1:Bb({v26, waitForChild, v27})
+        v4[3].CalculatePetIncome = v112
+        v2[1][3]("29-pet-auto-place-helpers")
+        v112 = v1:Ph({v34, v4, v16})
+        v4[3].GetAllPetsSorted = v112
+        v112 = v1:zh({v25, v16})
+        v4[3].GetPlotPlacementPos = v112
+        v4[3].FastRideState = {
+            Key = nil,
+            PetName = nil,
+            Speed = nil,
+            MountRetryAt = 0,
+            PhaseActive = false,
+            MountRequestedKey = nil,
+            MountKeyVerified = false,
+        }
+        v4[3].RideDropLog = {}
+        v112 = v1:cc({v4})
+        v4[3].TraceRideDrop = v112
+        v112 = v1:jg({v26})
+        v4[3].ReadPetRideSpeed = v112
+        v112 = v1:mi({v16, v4})
+        v4[3].FindFastestRidePet = v112
+        v112 = v1:sc({v16, v26})
+        v4[3].MountedPetDescriptor = v112
+        v112 = v1:_i({v4, v34, v16})
+        v4[3].CurrentMountedPetKey = v112
+        v112 = v1:fb({v4, v89, v35, v59})
+        v4[3].TryNativeDismount = v112
+        v112 = v1:tf({v4, v35, v59, v89})
+        v4[3].EnsureInstantOnFoot = v112
+        v111 = v1:ue({v4, v59})
+        task.spawn(v111)
+        v112 = v1:rg({v34, v16})
+        v4[3].GetRideModel = v112
+        v112 = v1:af({v16})
+        v4[3].IsFastRideMounted = v112
+        v112 = v1:Wh({v4, v35, v89, v59})
+        v4[3].TryMountInventoryPet = v112
+        v112 = v1:da({v4, v16, v59, v89})
+        v4[3].PrepareFastRide = v112
+        v112 = CFrame.new(-46040.7734, 40371.4453, -20327.2539, -0.780875802, 0, -0.62468636, 0, 1, 0, 0.62468636, 0, -0.780875802)
+        v4[3].CandyEvent = v112
+        v112 = CFrame.new(-45842.9766, 40375.2734, -20118.6797, -0.99513644, -2.46834375e-8, -0.0985061005, -2.63667683e-8, 1, 1.57867746e-8, 0.0985061005, 1.8307281e-8, -0.99513644)
+        v4[3].CandyHome = v112
+        v112 = setmetatable({}, {__mode = "k"})
+        v4[3].CandySkip = v112
+        v4[3].CandyLogs = {}
+        v4[3].CandyCount = 0
+        v4[3].CandyBaseSource = "Event Candy Drop-Off"
+        v4[3].CandyBusy = false
+        v2[1][3]("30-candy-event-helpers")
+        v112 = v1:La({v4})
+        v4[3].CandyLog = v112
+        v112 = v1:Vd({v4, v99})
+        v4[3].CandySetStatus = v112
+        v4[3].CandyCarryPending = false
+        v4[3].CandyPendingBalance = nil
+        v4[3].CandyDepositReceipts = 0
+        v4[3].CandyUIClears = 0
+        v4[3].CandyLastHUD = "unknown"
+        v112 = v1:Fa({v16})
+        v4[3].CandyBalance = v112
+        v112 = v1:Ce({v16, v4})
+        v4[3].CandyHUDState = v112
+        v112 = v1:oi()
+        v4[3].CandyPad = v112
+        v112 = v1:sd({v4})
+        v4[3].CandyXZFromBase = v112
+        v112 = v1:Ke({v4})
+        v4[3].CandyReturnHome = v112
+        v112 = v1:jf()
+        v4[3].CandyPosition = v112
+        v112 = v1:aa()
+        v4[3].CandyGetIDs = v112
+        v112 = v1:xd({v4})
+        v4[3].CandyWaitGone = v112
+        v112 = v1:hg({v4, v35})
+        v4[3].CandyCollect = v112
+        v112 = v1:Qg({v4})
+        v4[3].CandyFindNearest = v112
+        v112 = v1:lh()
+        v4[3].CandyDiscoverWaypoints = v112
+        v4[3].CandyStreamScans = 0
+        v112 = os.clock()
+        v4[3].CandyLastVisibleAt = v112
+        v112 = v1:Yd({v4})
+        v4[3].CandyRefreshStream = v112
+        v112 = v1:fh({v4})
+        v4[3].CandyVerifyRide = v112
+        v112 = v1:wg({v4})
+        v4[3].CandyEnsureEventRide = v112
+        task.spawn(v1:Sc({v4, v59}))
+        v1:ob({v4, v9, v10, v16, v59, v35, v15})()
+        v2[1][3]("31-phase-movement-helpers")
+        v112 = v1:Na({v4})
+        v4[3].StopPetPhase = v112
+        v112 = v1:Qa({v4})
+        v4[3].SavedDropRoute = v112
+        v112 = v1:qd({v4})
+        v4[3].ObserveDeliveryCooldown = v112
+        v112 = v1:Rc({v4, v59, v89, v9})
+        v4[3].PhaseMountedTo = v112
+        v2[1][3]("32-auto-place-pets")
+        v112 = v1:vf({v59, v16, v39, v77, v76, v4, v34, v38})
+        v4[3].PlaceBestPets = v112
+        v111 = v1:Wb({v4, zb2, ba2, v77, v76, v68})
+        task.spawn(v111)
+        v112 = CFrame.new(388.60022, 40328.2148, 752.438721, 0.994453132, 1.98315195e-8, 0.105180927, -3.07236547e-8, 1, 1.01935925e-7, -0.105180927, -1.04602044e-7, 0.994453132)
+        v4[3].FuseMachineCFrame = v112
+        v112 = {[1] = 3, [3] = v112}
+        v112[2] = v112
+        v112[3] = v1:Te()
+        v111 = {[1] = 3, [3] = 388.60022}
+        v111[2] = v111
+        v111[3] = v1:je()
+        v113 = {[1] = 3, [3] = 40328.2148}
+        v113[2] = v113
+        v113[3] = v1:Ah({v111, v105, v4})
+        v115 = {[1] = 3, [3] = 752.438721}
+        v115[2] = v115
+        v115[3] = v1:Gh({v57, v4, v112, v111, v16})
+        v117 = {[1] = 3, [3] = 0.994453132}
+        v117[2] = v117
+        v117[3] = v1:bh({v16})
+        v118 = {[1] = 3, [3] = 1.98315195e-8}
+        v118[2] = v118
+        v119, v118[3] = {}, v1:ie({v16})
+        v116 = {[1] = 3, [3] = v119}
+        v116[2] = v116
+        v119 = {[1] = 3, [3] = 0}
+        v119[2] = v119
+        v121 = v1:Ic({v79, v115, v117, v116, v118})
+        v120 = v4[3].TaskNeeds
+        v120.Fuse = v121
+        v120 = {[1] = 3, [3] = v120}
+        v120[2] = v120
+        v122, v120[3] = task, v1:Cg({v105, v116, v118, v117, v16, v10, v119, v115, v79, v4, v113})
+        v121, v122 = v122.spawn, v1:Af({v4, v120, v79})
+        v121(v122)
+        v111 = v1:Qb({v80, v16})
+        v112 = v4[3].TaskNeeds
+        v112.FuseClaim = v111
+        v112 = {[1] = 3, [3] = v112}
+        v112[2] = v112
+        v112[3], v113 = v1:Ih({v4, v16, v10}), task
+        v113, v111 = v1:Ra({v4, v112, v80}), v113.spawn
+        v111(v113)
+        v4[3].HatchLuckState = {LastSentAt = 0, LastLevel = nil, Mode = "Off"}
+        v112 = v1:Rg()
+        v4[3].parsePriceText = v112
+        v112 = {[1] = 3, [3] = nil}
+        v112[2] = v112
+        v111 = {[1] = 3, [3] = nil}
+        v111[2] = v111
+        v113 = v1:ag({v16, v4, v111, v112, v10})
+        v4[3].hatchLuckNextPrice = v113
+        v2[1][3]("33-hatch-luck-runtime")
+        v113 = v1:Yg({v35, v101, v4})
+        v4[3].SafeHatchUpgrade = v113
+        task.spawn(v1:Kd({v4, v71, v70}))
+        v112 = v1:Ge({v32, v34, v16, v25, v17, v19})
+        v4[3].CanRebirth = v112
+        task.spawn(v1:xb({v4, v10, v72}))
+        v112 = v1:pi({v33, v21, v20})
+        v4[3].CanClaimIndexReward = v112
+        v111 = v1:ea({v4, v40, v73})
+        task.spawn(v111)
+        v111 = v1:yg({v10, v16})
+        task.spawn(v111)
+        v112 = CFrame.new(-4917.03369, 41286.2031, -3704.17529, -0.76919955, 5.31099609e-8, 0.639008641, 1.79985058e-8, 1, -6.14475582e-8, -0.639008641, -3.57642307e-8, -0.76919955)
+        v4[3].VOLCANO_1_CFRAME = v112
+        v112 = CFrame.new(-4974.02295, 41275.0195, -3647.97583, -0.736429989, 5.97274452e-9, 0.676513731, 3.34177592e-8, 1, 2.75487313e-8, -0.676513731, 4.28952873e-8, -0.736429989)
+        v4[3].VOLCANO_2_CFRAME = v112
+        v112 = CFrame.new(-5078.99951, 41557.7578, -3470.83325, -0.957514703, -8.63799983e-8, 0.288384527, 0.000290492084, 0.999999464, 0.000964811828, -0.288384378, 0.00100759498, -0.957514226)
+        v4[3].LAVA_CFRAME = v112
+        v4[3].FarmHover = nil
+        v2[1][3]("34-farm-hover-controls")
+        v112 = v1:bc({v4})
+        v4[3].StopFarmHover = v112
+        v112 = v1:_b({v4, v9, v59})
+        v4[3].StartFarmHover = v112
+        v2[1][3]("35-basket-pickup-helpers")
+        v112 = v1:Ed({v16})
+        v4[3].WaitForEggBasket = v112
+        v112 = v1:Pc({v4, v89})
+        v4[3].PickupAndConfirm = v112
+        v112 = v1:di({v16})
+        v4[3].ReadCarriedEggTimer = v112
+        v112 = v1:ae({v4, v59})
+        v4[3].WaitInitialCarryTimer = v112
+        v112 = v1:hi({v16})
+        v4[3].HasCarriedEgg = v112
+        v112 = v1:Ye({v60, v59, net, v89, v16, v4})
+        v4[3].DoVerifiedVolcanoDip = v112
+        v112 = v1:if_()
+        v4[3].DeliveryLocationKey = v112
+        v112 = v1:uc({v4})
+        v4[3].EffectiveMountedSpeed = v112
+        v112 = v1:Th({v4})
+        v4[3].PredictDeliveryWait = v112
+        v112 = v1:Ki({v4, v89, v59})
+        v4[3].WaitPickupStopwatch = v112
+        v112 = v1:mb({v30})
+        v4[3].InventoryEggType = v112
+        v112 = v1:gg({v16})
+        v4[3].InventoryEggContainers = v112
+        v112 = v1:Ca({v4})
+        v4[3].CountInventoryEgg = v112
+        v112 = v1:Fh({v4, v16})
+        v4[3].IsEggBreakWarningActive = v112
+        v112 = v1:hh({v16})
+        v4[3].VisibleDeliveryFailureNotices = v112
+        v112 = v1:Gf({v4})
+        v4[3].RejectedEggReturned = v112
+        v112 = v1:ld({v4})
+        v4[3].BeginRanchReceiptWatch = v112
+        v112 = v1:Fb({v4})
+        v4[3].InstantTeleportTo = v112
+        v112 = v1:ab({v4, v59})
+        v4[3].WaitSavedDropArrival = v112
+        v2[1][3]("36-ranch-delivery-helpers")
+        v112 = v1:bg({v4, v59})
+        v4[3].ConfirmRanchDelivery = v112
+        v112 = v1:ia({v4})
+        v4[3].RecordDeliveredEgg = v112
+        v111 = v10[3]
+        v112 = v10[3].WaitForChild(v111, "Remotes"):WaitForChild("Game"):WaitForChild("BasketDrop")
+        v4[3].BasketDrop = v112
+        v4[3].OutsideHeight = 5
+        v4[3].OutsideExtra = 30
+        v112 = v1:Hd({v4})
+        v4[3].TeleportOutsidePlot = v112
+        v112 = v1:Nh({v4})
+        v4[3].FireBasketDrop = v112
+        v112 = v1:Ee({v15})
+        v4[3].WaitForBasketEmpty = v112
+        v112 = v1:Jf({v4})
+        v4[3].FindDroppedEgg = v112
+        v112 = v1:vc({v4, v59, v89, v15})
+        v4[3].DropAndRepickup = v112
+        v112 = v1:Lf({v4})
+        v4[3].IsInsideOwnPlotPosition = v112
+        v112 = CFrame.new(-4857.66064, 40967.8125, -3838.27417)
+        v4[3].InstantDropCFrame = v112
+        v4[3].InstantOutsidePOVGap = 25
+        v4[3].InstantOutsidePOVHeight = 4
+        v112 = v1:Kc({v4})
+        v4[3].GetInstantOutsideRanchPOV = v112
+        v4[3].InstantHomeReturnArmed = false
+        v4[3].InstantDeliveryConfirmed = false
+        v112 = v1:gf({v4, v16})
+        v4[3].IsAtInstantRanchCenter = v112
+        v4[3].InstantCameraProxy = nil
+        v4[3].InstantVisualEgg = nil
+        v112 = v1:pe({v4, v16, v9})
+        v4[3].StopInstantCameraProxy = v112
+        v4[3].InstantRecoveryPending = false
+        v4[3].InstantCancelEpoch = 0
+        v4[3].InstantCycleEpoch = 0
+        v4[3].InstantExpectedBasketClear = nil
+        v4[3].InstantEmergencyReason = nil
+        v2[1][3]("37-instant-pickup-helpers")
+        v112 = v1:Fd({v4})
+        v4[3].InstantCycleCancelled = v112
+        v112 = v1:Ua({v4, v16, v89})
+        v4[3].InstantEmergencyRanchReturn = v112
+        v112 = v1:ze({v4, v9, v16, v15})
+        v4[3].StartInstantCameraProxy = v112
+        v112 = v1:Fc({v4})
+        v4[3].InstantPOVReady = v112
+        v112 = v1:na({v4})
+        v4[3].SafeInstantPOVExit = v112
+        v112 = v1:ke({v4})
+        v4[3].MoveInstantCameraProxy = v112
+        v112 = setmetatable({}, {__mode = "k"})
+        v4[3].InstantWatchedBaskets = v112
+        v112 = v1:bd({v4})
+        v4[3].WatchInstantManualBasketDrop = v112
+        v111 = v16[3]
+        v112 = v16[3].FindFirstChild(v111, "Basket")
+        if v112 then
+            v4[3].WatchInstantManualBasketDrop(v112)
+        end
+        v111 = v4[3].Bind
+        v115 = v1:G({v4})
+        v111(v16[3].ChildAdded, v115)
+        v4[3].InstantPairTiming = {
+            PreHomeSettle = 0.34,
+            NotBefore = 0,
+            LastHomeAt = nil,
+            LastPickupAt = nil,
+            Attempts = 0,
+        }
+        v111 = v1:Db({v4, v35, v59})
+        v4[3].InstantPickupRequest = v111
+        v111 = v1:Qd({v4, v89, v16})
+        v4[3].InstantAwaitDelivery = v111
+        v2[1][3]("38-instant-pair-and-verify")
+        v111 = v1:te({v4, v16})
+        v4[3].InstantPairAndVerify = v111
+        v111 = v1:Bd({v4, v89, v59})
+        v4[3].InstantWorldPickupAndHome = v111
+        v111 = v1:Hg({v4, v60, v59, v9, v89})
+        v4[3].InstantDropAndPair = v111
+        v111 = v1:Ya({v4, v16, v59, v89, v60})
+        v4[3].FinishNewInstantEgg = v111
+        v111 = v1:Sf({v4, v16, v89, v59, v60})
+        v4[3].FinishEggInternal = v111
+        v2[1][3]("39-egg-delivery-finishing")
+        v111 = v1:nd({v4, v89})
+        v4[3].FinishEgg = v111
+        v111 = v1:Li({v4, v89, v59})
+        v4[3].CompleteVolcanicLairExit = v111
+        v113 = v1:Ag({v4, v30, v60, v16, v89, v59})
+        task.spawn(v113)
+        v113 = {}
+        v117 = Enum.HumanoidStateType.Ragdoll
+        v116 = Enum.HumanoidStateType
+        v113[1], v113[2], v113[3] = Enum.HumanoidStateType.FallingDown, v117, v116.PlatformStanding
+        v4[3].NoFallStates = v113
+        v113 = v9[3].Heartbeat
+        v4[3].Bind(v113, v1:Eh({v59, v16, v4}))
+        if v78[3] and type(v86[3]) == "function" then
+            task.spawn(v86[3])
+        end
+        v2[1][3]("40-egg-tracker-runtime")
+        v111 = v1:ih({v4, v110, v59, v30, v16, v10, cb2})
+        v4[3].StartTracker = v111
+        v4[3].StartTracker()
+        v2[1][3]("41-lifecycle-cleanup")
+        v111 = v1:ve({
+            v81,
+            v68,
+            v83,
+            v79,
+            v60,
+            v59,
+            v77,
+            v76,
+            v85,
+            v4,
+            v72,
+            v78,
+            v67,
+            v80,
+            v84,
+            v66,
+            v71,
+            v65,
+            v73,
+            v69,
+            v74,
+            v70,
+            v75,
+        })
+        v4[3].StopFeatures = v111
+        v2[1][3]("42-register-runtime")
+        v115 = {}
+        v111 = v2[3][3]
+        v115.Stop = v4[3].StopFeatures
+        v115.Runtime = v4[3]
+        v111.REZEHUB_RAP_V8_FEATURES = v115
+        task.spawn(v1:Mh({v4}))
+        if v16[3].OnTeleport then
+            v115 = v1:cb({v4})
+            v4[3].Bind(v16[3].OnTeleport, v115)
+        end
+        v4[3].addLabel("SETTINGS", "Config", type(writefile) == "function" and type(readfile) == "function" and "Auto-saved. Reset clears settings and rejoins." or "Auto-save requires executor file support.")
+        v118 = v1:Lg({v42, v16, zb2, v43, v4})
+        v4[3].addButton("SETTINGS", "Config", "Reset Config", v118)
+        v2[1][3]("43-finish-feature-ui")
+        v4[3].UIBuildComplete = true
+        print("[REZEHUB] Loaded")
+    end
+end
+local function _w884(v1, v2)
+    return function(v3)
+        local v4, v5
+        if not v3 then
+            return nil
+        else
+            v4 = v3:GetAttribute("Weight")
+            if v4 == nil then
+                v5 = v3:FindFirstChild("Weight")
+                if v5 and v5:IsA("ValueBase") then
+                    v4 = v5.Value
+                end
+            end
+            v5 = v2[1][3].ParseKG
+            v5 = table.pack(v5(v4))
+            return table.unpack(v5, 1, v5.n)
+        end
+    end
+end
+local function _w885(v1, v2)
+    return function(v3)
+        local v4, v5, v6, v7, v8, v9, v10, v11, v12, eggData2, v13, v14
+        if not v3 then
+            return false
+        else
+            v2[1][3].TryTransferVerifiedWorldDipToCarry(v3)
+            v12 = tostring(v3.Name)
+            v5 = v2[1][3].CarryCapture and v2[1][3].CarryCapture[v3]
+            if v2[1][3].VolcanoDippedCarryUIDs[v12] or v5 then
+                return true
+            else
+                v14 = {}
+                eggData2 = v3:FindFirstChild("EggData")
+                v13 = v3.FindFirstChild
+                v13 = v1.h(v13(v3, "Handle"))
+                v14[1], v14[2] = v3, eggData2
+                v1.j(v14, 3, v1.i(v13))
+                v7, v4, v6 = ipairs(v14)
+                v7, v4, v6 = v1.g(v7, v4, v6)
+                v14, v9 = v7(v4, v6)
+                v6 = v14
+                if v6 ~= nil then
+                    local __cont2 = false
+                    while true do
+                        if not v9 then
+                            v14, v9 = v7(v4, v6)
+                            v6 = v14
+                            if v6 ~= nil then
+                                continue
+                            end
+                            return false
+                        end
+                        v11 = {}
+                        v11[1], v11[2], v11[3], v11[4] = "Mutation", "SpawnMutation", "SpawnTrait", "Trait"
+                        eggData2, v13, v8 = ipairs(v11)
+                        eggData2, v13, v8 = v1.g(eggData2, v13, v8)
+                        v11, v10 = eggData2(v13, v8)
+                        v8 = v11
+                        if v8 == nil then
+                            v14, v9 = v7(v4, v6)
+                            v6 = v14
+                            if v6 ~= nil then
+                                continue
+                            end
+                            return false
+                        end
+                        while true do
+                            if not tostring(v9:GetAttribute(v10) or ""):find("Magma", 1, true) then
+                                v11, v10 = eggData2(v13, v8)
+                                v8 = v11
+                                if v8 == nil then
+                                    v14, v9 = v7(v4, v6)
+                                    v6 = v14
+                                    if v6 ~= nil then
+                                        __cont2 = true
+                                        break
+                                    end
+                                    return false
+                                else
+                                    continue
+                                end
+                            end
+                            break
+                        end
+                        if __cont2 then
+                            __cont2 = false
+                            continue
+                        end
+                        break
+                    end
+                    return true
+                end
+                return false
+            end
+        end
+    end
+end
+local function _w886(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        local v4, v5
+        v4, v3, v5 = true, v2[2][3], v3.unbindInventoryESPCard
+        v5(v3, true)
+    end
+end
+local function _w887(v1, v2)
+    return function(v3)
+        v3 = {[1] = 3, [3] = v3}
+        v3[2] = v3
+        local v4 = not v2[1][3].Alive or not v3[3]
+        local v5
+        if not v4 then
+            v5 = v3[3]
+            v4 = not v3[3].IsA(v5, "Tool")
+        end
+        local v6
+        if not v4 then
+            v6 = v1:Jq({v2[1], v3})
+            task.defer(v6)
+            return
+        end
+    end
+end
+local function _w888(v1, v2)
+    return function()
+        v2[1][3].Enabled = false
+    end
+end
+local function _w889(v1, v2)
+    return function()
+        local v3 = v2[3][3]
+        v2[1][3]:TeleportToPlaceInstance(game.PlaceId, v3.id, v2[2][3])
+    end
+end
+local function _w890(v1, v2)
+    return function()
+        local v3, v4, v5
+        v3, v4, v5 = pairs(v2[1][3])
+        v3, v4, v5 = v1.g(v3, v4, v5)
+        local v6, v7
+        v6, v7 = v3(v4, v5)
+        if v6 ~= nil then
+            while true do
+                if v6 and v6.Parent then
+                    v6.CanCollide = v7
+                end
+                v2[1][3][v6] = nil
+                v6, v7 = v3(v4, v5)
+                v5 = v6
+                if v5 == nil then
+                    break
+                end
+            end
+        end
+    end
+end
+local function _w891(v1, v2)
+    return function(v3, v4, v5, v6)
+        v4 = {[1] = 3, [3] = v4}
+        v4[2] = v4
+        local v7 = {
+            ["Sell Pets"] = "Auto Sell Off",
+            ["Feed Pets"] = "Auto Feed Off",
+            ["Pets Fusion"] = "Auto Fuse Off",
+            ["Favorite Pets"] = "Auto Favorite Off",
+        }
+        local v8 = {}
+        local v9 = {
+            ["Sell Pets"] = "🟡 Selling matching pets",
+            ["Feed Pets"] = "🟡 Checking active pets",
+            ["Pets Fusion"] = "🟡 Fusing matching pets",
+            ["Favorite Pets"] = "🟡 Favoriting matching pets",
+        }
+        v8.Sell = v2[10][3]
+        v8.Feed = v2[6][3]
+        v8.Fusion = v2[5][3]
+        v8.Favorite = v2[4][3]
+        local v10, v11, v12
+        v10, v12, v11, v8 = v8[v4[3]], v3, v2[2][3].addLabel, "PETS"
+        if v10 then
+            v10 = v9[v3]
+        end
+        if not v10 then
+            v10 = "🔴 " .. (v7[v3] or v3 .. " Off")
+        end
+        v11 = v11("PETS", v12, v10)
+        v12 = v2[2][3]
+        local v13
+        v10, v13, v8, v12 = v3, ({
+            ["Sell Pets"] = "Sell matching inventory pets.",
+            ["Feed Pets"] = "Feed active hungry pets.",
+            ["Pets Fusion"] = "Fuse matching eligible pets.",
+            ["Favorite Pets"] = "Favorite matching inventory pets.",
+        })[v3], v12.addLabel, "PETS"
+        if not v13 then
+            v13 = "Manage matching pets."
+        end
+        v8("PETS", v10, v13)
+        if v4[3] == "Feed" then
+            v2[2][3].addDecoratedMulti("PETS", v3, "FeedFoods", "Food", "FeedFoods", v2[2][3].FeedFoodOptions(), v1:an({v2[2]}))
+        end
+        v2[2][3].addDecoratedMulti("PETS", v3, v4[3] .. "Rarity", "Rarity", v6, v2[2][3].rarityOptions(), v1:dn())
+        local v14, v15, v16
+        v13 = v4[3] .. "Names"
+        v2[2][3].addDecoratedMulti("PETS", v3, v13, "Category", v5, v4[3] == "Fusion" and v2[2][3].petCategoryOptionsForFuse() or v2[2][3].petCategoryOptions(), v1:cn({v4, v2[7], v2[3], v2[8]}))
+        v8 = v2[2][3].addDecoratedMulti
+        v13 = v4[3] .. "Mutation"
+        local v17
+        v14 = v1:en()
+        v17 = v2[9][3]
+        v8("PETS", v3, v13, "Mutation", v4[3] .. "Mutations", v17, v14)
+        v13 = v4[3] .. "Trait"
+        v16 = v4[3] .. "Traits"
+        v17 = v2[1][3]
+        v2[2][3].addDecoratedMulti("PETS", v3, v13, "Trait", v16, v17, v1:_n())
+        v8 = v2[2][3].addKGControls
+        v13 = v4[3]
+        v15 = v4[3] .. "KGRule"
+        v17 = v1:bn()
+        v8("PETS", v3, v13, v15, v4[3] .. "KGThreshold", v17)
+        return v11
+    end
+end
+local function _w892(v1, v2)
+    return function()
+        if v2[1][3].FPSState.Original.GlobalShadows ~= nil then
+            pcall(v1:po({v2[2], v2[1]}))
+        end
+        if v2[1][3].FPSState.Original.FogEnd ~= nil then
+            pcall(v1:ro({v2[2], v2[1]}))
+        end
+        if v2[1][3].FPSState.Original.ShadowSoftness ~= nil then
+            pcall(v1:wo({v2[2], v2[1]}))
+        end
+        if v2[1][3].FPSState.Original.QualityLevel ~= nil then
+            pcall(v1:yo({v2[1]}))
+        end
+        if v2[1][3].FPSState.Original.MeshPartDetailLevel ~= nil then
+            pcall(v1:so({v2[1]}))
+        end
+        if v2[1][3].FPSState.Original.LightingTechnology ~= nil then
+            pcall(v1:to({v2[2], v2[1]}))
+        end
+        local v3 = workspace
+        local v4
+        v3, v4 = v3.FindFirstChildOfClass, v3
+        v3 = {[1] = 3, [3] = v3(v4, "Terrain")}
+        v3[2] = v3
+        if v3[3] then
+            if v2[1][3].FPSState.Original.WaterWaveSize ~= nil then
+                pcall(v1:xo({v3, v2[1]}))
+            end
+            if v2[1][3].FPSState.Original.WaterWaveSpeed ~= nil then
+                pcall(v1:uo({v3, v2[1]}))
+            end
+            if v2[1][3].FPSState.Original.WaterReflectance ~= nil then
+                pcall(v1:zo({v3, v2[1]}))
+            end
+            if v2[1][3].FPSState.Original.WaterTransparency ~= nil then
+                pcall(v1:vo({v3, v2[1]}))
+            end
+            if v2[1][3].FPSState.Original.TerrainDecoration ~= nil then
+                pcall(v1:qo({v3, v2[1]}))
+            end
+        end
+    end
+end
+local function _w893(v1, v2)
+    return function()
+        if v2[1][3]:IsA("RemoteEvent") then
+            v2[1][3]:FireServer(v2[2][3])
+        else
+            v2[1][3]:IsA("RemoteFunction")
+            error("INVALID_REMOTE_CLASS")
+        end
+    end
+end
+local function _w894(v1, v2)
+    return function(v3)
+        v2[1][3] = v3
+    end
+end
+local function _w895(v1, v2)
+    return function()
+        v2[1][3].setInventoryESPEnabled(false)
+    end
+end
+local function _w896(v1, v2)
+    return function(v3)
+        if v2[1][3].ActiveESP[v3] then
+            v2[1][3].ActiveESP[v3].Billboard:Destroy()
+            v2[1][3].ActiveESP[v3] = nil
+        end
+    end
+end
+local function _w898(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        local v4 = v2[2][3]
+        v3.ClockTime = v4.ShaderOriginal.ClockTime
+        v3.Brightness = v4.ShaderOriginal.Brightness
+        v3.Ambient = v4.ShaderOriginal.Ambient
+        v3.OutdoorAmbient = v4.ShaderOriginal.OutdoorAmbient
+        v3.FogEnd = v4.ShaderOriginal.FogEnd
+    end
+end
+local function _w899(v1, v2)
+    return function(v3)
+        local v4, v5, v6
+        if not (not v3.Parent or not v2[1][3](v3) or v3 == v2[3][3]) then
+            v4 = v3.Parent
+            while v4 do
+                if not (v4.Name == "REZESessionOverviewGrid" or v4.Name == "REZELiveStatsGrid") then
+                    v4:IsA("ScreenGui")
+                    v4 = v4.Parent
+                    continue
+                end
+                return
+            end
+            v5 = Enum.Font.Code
+            if v3.Font ~= v5 then
+                v3.Font = Enum.Font.Code
+            end
+            v6 = tostring(v3.Text or "")
+            if (v6:find("<b>", 1, true) or v6:find("<font", 1, true)) and not v3.RichText then
+                v3.RichText = true
+            end
+            v5 = v2[2][3][v6] and 16 or 14
+            if v3:IsA("TextBox") then
+                v5 = math.max(v5, 15)
+            end
+            if (v3.TextSize or 0) < v5 then
+                v3.TextSize = v5
+            end
+            return
+        end
+    end
+end
+local function _w900(v1, v2)
+    return function(v3)
+        local v4 = v2[1][3]
+        local v5 = v4.ParseKG
+        local v6, v7, v8, v9, v10
+        v8, v4, v6, v7, v9, v10 = "KG", v4.WebhookPetAttribute, "Weight", {}, v3, "BaseWeight"
+        v7[1], v7[2], v7[3] = "Weight", "KG", "BaseWeight"
+        v4 = v1.h(v4(v9, v7))
+        v5 = v5(v1.i(v4))
+        v4 = v5
+        if v5 then
+            v4 = string.format("%.2f KG", v5)
+        end
+        if not v4 then
+            v4 = "Unknown"
+        end
+        return v4
+    end
+end
+local function _w901(v1, v2)
+    return function(autoExecute)
+        local v3
+        v3, autoExecute = v2[1][3], autoExecute == true
+        v3.AutoExecute = autoExecute
+        v2[2][3].SaveConfig()
+        local v4
+        if autoExecute then
+            v4 = v2[2][3]
+            v4.QueueAutoExecute()
+            v4.InstallAutoExecute()
+        else
+            v2[2][3].RemoveAutoExecute()
+        end
+        v3 = v2[2][3].AutoExecuteStatus
+        v3 = table.pack(v3())
+        return table.unpack(v3, 1, v3.n)
+    end
+end
+local function _w902(v1)
+    return function(v2, v3)
+        local v4
+        v2, v4 = tonumber(v2), nil
+        local v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15
+        if v2 == nil then
+            return "syncing"
+        elseif math.abs(v2) == math.huge then
+            return "syncing"
+        else
+            v4 = math.clamp(tonumber(v3) or 2, 0, 4)
+            v12 = {}
+            v14 = {}
+            v14[1], v14[2] = 1000000000000000000, "Qi"
+            v10 = {}
+            v10[1], v10[2] = 1000000000000000, "Qa"
+            v11 = {}
+            v11[1], v11[2] = 1000000000000, "T"
+            v7 = {}
+            v7[1], v7[2] = 1000000000, "B"
+            v8 = {}
+            v8[1], v8[2] = 1000000, "M"
+            v5 = {}
+            v5[1], v5[2] = 1000, "K"
+            v12[1], v12[2], v12[3], v12[4], v12[5], v12[6] = v14, v10, v11, v7, v8, v5
+            v13, v15, v6 = ipairs(v12)
+            v13, v15, v6 = v1.g(v13, v15, v6)
+            v12, v9 = v13(v15, v6)
+            v6 = v12
+            if v6 ~= nil then
+                while true do
+                    if math.abs(v2) < v9[1] then
+                        v12, v9 = v13(v15, v6)
+                        v6 = v12
+                        if v6 ~= nil then
+                            continue
+                        end
+                        v13 = string.format("%." .. v4 .. "f", v2):gsub("0+$", "")
+                        v6, v13, v12, v15 = "%.$", v13.gsub, "", v13
+                        return v13(v15, "%.$", "")
+                    end
+                    break
+                end
+                v7 = v2 / v9[1]
+                v10 = string.format("%." .. v4 .. "f", v7):gsub("0+$", "")
+                v11, v7, v10, v8 = v10, "%.$", v10.gsub, ""
+                return v10(v11, "%.$", "") .. v9[2]
+            end
+        end
+    end
+end
+local function _w903(v1, v2)
+    return function()
+        v2[1][3]:UnequipTools()
+    end
+end
+local function _w904(v1, v2)
+    return function()
+        local v3
+        if not v2[1][3].ScrollRefreshQueued then
+            v2[1][3].ScrollRefreshQueued = true
+            v3 = v1:Si({v2[1], v2[3], v2[2]})
+            task.delay(0.035, v3)
+        end
+    end
+end
+local function _w905(v1, v2)
+    return function()
+        v2[1][3]:Destroy()
+    end
+end
+local function _w906(v1, v2)
+    return function(shopStockData)
+        local v3
+        if not (type(shopStockData) ~= "table") then
+            v3 = v2[1][3]
+            v3.ShopStockData = shopStockData
+            v3.ShopStockReady = true
+        end
+    end
+end
+local function _w907(v1, v2)
+    return function()
+        local v3, v4, v5, v6, v7, v8, v9
+        if v2[1][3] then
+            v5 = v2[2][3].GetMyPlot()
+            v7 = v5 and v5:FindFirstChild("Eggs")
+            if v7 then
+                v3 = v7.GetChildren
+                v3 = v1.h(v3(v7))
+                v9, v3, v8 = ipairs(v1.i(v3))
+                v9, v3, v8 = v1.g(v9, v3, v8)
+                v4, v6 = v9(v3, v8)
+                v8 = v4
+                if v8 ~= nil then
+                    while true do
+                        if not (v2[2][3].IsEggMatchingHatchFilter(v6) and v2[2][3].IsEggReadyToHatch(v6)) then
+                            v4, v6 = v9(v3, v8)
+                            v8 = v4
+                            if v8 ~= nil then
+                                continue
+                            end
+                            return false
+                        end
+                        break
+                    end
+                    return true
+                end
+            end
+        end
+        return false
+    end
+end
+local function _w908(v1, v2)
+    return function()
+        local v3 = v2[2][3]
+        if v2[1][3].EventScanCamera == v3 then
+            v2[1][3].StopHalloweenScanCamera()
+        end
+        if v2[1][3].EventScanReplica then
+            pcall(v1:Wk({v2[1]}))
+            v2[1][3].EventScanReplica = nil
+        end
+        local v4
+        if v2[1][3].EventScanPetReplica then
+            pcall(v1:Vk({v2[1]}))
+            v4 = v2[1][3]
+            v4.EventScanPetReplica = nil
+            v4.EventScanPetSource = nil
+        end
+    end
+end
+local function _w909(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        local v4, v5
+        v3, v5, v4 = v2[3][3], nil, v3.CardCache
+        v4[v3] = nil
+        if v2[1][3].CardUpdateQueued == nil then
+            v2[1][3].CardUpdateQueued = setmetatable({}, {__mode = "k"})
+        end
+        v5 = v2[3][3]
+        if not v2[1][3].CardUpdateQueued[v5] then
+            v3 = v2[3][3]
+            v2[1][3].CardUpdateQueued[v3] = true
+            task.defer(v1:aj({v2[1], v2[2], v2[3], v2[4]}))
+        end
+    end
+end
+local function _w910(v1, v2)
+    return function()
+        local v3, v4, v5
+        if not v2[1][3] or v2[3][3]() then
+            return false
+        else
+            v4 = v2[5][3]()
+            v3 = 0
+            v5 = 1
+            while true do
+                if not v4[v5] then
+                    v3 = v3 + 1
+                end
+                v5 = v5 + 1
+                if v5 > 4 then
+                    break
+                end
+            end
+            if v3 == 0 then
+                v5 = 1
+                while true do
+                    if v2[4][3][v5] then
+                        v5 = v5 + 1
+                        if v5 <= 4 then
+                            continue
+                        end
+                        return true
+                    end
+                    break
+                end
+                return false
+            else
+                return #v2[2][3]() >= v3
+            end
+        end
+    end
+end
+local function _w911(v1, v2)
+    return function()
+        local v3 = v2[2][3].ShadowSoftness
+        v2[1][3].FPSState.Original.ShadowSoftness = v3
+    end
+end
+local function _w912(v1, v2)
+    return function(v3)
+        local v4, v5, v6, v7, v8, v9, v10, v11
+        if v2[1][3].PickupMode == "Instant" then
+            return false
+        elseif not (v2[1][3].AutoDropEgg and v2[1][3].DropSafezoneActive) then
+            return false
+        else
+            v11 = v2[1][3].SavedDropPosition
+            v6 = v3 and v2[1][3].GetEggPart(v3)
+            if not (v6 and type(v11) == "table") then
+                return false
+            else
+                v10 = v6.Position
+                v8, v9, v10 = v11.X, v10.X, tonumber
+                v10 = v10(v8) or math.huge
+                v7 = v9 - v10
+                v5 = v11.Z
+                v9 = v6.Position.Z - (tonumber(v5) or math.huge)
+                v4 = v2[1][3]
+                return v7 * v7 + v9 * v9 <= v4.DropSafezoneRadius * v4.DropSafezoneRadius
+            end
+        end
+    end
+end
+local function _w913(v1, v2)
+    return function(v3, v4)
+        local ritualView4 = v2[1][3]:FindFirstChild("RitualView")
+        local v5 = v2[3][3](v3)
+        local v6 = v2[2][3]()
+        local v7 = v5
+        if v5 then
+            v7 = v6
+        end
+        local v8
+        if v7 then
+            v8 = (v6.Position - v5).Magnitude * 10
+            v7 = math.floor(v8 + 0.5) / 10
+        end
+        if not v7 then
+            v7 = "?"
+        end
+        local v9 = string.format
+        local v10 = tostring(v4)
+        local v11 = tostring(v3.ActionText)
+        local v12 = ritualView4
+        if ritualView4 then
+            v12 = ritualView4:GetAttribute("Phase")
+        end
+        local v13 = tostring(v12)
+        local getAttribute2 = v3.GetAttribute
+        getAttribute2 = v1.h(getAttribute2(v3, "RitualAvailable"))
+        v12 = tostring(v1.i(getAttribute2))
+        getAttribute2 = tostring(v3.Enabled)
+        local getAttribute3 = v3.GetAttribute
+        getAttribute3 = v1.h(getAttribute3(v3, "RitualSuppressed"))
+        local v14 = tostring(v1.i(getAttribute3))
+        getAttribute3 = tostring(v2[4][3].IsFastRideMounted and v2[4][3].IsFastRideMounted())
+        local v15 = tostring(v7)
+        v9 = table.pack(v9("%s action=%s phase=%s available=%s enabled=%s suppressed=%s mounted=%s distance=%s maxRange=%s", v10, v11, v13, v12, getAttribute2, v14, getAttribute3, v15, tostring(nil)))
+        return table.unpack(v9, 1, v9.n)
+    end
+end
+local function _w914(v1, v2)
+    return function()
+        v2[1][3].EnsureFolders()
+        local v3 = isfile
+        if isfile then
+            v3 = readfile
+        end
+        if v3 then
+            v3 = isfile(v2[3][3])
+        end
+        local v4, v5, v6, v7, v8, v9
+        if v3 then
+            v3, v8 = pcall(v1:wn({v2[2], v2[3]}))
+            if v3 and type(v8) == "table" then
+                v4, v9, v7 = pairs(v8)
+                v4, v9, v7 = v1.g(v4, v9, v7)
+                v5, v6 = v4(v9, v7)
+                v7 = v5
+                if v7 ~= nil then
+                    while true do
+                        v2[4][3][v5] = v6
+                        v5, v6 = v4(v9, v7)
+                        v7 = v5
+                        if v7 == nil then
+                            break
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+local function _w915(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        local v4
+        v4, v3 = v3, v3.GetScale
+        v3 = table.pack(v3(v4))
+        return table.unpack(v3, 1, v3.n)
+    end
+end
+local function _w916(v1, v2)
+    return function(v3)
+        local n
+        local v4, v5, v6, v7, v8
+        if not (v2[1][3] or v2[6][3].DynamicDropdownIsRefreshing) then
+            v8 = {}
+            v6 = v2[6][3].normalizeSelection
+            v6 = v1.h(v6(v3))
+            v7, v6, v4 = ipairs(v1.i(v6))
+            v7, v6, v4 = v1.g(v7, v6, v4)
+            for v9, n in v7, v6, v4 do
+                v5 = v2[5][3].ToName[n]
+                if v5 then
+                    v8[#v8 + 1] = v5
+                end
+            end
+            v6 = v2[2][3]
+            v2[4][3][v6] = v8
+            v2[3][3](v8)
+            v2[6][3].SaveConfig()
+            return
+        end
+    end
+end
+local function _w917(v1, v2)
+    return function()
+        local v3 = v2[1][3].REZETitleLabel
+        local v4 = v3
+        if v3 then
+            v4 = v3:FindFirstAncestorOfClass("ScreenGui")
+        end
+        local v5, v6, v7, v8, v9, v10, REZEDiscordFooterClick, v11, v12, v13, v14, v15
+        if v4 then
+            v6 = v4.GetDescendants
+            v6 = v1.h(v6(v4))
+            v15, v6, v5 = ipairs(v1.i(v6))
+            v15, v6, v5 = v1.g(v15, v6, v5)
+            v8, v7 = v15(v6, v5)
+            v5 = v8
+            if v5 ~= nil then
+                while true do
+                    if not (v7:IsA("TextLabel") or v7:IsA("TextButton")) then
+                        v8, v7 = v15(v6, v5)
+                        v5 = v8
+                        if v5 ~= nil then
+                            continue
+                        end
+                        return false
+                    end
+                    v13 = tostring(v7.Text or "")
+                    v12 = v13:find("RIDE A PET", 1, true) and v13:find("V12", 1, true)
+                    v9 = v13:find("discord.gg/CHpZkDtmPe", 1, true) ~= nil
+                    if not (v12 or v9) then
+                        v8, v7 = v15(v6, v5)
+                        v5 = v8
+                        if v5 ~= nil then
+                            continue
+                        end
+                        return false
+                    end
+                    break
+                end
+                v7.Text = "discord.gg/CHpZkDtmPe"
+                v7.RichText = false
+                v7.TextColor3 = Color3.fromRGB(70, 155, 255)
+                v7.Font = Enum.Font.Code
+                v7.TextSize = 14
+                v14 = v7.FindFirstChild
+                v11 = v1:E()
+                v14 = v14(v7, "REZEDiscordFooterClick")
+                if not v14 then
+                    REZEDiscordFooterClick = Instance.new("TextButton")
+                    REZEDiscordFooterClick.Name = "REZEDiscordFooterClick"
+                    REZEDiscordFooterClick.BackgroundTransparency = 1
+                    REZEDiscordFooterClick.Text = ""
+                    REZEDiscordFooterClick.AutoButtonColor = false
+                    REZEDiscordFooterClick.BorderSizePixel = 0
+                    REZEDiscordFooterClick.Size = UDim2.fromScale(1, 1)
+                    REZEDiscordFooterClick.Position = UDim2.fromScale(0, 0)
+                    v10 = v7.ZIndex + 1
+                    REZEDiscordFooterClick.ZIndex = math.max(v10, 10)
+                    REZEDiscordFooterClick.Parent = v7
+                    REZEDiscordFooterClick.MouseButton1Click:Connect(v11)
+                end
+                return true
+            end
+        end
+        return false
+    end
+end
+local function _w918(v1, v2)
+    return function(v3)
+        local v4
+        v2[1][3], v4 = v3, v2[2][3]
+        local v5
+        v5, v4 = v4.ApplyFPSBoost, v3
+        v5(v4)
+    end
+end
+local function _w919(v1, v2)
+    return function()
+        local j, a, _
+        v2[1][3]()
+        local v3 = tonumber(v2[6][3].Value)
+        local v4 = {}
+        v4.CASH = v2[5][3](v3)
+        v4.LUCK = v2[4][3]()
+        local v5
+        v5, v4 = v4, 0
+        local v6 = 0
+        local v7 = {[1] = 3, [3] = {}}
+        v7[2] = v7
+        local v8 = {[1] = 3, [3] = 0}
+        v8[2] = v8
+        local v9 = {[1] = 3, [3] = false}
+        v9[2] = v9
+        local v10 = v2[7][3]
+        local v11 = v1:gn({v7, v8, v2[2], v9})
+        _ = {}
+        local v12
+        v10, v12 = v10.FindFirstChildOfClass, v10
+        _[1], _[2] = v10(v12, "Backpack"), v2[7][3].Character
+        local v13, v14, v15
+        v15, v13, v14 = ipairs(_)
+        v15, v13, v14 = v1.g(v15, v13, v14)
+        _, v10 = v15(v13, v14)
+        local v16, v17, petName4, mutation3, v18, v19, v20, v21, v22, v23
+        if _ ~= nil then
+            while true do
+                if v10 then
+                    v18 = v10.GetChildren
+                    v18 = v1.h(v18(v10))
+                    v12, v18, a = ipairs(v1.i(v18))
+                    v12, v18, a = v1.g(v12, v18, a)
+                    for _, j in v12, v18, a do
+                        if j:IsA("Tool") then
+                            v17 = j:GetAttribute("PetKey")
+                            petName4 = j:GetAttribute("PetName")
+                            if v17 ~= nil or petName4 ~= nil then
+                                v23 = tostring(v17)
+                                if not v7[3][v23] then
+                                    v19, v20, v16, v6, v21 = j, v23, v11, v6 + 1, v2[3][3]
+                                    v21 = v21(v19)
+                                    v19 = j:GetAttribute("Weight")
+                                    mutation3 = j:GetAttribute("Mutation")
+                                    v22 = j.GetAttribute
+                                    v22 = table.pack(v22(j, "SpawnMutation"))
+                                    v16(v20, v21, v19, mutation3, table.unpack(v22, 1, v22.n))
+                                end
+                            else
+                                j:GetAttribute("EggInventoryId")
+                                v23 = j:GetAttribute("EggName") ~= nil
+                            end
+                        end
+                    end
+                end
+                _, v10 = v15(v13, v14)
+                v14 = _
+                if v14 == nil then
+                    break
+                end
+            end
+        end
+        v5["EGG INVENTORY"] = tostring(0)
+        v5["PET INVENTORY"] = tostring(v6)
+        v15 = 0
+        v13, v14 = pcall(v1:hn({v2[8]}))
+        _ = v13
+        if v13 then
+            _ = type(v14) == "table"
+        end
+        local v24
+        if _ then
+            _, v10, v12 = pairs(v14)
+            _, v10, v12 = v1.g(_, v10, v12)
+            for _, a in _, v10, v12 do
+                if type(a) == "table" and tonumber(a.OwnerUserId) == v2[7][3].UserId and a.Model and a.Model.Parent then
+                    v24 = tonumber(a.DisplayIncome)
+                    j = v24 and true and v24 >= 0
+                    if j then
+                        v15 = v15 + v24
+                    end
+                    j = a.PetKey
+                    if not j then
+                        j = a.Model
+                        j = j:GetAttribute("PetKey")
+                    end
+                    v17 = a.PetName or a.Model:GetAttribute("PetName") or a.Model.Name
+                    v11(j and tostring(j) or a.Model, v17, a.Weight or a.Model:GetAttribute("Weight"), a.Mutation or a.Model:GetAttribute("Mutation"), a.SpawnMutation or a.Model:GetAttribute("SpawnMutation"))
+                end
+            end
+            v18, a = v2[9][3].formatCompactNumber, v15
+            v5["INCOME / SEC"] = "$" .. v18(a) .. "/s"
+        else
+            v5["INCOME / SEC"] = "—"
+        end
+        _ = v9[3]
+        if _ then
+            v18 = v2[9][3]
+            v18, v12 = v8[3], v18.formatCompactNumber
+            _ = "$" .. v12(v18)
+        end
+        if not _ then
+            _ = "—"
+        end
+        v5["TOTAL PET VALUE"] = _
+        return v5
+    end
+end
+local function _w920(v1, v2)
+    return function(v3)
+        v2[1][3] = v3
+    end
+end
+local function _w921(v1)
+    return function(v2, v3)
+        v2 = {[1] = 3, [3] = v2}
+        v2[2] = v2
+        v3 = {[1] = 3, [3] = v3}
+        v3[2] = v3
+        if v2[3] then
+            pcall(v1:Ql({v2, v3}))
+        end
+    end
+end
+local function _w922(v1, v2)
+    return function()
+        v2[1][3].GlobalShadows = false
+    end
+end
+local function _w923(v1, v2)
+    return function()
+        local j
+        local v3 = v2[3][3]
+        local v4, v5
+        if v2[1][3].InstantCameraProxy == v3 then
+            v5, v3, v4 = pairs(v2[2][3])
+            v5, v3, v4 = v1.g(v5, v3, v4)
+            for j in v5, v3, v4 do
+                if j.Parent then
+                    j.LocalTransparencyModifier = 1
+                end
+            end
+            return
+        end
+    end
+end
+local function _w924(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        local v4
+        v3, v4 = v2[2][3], v3.ShownEggKG
+        v4 = table.pack(v4(v3))
+        return table.unpack(v4, 1, v4.n)
+    end
+end
+local function _w925(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        local v4, v5
+        v3, v4, v5 = v2[3][3], nil, v3.CardUpdateQueued
+        v5[v3] = nil
+        local v6
+        if not (not v2[2][3].Alive or not v2[1][3].Enabled or not v2[3][3].Parent) then
+            v3 = v2[3][3]
+            v6 = v2[1][3]
+            v4 = v6.ToolLookup or {}
+            v2[4][3].processInventoryESPCard(v3, v4, {})
+            return
+        end
+    end
+end
+local function _w926(v1, v2)
+    return function(v3)
+        local v4 = v2[1][3].TaskPriority[v3] or 99
+        local v5, v6, v7
+        v5, v6, v7 = pairs(v2[1][3].TaskPriority)
+        v5, v6, v7 = v1.g(v5, v6, v7)
+        local v8, v9
+        v8, v9 = v5(v6, v7)
+        if v8 ~= nil then
+            while true do
+                if not (v9 < v4 and v2[1][3].TaskWants(v8)) then
+                    v8, v9 = v5(v6, v7)
+                    v7 = v8
+                    if v7 ~= nil then
+                        continue
+                    end
+                    return false, nil
+                end
+                break
+            end
+            return true, v8
+        end
+        return false, nil
+    end
+end
+local function _w927(v1)
+    return function(v2)
+        return v2:IsA("TextLabel") or v2:IsA("TextButton") or v2:IsA("TextBox")
+    end
+end
+local function _w928(v1, v2)
+    return function()
+        local v3 = v2[1][3]:FindFirstChildOfClass("PlayerGui")
+        local v4 = v3
+        if v3 then
+            v4 = v3:FindFirstChild("EggBreaking")
+        end
+        local v5 = v4
+        if v4 then
+            v5 = v4:FindFirstChild("BreakTime", true)
+        end
+        local v6 = v5
+        if v5 then
+            v6 = v5:FindFirstChild("Timer", true)
+        end
+        local v7, v8, v9, v10
+        if not v6 or not (v6:IsA("TextLabel") or v6:IsA("TextButton")) then
+            return nil
+        else
+            v8 = v6
+            if v8 and v8 ~= v3 then
+                v8:IsA("GuiObject")
+                return nil
+            end
+            v10 = tostring(v6.Text)
+            v9, v10, v7 = v10, v10.match, "^%s*(%d+%.?%d*)%s*[sS]%s*$"
+            v10 = table.pack(v10(v9, "^%s*(%d+%.?%d*)%s*[sS]%s*$"))
+            return tonumber(table.unpack(v10, 1, v10.n))
+        end
+    end
+end
+local function _w929(v1, v2)
+    return function()
+        v2[1][3].bindInventoryESPTools()
+    end
+end
+local function _w930(v1, v2)
+    return function(v3)
+        local s, _
+        local v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, readCarriedEggTimer, v27, v28, v29, v30, v31, v32, v33, v34
+        if not v2[1][3] then
+            return true
+        else
+            v2[6][3].HasCarriedEgg()
+            v22 = v2[5][3]:FindFirstChild("Basket")
+            v20 = v22 and v22:GetChildren()[1]
+            v31 = v20 and tostring(v20.Name) or nil
+            v24 = tonumber(v2[6][3].ActivePickupAt)
+            if v24 and v2[6][3].VolcanoSession and v2[6][3].VolcanoSession.PickupAt == v24 and v2[6][3].VolcanoSession.Done then
+                v2[6][3].TraceRideDrop("DIP_SKIP_VERIFIED", "source=same-pickup-session")
+                v6 = v2[4][3]
+                v2[6][3].setLabel(v6, "🟢 Volcano completed for this pickup • skip dip")
+                return true
+            else
+                v2[6][3].IsVerifiedDippedCarry(v20)
+                v30 = Vector3.new(-5102.84, 41446.13, -3489.11)
+                v6 = workspace:FindFirstChild("Volcano")
+                v12 = v6 and v6:FindFirstChild("VolcanoTop", true)
+                if v12 and v12:IsA("BasePart") then
+                    v27 = v12.CFrame:PointToObjectSpace(v30)
+                    _, v23 = v27.X, math.abs
+                    v23 = v23(_)
+                    v7 = v23 > v12.Size.X / 2
+                    if not v7 then
+                        _, v23 = v27.Z, math.abs
+                        v23 = v23(_)
+                        v7 = v23 > v12.Size.Z / 2
+                    end
+                    if v7 then
+                        _, v23, v21 = 0, Vector3.new, 40
+                        v30 = v12.Position + v23(0, 40, 0)
+                    end
+                end
+                v23, v21, _, v7 = v3, "Volcano Dip + return wait", v30, v2[6][3].StartFarmHover
+                v7 = v7(v23, _, "Volcano Dip + return wait")
+                if not v7 then
+                    v7 = v2[4][3]
+                    v2[6][3].setLabel(v7, "🔴 Volcano hover unavailable")
+                else
+                    v27 = v1:Un({v2[6]})
+                    v23 = v2[6][3]
+                    _, v23, v7 = "🟡 Volcano Dip • submitting", v2[4][3], v23.setLabel
+                    v7(v23, "🟡 Volcano Dip • submitting")
+                    task.wait(0.4)
+                    if not v2[6][3].Alive or not v2[2][3] or not v2[1][3] then
+                        v27()
+                    else
+                        v23, _, v7, v16 = v1:Tn(), v2[5][3], {}, "PlayerGui"
+                        _ = _:FindFirstChild("PlayerGui")
+                        if _ then
+                            v16 = _.GetDescendants
+                            v16 = v1.h(v16(_))
+                            v21, v16, v34 = ipairs(v1.i(v16))
+                            v21, v16, v34 = v1.g(v21, v16, v34)
+                            for _, s in v21, v16, v34 do
+                                if s:IsA("TextLabel") or s:IsA("TextButton") then
+                                    v17 = tostring(s.Text or ""):lower()
+                                    if v17:find("already been in the volcano", 1, true) or v17:find("every egg you carry has already", 1, true) then
+                                        v25 = {Text = v17}
+                                        v25.Shown = v23(s)
+                                        v7[s] = v25
+                                    end
+                                end
+                            end
+                        end
+                        v21 = os.clock()
+                        if not pcall(v1:Vn({v2[3]})) then
+                            v27()
+                            s, v34, v8 = "🔴 Volcano request failed", v2[6][3].setLabel, v2[4][3]
+                            v34(v8, "🔴 Volcano request failed")
+                        else
+                            if v31 then
+                                v2[6][3].VolcanoAttemptedCarryUIDs[v31] = true
+                            end
+                            s = false
+                            v17 = os.clock()
+                            readCarriedEggTimer = v2[6][3].ReadCarriedEggTimer()
+                            v25 = math.min
+                            v4 = math.max
+                            v4 = v1.h(v4(2.5, (readCarriedEggTimer or 12) - 1.5))
+                            v25 = v25(10, v1.i(v4))
+                            v5 = 0
+                            local __cont1 = false
+                            while true do
+                                if v2[6][3].Alive and v2[2][3] and v2[1][3] and v3.Parent and os.clock() - v17 < v25 then
+                                    v2[6][3].HasCarriedEgg()
+                                    v4 = v2[6][3].ReadCarriedEggTimer() ~= nil
+                                    if not (os.clock() - v21 > 0.15 and os.clock() - v5 >= 0.3) then
+                                        v9 = v2[4][3]
+                                        v2[6][3].setLabel(v9, "🟡 Waiting for Volcano Dip")
+                                        task.wait(0.06)
+                                        continue
+                                    end
+                                    v5 = os.clock()
+                                    v29 = v2[5][3]:FindFirstChild("PlayerGui")
+                                    if not v29 then
+                                        v9 = v2[4][3]
+                                        v2[6][3].setLabel(v9, "🟡 Waiting for Volcano Dip")
+                                        task.wait(0.06)
+                                        continue
+                                    end
+                                    v10 = v29.GetDescendants
+                                    v10 = v1.h(v10(v29))
+                                    v9, v10, v18 = ipairs(v1.i(v10))
+                                    v9, v10, v18 = v1.g(v9, v10, v18)
+                                    v14, v33 = v9(v10, v18)
+                                    v18 = v14
+                                    if v18 == nil then
+                                        v9 = v2[4][3]
+                                        v2[6][3].setLabel(v9, "🟡 Waiting for Volcano Dip")
+                                        task.wait(0.06)
+                                        continue
+                                    end
+                                    while true do
+                                        if not ((v33:IsA("TextLabel") or v33:IsA("TextButton")) and v33.Text) then
+                                            v14, v33 = v9(v10, v18)
+                                            v18 = v14
+                                            if v18 == nil then
+                                                v9 = v2[4][3]
+                                                v2[6][3].setLabel(v9, "🟡 Waiting for Volcano Dip")
+                                                task.wait(0.06)
+                                                __cont1 = true
+                                                break
+                                            else
+                                                continue
+                                            end
+                                        end
+                                        v19 = tostring(v33.Text):lower()
+                                        v11 = v7[v33]
+                                        if v11 and not v23(v33) then
+                                            v11.Shown = false
+                                        end
+                                        v28 = v7[v33]
+                                        v13 = not v28 or v28.Text ~= v19 or not v28.Shown
+                                        if not ((v19:find("already been in the volcano", 1, true) or v19:find("every egg you carry has already", 1, true)) and v13 and v23(v33)) then
+                                            v14, v33 = v9(v10, v18)
+                                            v18 = v14
+                                            if v18 == nil then
+                                                v9 = v2[4][3]
+                                                v2[6][3].setLabel(v9, "🟡 Waiting for Volcano Dip")
+                                                task.wait(0.06)
+                                                __cont1 = true
+                                                break
+                                            else
+                                                continue
+                                            end
+                                        end
+                                        break
+                                    end
+                                    if __cont1 then
+                                        __cont1 = false
+                                        continue
+                                    end
+                                    v2[6][3].MarkCurrentCarryDipped("fresh server already-dipped notice")
+                                    v26 = v2[6][3]
+                                    v26, v15, v32 = v2[4][3], v26.setLabel, "🟢 Server confirmed already dipped • delivery only"
+                                    v15(v26, "🟢 Server confirmed already dipped • delivery only")
+                                    v15 = v2[6][3].HasCarriedEgg
+                                    v15 = table.pack(v15())
+                                    return table.unpack(v15, 1, v15.n)
+                                end
+                                break
+                            end
+                            v27()
+                            v4 = v2[6][3].TraceRideDrop
+                            v18 = tostring(v31)
+                            v28 = v2[6][3].HasCarriedEgg
+                            v28 = table.pack(v28())
+                            v4("DIP_UNVERIFIED", "uuid=" .. v18 .. " carry=" .. tostring(table.unpack(v28, 1, v28.n)) .. " offSeen=" .. tostring(false) .. " reason=no confirmed OFF-ON or fresh already-dipped notice")
+                            v29 = v2[6][3]
+                            v9, v29, v4 = "🟠 Volcano state unverified • review Egg pickup status", v2[4][3], v29.setLabel
+                            v4(v29, "🟠 Volcano state unverified • review Egg pickup status")
+                        end
+                    end
+                end
+                return false
+            end
+        end
+    end
+end
+local function _w931(v1, v2)
+    return function(v3)
+        local v4 = v2[1][3].GetCharacter()
+        local v5, v6, humanoidRootPart4, v7, v8, getEggPart8, v9
+        if not v4 then
+            return false
+        else
+            humanoidRootPart4 = v4:FindFirstChild("HumanoidRootPart")
+            getEggPart8 = v2[1][3].GetEggPart(v3)
+            if not humanoidRootPart4 or not getEggPart8 then
+                return false
+            else
+                v7 = v2[1][3]
+                v6, v7, v8 = Vector3, getEggPart8.Position, v7.UprightCFrame
+                v6, v9, v5 = 0, 3, v6.new
+                humanoidRootPart4.CFrame = v8(v7 + v5(0, 3, 0))
+                v2[1][3].Stabilize()
+                return true
+            end
+        end
+    end
+end
+local function _w932(v1)
+    return function(v2)
+        local v3 = tostring(v2 or "")
+        return v3:match("^https://discord%.com/api/webhooks/%d+/[%w_%-]+$") ~= nil or v3:match("^https://discordapp%.com/api/webhooks/%d+/[%w_%-]+$") ~= nil
+    end
+end
+local function _w933(v1, v2)
+    return function(v3)
+        v2[1][3](v3)
+        if v3.Name == "ToolName" or v3.Name == "WithIconLabel" then
+            v2[2][3]()
+        end
+    end
+end
+local function _w934(v1, v2)
+    return function(v3)
+        v2[1][3].InventoryESPEnabled = v3 == true
+        v2[2][3].setInventoryESPEnabled(v3 == true)
+    end
+end
+local function _w935(v1, v2)
+    return function()
+        local d, k
+        local v3 = v2[1][3]:FindFirstChild("PlayerGui")
+        local v4 = v3
+        if v3 then
+            v4 = v3:FindFirstChild("Main")
+        end
+        local v5 = v4
+        if v4 then
+            v5 = v4:FindFirstChild("PetsTracker")
+        end
+        local v6 = v5
+        if v5 then
+            v6 = v5:FindFirstChild("Holder")
+        end
+        local v7 = {}
+        local v8, v9
+        if v6 then
+            v9 = v6.GetChildren
+            v9 = v1.h(v9(v6))
+            v8, v9, d = ipairs(v1.i(v9))
+            v8, v9, d = v1.g(v8, v9, d)
+            for d, k in v8, v9, d do
+                if tostring(k.Name):match("^[%da-fA-F]+%-[%da-fA-F]+%-[%da-fA-F]+%-[%da-fA-F]+%-[%da-fA-F]+$") then
+                    v7[#v7 + 1] = k
+                end
+            end
+        end
+        if #v7 == 0 then
+            v8 = v2[2][3].GetMyPlot()
+            v9 = v8 and v8:FindFirstChild("Pets")
+            if v9 then
+                v7 = v9:GetChildren()
+            end
+        end
+        return v7
+    end
+end
+local function _w936(v1, v2)
+    return function(v3, v4, v5)
+        local v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, webhookPetName
+        if not (not v2[1][3] or not v3) then
+            v9 = {}
+            v6 = v3.Kind
+            v9.Hatch = "WebhookHatchAlerts"
+            v9.Fuse = "WebhookFuseAlerts"
+            if not (not v9[v6] or v5 ~= "TEST") then
+                webhookPetName = v2[5][3].WebhookPetName(v4)
+                v9 = v2[4][3][webhookPetName] or {}
+                v12 = v2[5][3].WebhookPetAttribute
+                v12 = v12(v4, {[1] = "Rarity"}) or v9.Rarity or "Common"
+                v11 = tostring(v12)
+                v12 = v2[5][3].WebhookPetMutationTrait(v4)
+                v14 = {}
+                v18 = v2[5][3].WebhookPetAttribute
+                v14[1] = "Age"
+                v18 = v18(v4, v14)
+                v15 = {}
+                v17 = v2[5][3].WebhookPetAttribute
+                v15[1], v15[2] = "DisplayIncome", "Income"
+                v17 = v17(v4, v15)
+                v14 = v2[5][3].WebhookPetWeight(v4)
+                v19 = {}
+                v19.description = "By User:  ||**" .. tostring(v2[2][3].Name) .. "**||"
+                v19.color = v2[5][3].WebhookRarityColor[v11] or 10980346
+                v19.fields = {}
+                v15, v19 = v19, "Hatch"
+                if v6 == "Hatch" then
+                    v19 = v3.Context or {}
+                    v15.title = "🐣 " .. webhookPetName .. " • " .. v14
+                    v13 = {}
+                    v13[1], v13[2], v13[3], v13[4] = "🥚 Egg: " .. tostring(v19.EggName or "Unknown Egg"), "⭐ Rarity: " .. v11, "🧬 Mutation/Trait: " .. v12, "🍀 Luck: " .. tostring(v19.LuckText or "Syncing")
+                    v13, v16, v20, v10 = v15.fields, "🐾 Hatch result", v13, {}
+                    v10.name = "🐾 Hatch result"
+                    v10.value = "```" .. table.concat(v20, "\n") .. "```"
+                    v10.inline = false
+                    v13[1] = v10
+                    v8 = v2[5][3]
+                    v10, v13, v8 = v19.EggName, v8.WebhookPetThumbnail, v2[3][3]
+                    v8 = v8[v10] or v9
+                    v15.thumbnail = v13(v8)
+                else
+                    v15.title = "🧬 Fuse Completed!"
+                    v15.color = 10980346
+                    v20 = {}
+                    v13, v8, v10 = ipairs((v3.Batch or {}).Used or {})
+                    v13, v8, v10 = v1.g(v13, v8, v10)
+                    v16, v7 = v13(v8, v10)
+                    v10 = v16
+                    if v10 ~= nil then
+                        while true do
+                            v20[#v20 + 1] = "**" .. tostring(v16) .. ". " .. tostring(v7.Name or "Unknown Pet") .. "**" .. "\nMutation/Trait: `" .. v2[5][3].WebhookPetMutationTrait(v7) .. "`" .. " • Age: `" .. tostring(v7.Age or "?") .. "`" .. " • Weight: `" .. v2[5][3].WebhookPetWeight(v7) .. "`" .. " • Income: `" .. tostring(v7.Income or "?") .. "`"
+                            v16, v7 = v13(v8, v10)
+                            v10 = v16
+                            if v10 == nil then
+                                break
+                            end
+                        end
+                    end
+                    if #v20 > 0 then
+                        v13 = v15.fields
+                        v10 = #v15.fields
+                        v16 = {name = "🐾 Pets Used"}
+                        v16.value = table.concat(v20, "\n\n")
+                        v16.inline = false
+                        v13[v10 + 1] = v16
+                    end
+                    v13 = v15.fields
+                    v10 = #v15.fields
+                    v16 = {name = "✨ Fuse Result"}
+                    v16.value = "**" .. webhookPetName .. "**" .. "\nMutation/Trait: `" .. v12 .. "`" .. "\nAge: `" .. tostring(v18 or "?") .. "` • Weight: `" .. v14 .. "`" .. " • Income: `" .. tostring(v17 or "?") .. "`"
+                    v16.inline = false
+                    v13[v10 + 1] = v16
+                    v15.thumbnail = v2[5][3].WebhookPetThumbnail(v9)
+                end
+                v20 = {}
+                v19 = v2[5][3].WebhookRequest
+                v20.embeds = {[1] = v15}
+                v19(v20)
+                return
+            end
+        end
+    end
+end
+local function _w937(v1)
+    return function()
+        local d
+        local halloweenArea = workspace:FindFirstChild("HalloweenArea")
+        local v2 = halloweenArea
+        if halloweenArea then
+            v2 = halloweenArea:FindFirstChild("CandySpawns")
+        end
+        local v3 = {}
+        local v4, v5, v6
+        if v2 then
+            v4 = v2.GetChildren
+            v4 = v1.h(v4(v2))
+            v5, v4, v6 = ipairs(v1.i(v4))
+            v5, v4, v6 = v1.g(v5, v4, v6)
+            for v7, d in v5, v4, v6 do
+                if d.Name:match("^Near%d+$") then
+                    v3[#v3 + 1] = d
+                end
+            end
+        end
+        return v3
+    end
+end
+local function _w938(v1, v2)
+    return function()
+        local v3 = 0
+        local v4, v5, v6
+        v6, v5, v4 = pairs(v2[1][3].BeforeIDs)
+        v6, v5, v4 = v1.g(v6, v5, v4)
+        v4 = v6(v5, v4)
+        if v4 ~= nil then
+            while true do
+                v3 = v3 + 1
+                v4 = v6(v5, v4)
+                if v4 == nil then
+                    break
+                end
+            end
+        end
+        return v3
+    end
+end
+local function _w940(v1)
+    return function(v2)
+        local getAttribute4 = v2.GetAttribute
+        getAttribute4 = v1.h(getAttribute4(v2, "Age"))
+        local v3 = tonumber(v1.i(getAttribute4))
+        local v4, v5, v6, v7, v8, v9, v10, v11, v12
+        if v3 then
+            return v3
+        else
+            getAttribute4 = v2:FindFirstChild("Age", true)
+            if getAttribute4 and getAttribute4:IsA("NumberValue") then
+                return tonumber(getAttribute4.Value)
+            else
+                v9 = v2.GetDescendants
+                v9 = v1.h(v9(v2))
+                v10, v9, v7 = ipairs(v1.i(v9))
+                v10, v9, v7 = v1.g(v10, v9, v7)
+                v6, v11 = v10(v9, v7)
+                v7 = v6
+                if v7 ~= nil then
+                    while true do
+                        v5 = v11
+                        v4 = v11:IsA("TextLabel")
+                        if not v4 then
+                            v5 = v11
+                            v4 = v11:IsA("TextButton")
+                        end
+                        if not v4 then
+                            v6, v11 = v10(v9, v7)
+                            v7 = v6
+                            if v7 ~= nil then
+                                continue
+                            end
+                            return nil
+                        end
+                        v4 = tostring(v11.Text or "")
+                        v12 = v4.match
+                        v12 = v1.h(v12(v4, "[Aa][Gg][Ee]%s*[:%-]?%s*(%d+)"))
+                        v5 = tonumber(v1.i(v12))
+                        if not v5 then
+                            v12 = v4.match
+                            v12 = table.pack(v12(v4, "(%d+)%s*/%s*100"))
+                            v5 = tonumber(table.unpack(v12, 1, v12.n))
+                        end
+                        if not v5 and tostring(v11.Name):lower():find("age", 1, true) then
+                            v8 = v4.match
+                            v8 = table.pack(v8(v4, "(%d+)"))
+                            v5 = tonumber(table.unpack(v8, 1, v8.n))
+                        end
+                        if not v5 then
+                            v6, v11 = v10(v9, v7)
+                            v7 = v6
+                            if v7 ~= nil then
+                                continue
+                            end
+                            return nil
+                        end
+                        break
+                    end
+                    return v5
+                end
+                return nil
+            end
+        end
+    end
+end
+local function _w941(v1, v2)
+    return function()
+        local v3 = v2[1][3]
+        local v4
+        v4, v3 = v3, v3.GetPivot
+        v3 = table.pack(v3(v4))
+        return table.unpack(v3, 1, v3.n)
+    end
+end
+local function _w942(v1, v2)
+    return function(v3, v4, v5)
+        local v6, v7, getInventoryESPCardToolName3, v8, v9
+        if not (not v3 or not v3.Parent or not v3:IsA("GuiObject")) then
+            getInventoryESPCardToolName3 = v2[1][3].getInventoryESPCardToolName(v3)
+            if not (not getInventoryESPCardToolName3 or getInventoryESPCardToolName3 == "") then
+                v7 = v2[1][3]
+                v7.refreshInventoryESPNameCaches()
+                v7, v8, v9 = v7.InventoryESPState.EggNamesLower, getInventoryESPCardToolName3, getInventoryESPCardToolName3.lower
+                v9 = v9(v8)
+                v6 = v4 or v2[1][3].buildInventoryESPToolLookup()
+                v7 = v2[1][3].pickInventoryESPPetTool(v3, getInventoryESPCardToolName3, v6, v5 or {})
+                if v7 then
+                    v9, v8, v6 = v2[1][3].getInventoryESPPetIncomeFromTool(v7)
+                    if v9 then
+                        return {Type = "Pet", Name = v6, Income = v9, UID = v8, Tool = v7}
+                    end
+                end
+            end
+        end
+        return nil
+    end
+end
+local function _w943(v1, v2)
+    return function()
+        firesignal(v2[1][3].MouseButton1Click)
+    end
+end
+local function _w944(v1, v2)
+    return function()
+        local k, d
+        local halloweenCandy3 = workspace:FindFirstChild("HalloweenCandy")
+        local v3, v4, v5, v6, v7, v8, v9, v10, candyPosition2
+        if not halloweenCandy3 then
+            return nil
+        else
+            v10 = v2[1][3].GetCharacter()
+            v8 = v10 and v10:FindFirstChild("HumanoidRootPart")
+            if not v8 then
+                return nil
+            else
+                v4 = nil
+                v6, d, v7, v3 = halloweenCandy3.GetChildren, halloweenCandy3, ipairs, math.huge
+                v6 = v1.h(v6(d))
+                v7, v6, d = v7(v1.i(v6))
+                v7, v6, d = v1.g(v7, v6, d)
+                for d, k in v7, v6, d do
+                    v5 = k.Name
+                    v5 = v5:match("^Candy_%d+$") and k.Parent and not v2[1][3].CandySkip[k]
+                    if v5 then
+                        v5 = v2[1][3].CandyGetIDs(k)
+                        candyPosition2 = v2[1][3].CandyPosition(k)
+                        if candyPosition2 and #v5 > 0 then
+                            v9 = (v8.Position - candyPosition2).Magnitude
+                            if v9 < v3 then
+                                v4 = k
+                                v3 = v9
+                            end
+                        end
+                    end
+                end
+                return v4
+            end
+        end
+    end
+end
+local function _w945(v1, v2)
+    return function(v3)
+        local v4, v5, v6, v7, v8, v9, v10, v11
+        if v3 == "Event" then
+            return v2[1][3].AutoCandy or v2[1][3].EventAutoRitual or v2[1][3].EventAutoBuyHalloweenEgg or v2[1][3].EventAutoHalves
+        else
+            v7 = v2[1][3].TaskNeeds[v3]
+            if type(v7) ~= "function" then
+                return false
+            else
+                v5 = os.clock()
+                v6 = v2[1][3].TaskNeedCache[v3]
+                if v6 and v5 - v6.At < (v3 == "Pickup" and 0.1 or v3 == "Hatch" or 0.48) then
+                    return v6.Value
+                else
+                    v8, v11 = pcall(v7)
+                    if not v8 then
+                        if v5 - v2[1][3].TaskLogAt[v3] > 8 then
+                            v2[1][3].TaskLogAt[v3] = v5
+                            warn("[REZEHUB Priority] " .. v3 .. " eligibility: " .. tostring(v11))
+                        end
+                    end
+                    v9 = v8 and v11 == true or false
+                    v4 = {}
+                    v10 = v2[1][3].TaskNeedCache
+                    v4.At = v5
+                    v4.Value = v9
+                    v10[v3] = v4
+                    return v9
+                end
+            end
+        end
+    end
+end
+local function _w946(v1, v2)
+    return function(v3)
+        local v4, v5, v6, v7
+        v5, v7, v6, v4 = v2[1][3](v3)
+        local v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25
+        if not v5 then
+            return "DOOR_SKIP_" .. tostring(v7)
+        else
+            v11 = {[1] = 3, [3] = v3:GetAttribute("Id")}
+            v11[2] = v11
+            v9 = "Door:" .. v11[3]
+            if (v2[6][3].Next[v9] or 0) > os.clock() then
+                return "DOOR_COOLDOWN"
+            elseif v2[6][3].DoorLit[v11[3]] == false then
+                return "DOOR_NOT_LIT"
+            else
+                v22 = v2[5][3]
+                v22, v24 = v22.FindFirstChild, v22
+                v22 = {[1] = 3, [3] = v22(v24, "KnockDoor")}
+                v22[2] = v22
+                if not (v22[3] and v22[3].IsA(v22[3], "RemoteEvent")) then
+                    return "KNOCK_REMOTE_MISSING"
+                else
+                    v24 = 1
+                    v15 = 1
+                    local __cont1 = false
+                    do
+                        local shouldExit = false
+                        while true do
+                            if not v2[4][3]() then
+                                v2[2][3]()
+                                v16, v23, v19, v8 = v2[1][3](v3)
+                                if v16 then
+                                    v6 = v19
+                                    v4 = v8
+                                    v2[7][3](v8)
+                                    v2[3][3](v4)
+                                    task.wait(0.5)
+                                    v25 = v2[8][3]()
+                                    if not (not v25 or (v25.Position - v4).Magnitude > 15.5) then
+                                        v17 = os.clock()
+                                        v10, v21 = pcall(v1:Gk({v22, v11}))
+                                        if v10 then
+                                            v18 = os.clock() + 1.8
+                                            while true do
+                                                if not (os.clock() < v18 and v2[2][3]()) then
+                                                    v14 = v2[9][3]
+                                                    v13, v14, v20, v12 = v11[3], "EVENT_DOOR_RETRY", v14.CandyLog, tostring
+                                                    v12 = v12(v13)
+                                                    v12 = v12 .. " attempt=" .. v24
+                                                    v20("EVENT_DOOR_RETRY", v12)
+                                                    task.wait(0.27)
+                                                    v24 = v24 + 1
+                                                    if v24 <= 3 then
+                                                        __cont1 = true
+                                                        break
+                                                    end
+                                                    shouldExit = true
+                                                    break
+                                                end
+                                                if not v2[4][3]() then
+                                                    v20 = v2[6][3].DoorResult[v11[3]]
+                                                    if v20 and v20.Time >= v17 then
+                                                        if v20.Treat == nil then
+                                                            v2[9][3].CandyLog("EVENT_DOOR_REFUSED", tostring(v11[3]) .. " " .. tostring(v20.Reason))
+                                                            v14 = v2[9][3]
+                                                            v13, v14, v20, v12 = v11[3], "EVENT_DOOR_RETRY", v14.CandyLog, tostring
+                                                            v12 = v12(v13)
+                                                            v12 = v12 .. " attempt=" .. v24
+                                                            v20("EVENT_DOOR_RETRY", v12)
+                                                            task.wait(0.27)
+                                                            v24 = v24 + 1
+                                                            if v24 <= 3 then
+                                                                __cont1 = true
+                                                                break
+                                                            end
+                                                            shouldExit = true
+                                                            break
+                                                        end
+                                                        v12 = "Door:" .. v11[3]
+                                                        v2[6][3].Next[v12] = os.clock() + 10
+                                                        return "DOOR_KNOCK_CONFIRMED"
+                                                    end
+                                                    v12 = v2[6][3].DoorLit[v11[3]]
+                                                    if not (v12 == false or v6:GetAttribute("DoorPromptAvailable") ~= true) then
+                                                        task.wait(0.08)
+                                                        continue
+                                                    end
+                                                    break
+                                                end
+                                                return "YIELD_EGG"
+                                            end
+                                            if shouldExit then
+                                                break
+                                            end
+                                            if __cont1 then
+                                                __cont1 = false
+                                                continue
+                                            end
+                                            break
+                                        end
+                                        return "KNOCK_ERROR_" .. tostring(v21)
+                                    end
+                                    return "DOOR_OUT_OF_RANGE"
+                                end
+                                return "DOOR_SKIP_" .. tostring(v23)
+                            end
+                            return "YIELD_EGG"
+                        end
+                        if shouldExit then
+                            break
+                        end
+                        v12 = "Door:" .. v11[3]
+                        v2[6][3].Next[v12] = os.clock() + 10
+                        return "DOOR_STATE_CHANGED"
+                    end
+                    v9 = "Door:" .. v11[3]
+                    v2[6][3].Next[v9] = os.clock() + 1.5
+                    return "DOOR_UNCONFIRMED_RETRY_NEXT_CYCLE"
+                end
+            end
+        end
+    end
+end
+local function _w947(v1, v2)
+    return function()
+        return v2[1][3].AutoCandy or v2[1][3].EventAutoRitual or v2[1][3].EventAutoBuyHalloweenEgg or v2[1][3].EventAutoHalves, "🔴 Halloween Automations Off"
+    end
+end
+local function _w948(v1, v2)
+    return function()
+        local v3 = v2[2][3]
+        local v4, v5
+        if v2[1][3].InstantCameraProxy == v3 then
+            v4 = workspace.CurrentCamera
+            if v4 and v2[2][3].Model and v2[2][3].Model.Parent and v2[2][3].Humanoid and v2[2][3].Humanoid.Parent then
+                v5 = Enum.CameraType.Custom
+                if v4.CameraType ~= v5 then
+                    v4.CameraType = Enum.CameraType.Custom
+                end
+                v5 = v2[2][3].Humanoid
+                if v4.CameraSubject ~= v5 then
+                    v4.CameraSubject = v2[2][3].Humanoid
+                end
+            end
+            return
+        end
+    end
+end
+local function _w949(v1, v2)
+    return function(v3)
+        local v4 = math.clamp
+        v2[1][3].WalkSpeedValue = v4(tonumber(v3) or 16, 0, 120)
+    end
+end
+local function _w950(v1, v2)
+    return function(v3, v4)
+        local _, k
+        local normalizeSelection4 = v2[1][3].normalizeSelection(v3)
+        local v5, v6, v7, v8, v9, v10, v11
+        if #normalizeSelection4 == 0 then
+            return true
+        else
+            v9 = {[1] = 3, [3] = {}}
+            v9[2] = v9
+            v7 = v4
+            v5 = v1:Fo({v9})
+            if not v7 then
+                v7 = {}
+            end
+            v11, v7, v10 = pairs(v7)
+            v11, v7, v10 = v1.g(v11, v7, v10)
+            for _, k in v11, v7, v10 do
+                v5(k)
+            end
+            v11 = next(v9[3]) == nil
+            v7, v10, v8 = ipairs(normalizeSelection4)
+            v7, v10, v8 = v1.g(v7, v10, v8)
+            k, v6 = v7(v10, v8)
+            v8 = k
+            if v8 ~= nil then
+                while true do
+                    _ = tostring(v6)
+                    _ = _:lower()
+                    if _ == "normal" then
+                        if not v11 then
+                            k, v6 = v7(v10, v8)
+                            v8 = k
+                            if v8 ~= nil then
+                                continue
+                            end
+                            return false
+                        end
+                        return true
+                    end
+                    if not v9[3][_] then
+                        k, v6 = v7(v10, v8)
+                        v8 = k
+                        if v8 ~= nil then
+                            continue
+                        end
+                        return false
+                    end
+                    break
+                end
+                return true
+            end
+            return false
+        end
+    end
+end
+local function _w951(v1, v2)
+    return function()
+        v2[1][3].Interactable = false
+    end
+end
+local function _w952(v1, v2)
+    return function()
+        local v3, v4
+        if v2[1][3].Alive then
+            v3, v4 = pcall(v2[1][3].RestoreSavedDropdownDisplays)
+            if not v3 then
+                warn("[REZEHUB] Dropdown restore error: " .. tostring(v4))
+            end
+        end
+        v2[2][3] = false
+    end
+end
+local function _w953(v1, v2)
+    return function()
+        local v3 = v2[3][3]
+        local v4
+        if v2[1][3].EventScanCamera == v3 then
+            v4 = workspace.CurrentCamera
+            if v4 then
+                v4.CameraType = Enum.CameraType.Scriptable
+                v4.CFrame = v2[2][3]
+                v4.Focus = v2[4][3]
+            end
+            return
+        end
+    end
+end
+local function _w954(v1, v2)
+    return function()
+        local v3 = v2[1][3].GetAll
+        local pack = table.pack(v3())
+        return table.unpack(pack, 1, pack.n)
+    end
+end
+local function _w955(v1)
+    return function(v2, v3)
+        local v4 = v3.Income
+        return v2.Income > v4
+    end
+end
+local function _w956(v1, v2)
+    return function()
+        local v3, v4, v5, v6, v7
+        if v2[1][3] == "Collect" then
+            v6 = v2[3][3]
+            if v6 then
+                v3 = v2[5][3]
+                v4 = v2[3][3]
+                v3, v7, v5 = v3.GetAttribute, "Ritual" .. v4, v3
+                v6 = v3(v5, v7) == true
+            end
+        else
+            v6 = not v2[2][3].Parent
+            if not v6 then
+                v3 = v2[2][3]
+                v3, v5 = v3.GetAttribute, v3
+                v6 = v3(v5, "RitualAvailable") ~= true
+            end
+        end
+        return v6
+    end
+end
+local function _w957(v1)
+    return function(v2, v3)
+        local v4, v5, v6
+        v6, v5, v4 = ipairs(v3)
+        v6, v5, v4 = v1.g(v6, v5, v4)
+        local v7, v8
+        v8, v7 = v6(v5, v4)
+        local v9, v10, findFirstChild6, findFirstChild7, v11, v12, v13, v14
+        if v8 ~= nil then
+            while true do
+                v10 = nil
+                if typeof(v2) == "Instance" then
+                    v10 = v2:GetAttribute(v7)
+                    if v10 == nil then
+                        v9 = {}
+                        v9[1], v9[2] = "Data", "PetData"
+                        findFirstChild7, v13, v12 = ipairs(v9)
+                        findFirstChild7, v13, v12 = v1.g(findFirstChild7, v13, v12)
+                        v9, v14 = findFirstChild7(v13, v12)
+                        v12 = v9
+                        do
+                            local shouldExit = false
+                            if v12 ~= nil then
+                                while true do
+                                    findFirstChild6 = v2:FindFirstChild(v14)
+                                    v11 = findFirstChild6 and findFirstChild6:FindFirstChild(v7)
+                                    if v11 and v11:IsA("ValueBase") then
+                                        break
+                                    else
+                                        v9, v14 = findFirstChild7(v13, v12)
+                                        v12 = v9
+                                        if v12 ~= nil then
+                                            continue
+                                        end
+                                    end
+                                    shouldExit = true
+                                    break
+                                end
+                                if shouldExit then
+                                    break
+                                end
+                                v10 = v11.Value
+                            end
+                        end
+                        findFirstChild7 = v2:FindFirstChild(v7)
+                        if findFirstChild7 and findFirstChild7:IsA("ValueBase") then
+                            v10 = findFirstChild7.Value
+                        end
+                    end
+                else
+                    type(v2)
+                end
+                if not (v10 ~= nil and tostring(v10) ~= "") then
+                    v8, v7 = v6(v5, v4)
+                    v4 = v8
+                    if v4 ~= nil then
+                        continue
+                    end
+                    return nil
+                end
+                break
+            end
+            return v10
+        end
+        return nil
+    end
+end
+local function _w958(v1, v2)
+    return function(v3)
+        local e, j
+        local v4, v5
+        if not (not v3 or v2[1][3].CarryObserved[v3]) then
+            v2[1][3].CarryObserved[v3] = true
+            v4 = v2[1][3]
+            j, v4, v5 = v2[1][3], v3.ChildAdded, v4.Bind
+            v5(v4, j.CaptureCarriedEgg)
+            v4 = v3.GetChildren
+            v4 = v1.h(v4(v3))
+            v5, v4, j = ipairs(v1.i(v4))
+            v5, v4, j = v1.g(v5, v4, j)
+            for j, e in v5, v4, j do
+                v2[1][3].CaptureCarriedEgg(e)
+            end
+            return
+        end
+    end
+end
+local function _w959(v1, v2)
+    return function()
+        v2[1][3]:Disconnect()
+    end
+end
+local function _w960(v1, v2)
+    return function()
+        local v3 = v2[2][3]
+        v2[1][3](v3, "EggInventoryId changed")
+    end
+end
+local function _w961(v1, v2)
+    return function()
+        v2[1][3].Enabled = false
+    end
+end
+local function _w962(v1, v2)
+    return function()
+        local v3
+        if v2[1][3] then
+            v3 = v2[2][3]
+            v2[1][3]:FireServer(v3.Key)
+        end
+    end
+end
+local function _w963(v1)
+    return function(v2)
+        v2 = tonumber(v2)
+        if v2 then
+            return math.floor(v2 * 100 + 0.5) / 100
+        end
+        return nil
+    end
+end
+Tq({
+    "zd",
+    "pr",
+    "pn",
+    "fp",
+    "Lj",
+    "Br",
+    "pk",
+    "lg",
+    "zl",
+    "Ki",
+    "ki",
+    "Ar",
+    "ha",
+    "Dg",
+    "L",
+    "o",
+    "Fc",
+    "zh",
+    "Yo",
+    "ua",
+    "Ve",
+    "Fb",
+    "gl",
+    "y",
+    "el",
+    "we",
+    "vp",
+    "xq",
+    "ta",
+    "Sf",
+    "bh",
+    "qk",
+    "ym",
+    "Ld",
+    "Id",
+    "Nb",
+    "mo",
+    "sd",
+    "si",
+    "yo",
+    "ke",
+    "al",
+    "rn",
+    "s",
+    "Se",
+    "ic",
+    "rc",
+    "Tg",
+    "Ka",
+    "Xi",
+    "Q",
+    "gk",
+    "Gp",
+    "be",
+    "to",
+    "Xq",
+    "Ke",
+    "Om",
+    "Ym",
+    "Xp",
+    "Lk",
+    "cb",
+    "eh",
+    "zq",
+    "Ml",
+    "rh",
+    "Vd",
+    "Ab",
+    "Hk",
+    "H",
+    "Rf",
+    "Mq",
+    "wj",
+    "or_",
+    "ih",
+    "vl",
+    "bf",
+    "nk",
+    "Ji",
+    "zb",
+    "Qq",
+    "wl",
+    "ri",
+    "Bc",
+    "Fl",
+    "Am",
+    "fn",
+    "po",
+    "vh",
+    "Fp",
+    "um",
+    "Kr",
+    "gg",
+    "pi",
+    "yl",
+    "Vo",
+    "up",
+    "Cf",
+    "Ni",
+    "Jg",
+    "Sq",
+    "Ff",
+    "ga",
+    "ja",
+    "Mc",
+    "Va",
+    "C",
+    "_f",
+    "Nl",
+    "Fk",
+    "V",
+    "od",
+    "gm",
+    "ce",
+    "_l",
+    "Ln",
+    "nq",
+    "ti",
+    "Fd",
+    "Io",
+    "yk",
+    "Sd",
+    "Pm",
+    "xd",
+    "Dp",
+    "wd",
+    "Vq",
+    "kq",
+    "bl",
+    "Yh",
+    "yh",
+    "qq",
+    "j",
+    "sr",
+    "he",
+    "en",
+    "na",
+    "ap",
+    "ne",
+    "Wk",
+    "ho",
+    "Jf",
+    "Ec",
+    "qo",
+    "wo",
+    "ul",
+    "_d",
+    "uk",
+    "Ko",
+    "jf",
+    "Jj",
+    "I",
+    "Lh",
+    "Kc",
+    "Nc",
+    "sh",
+    "Fg",
+    "sj",
+    "la",
+    "tk",
+    "Nf",
+    "Dq",
+    "Nr",
+    "ba",
+    "Rg",
+    "wn",
+    "Tj",
+    "Em",
+    "kd",
+    "Di",
+    "Tk",
+    "ae",
+    "Uf",
+    "Wg",
+    "th",
+    "Eb",
+    "ab",
+    "w",
+    "qb",
+    "uh",
+    "Iq",
+    "pg",
+    "Oj",
+    "oh",
+    "jk",
+    "Kb",
+    "kj",
+    "Rm",
+    "Ql",
+    "Hf",
+    "vj",
+    "Jn",
+    "ml",
+    "ze",
+    "_r",
+    "Pk",
+    "_q",
+    "Xg",
+    "Ub",
+    "wi",
+    "Bo",
+    "ep",
+    "Bn",
+    "Ad",
+    "rd",
+    "me",
+    "om",
+    "Qg",
+    "Mo",
+    "If",
+    "Pj",
+    "lj",
+    "_g",
+    "kn",
+    "Sr",
+    "Wc",
+    "ln",
+    "Jb",
+    "Qj",
+    "wb",
+    "Xk",
+    "M",
+    "ca",
+    "rm",
+    "ef",
+    "g",
+    "bo",
+    "di",
+    "ug",
+    "Go",
+    "Ug",
+    "em",
+    "Um",
+    "Of",
+    "ia",
+    "ok",
+    "Pb",
+    "K",
+    "Yn",
+    "fg",
+    "Tp",
+    "_e",
+    "Lo",
+    "sb",
+    "Gk",
+    "Qm",
+    "gi",
+    "Rb",
+    "qn",
+    "v",
+    "ei",
+    "Ih",
+    "Rk",
+    "Y",
+    "Rc",
+    "Hn",
+    "Lp",
+    "Qi",
+    "uf",
+    "kh",
+    "Co",
+    "Gm",
+    "ud",
+    "Bj",
+    "jm",
+    "Gg",
+    "Oc",
+    "nc",
+    "Tb",
+    "rq",
+    "Pe",
+    "_i",
+    "zf",
+    "bc",
+    "Rn",
+    "xg",
+    "oc",
+    "mm",
+    "Kk",
+    "dc",
+    "Wp",
+    "Je",
+    "kp",
+    "Nm",
+    "Cg",
+    "io",
+    "ub",
+    "yg",
+    "Jr",
+    "bd",
+    "Ta",
+    "Gh",
+    "_c",
+    "af",
+    "Vh",
+    "Fm",
+    "x",
+    "Km",
+    "Er",
+    "bk",
+    "S",
+    "Ri",
+    "Uj",
+    "Xl",
+    "bn",
+    "z",
+    "En",
+    "Mr",
+    "qa",
+    "ve",
+    "fl",
+    "Ol",
+    "Qd",
+    "cm",
+    "fc",
+    "aa",
+    "Kl",
+    "pp",
+    "tg",
+    "li",
+    "Ma",
+    "Qk",
+    "da",
+    "Hh",
+    "Qn",
+    "jj",
+    "ak",
+    "zk",
+    "ad",
+    "Bg",
+    "qm",
+    "ql",
+    "gd",
+    "Pl",
+    "ar",
+    "Sa",
+    "qh",
+    "eb",
+    "zn",
+    "Ge",
+    "Ip",
+    "Uq",
+    "nh",
+    "Gn",
+    "rl",
+    "gb",
+    "Hd",
+    "qg",
+    "xj",
+    "Vp",
+    "Wb",
+    "Mk",
+    "un",
+    "uc",
+    "Sk",
+    "Jd",
+    "hi",
+    "Vb",
+    "hl",
+    "pq",
+    "Oi",
+    "Fh",
+    "nf",
+    "Hg",
+    "Be",
+    "Fj",
+    "dp",
+    "vd",
+    "pf",
+    "jl",
+    "Rr",
+    "yj",
+    "Jc",
+    "Vl",
+    "co",
+    "ui",
+    "Wj",
+    "dj",
+    "Pr",
+    "hk",
+    "ma",
+    "Lm",
+    "bp",
+    "Li",
+    "Bh",
+    "eo",
+    "ea",
+    "so",
+    "Na",
+    "Ho",
+    "Cm",
+    "Cr",
+    "gf",
+    "za",
+    "wr",
+    "Hl",
+    "Mh",
+    "nr",
+    "bg",
+    "gp",
+    "rk",
+    "Vi",
+    "jb",
+    "Pa",
+    "yp",
+    "Ce",
+    "Wl",
+    "Bi",
+    "in_",
+    "tr",
+    "Te",
+    "Kf",
+    "Fo",
+    "tb",
+    "Vk",
+    "jg",
+    "Un",
+    "Lb",
+    "ni",
+    "zg",
+    "Pp",
+    "mn",
+    "Ga",
+    "Mp",
+    "xb",
+    "Hc",
+    "nm",
+    "Yj",
+    "Nh",
+    "vi",
+    "Vj",
+    "bb",
+    "Xb",
+    "sm",
+    "bi",
+    "mj",
+    "Nk",
+    "Xa",
+    "rg",
+    "Ao",
+    "oa",
+    "Ja",
+    "pm",
+    "ac",
+    "ag",
+    "Jl",
+    "cg",
+    "Hj",
+    "Xc",
+    "Vc",
+    "El",
+    "sl",
+    "E",
+    "xn",
+    "Fe",
+    "ff",
+    "lh",
+    "Uc",
+    "Qp",
+    "vf",
+    "dg",
+    "Wi",
+    "O",
+    "dm",
+    "Ch",
+    "Sj",
+    "jo",
+    "wp",
+    "Lg",
+    "La",
+    "vb",
+    "aj",
+    "hb",
+    "We",
+    "Ne",
+    "yb",
+    "Ib",
+    "Ek",
+    "fh",
+    "sp",
+    "xk",
+    "p",
+    "_k",
+    "Pq",
+    "Qh",
+    "Or",
+    "sk",
+    "_h",
+    "Sb",
+    "Tc",
+    "sn",
+    "_j",
+    "Nj",
+    "Cq",
+    "Tr",
+    "hq",
+    "To",
+    "De",
+    "zm",
+    "tl",
+    "if_",
+    "J",
+    "ka",
+    "yf",
+    "uo",
+    "So",
+    "rr",
+    "Im",
+    "qf",
+    "lm",
+    "je",
+    "ol",
+    "Kn",
+    "aq",
+    "no",
+    "Yd",
+    "Kp",
+    "vc",
+    "Eo",
+    "Ra",
+    "Fa",
+    "Bf",
+    "ob",
+    "Fr",
+    "Nq",
+    "Ud",
+    "mb",
+    "G",
+    "Pg",
+    "An",
+    "Dd",
+    "sg",
+    "rb",
+    "fd",
+    "yd",
+    "Ee",
+    "iq",
+    "Cn",
+    "Yp",
+    "Ul",
+    "q",
+    "qe",
+    "mk",
+    "Aj",
+    "Nd",
+    "ra",
+    "Xm",
+    "tc",
+    "yr",
+    "ii",
+    "_m",
+    "yn",
+    "Wq",
+    "Oe",
+    "lo",
+    "Td",
+    "Bb",
+    "Jq",
+    "Wh",
+    "im",
+    "Ie",
+    "Ok",
+    "ip",
+    "nj",
+    "Kd",
+    "ro",
+    "id",
+    "qp",
+    "dd",
+    "zi",
+    "rj",
+    "tq",
+    "Ya",
+    "yq",
+    "Th",
+    "U",
+    "Ej",
+    "Ap",
+    "Xe",
+    "le",
+    "Gq",
+    "hm",
+    "jq",
+    "fq",
+    "Og",
+    "ej",
+    "wa",
+    "Oh",
+    "Ph",
+    "Hp",
+    "Yc",
+    "kk",
+    "Lr",
+    "Oa",
+    "an",
+    "wq",
+    "lk",
+    "Rj",
+    "Gd",
+    "Eq",
+    "Mj",
+    "uj",
+    "Ei",
+    "Dl",
+    "Md",
+    "Ig",
+    "hd",
+    "ci",
+    "cd",
+    "u",
+    "ik",
+    "P",
+    "xi",
+    "kb",
+    "kc",
+    "Hb",
+    "Xf",
+    "Sn",
+    "ib",
+    "On",
+    "eq",
+    "wh",
+    "ai",
+    "Jh",
+    "Ii",
+    "on",
+    "Dc",
+    "oq",
+    "Ac",
+    "pj",
+    "Gl",
+    "Il",
+    "Bl",
+    "zp",
+    "Gc",
+    "dh",
+    "Fq",
+    "Xh",
+    "zr",
+    "Jp",
+    "Ro",
+    "Lq",
+    "Eh",
+    "tp",
+    "Uo",
+    "sa",
+    "ah",
+    "xh",
+    "ll",
+    "_b",
+    "bm",
+    "Gb",
+    "Ae",
+    "Le",
+    "Rl",
+    "Ue",
+    "Hi",
+    "Af",
+    "fj",
+    "Ag",
+    "ng",
+    "Dh",
+    "Tf",
+    "ld",
+    "dk",
+    "_o",
+    "Dm",
+    "df",
+    "Yg",
+    "Tn",
+    "Sg",
+    "td",
+    "He",
+    "Qb",
+    "Vf",
+    "hn",
+    "m",
+    "Bd",
+    "mi",
+    "lp",
+    "eg",
+    "wg",
+    "Oq",
+    "pa",
+    "lb",
+    "Cj",
+    "Aa",
+    "D",
+    "wm",
+    "B",
+    "ye",
+    "qc",
+    "qd",
+    "Uh",
+    "jd",
+    "Do",
+    "xa",
+    "Hq",
+    "Qc",
+    "Yl",
+    "Xd",
+    "jh",
+    "Dr",
+    "Qe",
+    "sq",
+    "Ye",
+    "fi",
+    "de",
+    "Kq",
+    "fe",
+    "pd",
+    "Ij",
+    "_p",
+    "vq",
+    "Mg",
+    "Sl",
+    "Bk",
+    "Nn",
+    "xo",
+    "kf",
+    "Ef",
+    "va",
+    "lc",
+    "Cd",
+    "Oo",
+    "xe",
+    "Mf",
+    "Lf",
+    "wc",
+    "Gi",
+    "Ic",
+    "ue",
+    "yc",
+    "Tm",
+    "Ak",
+    "Ha",
+    "Mn",
+    "db",
+    "pe",
+    "zo",
+    "Rd",
+    "Df",
+    "se",
+    "nd",
+    "Me",
+    "Mi",
+    "te",
+    "Od",
+    "hh",
+    "ek",
+    "rf",
+    "Gj",
+    "Gf",
+    "go",
+    "Xo",
+    "Pn",
+    "Op",
+    "Ep",
+    "Wn",
+    "t",
+    "Yi",
+    "Tl",
+    "In",
+    "lf",
+    "Pf",
+    "Lc",
+    "Ui",
+    "vm",
+    "n",
+    "Da",
+    "qr",
+    "jc",
+    "ge",
+    "Sp",
+    "kl",
+    "jp",
+    "uq",
+    "ph",
+    "oo",
+    "il",
+    "Jo",
+    "Dk",
+    "Wa",
+    "cn",
+    "cc",
+    "Qo",
+    "fa",
+    "Xj",
+    "Ed",
+    "ed",
+    "mq",
+    "Yq",
+    "Pc",
+    "Ik",
+    "ur",
+    "oj",
+    "ck",
+    "Kj",
+    "Wm",
+    "Cc",
+    "ji",
+    "_n",
+    "sf",
+    "xf",
+    "ij",
+    "xm",
+    "fb",
+    "nb",
+    "zc",
+    "fo",
+    "Jm",
+    "km",
+    "vk",
+    "Bm",
+    "gq",
+    "Fn",
+    "cq",
+    "bq",
+    "Mb",
+    "yi",
+    "mh",
+    "pb",
+    "Fi",
+    "ie",
+    "gj",
+    "pl",
+    "Ai",
+    "Ll",
+    "sc",
+    "tm",
+    "No",
+    "cl",
+    "dq",
+    "Ia",
+    "oe",
+    "r",
+    "_a",
+    "xp",
+    "tj",
+    "Ir",
+    "qj",
+    "of",
+    "Yb",
+    "Ah",
+    "cj",
+    "pc",
+    "gc",
+    "Hr",
+    "Db",
+    "Bq",
+    "Sm",
+    "op",
+    "cp",
+    "hg",
+    "mp",
+    "T",
+    "bj",
+    "Al",
+    "fk",
+    "nl",
+    "ee",
+    "l",
+    "hp",
+    "jn",
+    "Jk",
+    "dn",
+    "W",
+    "og",
+    "Vg",
+    "gn",
+    "Wo",
+    "Mm",
+    "Bp",
+    "Sc",
+    "k",
+    "Cp",
+    "oi",
+    "Pi",
+    "lq",
+    "np",
+    "Eg",
+    "hf",
+    "ig",
+    "Xn",
+    "Cl",
+    "am",
+    "Rh",
+    "Vn",
+    "Ob",
+    "Dj",
+    "Rq",
+    "Ng",
+    "Kg",
+    "vo",
+    "Vm",
+    "ec",
+    "ao",
+    "gh",
+    "Qf",
+    "hc",
+    "Pd",
+    "kg",
+    "Ua",
+    "xc",
+    "mg",
+    "rp",
+    "vg",
+    "N",
+    "md",
+    "vn",
+    "vr",
+    "Yk",
+    "X",
+    "Ca",
+    "Rp",
+    "xl",
+    "Uk",
+    "qi",
+    "R",
+    "F",
+    "Po",
+    "mf",
+    "Gr",
+    "Si",
+    "Sh",
+    "Yf",
+    "tn",
+    "re",
+    "Qa",
+    "Aq",
+    "cf",
+    "fm",
+    "tf",
+    "dl",
+    "xr",
+    "zj",
+    "Ti",
+    "Kh",
+    "ko",
+    "wf",
+    "hj",
+    "Wf",
+    "do_",
+    "Re",
+    "Ba",
+    "Qr",
+    "Hm",
+    "Ci",
+    "mc",
+    "A",
+    "ch",
+    "nn",
+    "Ck",
+    "Ea",
+    "Dn",
+    "Up",
+    "Np",
+    "ya",
+    "Cb",
+    "Wd",
+    "wk",
+}, "Tr", ...)
+
+-- https://discord.gg/AwGHNh7Z7T
