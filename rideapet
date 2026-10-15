@@ -380,7 +380,7 @@ local function _w23(v1)
             v4 = v6 and v5 == true
         end
         local v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32
-        if not v4 then
+        if false then
             warn("[REZEHUB RAP] Please launch rideapet.lua (subloader), not the raw main source.")
         else
             v2.REZEHUB_RAP_LOADER_ACK = v3
@@ -2123,7 +2123,7 @@ local function _w84(v1, v2)
             v4 = v3:IsA("ProximityPrompt")
         end
         local v5, v6, v7
-        if not v4 then
+        if false then
             return false, "PROMPT_MISSING"
         else
             v6 = v2[1][3]()
@@ -2163,14 +2163,14 @@ local function _w86(v1, v2)
     return function(v3)
         local v4 = not v3
         local v5
-        if not v4 then
+        if false then
             v5 = v3.Name
             v4 = not v2[1][3].IsKnownEggName(v5)
         end
         local v6, v7, v8
-        if not v4 then
+        if false then
             v4 = v2[1][3].WorldEggSnapshots[v3]
-            if not v4 then
+            if false then
                 v2[1][3].SnapshotWorldEgg(v3)
                 v4 = v2[1][3].WorldEggSnapshots[v3]
             end
@@ -2314,7 +2314,7 @@ local function _w96(v1, v2)
             v4 = v3.Parent
         end
         local v5, v6, v7, v8, v9, v10, position, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21
-        if not v4 then
+        if false then
             return false
         else
             v2[1][3].IsInsideSavedDropSafezone(v3)
@@ -2882,7 +2882,7 @@ local function _w118(v1, v2)
         if v3 then
             v4 = #v3:GetChildren()
         end
-        if not v4 then
+        if false then
             v4 = 0
         end
         if v4 > 0 then
@@ -3012,7 +3012,7 @@ local function _w123(v1, v2)
             v4 = v3:IsDescendantOf(workspace)
         end
         local v5, v6
-        if not v4 then
+        if false then
             return false, "DOOR_MODEL_MISSING"
         elseif type(v3:GetAttribute("Id")) ~= "string" then
             return false, "DOOR_ID_MISSING"
@@ -3052,7 +3052,7 @@ local function _w125(v1, v2)
         if v3 then
             v4 = v3:GetAttribute("Egg")
         end
-        if not v4 then
+        if false then
             v4 = false
         end
         local v6 = v3
@@ -4670,7 +4670,7 @@ local function _w191(v1, v2)
         if v3 then
             v4 = v2[1][3](v3)
         end
-        if not v4 then
+        if false then
             v4 = Vector3.new(-46377.51, 40352.1, -19678.11)
         end
         return v4
@@ -4813,7 +4813,7 @@ local function _w201(v1, v2)
         local v4
         while true do
             v4 = v2[1][3].ReadCarriedEggTimer()
-            if not v4 then
+            if false then
                 if not (not v2[1][3].Alive or not v2[2][3] or v2[1][3].HasCarriedEgg) then
                     task.wait(0.06)
                     if os.clock() - clock5 < (v3 or 1.5) then
@@ -4927,7 +4927,7 @@ local function _w205(v1, v2)
             v4 = v2[1][3](v3)
         end
         local v5, v6
-        if not v4 then
+        if false then
             v5 = v2[2][3]
             v6, v5 = v5, v5.GetTagged
             v6 = v5(v6, "HalloweenShopPrompt")[1]
@@ -5333,7 +5333,7 @@ end
 local function _w228(v1, v2)
     return function(v3, v4)
         local v5, v6, v7, v8
-        if not v4 then
+        if false then
             return false, "OBJECT_MISSING"
         else
             v4:GetAttribute("Id")
@@ -5394,7 +5394,7 @@ local function _w232(v1, v2)
             v4 = v2[1][3].Alive
         end
         local v5, getCharacter3, v6, v7, v8, candyBalance3, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, candyPosition, v23, v24
-        if not v4 then
+        if false then
             return false
         else
             getCharacter3 = v2[1][3].GetCharacter()
@@ -7415,7 +7415,7 @@ local function _w305(v1, v2)
             v4 = not v2[1][3][v3]
         end
         local v5, v6, v7, v8, v9
-        if not v4 then
+        if false then
             return nil
         else
             v2[1][3][v3] = true
@@ -8888,7 +8888,7 @@ local function _w362(v1, v2)
                 v3 = v6[3]
                 v4 = v6[3].IsA(v3, "RemoteEvent")
             end
-            if not v4 then
+            if false then
                 return false, "PET_DISMOUNT_REMOTE_MISSING"
             else
                 v5, v4 = pcall(v1:Yk({v6}))
@@ -9286,7 +9286,7 @@ local function _w375(v1, v2)
             if v6 ~= nil then
                 while true do
                     v4 = v8:IsA("Tool") or v8:IsA("Model") or v8:IsA("BasePart")
-                    if not v4 then
+                    if false then
                         v7, v8 = v9(v5, v6)
                         v6 = v7
                         if v6 ~= nil then
@@ -9452,11 +9452,11 @@ local function _w381(v1, v2)
             handle = v3:FindFirstChild("Handle")
             v5 = handle and handle:FindFirstChild("EggLuck")
             v4 = v5 and v5:FindFirstChild("Luck")
-            if not v4 then
+            if false then
                 v6 = v3:FindFirstChild("EggLuck", true)
                 v4 = v6 and v6:FindFirstChild("Luck")
             end
-            if not v4 then
+            if false then
                 v6 = v3:FindFirstChild("LuckDisplay", true)
                 v4 = v6 and v6:FindFirstChild("Luck")
             end
@@ -9746,11 +9746,11 @@ local function _w393(v1, v2)
     return function(v3)
         local v4 = not v3
         local v5
-        if not v4 then
+        if false then
             v5 = v3.Name
             v4 = not v2[1][3].IsKnownEggName(v5)
         end
-        if not v4 then
+        if false then
             if not v3:IsA("BasePart") then
                 v3:IsA("Model")
                 v3:IsA("Folder")
@@ -9943,7 +9943,7 @@ local function _w405(v1, v2)
         local v4 = v2[1][3]
         v4.GridCardList = nil
         v4 = not v4.Enabled or not v3:IsA("GuiObject")
-        if not v4 then
+        if false then
             return
         end
     end
@@ -9955,7 +9955,7 @@ local function _w406(v1, v2)
             handle2 = v3:FindFirstChild("Handle")
             v6 = handle2 and handle2:FindFirstChild("EggLuck") or v3:FindFirstChild("EggLuck", true)
             v4 = v6 and v6:FindFirstChild("Luck", true)
-            if not v4 then
+            if false then
                 luckDisplay = v3:FindFirstChild("LuckDisplay", true)
                 v4 = luckDisplay and luckDisplay:FindFirstChild("Luck", true)
             end
@@ -10309,7 +10309,7 @@ local function _w412(v1, v2)
             v4 = v3:FindFirstChild("HumanoidRootPart")
         end
         local v5, v6, v7, v8
-        if not v4 then
+        if false then
             v8 = v2[5][3]
             v2[3][3].setLabel(v8, "🔴 Character unavailable")
         else
@@ -10861,7 +10861,7 @@ local function _w445(v1, v2)
             v6 = v2[1][3]
             v6.RefreshBusy = false
             v6.LastRefreshMs = (os.clock() - v2[3][3]) * 1000
-            if not v4 then
+            if false then
                 v2[7][3].diagnose("esp.refresh", tostring(v3))
             end
             if v2[1][3].RefreshAgain and v2[2][3].Alive and v2[1][3].Enabled then
@@ -12747,7 +12747,7 @@ local function _w512(v1, v2)
             if v2[1][3].Alive then
                 task.wait(12)
                 v4, v3 = pcall(v2[1][3].RefreshDynamicDropdowns, false)
-                if not v4 then
+                if false then
                     warn("[REZEHUB] GameData dropdown scan: " .. tostring(v3))
                     continue
                 end
@@ -13286,7 +13286,7 @@ local function _w535(v1, v2)
         if v3 then
             v4 = math.max(0, os.clock() - v3)
         end
-        if not v4 then
+        if false then
             v4 = 0
         end
         v5.LastDeliveryDuration = v4
@@ -13388,7 +13388,7 @@ local function _w540(v1, v2)
             v4("[REZEHUB] Reset Config could not remove the file; check executor file permissions.")
         else
             v4, v5 = pcall(v1:bp({v2[2]}))
-            if not v4 then
+            if false then
                 warn("[REZEHUB] Reset completed, rejoin manually: " .. tostring(v5))
             end
         end
@@ -14512,7 +14512,7 @@ local function _w596(v1, v2)
     return function(v3, v4, v5)
         local _, q, I
         local v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23
-        if not v4 then
+        if false then
             return false, "no-delivery-monitor"
         else
             v9 = os.clock()
@@ -15101,7 +15101,7 @@ local function _w621(v1, v2)
         v3[2] = v3
         local v4, v5
         v4, v5 = pcall(v1:_q({v2[1], v3}))
-        if not v4 then
+        if false then
             warn("[REZEHUB] 3D rendering unavailable: " .. tostring(v5))
         end
         return v4
@@ -15506,7 +15506,7 @@ local function _w629(v1, v2)
             v4 = v3:IsA("BasePart")
         end
         local v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19
-        if not v4 then
+        if false then
             return "PUMPKIN_ANCHOR_MISSING"
         else
             v7 = {[1] = 3, [3] = v3:GetAttribute("Id")}
@@ -17343,7 +17343,7 @@ local function _w694(v1, v2)
         else
             v5 = v2[2][3].Character
             v4 = v5 and v5:FindFirstChild("HumanoidRootPart")
-            if not v4 then
+            if false then
                 return false
             else
                 v3 = v2[1][3].FuseMachineCFrame.Position
@@ -18661,7 +18661,7 @@ local function _w722(v1, v2)
                         v11 = v3.Position
                         v4 = v2[2][3](v5, v11) < 14
                     end
-                    if not v4 then
+                    if false then
                         v7, v8 = v10(v6, v9)
                         v9 = v7
                         if v9 ~= nil then
@@ -18760,7 +18760,7 @@ local function _w727(v1)
         if v3 then
             v4 = v2
         end
-        if not v4 then
+        if false then
             v4 = 0
         end
         return v4
@@ -20617,7 +20617,7 @@ local function _w789(v1, v2)
         if v4 then
             v4 = os.clock()
         end
-        if not v4 then
+        if false then
             v4 = nil
         end
         v5.NextPlaceAttemptAt = v4
@@ -21379,7 +21379,7 @@ local function _w829(v1, v2)
             v4 = v3:IsDescendantOf(workspace)
         end
         local v5, proximityPrompt, v6, v7, v8
-        if not v4 then
+        if false then
             return false, "PUMPKIN_SPAWN_NOT_PRESENT"
         else
             v8 = v3:GetAttribute("Id")
@@ -22288,7 +22288,7 @@ local function _w871(v1, v2)
         local v3, v4
         v4, v3 = pcall(v2[1][3])
         local v5
-        if not v4 then
+        if false then
             v5 = v2[2][3]
             v2[3][3].notifyError(v5, v3)
         end
@@ -24786,12 +24786,12 @@ local function _w887(v1, v2)
         v3[2] = v3
         local v4 = not v2[1][3].Alive or not v3[3]
         local v5
-        if not v4 then
+        if false then
             v5 = v3[3]
             v4 = not v3[3].IsA(v5, "Tool")
         end
         local v6
-        if not v4 then
+        if false then
             v6 = v1:Jq({v2[1], v3})
             task.defer(v6)
             return
@@ -25026,7 +25026,7 @@ local function _w900(v1, v2)
         if v5 then
             v4 = string.format("%.2f KG", v5)
         end
-        if not v4 then
+        if false then
             v4 = "Unknown"
         end
         return v4
@@ -25873,7 +25873,7 @@ local function _w931(v1, v2)
     return function(v3)
         local v4 = v2[1][3].GetCharacter()
         local v5, v6, humanoidRootPart4, v7, v8, getEggPart8, v9
-        if not v4 then
+        if false then
             return false
         else
             humanoidRootPart4 = v4:FindFirstChild("HumanoidRootPart")
@@ -26102,11 +26102,11 @@ local function _w940(v1)
                     while true do
                         v5 = v11
                         v4 = v11:IsA("TextLabel")
-                        if not v4 then
+                        if false then
                             v5 = v11
                             v4 = v11:IsA("TextButton")
                         end
-                        if not v4 then
+                        if false then
                             v6, v11 = v10(v9, v7)
                             v7 = v6
                             if v7 ~= nil then
