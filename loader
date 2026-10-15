@@ -1,13 +1,4 @@
--- REZEHUB Loader (runtime rebrand)
-if not game:IsLoaded() then
-    game.Loaded:Wait()
-end
-
-local env = (getgenv and getgenv()) or _G
-if env.__REZEHUB_LOADING then return end
-env.__REZEHUB_LOADING = true
-
--- Step 1: Runtime rebrand watcher
+-- REZEHUB Rebrand Wrapper
 task.spawn(function()
     while true do
         task.wait(0.5)
@@ -16,6 +7,8 @@ task.spawn(function()
                 local txt = gui.Text
                 if txt and txt:find("ZANJIHUB", 1, true) then
                     gui.Text = txt:gsub("ZANJIHUB", "REZEHUB")
+                elseif txt and txt:find("Zanji", 1, true) then
+                    gui.Text = txt:gsub("Zanji", "Reze")
                 elseif txt and txt:find("ZANJI", 1, true) then
                     gui.Text = txt:gsub("ZANJI", "REZE")
                 end
@@ -24,26 +17,5 @@ task.spawn(function()
     end
 end)
 
--- Step 2: Load the original working payload
-local RAP = "https://raw.githubusercontent.com/jr0nzz/zanjihub/refs/heads/main/rideapet.lua"
-
-local ok, err = pcall(function()
-    local source
-    for i = 1, 3 do
-        local success, result = pcall(game.HttpGet, game, RAP, true)
-        if success and type(result) == "string" and #result > 0 then
-            source = result
-            break
-        end
-        task.wait(i * 0.5)
-    end
-
-    if not source then error("Failed to download script") end
-
-    local chunk, compileError = loadstring(source)
-    if not chunk then error(compileError) end
-    chunk()
-end)
-
-env.__REZEHUB_LOADING = nil
-if not ok then warn("[REZEHUB] " .. tostring(err)) end
+-- Load the original working payload
+loadstring(game:HttpGet("https://raw.githubusercontent.com/jr0nzz/zanjihub/refs/heads/main/rideapet.lua", true))()
