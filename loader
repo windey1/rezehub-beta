@@ -1,3 +1,4 @@
+-- REZEHUB Loader (runtime rebrand)
 if not game:IsLoaded() then
     game.Loaded:Wait()
 end
@@ -6,6 +7,24 @@ local env = (getgenv and getgenv()) or _G
 if env.__REZEHUB_LOADING then return end
 env.__REZEHUB_LOADING = true
 
+-- Step 1: Runtime rebrand watcher
+task.spawn(function()
+    while true do
+        task.wait(0.5)
+        for _, gui in ipairs(game:GetService("CoreGui"):GetDescendants()) do
+            if gui:IsA("TextLabel") or gui:IsA("TextButton") then
+                local txt = gui.Text
+                if txt and txt:find("ZANJIHUB", 1, true) then
+                    gui.Text = txt:gsub("ZANJIHUB", "REZEHUB")
+                elseif txt and txt:find("ZANJI", 1, true) then
+                    gui.Text = txt:gsub("ZANJI", "REZE")
+                end
+            end
+        end
+    end
+end)
+
+-- Step 2: Load the original working payload
 local RAP = "https://raw.githubusercontent.com/jr0nzz/zanjihub/refs/heads/main/rideapet.lua"
 
 local ok, err = pcall(function()
